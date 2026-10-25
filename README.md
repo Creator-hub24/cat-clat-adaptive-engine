@@ -1,7 +1,7 @@
 <h1 align="center">🎯 CAT/CLAT Adaptive Mock Test & Analytics Engine</h1>
 
 <p align="center">
-  <a href="https://YOUR-APP.streamlit.app"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit"></a>
+  <a href="https://cat-clat-adaptive-engine-gzkqrxpowaogew7ptmabip.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python">
   <img src="https://img.shields.io/badge/LLM-Gemini%202.5%20Flash-orange" alt="Gemini">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT">
@@ -12,7 +12,7 @@
 > Built by **Vaibhav Gupta**, who taught CAT/CLAT at Career Launcher for 6 years. Plenty of people can wrap an LLM. This project encodes *why* an RC option is a trap and *how* QA difficulty scales non-linearly into prompts, rubrics and analytics. See [PRD.md](PRD.md) for the full product and pedagogy rationale.
 
 ## 🎥 Demo
-- **Live app:** `https://YOUR-APP.streamlit.app` *(replace after deploy)*
+- **Live app:** `https://cat-clat-adaptive-engine-gzkqrxpowaogew7ptmabip.streamlit.app/` *(replace after deploy)*
 - **Video walkthrough:** `https://youtu.be/VIDEO_ID` *(coming soon)*
 
 | Practice | Weakness heatmap |

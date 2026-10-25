@@ -155,7 +155,7 @@ def generate_ai_question(topic: str, difficulty: str, api_key: str) -> dict:
                 MODEL = cand
                 break
             except Exception as e:
-                if "404" in str(e) or "NOT_FOUND" in str(e):
+                if any(k in str(e) for k in ("404", "NOT_FOUND", "503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED")):
                     last_err = e
                     continue
                 raise
