@@ -14,7 +14,14 @@ import streamlit as st
 
 APP_DIR = Path(__file__).parent
 BANK_PATH = APP_DIR / "data" / "sample_bank.json"
-MODEL = "gemini-2.5-flash"
+MODEL_CANDIDATES = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]
+try:
+    _custom = st.secrets.get("GEMINI_MODEL") or os.environ.get("GEMINI_MODEL")
+except Exception:
+    _custom = os.environ.get("GEMINI_MODEL")
+if _custom:
+    MODEL_CANDIDATES.insert(0, _custom)
+MODEL = MODEL_CANDIDATES[0]
 FREE_DAILY_AI_LIMIT = 10
 REVIEW_INTERVALS = [1, 3, 7]  # spaced-repetition gaps (in questions answered)
 
@@ -131,16 +138,29 @@ def generate_ai_question(topic: str, difficulty: str, api_key: str) -> dict:
     client = genai.Client(api_key=api_key)
     examples = retrieve_examples(load_bank(), topic, difficulty)
     last_err = None
+    global MODEL
     for _ in range(2):
-        resp = client.models.generate_content(
-            model=MODEL,
+        resp = None
+        for cand in [MODEL] + [m for m in MODEL_CANDIDATES if m != MODEL]:
+            try:
+                resp = client.models.generate_content(
+            model=cand,
             contents=build_prompt(topic, difficulty, examples),
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
                 response_mime_type="application/json",
                 temperature=0.8,
             ),
-        )
+                )
+                MODEL = cand
+                break
+            except Exception as e:
+                if "404" in str(e) or "NOT_FOUND" in str(e):
+                    last_err = e
+                    continue
+                raise
+        if resp is None:
+            raise RuntimeError(f"No available Gemini model: {last_err}")
         try:
             q = parse_question_json(resp.text)
             q.update({"id": f"AI-{random.randint(10000, 99999)}", "topic": topic,
