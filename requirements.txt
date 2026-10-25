@@ -1,0 +1,6 @@
+streamlit>=1.38
+google-genai>=1.0
+pandas>=2.0
+plotly>=5.20
+# Optional vector store for a larger corpus:
+# chromadb>=0.5

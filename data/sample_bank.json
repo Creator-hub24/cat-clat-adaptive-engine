@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "version": "1.0",
+    "author": "Vaibhav Gupta",
+    "note": "Original seed questions written for this project; not taken from any past paper."
+  },
+  "questions": [
+    {
+      "id": "Q-E-01",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "concept_tag": "Percentages - successive change",
+      "question_text": "A shopkeeper raises the price of a jacket by 20% and then offers a 20% discount on the new price. What is the net change in price?",
+      "options": {
+        "A": "No change",
+        "B": "4% decrease",
+        "C": "4% increase",
+        "D": "2% decrease"
+      },
+      "correct_answer": "B",
+      "trap_type": "Additive fallacy",
+      "pedagogical_explanation": "Successive change formula: a + b + ab/100 = 20 - 20 + (20)(-20)/100 = -4%. So a 4% decrease. Trap (A): students add +20 and -20 and get zero, forgetting the discount applies to a larger base. Shortcut: equal up-and-down percentage changes always give a net loss of x^2/100 %."
+    },
+    {
+      "id": "Q-M-01",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "concept_tag": "Time & Work - efficiency",
+      "question_text": "A can finish a job in 12 days and B in 18 days. They start together, but A leaves 3 days before the job is finished. In how many days is the job finished?",
+      "options": {
+        "A": "7.2",
+        "B": "9",
+        "C": "8.4",
+        "D": "7.8"
+      },
+      "correct_answer": "B",
+      "trap_type": "Wrong reference window",
+      "pedagogical_explanation": "Take total work = LCM(12,18) = 36 units. A = 3/day, B = 2/day. Let total time be T. B works T days, A works T-3 days: 2T + 3(T-3) = 36, so 5T = 45, T = 9. Trap (A): 36/5 = 7.2 is the time if both worked throughout; students ignore A's exit. Trap (D): adding 3 days to a wrong base. Shortcut: assume A also worked the last 3 days, adding 9 phantom units: 45/5 = 9."
+    },
+    {
+      "id": "Q-C-01",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Number systems - remainders and cyclicity",
+      "question_text": "What is the remainder when 7^(2026) is divided by 50?",
+      "options": {
+        "A": "1",
+        "B": "49",
+        "C": "7",
+        "D": "43"
+      },
+      "correct_answer": "B",
+      "trap_type": "Cyclicity overreach",
+      "pedagogical_explanation": "7^2 = 49 = -1 (mod 50). So 7^2026 = (7^2)^1013 = (-1)^1013 = -1 = 49 (mod 50). Trap (A): students who spot 7^4 = 1 (mod 50) check only that 2026 is even and conclude 1, but 2026 = 4(506) + 2, so the answer is 7^2 = 49. Non-linear difficulty: the jump from Moderate is not bigger numbers but needing a negative remainder insight that collapses the work to two lines."
+    },
+    {
+      "id": "Q-C-02",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Algebra - integer solutions",
+      "question_text": "How many ordered pairs of positive integers (x, y) satisfy 1/x + 1/y = 1/6?",
+      "options": {
+        "A": "8",
+        "B": "9",
+        "C": "4",
+        "D": "5"
+      },
+      "correct_answer": "B",
+      "trap_type": "Unordered vs ordered count",
+      "pedagogical_explanation": "Rewrite as (x-6)(y-6) = 36. With x, y > 6 (x-6 and y-6 must be positive here, because negative factors give non-positive x or y), the number of pairs equals the number of divisors of 36 = 2^2 * 3^2, which is (3)(3) = 9. Trap (D): counting unordered pairs gives 5, which ignores the word 'ordered'. Trap (C): counting only the factor pairs where x is not equal to y."
+    },
+    {
+      "id": "R-E-01",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "concept_tag": "RC - main idea",
+      "question_text": "Passage: Urban tree cover is often praised for its looks, but its measurable value lies elsewhere. Shaded streets can be several degrees cooler in summer, which lowers electricity demand for cooling and reduces heat-related hospital visits among the elderly. Cities that treat trees as infrastructure, budgeting for them like roads or drains, tend to keep them alive longer.\n\nWhich of the following best captures the main idea of the passage?",
+      "options": {
+        "A": "Trees are the most important part of a city's infrastructure.",
+        "B": "The practical public benefits of urban trees justify treating them as infrastructure.",
+        "C": "Elderly people in cities suffer the most from summer heat.",
+        "D": "Cities should spend less on roads and more on trees."
+      },
+      "correct_answer": "B",
+      "trap_type": "Extreme scope",
+      "pedagogical_explanation": "The author moves from the 'looks' framing to measurable benefits (cooling, energy, health) to a policy point (budget trees as infrastructure). B joins all three. Trap (A) uses EXTREME SCOPE: 'most important' is never claimed. (C) is a detail, not the main idea. (D) is OUT OF SCOPE: no trade-off with roads is suggested; roads are only an analogy."
+    },
+    {
+      "id": "R-M-01",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "concept_tag": "RC - inference",
+      "question_text": "Passage: The early printing press is often credited with spreading literacy, yet for its first several decades most printed books were expensive Latin texts bought by people who could already read. Literacy rose sharply only later, when cheap pamphlets in local languages became common, often in response to religious and political disputes that made ordinary people want to read arguments for themselves.\n\nIt can be inferred from the passage that:",
+      "options": {
+        "A": "The printing press had no effect on literacy.",
+        "B": "Demand for content in local languages played a larger role in raising literacy than the invention of printing alone.",
+        "C": "Latin texts were deliberately kept expensive to limit literacy.",
+        "D": "Religious disputes were the only cause of rising literacy."
+      },
+      "correct_answer": "B",
+      "trap_type": "Reversal / overstatement",
+      "pedagogical_explanation": "The passage separates the technology (press) from the trigger (cheap local-language pamphlets driven by disputes). B is the minimal inference that follows. Trap (A) is a REVERSAL into an extreme: the press enabled pamphlets, so 'no effect' contradicts the text. (C) invents motive (OUT OF SCOPE). (D) turns 'often in response to' into 'only' (EXTREME SCOPE)."
+    },
+    {
+      "id": "R-C-01",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "concept_tag": "RC - author's tone and argument structure",
+      "question_text": "Passage: Critics of 'nudge' policy argue that steering choices through defaults is manipulation by another name. The objection has force, but it assumes there exists a neutral way to present a choice. There rarely is. A cafeteria must place some food at eye level; a pension form must have some box pre-ticked or none at all, and 'none' is itself a design decision with predictable effects. The real question is therefore not whether to influence, but whether the influence is transparent and open to challenge.\n\nThe author's stance toward the critics is best described as:",
+      "options": {
+        "A": "Dismissive: their objection is baseless.",
+        "B": "Fully supportive: nudges are manipulation and should be banned.",
+        "C": "Partly conceding, but reframing: the objection rests on a false assumption, so the debate should shift to transparency.",
+        "D": "Neutral: the author presents both sides without taking a position."
+      },
+      "correct_answer": "C",
+      "trap_type": "Half-true",
+      "pedagogical_explanation": "Key signals: 'The objection has force' (concession) + 'but it assumes...' (attacks a premise) + 'The real question is therefore' (reframe). Only C captures all three moves. Trap (A) is HALF-TRUE: the author does reject the conclusion but explicitly says the objection 'has force', so 'baseless' is wrong. (B) is a REVERSAL. (D) ignores the clear position in the last sentence. At CAT level, tone questions are decided by such small qualifiers."
+    },
+    {
+      "id": "D-M-01",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "concept_tag": "Arrangement - linear with constraints",
+      "question_text": "Five friends P, Q, R, S, T sit in a row of seats numbered 1 to 5 (left to right). R sits in seat 3. P is not at either end. Q sits immediately to the right of T. S is not next to R. T is not in seat 1. Who sits in seat 1?",
+      "options": {
+        "A": "S",
+        "B": "T",
+        "C": "Q",
+        "D": "P"
+      },
+      "correct_answer": "A",
+      "trap_type": "Premature lock-in",
+      "pedagogical_explanation": "R = 3. S is not next to R, so S is in 1 or 5. The adjacent free pairs for T-Q are (1,2) and (4,5); T is not in 1, so T-Q = (4,5). Then P (not at an end) takes 2 and S takes 1. Trap (B): solvers who place T-Q at (1,2) first and stop without checking the 'T not in seat 1' clue. DILR lesson: list every case the constraints allow, then eliminate; don't lock in the first arrangement that fits."
+    },
+    {
+      "id": "D-C-02",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Tournament - points conservation",
+      "question_text": "Four teams W, X, Y, Z play a single round-robin (each pair plays once). Win = 3 points, draw = 1, loss = 0. Final points: W = 7, X = 5, Y = 3, Z = 1. How many matches ended in a draw?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "B",
+      "trap_type": "Ignoring the conservation check",
+      "pedagogical_explanation": "Step 1 (conservation): 6 matches. A decisive match adds 3 points to the table, a draw adds 2. Total = 16, so 3(6-d) + 2d = 16 gives d = 2. Step 2 (verify with teams): W = 7 = 2 wins + 1 draw; X = 5 = 1 win + 2 draws; Z = 1 = 1 draw; Y = 3 = 1 win (0 draws). Draw appearances = 1+2+0+1 = 4 = 2 x 2 draws. Consistent. Trap (C): solvers who read Y = 3 as three draws get 3, but that makes draw appearances 7, an odd number, which is impossible. DILR lesson: always run the global conservation check before building the grid."
+    },
+    {
+      "id": "C-E-01",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "concept_tag": "Legal RC - applying a stated rule",
+      "question_text": "Passage: Under the principle of 'volenti non fit injuria', a person who voluntarily accepts a known risk cannot later claim damages for harm arising from that risk. However, the defence fails if the harm results from a risk the person was not aware of, or did not freely agree to.\n\nA spectator at a cricket match is hit by a ball that flies into the stands during normal play. Later, the same spectator is injured when a poorly maintained railing collapses. Applying the principle:",
+      "options": {
+        "A": "The spectator can claim for neither injury.",
+        "B": "The spectator can claim for both injuries.",
+        "C": "The spectator cannot claim for the ball injury but may claim for the railing injury.",
+        "D": "The spectator can claim for the ball injury but not the railing injury."
+      },
+      "correct_answer": "C",
+      "trap_type": "Overgeneralising the defence",
+      "pedagogical_explanation": "Being hit by a ball in normal play is a known, accepted risk of attending a match, so volenti applies. A collapsing railing due to poor maintenance is not a risk the spectator knowingly accepted, so the defence fails there. Trap (A): treating 'attending the event' as accepting every risk at the venue. CLAT rule: apply only the principle given in the passage, risk by risk."
+    },
+    {
+      "id": "C-M-01",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "concept_tag": "Legal RC - exception to a rule",
+      "question_text": "Passage: A contract made by a minor is void from the start. But a minor may be held liable to pay a reasonable price for 'necessaries' supplied to them, meaning goods suited to their condition in life and actual needs at the time. The liability is only to pay a reasonable price, not the agreed contract price.\n\nA 16-year-old student buys a winter coat for Rs 9,000 on credit; a fair market price is Rs 6,000. He already owned no warm clothing. The seller sues for Rs 9,000. Which is correct?",
+      "options": {
+        "A": "The seller gets nothing because the contract is void.",
+        "B": "The seller gets Rs 9,000 because the coat was a necessary.",
+        "C": "The seller can recover a reasonable price, around Rs 6,000.",
+        "D": "The seller can recover Rs 9,000 from the minor's parents."
+      },
+      "correct_answer": "C",
+      "trap_type": "Half-true",
+      "pedagogical_explanation": "The coat is a necessary (winter, no warm clothing), so the exception applies, but only for a reasonable price. Trap (B) is HALF-TRUE: correct that it is a necessary, wrong on the amount. Trap (A) applies the general rule and ignores the exception. (D) is OUT OF SCOPE: the passage says nothing about parents' liability."
+    },
+    {
+      "id": "L-E-01",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Assumption",
+      "question_text": "Statement: 'Our city should build more bicycle lanes, because that will reduce traffic jams.'\n\nWhich of the following is an assumption the argument depends on?",
+      "options": {
+        "A": "Bicycles are cheaper than cars.",
+        "B": "A meaningful number of people would switch from cars to bicycles if lanes were available.",
+        "C": "Traffic jams are the city's biggest problem.",
+        "D": "All residents own bicycles."
+      },
+      "correct_answer": "B",
+      "trap_type": "Extreme scope",
+      "pedagogical_explanation": "Negation test: if nobody would switch to bicycles, the lanes would not reduce jams, so the argument collapses. B is necessary. (A) may be true but the argument does not depend on cost. (C) and (D) are EXTREME: the argument needs neither 'biggest problem' nor 'all residents'. Tip: necessary assumptions are usually modest; extreme words usually signal a trap."
+    },
+    {
+      "id": "L-M-01",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Strengthen / weaken - causal reasoning",
+      "question_text": "A survey found that students who eat breakfast score higher on tests. The principal concludes that eating breakfast improves test performance and plans to make breakfast compulsory.\n\nWhich of the following, if true, most weakens the principal's conclusion?",
+      "options": {
+        "A": "Some students who skip breakfast also score well.",
+        "B": "Students who eat breakfast mostly come from households that also provide regular tutoring and fixed sleep schedules.",
+        "C": "Breakfast is the most important meal of the day.",
+        "D": "The survey covered students from three schools."
+      },
+      "correct_answer": "B",
+      "trap_type": "Exception mistaken for weakener",
+      "pedagogical_explanation": "The principal moves from correlation to causation. B supplies an alternative cause (tutoring, sleep), the classic weakener. Trap (A) is a few exceptions; a correlation can hold even with exceptions, so it barely dents the conclusion. (C) strengthens, if anything. (D) is neutral detail."
+    },
+    {
+      "id": "L-C-01",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Conditional logic - contrapositive",
+      "question_text": "Rule: 'If a bill is passed by the council, then it has been reviewed by the legal committee.' Which statement must be true?",
+      "options": {
+        "A": "If a bill was reviewed by the legal committee, it was passed.",
+        "B": "If a bill was not passed, it was not reviewed.",
+        "C": "If a bill was not reviewed by the legal committee, it was not passed.",
+        "D": "Every reviewed bill is eventually passed."
+      },
+      "correct_answer": "C",
+      "trap_type": "Reversal (converse/inverse fallacy)",
+      "pedagogical_explanation": "P -> Q is equivalent only to its contrapositive, not-Q -> not-P, which is C. (A) is the converse (Q -> P), a REVERSAL. (B) is the inverse (not-P -> not-Q), also invalid. (D) is an extreme version of the converse. Coaching shortcut: 'flip and negate both', never just flip."
+    },
+    {
+      "id": "Q-E-02",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "concept_tag": "Averages - change on inclusion",
+      "question_text": "The average age of 10 students is 15 years. When the teacher's age is included, the average rises by 2 years. What is the teacher's age?",
+      "options": {
+        "A": "17",
+        "B": "37",
+        "C": "35",
+        "D": "32"
+      },
+      "correct_answer": "B",
+      "trap_type": "Forgetting the redistribution",
+      "pedagogical_explanation": "New average 17 for 11 people means total 187; old total 150; teacher = 37. Shortcut: the teacher must cover his own 17 plus give 2 years to each of 10 students: 17 + 20 = 37. Trap (A): taking the new average as the teacher's age."
+    }
+  ]
+}
