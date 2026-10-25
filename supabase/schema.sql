@@ -31,3 +31,18 @@ create index if not exists attempts_user_idx on public.attempts(user_id, created
 alter table public.profiles enable row level security;
 alter table public.attempts enable row level security;
 revoke all on public.profiles, public.attempts from anon, authenticated;
+
+-- v0.3: adaptive levels, timing, anonymous question reports (safe to re-run on an existing project)
+alter table public.profiles add column if not exists topic_levels jsonb not null default '{}'::jsonb;
+alter table public.attempts add column if not exists time_taken_s int;
+alter table public.attempts add column if not exists timing_class text;
+
+create table if not exists public.question_reports (
+  id            bigint generated always as identity primary key,
+  topic         text not null,
+  question_ref  text not null,   -- seed id or content hash of an AI question; NO user identifier
+  reason        text not null,
+  created_at    timestamptz not null default now()
+);
+alter table public.question_reports enable row level security;
+revoke all on public.question_reports from anon, authenticated;

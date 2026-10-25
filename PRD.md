@@ -3,13 +3,13 @@
 | | |
 |---|---|
 | **Author** | Vaibhav Gupta (6 years CAT/CLAT faculty, Career Launcher) |
-| **Status** | v0.1 prototype, live on Streamlit Cloud |
+| **Status** | v0.3 prototype, live on Streamlit Cloud |
 | **Last updated** | October 2026 |
 
 ---
 
 ## 1. Executive summary
-A practice engine that writes CAT and CLAT questions the way a senior faculty member does. Every wrong option is a named trap, every explanation says why the tempting answer is wrong, and every mistake comes back on a spaced-repetition schedule. An LLM (Gemini 2.5 Flash) does the writing. A pedagogical layer does the controlling: a difficulty rubric, a distractor taxonomy, topic rules and few-shot examples from a curated seed bank. That layer is the product's real value.
+A practice engine that writes CAT and CLAT questions the way a senior faculty member does. Every wrong option is a named trap, every explanation says why the tempting answer is wrong, and every mistake comes back on a spaced-repetition schedule. An LLM (Gemini Flash family, with automatic fallback between models) does the writing, and every AI answer key is checked before display. A pedagogical layer does the controlling: a difficulty rubric, a distractor taxonomy, topic rules and few-shot examples from a curated seed bank. That layer is the product's real value.
 
 ## 2. Problem statement
 - **Coaching is expensive and hard to reach.** Classroom programmes cost ₹40k–₹1L+ and assume a fixed schedule. Working aspirants mostly practise alone, late at night.
@@ -34,11 +34,14 @@ A practice engine that writes CAT and CLAT questions the way a senior faculty me
 |---|---|---|---|
 | F1 | Controlled question generation | Exam → section → difficulty (Easy / Moderate / CAT-Level). Structured prompt with a rubric, topic rules and retrieved few-shot examples; strict JSON output validated before display. | ✅ |
 | F2 | Pedagogical feedback loop | After each answer: the correct key, the **trap type** of the main distractor, and a step-by-step coach's explanation including the shortcut. | ✅ |
-| F3 | Error log + spaced repetition | Wrong answers enter a queue and come back after 1, 3 and 7 further questions, then graduate. | ✅ (session) |
+| F3 | Error log + spaced repetition | Wrong answers enter a queue and come back after 3, 7 and 15 further questions, then graduate. | ✅ (saved when signed in) |
 | F4 | Weakness heatmap | Accuracy % by topic × difficulty, plus a "traps you fall for most" chart. | ✅ |
 | F5 | Streaks & daily micro-challenge | Correct-answer streak, plus one deterministic challenge question per day. | ✅ |
 | F6 | Freemium meter | 10 AI questions per day free; the seed bank is always available. | ✅ (client-side) |
 | F7 | Graceful offline mode | With no API key, or if the model fails, the app serves curated seed questions so the demo always works. | ✅ |
+| F9 | Adaptive difficulty | Per-topic level; up after 2 consecutive on-time correct answers, down after 2 wrong; manual override. | ✅ v0.3 |
+| F10 | Answer-key verification | Sandboxed `verify_code` for Quant/DILR, an independent solve pass for all sections, max 2 regenerations, then seed fallback; Verified badge; anonymous Report button. | ✅ v0.3 |
+| F11 | Per-question timer | Difficulty-based targets, RC scaled by passage length; "Right but too slow" category. | ✅ v0.3 |
 | F8 | Faculty test builder (Meera) | Batch-generate a 10–20 question sectional, edit it, export as PDF/CSV. | Roadmap |
 
 ## 5. Pedagogical rationale (the differentiator)
@@ -144,16 +147,17 @@ What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. 
 | Revenue | Free → Pro conversion at 30 days | 4% |
 
 ## 9. Roadmap
-- **v0.1 (now):** Streamlit prototype, 5 sections, seed bank, AI generation, session analytics.
-- **v0.2:** Persistent user accounts (Supabase), server-side freemium metering, a second-model "answer-key verifier" pass for DILR/QA.
-- **v0.3:** Mentor Meera's test builder: batch generation, edit, PDF export, batch analytics.
-- **v0.4:** Adaptive sequencing (Elo/IRT-style ability estimate per topic) and full-length timed sectionals.
+- **v0.1 (shipped):** Streamlit prototype, 5 sections, seed bank, AI generation, session analytics.
+- **v0.2 (shipped):** Optional Google sign-in, Supabase storage keyed by hashed IDs, data export/delete, server-side metering for signed-in users, Razorpay Pro.
+- **v0.3 (shipped):** Adaptive per-topic difficulty, answer-key verification (sandboxed computation + independent solve), anonymous question reports, per-question timer with "Right but too slow", a 45-question seed bank, a daily challenge that cycles the whole bank, and review intervals 3 → 7 → 15.
+- **v0.4:** Mentor Meera's test builder: batch generation, edit, PDF export, batch analytics.
+- **v0.5:** Replace the 2-up/2-down rule with an Elo/IRT-style ability estimate per topic and full-length timed sectionals.
 - **v1.0:** Payments (Razorpay), mobile-friendly frontend, a ChromaDB corpus of 1,000+ reviewed items.
 
 ## 10. Risks & mitigations
 | Risk | Mitigation |
 |---|---|
-| LLM writes a wrong or ambiguous answer key (most likely in DILR/QA) | Schema validation now; verifier-model pass + user "report" button + faculty review of flagged items next |
+| LLM writes a wrong or ambiguous answer key (most likely in DILR/QA) | Schema validation, sandboxed verify_code, independent solve pass and an anonymous Report button (v0.3); faculty review of reported items next |
 | Copyright: generating text close to real past papers | The prompt requires original passages; the seed bank is fully original; no past papers in the corpus |
 | Freemium limit bypass | Signed-in users are metered server-side in Supabase; guest sessions are still client-side (accepted for the demo) |
 | Data breach / privacy | Only hashed IDs + practice stats are stored; RLS on; service key server-side; export/delete in-app |

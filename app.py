@@ -6,12 +6,15 @@ import json
 import os
 import random
 import re
+import time
 from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+import engine
+import llm
 import payments
 import store as storage
 
@@ -24,15 +27,14 @@ except Exception:
     _custom = os.environ.get("GEMINI_MODEL")
 if _custom:
     MODEL_CANDIDATES.insert(0, _custom)
-MODEL = MODEL_CANDIDATES[0]
 FREE_DAILY_AI_LIMIT = 10
-REVIEW_INTERVALS = [1, 3, 7]  # spaced-repetition gaps (in questions answered)
+REVIEW_INTERVALS = engine.REVIEW_INTERVALS  # 3 -> 7 -> 15 questions
 
 SECTIONS = {
     "CAT": ["CAT Quant", "CAT VARC RC", "CAT DILR"],
     "CLAT": ["CLAT RC", "CLAT Logical Reasoning"],
 }
-DIFFICULTIES = ["Easy", "Moderate", "CAT-Level"]
+DIFFICULTIES = engine.DIFFICULTIES
 
 DIFFICULTY_RUBRIC = {
     "Easy": "Single concept, one or two steps, direct application. A prepared aspirant should solve it in under 60 seconds.",
@@ -41,9 +43,9 @@ DIFFICULTY_RUBRIC = {
 }
 
 TOPIC_RULES = {
-    "CAT Quant": "Use clean integers. Every distractor must be the result of a specific, nameable mistake (e.g. additive fallacy, wrong base, ordered vs unordered). Mention the fastest shortcut.",
+    "CAT Quant": "verify_code is REQUIRED. Use clean integers. Every distractor must be the result of a specific, nameable mistake (e.g. additive fallacy, wrong base, ordered vs unordered). Mention the fastest shortcut.",
     "CAT VARC RC": "Write an ORIGINAL 120-220 word passage (no copyrighted text) followed by one question. Distractors must follow the taxonomy: Extreme scope, Out-of-scope, Half-true, Reversal. Label the trap type of each wrong option in the explanation.",
-    "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building.",
+    "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building. When the set needs data, present it as a GitHub-markdown table inside question_text. Where the answer is computable, include verify_code.",
     "CLAT RC": "Write an ORIGINAL legal-principle passage (100-200 words) and a fact situation. The answer must follow ONLY from the stated principle, not outside legal knowledge. Include an exception in the principle at Moderate+.",
     "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
 }
@@ -57,9 +59,14 @@ Pedagogical constraints you must obey:
 4. Match the difficulty rubric exactly; difficulty comes from insight, not ugly numbers.
 5. Output ONLY one JSON object, no markdown fences, with keys:
    question_text (string), options (object with keys A,B,C,D), correct_answer (one of A,B,C,D),
-   pedagogical_explanation (string), trap_type (string, the main distractor's trap), concept_tag (string)."""
+   pedagogical_explanation (string), trap_type (string, the main distractor's trap), concept_tag (string),
+   and for computable questions (Quant, numeric/arrangement DILR) verify_code (string).
+6. verify_code: short plain Python that computes the answer and assigns it to a variable named `answer`
+   (a number equal to the correct option's value, or the correct option letter). Only math, itertools and
+   fractions may be imported. No input, files, network or printing needed.
+7. Tabular data must be written as a markdown table inside question_text. Never use HTML."""
 
-REQUIRED_KEYS = {"question_text", "options", "correct_answer", "pedagogical_explanation", "trap_type", "concept_tag"}
+REQUIRED_KEYS = engine.REQUIRED_KEYS
 
 
 # ---------------------------------------------------------------- data / retrieval
@@ -91,7 +98,8 @@ def get_api_key() -> str | None:
 
 def build_prompt(topic: str, difficulty: str, examples: list[dict]) -> str:
     shots = "\n\n".join(
-        json.dumps({k: ex[k] for k in REQUIRED_KEYS}, ensure_ascii=False) for ex in examples
+        json.dumps({k: ex[k] for k in list(REQUIRED_KEYS) + ["verify_code"] if k in ex}, ensure_ascii=False)
+        for ex in examples
     )
     return f"""Topic: {topic}
 Difficulty: {difficulty}
@@ -104,74 +112,17 @@ Reference examples of house style (do NOT reuse their content, numbers or passag
 Now write ONE new question as a single JSON object."""
 
 
-def parse_question_json(text: str) -> dict:
-    """Robustly extract and validate a question JSON object from model output."""
-    if not text:
-        raise ValueError("Empty model response")
-    cleaned = re.sub(r"```(?:json)?", "", text).strip()
-    start, end = cleaned.find("{"), cleaned.rfind("}")
-    if start == -1 or end == -1:
-        raise ValueError("No JSON object found")
-    blob = cleaned[start:end + 1]
-    try:
-        data = json.loads(blob)
-    except json.JSONDecodeError:
-        blob = re.sub(r",\s*([}\]])", r"\1", blob)  # trailing commas
-        data = json.loads(blob)
-    missing = REQUIRED_KEYS - data.keys()
-    if missing:
-        raise ValueError(f"Missing keys: {missing}")
-    opts = data["options"]
-    if isinstance(opts, list):  # ["A) ...", ...] -> dict
-        opts = {chr(65 + i): re.sub(r"^\s*[A-D][\).:\-]\s*", "", str(o)) for i, o in enumerate(opts[:4])}
-    opts = {str(k).strip().upper()[:1]: str(v) for k, v in opts.items()}
-    if set(opts) != {"A", "B", "C", "D"}:
-        raise ValueError("Options must be exactly A-D")
-    ans = str(data["correct_answer"]).strip().upper()[:1]
-    if ans not in opts:
-        raise ValueError("correct_answer not in options")
-    data["options"], data["correct_answer"] = opts, ans
-    return data
+parse_question_json = engine.parse_question_json
 
 
-def generate_ai_question(topic: str, difficulty: str, api_key: str) -> dict:
+def generate_ai_question(topic: str, difficulty: str, api_key: str, log: list | None = None) -> dict:
+    """Generate + verify (sandboxed verify_code and an independent solve); max 2 tries."""
     from google import genai
-    from google.genai import types
 
     client = genai.Client(api_key=api_key)
     examples = retrieve_examples(load_bank(), topic, difficulty)
-    last_err = None
-    global MODEL
-    for _ in range(2):
-        resp = None
-        for cand in [MODEL] + [m for m in MODEL_CANDIDATES if m != MODEL]:
-            try:
-                resp = client.models.generate_content(
-            model=cand,
-            contents=build_prompt(topic, difficulty, examples),
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_PROMPT,
-                response_mime_type="application/json",
-                temperature=0.8,
-            ),
-                )
-                MODEL = cand
-                break
-            except Exception as e:
-                if any(k in str(e) for k in ("404", "NOT_FOUND", "503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED")):
-                    last_err = e
-                    continue
-                raise
-        if resp is None:
-            raise RuntimeError(f"No available Gemini model: {last_err}")
-        try:
-            q = parse_question_json(resp.text)
-            q.update({"id": f"AI-{random.randint(10000, 99999)}", "topic": topic,
-                      "difficulty": difficulty, "exam": topic.split()[0], "source": "AI"})
-            return q
-        except (ValueError, json.JSONDecodeError) as e:
-            last_err = e
-    raise RuntimeError(f"Model output failed validation: {last_err}")
+    return llm.generate_verified(client, MODEL_CANDIDATES, topic, difficulty,
+                                 build_prompt(topic, difficulty, examples), SYSTEM_PROMPT, log=log)
 
 
 def seed_question(topic: str, difficulty: str, exclude: set[str]) -> dict:
@@ -181,7 +132,19 @@ def seed_question(topic: str, difficulty: str, exclude: set[str]) -> dict:
     fresh = [q for q in pool if q["id"] not in exclude] or pool
     q = dict(random.choice(fresh))
     q["source"] = "Seed bank"
+    return mark_seed(q)
+
+
+def mark_seed(q: dict) -> dict:
+    q["verified"] = True
+    q["verification"] = ["hand-checked"] + (["computed"] if q.get("verify_code") else [])
+    q.setdefault("model", None)
     return q
+
+
+def md_escape(text) -> str:
+    """Neutralise markdown/HTML in short model-provided strings (tags, trap names, options)."""
+    return re.sub(r"([\\`*_{}\[\]()#+\-.!|<>~$])", r"\\\1", str(text or ""))
 
 
 # ---------------------------------------------------------------- secrets / account
@@ -232,7 +195,8 @@ def profile_from_state() -> dict:
     s = st.session_state
     return {"streak": s.streak, "best_streak": s.best_streak, "usage_day": s.day,
             "ai_used": s.ai_used, "plan": s.plan, "pro_until": s.pro_until,
-            "review_queue": s.error_log, "pending_payment_ref": s.get("pending_ref")}
+            "review_queue": s.error_log, "pending_payment_ref": s.get("pending_ref"),
+            "topic_levels": s.topic_levels}
 
 
 def persist():
@@ -258,7 +222,9 @@ def hydrate_from_store():
     s.uid, s.db = uid, db
     s.attempts = [{"id": a["question_id"], "topic": a["topic"], "difficulty": a["difficulty"],
                    "correct": a["correct"], "trap_type": a.get("trap_type") or "",
+                   "time_taken_s": a.get("time_taken_s"), "timing_class": a.get("timing_class") or "",
                    "time": str(a.get("created_at", ""))[:16]} for a in attempts]
+    s.topic_levels = profile.get("topic_levels") or {}
     s.error_log = profile.get("review_queue") or {}
     s.streak, s.best_streak = profile["streak"], profile["best_streak"]
     s.plan, s.pro_until = profile["plan"], profile["pro_until"]
@@ -293,12 +259,14 @@ def init_state():
     s.setdefault("challenge_done", False)
     s.setdefault("plan", "free")
     s.setdefault("pro_until", None)
+    s.setdefault("topic_levels", {})   # topic -> {level, run_correct, run_wrong}
+    s.setdefault("q_started", None)
+    s.setdefault("session_reports", [])
 
 
 def daily_challenge() -> dict:
-    bank = load_bank()
-    rng = random.Random(dt.date.today().toordinal())
-    return dict(rng.choice(bank), source="Daily micro-challenge")
+    """Same question for everyone today; no repeat until the whole bank has cycled."""
+    return mark_seed(dict(engine.daily_pick(load_bank(), dt.date.today()), source="Daily micro-challenge"))
 
 
 def due_reviews() -> list[dict]:
@@ -306,25 +274,32 @@ def due_reviews() -> list[dict]:
     return [v for v in st.session_state.error_log.values() if v["due_at"] <= n]
 
 
-def record_answer(q: dict, choice: str):
+def record_answer(q: dict, choice: str, seconds: float):
     s = st.session_state
     correct = choice == q["correct_answer"]
+    target = engine.target_seconds(q["topic"], q["difficulty"], q["question_text"])
+    tclass = engine.classify(correct, seconds, target)
     s.attempts.append({"id": q["id"], "topic": q["topic"], "difficulty": q["difficulty"],
                        "correct": correct, "trap_type": q.get("trap_type", ""),
+                       "time_taken_s": int(seconds), "timing_class": tclass,
                        "time": dt.datetime.now().strftime("%H:%M")})
+    s.last_result = {"seconds": int(seconds), "target": target, "class": tclass}
     s.streak = s.streak + 1 if correct else 0
     s.best_streak = max(s.best_streak, s.streak)
+    # adaptive level only moves on questions served at the topic's current level
+    lvl = s.topic_levels.get(q["topic"]) or engine.new_topic_state()
+    if q["difficulty"] == lvl["level"]:
+        before = lvl["level"]
+        s.topic_levels[q["topic"]] = engine.update_level(lvl, correct, tclass == "Right but too slow")
+        after = s.topic_levels[q["topic"]]["level"]
+        s.level_change = None if after == before else f"{q['topic']}: {before} → {after}"
+    else:
+        s.level_change = None
     n = len(s.attempts)
-    entry = s.error_log.get(q["id"])
     if not correct:
-        s.error_log[q["id"]] = {"question": q, "stage": 0, "due_at": n + REVIEW_INTERVALS[0],
-                                "your_answer": choice}
-    elif entry:  # correct on a review: push further out or graduate
-        entry["stage"] += 1
-        if entry["stage"] >= len(REVIEW_INTERVALS):
-            del s.error_log[q["id"]]
-        else:
-            entry["due_at"] = n + REVIEW_INTERVALS[entry["stage"]]
+        engine.schedule_mistake(s.error_log, q, choice, n)
+    elif q["id"] in s.error_log:
+        engine.advance_review(s.error_log, q["id"], n)
     if q.get("source") == "Daily micro-challenge":
         s.challenge_done = True
     if s.get("uid") and s.get("db"):
@@ -333,7 +308,8 @@ def record_answer(q: dict, choice: str):
             a = s.attempts[-1]
             s.db.add_attempt(s.uid, {"question_id": a["id"], "topic": a["topic"],
                                      "difficulty": a["difficulty"], "correct": a["correct"],
-                                     "trap_type": a["trap_type"]})
+                                     "trap_type": a["trap_type"], "time_taken_s": a["time_taken_s"],
+                                     "timing_class": a["timing_class"]})
         except Exception as e:
             st.toast(f"Could not save attempt: {e}")
 
@@ -342,6 +318,16 @@ def set_current(q: dict):
     st.session_state.current = q
     st.session_state.answered = False
     st.session_state.seen.add(q["id"])
+    st.session_state.q_started = time.time()
+
+
+def report_question(q: dict, reason: str):
+    rep = {"topic": q["topic"], "question_ref": storage.question_ref(q), "reason": reason}
+    db = get_store()
+    if db:
+        db.add_report(rep)
+    else:
+        st.session_state.session_reports.append(storage.clean_report(rep))
 
 
 # ---------------------------------------------------------------- UI
@@ -356,10 +342,21 @@ with st.sidebar:
     st.title("🎯 Adaptive Engine")
     exam = st.radio("Exam", list(SECTIONS), horizontal=True)
     topic = st.selectbox("Section / topic", SECTIONS[exam])
-    difficulty = st.select_slider("Difficulty", DIFFICULTIES, value="Moderate")
+    mode = st.radio("Difficulty mode", ["Adaptive", "Manual"], horizontal=True,
+                    help="Adaptive: per topic, steps up after 2 fast correct answers and down after 2 wrong.")
+    level = (s.topic_levels.get(topic) or engine.new_topic_state())["level"]
+    if mode == "Adaptive":
+        difficulty = level
+        st.info(f"Your level in {topic}: **{level}**")
+    else:
+        difficulty = st.select_slider("Difficulty", DIFFICULTIES, value=level)
+    with st.expander("My level per topic"):
+        st.dataframe(pd.DataFrame([{"Topic": t, "Level": (s.topic_levels.get(t) or engine.new_topic_state())["level"]}
+                                   for sec in SECTIONS.values() for t in sec]), hide_index=True,
+                     width="stretch")
     st.divider()
     if api_key:
-        st.success(f"AI mode: {MODEL}")
+        st.success("AI mode (verified): " + " → ".join(MODEL_CANDIDATES))
     else:
         st.info("Demo mode: no GEMINI_API_KEY found, serving curated seed questions.")
     if pro:
@@ -372,14 +369,14 @@ with st.sidebar:
         st.caption("Guest mode: progress lasts for this browser session only.")
     elif not logged_in():
         st.caption("Guest mode. Sign in to save progress (we store only a hashed ID, never your email).")
-        if st.button("Sign in with Google", use_container_width=True):
+        if st.button("Sign in with Google", width="stretch"):
             st.login()
     else:
         if s.get("uid"):
             st.caption("✅ Progress is being saved (pseudonymous ID).")
         else:
             st.caption("Signed in, but storage is not configured: session-only.")
-        if st.button("Sign out", use_container_width=True):
+        if st.button("Sign out", width="stretch"):
             for k in list(s.keys()):
                 del s[k]
             st.logout()
@@ -391,7 +388,7 @@ with st.sidebar:
             st.caption("Pro coming soon." if not (rz_id and rz_secret)
                        else "Sign in to upgrade (Pro is tied to your saved account).")
         else:
-            if st.button("Upgrade to Pro", use_container_width=True):
+            if st.button("Upgrade to Pro", width="stretch"):
                 try:
                     link = payments.create_link(rz_id, rz_secret, s.uid, secret("APP_URL"))
                     s.pending_ref, s.pay_url = link["reference_id"], link["short_url"]
@@ -400,8 +397,8 @@ with st.sidebar:
                     st.error(f"Could not create payment link: {e}")
             pay_url = s.get("pay_url") or (secret("RAZORPAY_PAYMENT_LINK") if not s.get("pending_ref") else None)
             if pay_url:
-                st.link_button("Pay securely on Razorpay ↗", pay_url, use_container_width=True)
-            if s.get("pending_ref") and st.button("I've paid, verify", use_container_width=True):
+                st.link_button("Pay securely on Razorpay ↗", pay_url, width="stretch")
+            if s.get("pending_ref") and st.button("I've paid, verify", width="stretch"):
                 try:
                     if payments.verify_paid(rz_id, rz_secret, s.pending_ref):
                         prof = payments.extend_pro(profile_from_state())
@@ -429,38 +426,48 @@ tab_practice, tab_review, tab_analytics, tab_privacy = st.tabs(
 
 with tab_practice:
     b1, b2, b3 = st.columns(3)
-    if b1.button("Generate question", type="primary", use_container_width=True):
+    if b1.button("Generate question", type="primary", width="stretch"):
         q = None
         if api_key and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
-            with st.spinner("Your coach is writing a question..."):
+            with st.spinner("Your coach is writing and double-checking a question..."):
                 try:
                     q = generate_ai_question(topic, difficulty, api_key)
                     s.ai_used += 1
                     persist()
                 except Exception as e:
-                    st.warning(f"AI generation failed ({e}); serving a seed question instead.")
+                    st.warning("Couldn't produce a question that passed verification, so here is a "
+                               "hand-checked seed question instead.")
+                    with st.expander("Verification details"):
+                        st.text(str(e)[:1500])
         elif api_key:
             st.warning("Daily free limit reached. Upgrade to Pro for unlimited; serving a seed question.")
         set_current(q or seed_question(topic, difficulty, s.seen))
-    if b2.button("Daily micro-challenge" + (" ✅" if s.challenge_done else ""), use_container_width=True):
+    if b2.button("Daily micro-challenge" + (" ✅" if s.challenge_done else ""), width="stretch"):
         set_current(daily_challenge())
     due = due_reviews()
-    if b3.button(f"Review a mistake ({len(due)})", use_container_width=True, disabled=not due):
+    if b3.button(f"Review a mistake ({len(due)})", width="stretch", disabled=not due):
         set_current(dict(due[0]["question"], source="Spaced-repetition review"))
+    if s.get("level_change"):
+        st.toast(f"Adaptive level changed: {s.level_change}")
 
     q = s.current
     if q is None:
         st.info("Pick a section and difficulty in the sidebar, then hit **Generate question**.")
     else:
-        st.markdown(f"**{q['topic']} · {q['difficulty']} · {q.get('concept_tag', '')}**  \n"
-                    f"<small>Source: {q.get('source', '')}</small>", unsafe_allow_html=True)
-        st.markdown(q["question_text"].replace("\n", "  \n"))
-        labels = [f"{k}) {v}" for k, v in q["options"].items()]
+        badge = ("✅ Verified (" + ", ".join(q.get("verification", [])) + ")") if q.get("verified") else "⚠️ Unverified"
+        meta = f"{q['topic']} · {q['difficulty']} · {md_escape(q.get('concept_tag', ''))}"
+        st.markdown(f"**{meta}**")
+        lo, hi = engine.target_seconds(q["topic"], q["difficulty"], q["question_text"])
+        st.caption(f"{badge} · Source: {q.get('source', '')}" + (f" · model: {q['model']}" if q.get("model") else "")
+                   + f" · Target time: {lo}-{hi}s")
+        # model text rendered as markdown only (tables ok); raw HTML is never enabled
+        st.markdown(q["question_text"].replace("\n", "  \n") if "|" not in q["question_text"] else q["question_text"])
+        labels = [f"{k}) {md_escape(v)}" for k, v in q["options"].items()]
         pick = st.radio("Your answer", labels, index=None, key=f"pick_{q['id']}_{len(s.attempts)}",
                         disabled=s.answered)
         if st.button("Submit", disabled=s.answered or pick is None):
             choice = pick[0]
-            record_answer(q, choice)
+            record_answer(q, choice, time.time() - (s.q_started or time.time()))
             s.answered = True
             s.last_choice = choice
             st.rerun()
@@ -470,13 +477,26 @@ with tab_practice:
             else:
                 st.error(f"Not quite. You chose {s.last_choice}; correct is {q['correct_answer']}. "
                          "Added to your error log for spaced review.")
-            st.markdown(f"**Trap type of the main distractor:** {q.get('trap_type', '-')}")
+            r = s.get("last_result") or {}
+            if r:
+                msg = f"⏱️ {r['seconds']}s (target {r['target'][0]}-{r['target'][1]}s): {r['class']}"
+                (st.warning if r["class"] == "Right but too slow" else st.caption)(
+                    msg + (". Right, but too slow to count toward levelling up." if r["class"] == "Right but too slow" else ""))
+            st.markdown(f"**Trap type of the main distractor:** {md_escape(q.get('trap_type', '-'))}")
             with st.expander("Coach's explanation", expanded=True):
-                st.write(q["pedagogical_explanation"])
+                st.markdown(q["pedagogical_explanation"])
+            with st.expander("🚩 Report this question"):
+                reason = st.selectbox("What's wrong?", storage.REPORT_REASONS, key=f"rr_{q['id']}")
+                if st.button("Send report", key=f"rb_{q['id']}"):
+                    try:
+                        report_question(q, reason)
+                        st.success("Thanks! Reported anonymously (topic, question reference and reason only).")
+                    except Exception as e:
+                        st.error(f"Could not save report: {e}")
 
 with tab_review:
     if not s.error_log:
-        st.info("No mistakes logged yet. Wrong answers appear here and come back after 1, 3 and 7 questions.")
+        st.info("No mistakes logged yet. Wrong answers appear here and come back after 3, 7 and 15 questions.")
     else:
         n = len(s.attempts)
         rows = [{"Question": v["question"]["id"], "Topic": v["question"]["topic"],
@@ -484,7 +504,7 @@ with tab_review:
                  "Your answer": v["your_answer"], "Stage": f"{v['stage'] + 1}/{len(REVIEW_INTERVALS)}",
                  "Due": "now" if v["due_at"] <= n else f"in {v['due_at'] - n} questions"}
                 for v in s.error_log.values()]
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 
 with tab_analytics:
     if not s.attempts:
@@ -500,7 +520,15 @@ with tab_analytics:
         fig = px.imshow(pivot.round(0), text_auto=True, color_continuous_scale="RdYlGn",
                         zmin=0, zmax=100, aspect="auto", labels=dict(color="Accuracy %"))
         fig.update_layout(title="Accuracy % by topic x difficulty")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
+        if "timing_class" in df:
+            st.subheader("Speed: right but too slow")
+            tc = (df.assign(timing_class=df.timing_class.replace("", "Unknown"))
+                  .pivot_table(index="topic", columns="timing_class", values="correct", aggfunc="size", fill_value=0))
+            st.bar_chart(tc)
+            slow = (df.timing_class == "Right but too slow").sum()
+            st.caption(f"{slow} of {int(df.correct.sum())} correct answers were slower than target. "
+                       "In the exam these cost you time on other questions.")
         wrong = df[~df.correct]
         if not wrong.empty:
             st.subheader("Traps you fall for most")

@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://cat-clat-adaptive-engine-gzkqrxpowaogew7ptmabip.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python">
-  <img src="https://img.shields.io/badge/LLM-Gemini%202.5%20Flash-orange" alt="Gemini">
+  <img src="https://img.shields.io/badge/LLM-Gemini%20Flash-orange" alt="Gemini">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT">
 </p>
 
@@ -12,25 +12,28 @@
 > Built by **Vaibhav Gupta**, who taught CAT/CLAT at Career Launcher for 6 years. Plenty of people can wrap an LLM. This project encodes *why* an RC option is a trap and *how* QA difficulty scales non-linearly into prompts, rubrics and analytics. See [PRD.md](PRD.md) for the full product and pedagogy rationale.
 
 ## 🎥 Demo
-- **Live app:** `https://cat-clat-adaptive-engine-gzkqrxpowaogew7ptmabip.streamlit.app/` *(replace after deploy)*
-- **Video walkthrough:** `https://youtu.be/VIDEO_ID` *(coming soon)*
+- **Live app:** https://cat-clat-adaptive-engine-gzkqrxpowaogew7ptmabip.streamlit.app/
+- **Video walkthrough:** TODO: not recorded yet
 
 | Practice | Weakness heatmap |
 |---|---|
 | ![Practice screen](docs/screenshot-practice.png) | ![Heatmap](docs/screenshot-heatmap.png) |
-*(screenshots coming soon)*
+*TODO: screenshots not added yet; the image links above are placeholders.*
 
 ## ✨ Features
 - **Controlled generation:** CAT Quant, CAT VARC RC, CAT DILR, CLAT RC and CLAT Logical Reasoning at Easy / Moderate / CAT-Level, using a faculty system prompt, a difficulty rubric, topic rules and retrieved few-shot examples.
-- **Strict JSON + validation:** fence stripping, trailing-comma repair, A–D normalisation and key checks, with a retry and then a fallback.
+- **Adaptive difficulty per topic (default):** your level in each topic steps up after 2 consecutive correct answers *within the target time* and down after 2 consecutive wrong ones. Levels are saved for signed-in users. A manual override is in the sidebar.
+- **Answer-key checks on AI questions:** for Quant (and computable DILR) the model must also return a short Python `verify_code`, which runs in a restricted sandbox (3 s timeout; only `math`, `itertools` and `fractions`; no files or network) and must reproduce the key. Every AI question then gets a separate solve pass with the key hidden. If either check disagrees, the app regenerates (max 2 tries) and then falls back to a seed question. Questions that pass show a ✅ Verified badge. These checks reduce wrong keys; they do not eliminate them. Use **Report this question** (anonymous) when one slips through.
+- **Per-question timer:** targets of Easy ≈ 60 s, Moderate 90–120 s and CAT-Level 2–3 min, with RC targets scaled by passage length. Correct-but-slow answers are tagged **Right but too slow** in feedback and analytics.
+- **Strict JSON + validation:** fence stripping, trailing-comma repair, A–D normalisation and key checks.
 - **Pedagogical feedback:** the correct answer, the trap type of the main distractor (Extreme scope, Out-of-scope, Half-true, Reversal…), and a step-by-step explanation with the shortcut.
-- **Error log + spaced repetition:** mistakes come back after 1 → 3 → 7 questions.
-- **Weakness heatmap:** accuracy by topic × difficulty, plus the traps you fall for most.
-- **Streaks & a daily micro-challenge.**
+- **Error log + spaced repetition:** mistakes come back after 3 → 7 → 15 questions.
+- **Weakness heatmap:** accuracy by topic × difficulty, a speed breakdown (on time / too slow / wrong), and the traps you fall for most.
+- **Streaks & a daily micro-challenge** (cycles through the whole seed bank before repeating).
 - **Freemium + Pro:** 10 AI questions/day free; **Pro ₹999/month** unlimited, paid through Razorpay Payment Links (no card data touches the app).
 - **Optional Google sign-in:** saves your progress across devices. Guest mode works without it.
 - **Privacy-first:** only a hashed ID is stored (HMAC-SHA256 of your email + a server secret). No email, name or photo. One-click **Download my data** and **Delete my data**. See **[PRIVACY.md](PRIVACY.md)**.
-- **Always-on demo:** with no API key, the app serves 15 original, curated seed questions.
+- **Always-on demo:** with no API key, the app serves 45 original seed questions (9 per section, across all three difficulties). All answer keys are hand-checked, and every Quant key is also verified by computation in the test suite.
 
 ## 🏗️ Architecture
 ```
@@ -40,9 +43,12 @@ Sidebar (exam/topic/difficulty)
 retrieve_examples()  ← data/sample_bank.json (seed bank / RAG corpus)
         │
         ▼
-build_prompt() + SYSTEM_PROMPT  ──►  Gemini 2.5 Flash (JSON mode)
+build_prompt() + SYSTEM_PROMPT  ──►  Gemini (JSON mode), first available of:
+        │                           GEMINI_MODEL (optional) → gemini-3.8-flash
+        │                           → gemini-flash-latest → gemini-2.5-flash
         │                                   │
-        │                         parse_question_json() ── fail ──► seed fallback
+        │                         parse → sandbox verify_code → independent solve
+        │                         ── fail ×2 ──► seed fallback
         ▼
 Practice UI ─► record_answer() ─► session_state: attempts, error_log, streak
                                          │
@@ -53,7 +59,9 @@ Practice UI ─► record_answer() ─► session_state: attempts, error_log, st
 ```
 cat-clat-adaptive-engine/
 ├── app.py                        # Streamlit app
-├── data/sample_bank.json         # 15 original seed questions with explanations & trap types
+├── data/sample_bank.json         # 45 original seed questions (explanations, trap types, verify_code)
+├── engine.py                     # Adaptive levels, timing, spacing, sandboxed verifier
+├── llm.py                        # Gemini calls + verification pipeline
 ├── store.py                      # Privacy-first storage (hashed IDs, Supabase)
 ├── payments.py                   # Razorpay Payment Links
 ├── PRIVACY.md
@@ -98,10 +106,10 @@ Run the tests: `pip install pytest && pytest -q tests`
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
 2. **Create app** → repo `Creator-hub24/cat-clat-adaptive-engine`, branch `main`, file `app.py`.
 3. **Advanced settings → Secrets:** paste `GEMINI_API_KEY = "your-key"`.
-4. Deploy, then copy the `*.streamlit.app` URL into the badge and demo links above.
+4. Deploy. Optionally set `GEMINI_MODEL` to pin a model; otherwise the fallback list above is used.
 
 ## 🧭 Roadmap
-Persistent accounts, server-side metering, an answer-key verifier model, Mentor Meera's test builder, IRT-based adaptive sequencing. See [PRD.md §9](PRD.md#9-roadmap).
+Mentor Meera's test builder, IRT-based adaptive sequencing. See [PRD.md §9](PRD.md#9-roadmap).
 
 ## 📄 License
 MIT © 2026 Vaibhav Gupta

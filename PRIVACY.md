@@ -4,9 +4,11 @@
 
 ### What we store (only if you sign in)
 - A **pseudonymous user ID**: an HMAC-SHA256 hash of your lowercased email, made with a secret key ("pepper") that only the server knows. It can't be reversed back into your email.
-- Your **attempts**: question ID, topic, difficulty, whether you got it right, the trap type, and a timestamp.
+- Your **attempts**: question ID, topic, difficulty, whether you got it right, the trap type, time taken in seconds with its speed category, and a timestamp.
+- Your **adaptive level** per topic (Easy / Moderate / CAT-Level).
 - Your **streak**, today's **AI-question count**, your **error log / review queue**, and your **plan** (free/pro) with the **Pro expiry date**.
 - During an upgrade, a **payment reference ID** (derived from your hashed ID) so the payment can be matched to your account.
+- **Question reports** (when anyone presses "Report this question") are stored with only the topic, a question reference and the reason. No user ID is attached, so a report cannot be linked to you, and that includes signed-in users.
 
 ### What we never store
 - Your email address, name or profile photo. Google sends them at sign-in; we use the email only in memory to compute the hash, then discard it.

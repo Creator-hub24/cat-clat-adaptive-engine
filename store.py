@@ -10,10 +10,14 @@ import datetime as dt
 import hashlib
 import hmac
 
-ATTEMPT_FIELDS = ("question_id", "topic", "difficulty", "correct", "trap_type", "created_at")
+ATTEMPT_FIELDS = ("question_id", "topic", "difficulty", "correct", "trap_type", "time_taken_s",
+                  "timing_class", "created_at")
+REPORT_FIELDS = ("topic", "question_ref", "reason", "created_at")
+REPORT_REASONS = ("Wrong answer key", "Ambiguous / two answers", "Explanation is wrong", "Typo or formatting", "Other")
 PROFILE_DEFAULTS = {
     "streak": 0, "best_streak": 0, "usage_day": None, "ai_used": 0,
     "plan": "free", "pro_until": None, "review_queue": {}, "pending_payment_ref": None,
+    "topic_levels": {},
 }
 
 
@@ -31,8 +35,24 @@ def clean_attempt(a: dict) -> dict:
         "difficulty": str(a.get("difficulty", ""))[:32],
         "correct": bool(a.get("correct")),
         "trap_type": str(a.get("trap_type", ""))[:120],
+        "time_taken_s": int(a["time_taken_s"]) if a.get("time_taken_s") is not None else None,
+        "timing_class": str(a.get("timing_class") or "")[:32] or None,
         "created_at": a.get("created_at") or dt.datetime.now(dt.timezone.utc).isoformat(),
     }
+
+
+def clean_report(r: dict) -> dict:
+    """Reports are anonymous: no user_id, only what is needed to fix the question."""
+    reason = r.get("reason") if r.get("reason") in REPORT_REASONS else "Other"
+    return {"topic": str(r.get("topic", ""))[:64], "question_ref": str(r.get("question_ref", ""))[:64],
+            "reason": reason, "created_at": dt.datetime.now(dt.timezone.utc).isoformat()}
+
+
+def question_ref(q: dict) -> str:
+    """Seed IDs as-is; AI questions as a short content hash so reports can be de-duplicated."""
+    if not str(q.get("id", "")).startswith("AI-"):
+        return str(q.get("id"))
+    return "AI-" + hashlib.sha256(q.get("question_text", "").encode()).hexdigest()[:16]
 
 
 def clean_profile(p: dict) -> dict:
@@ -44,6 +64,10 @@ class MemoryStore:
     def __init__(self):
         self.profiles: dict[str, dict] = {}
         self.attempts: list[dict] = []
+        self.reports: list[dict] = []
+
+    def add_report(self, report):
+        self.reports.append(clean_report(report))
 
     def load(self, uid):
         p = copy.deepcopy(self.profiles.get(uid)) or clean_profile({})
@@ -79,6 +103,9 @@ class SupabaseStore:
         row = {"user_id": uid, **clean_profile(profile),
                "updated_at": dt.datetime.now(dt.timezone.utc).isoformat()}
         self.db.table("profiles").upsert(row).execute()
+
+    def add_report(self, report):
+        self.db.table("question_reports").insert(clean_report(report)).execute()
 
     def add_attempt(self, uid, attempt):
         self.db.table("attempts").insert({"user_id": uid, **clean_attempt(attempt)}).execute()

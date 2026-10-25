@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "1.0",
+    "version": "2.0",
     "author": "Vaibhav Gupta",
     "note": "Original seed questions written for this project; not taken from any past paper."
   },
@@ -20,7 +20,8 @@
       },
       "correct_answer": "B",
       "trap_type": "Additive fallacy",
-      "pedagogical_explanation": "Successive change formula: a + b + ab/100 = 20 - 20 + (20)(-20)/100 = -4%. So a 4% decrease. Trap (A): students add +20 and -20 and get zero, forgetting the discount applies to a larger base. Shortcut: equal up-and-down percentage changes always give a net loss of x^2/100 %."
+      "pedagogical_explanation": "Successive change formula: a + b + ab/100 = 20 - 20 + (20)(-20)/100 = -4%. So a 4% decrease. Trap (A): students add +20 and -20 and get zero, forgetting the discount applies to a larger base. Shortcut: equal up-and-down percentage changes always give a net loss of x^2/100 %.",
+      "verify_code": "answer='B' if abs((1.2*0.8-1)*100+4)<1e-9 else None"
     },
     {
       "id": "Q-M-01",
@@ -37,7 +38,8 @@
       },
       "correct_answer": "B",
       "trap_type": "Wrong reference window",
-      "pedagogical_explanation": "Take total work = LCM(12,18) = 36 units. A = 3/day, B = 2/day. Let total time be T. B works T days, A works T-3 days: 2T + 3(T-3) = 36, so 5T = 45, T = 9. Trap (A): 36/5 = 7.2 is the time if both worked throughout; students ignore A's exit. Trap (D): adding 3 days to a wrong base. Shortcut: assume A also worked the last 3 days, adding 9 phantom units: 45/5 = 9."
+      "pedagogical_explanation": "Take total work = LCM(12,18) = 36 units. A = 3/day, B = 2/day. Let total time be T. B works T days, A works T-3 days: 2T + 3(T-3) = 36, so 5T = 45, T = 9. Trap (A): 36/5 = 7.2 is the time if both worked throughout; students ignore A's exit. Trap (D): adding 3 days to a wrong base. Shortcut: assume A also worked the last 3 days, adding 9 phantom units: 45/5 = 9.",
+      "verify_code": "answer=next(T for T in range(1,100) if 2*T+3*(T-3)==36)"
     },
     {
       "id": "Q-C-01",
@@ -54,7 +56,8 @@
       },
       "correct_answer": "B",
       "trap_type": "Cyclicity overreach",
-      "pedagogical_explanation": "7^2 = 49 = -1 (mod 50). So 7^2026 = (7^2)^1013 = (-1)^1013 = -1 = 49 (mod 50). Trap (A): students who spot 7^4 = 1 (mod 50) check only that 2026 is even and conclude 1, but 2026 = 4(506) + 2, so the answer is 7^2 = 49. Non-linear difficulty: the jump from Moderate is not bigger numbers but needing a negative remainder insight that collapses the work to two lines."
+      "pedagogical_explanation": "7^2 = 49 = -1 (mod 50). So 7^2026 = (7^2)^1013 = (-1)^1013 = -1 = 49 (mod 50). Trap (A): students who spot 7^4 = 1 (mod 50) check only that 2026 is even and conclude 1, but 2026 = 4(506) + 2, so the answer is 7^2 = 49. Non-linear difficulty: the jump from Moderate is not bigger numbers but needing a negative remainder insight that collapses the work to two lines.",
+      "verify_code": "answer=pow(7,2026,50)"
     },
     {
       "id": "Q-C-02",
@@ -71,7 +74,8 @@
       },
       "correct_answer": "B",
       "trap_type": "Unordered vs ordered count",
-      "pedagogical_explanation": "Rewrite as (x-6)(y-6) = 36. With x, y > 6 (x-6 and y-6 must be positive here, because negative factors give non-positive x or y), the number of pairs equals the number of divisors of 36 = 2^2 * 3^2, which is (3)(3) = 9. Trap (D): counting unordered pairs gives 5, which ignores the word 'ordered'. Trap (C): counting only the factor pairs where x is not equal to y."
+      "pedagogical_explanation": "Rewrite as (x-6)(y-6) = 36. With x, y > 6 (x-6 and y-6 must be positive here, because negative factors give non-positive x or y), the number of pairs equals the number of divisors of 36 = 2^2 * 3^2, which is (3)(3) = 9. Trap (D): counting unordered pairs gives 5, which ignores the word 'ordered'. Trap (C): counting only the factor pairs where x is not equal to y.",
+      "verify_code": "answer=sum(1 for x in range(1,200) for y in range(1,200) if 6*(x+y)==x*y)"
     },
     {
       "id": "R-E-01",
@@ -139,7 +143,8 @@
       },
       "correct_answer": "A",
       "trap_type": "Premature lock-in",
-      "pedagogical_explanation": "R = 3. S is not next to R, so S is in 1 or 5. The adjacent free pairs for T-Q are (1,2) and (4,5); T is not in 1, so T-Q = (4,5). Then P (not at an end) takes 2 and S takes 1. Trap (B): solvers who place T-Q at (1,2) first and stop without checking the 'T not in seat 1' clue. DILR lesson: list every case the constraints allow, then eliminate; don't lock in the first arrangement that fits."
+      "pedagogical_explanation": "R = 3. S is not next to R, so S is in 1 or 5. The adjacent free pairs for T-Q are (1,2) and (4,5); T is not in 1, so T-Q = (4,5). Then P (not at an end) takes 2 and S takes 1. Trap (B): solvers who place T-Q at (1,2) first and stop without checking the 'T not in seat 1' clue. DILR lesson: list every case the constraints allow, then eliminate; don't lock in the first arrangement that fits.",
+      "verify_code": "import itertools\nsols=[p for p in itertools.permutations('PQRST') if p[2]=='R' and p.index('P') not in (0,4) and p.index('Q')==p.index('T')+1 and abs(p.index('S')-2)>1 and p.index('T')!=0]\nanswer='A' if len(sols)==1 and sols[0][0]=='S' else 'X'"
     },
     {
       "id": "D-C-02",
@@ -156,7 +161,8 @@
       },
       "correct_answer": "B",
       "trap_type": "Ignoring the conservation check",
-      "pedagogical_explanation": "Step 1 (conservation): 6 matches. A decisive match adds 3 points to the table, a draw adds 2. Total = 16, so 3(6-d) + 2d = 16 gives d = 2. Step 2 (verify with teams): W = 7 = 2 wins + 1 draw; X = 5 = 1 win + 2 draws; Z = 1 = 1 draw; Y = 3 = 1 win (0 draws). Draw appearances = 1+2+0+1 = 4 = 2 x 2 draws. Consistent. Trap (C): solvers who read Y = 3 as three draws get 3, but that makes draw appearances 7, an odd number, which is impossible. DILR lesson: always run the global conservation check before building the grid."
+      "pedagogical_explanation": "Step 1 (conservation): 6 matches. A decisive match adds 3 points to the table, a draw adds 2. Total = 16, so 3(6-d) + 2d = 16 gives d = 2. Step 2 (verify with teams): W = 7 = 2 wins + 1 draw; X = 5 = 1 win + 2 draws; Z = 1 = 1 draw; Y = 3 = 1 win (0 draws). Draw appearances = 1+2+0+1 = 4 = 2 x 2 draws. Consistent. Trap (C): solvers who read Y = 3 as three draws get 3, but that makes draw appearances 7, an odd number, which is impossible. DILR lesson: always run the global conservation check before building the grid.",
+      "verify_code": "import itertools\nm=list(itertools.combinations('WXYZ',2))\nok=set()\nfor r in itertools.product((0,1,2),repeat=6):\n    pts=dict.fromkeys('WXYZ',0)\n    for (a,b),x in zip(m,r):\n        if x==0: pts[a]+=3\n        elif x==1: pts[b]+=3\n        else: pts[a]+=1; pts[b]+=1\n    if [pts[t] for t in 'WXYZ']==[7,5,3,1]: ok.add(r.count(2))\nanswer=ok.pop() if len(ok)==1 else None"
     },
     {
       "id": "C-E-01",
@@ -258,7 +264,529 @@
       },
       "correct_answer": "B",
       "trap_type": "Forgetting the redistribution",
-      "pedagogical_explanation": "New average 17 for 11 people means total 187; old total 150; teacher = 37. Shortcut: the teacher must cover his own 17 plus give 2 years to each of 10 students: 17 + 20 = 37. Trap (A): taking the new average as the teacher's age."
+      "pedagogical_explanation": "New average 17 for 11 people means total 187; old total 150; teacher = 37. Shortcut: the teacher must cover his own 17 plus give 2 years to each of 10 students: 17 + 20 = 37. Trap (A): taking the new average as the teacher's age.",
+      "verify_code": "answer=17*11-15*10"
+    },
+    {
+      "id": "Q-E-03",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "concept_tag": "Speed - unit conversion",
+      "question_text": "A train 150 m long crosses a pole in 10 seconds. What is its speed in km/h?",
+      "options": {
+        "A": "54",
+        "B": "15",
+        "C": "45",
+        "D": "60"
+      },
+      "correct_answer": "A",
+      "trap_type": "Unit not converted",
+      "pedagogical_explanation": "Distance covered = its own length = 150 m in 10 s, so 15 m/s. Convert: x 18/5 gives 54 km/h. Trap (B): 15 is the speed in m/s; the question asks for km/h. Shortcut: m/s to km/h, multiply by 3.6.",
+      "verify_code": "answer=150/10*18/5"
+    },
+    {
+      "id": "Q-M-02",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "concept_tag": "Mixtures - adding one component",
+      "question_text": "A 40-litre mixture contains milk and water in the ratio 3:1. How many litres of water must be added to make the ratio 3:2?",
+      "options": {
+        "A": "10",
+        "B": "5",
+        "C": "20",
+        "D": "8"
+      },
+      "correct_answer": "A",
+      "trap_type": "Final quantity instead of added quantity",
+      "pedagogical_explanation": "Milk = 30 L, water = 10 L. Milk is unchanged, so for 3:2 water must be 20 L. Water to add = 20 - 10 = 10 L. Trap (C): 20 is the final water, not the amount added. Shortcut: hold the unchanged component fixed and scale the ratio to it.",
+      "verify_code": "answer=next(w for w in range(0,100) if 30*2==3*(10+w))"
+    },
+    {
+      "id": "Q-M-03",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "concept_tag": "Number systems - inclusion-exclusion",
+      "question_text": "How many three-digit numbers are divisible by 7 but not by 11?",
+      "options": {
+        "A": "117",
+        "B": "128",
+        "C": "116",
+        "D": "118"
+      },
+      "correct_answer": "A",
+      "trap_type": "Forgetting the exclusion",
+      "pedagogical_explanation": "Multiples of 7 from 100 to 999: floor(999/7) - floor(99/7) = 142 - 14 = 128. Multiples of 77 among them: floor(999/77) - floor(99/77) = 12 - 1 = 11. Answer = 128 - 11 = 117. Trap (B): 128 counts all multiples of 7 and skips the 'not by 11' condition. Trap (C)/(D): off-by-one errors at the 100/999 boundaries.",
+      "verify_code": "answer=sum(1 for n in range(100,1000) if n%7==0 and n%11)"
+    },
+    {
+      "id": "Q-C-03",
+      "exam": "CAT",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Factorials - trailing zeros in another base",
+      "question_text": "How many trailing zeros does 100! have when written in base 12?",
+      "options": {
+        "A": "48",
+        "B": "97",
+        "C": "24",
+        "D": "32"
+      },
+      "correct_answer": "A",
+      "trap_type": "Using the wrong prime's exponent",
+      "pedagogical_explanation": "12 = 2^2 x 3, so each trailing zero needs one 2^2 and one 3. Power of 2 in 100! = 50+25+12+6+3+1 = 97, giving floor(97/2) = 48 copies of 2^2. Power of 3 = 33+11+3+1 = 48. Zeros = min(48, 48) = 48. Trap (B): 97 is the raw power of 2, forgetting 12 needs 2 squared. Insight: in base b, factorise b and take the minimum over prime-power 'budgets'.",
+      "verify_code": "n=1\nfor i in range(1,101): n*=i\nc=0\nwhile n%12==0:\n    n//=12; c+=1\nanswer=c"
+    },
+    {
+      "id": "R-E-02",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "concept_tag": "RC - detail",
+      "question_text": "Passage: Several city libraries now lend drills, sewing machines and camping gear alongside books. Librarians say the idea is not new: a library has always been a way for a community to share things that each household uses only occasionally. Borrowing a drill used for a few minutes a year saves money and storage space, and the libraries report that tool borrowers often go on to borrow books as well.\n\nAccording to the passage, librarians justify lending tools mainly because:",
+      "options": {
+        "A": "it attracts younger visitors",
+        "B": "it follows the library's basic purpose of sharing rarely used items",
+        "C": "tools are more popular than books",
+        "D": "it earns income for the library"
+      },
+      "correct_answer": "B",
+      "trap_type": "Out-of-scope",
+      "pedagogical_explanation": "The librarians' justification is explicit: a library shares things each household uses only occasionally. (A) and (D) are OUT OF SCOPE: age and income are never mentioned. (C) is EXTREME/REVERSAL: the passage says tool borrowers also borrow books, not that tools are more popular."
+    },
+    {
+      "id": "R-M-02",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "concept_tag": "RC - assumption behind the argument",
+      "question_text": "Passage: A company replaced its open-plan office with small team rooms after finding that employees in the open plan sent more emails and held fewer face-to-face conversations than before. Managers concluded that walls, by giving people privacy, had made collaboration harder in the open plan, not easier, and that the new layout would restore conversation.\n\nThe managers' conclusion assumes that:",
+      "options": {
+        "A": "employees prefer working from home",
+        "B": "the drop in face-to-face conversation was caused by the layout rather than by some other change at the same time",
+        "C": "team rooms are cheaper than open-plan offices",
+        "D": "email is a poor tool for all kinds of work"
+      },
+      "correct_answer": "B",
+      "trap_type": "Extreme scope",
+      "pedagogical_explanation": "The argument links one change (layout) to one effect (fewer conversations). For it to hold, no other simultaneous cause can explain the drop: that is the necessary assumption (B). Negation test: if a new remote-work policy started at the same time, the conclusion collapses. (D) is EXTREME ('all kinds of work'). (A) and (C) are OUT OF SCOPE."
+    },
+    {
+      "id": "R-C-02",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "concept_tag": "RC - inference with qualified claims",
+      "question_text": "Passage: It is tempting to read the decline of handwritten letters as a loss of intimacy. Yet historians of correspondence note that many nineteenth-century letters were formulaic, written to be read aloud to a household, and copied into letter-books by their senders. Privacy, in other words, was not the default condition of the letter. What has changed is less the warmth of our messages than the audience we imagine for them: a text message assumes one reader, while the old letter assumed several.\n\nWhich of the following can be most reasonably inferred from the passage?",
+      "options": {
+        "A": "Nineteenth-century letters were less sincere than modern messages.",
+        "B": "The belief that letters were more intimate partly rests on an assumption about who read them.",
+        "C": "Modern messages are always more private than old letters.",
+        "D": "Historians regret the decline of handwritten letters."
+      },
+      "correct_answer": "B",
+      "trap_type": "Half-true",
+      "pedagogical_explanation": "The author challenges the 'loss of intimacy' reading by showing that old letters often had several readers. So the intimacy belief rests partly on a mistaken picture of the audience: (B). (A) is HALF-TRUE: 'formulaic' is in the passage, but 'less sincere' is a value judgement the author avoids, and the author explicitly says warmth is not what changed. (C) is EXTREME ('always'). (D) is a REVERSAL of the historians' role; they complicate the nostalgia rather than share it."
+    },
+    {
+      "id": "R-C-03",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "concept_tag": "RC - function of a paragraph element",
+      "question_text": "Passage: Economists once assumed that people who leave money in default pension options are simply lazy. Studies of automatic enrolment complicated this picture: many savers who stayed with the default could explain their choice, and some had compared alternatives before deciding the default was adequate. Inertia exists, but so does the considered decision that looks like inertia from the outside. Policy that treats every non-switcher as passive risks designing for an imaginary saver.\n\nThe sentence 'Inertia exists, but so does the considered decision that looks like inertia from the outside' serves primarily to:",
+      "options": {
+        "A": "reject the idea that inertia affects savings decisions",
+        "B": "concede part of the older view while introducing a distinction the author relies on",
+        "C": "summarise the evidence from automatic-enrolment studies",
+        "D": "argue that default options should be abolished"
+      },
+      "correct_answer": "B",
+      "trap_type": "Reversal",
+      "pedagogical_explanation": "Structure: 'Inertia exists' concedes part of the old view; 'but so does the considered decision...' introduces the distinction that the final sentence's policy warning depends on: (B). (A) is a REVERSAL: the sentence explicitly affirms inertia exists. (C) misses the sentence's argumentative job (it interprets rather than summarises). (D) is OUT OF SCOPE: abolition is never proposed."
+    },
+    {
+      "id": "D-E-01",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "concept_tag": "Venn diagram - two sets",
+      "question_text": "In a group of 60 students, 35 like tea, 30 like coffee and 10 like neither. How many like both?",
+      "options": {
+        "A": "15",
+        "B": "5",
+        "C": "25",
+        "D": "10"
+      },
+      "correct_answer": "A",
+      "trap_type": "Ignoring the 'neither' group",
+      "pedagogical_explanation": "Students who like at least one = 60 - 10 = 50. Both = 35 + 30 - 50 = 15. Trap (B): using 60 instead of 50 gives 35 + 30 - 60 = 5, forgetting the 10 who like neither. Lesson: always remove the outside region first.",
+      "verify_code": "answer=35+30-(60-10)"
+    },
+    {
+      "id": "D-E-02",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "concept_tag": "Data interpretation - percentage growth from a table",
+      "question_text": "Annual sales (units) of four shops:\n\n| Shop | 2024 | 2025 |\n|---|---|---|\n| P | 200 | 250 |\n| Q | 150 | 195 |\n| R | 300 | 360 |\n| S | 120 | 150 |\n\nWhich shop had the highest percentage growth from 2024 to 2025?",
+      "options": {
+        "A": "P",
+        "B": "Q",
+        "C": "R",
+        "D": "S"
+      },
+      "correct_answer": "B",
+      "trap_type": "Absolute vs percentage change",
+      "pedagogical_explanation": "Growth %: P = 50/200 = 25%, Q = 45/150 = 30%, R = 60/300 = 20%, S = 30/120 = 25%. Q is highest. Trap (C): R has the biggest absolute increase (60) but the smallest percentage growth because of its large base. DI lesson: check whether the question asks for absolute or relative change before computing.",
+      "verify_code": "t={'P':(200,250),'Q':(150,195),'R':(300,360),'S':(120,150)}\nbest=max(t,key=lambda k:t[k][1]/t[k][0])\nanswer='ABCD'['PQRS'.index(best)]"
+    },
+    {
+      "id": "D-E-03",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "concept_tag": "Ordering - heights",
+      "question_text": "Among five friends: A is taller than B, D is taller than A, C is shorter than B, and E is shorter than C. Who is the third tallest?",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D"
+      },
+      "correct_answer": "B",
+      "trap_type": "Off-by-one in ranking",
+      "pedagogical_explanation": "Chain: D > A > B > C > E. The third tallest is B. Trap (A): A is second tallest; solvers who count from A instead of D land here. Lesson: write the full chain before answering rank questions.",
+      "verify_code": "import itertools\nr=[p for p in itertools.permutations('ABCDE') if p.index('A')<p.index('B') and p.index('D')<p.index('A') and p.index('B')<p.index('C') and p.index('C')<p.index('E')]\nanswer='ABCD'['ABCD'.index(r[0][2])] if len(r)==1 else None"
+    },
+    {
+      "id": "D-M-02",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "concept_tag": "Scheduling - slots with adjacency",
+      "question_text": "Four talks W, X, Y, Z are scheduled in slots 1 to 4, one per slot. X is before Y. Z is not in slot 1 or slot 4. W is immediately after Z. Y is not in slot 2. In which slot is Y?",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "2",
+        "D": "1"
+      },
+      "correct_answer": "A",
+      "trap_type": "Stopping at the first valid-looking case",
+      "pedagogical_explanation": "Z is in 2 or 3. Case Z=2: W=3, so X and Y take slots 1 and 4 with X first: X=1, Y=4. Case Z=3: W=4, X=1, Y=2, but Y cannot be in slot 2, so this case fails. Y = 4. Trap (C): solvers who try Z=3 first and forget the last clue answer slot 2. Lesson: test every case against every clue.",
+      "verify_code": "import itertools\ns=[p for p in itertools.permutations('WXYZ') if p.index('X')<p.index('Y') and p.index('Z') not in (0,3) and p.index('W')==p.index('Z')+1 and p.index('Y')!=1]\nanswer=s[0].index('Y')+1 if len(s)==1 else None"
+    },
+    {
+      "id": "D-M-03",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "concept_tag": "Table with missing values",
+      "question_text": "Scores of four students (out of 100):\n\n| Student | Maths | English |\n|---|---|---|\n| A | 80 | 70 |\n| B | ? | 85 |\n| C | 65 | ? |\n| D | 75 | 60 |\n\nThe average Maths score is 70, and C's total across both subjects is 150. How many students scored more in English than in Maths?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "0"
+      },
+      "correct_answer": "B",
+      "trap_type": "Answering before filling the gaps",
+      "pedagogical_explanation": "Maths total = 4 x 70 = 280, so B's Maths = 280 - 80 - 65 - 75 = 60. C's English = 150 - 65 = 85. Compare: A 70 < 80, B 85 > 60, C 85 > 65, D 60 < 75. Two students: B and C. Trap (A): solvers who count only rows with no missing values. Lesson: complete the table first, then answer.",
+      "verify_code": "m={'A':80,'C':65,'D':75}; m['B']=4*70-sum(m.values())\ne={'A':70,'B':85,'D':60}; e['C']=150-m['C']\nanswer=sum(1 for k in 'ABCD' if e[k]>m[k])"
+    },
+    {
+      "id": "D-C-03",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Round robin - distinct win counts",
+      "question_text": "Four teams P, Q, R, S play a single round-robin with no draws. Each team ends with a different number of wins. R wins 3 matches, S wins exactly 1, and P beat Q. Which of the following must be true?",
+      "options": {
+        "A": "P beat S",
+        "B": "S beat P",
+        "C": "Q beat S",
+        "D": "P beat R"
+      },
+      "correct_answer": "A",
+      "trap_type": "Not using the forced win-distribution",
+      "pedagogical_explanation": "Six matches mean 6 wins in total, and distinct counts from {0,1,2,3} must be exactly 0,1,2,3. R = 3 (beat everyone), S = 1, so P and Q have 2 and 0. P beat Q, so P has 2 and Q has 0. Q lost every match, so S's one win is over Q, and S lost to P. Therefore P beat S. Trap (B): assuming S's win could be over P without checking Q's zero. Lesson: lock the global distribution first, then the pairings.",
+      "verify_code": "import itertools\nT='PQRS'; M=list(itertools.combinations(T,2)); res=set()\nfor r in itertools.product((0,1),repeat=6):\n    w=dict.fromkeys(T,0); beat=set()\n    for (a,b),x in zip(M,r):\n        win,lose=(a,b) if x==0 else (b,a); w[win]+=1; beat.add((win,lose))\n    if len(set(w.values()))==4 and w['R']==3 and w['S']==1 and ('P','Q') in beat:\n        res.add(('P','S') in beat)\nanswer='A' if res=={True} else None"
+    },
+    {
+      "id": "D-C-04",
+      "exam": "CAT",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Selection - constrained committees",
+      "question_text": "A committee of 3 is chosen from 4 men (M1-M4) and 3 women (W1-W3). It must include at least one woman, and M1 and W1 cannot both be on it. How many committees are possible?",
+      "options": {
+        "A": "26",
+        "B": "31",
+        "C": "25",
+        "D": "30"
+      },
+      "correct_answer": "A",
+      "trap_type": "Applying only one constraint",
+      "pedagogical_explanation": "All committees: C(7,3) = 35. Remove all-male ones: C(4,3) = 4, leaving 31. Remove those with both M1 and W1: the third member is any of the other 5, and each of these already has a woman, so 5 more go. 31 - 5 = 26. Trap (B): 31 applies only the 'at least one woman' rule. Lesson: when subtracting a second constraint, check the overlap with the first.",
+      "verify_code": "import itertools\nP=['M1','M2','M3','M4','W1','W2','W3']\nanswer=sum(1 for c in itertools.combinations(P,3) if any(x[0]=='W' for x in c) and not ('M1' in c and 'W1' in c))"
+    },
+    {
+      "id": "C-E-02",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "concept_tag": "Legal RC - trespass",
+      "question_text": "Passage: Trespass to land is the intentional and direct entry onto another's land without lawful justification. Entry with the owner's permission is not trespass, but if a visitor stays after the permission is withdrawn and they have had a reasonable time to leave, they become a trespasser.\n\nRavi is invited to a party at Meena's house. At midnight Meena asks all guests to leave. Ravi refuses and stays for another hour. Which is correct?",
+      "options": {
+        "A": "Ravi was a trespasser from the moment he entered.",
+        "B": "Ravi became a trespasser after he stayed beyond a reasonable time once permission was withdrawn.",
+        "C": "Ravi was never a trespasser because he was invited.",
+        "D": "Meena committed trespass by asking him to leave."
+      },
+      "correct_answer": "B",
+      "trap_type": "Overgeneralising the permission",
+      "pedagogical_explanation": "Entry was lawful (an invitation). Permission was withdrawn at midnight; after a reasonable time to leave, staying makes Ravi a trespasser: (B). Trap (C) treats the original invitation as permanent permission, ignoring the withdrawal rule. (A) ignores the lawful entry. (D) is absurd: an owner cannot trespass on her own land."
+    },
+    {
+      "id": "C-E-03",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "concept_tag": "Legal RC - consideration",
+      "question_text": "Passage: A promise is enforceable as a contract only if it is supported by consideration, meaning something of value given or promised in return. A purely gratuitous promise, made without anything in return, is generally not enforceable.\n\nAnil promises his neighbour Rs 5,000 as a birthday gift, and asks for nothing in return. He later changes his mind. Can the neighbour enforce the promise?",
+      "options": {
+        "A": "Yes, because a promise was made.",
+        "B": "No, because the promise was not supported by consideration.",
+        "C": "Yes, because birthdays create a moral obligation.",
+        "D": "No, because the amount is too small to be a contract."
+      },
+      "correct_answer": "B",
+      "trap_type": "Moral vs legal obligation",
+      "pedagogical_explanation": "Nothing was given or promised in return, so the promise is gratuitous and not enforceable: (B). Trap (C) confuses moral obligation with the legal rule in the passage. (A) ignores the consideration requirement. (D) is OUT OF SCOPE: the passage sets no minimum amount."
+    },
+    {
+      "id": "C-M-02",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "concept_tag": "Legal RC - vicarious liability",
+      "question_text": "Passage: An employer is vicariously liable for wrongs committed by an employee in the course of employment, meaning while doing authorised work, even in an unauthorised manner. The employer is not liable when the employee acts on a 'frolic of his own', pursuing purely personal purposes unrelated to the job.\n\nA delivery driver, while making deliveries, speeds to finish early and hits a pedestrian. On another day, after his shift, he uses the company van to visit a friend in another city and hits a cyclist. Which is correct?",
+      "options": {
+        "A": "The employer is liable in both cases.",
+        "B": "The employer is liable in neither case.",
+        "C": "The employer is liable for the pedestrian but not the cyclist.",
+        "D": "The employer is liable for the cyclist but not the pedestrian."
+      },
+      "correct_answer": "C",
+      "trap_type": "Half-true",
+      "pedagogical_explanation": "Speeding while delivering is authorised work done in an unauthorised manner, so the employer is liable for the pedestrian. The after-shift trip to a friend is a frolic of his own, so there is no liability for the cyclist: (C). Trap (A) is HALF-TRUE: right about the pedestrian, but it treats use of the company van as enough. The test is the purpose of the trip, not whose vehicle it is."
+    },
+    {
+      "id": "C-M-03",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "concept_tag": "Legal RC - private defence and proportionality",
+      "question_text": "Passage: Every person has a right of private defence of their body against an unlawful attack. The force used must be proportionate to the threat and may not continue once the threat has ended.\n\nX attacks Y with a stick. Y pushes X away, causing X to fall and drop the stick. X lies on the ground, unarmed and not getting up. Y then kicks X repeatedly. Which is correct?",
+      "options": {
+        "A": "Y's push and the kicks are both protected.",
+        "B": "Neither the push nor the kicks are protected, because Y used force.",
+        "C": "The push is protected, but the kicks are not, because the threat had ended.",
+        "D": "The kicks are protected because X started the fight."
+      },
+      "correct_answer": "C",
+      "trap_type": "Who-started-it fallacy",
+      "pedagogical_explanation": "The push was a proportionate response to an ongoing armed attack, so it is protected. Once X was down and unarmed, the threat had ended, so the kicks fall outside private defence: (C). Trap (D): 'he started it' does not extend the right beyond the end of the threat. (B) ignores the right altogether."
+    },
+    {
+      "id": "C-C-01",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Legal RC - postal rule of acceptance",
+      "question_text": "Passage: Where acceptance of an offer is sent by post, the contract is complete as against the offeror when the letter of acceptance is posted, and as against the acceptor when the letter reaches the offeror. An acceptor may revoke the acceptance by a communication that reaches the offeror before the letter of acceptance does.\n\nOn 1 June, Sita posts an acceptance of Ramesh's offer. On 2 June she sends Ramesh an email revoking it, which he reads that day. The acceptance letter reaches Ramesh on 4 June. Which is correct?",
+      "options": {
+        "A": "The contract was concluded on 1 June and cannot be revoked.",
+        "B": "The revocation is valid because it reached Ramesh before the acceptance letter.",
+        "C": "The revocation is invalid because email is not a recognised mode.",
+        "D": "No contract could form because Ramesh never replied."
+      },
+      "correct_answer": "B",
+      "trap_type": "Applying half of a two-part rule",
+      "pedagogical_explanation": "The rule has two halves. As against the offeror, the contract binds him from posting (1 June). But the acceptor can still revoke if the revocation reaches the offeror before the acceptance letter does. The email arrived on 2 June, before the letter on 4 June, so the revocation is valid: (B). Trap (A) applies only the first half (binding on posting) and ignores the acceptor's revocation window. (C) adds a requirement the passage does not state."
+    },
+    {
+      "id": "C-C-02",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Legal RC - defamation and the truth defence",
+      "question_text": "Passage: A person who publishes a false statement that harms another's reputation commits defamation. Truth is a complete defence, but only if the whole substance of the statement, including any implication it carries, is true. Statements made in a court proceeding are absolutely privileged.\n\nA newspaper reports, 'Mr K, arrested for fraud last year, has now opened a new company,' implying he is a convicted fraudster. Mr K was arrested but acquitted. Which is correct?",
+      "options": {
+        "A": "The newspaper is protected because every word in the sentence is literally true.",
+        "B": "The newspaper may be liable, because the implied claim of guilt is false.",
+        "C": "The newspaper is protected by absolute privilege.",
+        "D": "Mr K cannot sue because he was in fact arrested."
+      },
+      "correct_answer": "B",
+      "trap_type": "Literal truth vs substantial truth",
+      "pedagogical_explanation": "The words are literally true, but the passage requires the whole substance, including the implication, to be true. The implication (a convicted fraudster) is false because he was acquitted, so the defence fails: (B). Trap (A) is the literal-truth trap the principle is designed to close. (C): the privilege covers statements made in court, not a newspaper report. (D) repeats the literal-truth error."
+    },
+    {
+      "id": "C-C-03",
+      "exam": "CLAT",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Legal RC - free consent and coercion",
+      "question_text": "Passage: Consent to a contract is not free if it is caused by coercion, meaning committing or threatening to commit an act forbidden by law in order to obtain agreement. A contract caused by coercion is voidable at the option of the party whose consent was so caused. A threat to do something one is legally entitled to do is not coercion.\n\nA landlord tells a tenant whose lease has legally expired: 'Sign this new lease at a higher rent, or I will file an eviction case.' Separately, he tells another tenant: 'Sign, or I will have your car damaged.' Which is correct?",
+      "options": {
+        "A": "Both contracts are voidable for coercion.",
+        "B": "Neither contract is voidable, because both tenants signed.",
+        "C": "Only the second contract is voidable for coercion.",
+        "D": "Only the first contract is voidable for coercion."
+      },
+      "correct_answer": "C",
+      "trap_type": "Pressure mistaken for coercion",
+      "pedagogical_explanation": "Filing an eviction case against a tenant whose lease has expired is something the landlord is legally entitled to do, so it is not coercion. Threatening to damage a car is an act forbidden by law, so the second contract was caused by coercion and is voidable: (C). Trap (A) equates any pressure with coercion. (B) ignores that signing under coercion is precisely what the rule addresses."
+    },
+    {
+      "id": "L-E-02",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Syllogism",
+      "question_text": "Statements: All editors are readers. Some readers are writers.\n\nWhich conclusion definitely follows?",
+      "options": {
+        "A": "Some editors are writers.",
+        "B": "All readers are editors.",
+        "C": "No definite conclusion about editors being writers follows.",
+        "D": "No editor is a writer."
+      },
+      "correct_answer": "C",
+      "trap_type": "Undistributed middle",
+      "pedagogical_explanation": "'Readers' is the middle term. The writers among the readers may or may not include any editors, so neither (A) nor (D) is certain: (C). Trap (A): the classic undistributed-middle error, assuming the 'some' overlap must touch the editors. (B) reverses 'all editors are readers'."
+    },
+    {
+      "id": "L-E-03",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Identify the conclusion",
+      "question_text": "Argument: 'The school canteen should offer more fruit. Students who eat fruit at lunch report better concentration in afternoon classes, and fruit is no more expensive than the packaged snacks currently sold.'\n\nWhat is the main conclusion?",
+      "options": {
+        "A": "Fruit is no more expensive than packaged snacks.",
+        "B": "Students who eat fruit concentrate better.",
+        "C": "The school canteen should offer more fruit.",
+        "D": "Packaged snacks should be banned."
+      },
+      "correct_answer": "C",
+      "trap_type": "Premise mistaken for conclusion",
+      "pedagogical_explanation": "The other sentences are reasons supporting the recommendation 'the canteen should offer more fruit': (C). (A) and (B) are premises. Trap (B): a striking claim is not automatically the conclusion; ask 'which statement do the others support?'. (D) is EXTREME and OUT OF SCOPE."
+    },
+    {
+      "id": "L-M-02",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Flaw - sampling",
+      "question_text": "A fitness app surveyed its own users and found that 85% exercise at least four times a week. The app's marketing team concludes that most adults in the country exercise at least four times a week.\n\nWhich best describes the flaw?",
+      "options": {
+        "A": "It assumes the survey questions were confusing.",
+        "B": "It generalises from a sample that is unlikely to represent all adults.",
+        "C": "It ignores that some users exercise more than four times a week.",
+        "D": "It relies on a percentage rather than a number."
+      },
+      "correct_answer": "B",
+      "trap_type": "Unrepresentative sample",
+      "pedagogical_explanation": "Users of a fitness app are self-selected and likely to be more active than the general population, so the sample cannot support a claim about 'most adults': (B). Trap (C) describes a detail consistent with the data, not a flaw. (A) and (D) are irrelevant: nothing suggests confusing questions, and percentages are fine."
+    },
+    {
+      "id": "L-M-03",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Resolve the paradox",
+      "question_text": "After a city made its main bus route free, the number of bus passengers rose sharply, yet traffic congestion on that route did not fall.\n\nWhich of the following, if true, best explains this?",
+      "options": {
+        "A": "Bus fares in other cities are high.",
+        "B": "Most new bus passengers had previously walked or cycled rather than driven.",
+        "C": "The buses were repainted when fares were removed.",
+        "D": "Congestion is a problem in many cities."
+      },
+      "correct_answer": "B",
+      "trap_type": "Irrelevant comparison",
+      "pedagogical_explanation": "Congestion falls only if bus riders come out of cars. If the new riders were former walkers and cyclists, ridership rises while car traffic stays the same: (B) resolves the apparent conflict. (A) and (D) are about other cities (IRRELEVANT COMPARISON). (C) is trivia."
+    },
+    {
+      "id": "L-C-02",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Parallel reasoning",
+      "question_text": "Argument: 'Every member of the chess club is a student. Priya is not a student. So Priya is not a member of the chess club.'\n\nWhich argument has the same logical structure?",
+      "options": {
+        "A": "Every doctor has a degree. Ravi has a degree. So Ravi is a doctor.",
+        "B": "Every train on this line stops at Dadar. This train does not stop at Dadar. So it is not on this line.",
+        "C": "Some birds cannot fly. Penguins are birds. So penguins cannot fly.",
+        "D": "Every cat is a mammal. Tom is not a cat. So Tom is not a mammal."
+      },
+      "correct_answer": "B",
+      "trap_type": "Converse/inverse fallacy",
+      "pedagogical_explanation": "Structure: All A are B; x is not B; so x is not A (valid contrapositive). (B) matches exactly: all line trains stop at Dadar; this one doesn't; so it's not a line train. (A) affirms the consequent (converse fallacy). (D) denies the antecedent (inverse fallacy), the most tempting trap because it also has 'not' twice. (C) uses 'some', a different form."
+    },
+    {
+      "id": "L-C-03",
+      "exam": "CLAT",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Necessary vs sufficient conditions",
+      "question_text": "Rule: 'A candidate will be shortlisted only if she has cleared the written test.' Asha has cleared the written test.\n\nWhat can be concluded?",
+      "options": {
+        "A": "Asha will be shortlisted.",
+        "B": "Asha will not be shortlisted.",
+        "C": "Nothing definite about whether Asha will be shortlisted.",
+        "D": "Asha did not need the written test."
+      },
+      "correct_answer": "C",
+      "trap_type": "Necessary read as sufficient",
+      "pedagogical_explanation": "'Only if' introduces a NECESSARY condition: shortlisted -> cleared the test. Clearing the test does not guarantee shortlisting, so nothing definite follows about Asha: (C). Trap (A) reads 'only if' as 'if', turning a necessary condition into a sufficient one, the single most common CLAT LR error. Coaching rule: whatever follows 'only if' goes on the right of the arrow."
+    },
+    {
+      "id": "R-E-03",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "concept_tag": "RC - author's purpose",
+      "question_text": "Passage: Many people believe that goldfish have a memory of only three seconds. Experiments tell a different story. Goldfish trained to push a lever for food remembered the task weeks later, and fish fed at the same spot each day learned to gather there before feeding time. The three-second myth may survive because it is a comforting excuse for keeping fish in small, bare bowls.\n\nThe primary purpose of the passage is to:",
+      "options": {
+        "A": "explain how to train goldfish",
+        "B": "challenge a popular belief about goldfish memory using evidence",
+        "C": "argue that goldfish should be released into the wild",
+        "D": "prove that goldfish are the most intelligent fish"
+      },
+      "correct_answer": "B",
+      "trap_type": "Extreme scope",
+      "pedagogical_explanation": "The passage states a belief, offers experiments that contradict it, and suggests why the myth survives: (B). (A) mistakes evidence for purpose. (C) is OUT OF SCOPE: small bowls are criticised, but release into the wild is never proposed. (D) is EXTREME ('most intelligent', 'prove')."
+    },
+    {
+      "id": "R-M-03",
+      "exam": "CAT",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "concept_tag": "RC - weaken the author's claim",
+      "question_text": "Passage: Four-day work weeks are often defended on the grounds that rested employees produce as much in four days as tired ones do in five. Trials at several firms found output held steady after the switch. The author concludes that the four-day week raises productivity per hour without cost to the firm.\n\nWhich of the following, if true, would most weaken the author's conclusion?",
+      "options": {
+        "A": "Some employees prefer a five-day week.",
+        "B": "During the trials, the firms quietly hired temporary staff to cover the fifth day.",
+        "C": "Four-day weeks are popular in many countries.",
+        "D": "Rested employees make fewer mistakes."
+      },
+      "correct_answer": "B",
+      "trap_type": "Out-of-scope",
+      "pedagogical_explanation": "The conclusion claims productivity rose 'without cost'. If output held steady only because temporary staff were hired, there was a cost and per-employee productivity may not have risen at all: (B). (A) is about preference, not productivity (OUT OF SCOPE). (C) is irrelevant popularity. (D) actually strengthens the claim, a REVERSAL trap."
     }
   ]
 }
