@@ -87,6 +87,16 @@ In DILR, choosing which set to attempt matters as much as solving it. The engine
 3. **Retrieval-grounded few-shot:** the 2 nearest seed questions (same topic, then same difficulty) are included as house-style references. ChromaDB is optional once the corpus grows beyond a few hundred items.
 4. **Schema validation:** JSON is parsed with fence-stripping and trailing-comma repair, the keys are checked, the options are normalised to A–D, and the key must be one of them. On failure: one retry, then a fallback to the seed bank.
 
+## 5A. Privacy by design
+Aspirants are often students and working professionals who don't want their prep visible to an employer or institute, so trust is a feature.
+- **Data minimisation:** the only identifier is `HMAC-SHA256(lowercased email, server pepper)`. Email, name and photo are never stored.
+- **Stored fields:** attempts (question ID, topic, difficulty, correct, trap type, timestamp), streak, daily usage, review queue, plan and Pro expiry. Nothing else.
+- **User control:** in-app JSON export and permanent deletion with confirmation.
+- **Infrastructure:** Supabase with Row Level Security on and no public policies; the service key exists only server-side. Payments run on Razorpay's hosted page, so no card data reaches the app.
+- **LLM processing:** Gemini receives only topic, difficulty and seed-bank examples, never user data.
+- **Business model:** subscription only. No ads, no data selling.
+- Full policy: [PRIVACY.md](PRIVACY.md).
+
 ## 6. Retention hooks
 - **Streak counter** for consecutive correct answers, and best streak.
 - **Daily micro-challenge:** one question a day, the same for everyone (date-seeded), which also makes it easy to share.
@@ -111,6 +121,18 @@ In DILR, choosing which set to attempt matters as much as solving it. The engine
 
 What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. CAT + CLAT + GMAT bundles, or carrying over to the next year's attempt).
 
+### 7.1 Monetisation implementation (v0.2)
+- **Free:** 10 AI questions/day plus the unlimited seed bank. **Pro:** ₹999 for 30 days, unlimited AI questions.
+- **Flow:** the app creates a per-user Razorpay Payment Link (`reference_id` = hashed user ID + timestamp). The user pays on Razorpay and clicks **"I've paid, verify"**. The server checks the link's status through the Razorpay API and extends `pro_until` by 30 days (stacking on any remaining time).
+- **Next:** a Razorpay webhook for automatic activation, then Subscriptions for auto-renew.
+
+### 7.2 B2B: Mentor plan
+- **Target:** independent faculty and small coaching centres (Mentor Meera).
+- **Offer:** a seat-based plan (indicative ₹4,999/month for 1 mentor + 50 students) with the sectional test builder, batch heatmaps and white-label PDF export.
+- **Why it matters:** lower CAC (one sale brings many students), less seasonal churn (centres run batches all year), and a distribution channel into B2C Pro.
+- **Privacy:** mentors see batch-level aggregates and students who opt in. Data stays keyed by hashed IDs.
+- *Pricing is an assumption, to be validated with 5–10 centre interviews.*
+
 ## 8. Success metrics
 | Category | Metric | v1 target |
 |---|---|---|
@@ -133,6 +155,8 @@ What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. 
 |---|---|
 | LLM writes a wrong or ambiguous answer key (most likely in DILR/QA) | Schema validation now; verifier-model pass + user "report" button + faculty review of flagged items next |
 | Copyright: generating text close to real past papers | The prompt requires original passages; the seed bank is fully original; no past papers in the corpus |
-| Client-side freemium limit is easy to bypass | Acceptable for the prototype; move to server-side metering in v0.2 |
+| Freemium limit bypass | Signed-in users are metered server-side in Supabase; guest sessions are still client-side (accepted for the demo) |
+| Data breach / privacy | Only hashed IDs + practice stats are stored; RLS on; service key server-side; export/delete in-app |
+| Payment spoofing | Pro is granted only after a server-side Razorpay API check of the link status; no client-side trust |
 | API cost spikes | Flash-tier model, daily caps, cached seed fallback |
 | Seasonal churn after the exam | Bundle the next attempt and adjacent exams (CLAT → AILET, CAT → XAT/GMAT) |

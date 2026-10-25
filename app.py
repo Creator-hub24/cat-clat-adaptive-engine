@@ -12,6 +12,9 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+import payments
+import store as storage
+
 APP_DIR = Path(__file__).parent
 BANK_PATH = APP_DIR / "data" / "sample_bank.json"
 MODEL_CANDIDATES = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]
@@ -181,6 +184,96 @@ def seed_question(topic: str, difficulty: str, exclude: set[str]) -> dict:
     return q
 
 
+# ---------------------------------------------------------------- secrets / account
+def secret(name, default=None):
+    try:
+        v = st.secrets.get(name)
+        if v:
+            return v
+    except Exception:
+        pass
+    return os.environ.get(name, default)
+
+
+def auth_configured() -> bool:
+    try:
+        return "auth" in st.secrets
+    except Exception:
+        return False
+
+
+def logged_in() -> bool:
+    try:
+        return auth_configured() and bool(st.user.is_logged_in)
+    except Exception:
+        return False
+
+
+@st.cache_resource
+def get_store():
+    url, key = secret("SUPABASE_URL"), secret("SUPABASE_SERVICE_KEY")
+    if not (url and key):
+        return None
+    try:
+        return storage.SupabaseStore(url, key)
+    except Exception:
+        return None
+
+
+def current_uid() -> str | None:
+    pepper = secret("PEPPER")
+    if not (logged_in() and pepper):
+        return None
+    email = getattr(st.user, "email", None)
+    return storage.user_id_hash(email, pepper) if email else None
+
+
+def profile_from_state() -> dict:
+    s = st.session_state
+    return {"streak": s.streak, "best_streak": s.best_streak, "usage_day": s.day,
+            "ai_used": s.ai_used, "plan": s.plan, "pro_until": s.pro_until,
+            "review_queue": s.error_log, "pending_payment_ref": s.get("pending_ref")}
+
+
+def persist():
+    s = st.session_state
+    if s.get("uid") and s.get("db"):
+        try:
+            s.db.save_profile(s.uid, profile_from_state())
+        except Exception as e:
+            st.toast(f"Could not save progress: {e}")
+
+
+def hydrate_from_store():
+    """Load saved progress once per session for a logged-in user."""
+    s = st.session_state
+    uid, db = current_uid(), get_store()
+    if not (uid and db) or s.get("uid") == uid:
+        return
+    try:
+        profile, attempts = db.load(uid)
+    except Exception as e:
+        st.warning(f"Saved progress unavailable right now ({e}); continuing in guest mode.")
+        return
+    s.uid, s.db = uid, db
+    s.attempts = [{"id": a["question_id"], "topic": a["topic"], "difficulty": a["difficulty"],
+                   "correct": a["correct"], "trap_type": a.get("trap_type") or "",
+                   "time": str(a.get("created_at", ""))[:16]} for a in attempts]
+    s.error_log = profile.get("review_queue") or {}
+    s.streak, s.best_streak = profile["streak"], profile["best_streak"]
+    s.plan, s.pro_until = profile["plan"], profile["pro_until"]
+    s.pending_ref = profile.get("pending_payment_ref")
+    today = dt.date.today().isoformat()
+    s.ai_used = profile["ai_used"] if str(profile.get("usage_day")) == today else 0
+    s.day = today
+    persist()  # ensures the profile row exists before attempts are inserted
+
+
+def user_is_pro() -> bool:
+    s = st.session_state
+    return storage.is_pro({"pro_until": s.get("pro_until")})
+
+
 # ---------------------------------------------------------------- state
 def init_state():
     today = dt.date.today().isoformat()
@@ -198,6 +291,8 @@ def init_state():
         s.challenge_done = False
     s.setdefault("ai_used", 0)
     s.setdefault("challenge_done", False)
+    s.setdefault("plan", "free")
+    s.setdefault("pro_until", None)
 
 
 def daily_challenge() -> dict:
@@ -232,6 +327,15 @@ def record_answer(q: dict, choice: str):
             entry["due_at"] = n + REVIEW_INTERVALS[entry["stage"]]
     if q.get("source") == "Daily micro-challenge":
         s.challenge_done = True
+    if s.get("uid") and s.get("db"):
+        try:
+            persist()
+            a = s.attempts[-1]
+            s.db.add_attempt(s.uid, {"question_id": a["id"], "topic": a["topic"],
+                                     "difficulty": a["difficulty"], "correct": a["correct"],
+                                     "trap_type": a["trap_type"]})
+        except Exception as e:
+            st.toast(f"Could not save attempt: {e}")
 
 
 def set_current(q: dict):
@@ -243,7 +347,9 @@ def set_current(q: dict):
 # ---------------------------------------------------------------- UI
 st.set_page_config(page_title="CAT/CLAT Adaptive Engine", page_icon="🎯", layout="wide")
 init_state()
+hydrate_from_store()
 s = st.session_state
+pro = user_is_pro()
 api_key = get_api_key()
 
 with st.sidebar:
@@ -256,8 +362,59 @@ with st.sidebar:
         st.success(f"AI mode: {MODEL}")
     else:
         st.info("Demo mode: no GEMINI_API_KEY found, serving curated seed questions.")
-    st.metric("Free AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
-    st.caption("Pro (₹999/month): unlimited adaptive mocks.")
+    if pro:
+        st.success(f"⭐ Pro until {s.pro_until}: unlimited AI questions")
+    else:
+        st.metric("Free AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
+    st.divider()
+    st.subheader("Account")
+    if not auth_configured():
+        st.caption("Guest mode: progress lasts for this browser session only.")
+    elif not logged_in():
+        st.caption("Guest mode. Sign in to save progress (we store only a hashed ID, never your email).")
+        if st.button("Sign in with Google", use_container_width=True):
+            st.login()
+    else:
+        if s.get("uid"):
+            st.caption("✅ Progress is being saved (pseudonymous ID).")
+        else:
+            st.caption("Signed in, but storage is not configured: session-only.")
+        if st.button("Sign out", use_container_width=True):
+            for k in list(s.keys()):
+                del s[k]
+            st.logout()
+    # ---- Pro upgrade
+    if not pro:
+        st.subheader("Go Pro · ₹999/month")
+        rz_id, rz_secret = secret("RAZORPAY_KEY_ID"), secret("RAZORPAY_KEY_SECRET")
+        if not (rz_id and rz_secret and s.get("uid")):
+            st.caption("Pro coming soon." if not (rz_id and rz_secret)
+                       else "Sign in to upgrade (Pro is tied to your saved account).")
+        else:
+            if st.button("Upgrade to Pro", use_container_width=True):
+                try:
+                    link = payments.create_link(rz_id, rz_secret, s.uid, secret("APP_URL"))
+                    s.pending_ref, s.pay_url = link["reference_id"], link["short_url"]
+                    persist()
+                except Exception as e:
+                    st.error(f"Could not create payment link: {e}")
+            pay_url = s.get("pay_url") or (secret("RAZORPAY_PAYMENT_LINK") if not s.get("pending_ref") else None)
+            if pay_url:
+                st.link_button("Pay securely on Razorpay ↗", pay_url, use_container_width=True)
+            if s.get("pending_ref") and st.button("I've paid, verify", use_container_width=True):
+                try:
+                    if payments.verify_paid(rz_id, rz_secret, s.pending_ref):
+                        prof = payments.extend_pro(profile_from_state())
+                        s.plan, s.pro_until, s.pending_ref = prof["plan"], prof["pro_until"], None
+                        s.pop("pay_url", None)
+                        persist()
+                        st.success("Payment verified. Welcome to Pro!")
+                        st.rerun()
+                    else:
+                        st.warning("Payment not found yet. If you just paid, wait a minute and retry.")
+                except Exception as e:
+                    st.error(f"Verification failed: {e}")
+            st.caption("Payments are handled by Razorpay. We never see or store card/UPI details.")
     st.divider()
     c1, c2 = st.columns(2)
     c1.metric("🔥 Streak", s.streak)
@@ -267,17 +424,19 @@ with st.sidebar:
 st.title("CAT/CLAT Adaptive Mock Test & Analytics Engine")
 st.caption("Questions built like a faculty member builds them: every wrong option is a named trap.")
 
-tab_practice, tab_review, tab_analytics = st.tabs(["📝 Practice", "🔁 Error log & review", "📊 Weakness heatmap"])
+tab_practice, tab_review, tab_analytics, tab_privacy = st.tabs(
+    ["📝 Practice", "🔁 Error log & review", "📊 Weakness heatmap", "🔒 Privacy & my data"])
 
 with tab_practice:
     b1, b2, b3 = st.columns(3)
     if b1.button("Generate question", type="primary", use_container_width=True):
         q = None
-        if api_key and s.ai_used < FREE_DAILY_AI_LIMIT:
+        if api_key and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
             with st.spinner("Your coach is writing a question..."):
                 try:
                     q = generate_ai_question(topic, difficulty, api_key)
                     s.ai_used += 1
+                    persist()
                 except Exception as e:
                     st.warning(f"AI generation failed ({e}); serving a seed question instead.")
         elif api_key:
@@ -346,3 +505,25 @@ with tab_analytics:
         if not wrong.empty:
             st.subheader("Traps you fall for most")
             st.bar_chart(wrong.trap_type.value_counts())
+
+with tab_privacy:
+    st.markdown((APP_DIR / "PRIVACY.md").read_text(encoding="utf-8") if (APP_DIR / "PRIVACY.md").exists()
+                else "See PRIVACY.md in the repository.")
+    st.divider()
+    st.subheader("Your data controls")
+    if not s.get("uid"):
+        st.info("You are in guest mode: nothing is saved on our servers. Closing the tab erases your session.")
+    else:
+        st.download_button("⬇️ Download my data (JSON)",
+                           json.dumps(storage.export_data(s.db, s.uid), indent=2, default=str),
+                           file_name="my-cat-clat-data.json", mime="application/json")
+        confirm = st.checkbox("I understand this permanently deletes all my saved progress, error log and plan status.")
+        if st.button("🗑️ Delete my data", type="primary", disabled=not confirm):
+            try:
+                s.db.delete_all(s.uid)
+                for k in list(s.keys()):
+                    del s[k]
+                st.success("All your data has been deleted.")
+                st.logout()
+            except Exception as e:
+                st.error(f"Deletion failed: {e}")

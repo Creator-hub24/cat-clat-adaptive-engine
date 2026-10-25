@@ -1,6 +1,9 @@
-streamlit>=1.38
+streamlit>=1.42
+Authlib>=1.3.2
 google-genai>=1.0
 pandas>=2.0
 plotly>=5.20
+supabase>=2.0
+requests>=2.31
 # Optional vector store for a larger corpus:
 # chromadb>=0.5

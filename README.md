@@ -27,7 +27,9 @@
 - **Error log + spaced repetition:** mistakes come back after 1 → 3 → 7 questions.
 - **Weakness heatmap:** accuracy by topic × difficulty, plus the traps you fall for most.
 - **Streaks & a daily micro-challenge.**
-- **Freemium meter:** 10 AI questions/day (Pro tier ₹999/month in the PRD).
+- **Freemium + Pro:** 10 AI questions/day free; **Pro ₹999/month** unlimited, paid through Razorpay Payment Links (no card data touches the app).
+- **Optional Google sign-in:** saves your progress across devices. Guest mode works without it.
+- **Privacy-first:** only a hashed ID is stored (HMAC-SHA256 of your email + a server secret). No email, name or photo. One-click **Download my data** and **Delete my data**. See **[PRIVACY.md](PRIVACY.md)**.
 - **Always-on demo:** with no API key, the app serves 15 original, curated seed questions.
 
 ## 🏗️ Architecture
@@ -52,6 +54,11 @@ Practice UI ─► record_answer() ─► session_state: attempts, error_log, st
 cat-clat-adaptive-engine/
 ├── app.py                        # Streamlit app
 ├── data/sample_bank.json         # 15 original seed questions with explanations & trap types
+├── store.py                      # Privacy-first storage (hashed IDs, Supabase)
+├── payments.py                   # Razorpay Payment Links
+├── PRIVACY.md
+├── supabase/schema.sql
+├── tests/
 ├── PRD.md                        # Product requirements + pedagogical rationale
 ├── requirements.txt
 ├── .streamlit/secrets.toml.example
@@ -70,6 +77,22 @@ export GEMINI_API_KEY="your-key"        # or copy .streamlit/secrets.toml.exampl
 
 streamlit run app.py
 ```
+
+## 🔐 Optional services setup
+Every service is optional. If its secrets are missing, the app falls back: guest mode, session-only storage, "Pro coming soon".
+
+| Feature | Secrets | Where |
+|---|---|---|
+| AI questions | `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) |
+| Google sign-in | `[auth]` block | Google Cloud Console → OAuth client (Web). Redirect URI: `https://<your-app>.streamlit.app/oauth2callback` |
+| Saved progress | `PEPPER`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY` | Supabase project → run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor |
+| Pro payments | `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `APP_URL` | Razorpay Dashboard → API Keys (test mode first) |
+
+All keys are listed in [`.streamlit/secrets.toml.example`](.streamlit/secrets.toml.example).
+
+> ⚠️ `SUPABASE_SERVICE_KEY` is the service-role key. It stays server-side in Streamlit secrets and is never sent to the browser. RLS is enabled with no public policies, so the anon key can't read anything. Never change `PEPPER` after launch, because that would orphan every user's saved data.
+
+Run the tests: `pip install pytest && pytest -q tests`
 
 ## ☁️ Deploy to Streamlit Community Cloud
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
