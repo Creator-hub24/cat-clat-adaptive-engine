@@ -13,60 +13,25 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+import bank as qbank
 import engine
 import llm
 import payments
+import prompts
 import store as storage
 
 APP_DIR = Path(__file__).parent
 BANK_PATH = APP_DIR / "data" / "sample_bank.json"
-MODEL_CANDIDATES = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]
 try:
-    _custom = st.secrets.get("GEMINI_MODEL") or os.environ.get("GEMINI_MODEL")
+    _custom = st.secrets.get("GEMINI_MODEL")
 except Exception:
-    _custom = os.environ.get("GEMINI_MODEL")
-if _custom:
-    MODEL_CANDIDATES.insert(0, _custom)
+    _custom = None
+MODEL_CANDIDATES = prompts.model_candidates(_custom)
 FREE_DAILY_AI_LIMIT = 10
 REVIEW_INTERVALS = engine.REVIEW_INTERVALS  # 3 -> 7 -> 15 questions
-
-SECTIONS = {
-    "CAT": ["CAT Quant", "CAT VARC RC", "CAT DILR"],
-    "CLAT": ["CLAT RC", "CLAT Logical Reasoning"],
-}
-DIFFICULTIES = engine.DIFFICULTIES
-
-DIFFICULTY_RUBRIC = {
-    "Easy": "Single concept, one or two steps, direct application. A prepared aspirant should solve it in under 60 seconds.",
-    "Moderate": "Two linked concepts or one concept with a twist; 90-120 seconds. Distractors reflect the most common procedural slip.",
-    "CAT-Level": "Non-linear jump: needs an insight (a symmetry, a negative remainder, an invariant, a premise attack) rather than more computation. Brute force should be possible but slow; the elegant path takes 2-3 minutes. Distractors must be the answers a strong but hasty solver would actually get.",
-}
-
-TOPIC_RULES = {
-    "CAT Quant": "verify_code is REQUIRED. Use clean integers. Every distractor must be the result of a specific, nameable mistake (e.g. additive fallacy, wrong base, ordered vs unordered). Mention the fastest shortcut.",
-    "CAT VARC RC": "Write an ORIGINAL 120-220 word passage (no copyrighted text) followed by one question. Distractors must follow the taxonomy: Extreme scope, Out-of-scope, Half-true, Reversal. Label the trap type of each wrong option in the explanation.",
-    "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building. When the set needs data, present it as a GitHub-markdown table inside question_text. Where the answer is computable, include verify_code.",
-    "CLAT RC": "Write an ORIGINAL legal-principle passage (100-200 words) and a fact situation. The answer must follow ONLY from the stated principle, not outside legal knowledge. Include an exception in the principle at Moderate+.",
-    "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
-}
-
-SYSTEM_PROMPT = """You are a master CAT/CLAT faculty member with 10+ years of classroom coaching.
-You write ORIGINAL exam-grade questions (never copy past papers) and you teach through the explanation.
-Pedagogical constraints you must obey:
-1. Exactly 4 options keyed A, B, C, D, exactly one correct.
-2. Every wrong option is a deliberate, realistic trap; the most tempting one is the 'main distractor'.
-3. The explanation must (a) solve step by step, (b) name the shortcut or reading signal, (c) explain why the main distractor is wrong and what thinking error produces it.
-4. Match the difficulty rubric exactly; difficulty comes from insight, not ugly numbers.
-5. Output ONLY one JSON object, no markdown fences, with keys:
-   question_text (string), options (object with keys A,B,C,D), correct_answer (one of A,B,C,D),
-   pedagogical_explanation (string), trap_type (string, the main distractor's trap), concept_tag (string),
-   and for computable questions (Quant, numeric/arrangement DILR) verify_code (string).
-6. verify_code: short plain Python that computes the answer and assigns it to a variable named `answer`
-   (a number equal to the correct option's value, or the correct option letter). Only math, itertools and
-   fractions may be imported. No input, files, network or printing needed.
-7. Tabular data must be written as a markdown table inside question_text. Never use HTML."""
-
+SECTIONS, DIFFICULTIES, SYSTEM_PROMPT = prompts.SECTIONS, prompts.DIFFICULTIES, prompts.SYSTEM_PROMPT
 REQUIRED_KEYS = engine.REQUIRED_KEYS
+retrieve_examples, build_prompt = prompts.retrieve_examples, prompts.build_prompt
 
 
 # ---------------------------------------------------------------- data / retrieval
@@ -74,15 +39,6 @@ REQUIRED_KEYS = engine.REQUIRED_KEYS
 def load_bank() -> list[dict]:
     with open(BANK_PATH, encoding="utf-8") as f:
         return json.load(f)["questions"]
-
-
-def retrieve_examples(bank: list[dict], topic: str, difficulty: str, k: int = 2) -> list[dict]:
-    """Simple lexical retrieval: same topic first (same difficulty ranked higher), then same exam."""
-    exam = topic.split()[0]
-    def score(q):
-        return (q["topic"] == topic) * 2 + (q["difficulty"] == difficulty) + (q["exam"] == exam) * 0.5
-    ranked = sorted(bank, key=score, reverse=True)
-    return [q for q in ranked if score(q) > 0][:k]
 
 
 # ---------------------------------------------------------------- LLM
@@ -94,22 +50,6 @@ def get_api_key() -> str | None:
     except Exception:
         pass
     return os.environ.get("GEMINI_API_KEY")
-
-
-def build_prompt(topic: str, difficulty: str, examples: list[dict]) -> str:
-    shots = "\n\n".join(
-        json.dumps({k: ex[k] for k in list(REQUIRED_KEYS) + ["verify_code"] if k in ex}, ensure_ascii=False)
-        for ex in examples
-    )
-    return f"""Topic: {topic}
-Difficulty: {difficulty}
-Difficulty rubric: {DIFFICULTY_RUBRIC[difficulty]}
-Topic rules: {TOPIC_RULES[topic]}
-
-Reference examples of house style (do NOT reuse their content, numbers or passages):
-{shots}
-
-Now write ONE new question as a single JSON object."""
 
 
 parse_question_json = engine.parse_question_json
@@ -125,14 +65,25 @@ def generate_ai_question(topic: str, difficulty: str, api_key: str, log: list | 
                                  build_prompt(topic, difficulty, examples), SYSTEM_PROMPT, log=log)
 
 
+@st.cache_data(ttl=3600)
+def load_pool() -> list[dict]:
+    """Seed bank + pre-generated AI bank (rejected items excluded). No API call needed."""
+    return qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"])
+
+
+def bank_question(topic: str, difficulty: str, exclude: set[str]) -> dict | None:
+    """Unseen bank question for this topic+level, or None if the user has seen them all."""
+    return qbank.pick_unseen(load_pool(), topic, difficulty, exclude, random)
+
+
 def seed_question(topic: str, difficulty: str, exclude: set[str]) -> dict:
-    bank = load_bank()
-    pool = [q for q in bank if q["topic"] == topic and q["difficulty"] == difficulty] \
-        or [q for q in bank if q["topic"] == topic] or bank
+    """Last-resort fallback: prefer unseen, else repeat (never fails)."""
+    q = bank_question(topic, difficulty, exclude)
+    if q:
+        return q
+    pool = [q for q in load_pool() if q["topic"] == topic] or load_pool()
     fresh = [q for q in pool if q["id"] not in exclude] or pool
-    q = dict(random.choice(fresh))
-    q["source"] = "Seed bank"
-    return mark_seed(q)
+    return dict(random.choice(fresh))
 
 
 def mark_seed(q: dict) -> dict:
@@ -225,6 +176,7 @@ def hydrate_from_store():
                    "time_taken_s": a.get("time_taken_s"), "timing_class": a.get("timing_class") or "",
                    "time": str(a.get("created_at", ""))[:16]} for a in attempts]
     s.topic_levels = profile.get("topic_levels") or {}
+    s.seen = {a.get("question_id") for a in attempts if a.get("question_id")}  # no repeats across sessions
     s.error_log = profile.get("review_queue") or {}
     s.streak, s.best_streak = profile["streak"], profile["best_streak"]
     s.plan, s.pro_until = profile["plan"], profile["pro_until"]
@@ -266,7 +218,11 @@ def init_state():
 
 def daily_challenge() -> dict:
     """Same question for everyone today; no repeat until the whole bank has cycled."""
-    return mark_seed(dict(engine.daily_pick(load_bank(), dt.date.today()), source="Daily micro-challenge"))
+    approved = [q for q in qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"]
+                if q.get("review_status") == "approved" and q.get("verified")]
+    base = load_bank() + approved   # only faculty-approved AI items join the shared daily question
+    q = dict(engine.daily_pick(base, dt.date.today()), source="Daily micro-challenge")
+    return q if q["id"].startswith("AI-") else mark_seed(q)
 
 
 def due_reviews() -> list[dict]:
@@ -358,11 +314,11 @@ with st.sidebar:
     if api_key:
         st.success("AI mode (verified): " + " → ".join(MODEL_CANDIDATES))
     else:
-        st.info("Demo mode: no GEMINI_API_KEY found, serving curated seed questions.")
+        st.info("No GEMINI_API_KEY: serving the verified question bank (seed + pre-generated). Live AI is off.")
     if pro:
         st.success(f"⭐ Pro until {s.pro_until}: unlimited AI questions")
     else:
-        st.metric("Free AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
+        st.metric("Free live-AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
     st.divider()
     st.subheader("Account")
     if not auth_configured():
@@ -426,9 +382,11 @@ tab_practice, tab_review, tab_analytics, tab_privacy = st.tabs(
 
 with tab_practice:
     b1, b2, b3 = st.columns(3)
-    if b1.button("Generate question", type="primary", width="stretch"):
-        q = None
-        if api_key and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
+    if b1.button("Next question", type="primary", width="stretch"):
+        # Default: serve from the verified bank, no live API call. Live AI only for Pro users,
+        # or when this user has exhausted the bank for this topic+level (free users: daily cap).
+        q = None if pro and api_key else bank_question(topic, difficulty, s.seen)
+        if q is None and api_key and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
             with st.spinner("Your coach is writing and double-checking a question..."):
                 try:
                     q = generate_ai_question(topic, difficulty, api_key)
@@ -439,8 +397,11 @@ with tab_practice:
                                "hand-checked seed question instead.")
                     with st.expander("Verification details"):
                         st.text(str(e)[:1500])
-        elif api_key:
-            st.warning("Daily free limit reached. Upgrade to Pro for unlimited; serving a seed question.")
+        elif q is None and api_key:
+            st.warning("You've done every bank question at this level and today's free AI questions are used up. "
+                       "Upgrade to Pro for unlimited fresh questions; serving a question from another level for now.")
+        elif q is None:
+            st.info("You've done every bank question at this level, so here is one from another level of this topic.")
         set_current(q or seed_question(topic, difficulty, s.seen))
     if b2.button("Daily micro-challenge" + (" ✅" if s.challenge_done else ""), width="stretch"):
         set_current(daily_challenge())
@@ -452,7 +413,7 @@ with tab_practice:
 
     q = s.current
     if q is None:
-        st.info("Pick a section and difficulty in the sidebar, then hit **Generate question**.")
+        st.info("Pick a section and difficulty in the sidebar, then hit **Next question**.")
     else:
         badge = ("✅ Verified (" + ", ".join(q.get("verification", [])) + ")") if q.get("verified") else "⚠️ Unverified"
         meta = f"{q['topic']} · {q['difficulty']} · {md_escape(q.get('concept_tag', ''))}"

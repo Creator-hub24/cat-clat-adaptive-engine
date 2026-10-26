@@ -1,0 +1,87 @@
+"""Prompt layer shared by the app and scripts/build_bank.py (no Streamlit import)."""
+from __future__ import annotations
+
+import json
+import os
+
+import engine
+
+MODEL_CANDIDATES = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]
+
+
+def model_candidates(custom: str | None = None) -> list[str]:
+    """Optional pinned model first, then the fallback list (404/503/429 fall through)."""
+    custom = custom or os.environ.get("GEMINI_MODEL")
+    return ([custom] if custom else []) + [m for m in MODEL_CANDIDATES if m != custom]
+
+SECTIONS = {
+    "CAT": ["CAT Quant", "CAT VARC RC", "CAT DILR"],
+    "CLAT": ["CLAT RC", "CLAT Logical Reasoning"],
+}
+DIFFICULTIES = engine.DIFFICULTIES
+
+DIFFICULTY_RUBRIC = {
+    "Easy": "Single concept, one or two steps, direct application. A prepared aspirant should solve it in under 60 seconds.",
+    "Moderate": "Two linked concepts or one concept with a twist; 90-120 seconds. Distractors reflect the most common procedural slip.",
+    "CAT-Level": "Non-linear jump: needs an insight (a symmetry, a negative remainder, an invariant, a premise attack) rather than more computation. Brute force should be possible but slow; the elegant path takes 2-3 minutes. Distractors must be the answers a strong but hasty solver would actually get.",
+}
+
+TOPIC_RULES = {
+    "CAT Quant": "verify_code is REQUIRED. Use clean integers. Every distractor must be the result of a specific, nameable mistake (e.g. additive fallacy, wrong base, ordered vs unordered). Mention the fastest shortcut.",
+    "CAT VARC RC": "Write an ORIGINAL 120-220 word passage (no copyrighted text) followed by one question. Distractors must follow the taxonomy: Extreme scope, Out-of-scope, Half-true, Reversal. Label the trap type of each wrong option in the explanation.",
+    "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building. When the set needs data, present it as a GitHub-markdown table inside question_text. Where the answer is computable, include verify_code.",
+    "CLAT RC": "Write an ORIGINAL legal-principle passage (100-200 words) and a fact situation. The answer must follow ONLY from the stated principle, not outside legal knowledge. Include an exception in the principle at Moderate+.",
+    "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
+}
+
+SYSTEM_PROMPT = """You are a master CAT/CLAT faculty member with 10+ years of classroom coaching.
+You write ORIGINAL exam-grade questions (never copy past papers) and you teach through the explanation.
+Pedagogical constraints you must obey:
+1. Exactly 4 options keyed A, B, C, D, exactly one correct.
+2. Every wrong option is a deliberate, realistic trap; the most tempting one is the 'main distractor'.
+3. The explanation must (a) solve step by step, (b) name the shortcut or reading signal, (c) explain why the main distractor is wrong and what thinking error produces it.
+4. Match the difficulty rubric exactly; difficulty comes from insight, not ugly numbers.
+5. Output ONLY one JSON object, no markdown fences, with keys:
+   question_text (string), options (object with keys A,B,C,D), correct_answer (one of A,B,C,D),
+   pedagogical_explanation (string), trap_type (string, the main distractor's trap), concept_tag (string),
+   and for computable questions (Quant, numeric/arrangement DILR) verify_code (string).
+6. verify_code: short plain Python that computes the answer and assigns it to a variable named `answer`
+   (a number equal to the correct option's value, or the correct option letter). Only math, itertools and
+   fractions may be imported. No input, files, network or printing needed.
+7. Tabular data must be written as a markdown table inside question_text. Never use HTML."""
+
+REQUIRED_KEYS = engine.REQUIRED_KEYS
+
+
+def retrieve_examples(bank: list[dict], topic: str, difficulty: str, k: int = 2) -> list[dict]:
+    """Simple lexical retrieval: same topic first (same difficulty ranked higher), then same exam."""
+    exam = topic.split()[0]
+    def score(q):
+        return (q["topic"] == topic) * 2 + (q["difficulty"] == difficulty) + (q["exam"] == exam) * 0.5
+    ranked = sorted(bank, key=score, reverse=True)
+    return [q for q in ranked if score(q) > 0][:k]
+
+
+def build_prompt(topic: str, difficulty: str, examples: list[dict], avoid: list[str] | None = None) -> str:
+    shots = "\n\n".join(
+        json.dumps({k: ex[k] for k in list(REQUIRED_KEYS) + ["verify_code"] if k in ex}, ensure_ascii=False)
+        for ex in examples
+    )
+    return f"""Topic: {topic}
+Difficulty: {difficulty}
+Difficulty rubric: {DIFFICULTY_RUBRIC[difficulty]}
+Topic rules: {TOPIC_RULES[topic]}
+
+Reference examples of house style (do NOT reuse their content, numbers or passages):
+{shots}
+
+{avoid_block(avoid)}Now write ONE new question as a single JSON object."""
+
+
+def avoid_block(avoid: list[str] | None) -> str:
+    if not avoid:
+        return ""
+    lines = "\n".join(f"- {a}" for a in avoid[-15:])
+    return f"Already in the bank (write something clearly DIFFERENT in concept, numbers and setting):\n{lines}\n\n"
+
+

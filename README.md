@@ -25,6 +25,7 @@
 - **Adaptive difficulty per topic (default):** your level in each topic steps up after 2 consecutive correct answers *within the target time* and down after 2 consecutive wrong ones. Levels are saved for signed-in users. A manual override is in the sidebar.
 - **Answer-key checks on AI questions:** for Quant (and computable DILR) the model must also return a short Python `verify_code`, which runs in a restricted sandbox (3 s timeout; only `math`, `itertools` and `fractions`; no files or network) and must reproduce the key. Every AI question then gets a separate solve pass with the key hidden. If either check disagrees, the app regenerates (max 2 tries) and then falls back to a seed question. Questions that pass show a ✅ Verified badge. These checks reduce wrong keys; they do not eliminate them. Use **Report this question** (anonymous) when one slips through.
 - **Per-question timer:** targets of Easy ≈ 60 s, Moderate 90–120 s and CAT-Level 2–3 min, with RC targets scaled by passage length. Correct-but-slow answers are tagged **Right but too slow** in feedback and analytics.
+- **Pre-generated, verified question bank (default):** practice is served from the 45 hand-checked seed questions plus `data/ai_bank.json` (TODO: still empty because the first batch has not been generated yet), a bank generated offline by `scripts/build_bank.py` through the same verification pipeline. No live API call happens per question, so the app costs nothing per user and keeps working under load or when the API is down. No question repeats for a user until the bank for that topic and level runs out (tracked across devices when signed in). Live AI generation runs only for Pro users, or for free users who have done every bank question at their level (within the daily cap). Items a faculty reviewer rejects are never served. Items not yet reviewed are labelled "faculty review pending".
 - **Strict JSON + validation:** fence stripping, trailing-comma repair, A–D normalisation and key checks.
 - **Pedagogical feedback:** the correct answer, the trap type of the main distractor (Extreme scope, Out-of-scope, Half-true, Reversal…), and a step-by-step explanation with the shortcut.
 - **Error log + spaced repetition:** mistakes come back after 3 → 7 → 15 questions.
@@ -60,6 +61,11 @@ Practice UI ─► record_answer() ─► session_state: attempts, error_log, st
 cat-clat-adaptive-engine/
 ├── app.py                        # Streamlit app
 ├── data/sample_bank.json         # 45 original seed questions (explanations, trap types, verify_code)
+├── bank.py                       # AI-bank storage, dedupe, serving pool
+├── prompts.py                    # Prompt layer shared by app + scripts
+├── scripts/                      # build_bank.py, export_review.py, apply_review.py
+├── review/ai_bank_review.csv     # faculty review sheet
+├── data/ai_bank.json             # pre-generated verified questions
 ├── engine.py                     # Adaptive levels, timing, spacing, sandboxed verifier
 ├── llm.py                        # Gemini calls + verification pipeline
 ├── store.py                      # Privacy-first storage (hashed IDs, Supabase)
@@ -101,6 +107,18 @@ All keys are listed in [`.streamlit/secrets.toml.example`](.streamlit/secrets.to
 > ⚠️ `SUPABASE_SERVICE_KEY` is the service-role key. It stays server-side in Streamlit secrets and is never sent to the browser. RLS is enabled with no public policies, so the anon key can't read anything. Never change `PEPPER` after launch, because that would orphan every user's saved data.
 
 Run the tests: `pip install pytest && pytest -q tests`
+
+## 🏦 Question bank workflow (monthly refresh)
+```bash
+export GEMINI_API_KEY=...                                     # never commit it
+python scripts/build_bank.py --per-cell 14 --rpm 8 --max-calls 450   # resumable; Ctrl-C safe
+python scripts/export_review.py                               # -> review/ai_bank_review.csv
+# faculty fills the `approve` column with Y / N (blank = leave unreviewed), optional review_note
+python scripts/apply_review.py --reviewer "VG"                # writes decisions back into data/ai_bank.json
+git add data/ai_bank.json && git commit -m "bank: monthly refresh"
+```
+- **Build:** each question gets the computed check (Quant/DILR) and an independent solve. Disagreements are rejected, and exact or near duplicates (normalised hash, 5-word-shingle Jaccard ≥ 0.6) are dropped. The bank is written after every accepted question, so a run can stop and resume. The script throttles to `--rpm`, backs off on 429/503, stops cleanly at `--max-calls` or a daily-quota error, and prints accepted/rejected/duplicate counts per topic.
+- **Monthly refresh:** raise `--per-cell` (e.g. +5) and re-run. Only the missing items are generated, and the prompt is told what already exists so it writes different questions. Then export, review, apply, commit. Rejected items stay in the JSON (never served) so the reject decision is remembered.
 
 ## ☁️ Deploy to Streamlit Community Cloud
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.

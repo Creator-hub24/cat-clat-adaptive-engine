@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "version": 1,
+    "generator": "scripts/build_bank.py"
+  },
+  "questions": [],
+  "build_stats": {}
+}

@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Author** | Vaibhav Gupta (6 years CAT/CLAT faculty, Career Launcher) |
-| **Status** | v0.3 prototype, live on Streamlit Cloud |
+| **Status** | v0.4 prototype, live on Streamlit Cloud |
 | **Last updated** | October 2026 |
 
 ---
@@ -42,6 +42,7 @@ A practice engine that writes CAT and CLAT questions the way a senior faculty me
 | F9 | Adaptive difficulty | Per-topic level; up after 2 consecutive on-time correct answers, down after 2 wrong; manual override. | ✅ v0.3 |
 | F10 | Answer-key verification | Sandboxed `verify_code` for Quant/DILR, an independent solve pass for all sections, max 2 regenerations, then seed fallback; Verified badge; anonymous Report button. | ✅ v0.3 |
 | F11 | Per-question timer | Difficulty-based targets, RC scaled by passage length; "Right but too slow" category. | ✅ v0.3 |
+| F12 | Verified question bank | Offline-generated, verified, deduped bank served by default; faculty approve/reject via CSV; monthly refresh. Cuts per-user inference cost to ~0 and removes API latency/outage risk. | ✅ v0.4 |
 | F8 | Faculty test builder (Meera) | Batch-generate a 10–20 question sectional, edit it, export as PDF/CSV. | Roadmap |
 
 ## 5. Pedagogical rationale (the differentiator)
@@ -150,7 +151,8 @@ What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. 
 - **v0.1 (shipped):** Streamlit prototype, 5 sections, seed bank, AI generation, session analytics.
 - **v0.2 (shipped):** Optional Google sign-in, Supabase storage keyed by hashed IDs, data export/delete, server-side metering for signed-in users, Razorpay Pro.
 - **v0.3 (shipped):** Adaptive per-topic difficulty, answer-key verification (sandboxed computation + independent solve), anonymous question reports, per-question timer with "Right but too slow", a 45-question seed bank, a daily challenge that cycles the whole bank, and review intervals 3 → 7 → 15.
-- **v0.4:** Mentor Meera's test builder: batch generation, edit, PDF export, batch analytics.
+- **v0.4 (shipped):** Pre-generated verified AI bank (`scripts/build_bank.py`), faculty review loop (CSV export → approve/reject → apply), bank-first serving with no live API call per question, per-user no-repeat across sessions, live AI only for Pro or once a user exhausts a topic/level. Monthly refresh: top up each topic × level, review, commit.
+- **v0.4.x:** Mentor Meera's test builder: batch generation, edit, PDF export, batch analytics.
 - **v0.5:** Replace the 2-up/2-down rule with an Elo/IRT-style ability estimate per topic and full-length timed sectionals.
 - **v1.0:** Payments (Razorpay), mobile-friendly frontend, a ChromaDB corpus of 1,000+ reviewed items.
 
@@ -162,5 +164,5 @@ What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. 
 | Freemium limit bypass | Signed-in users are metered server-side in Supabase; guest sessions are still client-side (accepted for the demo) |
 | Data breach / privacy | Only hashed IDs + practice stats are stored; RLS on; service key server-side; export/delete in-app |
 | Payment spoofing | Pro is granted only after a server-side Razorpay API check of the link status; no client-side trust |
-| API cost spikes | Flash-tier model, daily caps, cached seed fallback |
+| API cost spikes | Bank-first serving (no per-question API call for free users), live AI only for Pro, daily caps, seed fallback |
 | Seasonal churn after the exam | Bundle the next attempt and adjacent exams (CLAT → AILET, CAT → XAT/GMAT) |
