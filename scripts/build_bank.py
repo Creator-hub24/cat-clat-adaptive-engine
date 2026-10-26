@@ -38,16 +38,20 @@ class QuotaStop(Exception):
 
 
 class ThrottledClient:
-    """Wraps genai.Client: enforces an RPM ceiling, backs off on 429/503, counts calls."""
+    """Wraps genai.Client: enforces an RPM ceiling, backs off on 429, skips 503 models, counts calls."""
 
     def __init__(self, client, rpm: float, max_calls: int, max_backoff: float = 120, sleep=time.sleep):
         self._c, self.min_gap, self.max_calls = client, 60.0 / rpm, max_calls
         self.max_backoff, self.sleep = max_backoff, sleep
         self.calls, self._last = 0, 0.0
+        self.exhausted: set[str] = set()   # models whose free-tier DAILY quota is used up
         self.models = self
 
     def generate_content(self, **kw):
         delay = 5.0
+        model = kw.get("model")
+        if model in self.exhausted:
+            raise RuntimeError(f"429 RESOURCE_EXHAUSTED: daily quota already used for {model} (skipped)")
         while True:
             if self.calls >= self.max_calls:
                 raise QuotaStop(f"--max-calls {self.max_calls} reached")
@@ -62,9 +66,15 @@ class ThrottledClient:
                 msg = str(e)
                 if any(k in msg for k in ("API_KEY_INVALID", "PERMISSION_DENIED", "UNAUTHENTICATED", "401", "403")):
                     raise QuotaStop("API key rejected by Gemini (check GEMINI_API_KEY): " + msg[:120])
-                if "429" in msg or "RESOURCE_EXHAUSTED" in msg or "503" in msg or "UNAVAILABLE" in msg:
+                if "503" in msg or "UNAVAILABLE" in msg:
+                    raise  # overloaded model: fall through to the next model immediately
+                if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
                     if "PerDay" in msg or "per day" in msg.lower():
-                        raise QuotaStop("daily quota exhausted: " + msg[:200])
+                        self.exhausted.add(model)
+                        print(f"  daily quota used up for {model}; skipping it for this run", flush=True)
+                        if set(prompts.model_candidates()) <= self.exhausted:
+                            raise QuotaStop("daily free-tier quota used up on every model")
+                        raise  # llm.call_model falls through to the next model
                     if delay > self.max_backoff:
                         raise  # let llm.call_model fall through to the next model
                     print(f"  backoff {delay:.0f}s ({msg[:60]})", flush=True)
@@ -150,8 +160,7 @@ def main(argv=None):
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         sys.exit("GEMINI_API_KEY is not set")
-    from google import genai
-    client = ThrottledClient(genai.Client(api_key=key), a.rpm, a.max_calls)
+    client = ThrottledClient(llm.make_client(key), a.rpm, a.max_calls)
     try:
         data = build(client, a.per_cell, a.out, topics=a.topic, difficulties=a.difficulty)
         print("Done: all cells full (or skipped after repeated failures).")

@@ -114,3 +114,24 @@ def test_pick_unseen_exhausts_then_none():
     for _ in range(3):
         seen.add(bank.pick_unseen(pool, "T", "Easy", seen, rng)["id"])
     assert seen == {"0", "1", "2"} and bank.pick_unseen(pool, "T", "Easy", seen, rng) is None
+
+
+class DailyCapGemini(FakeGemini):
+    def __init__(self, cap):
+        super().__init__(); self.cap, self.used = cap, {}
+
+    def generate_content(self, model, contents, config):
+        self.used[model] = self.used.get(model, 0) + 1
+        if self.used[model] > self.cap:
+            raise RuntimeError("429 RESOURCE_EXHAUSTED quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier")
+        return super().generate_content(model, contents, config)
+
+
+def test_daily_quota_skips_model_then_stops(tmp_path):
+    out = tmp_path / "ai.json"
+    fake = DailyCapGemini(cap=3)
+    with pytest.raises(build_bank.QuotaStop):
+        build_bank.build(throttled(fake), 50, out, topics=["CAT Quant"], difficulties=["Easy"], log=lambda *_: None)
+    n = len(bank.load_json_bank(out)["questions"])
+    assert n >= 3                                    # kept working on later models after the first ran out
+    assert all(v <= 4 for v in fake.used.values())   # never hammered an exhausted model

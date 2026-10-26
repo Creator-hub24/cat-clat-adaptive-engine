@@ -6,7 +6,10 @@ import os
 
 import engine
 
-MODEL_CANDIDATES = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]
+# Order verified live on 2026-10-26: 3.8-flash/3.7-flash returned 503 (high demand), 2.5-flash 404 for new keys.
+# Free tier is 20 requests/day PER MODEL, so a longer list also stretches the daily quota.
+MODEL_CANDIDATES = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3-flash-preview", "gemini-3.8-flash",
+                    "gemini-3.7-flash", "gemini-flash-latest"]
 
 
 def model_candidates(custom: str | None = None) -> list[str]:

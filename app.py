@@ -57,9 +57,7 @@ parse_question_json = engine.parse_question_json
 
 def generate_ai_question(topic: str, difficulty: str, api_key: str, log: list | None = None) -> dict:
     """Generate + verify (sandboxed verify_code and an independent solve); max 2 tries."""
-    from google import genai
-
-    client = genai.Client(api_key=api_key)
+    client = llm.make_client(api_key)
     examples = retrieve_examples(load_bank(), topic, difficulty)
     return llm.generate_verified(client, MODEL_CANDIDATES, topic, difficulty,
                                  build_prompt(topic, difficulty, examples), SYSTEM_PROMPT, log=log)

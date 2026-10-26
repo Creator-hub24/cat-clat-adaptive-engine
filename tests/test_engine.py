@@ -156,3 +156,9 @@ def test_reports_have_no_personal_data():
                             "user_id": "abc", "email": "a@b.c"})
     assert set(r) == {"topic", "question_ref", "reason", "created_at"}
     assert store.question_ref({"id": "AI-123", "question_text": "hi"}).startswith("AI-")
+
+
+def test_missing_stem_rejected():
+    assert llm.missing_stem("CAT VARC RC", "Passage: long text about drugs and brands.")
+    assert llm.missing_stem("CAT VARC RC", "Passage: text.\n\nWhich of the following is the main idea?") is None
+    assert llm.missing_stem("CAT Quant", "no question mark") is None
