@@ -122,13 +122,20 @@ def logged_in() -> bool:
 
 
 @st.cache_resource
+def _make_store(url, key):
+    return storage.SupabaseStore(url, key)
+
+
 def get_store():
+    # Cache keyed on the secrets, and never cache a failure, so adding
+    # secrets later takes effect without a manual reboot.
     url, key = secret("SUPABASE_URL"), secret("SUPABASE_SERVICE_KEY")
     if not (url and key):
         return None
     try:
-        return storage.SupabaseStore(url, key)
-    except Exception:
+        return _make_store(str(url).strip(), str(key).strip())
+    except Exception as e:
+        st.session_state["store_error"] = str(e)[:200]
         return None
 
 
@@ -329,7 +336,9 @@ with st.sidebar:
         if s.get("uid"):
             st.caption("✅ Progress is being saved (pseudonymous ID).")
         else:
-            st.caption("Signed in, but storage is not configured: session-only.")
+            err = s.get("store_error")
+            st.caption("Signed in, but storage is not configured: session-only."
+                       + (f" ({err})" if err else ""))
         if st.button("Sign out", width="stretch"):
             for k in list(s.keys()):
                 del s[k]
