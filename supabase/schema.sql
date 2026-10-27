@@ -49,3 +49,18 @@ revoke all on public.question_reports from anon, authenticated;
 
 -- v0.4: intro price marker (see supabase/migrations/2026-10-27_pro_purchases.sql)
 alter table public.profiles add column if not exists pro_purchases int not null default 0;
+
+-- v0.5: exam families (see supabase/migrations/2026-10-28_exam_families.sql)
+create table if not exists public.pro_entitlements (
+  user_id              text not null references public.profiles(user_id) on delete cascade,
+  exam_family          text not null check (exam_family in ('mgmt_law','sarkari','medical','engineering')),
+  pro_until            date,
+  pro_purchases        int  not null default 0,
+  pending_payment_ref  text,
+  updated_at           timestamptz not null default now(),
+  primary key (user_id, exam_family)
+);
+alter table public.pro_entitlements enable row level security;
+revoke all on public.pro_entitlements from anon, authenticated;
+alter table public.attempts add column if not exists exam_family text not null default 'mgmt_law';
+create index if not exists attempts_user_family_idx on public.attempts(user_id, exam_family, created_at);

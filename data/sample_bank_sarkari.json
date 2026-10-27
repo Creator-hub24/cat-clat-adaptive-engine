@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "version": "1.0",
+    "author": "Vaibhav Gupta",
+    "family": "sarkari",
+    "note": "Original seed questions for the Sarkari (SSC/Railway/Bank) app; not taken from any past paper. General Awareness items are hand-added with source_url and as_of and are never AI-generated."
+  },
+  "questions": [
+    {
+      "id": "SQA-E-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Easy",
+      "concept_tag": "Simple interest",
+      "question_text": "What is the simple interest on Rs 8,000 at 5% per annum for 3 years?",
+      "options": {
+        "A": "Rs 1,200",
+        "B": "Rs 1,261",
+        "C": "Rs 1,000",
+        "D": "Rs 1,500"
+      },
+      "correct_answer": "A",
+      "trap_type": "Using compound interest instead of simple interest",
+      "pedagogical_explanation": "SI = P x R x T / 100 = 8000 x 5 x 3 / 100 = Rs 1,200. Trap (B): Rs 1,261 is the compound interest, 8000 x (1.05^3 - 1). Shortcut: 5% a year for 3 years is 15% of 8,000.",
+      "verify_code": "answer = 8000*5*3/100"
+    },
+    {
+      "id": "SQA-E-02",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Easy",
+      "concept_tag": "Speed - unit conversion",
+      "question_text": "A train 180 m long runs at 54 km/h. How long does it take to cross a signal pole?",
+      "options": {
+        "A": "12 seconds",
+        "B": "3.33 seconds",
+        "C": "10 seconds",
+        "D": "15 seconds"
+      },
+      "correct_answer": "A",
+      "trap_type": "Not converting km/h to m/s",
+      "pedagogical_explanation": "54 km/h = 54 x 5/18 = 15 m/s. To cross a pole the train covers only its own length: 180 / 15 = 12 s. Trap (B): 180/54 mixes metres with km/h. Shortcut: multiply km/h by 5/18.",
+      "verify_code": "answer = 180/(54*5/18)"
+    },
+    {
+      "id": "SQA-M-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Profit & loss - articles",
+      "question_text": "The cost price of 20 articles equals the selling price of 16 articles. What is the profit percentage?",
+      "options": {
+        "A": "20%",
+        "B": "25%",
+        "C": "16%",
+        "D": "80%"
+      },
+      "correct_answer": "B",
+      "trap_type": "Taking profit on the selling price (wrong base)",
+      "pedagogical_explanation": "Let each article cost Rs 1. SP of 16 = CP of 20 = Rs 20, so profit on 16 articles = 20 - 16 = 4 on a cost of 16: 4/16 = 25%. Trap (A): 4/20 = 20% divides by the selling price. Shortcut: profit% = (difference / articles sold) x 100.",
+      "verify_code": "answer = (20-16)/16*100"
+    },
+    {
+      "id": "SQA-C-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Pipes and cisterns - delayed outlet",
+      "question_text": "Pipes A and B can fill a tank in 12 hours and 15 hours respectively, and pipe C can empty the full tank in 20 hours. A and B are opened together on an empty tank, and C is opened 2 hours later. In how many hours from the start will the tank be full?",
+      "options": {
+        "A": "7",
+        "B": "9",
+        "C": "10",
+        "D": "8.5"
+      },
+      "correct_answer": "B",
+      "trap_type": "Forgetting the first 2 hours (or assuming all three ran from the start)",
+      "pedagogical_explanation": "Take the tank as 60 units: A = 5/h, B = 4/h, C = -3/h. In the first 2 hours A+B fill 18 units. The remaining 42 units fill at 5+4-3 = 6/h, taking 7 more hours. Total = 2 + 7 = 9 hours. Trap (A): 7 is only the time after C opens. Trap (C): 10 assumes all three pipes ran from the start (60/6). LCM-units shortcut avoids fractions.",
+      "verify_code": "answer = 2 + (60 - 2*(5+4)) / (5+4-3)"
+    },
+    {
+      "id": "SR-E-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Coding-decoding - letter shift",
+      "question_text": "If CAT is coded as DBU, how is DOG coded in the same language?",
+      "options": {
+        "A": "EPH",
+        "B": "EOH",
+        "C": "CNF",
+        "D": "FQI"
+      },
+      "correct_answer": "A",
+      "trap_type": "Shifting only some letters",
+      "pedagogical_explanation": "Each letter moves one step forward: C->D, A->B, T->U. So D->E, O->P, G->H gives EPH. Trap (B): EOH leaves the middle letter unchanged. (C) shifts backwards, (D) shifts by two.",
+      "verify_code": ""
+    },
+    {
+      "id": "SR-E-02",
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Number series - x2 + 1",
+      "question_text": "Find the next number: 3, 7, 15, 31, 63, ?",
+      "options": {
+        "A": "127",
+        "B": "125",
+        "C": "126",
+        "D": "95"
+      },
+      "correct_answer": "A",
+      "trap_type": "Spotting only the growing differences (+4, +8, +16, +32) and then mis-adding",
+      "pedagogical_explanation": "Each term = previous x 2 + 1 (3->7->15->31->63->127). Equivalently the differences double: 4, 8, 16, 32, 64, and 63 + 64 = 127. Trap (D): 95 adds 32 again instead of the next difference 64.",
+      "verify_code": ""
+    },
+    {
+      "id": "SR-M-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Direction sense - distance and direction",
+      "question_text": "Ravi walks 10 m north, turns right and walks 6 m, then turns right again and walks 18 m. How far is he from his starting point, and in which direction?",
+      "options": {
+        "A": "10 m, South-East",
+        "B": "10 m, North-East",
+        "C": "14 m, South-East",
+        "D": "8 m, South"
+      },
+      "correct_answer": "A",
+      "trap_type": "Losing track of the second right turn (north instead of south)",
+      "pedagogical_explanation": "North 10 m, right turn -> east 6 m, right turn -> south 18 m. Net: 18 - 10 = 8 m south and 6 m east. Distance = sqrt(8^2 + 6^2) = 10 m, direction South-East. Trap (B): ends up north if the second turn is misread. (C) adds 8 + 6 instead of using Pythagoras; (D) ignores the eastward 6 m.",
+      "verify_code": ""
+    },
+    {
+      "id": "SR-C-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Syllogism - 'some' conclusions",
+      "question_text": "Statements: All pens are books. Some books are tables.\nConclusions: I. Some pens are tables. II. Some tables are books.\nWhich conclusion(s) follow?",
+      "options": {
+        "A": "Only I follows",
+        "B": "Only II follows",
+        "C": "Both I and II follow",
+        "D": "Neither I nor II follows"
+      },
+      "correct_answer": "B",
+      "trap_type": "Chaining 'All' with a 'Some' that is about a different part of the set",
+      "pedagogical_explanation": "II is the conversion of 'Some books are tables', so it definitely follows. For I, the books that are tables may be books that are not pens (draw pens inside books, tables touching only the outside part of books), so I is only a possibility. Trap (C): assuming the 'some books' must include pens.",
+      "verify_code": ""
+    },
+    {
+      "id": "SE-E-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Synonyms",
+      "question_text": "Choose the word closest in meaning to ABUNDANT.",
+      "options": {
+        "A": "Plentiful",
+        "B": "Scarce",
+        "C": "Abandoned",
+        "D": "Rigid"
+      },
+      "correct_answer": "A",
+      "trap_type": "Picking the antonym",
+      "pedagogical_explanation": "Abundant means existing in large quantities: plentiful. Trap (B): scarce is the opposite. (C) abandoned only looks similar (sound-alike trap).",
+      "verify_code": ""
+    },
+    {
+      "id": "SE-E-02",
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Idioms",
+      "question_text": "Choose the correct meaning of the idiom: to burn the midnight oil.",
+      "options": {
+        "A": "To work or study late into the night",
+        "B": "To waste money",
+        "C": "To start a quarrel",
+        "D": "To finish a task in a hurry"
+      },
+      "correct_answer": "A",
+      "trap_type": "Reading the idiom literally (burning = wasting)",
+      "pedagogical_explanation": "'Burn the midnight oil' means to stay up late working or studying (from the days of oil lamps). Trap (B): a literal reading of 'burning' something valuable.",
+      "verify_code": ""
+    },
+    {
+      "id": "SE-M-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Subject-verb agreement - neither/nor",
+      "question_text": "Fill in the blank: Neither the manager nor the clerks ____ present at the meeting yesterday.",
+      "options": {
+        "A": "were",
+        "B": "was",
+        "C": "is",
+        "D": "has been"
+      },
+      "correct_answer": "A",
+      "trap_type": "Matching the verb with the first subject",
+      "pedagogical_explanation": "With 'neither...nor', the verb agrees with the subject nearer to it: 'the clerks' (plural), and 'yesterday' needs past tense, so 'were'. Trap (B): 'was' agrees with 'the manager'. (C) and (D) break the past tense.",
+      "verify_code": ""
+    },
+    {
+      "id": "SE-C-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Sentence improvement - hardly...when",
+      "question_text": "Choose the best improvement for the underlined part. If no improvement is needed, choose 'No improvement'.\nHardly had he reached the station **when the train left**.",
+      "options": {
+        "A": "than the train left",
+        "B": "then the train left",
+        "C": "when the train had left",
+        "D": "No improvement"
+      },
+      "correct_answer": "D",
+      "trap_type": "Pairing 'hardly' with 'than' (confusing it with 'no sooner...than')",
+      "pedagogical_explanation": "'Hardly/Scarcely ... when' is the correct pair, and 'hardly had he reached' already shows the earlier action, so the sentence is correct. Trap (A): 'than' goes with 'no sooner'. (C) 'had left' would mean the train left before he arrived, the opposite of the meaning.",
+      "verify_code": ""
+    },
+    {
+      "id": "SGA-E-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "Banking - RBI",
+      "question_text": "In which year was the Reserve Bank of India established?",
+      "options": {
+        "A": "1935",
+        "B": "1934",
+        "C": "1947",
+        "D": "1949"
+      },
+      "correct_answer": "A",
+      "trap_type": "Confusing the RBI Act (1934) with the date the bank began operating",
+      "pedagogical_explanation": "The RBI was established on 1 April 1935 under the Reserve Bank of India Act, 1934 (source). Trap (B): 1934 is the year of the Act. (D) 1949 is when the RBI was nationalised.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/Reserve_Bank_of_India",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "SGA-E-02",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "Geography - national parks",
+      "question_text": "Kaziranga National Park, known for the Indian (one-horned) rhinoceros, is in which state?",
+      "options": {
+        "A": "Assam",
+        "B": "West Bengal",
+        "C": "Meghalaya",
+        "D": "Arunachal Pradesh"
+      },
+      "correct_answer": "A",
+      "trap_type": "Confusing it with Jaldapara (West Bengal), another rhino habitat",
+      "pedagogical_explanation": "Kaziranga is a national park and UNESCO World Heritage Site in Assam, on the edge of the Brahmaputra (source). Trap (B): West Bengal's Jaldapara also has rhinos, but Kaziranga is in Assam.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/Kaziranga_National_Park",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "SGA-M-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "Polity - 73rd Amendment",
+      "question_text": "The 73rd Constitutional Amendment added the Eleventh Schedule. How many subjects does it list for Panchayats?",
+      "options": {
+        "A": "29",
+        "B": "18",
+        "C": "12",
+        "D": "22"
+      },
+      "correct_answer": "A",
+      "trap_type": "Confusing it with the Twelfth Schedule (18 subjects for municipalities)",
+      "pedagogical_explanation": "The 73rd Amendment (Constitution Act, 1992; in force 24 April 1993) added Part IX and the Eleventh Schedule listing 29 subjects for Panchayats (source). Trap (B): 18 is the Twelfth Schedule for municipalities (74th Amendment).",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/Seventy-third_Amendment_of_the_Constitution_of_India",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "SGA-C-01",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Polity - Panchayati Raj",
+      "question_text": "The 73rd Amendment, which gave constitutional status to Panchayati Raj institutions, came into effect on which date?",
+      "options": {
+        "A": "24 April 1993",
+        "B": "26 January 1993",
+        "C": "2 October 1959",
+        "D": "1 June 1993"
+      },
+      "correct_answer": "A",
+      "trap_type": "Picking 2 October 1959, when Panchayati Raj was first launched (Nagaur, Rajasthan)",
+      "pedagogical_explanation": "The 73rd Amendment came into effect on 24 April 1993, which is why 24 April is National Panchayati Raj Day (source). Trap (C): 2 October 1959 is when Panchayati Raj was first inaugurated, at Nagaur, before it had constitutional status. (D) 1 June 1993 is when the 74th Amendment (municipalities) came into force.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/Seventy-third_Amendment_of_the_Constitution_of_India",
+      "as_of": "2026-10-27"
+    }
+  ]
+}

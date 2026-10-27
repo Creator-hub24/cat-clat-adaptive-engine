@@ -20,6 +20,10 @@ PROFILE_DEFAULTS = {
     "topic_levels": {}, "pro_purchases": 0,
 }
 OPTIONAL_COLUMNS = ("pro_purchases",)  # added by supabase/migrations/2026-10-27_pro_purchases.sql
+DEFAULT_FAMILY = "mgmt_law"
+# Per-app Pro (supabase/migrations/2026-10-28_pro_entitlements.sql): one row per (user_id, exam_family).
+ENTITLEMENT_FIELDS = ("pro_until", "pro_purchases", "pending_payment_ref")
+ENTITLEMENT_TABLE = "pro_entitlements"
 
 
 def user_id_hash(email: str, pepper: str) -> str:
@@ -60,10 +64,54 @@ def clean_profile(p: dict) -> dict:
     return {k: p.get(k, v) for k, v in PROFILE_DEFAULTS.items()}
 
 
+def _later(a, b):
+    if not a or not b:
+        return a or b
+    return max(str(a)[:10], str(b)[:10])
+
+
+def apply_entitlement(profile: dict, ent: dict | None, family: str) -> dict:
+    """Overlay this app's Pro state on the shared profile.
+
+    mgmt_law (the original app) still also keeps Pro on the profiles row, so it merges both (latest
+    pro_until, highest purchase count). Every other family uses only its own entitlement row: Pro bought
+    in one app never unlocks another, and each app has its own first-ever intro offer."""
+    p = dict(profile)
+    ent = ent or {}
+    if family == DEFAULT_FAMILY:
+        p["pro_until"] = _later(p.get("pro_until"), ent.get("pro_until"))
+        p["pro_purchases"] = max(int(p.get("pro_purchases") or 0), int(ent.get("pro_purchases") or 0))
+        p["pending_payment_ref"] = p.get("pending_payment_ref") or ent.get("pending_payment_ref")
+    else:
+        p["pro_until"] = ent.get("pro_until")
+        p["pro_purchases"] = int(ent.get("pro_purchases") or 0)
+        p["pending_payment_ref"] = ent.get("pending_payment_ref")
+        p["plan"] = "pro" if p.get("pro_until") else "free"
+    return p
+
+
+def entitlement_row(uid: str, family: str, profile: dict) -> dict:
+    return {"user_id": uid, "exam_family": family, "pro_until": profile.get("pro_until"),
+            "pro_purchases": int(profile.get("pro_purchases") or 0),
+            "pending_payment_ref": profile.get("pending_payment_ref")}
+
+
+def shared_profile_row(profile: dict, family: str) -> dict:
+    """Columns written to the shared profiles row. Non-default families never touch its Pro columns."""
+    row = clean_profile(profile)
+    if family != DEFAULT_FAMILY:
+        for k in ("plan", *ENTITLEMENT_FIELDS):
+            row.pop(k, None)
+    return row
+
+
 class MemoryStore:
     """In-memory backend (used for tests and as a stand-in)."""
-    def __init__(self):
+    def __init__(self, family: str = DEFAULT_FAMILY):
+        self.family = family
+        self.entitlements_ok = True
         self.profiles: dict[str, dict] = {}
+        self.entitlements: dict[tuple[str, str], dict] = {}
         self.attempts: list[dict] = []
         self.reports: list[dict] = []
 
@@ -72,36 +120,71 @@ class MemoryStore:
 
     def load(self, uid):
         p = copy.deepcopy(self.profiles.get(uid)) or clean_profile({})
-        return p, [ {k: a[k] for k in ATTEMPT_FIELDS} for a in self.attempts if a["user_id"] == uid]
+        p = apply_entitlement(p, self.entitlements.get((uid, self.family)), self.family)
+        return p, [{k: a[k] for k in ATTEMPT_FIELDS} for a in self.attempts
+                   if a["user_id"] == uid and a.get("exam_family", DEFAULT_FAMILY) == self.family]
 
     def save_profile(self, uid, profile):
-        self.profiles[uid] = clean_profile(copy.deepcopy(profile))
+        row = {**clean_profile(self.profiles.get(uid) or {}), **shared_profile_row(copy.deepcopy(profile), self.family)}
+        self.profiles[uid] = row
+        self.entitlements[(uid, self.family)] = entitlement_row(uid, self.family, profile)
 
     def add_attempt(self, uid, attempt):
-        self.attempts.append({"user_id": uid, **clean_attempt(attempt)})
+        self.attempts.append({"user_id": uid, "exam_family": self.family, **clean_attempt(attempt)})
 
     def delete_all(self, uid):
         self.profiles.pop(uid, None)
+        self.entitlements = {k: v for k, v in self.entitlements.items() if k[0] != uid}
         self.attempts = [a for a in self.attempts if a["user_id"] != uid]
 
 
 class SupabaseStore:
     """Supabase backend. Uses the service-role key, which must stay server-side (Streamlit secrets)."""
-    def __init__(self, url, key, client=None):
+    family = DEFAULT_FAMILY
+    _ent_loaded = False     # mirror mgmt_law Pro into pro_entitlements only once the table is known to exist
+    _family_col = True      # attempts.exam_family exists (False until the migration is run)
+    entitlements_ok = True  # False once we learn the pro_entitlements table is missing
+
+    def __init__(self, url, key, client=None, family: str = DEFAULT_FAMILY):
         if client is None:
             from supabase import create_client
             client = create_client(url, key)
         self.db = client
+        self.family = family
+        self.entitlements_ok = True
+
+    def _load_entitlement(self, uid):
+        try:
+            rows = (self.db.table(ENTITLEMENT_TABLE).select("*").eq("user_id", uid)
+                    .eq("exam_family", self.family).execute().data)
+            self.entitlements_ok = self._ent_loaded = True
+            return rows[0] if rows else None
+        except Exception:
+            # Migration not run yet: mgmt_law keeps working from profiles; other apps disable Pro.
+            self.entitlements_ok = False
+            return None
 
     def load(self, uid):
         rows = self.db.table("profiles").select("*").eq("user_id", uid).execute().data
         profile = clean_profile(rows[0]) if rows else clean_profile({})
-        att = (self.db.table("attempts").select(",".join(ATTEMPT_FIELDS))
-               .eq("user_id", uid).order("created_at").execute().data) or []
+        profile = apply_entitlement(profile, self._load_entitlement(uid), self.family)
+        att = self._load_attempts(uid)
         return profile, att
 
+    def _load_attempts(self, uid):
+        """Only this app's attempts (attempts.exam_family). Before the migration every row is mgmt_law."""
+        q = self.db.table("attempts").select(",".join(ATTEMPT_FIELDS)).eq("user_id", uid)
+        try:
+            return q.eq("exam_family", self.family).order("created_at").execute().data or []
+        except Exception:
+            self._family_col = False
+            if self.family != DEFAULT_FAMILY:
+                return []
+            return (self.db.table("attempts").select(",".join(ATTEMPT_FIELDS))
+                    .eq("user_id", uid).order("created_at").execute().data) or []
+
     def save_profile(self, uid, profile):
-        row = {"user_id": uid, **clean_profile(profile),
+        row = {"user_id": uid, **shared_profile_row(profile, self.family),
                "updated_at": dt.datetime.now(dt.timezone.utc).isoformat()}
         try:
             self.db.table("profiles").upsert(row).execute()
@@ -111,12 +194,35 @@ class SupabaseStore:
             if not any(c in str(e) for c in OPTIONAL_COLUMNS):
                 raise
             self.db.table("profiles").upsert({k: v for k, v in row.items() if k not in OPTIONAL_COLUMNS}).execute()
+        self._save_entitlement(uid, profile)
+
+    def _save_entitlement(self, uid, profile):
+        if self.family == DEFAULT_FAMILY and not self._ent_loaded:
+            return  # table not confirmed yet: the profiles row is the source of truth for mgmt_law
+        row = {**entitlement_row(uid, self.family, profile),
+               "updated_at": dt.datetime.now(dt.timezone.utc).isoformat()}
+        try:
+            self.db.table(ENTITLEMENT_TABLE).upsert(row).execute()
+            self.entitlements_ok = True
+        except Exception:
+            self.entitlements_ok = False
+            if self.family != DEFAULT_FAMILY and (profile.get("pro_until") or profile.get("pending_payment_ref")):
+                raise  # other apps store Pro only here: never silently lose a paid entitlement  # mgmt_law: profiles row above already holds Pro
 
     def add_report(self, report):
         self.db.table("question_reports").insert(clean_report(report)).execute()
 
     def add_attempt(self, uid, attempt):
-        self.db.table("attempts").insert({"user_id": uid, **clean_attempt(attempt)}).execute()
+        row = {"user_id": uid, **clean_attempt(attempt)}
+        if self._family_col:
+            try:
+                self.db.table("attempts").insert({**row, "exam_family": self.family}).execute()
+                return
+            except Exception as e:
+                if "exam_family" not in str(e):
+                    raise
+                self._family_col = False
+        self.db.table("attempts").insert(row).execute()
 
     def delete_all(self, uid):
         self.db.table("attempts").delete().eq("user_id", uid).execute()

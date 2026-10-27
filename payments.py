@@ -28,14 +28,20 @@ def price_for(profile: dict) -> int:
     return INTRO_PRICE_PAISE if is_first_purchase(profile) else PRO_PRICE_PAISE
 
 
-def create_link(key_id, key_secret, uid, amount=PRO_PRICE_PAISE, callback_url=None, http=requests) -> dict:
+DEFAULT_APP_NAME = "CAT/CLAT Adaptive Engine"
+
+
+def create_link(key_id, key_secret, uid, amount=PRO_PRICE_PAISE, callback_url=None, http=requests,
+                app_name: str = DEFAULT_APP_NAME, exam_family: str = "mgmt_law") -> dict:
+    """One Razorpay account/keys for every app; the app name and exam_family go in the description and
+    notes so the dashboard shows which app each payment came from."""
     if amount not in (INTRO_PRICE_PAISE, PRO_PRICE_PAISE):
         raise ValueError(f"unexpected amount {amount}")
     ref = make_reference(uid)
     desc = "Pro - first month offer" if amount == INTRO_PRICE_PAISE else "Pro (30 days)"
     body = {"amount": amount, "currency": "INR", "reference_id": ref,
-            "description": f"CAT/CLAT Adaptive Engine - {desc}",
-            "notes": {"user_id": uid}, "reminder_enable": False}
+            "description": f"{app_name} - {desc}",
+            "notes": {"user_id": uid, "exam_family": exam_family, "app": app_name}, "reminder_enable": False}
     if callback_url:
         body.update(callback_url=callback_url, callback_method="get")
     r = http.post(f"{API}/payment_links", json=body, auth=(key_id, key_secret), timeout=15)
@@ -43,7 +49,8 @@ def create_link(key_id, key_secret, uid, amount=PRO_PRICE_PAISE, callback_url=No
     return {"reference_id": ref, "short_url": r.json()["short_url"], "amount": amount}
 
 
-def verify_paid(key_id, key_secret, reference_id, expected_amount, http=requests) -> bool:
+def verify_paid(key_id, key_secret, reference_id, expected_amount, http=requests,
+                exam_family: str | None = None) -> bool:
     """Paid only if the link for this reference is 'paid' AND both its amount and amount_paid equal
     the amount we expected to charge (so an Rs 499 link can't be passed off for a later Rs 999 month)."""
     r = http.get(f"{API}/payment_links", params={"reference_id": reference_id},
@@ -53,7 +60,15 @@ def verify_paid(key_id, key_secret, reference_id, expected_amount, http=requests
     return any(l.get("status") == "paid" and l.get("reference_id") == reference_id
                and l.get("currency", "INR") == "INR"
                and int(l.get("amount") or 0) == expected_amount
-               and int(l.get("amount_paid") or 0) == expected_amount for l in links)
+               and int(l.get("amount_paid") or 0) == expected_amount
+               and _family_ok(l, exam_family) for l in links)
+
+
+def _family_ok(link: dict, exam_family: str | None) -> bool:
+    """A link created by another app can't unlock this one. Old links without the note count as mgmt_law."""
+    if exam_family is None:
+        return True
+    return ((link.get("notes") or {}).get("exam_family") or "mgmt_law") == exam_family
 
 
 def extend_pro(profile: dict, today: dt.date | None = None) -> dict:
