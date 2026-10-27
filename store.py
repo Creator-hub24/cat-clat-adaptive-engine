@@ -17,8 +17,9 @@ REPORT_REASONS = ("Wrong answer key", "Ambiguous / two answers", "Explanation is
 PROFILE_DEFAULTS = {
     "streak": 0, "best_streak": 0, "usage_day": None, "ai_used": 0,
     "plan": "free", "pro_until": None, "review_queue": {}, "pending_payment_ref": None,
-    "topic_levels": {},
+    "topic_levels": {}, "pro_purchases": 0,
 }
+OPTIONAL_COLUMNS = ("pro_purchases",)  # added by supabase/migrations/2026-10-27_pro_purchases.sql
 
 
 def user_id_hash(email: str, pepper: str) -> str:
@@ -102,7 +103,14 @@ class SupabaseStore:
     def save_profile(self, uid, profile):
         row = {"user_id": uid, **clean_profile(profile),
                "updated_at": dt.datetime.now(dt.timezone.utc).isoformat()}
-        self.db.table("profiles").upsert(row).execute()
+        try:
+            self.db.table("profiles").upsert(row).execute()
+        except Exception as e:
+            # Tolerate a DB where the migration hasn't been run yet: retry without the new column(s).
+            # payments.is_first_purchase() then falls back to "pro_until present => not first".
+            if not any(c in str(e) for c in OPTIONAL_COLUMNS):
+                raise
+            self.db.table("profiles").upsert({k: v for k, v in row.items() if k not in OPTIONAL_COLUMNS}).execute()
 
     def add_report(self, report):
         self.db.table("question_reports").insert(clean_report(report)).execute()

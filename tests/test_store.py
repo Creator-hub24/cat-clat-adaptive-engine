@@ -65,7 +65,8 @@ def test_reference_and_verify():
     ref = payments.make_reference("a" * 64)
     assert len(ref) <= 40
     http = MagicMock()
-    http.get.return_value.json.return_value = {"payment_links": [{"reference_id": ref, "status": "paid"}]}
-    assert payments.verify_paid("k", "s", ref, http=http)
+    http.get.return_value.json.return_value = {"payment_links": [{"reference_id": ref, "status": "paid",
+                                                                      "amount": 99900, "amount_paid": 99900}]}
+    assert payments.verify_paid("k", "s", ref, 99900, http=http)
     http.get.return_value.json.return_value = {"payment_links": [{"reference_id": ref, "status": "created"}]}
-    assert not payments.verify_paid("k", "s", ref, http=http)
+    assert not payments.verify_paid("k", "s", ref, 99900, http=http)

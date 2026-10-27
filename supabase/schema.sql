@@ -46,3 +46,6 @@ create table if not exists public.question_reports (
 );
 alter table public.question_reports enable row level security;
 revoke all on public.question_reports from anon, authenticated;
+
+-- v0.4: intro price marker (see supabase/migrations/2026-10-27_pro_purchases.sql)
+alter table public.profiles add column if not exists pro_purchases int not null default 0;
