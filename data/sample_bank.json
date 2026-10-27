@@ -1113,6 +1113,168 @@
       "verify_code": ""
     },
     {
+      "id": "CLG-E-01",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Contract - communication of acceptance",
+      "question_text": "Passage: A contract is formed when an offer is accepted. Acceptance must be communicated to the offeror by words or conduct. A person who receives an offer is under no duty to reply, and the offeror cannot impose a contract on the other side by declaring that silence will count as acceptance. Mere mental assent, which is a decision kept to oneself, is not acceptance.\nFacts: Ravi wrote to Sita offering to sell his motorcycle for Rs 40,000 and added: 'If I don't hear from you by Friday, I will take it that you have bought it.' Sita decided she would buy it but told no one and sent no reply. On Saturday Ravi sold the motorcycle to Tom. Sita sues Ravi for breach of contract.\n\nWill Sita succeed?",
+      "options": {
+        "A": "Yes, because Ravi himself said silence would mean acceptance, so he cannot go back on his word.",
+        "B": "Yes, because Sita had genuinely decided to buy before Friday.",
+        "C": "No, because Sita never communicated her acceptance, and silence or an uncommunicated decision is not acceptance.",
+        "D": "No, because Ravi was entitled to sell to anyone who offered more money."
+      },
+      "correct_answer": "C",
+      "trap_type": "Offeror-prescribed silence treated as acceptance",
+      "pedagogical_explanation": "By the principle, acceptance must be communicated; mental assent is not acceptance, and the offeror cannot make silence count. Sita only decided privately, so no contract arose: (C). Trap A relies on fairness ('he said so'), but the passage expressly denies the offeror that power. B is mental assent, which the passage excludes. D gives a reason (higher price) found nowhere in the facts or principle.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-E-02",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Tort - negligence",
+      "question_text": "Passage: A person is liable in negligence when (1) they owe a duty of care to another, (2) they breach that duty by failing to take the care a reasonable person would take in the circumstances, and (3) the breach causes damage to the other person. A shopkeeper owes a duty of care to customers who enter the shop. Whether the defendant intended any harm is irrelevant to liability in negligence.\nFacts: The staff of a supermarket mopped the floor of a busy aisle during opening hours and put up no warning sign. Asha, a customer walking normally down the aisle, slipped on the wet floor and fractured her wrist. The supermarket says it never meant to hurt anyone.\n\nIs the supermarket liable to Asha in negligence?",
+      "options": {
+        "A": "No, because the supermarket did not intend to cause any harm.",
+        "B": "Yes, because it owed customers a duty of care, breached it by leaving a wet floor unmarked, and the breach caused Asha's injury.",
+        "C": "No, because customers must look after their own safety in a shop.",
+        "D": "Yes, because every injury suffered inside a shop must be compensated by the shopkeeper."
+      },
+      "correct_answer": "B",
+      "trap_type": "Treating lack of intention as a defence",
+      "pedagogical_explanation": "All three elements are met: the shop owes customers a duty, a reasonable shop would warn of a wet floor, and the slip caused the fracture: (B). Trap A uses intention, which the passage calls irrelevant. C imports a general idea of self-responsibility not in the principle (Asha walked normally). D overstates the rule into strict liability for every injury; liability arises only from breach of duty.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-E-03",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Criminal law - theft and dishonest intention",
+      "question_text": "Passage: Theft is committed when a person, intending to take dishonestly any movable property out of the possession of another without that person's consent, moves that property. A person acts dishonestly only if they intend to cause wrongful gain to one person or wrongful loss to another. A person who takes property in the honest belief that it is their own does not act dishonestly.\nFacts: Meena and her colleague Farah own identical black umbrellas. Leaving the office in the rain, Meena picked up Farah's umbrella from the common stand, honestly believing it was her own, and took it home. Farah had not consented.\n\nHas Meena committed theft?",
+      "options": {
+        "A": "Yes, because she moved Farah's movable property without Farah's consent.",
+        "B": "Yes, because an umbrella has value and Farah suffered a loss.",
+        "C": "No, because she took it in the honest belief that it was her own, so she had no dishonest intention.",
+        "D": "No, because an umbrella is too trivial an item to be the subject of theft."
+      },
+      "correct_answer": "C",
+      "trap_type": "Ignoring the mental element (dishonest intention)",
+      "pedagogical_explanation": "Theft needs a dishonest intention, and the passage says an honest belief of ownership is not dishonest. Meena honestly thought it was hers: (C). Trap A checks only the physical elements (movable, without consent) and skips the intention requirement. B confuses an actual loss with an intended wrongful loss. D invents a minimum-value rule absent from the passage.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-M-01",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Constitutional law - restrictions on free speech",
+      "question_text": "Passage: Every citizen has the right to freedom of speech and expression. The State may restrict this right only if two conditions are met: first, the restriction must be imposed by a law (an executive order without the backing of a law is not enough); second, the restriction must be reasonable and must relate to one of the following grounds: the sovereignty and integrity of the country, the security of the State, public order, decency or morality, contempt of court, defamation, or incitement to an offence. Criticism of the government, however sharp, is not by itself a ground for restriction.\nFacts: A District Collector, acting without any law that authorises such an order, directed a local newspaper to stop publishing articles criticising the municipal budget, stating that the articles 'embarrass the administration and could cause public disquiet'. No violence or protest had occurred or been threatened.\n\nIs the Collector's direction valid?",
+      "options": {
+        "A": "Yes, because the articles could cause public disquiet, which falls under public order.",
+        "B": "Yes, because the administration is entitled to protect its reputation through defamation.",
+        "C": "No, because the direction is not backed by any law, and embarrassment to the administration is not a permitted ground.",
+        "D": "No, because freedom of speech is absolute and can never be restricted."
+      },
+      "correct_answer": "C",
+      "trap_type": "Stretching a vague concern into a listed ground (public order)",
+      "pedagogical_explanation": "Both conditions fail. There is no law behind the order, and 'embarrassment' is not a listed ground; criticism of government is expressly not a ground by itself: (C). Trap A stretches 'public disquiet' into public order though no violence was threatened, and in any case the first condition (a law) is still missing. B misuses defamation: criticising a budget is not shown to defame anyone, and the order still lacks a law. D reverses the principle, which expressly allows restrictions.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-M-02",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Consumer law - commercial purpose exception",
+      "question_text": "Passage: A 'consumer' is a person who buys goods for consideration. A person who buys goods for resale or for any commercial purpose is not a consumer. However, 'commercial purpose' does not include the use of goods bought and used by a person exclusively to earn a livelihood by means of self-employment. Only a consumer can file a complaint before a consumer commission.\nFacts: Kiran bought a sewing machine and uses it herself, in her own home, to stitch clothes for neighbours, which is her only source of income. She employs no one. The machine stopped working within a month, and the seller refused to repair it. Kiran files a complaint before the consumer commission.\n\nCan Kiran file the complaint?",
+      "options": {
+        "A": "No, because she earns money from the machine, so she bought it for a commercial purpose.",
+        "B": "Yes, because she bought and uses it herself, exclusively to earn her livelihood by self-employment, so she remains a consumer.",
+        "C": "No, because the commission only hears complaints about goods used for personal or household purposes.",
+        "D": "Yes, because every buyer of defective goods is a consumer, whatever the purpose."
+      },
+      "correct_answer": "B",
+      "trap_type": "Ignoring the exception to the exclusion",
+      "pedagogical_explanation": "The general rule excludes commercial buyers, but the exception says use exclusively for livelihood by self-employment is not commercial purpose. Kiran uses the machine herself, employs no one, and earns her living from it: (B). Trap A applies the rule and ignores the exception. C invents a limitation not in the passage. D overstates: the passage clearly excludes buyers for resale or commercial purposes.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-M-03",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Criminal law - limits of private defence",
+      "question_text": "Passage: Every person has a right to defend their body and property against an unlawful attack. This right permits only such force as is reasonably necessary to repel the attack. The right begins when a reasonable apprehension of danger arises and ends as soon as that danger has ended. Force used after the danger has passed, by way of punishment or revenge, is not protected.\nFacts: A thief snatched Pooja's bag and ran. Pooja chased him, caught him, and the thief immediately dropped the bag, raised his hands and said he would not resist. Pooja's companion Rahul then beat the thief with a stick, breaking his arm, saying he 'deserved a lesson'.\n\nIs Rahul protected by the right of private defence?",
+      "options": {
+        "A": "Yes, because he was defending Pooja's property against a thief.",
+        "B": "Yes, because the thief started the incident and therefore deserved the consequences.",
+        "C": "No, because the right of private defence can only be exercised by the owner of the property.",
+        "D": "No, because the danger had ended when the thief surrendered and dropped the bag, so the beating was punishment, not defence."
+      },
+      "correct_answer": "D",
+      "trap_type": "Moral desert ('he deserved it') replacing the time limit of the right",
+      "pedagogical_explanation": "The right ends as soon as the danger ends. The thief had dropped the bag and surrendered, so there was nothing left to repel; the beating was punishment: (D). Trap B applies general morality, which the passage expressly excludes ('punishment or revenge'). A ignores the timing limit. C adds a restriction (owner only) that the passage never states; it says every person may defend body and property.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-C-01",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Copyright - fair dealing for review",
+      "question_text": "Passage: Copyright protects the expression of an idea, not the idea itself. Reproducing a substantial part of a copyrighted work without the owner's permission infringes copyright. However, there is no infringement where the work is used for the purpose of criticism or review, provided that all three conditions are met: (i) the use is genuinely for criticism or review of the work; (ii) no more of the work is reproduced than is reasonably necessary for that purpose; and (iii) the source and author are acknowledged. If any one condition fails, the exception does not apply.\nFacts: A literary website published, under the heading 'Review', the complete text of a newly released short story by Leela, without her permission. The post credited Leela by name and named the anthology in which the story appeared. Below the full text, the website added a single line: 'A gripping read - highly recommended.'\n\nHas the website infringed Leela's copyright?",
+      "options": {
+        "A": "No, because the post was labelled as a review and acknowledged both the author and the source.",
+        "B": "No, because recommending the story helps Leela by increasing her readership.",
+        "C": "Yes, because reproducing the entire story goes far beyond what is reasonably necessary for a review, so the exception does not apply.",
+        "D": "Yes, because copyright protects the idea of the story, which the website copied."
+      },
+      "correct_answer": "C",
+      "trap_type": "Checking only some conditions of a cumulative exception",
+      "pedagogical_explanation": "The exception needs all three conditions. Acknowledgement (iii) is met, but reproducing the whole story fails (ii), and a one-line recommendation hardly shows genuine review (i). One failure is enough, so the exception fails and copying a substantial part (here, all) infringes: (C). Trap A ticks the label and acknowledgement and ignores the extent condition. B is a general benefit argument outside the principle. D reverses the principle: copyright protects expression, not ideas (the conclusion is right but the reason is wrong, so D is not the best answer).",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-C-02",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Contract - minor's liability for necessaries",
+      "question_text": "Passage: An agreement with a minor (a person under 18) is void, and a minor cannot be personally sued on it. However, where a person supplies a minor with necessaries, the supplier may recover a reasonable price from the minor's property, though not from the minor personally. 'Necessaries' are goods suited to the minor's condition in life and to the minor's actual requirements at the time of sale. Luxury goods are never necessaries, whatever the minor's wealth.\nFacts: Arjun, aged 16, has a large estate inherited from his grandfather. On credit, he bought from Prakash's store (i) school textbooks he needed for the current academic year, at the usual price of Rs 3,000, and (ii) a designer luxury watch for Rs 2,00,000. Arjun did not pay. Prakash sues to recover Rs 2,03,000.\n\nWhich of the following is correct?",
+      "options": {
+        "A": "Prakash can recover Rs 2,03,000 from Arjun's estate, since Arjun is wealthy enough to afford both items.",
+        "B": "Prakash can recover nothing, because every agreement with a minor is void.",
+        "C": "Prakash can recover Rs 3,000 for the textbooks from Arjun's estate, but nothing for the watch.",
+        "D": "Prakash can recover Rs 3,000 from Arjun personally, and the watch price from his estate."
+      },
+      "correct_answer": "C",
+      "trap_type": "Applying the general rule (void) and missing the necessaries exception, or reading wealth as making luxuries necessary",
+      "pedagogical_explanation": "The agreement is void, but the exception lets a supplier of necessaries recover a reasonable price from the minor's property. Textbooks he actually needs are necessaries at a usual price; the watch is a luxury, which the passage says is never a necessary, whatever the wealth: (C). Trap B stops at the general rule and ignores the exception. A uses Arjun's wealth, which the passage expressly rules out for luxuries. D reverses who pays: recovery is from the property, never from the minor personally, and the watch is not recoverable at all.",
+      "verify_code": ""
+    },
+    {
+      "id": "CLG-C-03",
+      "exam": "CLAT",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Constitutional law - equality and reasonable classification",
+      "question_text": "Passage: The State must not deny any person equality before the law. This does not forbid the State from treating different groups differently. A law that classifies is valid if (1) the classification is based on an intelligible differentia, a clear difference that distinguishes those grouped together from those left out, and (2) that differentia has a rational connection with the object the law seeks to achieve. A classification is not invalid merely because it is under-inclusive, that is, because it does not cover every person or thing that could also have been covered.\nFacts: To reduce traffic congestion in the city centre, a State law bans heavy goods vehicles (trucks above 12 tonnes) from entering the city centre between 8 am and 8 pm. A transport company challenges the law, arguing that private cars also cause congestion but are not banned, so the law treats trucks unequally.\n\nWhich of the following is the most appropriate conclusion?",
+      "options": {
+        "A": "The law is invalid, because it treats trucks differently from cars, which also cause congestion.",
+        "B": "The law is valid, because heavy goods vehicles are clearly distinguishable from other vehicles and restricting them is rationally connected to reducing congestion; not banning cars only makes it under-inclusive.",
+        "C": "The law is valid, because the State may make any classification it considers convenient.",
+        "D": "The law is invalid, because a ban on trucks would hurt businesses that depend on deliveries."
+      },
+      "correct_answer": "B",
+      "trap_type": "Treating under-inclusiveness as unequal treatment (reversing the principle)",
+      "pedagogical_explanation": "Test 1: trucks above 12 tonnes form a clear, intelligible group. Test 2: large, slow vehicles in the centre plausibly worsen congestion, so the ban is rationally connected to the object. The company's only complaint is that cars are not covered, which is under-inclusiveness, and the passage says that alone does not invalidate a law: (B). Trap A reverses the principle by equating different treatment with inequality. C reaches the right result for a wrong reason: the passage requires both tests, not mere convenience. D is an economic-policy argument outside the stated principle.",
+      "verify_code": ""
+    },
+    {
       "id": "CGK-E-01",
       "exam": "CLAT",
       "topic": "CLAT Current Affairs & GK",

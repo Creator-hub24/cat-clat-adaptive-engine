@@ -84,18 +84,17 @@ class ThrottledClient:
                 raise
 
 
-def cell_counts(questions):
-    return Counter((q["topic"], q["difficulty"]) for q in questions)
-
-
-ID_PREFIX_OVERRIDES = {"CLAT Current Affairs & GK": "CGK"}
+# Explicit prefixes where the initials rule would clash ("CLAT Legal Reasoning" -> CLR, already CLAT Logical Reasoning).
+ID_PREFIX_OVERRIDES = {"CLAT Legal Reasoning": "CLG", "CLAT Current Affairs & GK": "CGK"}
 
 
 def topic_prefix(topic: str) -> str:
-    if topic in ID_PREFIX_OVERRIDES:
-        return ID_PREFIX_OVERRIDES[topic]
-    w = topic.split()
-    return w[0][0] + "".join(x[0] for x in w[1:])
+    """AI id prefix: first letter of the exam + initials of the rest (CAT Quant -> CQ), unless overridden."""
+    return ID_PREFIX_OVERRIDES.get(topic) or topic.split()[0][0] + "".join(w[0] for w in topic.split()[1:])
+
+
+def cell_counts(questions):
+    return Counter((q["topic"], q["difficulty"]) for q in questions)
 
 
 def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_fail_per_cell: int = 6,
