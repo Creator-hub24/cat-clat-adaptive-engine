@@ -787,6 +787,330 @@
       "correct_answer": "B",
       "trap_type": "Out-of-scope",
       "pedagogical_explanation": "The conclusion claims productivity rose 'without cost'. If output held steady only because temporary staff were hired, there was a cost and per-employee productivity may not have risen at all: (B). (A) is about preference, not productivity (OUT OF SCOPE). (C) is irrelevant popularity. (D) actually strengthens the claim, a REVERSAL trap."
+    },
+    {
+      "id": "IQ-E-01",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "concept_tag": "Arithmetic Progression - common difference",
+      "question_text": "In an arithmetic progression, the 4th term is 17 and the 10th term is 41. What is the 15th term of this progression?",
+      "options": {
+        "A": "57",
+        "B": "61",
+        "C": "65",
+        "D": "58"
+      },
+      "correct_answer": "B",
+      "trap_type": "Off-by-one term index",
+      "pedagogical_explanation": "Shortcut: Common difference d = (a_10 - a_4)/(10 - 4) = (41 - 17)/6 = 4. Then a_15 = a_10 + 5d = 41 + 20 = 61. Main distractor A (57) adds 4d instead of 5d, while C (65) adds 6d.",
+      "verify_code": "d = (41 - 17) // 6\na15 = 41 + 5 * d\nanswer = 'B' if a15 == 61 else 'A'"
+    },
+    {
+      "id": "IQ-E-02",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "concept_tag": "Logarithms - base power rules",
+      "question_text": "If log_2(x) + log_4(x) + log_16(x) = 7, what is the value of x?",
+      "options": {
+        "A": "8",
+        "B": "16",
+        "C": "32",
+        "D": "64"
+      },
+      "correct_answer": "B",
+      "trap_type": "Adding bases instead of reciprocals of exponents",
+      "pedagogical_explanation": "Shortcut: Convert all logarithms to base 2 using log_(2^k)(x) = (1/k)log_2(x). This gives (1 + 1/2 + 1/4)log_2(x) = 7 => (7/4)log_2(x) = 7 => log_2(x) = 4 => x = 2^4 = 16. Main distractor A (8) comes from taking log_2(x) = 3, and D (64) from miscomputing the fraction.",
+      "verify_code": "import math\nanswer = 'B' if abs(math.log(16, 2) + math.log(16, 4) + math.log(16, 16) - 7) < 1e-9 else 'A'"
+    },
+    {
+      "id": "IQ-E-03",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "concept_tag": "Permutations - vowel grouping",
+      "question_text": "In how many distinct ways can the letters of the word 'INDORE' be arranged so that all the vowels always stay together?",
+      "options": {
+        "A": "120",
+        "B": "144",
+        "C": "240",
+        "D": "720"
+      },
+      "correct_answer": "B",
+      "trap_type": "Forgetting internal permutation of bundled vowels",
+      "pedagogical_explanation": "Shortcut: Bundle the 3 vowels (I, O, E) as one unit along with the 3 consonants (N, D, R), giving 4 units that arrange in 4! = 24 ways. Inside the bundle, the 3 distinct vowels arrange in 3! = 6 ways. Total = 24 * 6 = 144. Main distractor A (120 = 5!) treats the bundle as fixed or miscounts the units.",
+      "verify_code": "import math\nways = math.factorial(4) * math.factorial(3)\nanswer = 'B' if ways == 144 else 'A'"
+    },
+    {
+      "id": "IQ-M-01",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "concept_tag": "Quadratics - symmetric functions of roots",
+      "question_text": "If alpha and beta are the roots of the quadratic equation x^2 - 5x + 3 = 0, what is the value of alpha^3 + beta^3?",
+      "options": {
+        "A": "125",
+        "B": "110",
+        "C": "80",
+        "D": "95"
+      },
+      "correct_answer": "C",
+      "trap_type": "Incomplete cube identity",
+      "pedagogical_explanation": "Shortcut: By Vieta's formulas, alpha + beta = 5 and alpha*beta = 3. Then alpha^3 + beta^3 = (alpha + beta)^3 - 3*alpha*beta*(alpha + beta) = 5^3 - 3(3)(5) = 125 - 45 = 80. Main distractor B (110) subtracts 3(5) = 15 instead of 45, and D (95) subtracts 30.",
+      "verify_code": "s, p = 5, 3\nval = s**3 - 3 * p * s\nanswer = 'C' if val == 80 else 'A'"
+    },
+    {
+      "id": "IQ-M-02",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "concept_tag": "Number System - highest power in factorial",
+      "question_text": "What is the highest power of 12 that divides 50! (50 factorial) completely?",
+      "options": {
+        "A": "22",
+        "B": "23",
+        "C": "24",
+        "D": "47"
+      },
+      "correct_answer": "A",
+      "trap_type": "Checking only exponent of 2^2 and ignoring exponent of 3",
+      "pedagogical_explanation": "Shortcut: Prime factorize 12 = 2^2 * 3. By Legendre's formula, the exponent of 3 in 50! is floor(50/3) + floor(50/9) + floor(50/27) = 16 + 5 + 1 = 22. The exponent of 2 in 50! is 25 + 12 + 6 + 3 + 1 = 47, giving floor(47/2) = 23 pairs of 2^2. The limiting factor is min(23, 22) = 22. Main distractor B (23) checks only 2^2 and forgets that 3 is the bottleneck.",
+      "verify_code": "import math\nf = math.factorial(50)\nk = max(i for i in range(1, 60) if f % (12**i) == 0)\nanswer = 'A' if k == 22 else 'B'"
+    },
+    {
+      "id": "IQ-M-03",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "concept_tag": "Coordinate Geometry - circle tangent to line",
+      "question_text": "A circle with center at (3, 4) is tangent to the straight line 3x + 4y - 10 = 0. What is the area of the circle?",
+      "options": {
+        "A": "9*pi",
+        "B": "15*pi",
+        "C": "25*pi",
+        "D": "16*pi"
+      },
+      "correct_answer": "A",
+      "trap_type": "Forgetting to divide by sqrt(a^2 + b^2) in point-to-line distance",
+      "pedagogical_explanation": "Shortcut: The radius r equals the perpendicular distance from (3, 4) to 3x + 4y - 10 = 0: r = |3(3) + 4(4) - 10| / sqrt(3^2 + 4^2) = |9 + 16 - 10| / 5 = 15 / 5 = 3. Area = pi * r^2 = 9*pi. Main distractor C (25*pi) takes r = 5 from the denominator, while B (15*pi) uses the unnormalized numerator 15.",
+      "verify_code": "import math\nr = abs(3*3 + 4*4 - 10) / math.hypot(3, 4)\nanswer = 'A' if abs(r**2 - 9) < 1e-9 else 'C'"
+    },
+    {
+      "id": "IQ-C-01",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Probability - Bayes theorem",
+      "question_text": "Box A contains 4 red and 2 blue balls, while Box B contains 2 red and 6 blue balls. One box is chosen at random (equally likely) and a ball is drawn from it. Given that the drawn ball is red, what is the probability that it came from Box A?",
+      "options": {
+        "A": "2/3",
+        "B": "8/11",
+        "C": "4/7",
+        "D": "3/11"
+      },
+      "correct_answer": "B",
+      "trap_type": "Pooling balls across boxes instead of weighting by box probabilities",
+      "pedagogical_explanation": "Shortcut: P(Red | A) = 4/6 = 2/3 and P(Red | B) = 2/8 = 1/4. By Bayes' theorem with equal priors, P(A | Red) = (2/3) / (2/3 + 1/4) = (8/12) / (11/12) = 8/11. Main distractor C (4/7) pools the red balls directly, and A (2/3) confuses P(Red | A) with P(A | Red).",
+      "verify_code": "from fractions import Fraction\npA = Fraction(4, 6)\npB = Fraction(2, 8)\npost = pA / (pA + pB)\nanswer = 'B' if post == Fraction(8, 11) else 'A'"
+    },
+    {
+      "id": "IQ-C-02",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Algebra - telescoping series",
+      "question_text": "What is the exact value of the sum S = 1/(1*4) + 1/(4*7) + 1/(7*10) + ... + 1/(28*31)?",
+      "options": {
+        "A": "10/31",
+        "B": "30/31",
+        "C": "9/31",
+        "D": "1/31"
+      },
+      "correct_answer": "A",
+      "trap_type": "Forgetting the 1/3 factor in partial fraction decomposition",
+      "pedagogical_explanation": "Shortcut: Rewrite each term using 1/((3k-2)(3k+1)) = (1/3) * (1/(3k-2) - 1/(3k+1)). Telescoping across all 10 terms leaves S = (1/3) * (1 - 1/31) = (1/3) * (30/31) = 10/31. Main distractor B (30/31) forgets to divide by the step size 3, and C (9/31) miscounts the number of terms as 9.",
+      "verify_code": "from fractions import Fraction\ns = sum(Fraction(1, (3*k - 2)*(3*k + 1)) for k in range(1, 11))\nanswer = 'A' if s == Fraction(10, 31) else 'B'"
+    },
+    {
+      "id": "IQ-C-03",
+      "exam": "IPMAT",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Combinatorics - derangements",
+      "question_text": "Five distinct admission letters are placed randomly into five addressed envelopes, one in each envelope. In how many ways can this be done such that exactly two letters go into their correct envelopes?",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "44"
+      },
+      "correct_answer": "B",
+      "trap_type": "Multiplying C(5,2) by 3! instead of the derangement number D_3",
+      "pedagogical_explanation": "Shortcut: Choose which 2 letters go into their right envelopes in C(5, 2) = 10 ways. The remaining 3 letters must all be deranged (none in its own envelope), which can happen in D_3 = 3!(1 - 1/1! + 1/2! - 1/3!) = 2 ways. Total ways = 10 * 2 = 20. Main distractor C (30) uses D_3 = 3, and A (10) forgets to multiply by D_3.",
+      "verify_code": "import itertools\nways = sum(1 for p in itertools.permutations(range(5)) if sum(i == p[i] for i in range(5)) == 2)\nanswer = 'B' if ways == 20 else 'A'"
+    },
+    {
+      "id": "IV-E-01",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "concept_tag": "Vocabulary - contextual fill-in-the-blank",
+      "question_text": "Select the word that best completes the sentence:\n\nDespite the startup's flashy marketing campaign, seasoned investors quickly saw through the ________ claims and demanded audited financial statements.",
+      "options": {
+        "A": "specious",
+        "B": "fastidious",
+        "C": "auspicious",
+        "D": "veracious"
+      },
+      "correct_answer": "A",
+      "trap_type": "Antonym or phonetic look-alike trap",
+      "pedagogical_explanation": "Reading signal: 'saw through' and 'Despite flashy marketing' require an adjective meaning superficially plausible but actually false or misleading—'specious'. Main distractor D ('veracious', meaning truthful) is the exact opposite of what the contrast requires, while B ('fastidious', meticulous) and C ('auspicious', favorable) do not fit the skepticism of the investors.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-E-02",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "concept_tag": "Grammar - subject-verb agreement with prepositional phrases",
+      "question_text": "Identify the grammatically correct version of the underlined part:\n\nA comprehensive dossier of the company's offshore transactions, along with several encrypted ledgers, **were submitted to the regulatory tribunal** yesterday.",
+      "options": {
+        "A": "were submitted to the regulatory tribunal",
+        "B": "was submitted to the regulatory tribunal",
+        "C": "have been submitted to the regulatory tribunal",
+        "D": "are being submitted to the regulatory tribunal"
+      },
+      "correct_answer": "B",
+      "trap_type": "Proximity agreement trap (matching verb to nearest plural noun)",
+      "pedagogical_explanation": "Grammar shortcut: Parenthetical phrases introduced by 'along with', 'together with', or 'as well as' do not change the number of the subject. The true head subject is singular ('A comprehensive dossier'), and 'yesterday' requires the simple past tense 'was submitted'. Main distractor A ('were submitted') falls for the plural noun 'ledgers' right before the verb.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-E-03",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "concept_tag": "Idioms & Phrases - contextual meaning",
+      "question_text": "Choose the option that best explains the meaning of the idiom in bold:\n\nWhen the committee asked for concrete budget cuts, the director **beat around the bush** for twenty minutes before adjourning the meeting.",
+      "options": {
+        "A": "spoke aggressively to intimidate opponents",
+        "B": "avoided addressing the main issue directly",
+        "C": "reviewed every minor detail exhaustively",
+        "D": "blamed subordinates for the shortfall"
+      },
+      "correct_answer": "B",
+      "trap_type": "Literal or over-specific misinterpretation",
+      "pedagogical_explanation": "Reading signal: Contrasting 'concrete budget cuts' with adjourning the meeting without an answer shows evasion. 'Beat around the bush' means to speak evasively or avoid coming to the point. Main distractor C confuses circumlocution with thoroughness.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-M-01",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "concept_tag": "Sentence Correction - dangling modifier",
+      "question_text": "Which of the following sentences is grammatically correct and free of modifier ambiguity?",
+      "options": {
+        "A": "Walking through the ancient archives, the brittle manuscripts caught the historian's eye.",
+        "B": "Walking through the ancient archives, the historian's eye was caught by the brittle manuscripts.",
+        "C": "Walking through the ancient archives, the historian noticed the brittle manuscripts.",
+        "D": "While walking through the ancient archives, the brittle manuscripts were noticed by the historian."
+      },
+      "correct_answer": "C",
+      "trap_type": "Possessive noun or inanimate object attached to opening participial phrase",
+      "pedagogical_explanation": "Grammar shortcut: An opening participial phrase ('Walking through the ancient archives') must immediately precede the agent performing that action ('the historian'). Only C places 'the historian' as the grammatical subject. Main distractor B is a classic IPMAT trap: 'the historian's eye' has the grammatical head noun 'eye', implying the eye itself was walking.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-M-02",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "concept_tag": "Short RC - primary inference",
+      "question_text": "Passage: Urban tree-planting campaigns often measure success solely by the number of saplings planted each monsoon. Yet municipal audits across twelve Indian cities reveal that fewer than 20 percent of planted saplings survive beyond their third year when native species are replaced by fast-growing ornamental exotics and post-planting maintenance budgets are omitted. Consequently, ecologists argue that tying contractor payouts to three-year survival audits rather than planting day headcounts would yield denser urban canopies at lower long-term cost.\n\nWhich of the following can be most reasonably inferred from the passage?",
+      "options": {
+        "A": "Fast-growing ornamental exotics never survive beyond three years in Indian cities.",
+        "B": "Current incentive structures reward the volume of initial planting more than the long-term survival of trees.",
+        "C": "Municipalities spend more money on three-year audits than on purchasing saplings.",
+        "D": "Native tree species require no post-planting maintenance to survive in urban environments."
+      },
+      "correct_answer": "B",
+      "trap_type": "Extreme quantifier trap ('never', 'no')",
+      "pedagogical_explanation": "Reading signal: The passage states campaigns measure success 'solely by the number of saplings planted' and proposes shifting payouts to 'three-year survival audits rather than planting day headcounts', directly supporting B. Main distractor A exaggerates 'fewer than 20 percent' into 'never', and D exaggerates the value of native species into needing 'no' maintenance.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-M-03",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "concept_tag": "Confusable Words - contextual usage",
+      "question_text": "Fill in the blanks with the most appropriate pair of words:\n\nThe chairperson's ________ remarks helped ________ the tension between the two merging departments, allowing negotiations to resume.",
+      "options": {
+        "A": "discreet ; defuse",
+        "B": "discrete ; diffuse",
+        "C": "discreet ; diffuse",
+        "D": "discrete ; defuse"
+      },
+      "correct_answer": "A",
+      "trap_type": "Homophone confusion (discreet/discrete and defuse/diffuse)",
+      "pedagogical_explanation": "Vocabulary shortcut: 'Discreet' means tactful or prudent (whereas 'discrete' means separate/distinct). 'Defuse' means to remove the fuse from or reduce tension/danger (whereas 'diffuse' means to spread out widely). Thus 'discreet ; defuse' is right. Main distractor C gets 'discreet' right but uses 'diffuse' instead of 'defuse'.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-C-01",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Short RC - logical flaw / assumption",
+      "question_text": "Passage: Critics of congestion pricing argue that charging motorists a fee to enter central business districts during peak hours is inherently regressive, because the flat toll represents a larger share of income for lower-wage commuters than for affluent drivers. Proponents counter that in cities where congestion revenues are ring-fenced to expand high-frequency bus lanes, the average door-to-door commute time for lower-wage workers—over 75 percent of whom already rely on public buses rather than private cars—actually falls by eighteen minutes per day.\n\nThe proponents' counterargument relies on which of the following unstated assumptions?",
+      "options": {
+        "A": "Affluent drivers will completely abandon private cars once congestion pricing is introduced.",
+        "B": "Evaluating the fairness of a transport policy should account for its net impact on all lower-wage commuters, not solely on the minority who drive private cars.",
+        "C": "Bus fares in central business districts will be eliminated entirely within the first year of congestion pricing.",
+        "D": "Lower-wage commuters who drive private cars live closer to the central business district than bus riders do."
+      },
+      "correct_answer": "B",
+      "trap_type": "Narrow scope vs cohort-wide welfare shift",
+      "pedagogical_explanation": "Reading signal: Critics focus only on lower-wage *motorists* paying the toll, whereas proponents respond with time savings for the 75%+ of lower-wage commuters who ride *buses*. For the proponents' point to rebut the regressivity charge, fairness must be judged across the broader lower-wage commuter group rather than just car drivers (Option B). Main distractor A uses the extreme quantifier 'completely abandon'.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-C-02",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Paragraph Completion - logical conclusion",
+      "question_text": "Choose the sentence that most logically completes the paragraph:\n\nIn classical cartography, projections that preserve local angles—such as the Mercator projection—inevitably inflate the apparent area of landmasses near the poles, making Greenland appear comparable in size to Africa despite Africa being fourteen times larger. Equal-area projections correct this territorial distortion, yet they do so only by shearing shapes and angles across mid-latitude continents. Every flat map of a spherical Earth is therefore not a neutral mirror of geography, but ________.",
+      "options": {
+        "A": "an obsolete artifact that satellite imagery has rendered completely unnecessary for modern navigation",
+        "B": "a deliberate compromise that privileges certain geometric truths at the expense of others",
+        "C": "proof that equal-area projections are objectively superior to angle-preserving projections in every setting",
+        "D": "a mathematical error that cartographers have failed to resolve due to inadequate computing power"
+      },
+      "correct_answer": "B",
+      "trap_type": "One-sided endorsement ignoring the trade-off structure",
+      "pedagogical_explanation": "Reading signal: The paragraph contrasts two projections: one preserves angles at the cost of area, the other preserves area at the cost of shape/angles. The synthesis ('therefore not a neutral mirror, but...') must capture this inescapable geometric trade-off (Option B). Main distractor C picks a winner when the passage shows both have trade-offs, and D falsely blames computing power for a theorem of spherical geometry.",
+      "verify_code": ""
+    },
+    {
+      "id": "IV-C-03",
+      "exam": "IPMAT",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Grammar & Parallelism - correlative conjunctions and comparison",
+      "question_text": "Identify the sentence that is grammatically impeccable in parallelism, comparison, and subjunctive usage:",
+      "options": {
+        "A": "The tribunal insisted that the auditor not only disclose the off-balance-sheet liabilities in full, but also that its valuation model be compared with peer banks rather than industry averages.",
+        "B": "The tribunal insisted that the auditor not only disclose the off-balance-sheet liabilities in full, but also compare its valuation model with those of peer banks rather than with industry averages.",
+        "C": "The tribunal insisted not only that the auditor discloses the off-balance-sheet liabilities in full, but also compares its valuation model with peer banks instead of industry averages.",
+        "D": "The tribunal insisted that the auditor should not only disclose the off-balance-sheet liabilities in full, and also compare its valuation model with those of peer banks."
+      },
+      "correct_answer": "B",
+      "trap_type": "Faulty comparison ('valuation model' compared with 'peer banks') and broken 'not only... but also' parallelism",
+      "pedagogical_explanation": "Grammar shortcut: Check three rules at once: (1) Mandative subjunctive after 'insisted that' requires bare infinitives ('disclose... compare'); (2) 'not only X but also Y' requires parallel verb phrases ('not only disclose... but also compare'); (3) Logical comparison requires comparing 'its valuation model' with 'those [valuation models] of peer banks', not with 'peer banks' themselves. Only B satisfies all three. Main distractor A breaks both 'not only... but also' parallelism and compares a model directly with banks.",
+      "verify_code": ""
     }
   ]
 }

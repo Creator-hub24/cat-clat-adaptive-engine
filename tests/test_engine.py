@@ -91,13 +91,13 @@ def test_seed_bank_coverage():
     assert len(BANK) >= 45 and len({q["id"] for q in BANK}) == len(BANK)
     from collections import Counter
     c = Counter(q["topic"] for q in BANK)
-    assert all(v >= 9 for v in c.values()) and len(c) == 5
+    assert all(v >= 9 for v in c.values()) and len(c) == 7
     assert {q["difficulty"] for q in BANK} == set(engine.DIFFICULTIES)
 
 
 def test_every_quant_and_coded_answer_verified():
     for q in BANK:
-        if q["topic"] == "CAT Quant":
+        if q["topic"] in ("CAT Quant", "IPMAT Quant"):
             assert q.get("verify_code"), q["id"]
         if q.get("verify_code"):
             assert engine.answer_matches_key(engine.run_verify_code(q["verify_code"]), q["options"],
@@ -162,3 +162,13 @@ def test_missing_stem_rejected():
     assert llm.missing_stem("CAT VARC RC", "Passage: long text about drugs and brands.")
     assert llm.missing_stem("CAT VARC RC", "Passage: text.\n\nWhich of the following is the main idea?") is None
     assert llm.missing_stem("CAT Quant", "no question mark") is None
+
+
+def test_ipmat_wired_in():
+    import prompts
+    assert prompts.SECTIONS["IPMAT"] == ["IPMAT Quant", "IPMAT Verbal"]
+    assert all(t in prompts.TOPIC_RULES for t in prompts.SECTIONS["IPMAT"])
+    ip = [q for q in BANK if q["exam"] == "IPMAT"]
+    assert len(ip) == 18 and all(q["id"][:2] in ("IQ", "IV") for q in ip)
+    assert all(len(q["options"]) == 4 and q["correct_answer"] in "ABCD" for q in ip)
+    assert {q["difficulty"] for q in ip} == set(engine.DIFFICULTIES)

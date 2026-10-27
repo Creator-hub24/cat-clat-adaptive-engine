@@ -20,6 +20,7 @@ def model_candidates(custom: str | None = None) -> list[str]:
 SECTIONS = {
     "CAT": ["CAT Quant", "CAT VARC RC", "CAT DILR"],
     "CLAT": ["CLAT RC", "CLAT Logical Reasoning"],
+    "IPMAT": ["IPMAT Quant", "IPMAT Verbal"],
 }
 DIFFICULTIES = engine.DIFFICULTIES
 
@@ -35,6 +36,8 @@ TOPIC_RULES = {
     "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building. When the set needs data, present it as a GitHub-markdown table inside question_text. Where the answer is computable, include verify_code.",
     "CLAT RC": "Write an ORIGINAL legal-principle passage (100-200 words) and a fact situation. The answer must follow ONLY from the stated principle, not outside legal knowledge. Include an exception in the principle at Moderate+.",
     "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
+    "IPMAT Quant": "IPMAT (IIM Indore/Rohtak) Class 11-12 level MCQ: algebra, AP/GP, logarithms, P&C, probability, coordinate geometry, number theory. verify_code is REQUIRED. Use clean integers or simple fractions. Every distractor must come from a specific, nameable mistake. Mention the fastest shortcut.",
+    "IPMAT Verbal": "IPMAT verbal ability MCQ: vocabulary in context, grammar/sentence correction, idioms, para-completion, or a short ORIGINAL passage (80-150 words) with an inference/assumption question. Exactly one defensible answer; name the trap behind each wrong option in the explanation.",
 }
 
 SYSTEM_PROMPT = """You are a master CAT/CLAT faculty member with 10+ years of classroom coaching.
