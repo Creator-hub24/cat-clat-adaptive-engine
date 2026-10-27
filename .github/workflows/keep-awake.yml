@@ -1,0 +1,42 @@
+name: Keep Streamlit app awake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Open app and wake if sleeping
+        env:
+          APP_URL: https://cat-clat-adaptive-engine-gzkqrxpowaogew7ptmabip.streamlit.app
+        run: |
+          cat > wake.py <<'PY'
+          import os
+          from playwright.sync_api import sync_playwright
+          url = os.environ["APP_URL"]
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              page = b.new_page()
+              try:
+                  page.goto(url, timeout=90000)
+                  page.wait_for_timeout(15000)
+                  btn = page.get_by_role("button", name="Yes, get this app back up!")
+                  if btn.count() > 0:
+                      print("App was asleep, clicking wake button")
+                      btn.first.click()
+                      page.wait_for_timeout(60000)
+                  else:
+                      print("App is awake")
+              except Exception as e:
+                  print("Warning:", e)
+              b.close()
+          PY
+          python wake.py || echo "wake script failed, ignoring"
