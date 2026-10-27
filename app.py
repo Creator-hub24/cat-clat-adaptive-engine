@@ -153,7 +153,7 @@ def profile_from_state() -> dict:
     return {"streak": s.streak, "best_streak": s.best_streak, "usage_day": s.day,
             "ai_used": s.ai_used, "plan": s.plan, "pro_until": s.pro_until,
             "review_queue": s.error_log, "pending_payment_ref": s.get("pending_ref"),
-            "topic_levels": s.topic_levels}
+            "topic_levels": s.topic_levels, "pro_purchases": s.get("pro_purchases", 0)}
 
 
 def persist():
@@ -187,6 +187,7 @@ def hydrate_from_store():
     s.streak, s.best_streak = profile["streak"], profile["best_streak"]
     s.plan, s.pro_until = profile["plan"], profile["pro_until"]
     s.pending_ref = profile.get("pending_payment_ref")
+    s.pro_purchases = int(profile.get("pro_purchases") or 0)
     today = dt.date.today().isoformat()
     s.ai_used = profile["ai_used"] if str(profile.get("usage_day")) == today else 0
     s.day = today
@@ -346,7 +347,12 @@ with st.sidebar:
             st.logout()
     # ---- Pro upgrade
     if not pro:
-        st.subheader("Go Pro · ₹999/month")
+        price = payments.price_for(profile_from_state())
+        intro = price == payments.INTRO_PRICE_PAISE
+        st.subheader("Go Pro · first month ₹499, then ₹999/month" if intro else "Go Pro · ₹999/month")
+        st.caption(("Intro offer for your first Pro month. " if intro else "")
+                   + "Each payment unlocks Pro for 30 days. There is no auto-debit: when it ends, you pay again "
+                   "(₹999) only if you want to continue.")
         rz_id, rz_secret = secret("RAZORPAY_KEY_ID"), secret("RAZORPAY_KEY_SECRET")
         if not (rz_id and rz_secret and s.get("uid")):
             st.caption("Pro coming soon." if not (rz_id and rz_secret)
@@ -354,19 +360,21 @@ with st.sidebar:
         else:
             if st.button("Upgrade to Pro", width="stretch"):
                 try:
-                    link = payments.create_link(rz_id, rz_secret, s.uid, secret("APP_URL"))
+                    link = payments.create_link(rz_id, rz_secret, s.uid, price, secret("APP_URL"))
                     s.pending_ref, s.pay_url = link["reference_id"], link["short_url"]
                     persist()
                 except Exception as e:
                     st.error(f"Could not create payment link: {e}")
             pay_url = s.get("pay_url") or (secret("RAZORPAY_PAYMENT_LINK") if not s.get("pending_ref") else None)
             if pay_url:
-                st.link_button("Pay securely on Razorpay ↗", pay_url, width="stretch")
+                st.link_button(f"Pay ₹{price // 100} securely on Razorpay ↗" if s.get("pay_url")
+                               else "Pay securely on Razorpay ↗", pay_url, width="stretch")
             if s.get("pending_ref") and st.button("I've paid, verify", width="stretch"):
                 try:
-                    if payments.verify_paid(rz_id, rz_secret, s.pending_ref):
+                    if payments.verify_paid(rz_id, rz_secret, s.pending_ref, price):
                         prof = payments.extend_pro(profile_from_state())
                         s.plan, s.pro_until, s.pending_ref = prof["plan"], prof["pro_until"], None
+                        s.pro_purchases = prof["pro_purchases"]
                         s.pop("pay_url", None)
                         persist()
                         st.success("Payment verified. Welcome to Pro!")
