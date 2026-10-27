@@ -8,7 +8,7 @@ import requests
 
 API = "https://api.razorpay.com/v1"
 PRO_PRICE_PAISE = 99900   # Rs 999 per 30 days
-INTRO_PRICE_PAISE = 59900  # Rs 599 for the first-ever Pro month
+INTRO_PRICE_PAISE = 49900  # Rs 499 for the first-ever Pro month
 PRO_DAYS = 30
 
 
@@ -45,7 +45,7 @@ def create_link(key_id, key_secret, uid, amount=PRO_PRICE_PAISE, callback_url=No
 
 def verify_paid(key_id, key_secret, reference_id, expected_amount, http=requests) -> bool:
     """Paid only if the link for this reference is 'paid' AND both its amount and amount_paid equal
-    the amount we expected to charge (so an Rs 599 link can't be passed off for a later Rs 999 month)."""
+    the amount we expected to charge (so an Rs 499 link can't be passed off for a later Rs 999 month)."""
     r = http.get(f"{API}/payment_links", params={"reference_id": reference_id},
                  auth=(key_id, key_secret), timeout=15)
     r.raise_for_status()
