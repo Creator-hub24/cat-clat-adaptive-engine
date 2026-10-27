@@ -1111,6 +1111,186 @@
       "trap_type": "Faulty comparison ('valuation model' compared with 'peer banks') and broken 'not only... but also' parallelism",
       "pedagogical_explanation": "Grammar shortcut: Check three rules at once: (1) Mandative subjunctive after 'insisted that' requires bare infinitives ('disclose... compare'); (2) 'not only X but also Y' requires parallel verb phrases ('not only disclose... but also compare'); (3) Logical comparison requires comparing 'its valuation model' with 'those [valuation models] of peer banks', not with 'peer banks' themselves. Only B satisfies all three. Main distractor A breaks both 'not only... but also' parallelism and compares a model directly with banks.",
       "verify_code": ""
+    },
+    {
+      "id": "CGK-E-01",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "Easy",
+      "concept_tag": "Sports - FIFA World Cup 2026 format",
+      "question_text": "Passage: On 19 July 2026, Spain beat Argentina 1-0 after extra time at MetLife Stadium in East Rutherford, New Jersey, to win the 23rd FIFA World Cup. The tournament, held from 11 June to 19 July across Canada, Mexico and the United States, was the first played in an expanded format, with twelve groups of four feeding a 32-team knockout stage. The final itself was one-sided. Spain dominated possession and created chance after chance, while Argentina, the defending champions, failed to register a single shot in regulation time, a first for a World Cup final. Argentina were reduced to ten men after Enzo Fernandez was sent off in the second half. Goalkeeper Emiliano Martinez kept the match goalless with eleven saves, a record for a World Cup final, until Ferran Torres scored in extra time from a Nico Williams header. Torres was named man of the match. In the awards ceremony, Spain's Rodri received the Golden Ball as the tournament's best player, Unai Simon the Golden Glove and Pau Cubarsi the Young Player Award. Lionel Messi, who had earlier become the all-time top scorer at World Cup tournaments, collected the Silver Ball and the Silver Boot, and by playing in the match became only the second man to appear in three World Cup finals. The win was Spain's second world title and its first in sixteen years. Because Spain also held the women's world title at the time, it became the first country to hold the men's and women's World Cups simultaneously. The match also broke new ground off the pitch: it was the first World Cup final with a halftime show, which stretched the break to more than 27 minutes, against the protocol of the International Football Association Board. The evening ended badly, however, with brawls between players, after which FIFA opened an investigation and Argentine players faced possible bans.\n\nThe 2026 FIFA World Cup referred to in the passage was the first to feature how many teams?",
+      "options": {
+        "A": "32",
+        "B": "40",
+        "C": "48",
+        "D": "64"
+      },
+      "correct_answer": "C",
+      "trap_type": "Confusing the 32-team knockout stage with the total field",
+      "pedagogical_explanation": "Twelve groups of four = 48 teams, up from 32 in 2022; the top two in each group plus the eight best third-placed teams formed the 32-team knockout stage (source). Trap A (32) is the knockout-stage size and the old format. B and D match no format.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_final",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-M-01",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "Moderate",
+      "concept_tag": "Sports - World Cup history (static GK)",
+      "question_text": "Passage: On 19 July 2026, Spain beat Argentina 1-0 after extra time at MetLife Stadium in East Rutherford, New Jersey, to win the 23rd FIFA World Cup. The tournament, held from 11 June to 19 July across Canada, Mexico and the United States, was the first played in an expanded format, with twelve groups of four feeding a 32-team knockout stage. The final itself was one-sided. Spain dominated possession and created chance after chance, while Argentina, the defending champions, failed to register a single shot in regulation time, a first for a World Cup final. Argentina were reduced to ten men after Enzo Fernandez was sent off in the second half. Goalkeeper Emiliano Martinez kept the match goalless with eleven saves, a record for a World Cup final, until Ferran Torres scored in extra time from a Nico Williams header. Torres was named man of the match. In the awards ceremony, Spain's Rodri received the Golden Ball as the tournament's best player, Unai Simon the Golden Glove and Pau Cubarsi the Young Player Award. Lionel Messi, who had earlier become the all-time top scorer at World Cup tournaments, collected the Silver Ball and the Silver Boot, and by playing in the match became only the second man to appear in three World Cup finals. The win was Spain's second world title and its first in sixteen years. Because Spain also held the women's world title at the time, it became the first country to hold the men's and women's World Cups simultaneously. The match also broke new ground off the pitch: it was the first World Cup final with a halftime show, which stretched the break to more than 27 minutes, against the protocol of the International Football Association Board. The evening ended badly, however, with brawls between players, after which FIFA opened an investigation and Argentine players faced possible bans.\n\nThe passage says Spain's 2026 title was its first in sixteen years. Spain's previous World Cup final win, in 2010, was played in which country?",
+      "options": {
+        "A": "Germany",
+        "B": "Brazil",
+        "C": "South Africa",
+        "D": "Qatar"
+      },
+      "correct_answer": "C",
+      "trap_type": "Mixing up recent World Cup host countries",
+      "pedagogical_explanation": "Spain won its first World Cup in 2010, beating the Netherlands in the final in Johannesburg, South Africa (source). A, B and D are other World Cup hosts that a hasty solver might mix up with 2010.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_final",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-C-01",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Sports - World Cup records (static GK)",
+      "question_text": "Passage: On 19 July 2026, Spain beat Argentina 1-0 after extra time at MetLife Stadium in East Rutherford, New Jersey, to win the 23rd FIFA World Cup. The tournament, held from 11 June to 19 July across Canada, Mexico and the United States, was the first played in an expanded format, with twelve groups of four feeding a 32-team knockout stage. The final itself was one-sided. Spain dominated possession and created chance after chance, while Argentina, the defending champions, failed to register a single shot in regulation time, a first for a World Cup final. Argentina were reduced to ten men after Enzo Fernandez was sent off in the second half. Goalkeeper Emiliano Martinez kept the match goalless with eleven saves, a record for a World Cup final, until Ferran Torres scored in extra time from a Nico Williams header. Torres was named man of the match. In the awards ceremony, Spain's Rodri received the Golden Ball as the tournament's best player, Unai Simon the Golden Glove and Pau Cubarsi the Young Player Award. Lionel Messi, who had earlier become the all-time top scorer at World Cup tournaments, collected the Silver Ball and the Silver Boot, and by playing in the match became only the second man to appear in three World Cup finals. The win was Spain's second world title and its first in sixteen years. Because Spain also held the women's world title at the time, it became the first country to hold the men's and women's World Cups simultaneously. The match also broke new ground off the pitch: it was the first World Cup final with a halftime show, which stretched the break to more than 27 minutes, against the protocol of the International Football Association Board. The evening ended badly, however, with brawls between players, after which FIFA opened an investigation and Argentine players faced possible bans.\n\nAccording to the passage, Lionel Messi became only the second man to appear in three World Cup finals. Who was the first?",
+      "options": {
+        "A": "Pele",
+        "B": "Cafu",
+        "C": "Miroslav Klose",
+        "D": "Diego Maradona"
+      },
+      "correct_answer": "B",
+      "trap_type": "Choosing the most famous name or a different record-holder",
+      "pedagogical_explanation": "Brazil's Cafu was the first player to appear in three men's World Cup finals (source); Messi matched him in 2026. Trap A (Pele) is the most famous multiple winner, but the record is about appearances in finals. C (Klose) is linked to a different record: Messi passed Klose's all-time World Cup scoring record in 2026, as the passage hints. D (Maradona) is a famous Argentine winner but holds neither record.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_final",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-E-02",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "Easy",
+      "concept_tag": "Sports - Winter Olympics 2026 new sport",
+      "question_text": "Passage: The XXV Olympic Winter Games, branded Milano Cortina 2026, were held in northern Italy from 6 to 22 February 2026, with some competition starting on 4 February. They were the first Olympic Games to be officially co-hosted by two cities. Milan staged most of the ice events, while snow and sliding events were spread across clusters around Cortina d'Ampezzo, Valtellina and the Fiemme Valley, mostly in existing venues. The opening ceremony, titled Armonia, took place at Milan's San Siro stadium, in front of a stadium crowd. The closing ceremony was held in the Roman arena at Verona. The programme grew to 116 medal events in 16 disciplines, seven more events than in Beijing 2022, and one sport made its Olympic debut, with sprint races for men and women and a mixed relay. The Games also had the highest percentage of women's participation in Winter Olympic history. On the medal table, Norway finished first for the fourth successive Winter Games with 18 gold and 41 medals in total, both records for a single Winter Olympics. The United States came second, and the host nation Italy won a record 30 medals. Brazil won its first Winter Olympic medal, a gold in alpine skiing that also made it the first South American National Olympic Committee to win a Winter Olympic medal, and Georgia also won its first medal. Italy had hosted the Winter Games twice before, and the 2026 edition was the third Winter Olympics held in the country. The Games were also a milestone for the International Olympic Committee, as they were the first held under its new president. At the closing ceremony the Olympic flag was formally handed over to the hosts of the 2030 Winter Games.\n\nWhich sport made its Olympic debut at the Milano Cortina 2026 Winter Games, as mentioned in the passage?",
+      "options": {
+        "A": "Curling",
+        "B": "Ski mountaineering",
+        "C": "Skeleton",
+        "D": "Biathlon"
+      },
+      "correct_answer": "B",
+      "trap_type": "Picking a less familiar but long-established Winter Olympic sport",
+      "pedagogical_explanation": "Ski mountaineering debuted at Milano Cortina 2026 with three events: men's sprint, women's sprint and mixed relay (source), which matches the passage's description. Curling, skeleton and biathlon were all already on the Winter Olympic programme; at most, skeleton gained a new event (a mixed relay), which is not a sport's debut.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Winter_Olympics",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-M-02",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "Moderate",
+      "concept_tag": "Sports - Olympic hosts (static GK)",
+      "question_text": "Passage: The XXV Olympic Winter Games, branded Milano Cortina 2026, were held in northern Italy from 6 to 22 February 2026, with some competition starting on 4 February. They were the first Olympic Games to be officially co-hosted by two cities. Milan staged most of the ice events, while snow and sliding events were spread across clusters around Cortina d'Ampezzo, Valtellina and the Fiemme Valley, mostly in existing venues. The opening ceremony, titled Armonia, took place at Milan's San Siro stadium, in front of a stadium crowd. The closing ceremony was held in the Roman arena at Verona. The programme grew to 116 medal events in 16 disciplines, seven more events than in Beijing 2022, and one sport made its Olympic debut, with sprint races for men and women and a mixed relay. The Games also had the highest percentage of women's participation in Winter Olympic history. On the medal table, Norway finished first for the fourth successive Winter Games with 18 gold and 41 medals in total, both records for a single Winter Olympics. The United States came second, and the host nation Italy won a record 30 medals. Brazil won its first Winter Olympic medal, a gold in alpine skiing that also made it the first South American National Olympic Committee to win a Winter Olympic medal, and Georgia also won its first medal. Italy had hosted the Winter Games twice before, and the 2026 edition was the third Winter Olympics held in the country. The Games were also a milestone for the International Olympic Committee, as they were the first held under its new president. At the closing ceremony the Olympic flag was formally handed over to the hosts of the 2030 Winter Games.\n\nThe passage says 2026 was the third Winter Olympics held in Italy. Which two Italian cities hosted the earlier Winter Games?",
+      "options": {
+        "A": "Cortina d'Ampezzo (1956) and Turin (2006)",
+        "B": "Rome (1960) and Turin (2006)",
+        "C": "Milan (1956) and Cortina d'Ampezzo (2006)",
+        "D": "Turin (1956) and Rome (2006)"
+      },
+      "correct_answer": "A",
+      "trap_type": "Counting a Summer Olympics host (Rome 1960) as a Winter host",
+      "pedagogical_explanation": "Italy hosted the Winter Olympics in Cortina d'Ampezzo in 1956 and in Turin (Torino) in 2006 (source). Trap B includes Rome 1960, which was a Summer Olympics. C and D swap cities and years: neither Milan nor Rome hosted the 1956 or 2006 Winter Games.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Winter_Olympics",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-C-02",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "CAT-Level",
+      "concept_tag": "International organisations - IOC leadership",
+      "question_text": "Passage: The XXV Olympic Winter Games, branded Milano Cortina 2026, were held in northern Italy from 6 to 22 February 2026, with some competition starting on 4 February. They were the first Olympic Games to be officially co-hosted by two cities. Milan staged most of the ice events, while snow and sliding events were spread across clusters around Cortina d'Ampezzo, Valtellina and the Fiemme Valley, mostly in existing venues. The opening ceremony, titled Armonia, took place at Milan's San Siro stadium, in front of a stadium crowd. The closing ceremony was held in the Roman arena at Verona. The programme grew to 116 medal events in 16 disciplines, seven more events than in Beijing 2022, and one sport made its Olympic debut, with sprint races for men and women and a mixed relay. The Games also had the highest percentage of women's participation in Winter Olympic history. On the medal table, Norway finished first for the fourth successive Winter Games with 18 gold and 41 medals in total, both records for a single Winter Olympics. The United States came second, and the host nation Italy won a record 30 medals. Brazil won its first Winter Olympic medal, a gold in alpine skiing that also made it the first South American National Olympic Committee to win a Winter Olympic medal, and Georgia also won its first medal. Italy had hosted the Winter Games twice before, and the 2026 edition was the third Winter Olympics held in the country. The Games were also a milestone for the International Olympic Committee, as they were the first held under its new president. At the closing ceremony the Olympic flag was formally handed over to the hosts of the 2030 Winter Games.\n\nThe passage notes that Milano Cortina 2026 was the first Games held under the IOC's new president. Who is that president?",
+      "options": {
+        "A": "Thomas Bach",
+        "B": "Sebastian Coe",
+        "C": "Kirsty Coventry",
+        "D": "Juan Antonio Samaranch Jr."
+      },
+      "correct_answer": "C",
+      "trap_type": "Choosing the long-serving previous president",
+      "pedagogical_explanation": "Milano Cortina 2026 was the first Olympic Games under IOC President Kirsty Coventry, who also closed the Games (source). Trap A, Thomas Bach, was her predecessor as IOC President. B and D are prominent sports administrators, but neither was IOC President at these Games.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Winter_Olympics",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-E-03",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "Easy",
+      "concept_tag": "Sports - Commonwealth Games 2030 host",
+      "question_text": "Passage: The XXIII Commonwealth Games were held in Glasgow, Scotland, from 23 July to 2 August 2026, with King Charles III opening them. Glasgow had not originally been chosen. The Games were first awarded in 2022 to an Australian state, which withdrew in July 2023 after estimating the cost at A$6-7 billion, about double the expected economic benefit. Other possible hosts in Australia, Malaysia and Singapore also stepped back, and for a time the Games risked being postponed or cancelled. In September 2024 the Scottish Government agreed to host a scaled-down event, funded largely by compensation paid by the Australian state that had withdrawn. The result was the most compact Games in decades: 10 sports across seven existing venues, no athletes' village, and opening and closing ceremonies held indoors at the OVO Hydro, the first time in the Games' 96-year history that a ceremony was held in an indoor venue. Under the new rules introduced from this edition, only two sports are compulsory at every Games; popular sports such as hockey, cricket, badminton, wrestling and rugby sevens were left out. At the same time, Glasgow staged 47 Para sport finals across six sports, the most in Commonwealth Games history, and revived the mile race, contested by women for the first time. All 74 Commonwealth Games Associations took part. Australia topped the medal table for the third consecutive Games with 70 gold medals, ahead of England and Canada. The Games' mascot, Finnie, was designed by Scottish schoolchildren, named after the city's Finnieston Crane and given a traffic cone for a horn. At the closing ceremony on 2 August, the Games were formally handed over to the host of the 2030 Commonwealth Games, the centenary edition, with performances by Shankar Mahadevan and Rashmika Mandanna.\n\nWhich city will host the 2030 Commonwealth Games, to which the Games were handed over at Glasgow's closing ceremony?",
+      "options": {
+        "A": "New Delhi",
+        "B": "Ahmedabad",
+        "C": "Kuala Lumpur",
+        "D": "Gold Coast"
+      },
+      "correct_answer": "B",
+      "trap_type": "Choosing India's previous host city (New Delhi, 2010)",
+      "pedagogical_explanation": "Glasgow handed over to Ahmedabad (Amdavad), India, host of the centenary 2030 Games (source); the Indian performers in the passage are the clue. Trap A, New Delhi, is the other Indian city aspirants tend to recall for the Commonwealth Games, but it is not the 2030 host. C (Kuala Lumpur) and D (Gold Coast, host in 2018) were both involved in the 2026 hosting saga, but neither is the 2030 host.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Commonwealth_Games",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-M-03",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "Moderate",
+      "concept_tag": "Sports - Commonwealth Games 2026 host change",
+      "question_text": "Passage: The XXIII Commonwealth Games were held in Glasgow, Scotland, from 23 July to 2 August 2026, with King Charles III opening them. Glasgow had not originally been chosen. The Games were first awarded in 2022 to an Australian state, which withdrew in July 2023 after estimating the cost at A$6-7 billion, about double the expected economic benefit. Other possible hosts in Australia, Malaysia and Singapore also stepped back, and for a time the Games risked being postponed or cancelled. In September 2024 the Scottish Government agreed to host a scaled-down event, funded largely by compensation paid by the Australian state that had withdrawn. The result was the most compact Games in decades: 10 sports across seven existing venues, no athletes' village, and opening and closing ceremonies held indoors at the OVO Hydro, the first time in the Games' 96-year history that a ceremony was held in an indoor venue. Under the new rules introduced from this edition, only two sports are compulsory at every Games; popular sports such as hockey, cricket, badminton, wrestling and rugby sevens were left out. At the same time, Glasgow staged 47 Para sport finals across six sports, the most in Commonwealth Games history, and revived the mile race, contested by women for the first time. All 74 Commonwealth Games Associations took part. Australia topped the medal table for the third consecutive Games with 70 gold medals, ahead of England and Canada. The Games' mascot, Finnie, was designed by Scottish schoolchildren, named after the city's Finnieston Crane and given a traffic cone for a horn. At the closing ceremony on 2 August, the Games were formally handed over to the host of the 2030 Commonwealth Games, the centenary edition, with performances by Shankar Mahadevan and Rashmika Mandanna.\n\nThe passage says the 2026 Games were first awarded to an Australian state that withdrew in 2023 over costs. Which state was it?",
+      "options": {
+        "A": "Queensland",
+        "B": "New South Wales",
+        "C": "Victoria",
+        "D": "Western Australia"
+      },
+      "correct_answer": "C",
+      "trap_type": "Confusing the original host with the city that briefly offered to step in (Gold Coast, Queensland)",
+      "pedagogical_explanation": "Victoria was confirmed as host in April 2022 and cancelled in July 2023, citing an estimated A$6-7 billion cost (source); its compensation later funded Glasgow. Trap A: Gold Coast, Queensland, only briefly offered to co-host and then ruled itself out. B and D played no part.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Commonwealth_Games",
+      "as_of": "2026-10-27"
+    },
+    {
+      "id": "CGK-C-03",
+      "exam": "CLAT",
+      "topic": "CLAT Current Affairs & GK",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Sports - Commonwealth Games compulsory sports",
+      "question_text": "Passage: The XXIII Commonwealth Games were held in Glasgow, Scotland, from 23 July to 2 August 2026, with King Charles III opening them. Glasgow had not originally been chosen. The Games were first awarded in 2022 to an Australian state, which withdrew in July 2023 after estimating the cost at A$6-7 billion, about double the expected economic benefit. Other possible hosts in Australia, Malaysia and Singapore also stepped back, and for a time the Games risked being postponed or cancelled. In September 2024 the Scottish Government agreed to host a scaled-down event, funded largely by compensation paid by the Australian state that had withdrawn. The result was the most compact Games in decades: 10 sports across seven existing venues, no athletes' village, and opening and closing ceremonies held indoors at the OVO Hydro, the first time in the Games' 96-year history that a ceremony was held in an indoor venue. Under the new rules introduced from this edition, only two sports are compulsory at every Games; popular sports such as hockey, cricket, badminton, wrestling and rugby sevens were left out. At the same time, Glasgow staged 47 Para sport finals across six sports, the most in Commonwealth Games history, and revived the mile race, contested by women for the first time. All 74 Commonwealth Games Associations took part. Australia topped the medal table for the third consecutive Games with 70 gold medals, ahead of England and Canada. The Games' mascot, Finnie, was designed by Scottish schoolchildren, named after the city's Finnieston Crane and given a traffic cone for a horn. At the closing ceremony on 2 August, the Games were formally handed over to the host of the 2030 Commonwealth Games, the centenary edition, with performances by Shankar Mahadevan and Rashmika Mandanna.\n\nFrom Glasgow 2026, only two sports are compulsory at every Commonwealth Games. Which are they?",
+      "options": {
+        "A": "Athletics and swimming",
+        "B": "Athletics and hockey",
+        "C": "Swimming and boxing",
+        "D": "Athletics and cricket"
+      },
+      "correct_answer": "A",
+      "trap_type": "Assuming a traditional Commonwealth team sport (hockey or cricket) must be core",
+      "pedagogical_explanation": "Starting with Glasgow 2026, the only compulsory sports are athletics and swimming (source). Traps B and D name hockey and cricket, popular Commonwealth sports that the passage says were left out of Glasgow 2026. C includes boxing, which was held in Glasgow but is optional, not compulsory.",
+      "verify_code": "",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Commonwealth_Games",
+      "as_of": "2026-10-27"
     }
   ]
 }

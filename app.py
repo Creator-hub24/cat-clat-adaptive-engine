@@ -393,8 +393,9 @@ with tab_practice:
     if b1.button("Next question", type="primary", width="stretch"):
         # Default: serve from the verified bank, no live API call. Live AI only for Pro users,
         # or when this user has exhausted the bank for this topic+level (free users: daily cap).
-        q = None if pro and api_key else bank_question(topic, difficulty, s.seen)
-        if q is None and api_key and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
+        live_ok = topic not in engine.NO_AI_GENERATION_TOPICS  # current affairs: verified bank only
+        q = None if pro and api_key and live_ok else bank_question(topic, difficulty, s.seen)
+        if q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
             with st.spinner("Your coach is writing and double-checking a question..."):
                 try:
                     q = generate_ai_question(topic, difficulty, api_key)
@@ -405,7 +406,7 @@ with tab_practice:
                                "hand-checked seed question instead.")
                     with st.expander("Verification details"):
                         st.text(str(e)[:1500])
-        elif q is None and api_key:
+        elif q is None and api_key and live_ok:
             st.warning("You've done every bank question at this level and today's free AI questions are used up. "
                        "Upgrade to Pro for unlimited fresh questions; serving a question from another level for now.")
         elif q is None:

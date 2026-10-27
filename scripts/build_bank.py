@@ -88,6 +88,16 @@ def cell_counts(questions):
     return Counter((q["topic"], q["difficulty"]) for q in questions)
 
 
+ID_PREFIX_OVERRIDES = {"CLAT Current Affairs & GK": "CGK"}
+
+
+def topic_prefix(topic: str) -> str:
+    if topic in ID_PREFIX_OVERRIDES:
+        return ID_PREFIX_OVERRIDES[topic]
+    w = topic.split()
+    return w[0][0] + "".join(x[0] for x in w[1:])
+
+
 def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_fail_per_cell: int = 6,
           topics=None, difficulties=None, log=print) -> dict:
     data = bank.load_json_bank(out_path)
@@ -95,7 +105,9 @@ def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_f
     qs = data.setdefault("questions", [])
     stats = data.setdefault(STATS_KEY, {})
     seed = bank.load_json_bank(bank.SEED_PATH)["questions"]
-    topics = topics or [t for sec in prompts.SECTIONS.values() for t in sec]
+    # Current-affairs topics need web-grounded facts the generator cannot verify: never auto-generated.
+    topics = topics or [t for sec in prompts.SECTIONS.values() for t in sec
+                        if t not in engine.NO_AI_GENERATION_TOPICS]
     difficulties = difficulties or prompts.DIFFICULTIES
     cells = [(t, d) for d in difficulties for t in topics]
     # round-robin across cells so a quota stop still leaves an even spread
@@ -136,7 +148,7 @@ def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_f
                 bank.save_json_bank(data, out_path)
                 continue
             h = bank.text_hash(q)
-            q.update({"id": f"AI-{topic.split()[0][0]}{''.join(w[0] for w in topic.split()[1:])}-{h[:8]}",
+            q.update({"id": f"AI-{topic_prefix(topic)}-{h[:8]}",
                       "text_hash": h, "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
                       "review_status": "unreviewed", "verified_computed": "computed" in q["verification"],
                       "verified_independent": "independent solve" in q["verification"]})
