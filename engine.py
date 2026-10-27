@@ -15,7 +15,7 @@ DIFFICULTIES = ["Easy", "Moderate", "CAT-Level"]
 REVIEW_INTERVALS = [3, 7, 15]  # questions answered before a mistake comes back
 STEP_UP_AFTER = 2
 STEP_DOWN_AFTER = 2
-RC_TOPICS = {"CAT VARC RC", "CLAT RC"}
+RC_TOPICS = {"CAT VARC RC", "CLAT RC", "CLAT Legal Reasoning"}
 COMPUTABLE_TOPICS = {"CAT Quant", "CAT DILR", "IPMAT Quant"}
 REQUIRED_KEYS = {"question_text", "options", "correct_answer", "pedagogical_explanation",
                  "trap_type", "concept_tag"}
