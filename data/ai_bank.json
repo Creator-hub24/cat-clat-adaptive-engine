@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-27T04:26:14.160381+00:00",
+    "updated_at": "2026-10-27T09:05:54.759019+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -604,33 +604,483 @@
       "reviewed_at": "2026-10-27T04:17:51.273410+00:00",
       "reviewed_by": "vaibhav",
       "review_note": "Pre-check: rules out reverse causation. Key C correct."
+    },
+    {
+      "question_text": "Passage: For centuries, soil scientists believed that the lush foliage of the Amazon basin was supported by exceptionally fertile ground. However, modern soil analysis revealed that Amazonian soil is naturally nutrient-poor and acidic, constantly leached of vital minerals by heavy tropical rains. The dense vegetation survives primarily by rapidly recycling nutrients from decaying surface leaf litter. Yet, dispersed throughout the basin are patches of remarkably rich, dark soil known as Terra Preta. These fertile plots are not natural occurrences; they are the legacy of pre-Columbian Indigenous farmers who deliberately enriched the soil over 2,500 years ago. By mixing nutrient-poor earth with charcoal, organic waste, and crushed ceramics, these farmers created a stable biochar matrix that holds moisture and prevents minerals from washing away. Today, researchers study Terra Preta to develop sustainable agricultural techniques that could regenerate degraded soils worldwide without relying heavily on synthetic chemical fertilizers.\n\nAccording to the passage, how does the dense natural vegetation of the Amazon basin sustain itself despite the nutrient-poor soil?",
+      "options": {
+        "A": "By absorbing synthetic chemical minerals dissolved in heavy tropical rainwater.",
+        "B": "By relying on the moisture-retentive Terra Preta patches scattered across the forest.",
+        "C": "By rapidly absorbing nutrients recycled from decaying surface leaf litter.",
+        "D": "By drawing essential minerals from naturally fertile Amazonian subsoil."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "Step-by-step: The question asks how the dense natural vegetation sustains itself. Scanning the text for 'dense vegetation survives' leads directly to the third sentence: 'The dense vegetation survives primarily by rapidly recycling nutrients from decaying surface leaf litter.' This makes (C) the correct direct choice.\n\nMain Distractor Analysis: Option (B) is a classic Half-true trap. While the passage mentions that Terra Preta holds moisture, it clearly specifies that Terra Preta consists of dispersed patches created by human intervention, whereas the dense vegetation across the basin survives via surface leaf litter recycling.\n\nOther Traps:\n- Option (A) is Out-of-scope; synthetic fertilizers are only mentioned in the context of modern farming practices researchers wish to reduce.\n- Option (D) is a Reversal; the passage explicitly states that Amazonian soil is 'naturally nutrient-poor', directly contradicting the claim that the subsoil is naturally fertile.",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - detail",
+      "id": "AI-CVR-06d6672a",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "06d6672a84b0527265bbe137c393da5f21adfc519ad33bc4fe783f8076761876",
+      "created_at": "2026-10-27T08:32:07.356134+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five speakers—P, Q, R, S, and T—are scheduled to deliver a seminar, one each day from Monday to Friday. The following conditions must be met:\n\n| Day | Speaker |\n| :--- | :--- |\n| Monday | ? |\n| Tuesday | ? |\n| Wednesday | ? |\n| Thursday | ? |\n| Friday | ? |\n\n1. R delivers the seminar on Tuesday.\n2. P delivers the seminar exactly two days before T (e.g., if T is on Friday, P is on Wednesday).\n3. S delivers the seminar on a day after Q.\n4. T does not deliver the seminar on Friday.\n\nWho delivers the seminar on Thursday?",
+      "options": {
+        "A": "P",
+        "B": "Q",
+        "C": "T",
+        "D": "S"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step Solution:\n1. **Fixed Position:** Start with R on Tuesday.\n2. **Constraint Linkage:** P is exactly two days before T. This means the gap between them is one day (P, then one day, then T). The possible pairs for (P, T) are (Mon, Wed), (Tue, Thu), and (Wed, Fri).\n3. **Elimination:** \n   - (Tue, Thu) is impossible because R is already on Tuesday.\n   - (Wed, Fri) is impossible because Clue 4 states T is not on Friday.\n4. **Placement:** Therefore, P must be on Monday and T must be on Wednesday.\n5. **Final Step:** The remaining days are Thursday and Friday, and the remaining speakers are Q and S. Clue 3 states S is after Q. Thus, Q must be on Thursday and S must be on Friday.\n\n**Reading Signal:** In scheduling, 'Exactly X days before/after' is a powerful anchor. Always check the boundaries (like Friday constraints) first to prune the logic tree.",
+      "trap_type": "Ordinal misinterpretation",
+      "concept_tag": "Linear Arrangement - Scheduling",
+      "verify_code": "import itertools\ndays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']\nspeakers = ['P', 'Q', 'R', 'S', 'T']\nans_val = ''\nfor p in itertools.permutations(speakers):\n    d = dict(zip(days, p))\n    idx_p = days.index([k for k,v in d.items() if v=='P'][0])\n    idx_t = days.index([k for k,v in d.items() if v=='T'][0])\n    idx_q = days.index([k for k,v in d.items() if v=='Q'][0])\n    idx_s = days.index([k for k,v in d.items() if v=='S'][0])\n    if d['Tue'] == 'R' and (idx_t - idx_p == 2) and (idx_s > idx_q) and d['Fri'] != 'T':\n        ans_val = d['Thursday' if 'Thursday' in d else 'Thu']\n        break\nanswer = {'P':'A', 'Q':'B', 'T':'C', 'S':'D'}[ans_val]",
+      "id": "AI-CD-738c51f4",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "738c51f4808457febae2adcb8cc16b33fe610a50edf9a94d7558480919d5541e",
+      "created_at": "2026-10-27T08:33:19.658616+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Statement: 'The state environment board plans to ban single-use plastic bottles in all wildlife sanctuaries, arguing that this policy will significantly reduce the total volume of litter left behind by visitors.'\n\nWhich of the following is an assumption required by the board's argument?",
+      "options": {
+        "A": "Single-use plastic bottles constitute a significant portion of the total litter currently left behind by visitors in wildlife sanctuaries.",
+        "B": "Visitors will completely stop bringing any form of packaged food or drink into wildlife sanctuaries once the ban takes effect.",
+        "C": "Reusable glass bottles cost less for visitors to purchase than single-use plastic bottles.",
+        "D": "Wildlife sanctuaries generate more litter than any other public tourist destination in the state."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step-by-step solution using the Negation Test:\n1. Identify the core premise and conclusion: Premise = Ban single-use plastic bottles; Conclusion = Significantly reduce total volume of litter.\n2. Apply the Negation Test to Option A: Assume single-use plastic bottles DO NOT constitute a significant portion of the current total litter (e.g., they make up only 0.1% of all trash). If true, banning them would fail to achieve a 'significant reduction in total litter', causing the argument to collapse completely. Thus, Option A is a necessary assumption.\n\nWhy Option B is wrong (Main Distractor): Option B is an 'Extreme Scope' trap. The argument requires only that banning plastic bottles will lead to a significant drop in litter, not that visitors must completely cease bringing all packaged goods. An assumption must be the minimum necessary condition, not an overbroad requirement.",
+      "trap_type": "Extreme scope",
+      "concept_tag": "Assumption",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CLR-9ffb80de",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9ffb80dee4c7ac53f7a2acbfb1adfa7c6d4db4d3e1f00935da46d9ee329c85ea",
+      "created_at": "2026-10-27T08:34:00.681668+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Development economics has experienced a methodological shift toward randomized controlled trials (RCTs) to evaluate antipoverty interventions. Proponents argue that RCTs provide rigorous, causal evidence by isolating specific variables, such as the effect of free textbook distribution on student test scores. However, critics contend that this micro-level focus often obscures broader structural determinants of poverty—such as political corruption, property rights, and macroeconomic policy—which cannot be randomly assigned in a trial. Furthermore, findings from a successful RCT in one region rarely translate seamlessly to another due to local institutional variations, a problem known as external validity. By prioritizing narrow, easily quantifiable interventions over complex systemic reforms, the field risks addressing the symptoms of poverty while leaving its fundamental socio-economic drivers unexamined.\n\nWhich of the following best expresses the main concern raised by the author regarding the heavy reliance on RCTs?",
+      "options": {
+        "A": "RCTs fail to produce reliable causal evidence even for small-scale local interventions.",
+        "B": "An overemphasis on RCTs risks diverting focus away from structural drivers of poverty that cannot be studied through randomized experiments.",
+        "C": "Structural issues like political corruption should only be tackled after local external validity problems are resolved.",
+        "D": "Development economics must completely abandon RCTs in favor of macro-level institutional analysis."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The author structures the passage by first acknowledging what RCTs do (isolate local variables) and then criticizing the field for *prioritizing* them over complex, structural factors (corruption, macroeconomic policy) that cannot be randomly assigned. Option B captures this core synthesis accurately.\n\nOption D is the main distractor (EXTREME SCOPE). The author argues against *prioritizing narrow interventions over systemic reforms*, but never demands that RCTs be 'completely abandoned.' The extreme word 'completely' turns a nuanced critique into an absolute prohibition.\n\nOption A is a REVERSAL/CONTRADICTION: the text states that proponents use RCTs specifically because they *do* isolate causal evidence for micro-level variables like textbook distribution.\n\nOption C is OUT-OF-SCOPE: the passage does not suggest a chronological sequence (tackling structural issues 'after' resolving external validity).",
+      "trap_type": "Extreme scope",
+      "concept_tag": "RC - central idea",
+      "id": "AI-CVR-9c35b1d0",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9c35b1d0cf972686a9661782d4cc48be79e00318673b8adb945abbe4d0657234",
+      "created_at": "2026-10-27T08:34:46.991916+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five managers—Amir, Binoy, Chandra, Deepa, and Edna—occupy floors 1 to 5 of an office building, one per floor. Floors are numbered 1 to 5 from bottom to top.\n\n1. Deepa is on an even-numbered floor.\n2. Amir is exactly two floors above Binoy.\n3. Chandra and Edna are on adjacent floors.\n4. Binoy is on a lower floor than Chandra.\n5. Edna is not on floor 4.\n\nWho is on floor 4?",
+      "options": {
+        "A": "Amir",
+        "B": "Chandra",
+        "C": "Deepa",
+        "D": "Edna"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve this vertical arrangement, we evaluate the most restrictive constraint: the gap between Amir (A) and Binoy (B). 'Two floors above' means Floor(A) = Floor(B) + 2. The possible (B, A) pairs are (1,3), (2,4), and (3,5).\n\n1. If (B,A) = (2,4): Deepa (D) must be on an even floor. Since floors 2 and 4 are taken, this case is impossible.\n2. If (B,A) = (3,5): Chandra (C) must be higher than Binoy (floor 3), so C = 4. Deepa (D) must be on an even floor; since floor 4 is occupied by Chandra, D must be floor 2. This leaves Edna (E) on floor 1. However, Chandra (4) and Edna (1) are not adjacent. Impossible.\n3. If (B,A) = (1,3): Deepa (D) must be floor 2 or 4. \n   - If D = 4, then C and E must occupy floors 2 and 5 (not adjacent).\n   - If D = 2, then C and E must occupy floors 4 and 5. Since Edna cannot be on floor 4 (clue 5), Edna is on floor 5 and Chandra is on floor 4.\n\nFinal Arrangement: Floor 1: Binoy, Floor 2: Deepa, Floor 3: Amir, Floor 4: Chandra, Floor 5: Edna. Shortcut: Always prioritize parity (even/odd) and fixed-gap constraints to eliminate impossible grids quickly.",
+      "trap_type": "Language interpretation (Gap vs. Displacement)",
+      "concept_tag": "Linear Arrangement - Vertical with Constraints",
+      "verify_code": "import itertools\nsols = [p for p in itertools.permutations([1,2,3,4,5]) if p[3]%2==0 and p[0]==p[1]+2 and abs(p[2]-p[4])==1 and p[1]<p[2] and p[4]!=4]\nanswer = 'B' if len(sols)==1 and sols[0][2]==4 else 'X'",
+      "id": "AI-CD-83223cb5",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "83223cb51c3190ff84f54be465d064e6e6a097ebe10b87771e37ccafc549c7a0",
+      "created_at": "2026-10-27T08:37:39.036809+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "The National Corporate Watchdog (NCW) recently mandated that all publicly listed companies appoint an independent ethics officer to handle internal misconduct complaints. The NCW argues that this mandate will significantly reduce corporate financial fraud, pointing to industry data showing that companies with an independent ethics officer record three times as many internal complaints as those without one, thereby enabling early detection of wrongdoing.\n\nWhich of the following is an assumption required by the NCW’s argument?",
+      "options": {
+        "A": "Internal employee complaints are the primary mechanism through which corporate financial fraud is uncovered.",
+        "B": "At least some of the additional internal complaints recorded by ethics officers lead to the detection and prevention of actual financial fraud.",
+        "C": "Companies currently lacking an independent ethics officer experience higher total financial losses from fraud than companies with one.",
+        "D": "Employees in companies without ethics officers refrain from reporting fraud solely due to fear of workplace retaliation."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To identify the necessary assumption, apply the Negation Test to option B:\n\n1. **Negation of B**: 'NONE of the additional internal complaints recorded by ethics officers lead to the detection and prevention of actual financial fraud.'\n2. **Impact on Argument**: If the higher number of reports consists entirely of trivial, unproven, or irrelevant grievances that never prevent actual fraud, then having 3x more complaints does NOT enable early detection of wrongdoing. The NCW's core bridge between 'more complaints' and 'reduced financial fraud' collapses entirely.\n\nTherefore, B is a required assumption.\n\n**Main Distractor Analysis (Option A)**:\nOption A is tempting because if internal complaints were the primary mechanism, the policy would certainly be impactful. However, it is NOT *necessary*. Even if external audits or whistleblower hotlines uncover 70% of frauds (making internal complaints a secondary mechanism), adding an ethics officer could still detect the remaining 30% early and achieve a 'significant reduction'. Mistaking a primary/sufficient factor for a strictly necessary assumption is a classic CLAT trap.",
+      "trap_type": "Primary mechanism mistaken for necessary assumption",
+      "concept_tag": "Assumption - Negation Test",
+      "id": "AI-CLR-e9da82bc",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "e9da82bc75273738dc55f7d425025059b6dad911786ba0972006e89d67d18bea",
+      "created_at": "2026-10-27T08:38:23.542990+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "options": {
+        "A": "1/199",
+        "B": "1/203",
+        "C": "1/196",
+        "D": "1/200"
+      },
+      "trap_type": "Off-by-one term count",
+      "question_text": "A sequence of real numbers $a_1, a_2, a_3, \\dots$ is defined by $a_1 = \\frac{1}{3}$ and $a_{n+1} = \\frac{a_n}{1 + 4a_n}$ for all $n \\ge 1$.\n\nWhat is the value of $a_{50}$?",
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Spot the structural pattern by taking the reciprocal of both sides of the recurrence relation:\n$$\\frac{1}{a_{n+1}} = \\frac{1 + 4a_n}{a_n} = \\frac{1}{a_n} + 4$$\n2. Substitute $b_n = \\frac{1}{a_n}$. The recurrence relation becomes $b_{n+1} = b_n + 4$, which is an Arithmetic Progression (AP) with a common difference $d = 4$.\n3. Find the first term of the AP: $b_1 = \\frac{1}{a_1} = \\frac{1}{1/3} = 3$.\n4. Compute the 50th term $b_{50}$ using $b_n = b_1 + (n - 1)d$:\n$$b_{50} = 3 + (50 - 1) \\times 4 = 3 + 196 = 199$$\n5. Invert back to find $a_{50}$:\n$$a_{50} = \\frac{1}{b_{50}} = \\frac{1}{199}$$\n\nShortcut / Reading Signal: Whenever you see a recurrence of the form $a_{n+1} = \\frac{a_n}{p + q a_n}$, taking the reciprocal instantly linearizes the sequence into an AP.\n\nMain Distractor Trap (B - 1/203): The most common hasty mistake is an off-by-one error, where the student computes $b_1 + 50d = 3 + 200 = 203$, giving $1/203$. Trap (C) comes from omitting the initial term $b_1 = 3$ and writing $1/(49 \\times 4) = 1/196$.",
+      "concept_tag": "Algebra - sequences and series",
+      "verify_code": "from fractions import Fraction\n\na = Fraction(1, 3)\nfor _ in range(49):\n    a = a / (1 + 4 * a)\nanswer = 'A' if a == Fraction(1, 199) else 'Wrong'",
+      "id": "AI-CQ-a2a3f516",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "a2a3f51681baea6673387c2cf8391010ef64e87f169c234ed8fe9dfbb1a1788e",
+      "created_at": "2026-10-27T08:39:33.069044+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Karl Popper’s criterion of falsifiability is often invoked as a neat boundary between science and non-science: a theory is scientific if and only if it makes predictions that could, in principle, be proven wrong. Yet, working scientists rarely discard a core hypothesis the moment an anomaly appears. When an experiment yields an unexpected result, researchers typically question the experimental setup, theoretical assumptions about auxiliary variables, or measurement noise before contemplating the demise of the central theory. Far from being unscientific dogmatism, this resistance is methodologically sound; without a degree of tenacity, promising theories would be abandoned at the first sign of noisy data. Popper himself recognized this subtlety, though popular accounts of his work routinely flatten it into a naive falsificationism. The true mark of scientific progress lies not in the instant rejection of challenged hypotheses, but in whether auxiliary modifications expand the theory's explanatory scope rather than merely shielding it from refutation.\n\nBased on the passage, the author would most likely agree with which of the following statements regarding scientific practice?",
+      "options": {
+        "A": "Defending a central hypothesis by re-examining auxiliary variables is a form of dogmatism that delays scientific progress.",
+        "B": "Abandoning a hypothesis immediately upon encountering conflicting experimental data can prematurely derail scientific progress.",
+        "C": "Popper’s original falsifiability framework is flawed because it fails to account for how working scientists handle measurement noise.",
+        "D": "Auxiliary modifications to a theory are scientifically valuable only if they shield the core hypothesis from future refutation."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Track the key shift signals: The passage opens with the popular view ('often invoked'), introduces a reality check with 'Yet', and reframes the phenomenon with 'Far from being unscientific dogmatism, this resistance is methodologically sound; without a degree of tenacity, promising theories would be abandoned...'\n2. Evaluate the author's core thesis: Preserving hypotheses against initial noisy data through tenacity is sound science, provided modifications expand explanatory scope.\n3. Option B accurately reflects this thesis: abandoning hypotheses too early ('at the first sign of noisy data') harms progress.\n\nMain Distractor Analysis:\nOption C is a classic HALF-TRUE / DISTORTED PREMISE trap (the main distractor). A hasty solver sees that 'naive falsificationism' is criticized and assumes Popper's actual theory was flawed. However, the text explicitly specifies that 'Popper himself recognized this subtlety' and that only 'popular accounts of his work routinely flatten it'. Blaming Popper's original framework distorts the text's clear distinction.\n\nTaxonomy of wrong options:\n- Option A (Reversal): The passage explicitly asserts that this defense is 'methodologically sound', directly opposing the claim that it is 'dogmatism'.\n- Option C (Half-true / Distorted Premise): Attributes the flaw to Popper's original work when the passage explicitly attributes it only to popular misinterpretations.\n- Option D (Reversal / Extreme): Inverts the final sentence, which states modifications must expand scope *rather than merely shielding it from refutation*.",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - central argument and author's nuance",
+      "id": "AI-CVR-8283c361",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "8283c36195dffc5c7bac8d7cfe844e12dee424eb84a058acfd7d55001baecac2",
+      "created_at": "2026-10-27T08:40:32.882536+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five chess players — A, B, C, D, and E — competed in a single round-robin tournament (every pair played exactly one match). A win yields 1 point, a draw yields 0.5 points to each player, and a loss yields 0 points. After all matches were completed, the following facts were recorded:\n\n1. Player A finished with a total score of 3.5 points.\n2. The remaining four players finished with strictly distinct total scores such that $B > C > D > E$.\n3. Player B did not lose any match.\n4. Player E did not win any match.\n5. Exactly one match in the entire tournament ended in a draw.\n\nWhat was the result of the match between B and C?",
+      "options": {
+        "A": "B beat C",
+        "B": "B and C drew",
+        "C": "C beat B",
+        "D": "Cannot be determined from the given information"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step 1 (Global draw analysis): A 5-player round-robin has $\\binom{5}{2} = 10$ total matches. Statement 5 specifies that EXACTLY ONE match ended in a draw. Therefore, the remaining 9 matches all produced decisive win/loss outcomes.\n\nStep 2 (Deducing A's matches): Player A scored 3.5 points out of 4.0 maximum possible. A fractional score of 0.5 in a tournament with 1-point wins and 0.5-point draws requires A to have 3 wins and 1 draw. Thus, A was one of the two players in the single draw of the tournament.\n\nStep 3 (Locking the unique draw): Player B did not lose any match (Statement 3). If A had beaten B, B would have a loss, which is forbidden. Since A has 3 wins and 1 draw, A could not beat B; hence A's single match against B MUST be a draw. Because there is only 1 draw overall, the A vs B match is that unique draw! All other 9 matches were decisive wins/losses.\n\nStep 4 (Deducing B's results): Since A vs B was a draw, A won all 3 of A's remaining matches (against C, D, E). Player B drew with A and has zero losses. Since no other draws exist in the tournament, B MUST HAVE WON all remaining 3 matches (against C, D, E). Therefore, B beat C.\n\nStep 5 (Full grid verification for uniqueness): \n- A = 3.5 (drew B, beat C, D, E)\n- B = 3.5 (drew A, beat C, D, E)\n- C, D, E lost to both A and B, so their points come entirely from matches among themselves.\n- In {C, D, E}, with no draws, total available points = 3. Since E won 0 matches (Statement 4), E lost to both C and D (E = 0). C beat D (C = 2, D = 1).\n- Final scores: A = 3.5, B = 3.5, C = 2.0, D = 1.0, E = 0.0. This satisfies $B > C > D > E$ ($3.5 > 2.0 > 1.0 > 0.0$).\n\nReading Signal/Shortcut: When a global invariant limits total draws to 1, fractional scores immediately pinpoint which pair played the draw.\n\nTrap (B): Hasty solvers assume B's 'no loss' condition meant B must have drawn with C or other players, forgetting that the total draw count across the ENTIRE tournament is capped at 1.",
+      "trap_type": "Misassigning the unique draw constraint",
+      "concept_tag": "Tournament - grid reconstruction",
+      "verify_code": "import itertools\nplayers = ['A', 'B', 'C', 'D', 'E']\nmatches = list(itertools.combinations(players, 2))\nvalid_results = []\nfor outcomes in itertools.product([0, 1, 2], repeat=10):\n    if outcomes.count(2) != 1: continue\n    pts = {p: 0.0 for p in players}\n    wins = {p: 0 for p in players}\n    losses = {p: 0 for p in players}\n    bc_res = None\n    for (p1, p2), res in zip(matches, outcomes):\n        if res == 0:\n            pts[p1] += 1.0; wins[p1] += 1; losses[p2] += 1\n            if (p1, p2) == ('B', 'C'): bc_res = 'B beat C'\n        elif res == 1:\n            pts[p2] += 1.0; wins[p2] += 1; losses[p1] += 1\n            if (p1, p2) == ('B', 'C'): bc_res = 'C beat B'\n        else:\n            pts[p1] += 0.5; pts[p2] += 0.5\n            if set([p1, p2]) == set(['B', 'C']): bc_res = 'B and C drew'\n    if pts['A'] == 3.5 and (pts['B'] > pts['C'] > pts['D'] > pts['E']) and losses['B'] == 0 and wins['E'] == 0:\n        valid_results.append(bc_res)\nanswer = 'A' if valid_results == ['B beat C'] else None",
+      "id": "AI-CD-73bb9ec8",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "73bb9ec8f09dbb5610890e529e3eebe5f42100e9265910af5dd97abdca3afcc1",
+      "created_at": "2026-10-27T08:42:48.626762+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: An employer is vicariously liable for any civil wrong committed by an employee acting in the course of employment. An act occurs in the course of employment if it is an authorized task or an unauthorized mode of performing an authorized task. Where an employer has issued an express prohibition against a specific act, the employer is exempt from liability ONLY IF the employee performed that prohibited act solely for personal benefit. If the prohibited act was performed, even in part, to advance the employer's business interests, the express prohibition does not exempt the employer from vicarious liability.\n\nFact Situation: Omni Freight strictly prohibits its drivers from carrying unauthorized passengers. Meera, an Omni Freight driver, is delivering a time-sensitive consignment. On her route, she spots an Omni Freight mechanic whose service vehicle has broken down. Knowing that bringing the mechanic to the central depot will allow the company to repair multiple stranded trucks, Meera carries the mechanic in her truck. While driving on her route, Meera negligently collides with a car owned by Samar. Samar sues Omni Freight for compensation. Which of the following is correct?",
+      "options": {
+        "A": "Omni Freight is liable because Meera performed the prohibited act to advance Omni Freight's business interests.",
+        "B": "Omni Freight is not liable because Meera violated an express prohibition against carrying unauthorized passengers.",
+        "C": "Omni Freight is not liable because carrying passengers is an independent personal act outside the scope of freight delivery.",
+        "D": "Omni Freight is liable only if Omni Freight explicitly ratified Meera's decision to pick up the mechanic."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "To solve this legal reasoning problem, apply the stated principles step by step:\n1. Principle Rule: An express prohibition exempts the employer ONLY IF the employee acted solely for personal benefit. If the act was intended to advance the employer's business interests, the prohibition does NOT exempt the employer.\n2. Apply to Facts: Meera picked up the mechanic to help Omni Freight repair stranded trucks, which directly advances Omni Freight's business interests.\n3. Conclusion: Because the prohibited act was performed to advance the employer's business interests, Omni Freight remains vicariously liable.\n\nReading Signal / Shortcut: Look for the 'Conditional Exception Qualifier' ('ONLY IF ... IF ...'). In legal RC, never stop reading after identifying a prohibition rule; always check whether the condition for the exception (personal benefit vs. business interest) is satisfied.\n\nWhy Main Distractor (B) is wrong: Trap (B) is the 'Rule Truncation Trap'. Candidates selecting B recognize that an express prohibition existed, but fail to evaluate the qualification attached to the prohibition exception. They incorrectly assume that any breach of a prohibition automatically frees the employer from liability.",
+      "trap_type": "Stopping at the general prohibition rule and ignoring the business-interest qualification",
+      "concept_tag": "Legal RC - vicarious liability and express prohibition",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CR-ed2f1bfa",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ed2f1bfa0e3ab94db55cd9a2c36428cac6a97a3f190118940f7b726172145642",
+      "created_at": "2026-10-27T08:43:21.590774+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A can complete a project in 12 days. If B is 20% more efficient than A, how many days will B take to complete the same project alone?",
+      "options": {
+        "A": "10",
+        "B": "9.6",
+        "C": "14.4",
+        "D": "15"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Efficiency and time are inversely proportional. If B is 20% more efficient than A, the ratio of their efficiencies is 100 : 120, which simplifies to 5 : 6. Consequently, the ratio of the time taken by A and B will be the inverse, 6 : 5. Since A takes 12 days (which corresponds to 6 units in our ratio), 1 unit equals 2 days. Therefore, B takes 5 units × 2 = 10 days. Shortcut: Time taken by B = Time taken by A / 1.2 = 12 / 1.2 = 10.",
+      "trap_type": "Direct percentage application to time",
+      "concept_tag": "Time and Work - Efficiency Ratios",
+      "verify_code": "time_a = 12; efficiency_ratio = 1.2; answer = int(time_a / efficiency_ratio)",
+      "id": "AI-CQ-3371dda6",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "3371dda684d2c67ebbda996762853fd656a85c9a152d6697576a854b70eb8369",
+      "created_at": "2026-10-27T08:51:40.165851+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Battery is a civil wrong consisting of the intentional and direct application of force to another person without their consent or legal justification. To establish battery, three essential elements must be met: first, the act must be intentional, meaning the person meant to make contact; second, there must be a direct application of force, though the force used can be very slight; and third, there must be a lack of consent from the person being touched. Physical injury or pain is not a prerequisite for battery; even an unwelcome touch can suffice. However, a significant exception exists: contact that is an incidental and inevitable part of daily life in crowded environments, such as bumping into someone on a busy street or a crowded train, does not constitute battery as it lacks the requisite intent to apply force unlawfully.\n\nFact Situation: Arjun is rushing to catch a metro. While running, he accidentally trips on a loose tile and falls into Sneha, knocking her down. Sneha is unhurt but annoyed. Later, while waiting on the platform, Vikram is annoyed by a stranger, Rahul, who is blocking the map. Vikram intentionally pokes Rahul's shoulder firmly with his index finger to get him to move. Rahul had not consented to the touch. Applying the principle, which of the following is correct?",
+      "options": {
+        "A": "Both Arjun and Vikram committed battery as both applied force without consent.",
+        "B": "Only Vikram committed battery because his act of poking was intentional.",
+        "C": "Only Arjun committed battery because the force he applied was enough to knock Sneha down.",
+        "D": "Neither Arjun nor Vikram committed battery because no physical injury was caused to Sneha or Rahul."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To succeed in a claim for battery based on the passage, the act must be 'intentional'. Arjun's contact with Sneha was accidental (he tripped), thus failing the first requirement. Vikram's act of poking Rahul was 'intentional' and 'direct', and even though the force was 'slight' and caused no 'physical injury', it meets all the criteria mentioned in the principle. The principle specifically states that injury is not a prerequisite and even slight force suffices. Therefore, only Vikram is liable.",
+      "trap_type": "Misinterpreting the 'no injury' rule",
+      "concept_tag": "Legal RC - battery",
+      "verify_code": "def check_battery():\n    arjun_intentional = False\n    vikram_intentional = True\n    injury_required = False\n    \n    arjun_battery = arjun_intentional\n    vikram_battery = vikram_intentional\n    \n    if not arjun_battery and vikram_battery:\n        return 'B'\n    return 'None'\n\nanswer = check_battery()",
+      "id": "AI-CR-a9587b32",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a9587b32a1cf8540146d124fffca6b72fe64ba9455d029618b59cb5c95273f48",
+      "created_at": "2026-10-27T08:52:38.380172+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A certain sum of money is invested at a constant annual rate of interest. For a period of 2 years, the compound interest earned (compounded annually) is exactly 12.5% more than the simple interest earned on the same sum at the same rate for the same period. What is the annual rate of interest?",
+      "options": {
+        "A": "12.5%",
+        "B": "25%",
+        "C": "50%",
+        "D": "6.25%"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Let the Principal be $P$ and the annual rate be $R$. Step 2: The Simple Interest (SI) for 2 years is $(P \\times R \\times 2) / 100 = 0.02PR$. Step 3: The Compound Interest (CI) for 2 years is $P[(1 + R/100)^2 - 1]$. Expanding this, $CI = P[1 + (R/100)^2 + 2R/100 - 1] = P[(R/100)^2 + 0.02R]$. Step 4: The difference $CI - SI = P(R/100)^2$. Step 5: We are given that $CI$ is 12.5% more than $SI$. This means $(CI - SI) / SI = 12.5/100 = 1/8$. Step 6: Substitute the expressions: $[P(R/100)^2] / [2PR/100] = 1/8$. Simplifying this gives $(R/100) / 2 = 1/8$, which implies $R/200 = 1/8$. Solving for $R$, we get $R = 200/8 = 25$. Shortcut: For a 2-year period, the ratio $(CI - SI) / SI$ is always $R/200$. Setting $R/200 = 12.5/100$ leads directly to $R = 25$.",
+      "trap_type": "Base value confusion",
+      "concept_tag": "Simple and Compound Interest - Comparison",
+      "verify_code": "from fractions import Fraction\n# Given (CI - SI) / SI = 12.5% = 0.125\n# Formula for 2 years: (CI - SI) / SI = R / 200\n# R / 200 = 0.125\nr = 0.125 * 200\nif r == 25:\n    answer = 'B'\nelse:\n    answer = None",
+      "id": "AI-CQ-2245ace4",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "2245ace4c3b149bb4e40a2d5d2b9bb1921b02a454b4a0951c454b2ac3d4a523b",
+      "created_at": "2026-10-27T08:54:48.015973+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Trespass to land occurs when a person intentionally enters another's property without lawful justification. It is an actionable wrong regardless of whether actual damage is caused. However, under the 'Doctrine of Necessity', an entry is justified if it is done to prevent an imminent and significantly greater harm to the public or the property owner. If the doctrine applies, the entrant is not held liable for the trespass or any incidental damage caused while reasonably addressing the emergency.\n\nFact Situation: Mr. Anil notices that a large pile of dry leaves next to his neighbor Mr. Sunil’s wooden shed has caught fire. Mr. Sunil is not home. To prevent the shed from burning down, Mr. Anil jumps over the fence and uses a heavy garden bench to smother the flames. In the process, the bench (belonging to Sunil) is scratched and a nearby decorative ceramic pot worth Rs. 5,000 is smashed by Anil's foot. Mr. Sunil sues Mr. Anil for trespass and the cost of the pot.",
+      "options": {
+        "A": "Anil is liable for the cost of the pot because the necessity of stopping a fire does not grant a right to destroy unrelated property.",
+        "B": "Anil is not liable because the fire posed an imminent threat to the shed, justifying both the entry and the incidental damage to the pot.",
+        "C": "Anil is liable for trespass because he should have sought permission or called the fire department instead of jumping the fence.",
+        "D": "Anil is not liable for trespass but must compensate Sunil for the pot, as the doctrine of necessity only excuses the act of entry, not the destruction of goods."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve this, we must apply the 'Doctrine of Necessity' provided in the text. Step 1: Was there a trespass? Yes, Anil entered without permission. Step 2: Was there an emergency? Yes, a fire near a wooden shed. Step 3: Was the harm prevented (shed burning) significantly greater than the harm caused (smashed pot)? Yes. The principle specifically states that if the doctrine applies, the entrant is not liable for 'any incidental damage caused while reasonably addressing the emergency.' Since smashing the pot was incidental to the act of putting out the fire, Anil is fully protected. Shortcut: Look for the 'incidental damage' clause in the principle—it's the 'twist' that resolves the liability for the pot.",
+      "trap_type": "Equity Trap",
+      "concept_tag": "Legal RC - Doctrine of Necessity",
+      "verify_code": "def check_liability():\n    # Harm prevented: Wooden shed (High value)\n    # Harm caused: Ceramic pot (Rs. 5000)\n    # Principle: Not liable for trespass OR incidental damage if harm prevented > harm caused\n    necessity_applies = True\n    incidental_damage_covered = True\n    \n    if necessity_applies and incidental_damage_covered:\n        return 'B'\n    return 'A'\n\nanswer = check_liability()",
+      "id": "AI-CR-d8d855ac",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d8d855ac28e44c030b6599d03ac2f229f3eea903dce20041bcb9c509f968711f",
+      "created_at": "2026-10-27T08:57:53.933036+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Following the implementation of a new 'No-Cell-Phone' ordinance for drivers in City X, the annual number of reported traffic collisions dropped by 25%. The City Council claimed the ordinance was a success, proving that banning cell phone use while driving significantly increases road safety in the city.",
+      "options": {
+        "A": "The ordinance was strictly enforced by the local police department, resulting in a high rate of citations for violators.",
+        "B": "The drop in collisions was not primarily a result of a substantial decline in the total number of miles driven by residents of City X.",
+        "C": "Cell phone use was the primary cause of traffic accidents in City X before the ordinance was passed.",
+        "D": "The majority of drivers in City X had already stopped using cell phones while driving before the ordinance was officially implemented."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To identify a necessary assumption, we use the Negation Test: if the statement is false, the argument must collapse. The argument concludes that the *ordinance* (a specific intervention) improved *safety* (a qualitative rate). However, the evidence provided is an absolute drop in collisions (a quantitative count). If we negate (B)—'The drop was a result of a substantial decline in total miles driven'—it means people simply drove less (perhaps due to high fuel prices or a recession). If people drive 50% less and accidents only drop by 25%, the activity of driving has actually become *more* dangerous. Thus, the conclusion that the ordinance increased safety would be logically unsupported. (A) and (D) are about the implementation process but aren't logically required for the result to exist. (C) is a common trap; the cause doesn't need to be the 'primary' one to be effective.",
+      "trap_type": "The Denominator Trap (Rate vs. Absolute)",
+      "concept_tag": "Necessary Assumption",
+      "verify_code": "def verify():\n    # Let C1, M1 be initial collisions and miles. Let C2, M2 be new collisions and miles.\n    # Given C2 = 0.75 * C1.\n    # Safety is defined as the rate C/M (lower is safer).\n    # For the ordinance to be 'safer', C2/M2 < C1/M1 must hold.\n    # (0.75 * C1) / M2 < C1 / M1  => 0.75 / M2 < 1 / M1 => M2 > 0.75 * M1.\n    # If M2 (miles driven) dropped by more than 25% (e.g., M2 = 0.5 * M1),\n    # the rate would be 0.75/0.5 = 1.5, meaning it got MORE dangerous.\n    # Thus, the assumption that miles (M) did not decline substantially is necessary.\n    answer = 'B'\n    return answer\n\nanswer = verify()",
+      "id": "AI-CLR-99754c65",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "99754c656f45e616c5358edb27f819fe3fb268b22354a3570321771eb3f67559",
+      "created_at": "2026-10-27T09:00:22.315882+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Traditional historical archives were once the exclusive domain of dedicated scholars, housed in temperature-controlled rooms with limited public access. The primary goal was preservation: protecting fragile parchment from the ravages of light and human touch. However, the digital revolution has shifted this paradigm. Modern digitization efforts focus less on sequestering the past and more on democratizing it. By uploading high-resolution scans to open-access platforms, archives now invite the public to engage with history directly. Furthermore, many institutions are adding interactive layers, such as crowdsourced transcription and GIS mapping, to these records. This transformation suggests that the value of an archive is no longer measured solely by how well it is guarded, but by how frequently it is used. While some purists worry about the loss of the physical experience of handling paper, the gain in accessibility ensures that history remains a living dialogue rather than a silent relic.\n\nWhich of the following best captures the main idea of the passage?",
+      "options": {
+        "A": "The primary goal of archiving is moving away from restricted preservation toward active public participation.",
+        "B": "Digitization is primarily intended to protect fragile parchment from the ravages of light and human touch.",
+        "C": "Purists support the digital shift because it replicates the physical experience of handling paper.",
+        "D": "Modern archiving has abandoned the goal of document preservation to focus on public accessibility."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The passage contrast the traditional archiving paradigm (preservation and restricted access) with the modern one (democratization and use). (a) Step-by-step: The author identifies the old focus, uses the pivot word 'However' to introduce the digital shift, and concludes by stating that value is now measured by usage rather than guarding. (b) Reading signal: The contrast marker 'However' in the third sentence and the value-judgment 'no longer measured solely by...' in the penultimate sentence indicate the main idea. (c) The main distractor is D, which is an Extreme Scope trap. While the passage says institutions focus 'less' on sequestering, 'abandoned' is too absolute and unsupported. Option B is a Half-true trap; it repeats the goal of the old paradigm as if it were the main point of the new one. Option C is a Reversal; the passage states purists 'worry' about the loss of the physical experience, rather than supporting the shift for replicating it.",
+      "trap_type": "Extreme scope",
+      "concept_tag": "RC - main idea",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CVR-ef24db3b",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ef24db3b7e07584f2cf14aaab49f516041b3df04df1829f54e3299d3142c0229",
+      "created_at": "2026-10-27T09:02:12.322121+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 5,
+      "attempts": 8,
       "rejected": 0,
-      "accepted": 5
+      "accepted": 8
     },
     "CAT VARC RC": {
-      "attempts": 5,
-      "rejected": 1,
-      "accepted": 4
+      "attempts": 11,
+      "rejected": 3,
+      "accepted": 8
     },
     "CAT DILR": {
-      "attempts": 6,
-      "rejected": 3,
-      "accepted": 3
+      "attempts": 10,
+      "rejected": 4,
+      "accepted": 6
     },
     "CLAT RC": {
-      "attempts": 5,
+      "attempts": 8,
       "rejected": 0,
-      "accepted": 5
+      "accepted": 8
     },
     "CLAT Logical Reasoning": {
-      "attempts": 6,
-      "rejected": 3,
-      "accepted": 3
+      "attempts": 11,
+      "rejected": 5,
+      "accepted": 6
     }
   }
 }
