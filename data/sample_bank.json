@@ -901,54 +901,54 @@
       "exam": "IPMAT",
       "topic": "IPMAT Quant",
       "difficulty": "CAT-Level",
-      "concept_tag": "Probability - Bayes theorem",
-      "question_text": "Box A contains 4 red and 2 blue balls, while Box B contains 2 red and 6 blue balls. One box is chosen at random (equally likely) and a ball is drawn from it. Given that the drawn ball is red, what is the probability that it came from Box A?",
+      "concept_tag": "Functions - functional equation with f(1/x)",
+      "question_text": "A function f, defined for all non-zero real x, satisfies f(x) + 2f(1/x) = 3x. How many non-zero real numbers x satisfy f(x) = f(-x)?",
       "options": {
-        "A": "2/3",
-        "B": "8/11",
-        "C": "4/7",
-        "D": "3/11"
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "Infinitely many"
       },
-      "correct_answer": "B",
-      "trap_type": "Pooling balls across boxes instead of weighting by box probabilities",
-      "pedagogical_explanation": "Shortcut: P(Red | A) = 4/6 = 2/3 and P(Red | B) = 2/8 = 1/4. By Bayes' theorem with equal priors, P(A | Red) = (2/3) / (2/3 + 1/4) = (8/12) / (11/12) = 8/11. Main distractor C (4/7) pools the red balls directly, and A (2/3) confuses P(Red | A) with P(A | Red).",
-      "verify_code": "from fractions import Fraction\npA = Fraction(4, 6)\npB = Fraction(2, 8)\npost = pA / (pA + pB)\nanswer = 'B' if post == Fraction(8, 11) else 'A'"
+      "correct_answer": "C",
+      "trap_type": "Declaring f odd and concluding 'no solution' without noticing f(x) = 0 is allowed",
+      "pedagogical_explanation": "Replace x by 1/x: f(1/x) + 2f(x) = 3/x. Solve the two linear equations: f(x) = 2/x - x. Then f(-x) = -2/x + x = -f(x), so f is odd. f(x) = f(-x) means f(x) = -f(x), i.e. f(x) = 0, so 2/x = x, x^2 = 2, x = +/-sqrt(2): 2 solutions. Main distractor A: 'an odd function never equals its mirror' ignores the zeros of f. D comes from wrongly assuming f is even (e.g. guessing f(x) = x and misapplying symmetry).",
+      "verify_code": "from fractions import Fraction as F\nimport math\nf = lambda x: 2/x - x\nfor x in (2.0, -3.5, 0.7):\n    assert abs(f(x) + 2*f(1/x) - 3*x) < 1e-9\nsols = [r for r in (math.sqrt(2), -math.sqrt(2)) if abs(f(r) - f(-r)) < 1e-9]\nanswer = {0:'A',1:'B',2:'C'}[len(sols)]"
     },
     {
       "id": "IQ-C-02",
       "exam": "IPMAT",
       "topic": "IPMAT Quant",
       "difficulty": "CAT-Level",
-      "concept_tag": "Algebra - telescoping series",
-      "question_text": "What is the exact value of the sum S = 1/(1*4) + 1/(4*7) + 1/(7*10) + ... + 1/(28*31)?",
+      "concept_tag": "Matrices - determinant of adjoint and scalar multiple",
+      "question_text": "A is a 3 x 3 matrix with det(A) = 4. What is the value of det(adj(2A))?",
       "options": {
-        "A": "10/31",
-        "B": "30/31",
-        "C": "9/31",
-        "D": "1/31"
+        "A": "64",
+        "B": "128",
+        "C": "256",
+        "D": "1024"
       },
-      "correct_answer": "A",
-      "trap_type": "Forgetting the 1/3 factor in partial fraction decomposition",
-      "pedagogical_explanation": "Shortcut: Rewrite each term using 1/((3k-2)(3k+1)) = (1/3) * (1/(3k-2) - 1/(3k+1)). Telescoping across all 10 terms leaves S = (1/3) * (1 - 1/31) = (1/3) * (30/31) = 10/31. Main distractor B (30/31) forgets to divide by the step size 3, and C (9/31) miscounts the number of terms as 9.",
-      "verify_code": "from fractions import Fraction\ns = sum(Fraction(1, (3*k - 2)*(3*k + 1)) for k in range(1, 11))\nanswer = 'A' if s == Fraction(10, 31) else 'B'"
+      "correct_answer": "D",
+      "trap_type": "Using det(kA) = k det(A) instead of k^n det(A)",
+      "pedagogical_explanation": "Two rules: det(kA) = k^n det(A) and det(adj M) = (det M)^(n-1) for an n x n matrix. Here n = 3: det(2A) = 2^3 x 4 = 32, so det(adj(2A)) = 32^2 = 1024. Main distractor A (64) uses det(2A) = 2 x 4 = 8, then 8^2 = 64. B (128) = 2^3 x 4^2 forgets to square the scalar factor 8. C (256) = 4 x 64 multiplies instead of squaring det(2A) correctly. Shortcut: det(adj(kA)) = k^(n(n-1)) (det A)^(n-1) = 2^6 x 16.",
+      "verify_code": "from fractions import Fraction as F\ndef det(m):\n    return (m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1]) - m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0]) + m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0]))\ndef adj(m):\n    c = [[(-1)**(i+j)*det2([[m[r][s] for s in range(3) if s != j] for r in range(3) if r != i]) for j in range(3)] for i in range(3)]\n    return [[c[j][i] for j in range(3)] for i in range(3)]\ndet2 = lambda m: m[0][0]*m[1][1]-m[0][1]*m[1][0]\nA = [[2,0,0],[0,1,0],[0,1,2]]\nassert det(A) == 4\nB = [[2*v for v in row] for row in A]\nval = det(adj(B))\nanswer = {64:'A',128:'B',256:'C',1024:'D'}[val]"
     },
     {
       "id": "IQ-C-03",
       "exam": "IPMAT",
       "topic": "IPMAT Quant",
       "difficulty": "CAT-Level",
-      "concept_tag": "Combinatorics - derangements",
-      "question_text": "Five distinct admission letters are placed randomly into five addressed envelopes, one in each envelope. In how many ways can this be done such that exactly two letters go into their correct envelopes?",
+      "concept_tag": "Series - telescoping with k^4 + k^2 + 1 factorisation",
+      "question_text": "What is the value of S = sum of k/(k^4 + k^2 + 1) for k = 1 to 20?",
       "options": {
-        "A": "10",
-        "B": "20",
-        "C": "30",
-        "D": "44"
+        "A": "210/421",
+        "B": "420/421",
+        "C": "20/21",
+        "D": "105/211"
       },
-      "correct_answer": "B",
-      "trap_type": "Multiplying C(5,2) by 3! instead of the derangement number D_3",
-      "pedagogical_explanation": "Shortcut: Choose which 2 letters go into their right envelopes in C(5, 2) = 10 ways. The remaining 3 letters must all be deranged (none in its own envelope), which can happen in D_3 = 3!(1 - 1/1! + 1/2! - 1/3!) = 2 ways. Total ways = 10 * 2 = 20. Main distractor C (30) uses D_3 = 3, and A (10) forgets to multiply by D_3.",
-      "verify_code": "import itertools\nways = sum(1 for p in itertools.permutations(range(5)) if sum(i == p[i] for i in range(5)) == 2)\nanswer = 'B' if ways == 20 else 'A'"
+      "correct_answer": "A",
+      "trap_type": "Forgetting the factor 1/2 from the partial-fraction split",
+      "pedagogical_explanation": "Key insight: k^4 + k^2 + 1 = (k^2 + k + 1)(k^2 - k + 1), and the difference of the two factors is 2k. So k/(k^4+k^2+1) = (1/2)[1/(k^2-k+1) - 1/(k^2+k+1)]. Since (k+1)^2 - (k+1) + 1 = k^2 + k + 1, the sum telescopes: S = (1/2)[1 - 1/(20^2+20+1)] = (1/2)(420/421) = 210/421. Main distractor B (420/421) drops the 1/2. C uses the k(k+1) telescoping pattern by mistake.",
+      "verify_code": "from fractions import Fraction as F\nS = sum(F(k, k**4 + k**2 + 1) for k in range(1, 21))\nanswer = {F(210,421):'A',F(420,421):'B',F(20,21):'C',F(105,211):'D'}[S]"
     },
     {
       "id": "IV-E-01",
@@ -1063,17 +1063,17 @@
       "exam": "IPMAT",
       "topic": "IPMAT Verbal",
       "difficulty": "CAT-Level",
-      "concept_tag": "Short RC - logical flaw / assumption",
-      "question_text": "Passage: Critics of congestion pricing argue that charging motorists a fee to enter central business districts during peak hours is inherently regressive, because the flat toll represents a larger share of income for lower-wage commuters than for affluent drivers. Proponents counter that in cities where congestion revenues are ring-fenced to expand high-frequency bus lanes, the average door-to-door commute time for lower-wage workers—over 75 percent of whom already rely on public buses rather than private cars—actually falls by eighteen minutes per day.\n\nThe proponents' counterargument relies on which of the following unstated assumptions?",
+      "concept_tag": "Short RC - author's tone",
+      "question_text": "Passage: Every few years a new app promises to 'revive' the handloom sector by connecting weavers directly to urban buyers. The intention is admirable, and some cooperatives have indeed raised their margins. Yet the apps tend to measure success in downloads and listings, while the weaver's real constraints, such as credit for yarn, a fair price for slow work, and a younger generation unwilling to inherit the loom, remain where they were. Technology can open a shop window; it cannot, by itself, make anyone want to keep weaving.\n\nWhich of the following best describes the author's attitude towards the handloom apps?",
       "options": {
-        "A": "Affluent drivers will completely abandon private cars once congestion pricing is introduced.",
-        "B": "Evaluating the fairness of a transport policy should account for its net impact on all lower-wage commuters, not solely on the minority who drive private cars.",
-        "C": "Bus fares in central business districts will be eliminated entirely within the first year of congestion pricing.",
-        "D": "Lower-wage commuters who drive private cars live closer to the central business district than bus riders do."
+        "A": "Dismissive contempt, since the apps have achieved nothing for weavers",
+        "B": "Qualified appreciation, acknowledging real gains while doubting the apps address the core problems",
+        "C": "Enthusiastic endorsement of technology as the solution to the sector's decline",
+        "D": "Detached neutrality, reporting facts without any evaluation"
       },
       "correct_answer": "B",
-      "trap_type": "Narrow scope vs cohort-wide welfare shift",
-      "pedagogical_explanation": "Reading signal: Critics focus only on lower-wage *motorists* paying the toll, whereas proponents respond with time savings for the 75%+ of lower-wage commuters who ride *buses*. For the proponents' point to rebut the regressivity charge, fairness must be judged across the broader lower-wage commuter group rather than just car drivers (Option B). Main distractor A uses the extreme quantifier 'completely abandon'.",
+      "trap_type": "Extreme tone (A) vs balanced tone with a reservation",
+      "pedagogical_explanation": "Reading signals: 'The intention is admirable' and 'some cooperatives have indeed raised their margins' are genuine praise; 'Yet ... remain where they were' and 'cannot, by itself' are the reservation. That mix is qualified appreciation (B). Main distractor A ignores the conceded gains ('achieved nothing' is extreme). C reverses the conclusion. D fails because 'admirable' and 'cannot, by itself' are evaluative words.",
       "verify_code": ""
     },
     {
@@ -1081,17 +1081,17 @@
       "exam": "IPMAT",
       "topic": "IPMAT Verbal",
       "difficulty": "CAT-Level",
-      "concept_tag": "Paragraph Completion - logical conclusion",
-      "question_text": "Choose the sentence that most logically completes the paragraph:\n\nIn classical cartography, projections that preserve local angles—such as the Mercator projection—inevitably inflate the apparent area of landmasses near the poles, making Greenland appear comparable in size to Africa despite Africa being fourteen times larger. Equal-area projections correct this territorial distortion, yet they do so only by shearing shapes and angles across mid-latitude continents. Every flat map of a spherical Earth is therefore not a neutral mirror of geography, but ________.",
+      "concept_tag": "Vocabulary - sentence completion (precise word)",
+      "question_text": "Choose the word that best fills the blank:\n\nThe minister's ________ reply, which committed to nothing while seeming to promise everything, left reporters unsure whether the scheme had been approved or shelved.",
       "options": {
-        "A": "an obsolete artifact that satellite imagery has rendered completely unnecessary for modern navigation",
-        "B": "a deliberate compromise that privileges certain geometric truths at the expense of others",
-        "C": "proof that equal-area projections are objectively superior to angle-preserving projections in every setting",
-        "D": "a mathematical error that cartographers have failed to resolve due to inadequate computing power"
+        "A": "laconic",
+        "B": "candid",
+        "C": "equivocal",
+        "D": "vociferous"
       },
-      "correct_answer": "B",
-      "trap_type": "One-sided endorsement ignoring the trade-off structure",
-      "pedagogical_explanation": "Reading signal: The paragraph contrasts two projections: one preserves angles at the cost of area, the other preserves area at the cost of shape/angles. The synthesis ('therefore not a neutral mirror, but...') must capture this inescapable geometric trade-off (Option B). Main distractor C picks a winner when the passage shows both have trade-offs, and D falsely blames computing power for a theorem of spherical geometry.",
+      "correct_answer": "C",
+      "trap_type": "Choosing a word that fits 'evasive politician' loosely (laconic) rather than the defined clue",
+      "pedagogical_explanation": "The clue is inside the sentence: 'committed to nothing while seeming to promise everything' and reporters left 'unsure' = deliberately open to two readings, i.e. equivocal (C). Main distractor A, laconic, means using very few words; a brief reply need not be ambiguous, and 'seeming to promise everything' suggests the opposite of terse. B (candid = frank) contradicts the clue; D (vociferous = loud, insistent) says nothing about meaning.",
       "verify_code": ""
     },
     {
