@@ -24,6 +24,9 @@ DEFAULT_FAMILY = "mgmt_law"
 # Per-app Pro (supabase/migrations/2026-10-28_pro_entitlements.sql): one row per (user_id, exam_family).
 ENTITLEMENT_FIELDS = ("pro_until", "pro_purchases", "pending_payment_ref")
 ENTITLEMENT_TABLE = "pro_entitlements"
+GUARD_TABLE = "usage_guard"      # per (user_id, exam_family): session token, IST-day AI count, cooldown
+ABUSE_TABLE = "abuse_events"     # append-only log of speed-check triggers (for manual review only)
+GUARD_FIELDS = ("session_token", "session_started_at", "ai_day", "ai_used", "cooldown_until")
 
 
 def user_id_hash(email: str, pepper: str) -> str:
@@ -114,6 +117,20 @@ class MemoryStore:
         self.entitlements: dict[tuple[str, str], dict] = {}
         self.attempts: list[dict] = []
         self.reports: list[dict] = []
+        self.guards: dict[tuple[str, str], dict] = {}
+        self.abuse: list[dict] = []
+
+    def load_guard(self, uid):
+        return copy.deepcopy(self.guards.get((uid, self.family)))
+
+    def save_guard(self, uid, fields):
+        g = self.guards.setdefault((uid, self.family), {})
+        g.update({k: v for k, v in fields.items() if k in GUARD_FIELDS})
+        return True
+
+    def log_abuse(self, uid, kind, detail=""):
+        self.abuse.append({"user_id": uid, "exam_family": self.family, "kind": kind, "detail": str(detail)[:200]})
+        return True
 
     def add_report(self, report):
         self.reports.append(clean_report(report))
@@ -136,6 +153,8 @@ class MemoryStore:
         self.profiles.pop(uid, None)
         self.entitlements = {k: v for k, v in self.entitlements.items() if k[0] != uid}
         self.attempts = [a for a in self.attempts if a["user_id"] != uid]
+        self.guards = {k: v for k, v in self.guards.items() if k[0] != uid}
+        self.abuse = [a for a in self.abuse if a["user_id"] != uid]
 
 
 class SupabaseStore:
@@ -208,6 +227,33 @@ class SupabaseStore:
             self.entitlements_ok = False
             if self.family != DEFAULT_FAMILY and (profile.get("pro_until") or profile.get("pending_payment_ref")):
                 raise  # other apps store Pro only here: never silently lose a paid entitlement  # mgmt_law: profiles row above already holds Pro
+
+    # ---- fair use (all best-effort: a missing table never breaks practice)
+    def load_guard(self, uid):
+        try:
+            rows = (self.db.table(GUARD_TABLE).select("*").eq("user_id", uid)
+                    .eq("exam_family", self.family).execute().data)
+            return rows[0] if rows else {}
+        except Exception:
+            return None  # None = table missing/unavailable
+
+    def save_guard(self, uid, fields):
+        row = {"user_id": uid, "exam_family": self.family,
+               **{k: v for k, v in fields.items() if k in GUARD_FIELDS},
+               "updated_at": dt.datetime.now(dt.timezone.utc).isoformat()}
+        try:
+            self.db.table(GUARD_TABLE).upsert(row).execute()
+            return True
+        except Exception:
+            return False
+
+    def log_abuse(self, uid, kind, detail=""):
+        try:
+            self.db.table(ABUSE_TABLE).insert({"user_id": uid, "exam_family": self.family, "kind": kind,
+                                                 "detail": str(detail)[:200]}).execute()
+            return True
+        except Exception:
+            return False
 
     def add_report(self, report):
         self.db.table("question_reports").insert(clean_report(report)).execute()

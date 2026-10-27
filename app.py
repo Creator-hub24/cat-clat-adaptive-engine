@@ -16,6 +16,7 @@ import streamlit as st
 import bank as qbank
 import engine
 import families
+import guard
 import llm
 import payments
 import prompts
@@ -203,6 +204,54 @@ def hydrate_from_store():
     s.ai_used = profile["ai_used"] if str(profile.get("usage_day")) == today else 0
     s.day = today
     persist()  # ensures the profile row exists before attempts are inserted
+    # One active session per (user, exam_family): this sign-in takes over from any older one.
+    s.session_token, s.session_lost = guard.new_session_token(), False
+    g = db.load_guard(uid) or {}
+    s.pro_ai_used, s.pro_day = guard.ai_used_today(g), guard.ist_today()
+    s.cooldown_until = g.get("cooldown_until")
+    db.save_guard(uid, {"session_token": s.session_token,
+                        "session_started_at": dt.datetime.now(dt.timezone.utc).isoformat()})
+
+
+def ai_gate(pro: bool) -> str | None:
+    """None if a fresh AI question may be generated now, else the friendly message to show.
+    Every check degrades gracefully: if usage_guard is missing, only in-session state is used."""
+    s = st.session_state
+    now = time.time()
+    g = s.db.load_guard(s.uid) if s.get("uid") and s.get("db") else None
+    if g is not None and s.get("session_token") and not guard.session_is_current(g.get("session_token"), s.session_token):
+        s.session_lost = True
+        return guard.OTHER_DEVICE_MESSAGE
+    if s.get("session_lost"):
+        return guard.OTHER_DEVICE_MESSAGE
+    if guard.in_cooldown(s.get("cooldown_until") or (g or {}).get("cooldown_until"), now):
+        return guard.COOLDOWN_MESSAGE
+    if g:
+        s.pro_ai_used = max(s.pro_ai_used, guard.ai_used_today(g))
+    if s.get("pro_day") not in (None, guard.ist_today()):
+        s.pro_ai_used = 0
+    if pro and guard.pro_cap_reached(s.pro_ai_used):
+        return guard.CAP_MESSAGE
+    s.ai_req_times = (s.ai_req_times + [now])[-20:]
+    if guard.too_fast(s.ai_req_times, now):
+        until = guard.cooldown_until(now)
+        s.cooldown_until, s.ai_req_times = until, []
+        if s.get("uid") and s.get("db"):
+            s.db.save_guard(s.uid, {"cooldown_until": dt.datetime.fromtimestamp(until, dt.timezone.utc).isoformat()})
+            s.db.log_abuse(s.uid, "speed", f"cooldown {guard.COOLDOWN_S}s")
+        return guard.COOLDOWN_MESSAGE
+    return None
+
+
+def count_ai_question():
+    """Count one fresh AI question for today's IST day in this exam family."""
+    s = st.session_state
+    today = guard.ist_today()
+    if s.get("pro_day") not in (None, today):
+        s.pro_ai_used = 0
+    s.pro_day, s.pro_ai_used = today, s.pro_ai_used + 1
+    if s.get("uid") and s.get("db"):
+        s.db.save_guard(s.uid, {"ai_day": today, "ai_used": s.pro_ai_used})
 
 
 def user_is_pro() -> bool:
@@ -226,6 +275,11 @@ def init_state():
         s.ai_used = 0
         s.challenge_done = False
     s.setdefault("ai_used", 0)
+    s.setdefault("pro_ai_used", 0)     # fresh AI questions today (IST) in this exam family (Pro fair use)
+    s.setdefault("ai_req_times", [])   # epoch seconds of recent AI requests (speed check)
+    s.setdefault("cooldown_until", None)
+    s.setdefault("session_token", None)
+    s.setdefault("session_lost", False)
     s.setdefault("challenge_done", False)
     s.setdefault("plan", "free")
     s.setdefault("pro_until", None)
@@ -340,8 +394,11 @@ with st.sidebar:
         st.success("AI mode (verified): " + " → ".join(MODEL_CANDIDATES))
     else:
         st.info("No GEMINI_API_KEY: serving the verified question bank (seed + pre-generated). Live AI is off.")
+    if s.get("session_lost"):
+        st.warning(guard.OTHER_DEVICE_MESSAGE)
     if pro:
-        st.success(f"⭐ Pro until {s.pro_until}: unlimited AI questions")
+        st.success(f"⭐ Pro until {s.pro_until}: Unlimited practice")
+        st.caption(guard.FAIR_USE_NOTE + f" Fresh AI questions used today: {min(s.pro_ai_used, guard.PRO_DAILY_AI_CAP)}/{guard.PRO_DAILY_AI_CAP}.")
     else:
         st.metric("Free live-AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
     st.divider()
@@ -426,11 +483,20 @@ with tab_practice:
         # or when this user has exhausted the bank for this topic+level (free users: daily cap).
         live_ok = topic not in engine.NO_AI_GENERATION_TOPICS  # current affairs: verified bank only
         q = None if pro and api_key and live_ok else bank_question(topic, difficulty, s.seen)
+        gate_msg = None
         if q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
+            gate_msg = ai_gate(pro)
+            if gate_msg:  # fair use / speed check / other device: keep serving bank questions
+                st.info(gate_msg)
+                q = bank_question(topic, difficulty, s.seen)
+        if gate_msg:
+            pass
+        elif q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
             with st.spinner("Your coach is writing and double-checking a question..."):
                 try:
                     q = generate_ai_question(topic, difficulty, api_key)
                     s.ai_used += 1
+                    count_ai_question()
                     persist()
                 except Exception as e:
                     st.warning("Couldn't produce a question that passed verification, so here is a "
@@ -439,7 +505,7 @@ with tab_practice:
                         st.text(str(e)[:1500])
         elif q is None and api_key and live_ok:
             st.warning("You've done every bank question at this level and today's free AI questions are used up. "
-                       "Upgrade to Pro for unlimited fresh questions; serving a question from another level for now.")
+                       "Upgrade to Pro for unlimited practice (up to 100 fresh AI questions a day); serving a question from another level for now.")
         elif q is None:
             st.info("You've done every bank question at this level, so here is one from another level of this topic.")
         set_current(q or seed_question(topic, difficulty, s.seen))
