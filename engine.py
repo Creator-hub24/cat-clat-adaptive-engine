@@ -15,7 +15,11 @@ DIFFICULTIES = ["Easy", "Moderate", "CAT-Level"]
 REVIEW_INTERVALS = [3, 7, 15]  # questions answered before a mistake comes back
 STEP_UP_AFTER = 2
 STEP_DOWN_AFTER = 2
-RC_TOPICS = {"CAT VARC RC", "CLAT RC", "CLAT Legal Reasoning"}
+RC_TOPICS = {"CAT VARC RC", "CLAT RC", "CLAT Legal Reasoning", "CLAT Current Affairs & GK"}
+# Topics whose facts must be grounded in a cited source (source_url + as_of). The LLM generator has no
+# web access, so these are never auto/live generated: served only from the hand-verified seed bank.
+NO_AI_GENERATION_TOPICS = {"CLAT Current Affairs & GK"}
+GROUNDED_KEYS = ("source_url", "as_of")
 COMPUTABLE_TOPICS = {"CAT Quant", "CAT DILR", "IPMAT Quant"}
 REQUIRED_KEYS = {"question_text", "options", "correct_answer", "pedagogical_explanation",
                  "trap_type", "concept_tag"}

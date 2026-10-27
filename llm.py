@@ -69,6 +69,9 @@ def missing_stem(topic: str, text: str) -> str | None:
 
 def generate_verified(client, models, topic, difficulty, prompt, system, max_tries=2, log=None):
     log = log if log is not None else []
+    if topic in engine.NO_AI_GENERATION_TOPICS:
+        raise RuntimeError(f"{topic} needs cited, current facts (source_url + as_of); "
+                           "AI generation is disabled for it to avoid hallucinated current affairs.")
     for attempt in range(1, max_tries + 1):
         try:
             text, model_used = call_model(client, models, prompt, system, 0.8)

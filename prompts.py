@@ -19,7 +19,7 @@ def model_candidates(custom: str | None = None) -> list[str]:
 
 SECTIONS = {
     "CAT": ["CAT Quant", "CAT VARC RC", "CAT DILR"],
-    "CLAT": ["CLAT RC", "CLAT Logical Reasoning", "CLAT Legal Reasoning"],
+    "CLAT": ["CLAT RC", "CLAT Logical Reasoning", "CLAT Legal Reasoning", "CLAT Current Affairs & GK"],
     "IPMAT": ["IPMAT Quant", "IPMAT Verbal"],
 }
 DIFFICULTIES = engine.DIFFICULTIES
@@ -37,6 +37,7 @@ TOPIC_RULES = {
     "CLAT RC": "Write an ORIGINAL legal-principle passage (100-200 words) and a fact situation. The answer must follow ONLY from the stated principle, not outside legal knowledge. Include an exception in the principle at Moderate+.",
     "CLAT Legal Reasoning": "CLAT UG style: write an ORIGINAL passage (about 350-450 words) that states one or more legal principles or rules (with an exception or condition at Moderate+), followed by a short fact situation and one question. The answer must follow STRICTLY from the stated principle, never from outside legal knowledge or general morality. Vary the area (contract, tort, criminal law, constitutional law/fundamental rights, consumer law, IPR). Distractors must be realistic traps: applying general morality or fairness, ignoring the exception or one of several conditions, reversing the principle, or importing an outside rule. Name the trap behind each wrong option in the explanation.",
     "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
+    "CLAT Current Affairs & GK": "CLAT UG style: a 300-400 word news-based passage about ONE real, verifiable event, then an MCQ on the event or related static GK. EVERY fact (in the passage, options and explanation) must come from a source you can cite. Output a 'source_url' (a public page stating the facts) and an 'as_of' date (YYYY-MM-DD). No invented names, numbers or dates; if you cannot ground a fact, do not write the question. NOTE: this topic is excluded from live/auto generation (engine.NO_AI_GENERATION_TOPICS) because the generator has no web grounding; seed questions are hand-verified.",
     "IPMAT Quant": "IPMAT (IIM Indore/Rohtak) Class 11-12 level MCQ: algebra, AP/GP, logarithms, P&C, probability, coordinate geometry, number theory. verify_code is REQUIRED. Use clean integers or simple fractions. Every distractor must come from a specific, nameable mistake. Mention the fastest shortcut.",
     "IPMAT Verbal": "IPMAT verbal ability MCQ: vocabulary in context, grammar/sentence correction, idioms, para-completion, or a short ORIGINAL passage (80-150 words) with an inference/assumption question. Exactly one defensible answer; name the trap behind each wrong option in the explanation.",
 }
