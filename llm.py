@@ -92,7 +92,7 @@ def generate_verified(client, models, topic, difficulty, prompt, system, max_tri
                 log.append(f"try {attempt}: computed {val!r} does not match key {q['correct_answer']}")
                 continue
             checks.append("computed")
-        elif topic == "CAT Quant":
+        elif topic in ("CAT Quant", "IPMAT Quant"):
             log.append(f"try {attempt}: Quant question returned no verify_code")
             continue
         ans, ambiguous = independent_solve(client, models, q, model_used)
