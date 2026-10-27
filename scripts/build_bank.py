@@ -85,7 +85,8 @@ class ThrottledClient:
 
 
 # Explicit prefixes where the initials rule would clash ("CLAT Legal Reasoning" -> CLR, already CLAT Logical Reasoning).
-ID_PREFIX_OVERRIDES = {"CLAT Legal Reasoning": "CLG", "CLAT Current Affairs & GK": "CGK"}
+ID_PREFIX_OVERRIDES = {"CLAT Legal Reasoning": "CLG", "CLAT Current Affairs & GK": "CGK",
+                       "Sarkari Quantitative Aptitude": "SQA", "Sarkari General Awareness": "SGA"}
 
 
 def topic_prefix(topic: str) -> str:

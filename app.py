@@ -15,21 +15,30 @@ import streamlit as st
 
 import bank as qbank
 import engine
+import families
+import guard
 import llm
 import payments
 import prompts
 import store as storage
 
 APP_DIR = Path(__file__).parent
-BANK_PATH = APP_DIR / "data" / "sample_bank.json"
 try:
     _custom = st.secrets.get("GEMINI_MODEL")
 except Exception:
     _custom = None
+try:
+    _family_key = st.secrets.get("EXAM_FAMILY")
+except Exception:
+    _family_key = None
+FAMILY = families.get_family(_family_key or os.environ.get("EXAM_FAMILY"))  # default: mgmt_law
+FAMILY_TOPICS = families.family_topics(FAMILY)
+BANK_PATH = APP_DIR / "data" / ("sample_bank.json" if FAMILY["key"] == families.DEFAULT_FAMILY
+                                else f"sample_bank_{FAMILY['key']}.json")
 MODEL_CANDIDATES = prompts.model_candidates(_custom)
 FREE_DAILY_AI_LIMIT = 10
 REVIEW_INTERVALS = engine.REVIEW_INTERVALS  # 3 -> 7 -> 15 questions
-SECTIONS, DIFFICULTIES, SYSTEM_PROMPT = prompts.SECTIONS, prompts.DIFFICULTIES, prompts.SYSTEM_PROMPT
+SECTIONS, DIFFICULTIES, SYSTEM_PROMPT = FAMILY["sections"], prompts.DIFFICULTIES, prompts.SYSTEM_PROMPT
 REQUIRED_KEYS = engine.REQUIRED_KEYS
 retrieve_examples, build_prompt = prompts.retrieve_examples, prompts.build_prompt
 
@@ -37,8 +46,10 @@ retrieve_examples, build_prompt = prompts.retrieve_examples, prompts.build_promp
 # ---------------------------------------------------------------- data / retrieval
 @st.cache_data
 def load_bank() -> list[dict]:
+    if not BANK_PATH.exists():
+        return []
     with open(BANK_PATH, encoding="utf-8") as f:
-        return json.load(f)["questions"]
+        return [q for q in json.load(f)["questions"] if q["topic"] in FAMILY_TOPICS]
 
 
 # ---------------------------------------------------------------- LLM
@@ -66,8 +77,9 @@ def generate_ai_question(topic: str, difficulty: str, api_key: str, log: list | 
 @st.cache_data(ttl=3600)
 def load_pool() -> list[dict]:
     """Seed bank + pre-generated AI bank (rejected items excluded). No API call needed."""
-    return qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"],
+    pool = qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"],
                               qbank.load_json_bank(qbank.APTISETU_PATH)["questions"])
+    return [q for q in pool if q["topic"] in FAMILY_TOPICS]  # only this app's exams
 
 
 def bank_question(topic: str, difficulty: str, exclude: set[str]) -> dict | None:
@@ -123,8 +135,8 @@ def logged_in() -> bool:
 
 
 @st.cache_resource
-def _make_store(url, key):
-    return storage.SupabaseStore(url, key)
+def _make_store(url, key, family):
+    return storage.SupabaseStore(url, key, family=family)
 
 
 def get_store():
@@ -134,7 +146,7 @@ def get_store():
     if not (url and key):
         return None
     try:
-        return _make_store(str(url).strip(), str(key).strip())
+        return _make_store(str(url).strip(), str(key).strip(), FAMILY["key"])
     except Exception as e:
         st.session_state["store_error"] = str(e)[:200]
         return None
@@ -192,6 +204,54 @@ def hydrate_from_store():
     s.ai_used = profile["ai_used"] if str(profile.get("usage_day")) == today else 0
     s.day = today
     persist()  # ensures the profile row exists before attempts are inserted
+    # One active session per (user, exam_family): this sign-in takes over from any older one.
+    s.session_token, s.session_lost = guard.new_session_token(), False
+    g = db.load_guard(uid) or {}
+    s.pro_ai_used, s.pro_day = guard.ai_used_today(g), guard.ist_today()
+    s.cooldown_until = g.get("cooldown_until")
+    db.save_guard(uid, {"session_token": s.session_token,
+                        "session_started_at": dt.datetime.now(dt.timezone.utc).isoformat()})
+
+
+def ai_gate(pro: bool) -> str | None:
+    """None if a fresh AI question may be generated now, else the friendly message to show.
+    Every check degrades gracefully: if usage_guard is missing, only in-session state is used."""
+    s = st.session_state
+    now = time.time()
+    g = s.db.load_guard(s.uid) if s.get("uid") and s.get("db") else None
+    if g is not None and s.get("session_token") and not guard.session_is_current(g.get("session_token"), s.session_token):
+        s.session_lost = True
+        return guard.OTHER_DEVICE_MESSAGE
+    if s.get("session_lost"):
+        return guard.OTHER_DEVICE_MESSAGE
+    if guard.in_cooldown(s.get("cooldown_until") or (g or {}).get("cooldown_until"), now):
+        return guard.COOLDOWN_MESSAGE
+    if g:
+        s.pro_ai_used = max(s.pro_ai_used, guard.ai_used_today(g))
+    if s.get("pro_day") not in (None, guard.ist_today()):
+        s.pro_ai_used = 0
+    if pro and guard.pro_cap_reached(s.pro_ai_used):
+        return guard.CAP_MESSAGE
+    s.ai_req_times = (s.ai_req_times + [now])[-20:]
+    if guard.too_fast(s.ai_req_times, now):
+        until = guard.cooldown_until(now)
+        s.cooldown_until, s.ai_req_times = until, []
+        if s.get("uid") and s.get("db"):
+            s.db.save_guard(s.uid, {"cooldown_until": dt.datetime.fromtimestamp(until, dt.timezone.utc).isoformat()})
+            s.db.log_abuse(s.uid, "speed", f"cooldown {guard.COOLDOWN_S}s")
+        return guard.COOLDOWN_MESSAGE
+    return None
+
+
+def count_ai_question():
+    """Count one fresh AI question for today's IST day in this exam family."""
+    s = st.session_state
+    today = guard.ist_today()
+    if s.get("pro_day") not in (None, today):
+        s.pro_ai_used = 0
+    s.pro_day, s.pro_ai_used = today, s.pro_ai_used + 1
+    if s.get("uid") and s.get("db"):
+        s.db.save_guard(s.uid, {"ai_day": today, "ai_used": s.pro_ai_used})
 
 
 def user_is_pro() -> bool:
@@ -215,6 +275,11 @@ def init_state():
         s.ai_used = 0
         s.challenge_done = False
     s.setdefault("ai_used", 0)
+    s.setdefault("pro_ai_used", 0)     # fresh AI questions today (IST) in this exam family (Pro fair use)
+    s.setdefault("ai_req_times", [])   # epoch seconds of recent AI requests (speed check)
+    s.setdefault("cooldown_until", None)
+    s.setdefault("session_token", None)
+    s.setdefault("session_lost", False)
     s.setdefault("challenge_done", False)
     s.setdefault("plan", "free")
     s.setdefault("pro_until", None)
@@ -226,7 +291,7 @@ def init_state():
 def daily_challenge() -> dict:
     """Same question for everyone today; no repeat until the whole bank has cycled."""
     approved = [q for q in qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"]
-                if q.get("review_status") == "approved" and q.get("verified")]
+                if q.get("review_status") == "approved" and q.get("verified") and q["topic"] in FAMILY_TOPICS]
     base = load_bank() + approved   # only faculty-approved AI items join the shared daily question
     q = dict(engine.daily_pick(base, dt.date.today()), source="Daily micro-challenge")
     return q if q["id"].startswith("AI-") else mark_seed(q)
@@ -234,7 +299,8 @@ def daily_challenge() -> dict:
 
 def due_reviews() -> list[dict]:
     n = len(st.session_state.attempts)
-    return [v for v in st.session_state.error_log.values() if v["due_at"] <= n]
+    return [v for v in st.session_state.error_log.values()
+            if v["due_at"] <= n and v["question"].get("topic") in FAMILY_TOPICS]  # this app's mistakes only
 
 
 def record_answer(q: dict, choice: str, seconds: float):
@@ -294,7 +360,9 @@ def report_question(q: dict, reason: str):
 
 
 # ---------------------------------------------------------------- UI
-st.set_page_config(page_title="CAT/CLAT Adaptive Engine", page_icon="🎯", layout="wide")
+st.set_page_config(page_title=FAMILY["name"], page_icon=FAMILY["icon"], layout="wide")
+if families.theme_css(FAMILY):  # mgmt_law: none, so its look is unchanged
+    st.markdown(families.theme_css(FAMILY), unsafe_allow_html=True)  # static CSS from families.py only
 init_state()
 hydrate_from_store()
 s = st.session_state
@@ -302,7 +370,11 @@ pro = user_is_pro()
 api_key = get_api_key()
 
 with st.sidebar:
-    st.title("🎯 Adaptive Engine")
+    st.title(FAMILY["sidebar_title"])
+    if FAMILY["coming_soon"]:
+        st.info("Coming soon: questions for this app are being prepared.")
+        st.stop()
+    _lbl = FAMILY["level_labels"]
     exam = st.radio("Exam", list(SECTIONS), horizontal=True)
     topic = st.selectbox("Section / topic", SECTIONS[exam])
     mode = st.radio("Difficulty mode", ["Adaptive", "Manual"], horizontal=True,
@@ -310,9 +382,9 @@ with st.sidebar:
     level = (s.topic_levels.get(topic) or engine.new_topic_state())["level"]
     if mode == "Adaptive":
         difficulty = level
-        st.info(f"Your level in {topic}: **{level}**")
+        st.info(f"Your level in {topic}: **{_lbl.get(level, level)}**")
     else:
-        difficulty = st.select_slider("Difficulty", DIFFICULTIES, value=level)
+        difficulty = st.select_slider("Difficulty", DIFFICULTIES, value=level, format_func=lambda d: _lbl.get(d, d))
     with st.expander("My level per topic"):
         st.dataframe(pd.DataFrame([{"Topic": t, "Level": (s.topic_levels.get(t) or engine.new_topic_state())["level"]}
                                    for sec in SECTIONS.values() for t in sec]), hide_index=True,
@@ -322,8 +394,11 @@ with st.sidebar:
         st.success("AI mode (verified): " + " → ".join(MODEL_CANDIDATES))
     else:
         st.info("No GEMINI_API_KEY: serving the verified question bank (seed + pre-generated). Live AI is off.")
+    if s.get("session_lost"):
+        st.warning(guard.OTHER_DEVICE_MESSAGE)
     if pro:
-        st.success(f"⭐ Pro until {s.pro_until}: unlimited AI questions")
+        st.success(f"⭐ Pro until {s.pro_until}: Unlimited practice")
+        st.caption(guard.FAIR_USE_NOTE + f" Fresh AI questions used today: {min(s.pro_ai_used, guard.PRO_DAILY_AI_CAP)}/{guard.PRO_DAILY_AI_CAP}.")
     else:
         st.metric("Free live-AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
     st.divider()
@@ -356,13 +431,16 @@ with st.sidebar:
                    + "Each payment unlocks Pro for 30 days. There is no auto-debit: when it ends, you pay again "
                    "(₹999) only if you want to continue.")
         rz_id, rz_secret = secret("RAZORPAY_KEY_ID"), secret("RAZORPAY_KEY_SECRET")
-        if not (rz_id and rz_secret and s.get("uid")):
+        if s.get("db") is not None and not getattr(s.db, "entitlements_ok", True) and FAMILY["key"] != families.DEFAULT_FAMILY:
+            st.caption("Pro coming soon for this app (database setup pending).")
+        elif not (rz_id and rz_secret and s.get("uid")):
             st.caption("Pro coming soon." if not (rz_id and rz_secret)
                        else "Sign in to upgrade (Pro is tied to your saved account).")
         else:
             if st.button("Upgrade to Pro", width="stretch"):
                 try:
-                    link = payments.create_link(rz_id, rz_secret, s.uid, price, secret("APP_URL"))
+                    link = payments.create_link(rz_id, rz_secret, s.uid, price, secret("APP_URL"),
+                                                app_name=FAMILY["name"], exam_family=FAMILY["key"])
                     s.pending_ref, s.pay_url = link["reference_id"], link["short_url"]
                     persist()
                 except Exception as e:
@@ -373,7 +451,7 @@ with st.sidebar:
                                else "Pay securely on Razorpay ↗", pay_url, width="stretch")
             if s.get("pending_ref") and st.button("I've paid, verify", width="stretch"):
                 try:
-                    if payments.verify_paid(rz_id, rz_secret, s.pending_ref, price):
+                    if payments.verify_paid(rz_id, rz_secret, s.pending_ref, price, exam_family=FAMILY["key"]):
                         prof = payments.extend_pro(profile_from_state())
                         s.plan, s.pro_until, s.pending_ref = prof["plan"], prof["pro_until"], None
                         s.pro_purchases = prof["pro_purchases"]
@@ -392,8 +470,8 @@ with st.sidebar:
     c2.metric("Best", s.best_streak)
     st.metric("🔁 Reviews due", len(due_reviews()))
 
-st.title("CAT/CLAT Adaptive Mock Test & Analytics Engine")
-st.caption("Questions built like a faculty member builds them: every wrong option is a named trap.")
+st.title(FAMILY["title"])
+st.caption(FAMILY["tagline"])
 
 tab_practice, tab_review, tab_analytics, tab_privacy = st.tabs(
     ["📝 Practice", "🔁 Error log & review", "📊 Weakness heatmap", "🔒 Privacy & my data"])
@@ -405,11 +483,20 @@ with tab_practice:
         # or when this user has exhausted the bank for this topic+level (free users: daily cap).
         live_ok = topic not in engine.NO_AI_GENERATION_TOPICS  # current affairs: verified bank only
         q = None if pro and api_key and live_ok else bank_question(topic, difficulty, s.seen)
+        gate_msg = None
         if q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
+            gate_msg = ai_gate(pro)
+            if gate_msg:  # fair use / speed check / other device: keep serving bank questions
+                st.info(gate_msg)
+                q = bank_question(topic, difficulty, s.seen)
+        if gate_msg:
+            pass
+        elif q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
             with st.spinner("Your coach is writing and double-checking a question..."):
                 try:
                     q = generate_ai_question(topic, difficulty, api_key)
                     s.ai_used += 1
+                    count_ai_question()
                     persist()
                 except Exception as e:
                     st.warning("Couldn't produce a question that passed verification, so here is a "
@@ -418,7 +505,7 @@ with tab_practice:
                         st.text(str(e)[:1500])
         elif q is None and api_key and live_ok:
             st.warning("You've done every bank question at this level and today's free AI questions are used up. "
-                       "Upgrade to Pro for unlimited fresh questions; serving a question from another level for now.")
+                       "Upgrade to Pro for unlimited practice (up to 100 fresh AI questions a day); serving a question from another level for now.")
         elif q is None:
             st.info("You've done every bank question at this level, so here is one from another level of this topic.")
         set_current(q or seed_question(topic, difficulty, s.seen))
@@ -475,7 +562,7 @@ with tab_practice:
                         st.error(f"Could not save report: {e}")
 
 with tab_review:
-    if not s.error_log:
+    if not any(v["question"].get("topic") in FAMILY_TOPICS for v in s.error_log.values()):
         st.info("No mistakes logged yet. Wrong answers appear here and come back after 3, 7 and 15 questions.")
     else:
         n = len(s.attempts)
@@ -483,7 +570,7 @@ with tab_review:
                  "Difficulty": v["question"]["difficulty"], "Trap": v["question"].get("trap_type", ""),
                  "Your answer": v["your_answer"], "Stage": f"{v['stage'] + 1}/{len(REVIEW_INTERVALS)}",
                  "Due": "now" if v["due_at"] <= n else f"in {v['due_at'] - n} questions"}
-                for v in s.error_log.values()]
+                for v in s.error_log.values() if v["question"].get("topic") in FAMILY_TOPICS]
         st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 
 with tab_analytics:

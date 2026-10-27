@@ -32,7 +32,7 @@
 - **Error log + spaced repetition:** mistakes come back after 3 → 7 → 15 questions.
 - **Weakness heatmap:** accuracy by topic × difficulty, a speed breakdown (on time / too slow / wrong), and the traps you fall for most.
 - **Streaks & a daily micro-challenge** (cycles through the whole seed bank before repeating).
-- **Freemium + Pro:** 10 AI questions/day free; **Pro: ₹500 off the first month (₹499), then ₹999/month** unlimited, paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
+- **Freemium + Pro:** 10 AI questions/day free; **Pro: ₹500 off the first month (₹499), then ₹999/month**: Unlimited practice (Pro includes up to 100 fresh AI questions per day per app, counted by IST day; question-bank practice is unlimited). Very fast repeated AI requests trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets fresh AI questions; paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
 - **Optional Google sign-in:** saves your progress across devices. Guest mode works without it.
 - **Privacy-first:** only a hashed ID is stored (HMAC-SHA256 of your email + a server secret). No email, name or photo. One-click **Download my data** and **Delete my data**. See **[PRIVACY.md](PRIVACY.md)**.
 - **Always-on demo:** with no API key, the app serves 45 original seed questions (9 per section, across all three difficulties). All answer keys are hand-checked, and every Quant key is also verified by computation in the test suite.
@@ -120,6 +120,26 @@ git add data/ai_bank.json && git commit -m "bank: monthly refresh"
 ```
 - **Build:** each question gets the computed check (Quant/DILR) and an independent solve. Disagreements are rejected, and exact or near duplicates (normalised hash, 5-word-shingle Jaccard ≥ 0.6) are dropped. The bank is written after every accepted question, so a run can stop and resume. The script throttles to `--rpm`, backs off on 429/503, stops cleanly at `--max-calls` or a daily-quota error, and prints accepted/rejected/duplicate counts per topic.
 - **Monthly refresh:** raise `--per-cell` (e.g. +5) and re-run. Only the missing items are generated, and the prompt is told what already exists so it writes different questions. Then export, review, apply, commit. Rejected items stay in the JSON (never served) so the reject decision is remembered.
+
+## 🧩 One codebase, several apps (exam families)
+
+Set `EXAM_FAMILY` in an app's Streamlit secrets (or env) to choose which app it runs as:
+
+| `EXAM_FAMILY` | App | Status |
+|---|---|---|
+| `mgmt_law` (default) | CAT · CLAT · IPMAT | live |
+| `sarkari` | SSC CGL/CHSL · Railway NTPC/Group D · Bank IBPS/SBI PO/Clerk | live |
+| `medical` | NEET UG | coming soon |
+| `engineering` | JEE Main | coming soon |
+
+Each app has its own branding, question bank (`data/sample_bank_<family>.json`), progress and Pro
+(the first-month ₹499 offer applies once per app). All apps share one Supabase project and one Razorpay
+account. Run `supabase/migrations/2026-10-28_exam_families.sql` once before deploying a second app.
+
+To deploy a new app: Streamlit Community Cloud → New app → same repo, branch `main`, file `app.py`, then
+in Secrets paste the same keys as the existing app plus `EXAM_FAMILY = "sarkari"` and that app's own
+`APP_URL`. Add the new app URL to the Google OAuth redirect URIs (`<APP_URL>/oauth2callback`, also set as
+`redirect_uri` in its `[auth]` secrets) and to your Razorpay website/app details.
 
 ## ☁️ Deploy to Streamlit Community Cloud
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.

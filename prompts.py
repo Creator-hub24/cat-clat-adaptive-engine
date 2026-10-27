@@ -17,11 +17,14 @@ def model_candidates(custom: str | None = None) -> list[str]:
     custom = custom or os.environ.get("GEMINI_MODEL")
     return ([custom] if custom else []) + [m for m in MODEL_CANDIDATES if m != custom]
 
-SECTIONS = {
-    "CAT": ["CAT Quant", "CAT VARC RC", "CAT DILR"],
-    "CLAT": ["CLAT RC", "CLAT Logical Reasoning", "CLAT Legal Reasoning", "CLAT Current Affairs & GK"],
-    "IPMAT": ["IPMAT Quant", "IPMAT Verbal"],
-}
+import families  # noqa: E402
+
+SECTIONS = families.FAMILIES[families.DEFAULT_FAMILY]["sections"]  # mgmt_law (default app)
+
+
+def sections_for(family: str | None = None) -> dict:
+    return families.get_family(family)["sections"]
+
 DIFFICULTIES = engine.DIFFICULTIES
 
 DIFFICULTY_RUBRIC = {
@@ -39,6 +42,10 @@ TOPIC_RULES = {
     "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
     "CLAT Current Affairs & GK": "CLAT UG style: a 300-400 word news-based passage about ONE real, verifiable event, then an MCQ on the event or related static GK. EVERY fact (in the passage, options and explanation) must come from a source you can cite. Output a 'source_url' (a public page stating the facts) and an 'as_of' date (YYYY-MM-DD). No invented names, numbers or dates; if you cannot ground a fact, do not write the question. NOTE: this topic is excluded from live/auto generation (engine.NO_AI_GENERATION_TOPICS) because the generator has no web grounding; seed questions are hand-verified.",
     "IPMAT Quant": "IPMAT (IIM Indore/Rohtak) Class 11-12 level MCQ: algebra, AP/GP, logarithms, P&C, probability, coordinate geometry, number theory. verify_code is REQUIRED. Use clean integers or simple fractions. Every distractor must come from a specific, nameable mistake. Mention the fastest shortcut.",
+    "Sarkari Quantitative Aptitude": "SSC CGL/CHSL, RRB NTPC/Group D and IBPS/SBI PO/Clerk level arithmetic MCQ: percentages, profit & loss, SI/CI, ratio, averages, time & work, pipes, time-speed-distance, mensuration, simplification. verify_code is REQUIRED. Clean numbers solvable in 30-90 seconds. Every distractor must come from a specific, nameable mistake. Mention the fastest shortcut.",
+    "Sarkari Reasoning": "SSC/Railway/Bank reasoning MCQ: coding-decoding, series, analogy, blood relations, directions, syllogisms, seating, inequalities. Exactly one defensible answer; for syllogisms use only the given statements. Name the trap behind each wrong option.",
+    "Sarkari English": "SSC/Bank English MCQ: synonyms/antonyms, idioms, fill in the blank, error spotting, sentence improvement, cloze. Standard Indian-exam grammar rules; exactly one defensible answer; state the rule in the explanation.",
+    "Sarkari General Awareness": "Static GK / current affairs for SSC, Railway and Bank exams. EVERY fact must come from a source you can cite: output 'source_url' and 'as_of' (YYYY-MM-DD). NOTE: excluded from live/auto generation (engine.NO_AI_GENERATION_TOPICS); items are hand-added and verified only.",
     "IPMAT Verbal": "IPMAT verbal ability MCQ: vocabulary in context, grammar/sentence correction, idioms, para-completion, or a short ORIGINAL passage (80-150 words) with an inference/assumption question. Exactly one defensible answer; name the trap behind each wrong option in the explanation.",
 }
 
