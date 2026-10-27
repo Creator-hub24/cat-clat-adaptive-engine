@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-26T09:07:50.380986+00:00",
+    "updated_at": "2026-10-27T04:17:51.273424+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -36,9 +36,12 @@
       ],
       "text_hash": "8f54205bb2dddffd03d0b4692513c3e2fef991e85f33910a8bbce9e901abc9bc",
       "created_at": "2026-10-26T03:56:07.624981+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273061+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: 1.5x0.8=1.2, 20% profit. Key B correct."
     },
     {
       "question_text": "Four teams—Alpha, Beta, Gamma, and Delta—participated in a round-robin tournament where every team played against every other team exactly once (a total of 6 matches).\n\nPoints system:\n- Win = 2 points\n- Draw = 1 point\n- Loss = 0 points\n\nThe table below shows the partial performance of the teams at the end of the tournament:\n\n| Team | Played | Won | Lost | Drawn | Total Points |\n|---|---|---|---|---|---|\n| Alpha | 3 | 2 | 0 | 1 | 5 |\n| Beta | 3 | 1 | 1 | 1 | 3 |\n| Gamma | 3 | 0 | 2 | 1 | 1 |\n| Delta | 3 | ? | ? | ? | ? |\n\nHow many points did Team Delta score in total?",
@@ -65,9 +68,12 @@
       ],
       "text_hash": "8325e27d044d2000e3d1957054522cdfe8a27dc8f680f9d557b48b337eae4dec",
       "created_at": "2026-10-26T03:57:08.910153+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273112+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: 6 matches x2 = 12 pts, others 9, Delta 3; W/L and draw parity force 1W1L1D. Key A correct, consistent."
     },
     {
       "question_text": "Passage: Under the doctrine of vicarious liability, an employer is held legally responsible for any wrongful act committed by their employee, provided the act takes place within the course of employment. An act is within the course of employment if it is expressly authorized by the employer, or if it is an unauthorized manner of performing an authorized task. However, if an employee commits a wrongful act while engaged in a personal task that has no connection to their employment duties, the employer is not vicariously liable for that act.\n\nFact Situation: Suresh is employed as a delivery driver for a bakery and is instructed to deliver cakes using the company van along a specified route. While driving along the delivery route to make a scheduled delivery, Suresh negligently hits a parked car. Applying the principle, is the bakery vicariously liable for the damage?",
@@ -93,9 +99,12 @@
       ],
       "text_hash": "b453e12d45546f61a7ab0aabff49d2708644c54a511d80a72d510e86d50b27b6",
       "created_at": "2026-10-26T03:57:31.135244+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273136+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: authorized task done negligently = course of employment. Key A correct."
     },
     {
       "question_text": "Statement: 'The city art gallery plans to abolish entry fees for students, arguing that this step will increase the overall number of student visitors.'\n\nWhich of the following is an underlying assumption on which the argument depends?",
@@ -121,9 +130,12 @@
       ],
       "text_hash": "913f76110a029a26b8b02432644206d449e51f3971c541d417f440284421422d",
       "created_at": "2026-10-26T03:57:47.752184+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273148+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: defender assumption. Key B correct."
     },
     {
       "question_text": "A dishonest merchant marks up the price of his goods by 60% and then offers a discount of 25% to attract customers. To further increase his profit, he uses a faulty balance that reads 1000g for every 900g of goods actually sold. What is his overall profit percentage in the transaction?",
@@ -150,9 +162,12 @@
       ],
       "text_hash": "dddbc80aa9b3860f40309443fa42421284ba1ded57cfc66164df99d9abb1f7f2",
       "created_at": "2026-10-26T04:06:27.372710+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273178+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: 1.6x0.75=1.2 revenue on 900g cost 0.9, 1.2/0.9 = 33.33%. Key C correct."
     },
     {
       "question_text": "Four football teams—Alpha, Beta, Gamma, and Delta—played a round-robin tournament where each team played every other team exactly once. A win earns 3 points, a draw earns 1 point, and a loss earns 0 points. The final points table is partially shown below:\n\n| Team | Points |\n| :--- | :--- |\n| Alpha | 7 |\n| Beta | 4 |\n| Gamma | 3 |\n| Delta | 1 |\n\nWhich of the following matches ended in a draw?",
@@ -179,9 +194,12 @@
       ],
       "text_hash": "41a29c0daf4636e72efe310ab79d8b811696e02d71291019674fa018f0721d76",
       "created_at": "2026-10-26T04:09:17.187036+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273190+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: 18-15 = 3 draws, draw-count forces Gamma 3 draws, A beats B,D and B beats D. Unique. Key C correct."
     },
     {
       "question_text": "Passage: \nDefamation occurs when a person communicates a false statement of fact to a third party that causes injury to the reputation of another. However, the doctrine of 'Qualified Privilege' protects communications made in good faith on a subject in which the party communicating has a legal or social duty to a person having a corresponding interest or duty. This protection is lost only if the statement is made with 'Actual Malice'—defined as making a statement with the knowledge that it is false or with a reckless disregard for the truth. For the purposes of this principle, 'reckless disregard' requires a high degree of awareness of probable falsity; simple negligence, such as an honest mistake or a failure to double-check facts, does not constitute Actual Malice.\n\nFact Situation: \nArjun, an HR Executive at a firm, receives a reference check call from a recruiter regarding a former employee, Sameer. Arjun searches the company database and finds a record stating Sameer was 'dismissed for financial misappropriation.' Arjun conveys this to the recruiter. It is later revealed that the database entry was a clerical error—Sameer had actually resigned voluntarily, and the 'misappropriation' note belonged to a different employee. Arjun had failed to verify the employee ID number before speaking. Sameer sues Arjun for defamation.",
@@ -207,9 +225,12 @@
       ],
       "text_hash": "b453e12d45546f61a7ab0aabff49d2708644c54a511d80a72d510e86d50b27b6",
       "created_at": "2026-10-26T03:57:31.135244+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273208+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: duty + honest mistake is negligence, not actual malice. Key B correct."
     },
     {
       "options": {
@@ -234,9 +255,12 @@
       ],
       "text_hash": "78e715f4f02ca86fdc75d660b516ad167cb3fa672d693bdf17498753ca86a52d",
       "created_at": "2026-10-26T08:35:09.496865+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273225+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: behavioural flexibility. Key B correct."
     },
     {
       "question_text": "Passage: Urban heat islands are traditionally mitigated through reflective roofs and expanded tree canopies. However, recent microclimate modeling reveals a counterintuitive paradox in dense urban corridors. While tree canopies effectively block direct solar radiation during daylight hours, high-density foliage can trap thermal radiation emitted by asphalt and concrete at night, preventing heat from escaping into the upper atmosphere. Furthermore, dense canopies at street level impede air circulation, exacerbating localized humidity and stagnating pollutants. Consequently, blanket reforestation initiatives that prioritize canopy density over spatial geometry often fail to achieve intended cooling outcomes. Urban climate scientists now advocate for \"ventilated greening\"—a strategy incorporating strategic canopy spacing, species with lower leaf area indices, and wind corridor integration. This targeted approach balances daytime shading with nocturnal heat dissipation, demonstrating that effective urban climate adaptation depends less on the total volume of vegetation than on its architectural configuration within the cityscape.\n\nWhich of the following best expresses the primary claim made by the author in the passage?",
@@ -261,9 +285,12 @@
       ],
       "text_hash": "bf5100e2b059666c4cba718f40244c9f8c4ce54295036bf484e2a383c285e6a4",
       "created_at": "2026-10-26T08:36:07.970960+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273254+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: configuration over volume. Key B correct."
     },
     {
       "concept_tag": "Assumption - Negation Test",
@@ -289,9 +316,12 @@
       ],
       "text_hash": "4b208ae2a4c1fbab2e9523fd3c27ce9dba06e8c6e13aac9e2bf408062e50c38e",
       "created_at": "2026-10-26T08:36:37.251007+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273267+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: visitor-volume defender assumption. Key B correct."
     },
     {
       "question_text": "What is the value of the product:\n$$\\left(1 - \\frac{2}{2 \\times 3}\\right)\\left(1 - \\frac{2}{3 \\times 4}\\right)\\left(1 - \\frac{2}{4 \\times 5}\\right) \\cdots \\left(1 - \\frac{2}{100 \\times 101}\\right)$$",
@@ -318,9 +348,12 @@
       ],
       "text_hash": "66b8fa70167da4bd6fea270b46cdd9a206cb842a046259b8323edcfa27dd14dd",
       "created_at": "2026-10-26T08:37:09.418784+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273279+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: term = (n-1)(n+2)/(n(n+1)), telescopes to (1/100)(102/3) = 17/50. Key A correct."
     },
     {
       "question_text": "Passage: Standardization of time in the late nineteenth century is frequently celebrated as a triumph of industrial coordination, bringing order to chaotic railway schedules and global commerce. Yet this dominant narrative obscures a fundamental shift in human perception: time ceased to be an environmental rhythm rooted in local solar observations and became an abstract commodity governed by distant master clocks. Critics of standard time were not merely backward-looking provincialists clinging to obsolete traditions. Rather, they recognized that decoupling time from geography would homogenize diverse cultural practices and prioritize industrial productivity over biological well-being. By reframing local temporal variations as administrative inefficiencies to be eliminated, standardized time systematically delegitimized regional autonomy. The triumph of the synchronized clock was thus as much an act of centralizing power as it was a technological convenience.\n\nWhich of the following best captures the main argument of the passage?",
@@ -374,9 +407,12 @@
       ],
       "text_hash": "ef4ab39a0476071d5a71c7c29bef10afaab12b0d35e72e2d4b5425041eeaea6e",
       "created_at": "2026-10-26T08:41:34.193645+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273319+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: pair sums 52/50/48; only {24,28},{20,30},{22,26} has a 4-gap pair; Q=28 with 24, R=26 with P, S=24 T=30 U=20. Unique. Key B correct."
     },
     {
       "question_text": "Passage: No person can claim damages for harm resulting from a risk they voluntarily assumed with full knowledge of its nature and extent. Exceptionally, this defence (voluntary assumption of risk) does not apply to a rescuer who acts under a legal, moral, or social duty to rescue a person from imminent peril created by the defendant's negligence, unless the rescuer's intervention is grossly disproportionate to the threat posed.\n\nFact Situation: Bhavin negligently leaves his horse unfastened on a busy street. The horse bolts toward a crowded pavement where young children are playing. Seeing the imminent danger, Arjun, a bystander, leaps into the street and successfully stops the horse, saving the children but suffering serious injuries. Arjun sues Bhavin for damages. Bhavin argues that Arjun voluntarily exposed himself to a known danger and therefore cannot recover damages. Which of the following is correct?",
@@ -402,9 +438,12 @@
       ],
       "text_hash": "b79c7752213d82a98e8857f804e0acf5470aa6d4027bb5fa74c6fe09ef68b828",
       "created_at": "2026-10-26T08:41:52.106812+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273336+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: rescuer exception, intervention proportionate. Key B correct."
     },
     {
       "question_text": "An inheritance of $3,600 is to be distributed among three siblings—A, B, and C—in the ratio of 2 : 3 : 4. What is the difference between the highest and the lowest share received?",
@@ -431,9 +470,12 @@
       ],
       "text_hash": "7f2c45d4c29f195a0329adcaf39ca953760afbef1f112b644467b2128766df3c",
       "created_at": "2026-10-26T08:46:42.808892+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273346+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: 3600x2/9 = 800. Key C correct. Minor: $ in stem, options unitless."
     },
     {
       "question_text": "Passage: The doctrine of 'Privity of Contract' establishes that a contract is a bargain between the parties who entered into it, and it confers rights and imposes obligations only on those parties. As a general rule, a third party to a contract cannot enforce the contract or rely on its terms, even if the contract was specifically made for that third party's benefit. Even if a third party stands to lose significantly from the non-performance of the contract, they lack the 'standing' to sue for breach of contract because they are not a 'privy' to the agreement. Only the person who manifested consent to be a party and provided the consideration can take legal action for its breach.\n\nFact Situation: Mr. Sharma enters into a written agreement with 'QuickFix Electronics' to repair his daughter's laptop. Mr. Sharma pays the service fee in advance. QuickFix Electronics fails to repair the laptop and eventually loses it. Mr. Sharma's daughter, Sneha, who needed the laptop for her board exams and suffered a loss of study time, files a lawsuit against QuickFix Electronics for breach of contract. Applying the principle:",
@@ -459,9 +501,12 @@
       ],
       "text_hash": "0f87142c863eec3f78935798acf242b411677b6d61626cc3865c2bfe40efaf07",
       "created_at": "2026-10-26T08:54:35.103031+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273368+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: privity, third-party beneficiary still cannot sue. Key B correct."
     },
     {
       "question_text": "The price of premium coffee beans increases by 25% due to a supply shortage. A cafe manager decides that the total budget for coffee beans can only be increased by 10%. To stay within this budget, the cafe must reduce the quantity of beans purchased. What is the percentage reduction in the quantity of coffee beans purchased?",
@@ -488,9 +533,12 @@
       ],
       "text_hash": "6f4ca2ed329bf00b1808a9f9f0d39b782bb36276cab7689cb03a375fcd46b3f9",
       "created_at": "2026-10-26T09:00:07.348263+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": true,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273377+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: 1.10/1.25 = 0.88, 12% cut. Key A correct."
     },
     {
       "question_text": "Passage: A person who, for his own purposes, brings onto his land and collects and keeps there anything likely to do mischief if it escapes, must keep it in at his peril; if he fails to do so, he is prima facie liable for all the damage which is the natural consequence of its escape. This is known as the rule of strict liability. However, an exception exists for an 'Act of God'—an operation of natural forces so unexpected and extraordinary that no human foresight or skill could reasonably be expected to anticipate or provide against it. Ordinary heavy rainfall or seasonal storms that are within the known climatic patterns of a region do not constitute an Act of God.\n\nFact Situation: Mr. Khanna constructed a large artificial pond on his estate to breed exotic fish. During a particularly heavy monsoon, the area received rainfall that was 25% higher than the average of the last decade, though similar levels had been recorded thirty years prior. The pond overflowed, and the water flooded the neighboring farm belonging to Mr. Das, destroying his standing crops. Mr. Khanna claims he is not liable because the rainfall was an unprecedented 'Act of God'. Is Mr. Khanna liable?",
@@ -516,9 +564,12 @@
       ],
       "text_hash": "1597a4689f2fad9d9b39de6e90f40e5430df0221cc7ac4bf35866ffa717fc1d6",
       "created_at": "2026-10-26T09:06:07.864831+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273393+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: similar rainfall on record, foreseeable, not Act of God. Key B correct."
     },
     {
       "question_text": "A longitudinal study found that individuals who regularly engage in complex strategy games, such as chess or Go, are 50% less likely to develop early-onset Alzheimer's than those who do not. Based on this finding, a public health advocate argued that the government should fund strategy-game clubs in community centers to decrease the prevalence of early-onset Alzheimer's in the general population.\n\nWhich of the following is an assumption required by the advocate's argument?",
@@ -544,9 +595,12 @@
       ],
       "text_hash": "a1f27d234db694f317dbc9694a17a907993fa731fd42f66b5762b3b0d12ca07c",
       "created_at": "2026-10-26T09:07:50.380931+00:00",
-      "review_status": "unreviewed",
+      "review_status": "approved",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:17:51.273410+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Pre-check: rules out reverse causation. Key C correct."
     }
   ],
   "build_stats": {
