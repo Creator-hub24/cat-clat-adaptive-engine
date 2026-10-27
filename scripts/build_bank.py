@@ -84,6 +84,15 @@ class ThrottledClient:
                 raise
 
 
+# Explicit prefixes where the initials rule would clash ("CLAT Legal Reasoning" -> CLR, already CLAT Logical Reasoning).
+ID_PREFIX_OVERRIDES = {"CLAT Legal Reasoning": "CLG"}
+
+
+def topic_prefix(topic: str) -> str:
+    """AI id prefix: first letter of the exam + initials of the rest (CAT Quant -> CQ), unless overridden."""
+    return ID_PREFIX_OVERRIDES.get(topic) or topic.split()[0][0] + "".join(w[0] for w in topic.split()[1:])
+
+
 def cell_counts(questions):
     return Counter((q["topic"], q["difficulty"]) for q in questions)
 
@@ -136,7 +145,7 @@ def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_f
                 bank.save_json_bank(data, out_path)
                 continue
             h = bank.text_hash(q)
-            q.update({"id": f"AI-{topic.split()[0][0]}{''.join(w[0] for w in topic.split()[1:])}-{h[:8]}",
+            q.update({"id": f"AI-{topic_prefix(topic)}-{h[:8]}",
                       "text_hash": h, "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
                       "review_status": "unreviewed", "verified_computed": "computed" in q["verification"],
                       "verified_independent": "independent solve" in q["verification"]})

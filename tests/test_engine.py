@@ -91,7 +91,7 @@ def test_seed_bank_coverage():
     assert len(BANK) >= 45 and len({q["id"] for q in BANK}) == len(BANK)
     from collections import Counter
     c = Counter(q["topic"] for q in BANK)
-    assert all(v >= 9 for v in c.values()) and len(c) == 7
+    assert all(v >= 9 for v in c.values()) and len(c) == 8
     assert {q["difficulty"] for q in BANK} == set(engine.DIFFICULTIES)
 
 
@@ -172,3 +172,20 @@ def test_ipmat_wired_in():
     assert len(ip) == 18 and all(q["id"][:2] in ("IQ", "IV") for q in ip)
     assert all(len(q["options"]) == 4 and q["correct_answer"] in "ABCD" for q in ip)
     assert {q["difficulty"] for q in ip} == set(engine.DIFFICULTIES)
+
+
+def test_clat_legal_reasoning_wired_in():
+    import prompts
+    from scripts import build_bank
+    assert "CLAT Legal Reasoning" in prompts.SECTIONS["CLAT"] and "CLAT Legal Reasoning" in prompts.TOPIC_RULES
+    assert "CLAT Legal Reasoning" not in engine.COMPUTABLE_TOPICS
+    assert build_bank.topic_prefix("CLAT Legal Reasoning") == "CLG"
+    prefixes = [build_bank.topic_prefix(t) for s in prompts.SECTIONS.values() for t in s]
+    assert len(prefixes) == len(set(prefixes))
+    assert [build_bank.topic_prefix(t) for t in ("CAT Quant", "CAT VARC RC", "CAT DILR", "CLAT RC",
+                                                 "CLAT Logical Reasoning", "IPMAT Quant", "IPMAT Verbal")] == \
+        ["CQ", "CVR", "CD", "CR", "CLR", "IQ", "IV"]
+    lg = [q for q in BANK if q["topic"] == "CLAT Legal Reasoning"]
+    assert len(lg) == 9 and all(q["id"].startswith("CLG-") and q["exam"] == "CLAT" for q in lg)
+    assert {q["difficulty"] for q in lg} == set(engine.DIFFICULTIES)
+    assert all(q["question_text"].startswith("Passage: ") and not q["verify_code"] for q in lg)

@@ -21,7 +21,7 @@
 *TODO: screenshots not added yet; the image links above are placeholders.*
 
 ## ✨ Features
-- **Controlled generation:** CAT Quant, CAT VARC RC, CAT DILR, CLAT RC, CLAT Logical Reasoning, IPMAT Quant and IPMAT Verbal at Easy / Moderate / CAT-Level, using a faculty system prompt, a difficulty rubric, topic rules and retrieved few-shot examples.
+- **Controlled generation:** CAT Quant, CAT VARC RC, CAT DILR, CLAT RC, CLAT Logical Reasoning, CLAT Legal Reasoning, IPMAT Quant and IPMAT Verbal at Easy / Moderate / CAT-Level, using a faculty system prompt, a difficulty rubric, topic rules and retrieved few-shot examples.
 - **Adaptive difficulty per topic (default):** your level in each topic steps up after 2 consecutive correct answers *within the target time* and down after 2 consecutive wrong ones. Levels are saved for signed-in users. A manual override is in the sidebar.
 - **Answer-key checks on AI questions:** for Quant (and computable DILR) the model must also return a short Python `verify_code`, which runs in a restricted sandbox (3 s timeout; only `math`, `itertools` and `fractions`; no files or network) and must reproduce the key. Every AI question then gets a separate solve pass with the key hidden. If either check disagrees, the app regenerates (max 2 tries) and then falls back to a seed question. Questions that pass show a ✅ Verified badge. These checks reduce wrong keys; they do not eliminate them. Use **Report this question** (anonymous) when one slips through.
 - **Per-question timer:** targets of Easy ≈ 60 s, Moderate 90–120 s and CAT-Level 2–3 min, with RC targets scaled by passage length. Correct-but-slow answers are tagged **Right but too slow** in feedback and analytics.
