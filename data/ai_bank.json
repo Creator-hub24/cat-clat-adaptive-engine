@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-27T04:17:51.273424+00:00",
+    "updated_at": "2026-10-27T04:26:14.160381+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -378,9 +378,12 @@
       ],
       "text_hash": "410b9f243ae9560ce53feacbf1d4e510564806470ceeb32cf24f2d54a27ac3f0",
       "created_at": "2026-10-26T08:37:31.755934+00:00",
-      "review_status": "unreviewed",
+      "review_status": "rejected",
       "verified_computed": false,
-      "verified_independent": true
+      "verified_independent": true,
+      "reviewed_at": "2026-10-27T04:26:14.160332+00:00",
+      "reviewed_by": "vaibhav",
+      "review_note": "Rejected: passage too short/easier than CAT-Level"
     },
     {
       "question_text": "Six friends P, Q, R, S, T, and U have distinct ages: 20, 22, 24, 26, 28, and 30 years. They are divided into three pairs (Pair 1, Pair 2, and Pair 3) to play a game. The following information is known:\n\n| Friend | Age |\n| :--- | :--- |\n| P | 22 |\n| Q | ? |\n| R | ? |\n| S | ? |\n| T | ? |\n| U | ? |\n\n1. The sum of ages in Pair 1 is 2 years more than the sum of ages in Pair 2.\n2. The sum of ages in Pair 2 is 2 years more than the sum of ages in Pair 3.\n3. Q is in Pair 1 and is older than the person he is paired with.\n4. R is 4 years older than the person he is paired with.\n5. T is 6 years older than S.\n\nWhat is the age of the person paired with Q?",
