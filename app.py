@@ -349,7 +349,7 @@ with st.sidebar:
     if not pro:
         price = payments.price_for(profile_from_state())
         intro = price == payments.INTRO_PRICE_PAISE
-        st.subheader("Go Pro · first month ₹499, then ₹999/month" if intro else "Go Pro · ₹999/month")
+        st.subheader("Go Pro · first month ₹599, then ₹999/month" if intro else "Go Pro · ₹999/month")
         st.caption(("Intro offer for your first Pro month. " if intro else "")
                    + "Each payment unlocks Pro for 30 days. There is no auto-debit: when it ends, you pay again "
                    "(₹999) only if you want to continue.")
