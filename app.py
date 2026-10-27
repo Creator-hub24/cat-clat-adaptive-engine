@@ -66,7 +66,8 @@ def generate_ai_question(topic: str, difficulty: str, api_key: str, log: list | 
 @st.cache_data(ttl=3600)
 def load_pool() -> list[dict]:
     """Seed bank + pre-generated AI bank (rejected items excluded). No API call needed."""
-    return qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"])
+    return qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"],
+                              qbank.load_json_bank(qbank.APTISETU_PATH)["questions"])
 
 
 def bank_question(topic: str, difficulty: str, exclude: set[str]) -> dict | None:

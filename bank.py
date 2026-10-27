@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 SEED_PATH = ROOT / "data" / "sample_bank.json"
 AI_BANK_PATH = ROOT / "data" / "ai_bank.json"
+APTISETU_PATH = ROOT / "data" / "aptisetu_bank.json"  # imported by scripts/import_aptisetu.py
 REVIEW_STATUSES = ("unreviewed", "approved", "rejected")
 NEAR_DUP_JACCARD = 0.6
 
@@ -69,7 +70,7 @@ def servable(questions: list[dict]) -> list[dict]:
     return [q for q in questions if q.get("review_status", "approved") != "rejected" and q.get("verified", True)]
 
 
-def serving_pool(seed: list[dict], ai: list[dict]) -> list[dict]:
+def serving_pool(seed: list[dict], ai: list[dict], imported: list[dict] | None = None) -> list[dict]:
     out = []
     for q in seed:
         q = dict(q, source="Seed bank", verified=True,
@@ -78,6 +79,8 @@ def serving_pool(seed: list[dict], ai: list[dict]) -> list[dict]:
     for q in servable(ai):
         out.append(dict(q, source="AI bank" + (" (faculty-approved)" if q.get("review_status") == "approved"
                                               else " (faculty review pending)")))
+    for q in imported or []:
+        out.append(dict(q, source="AptiSetu bank", verified=True, verification=["hand-checked"]))
     return out
 
 
