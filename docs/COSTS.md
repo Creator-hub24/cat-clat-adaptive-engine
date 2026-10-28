@@ -1,5 +1,10 @@
 # Gemini API cost model (Pro)
 
+> **Update 2026-10-28: chosen model is now no runtime AI.** The app never calls Gemini per user (free or Pro).
+> Every question comes from the verified bank; the only AI cost is the scheduled daily batch
+> (`scripts/build_bank.py`), so cost = questions generated per day × cost per verified question (section 1),
+> independent of the number of users. The per-user live-AI scenarios below are kept for reference only.
+
 _Estimates as of 2026-10-28. Prices are from the official page https://ai.google.dev/gemini-api/docs/pricing (fetched 2026-10-28, page "Last updated 2026-10-27 UTC"). Re-check before relying on these numbers._
 
 ## 1. What one verified AI question costs

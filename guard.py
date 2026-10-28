@@ -1,32 +1,39 @@
-"""Fair use for live AI questions (no Streamlit import, unit-testable).
+"""Serving rules: free daily question cap, speed check and one session (no Streamlit import, unit-testable).
 
-- Pro fair-use cap: PRO_DAILY_AI_CAP fresh AI questions per user per exam_family per IST day.
-  Question-bank practice is never capped.
-- Speed check: requests faster than a human could read a question trigger a temporary cooldown
-  (never a permanent ban); each trigger is logged as an abuse event.
-- One active session per (user, exam_family): a newer sign-in takes over; older sessions stop AI.
+There is no live AI at runtime for anyone: every question comes from the verified bank, which the
+scheduled routine (scripts/build_bank.py) tops up with fresh verified AI questions every day.
+- Free: FREE_DAILY_QUESTION_CAP questions per IST day in total.
+- Pro: unlimited bank questions.
+- Speed check (Pro, the only unlimited tier): requests faster than a human could read a question trigger
+  a temporary cooldown (never a permanent ban); each trigger is logged as an abuse event. This protects
+  the bank from scripted scraping.
+- One active session per (user, exam_family): a newer sign-in takes over; older sessions stop serving.
 """
 from __future__ import annotations
 
 import datetime as dt
 import uuid
 
-PRO_DAILY_AI_CAP = 50
 SPEED_WINDOW_S = 60
-SPEED_MAX_IN_WINDOW = 8        # >= 8 AI requests within 60 s
+SPEED_MAX_IN_WINDOW = 8        # >= 8 question requests within 60 s
 MIN_HUMAN_GAP_S = 5
 FAST_GAPS_IN_A_ROW = 4         # 4 consecutive gaps under 5 s
 COOLDOWN_S = 10 * 60
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
-FAIR_USE_NOTE = "Pro includes up to 50 fresh AI questions per day; question-bank practice is unlimited."
-CAP_MESSAGE = ("You've used today's 50 fresh AI questions (Pro fair use). Question-bank practice is still "
-               "unlimited, so here is a verified bank question. Fresh AI questions are back after midnight IST.")
-COOLDOWN_MESSAGE = ("Whoa, that's faster than anyone can read a question! Fresh AI questions are paused for a "
-                    "few minutes. Bank questions keep coming meanwhile.")
-OTHER_DEVICE_MESSAGE = ("Signed in on another device. This session no longer gets fresh AI questions. "
-                        "Sign out and sign in again here to continue on this device.")
+FREE_DAILY_QUESTION_CAP = 10
 
+FREE_NOTE = "Free: 10 questions/day."
+PRO_PITCH = "Unlimited verified practice + fresh questions added every day"
+PRO_NOTE = "Pro: " + PRO_PITCH + "."
+FREE_CAP_MESSAGE = ("You've used today's 10 free questions. Come back tomorrow (resets at midnight IST), or "
+                    "upgrade to Pro for unlimited verified practice plus fresh questions added every day.")
+PRO_LEVEL_DONE_MESSAGE = ("You've done every question at this level. New questions are added every day; "
+                          "try another level or topic meanwhile.")
+COOLDOWN_MESSAGE = ("Whoa, that's faster than anyone can read a question! New questions are paused for a few "
+                    "minutes.")
+OTHER_DEVICE_MESSAGE = ("Signed in on another device. This session no longer gets new questions. "
+                        "Sign out and sign in again here to continue on this device.")
 
 def ist_today(now: dt.datetime | None = None) -> str:
     now = now or dt.datetime.now(dt.timezone.utc)
@@ -35,18 +42,32 @@ def ist_today(now: dt.datetime | None = None) -> str:
     return now.astimezone(IST).date().isoformat()
 
 
-def ai_used_today(guard_row: dict | None, now: dt.datetime | None = None) -> int:
-    """AI questions used today (IST) from a usage_guard row; a row from an earlier day counts as 0."""
-    g = guard_row or {}
-    return int(g.get("ai_used") or 0) if str(g.get("ai_day") or "")[:10] == ist_today(now) else 0
+def free_used_today(usage_day, used, now: dt.datetime | None = None) -> int:
+    """Free questions used today (IST) from the profiles row (usage_day / ai_used); an earlier day counts as 0."""
+    return int(used or 0) if str(usage_day or "")[:10] == ist_today(now) else 0
 
 
-def pro_cap_reached(used_today: int, cap: int = PRO_DAILY_AI_CAP) -> bool:
+def free_cap_reached(used_today: int, cap: int = FREE_DAILY_QUESTION_CAP) -> bool:
     return used_today >= cap
 
 
+def serve_free(used_today: int, bank, fallback, cap: int = FREE_DAILY_QUESTION_CAP):
+    """Free users: bank only (there is no live AI). Returns (question, used_today, note).
+    question is None (and note is FREE_CAP_MESSAGE) once the daily cap is reached. bank() returns an unseen
+    question for this topic+level (scheduled AI first) or None; fallback() serves one from another level.
+    The counter goes up exactly once per question actually served."""
+    if free_cap_reached(used_today, cap):
+        return None, used_today, FREE_CAP_MESSAGE
+    q, note = bank(), None
+    if q is None:
+        q, note = fallback(), "level_exhausted"
+    if q is not None:
+        used_today += 1
+    return q, used_today, note
+
+
 def too_fast(request_times: list[float], now: float) -> bool:
-    """True if AI requests (epoch seconds, including this one) come faster than a human could use them."""
+    """True if question requests (epoch seconds, including this one) come faster than a human could use them."""
     recent = [t for t in request_times if now - t <= SPEED_WINDOW_S]
     if len(recent) >= SPEED_MAX_IN_WINDOW:
         return True

@@ -17,17 +17,11 @@ import bank as qbank
 import engine
 import families
 import guard
-import prefetch
-import llm
 import payments
 import prompts
 import store as storage
 
 APP_DIR = Path(__file__).parent
-try:
-    _custom = st.secrets.get("GEMINI_MODEL")
-except Exception:
-    _custom = None
 try:
     _family_key = st.secrets.get("EXAM_FAMILY")
 except Exception:
@@ -36,12 +30,10 @@ FAMILY = families.get_family(_family_key or os.environ.get("EXAM_FAMILY"))  # de
 FAMILY_TOPICS = families.family_topics(FAMILY)
 BANK_PATH = APP_DIR / "data" / ("sample_bank.json" if FAMILY["key"] == families.DEFAULT_FAMILY
                                 else f"sample_bank_{FAMILY['key']}.json")
-MODEL_CANDIDATES = prompts.model_candidates(_custom)
-FREE_DAILY_AI_LIMIT = 10
+FREE_DAILY_QUESTION_CAP = guard.FREE_DAILY_QUESTION_CAP  # free: total questions per IST day, bank only
 REVIEW_INTERVALS = engine.REVIEW_INTERVALS  # 3 -> 7 -> 15 questions
-SECTIONS, DIFFICULTIES, SYSTEM_PROMPT = FAMILY["sections"], prompts.DIFFICULTIES, prompts.SYSTEM_PROMPT
+SECTIONS, DIFFICULTIES = FAMILY["sections"], prompts.DIFFICULTIES
 REQUIRED_KEYS = engine.REQUIRED_KEYS
-retrieve_examples, build_prompt = prompts.retrieve_examples, prompts.build_prompt
 
 
 # ---------------------------------------------------------------- data / retrieval
@@ -53,31 +45,13 @@ def load_bank() -> list[dict]:
         return [q for q in json.load(f)["questions"] if q["topic"] in FAMILY_TOPICS]
 
 
-# ---------------------------------------------------------------- LLM
-def get_api_key() -> str | None:
-    try:
-        key = st.secrets.get("GEMINI_API_KEY")
-        if key:
-            return key
-    except Exception:
-        pass
-    return os.environ.get("GEMINI_API_KEY")
-
-
 parse_question_json = engine.parse_question_json
-
-
-def generate_ai_question(topic: str, difficulty: str, api_key: str, log: list | None = None) -> dict:
-    """Generate + verify (sandboxed verify_code and an independent solve); max 2 tries."""
-    client = llm.make_client(api_key)
-    examples = retrieve_examples(load_bank(), topic, difficulty)
-    return llm.generate_verified(client, MODEL_CANDIDATES, topic, difficulty,
-                                 build_prompt(topic, difficulty, examples), SYSTEM_PROMPT, log=log)
 
 
 @st.cache_data(ttl=3600)
 def load_pool() -> list[dict]:
-    """Seed bank + pre-generated AI bank (rejected items excluded). No API call needed."""
+    """Seed bank + scheduled (pre-generated) AI bank + imports, rejected items excluded. No API call needed.
+    pick_unseen serves the scheduled AI questions first."""
     pool = qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"],
                               qbank.load_json_bank(qbank.APTISETU_PATH)["questions"])
     return [q for q in pool if q["topic"] in FAMILY_TOPICS]  # only this app's exams
@@ -201,101 +175,41 @@ def hydrate_from_store():
     s.plan, s.pro_until = profile["plan"], profile["pro_until"]
     s.pending_ref = profile.get("pending_payment_ref")
     s.pro_purchases = int(profile.get("pro_purchases") or 0)
-    today = dt.date.today().isoformat()
-    s.ai_used = profile["ai_used"] if str(profile.get("usage_day")) == today else 0
+    today = guard.ist_today()
+    # Free daily counter (profiles.usage_day / ai_used, IST day). Keep any guest-session count from today.
+    session_used = s.ai_used if s.get("day") == today else 0
+    s.ai_used = max(session_used, guard.free_used_today(profile.get("usage_day"), profile.get("ai_used")))
     s.day = today
     persist()  # ensures the profile row exists before attempts are inserted
     # One active session per (user, exam_family): this sign-in takes over from any older one.
     s.session_token, s.session_lost = guard.new_session_token(), False
     g = db.load_guard(uid) or {}
-    s.pro_ai_used, s.pro_day = guard.ai_used_today(g), guard.ist_today()
     s.cooldown_until = g.get("cooldown_until")
     db.save_guard(uid, {"session_token": s.session_token,
                         "session_started_at": dt.datetime.now(dt.timezone.utc).isoformat()})
 
 
-def ai_gate(pro: bool, record: bool = True) -> str | None:
-    """None if a fresh AI question may be generated now, else the friendly message to show.
-    Every check degrades gracefully: if usage_guard is missing, only in-session state is used."""
+def serve_gate() -> str | None:
+    """Pro (unlimited) only: None if a question may be served now, else the friendly message to show.
+    Guards the bank against scripted scraping. Degrades gracefully if usage_guard is missing."""
     s = st.session_state
     now = time.time()
     g = s.db.load_guard(s.uid) if s.get("uid") and s.get("db") else None
     if g is not None and s.get("session_token") and not guard.session_is_current(g.get("session_token"), s.session_token):
         s.session_lost = True
-        return guard.OTHER_DEVICE_MESSAGE
     if s.get("session_lost"):
         return guard.OTHER_DEVICE_MESSAGE
     if guard.in_cooldown(s.get("cooldown_until") or (g or {}).get("cooldown_until"), now):
         return guard.COOLDOWN_MESSAGE
-    if g:
-        s.pro_ai_used = max(s.pro_ai_used, guard.ai_used_today(g))
-    if s.get("pro_day") not in (None, guard.ist_today()):
-        s.pro_ai_used = 0
-    if pro and guard.pro_cap_reached(s.pro_ai_used):
-        return guard.CAP_MESSAGE
-    if not record:  # serving an already-generated question: cap/session/cooldown only
-        return None
-    s.ai_req_times = (s.ai_req_times + [now])[-20:]
-    if guard.too_fast(s.ai_req_times, now):
+    s.req_times = (s.req_times + [now])[-20:]
+    if guard.too_fast(s.req_times, now):
         until = guard.cooldown_until(now)
-        s.cooldown_until, s.ai_req_times = until, []
+        s.cooldown_until, s.req_times = until, []
         if s.get("uid") and s.get("db"):
             s.db.save_guard(s.uid, {"cooldown_until": dt.datetime.fromtimestamp(until, dt.timezone.utc).isoformat()})
             s.db.log_abuse(s.uid, "speed", f"cooldown {guard.COOLDOWN_S}s")
         return guard.COOLDOWN_MESSAGE
     return None
-
-
-def ai_job(topic: str, difficulty: str, api_key: str):
-    """Build everything that needs Streamlit here (cached bank, prompt); the returned callable
-    runs in a worker thread and only calls the LLM."""
-    examples = retrieve_examples(load_bank(), topic, difficulty)
-    prompt, models = build_prompt(topic, difficulty, examples), list(MODEL_CANDIDATES)
-
-    def run():
-        return llm.generate_verified(llm.make_client(api_key), models, topic, difficulty, prompt, SYSTEM_PROMPT)
-    return run
-
-
-def serve_pro_question(topic: str, difficulty: str, api_key: str) -> dict | None:
-    """Pro: instant bank question (or a ready prefetched AI one), next AI question prefetched."""
-    s = st.session_state
-    if "prefetcher" not in s:
-        s.prefetcher = prefetch.Prefetcher()
-    msgs = []
-
-    def may(record):
-        m = ai_gate(True, record=record)
-        if m:
-            msgs.append(m)
-        return m is None
-
-    def served(_q):
-        s.ai_used += 1
-        count_ai_question()
-        persist()
-
-    with st.spinner("Getting your next question..."):
-        q, src = prefetch.serve_pro(
-            s.prefetcher, (topic, difficulty),
-            bank=lambda: bank_question(topic, difficulty, s.seen),
-            may_serve_ai=lambda: may(False), may_start_ai=lambda: may(True),
-            make_job=lambda: ai_job(topic, difficulty, api_key), on_ai_served=served,
-            wait_if_empty=120)
-    if msgs and src != "prefetch":
-        st.info(msgs[-1])
-    return q
-
-
-def count_ai_question():
-    """Count one fresh AI question for today's IST day in this exam family."""
-    s = st.session_state
-    today = guard.ist_today()
-    if s.get("pro_day") not in (None, today):
-        s.pro_ai_used = 0
-    s.pro_day, s.pro_ai_used = today, s.pro_ai_used + 1
-    if s.get("uid") and s.get("db"):
-        s.db.save_guard(s.uid, {"ai_day": today, "ai_used": s.pro_ai_used})
 
 
 def apply_verified_payment(ref: str):
@@ -315,7 +229,7 @@ def user_is_pro() -> bool:
 
 # ---------------------------------------------------------------- state
 def init_state():
-    today = dt.date.today().isoformat()
+    today = guard.ist_today()  # free counter and daily challenge follow the IST day
     s = st.session_state
     s.setdefault("attempts", [])       # list of dicts
     s.setdefault("error_log", {})      # id -> {question, due_at, stage}
@@ -328,9 +242,8 @@ def init_state():
         s.day = today
         s.ai_used = 0
         s.challenge_done = False
-    s.setdefault("ai_used", 0)
-    s.setdefault("pro_ai_used", 0)     # fresh AI questions today (IST) in this exam family (Pro fair use)
-    s.setdefault("ai_req_times", [])   # epoch seconds of recent AI requests (speed check)
+    s.setdefault("ai_used", 0)         # free: questions served today (IST), all from the bank
+    s.setdefault("req_times", [])      # epoch seconds of recent Pro question requests (speed check)
     s.setdefault("cooldown_until", None)
     s.setdefault("session_token", None)
     s.setdefault("session_lost", False)
@@ -347,7 +260,7 @@ def daily_challenge() -> dict:
     approved = [q for q in qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"]
                 if q.get("review_status") == "approved" and q.get("verified") and q["topic"] in FAMILY_TOPICS]
     base = load_bank() + approved   # only faculty-approved AI items join the shared daily question
-    q = dict(engine.daily_pick(base, dt.date.today()), source="Daily micro-challenge")
+    q = dict(engine.daily_pick(base, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     return q if q["id"].startswith("AI-") else mark_seed(q)
 
 
@@ -421,7 +334,6 @@ init_state()
 hydrate_from_store()
 s = st.session_state
 pro = user_is_pro()
-api_key = get_api_key()
 
 with st.sidebar:
     st.title(FAMILY["sidebar_title"])
@@ -444,17 +356,16 @@ with st.sidebar:
                                    for sec in SECTIONS.values() for t in sec]), hide_index=True,
                      width="stretch")
     st.divider()
-    if api_key:
-        st.success("AI mode (verified): " + " → ".join(MODEL_CANDIDATES))
-    else:
-        st.info("No GEMINI_API_KEY: serving the verified question bank (seed + pre-generated). Live AI is off.")
+    st.caption("Serving the verified question bank: today's freshest questions first. "
+               "New verified questions are added every day.")
     if s.get("session_lost"):
         st.warning(guard.OTHER_DEVICE_MESSAGE)
     if pro:
         st.success(f"⭐ Pro until {s.pro_until}: Unlimited practice")
-        st.caption(guard.FAIR_USE_NOTE + f" Fresh AI questions used today: {min(s.pro_ai_used, guard.PRO_DAILY_AI_CAP)}/{guard.PRO_DAILY_AI_CAP}.")
+        st.caption(guard.PRO_NOTE)
     else:
-        st.metric("Free live-AI questions left today", max(0, FREE_DAILY_AI_LIMIT - s.ai_used))
+        st.metric("Free questions left today", max(0, FREE_DAILY_QUESTION_CAP - s.ai_used))
+        st.caption(guard.FREE_NOTE + " Resets at midnight IST.")
     st.divider()
     st.subheader("Account")
     if not auth_configured():
@@ -481,6 +392,7 @@ with st.sidebar:
         st.subheader("Go Pro · first month ₹499, then ₹999/month" if intro else "Go Pro · ₹999/month")
         if intro:
             st.markdown("🎉 **First-time offer: ₹500 off your first month** · ~~₹999~~ **₹499**")
+        st.markdown(f"**{guard.PRO_PITCH}**")
         st.caption(("Intro offer for your first Pro month. " if intro else "")
                    + "Each payment unlocks Pro for 30 days. There is no auto-debit: when it ends, you pay again "
                    "(₹999) only if you want to continue.")
@@ -539,39 +451,30 @@ tab_practice, tab_review, tab_analytics, tab_privacy = st.tabs(
 with tab_practice:
     b1, b2, b3 = st.columns(3)
     if b1.button("Next question", type="primary", width="stretch"):
-        # Default: serve from the verified bank, no live API call. Live AI only for Pro users,
-        # or when this user has exhausted the bank for this topic+level (free users: daily cap).
-        live_ok = topic not in engine.NO_AI_GENERATION_TOPICS  # current affairs: verified bank only
-        gate_msg = None
-        if pro and api_key and live_ok:  # Pro: instant question + background AI prefetch
-            q, gate_msg = serve_pro_question(topic, difficulty, api_key), "pro"
-        else:
-            q = bank_question(topic, difficulty, s.seen)
-        if gate_msg is None and q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
-            gate_msg = ai_gate(pro)
-            if gate_msg:  # fair use / speed check / other device: keep serving bank questions
+        # No live AI at runtime for anyone: every question comes from the verified bank, freshest
+        # scheduled AI questions first, then the rest of the bank (no repeats, rejected items excluded).
+        # Free: 10 questions per IST day in total. Pro: unlimited (speed check + one session apply).
+        level_msg = "You've done every bank question at this level, so here is one from another level of this topic."
+        if pro:
+            gate_msg = serve_gate()
+            if gate_msg:
                 st.info(gate_msg)
+            else:
                 q = bank_question(topic, difficulty, s.seen)
-        if gate_msg:
-            pass
-        elif q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
-            with st.spinner("Your coach is writing and double-checking a question..."):
-                try:
-                    q = generate_ai_question(topic, difficulty, api_key)
-                    s.ai_used += 1
-                    count_ai_question()
-                    persist()
-                except Exception as e:
-                    st.warning("Couldn't produce a question that passed verification, so here is a "
-                               "hand-checked seed question instead.")
-                    with st.expander("Verification details"):
-                        st.text(str(e)[:1500])
-        elif q is None and api_key and live_ok:
-            st.warning("You've done every bank question at this level and today's free AI questions are used up. "
-                       "Upgrade to Pro for unlimited practice (up to 50 fresh AI questions a day); serving a question from another level for now.")
-        elif q is None:
-            st.info("You've done every bank question at this level, so here is one from another level of this topic.")
-        set_current(q or seed_question(topic, difficulty, s.seen))
+                if q is None:
+                    st.info(guard.PRO_LEVEL_DONE_MESSAGE)
+                set_current(q or seed_question(topic, difficulty, s.seen))
+        else:
+            q, s.ai_used, note = guard.serve_free(
+                s.ai_used, bank=lambda: bank_question(topic, difficulty, s.seen),
+                fallback=lambda: seed_question(topic, difficulty, s.seen))
+            if q is None:
+                st.warning(guard.FREE_CAP_MESSAGE)
+            else:
+                if note == "level_exhausted":
+                    st.info(level_msg)
+                set_current(q)
+                persist()
     if b2.button("Daily micro-challenge" + (" ✅" if s.challenge_done else ""), width="stretch"):
         set_current(daily_challenge())
     due = due_reviews()
