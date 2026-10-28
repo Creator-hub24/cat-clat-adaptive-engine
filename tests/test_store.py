@@ -50,7 +50,7 @@ def test_supabase_store_calls_are_scoped_to_user():
     assert row["user_id"] == "u" * 64 and "name" not in row
     s.delete_all("u" * 64)
     eq_calls = [c.args for c in client.table.return_value.delete.return_value.eq.call_args_list]
-    assert eq_calls == [("user_id", "u" * 64)] * 2
+    assert eq_calls == [("user_id", "u" * 64)] * (len(store.USER_TABLES) + 1)
 
 
 def test_is_pro_and_extend():

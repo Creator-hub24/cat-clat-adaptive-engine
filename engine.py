@@ -143,6 +143,9 @@ BANNED_NAMES = {"open", "exec", "eval", "compile", "__import__", "input", "globa
                 "memoryview", "type", "object", "super", "dir"}
 
 
+BANNED_ATTRS = {"format", "format_map"}  # "{0.__class__}".format(x) style attribute escapes
+
+
 class UnsafeCode(ValueError):
     pass
 
@@ -164,6 +167,11 @@ def check_code(code: str) -> None:
             raise UnsafeCode(f"name not allowed: {node.id}")
         elif isinstance(node, ast.Attribute) and node.attr.startswith("_"):
             raise UnsafeCode("dunder/private attribute access not allowed")
+        elif isinstance(node, ast.Attribute) and node.attr in BANNED_ATTRS:
+            raise UnsafeCode(f"attribute not allowed: {node.attr}")
+        elif isinstance(node, ast.Constant) and isinstance(node.value, (str, bytes)) and (
+                "__" in (node.value if isinstance(node.value, str) else node.value.decode("latin-1"))):
+            raise UnsafeCode("string containing '__' not allowed")  # covers f-string literal parts too
         elif isinstance(node, (ast.Global, ast.Nonlocal, ast.AsyncFunctionDef, ast.Await)):
             raise UnsafeCode("construct not allowed")
 
