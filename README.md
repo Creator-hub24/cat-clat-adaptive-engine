@@ -25,7 +25,7 @@
 - **Adaptive difficulty per topic (default):** your level in each topic steps up after 2 consecutive correct answers *within the target time* and down after 2 consecutive wrong ones. Levels are saved for signed-in users. A manual override is in the sidebar.
 - **Answer-key checks on AI questions:** for Quant (and computable DILR) the model must also return a short Python `verify_code`, which runs in a restricted sandbox (3 s timeout; only `math`, `itertools` and `fractions`; no files or network) and must reproduce the key. Every AI question then gets a separate solve pass with the key hidden. If either check disagrees, the app regenerates (max 2 tries) and then falls back to a seed question. Questions that pass show a ✅ Verified badge. These checks reduce wrong keys; they do not eliminate them. Use **Report this question** (anonymous) when one slips through.
 - **Per-question timer:** targets of Easy ≈ 60 s, Moderate 90–120 s and CAT-Level 2–3 min, with RC targets scaled by passage length. Correct-but-slow answers are tagged **Right but too slow** in feedback and analytics.
-- **Pre-generated, verified question bank (default):** practice is served from the 45 hand-checked seed questions plus `data/ai_bank.json` (first batch: 7 live-generated, verified and spot-checked questions; the Gemini free tier allows only 20 requests/day per model, about 50 questions/day across the fallback models, so run `python scripts/build_bank.py --per-cell 14` daily to resume toward the ~210 target), a bank generated offline by `scripts/build_bank.py` through the same verification pipeline. No live API call happens per question, so the app costs nothing per user and keeps working under load or when the API is down. No question repeats for a user until the bank for that topic and level runs out (tracked across devices when signed in). There is no live AI at runtime for anyone (free or Pro): the only AI cost is the scheduled daily batch that tops up `data/ai_bank.json` through `scripts/build_bank.py`. Scheduled AI questions are served first, freshest generation day first (by `created_at`), so users see the newest questions before older ones; once a user has seen all of them for a topic and level, the rest of the bank (seed, family sample bank, AptiSetu imports) follows. Items a faculty reviewer rejects are never served. AptiSetu imports (`data/aptisetu_bank.json`, built by `scripts/import_aptisetu.py`) carry their verification status from `data/aptisetu_curation/verified_ids.json` (each key independently re-solved); items on `data/aptisetu_curation/exclusions.json` stay in the bank with their reason but are not served until fixed, and duplicates, stem fixes and a seeded option shuffle are applied from the same folder on every re-import. Items not yet reviewed are labelled "faculty review pending".
+- **Pre-generated, verified question bank (default):** practice is served from the 45 hand-checked seed questions plus `data/ai_bank.json` (first batch: 7 live-generated, verified and spot-checked questions; the Gemini free tier allows only 20 requests/day per model, about 50 questions/day across the fallback models, so run `python scripts/build_bank.py --per-cell 14` daily to resume toward the ~210 target), a bank generated offline by `scripts/build_bank.py` through the same verification pipeline. No live API call happens per question, so the app costs nothing per user and keeps working under load or when the API is down. No question repeats for a user until the bank for that topic and level runs out (tracked across devices when signed in). There is no live AI at runtime for anyone (free or Pro): the only AI cost is the scheduled daily batch that tops up `data/ai_bank.json` through `scripts/build_bank.py`. Scheduled AI questions are served first, freshest generation day first (by `created_at`), so users see the newest questions before older ones; once a user has seen all of them for a topic and level, the rest of the bank (seed, family sample bank, AptiSetu imports, the Claude-curated bank) follows. Items a faculty reviewer rejects are never served. AptiSetu imports (`data/aptisetu_bank.json`, built by `scripts/import_aptisetu.py`) carry their verification status from `data/aptisetu_curation/verified_ids.json` (each key independently re-solved); items on `data/aptisetu_curation/exclusions.json` stay in the bank with their reason but are not served until fixed, and duplicates, stem fixes and a seeded option shuffle are applied from the same folder on every re-import. Items not yet reviewed are labelled "faculty review pending".
 - **CLAT Current Affairs & GK (verified bank only):** CLAT UG-style news passages (~300 words) on real events, with MCQs on the event and related static GK. Every seed question stores a `source_url` and an `as_of` date, and its facts were checked against that source. The generator has no web grounding, so this topic is **excluded from daily auto-generation** (`scripts/build_bank.py`) **and from live AI generation** (`engine.NO_AI_GENERATION_TOPICS`), instead of letting the model hallucinate current affairs. Refresh it by adding hand-verified seed questions with `source_url`/`as_of`.
 - **Strict JSON + validation:** fence stripping, trailing-comma repair, A–D normalisation and key checks.
 - **Pedagogical feedback:** the correct answer, the trap type of the main distractor (Extreme scope, Out-of-scope, Half-true, Reversal…), and a step-by-step explanation with the shortcut.
@@ -65,7 +65,8 @@ cat-clat-adaptive-engine/
 ├── data/sample_bank.json         # 45 original seed questions (explanations, trap types, verify_code)
 ├── bank.py                       # AI-bank storage, dedupe, serving pool
 ├── prompts.py                    # Prompt layer shared by app + scripts
-├── scripts/                      # build_bank.py, export_review.py, apply_review.py
+├── scripts/                      # build_bank.py, export_review.py, apply_review.py, import_claude_bank.py
+├── data/claude_bank_<family>.json  # Claude-curated verified bank per app (sources in data/claude_curation/)
 ├── review/ai_bank_review.csv     # faculty review sheet
 ├── data/ai_bank.json             # pre-generated verified questions
 ├── engine.py                     # Adaptive levels, timing, spacing, sandboxed verifier
@@ -121,6 +122,28 @@ git add data/ai_bank.json && git commit -m "bank: monthly refresh"
 - **Build:** each question gets the computed check (Quant/DILR) and an independent solve. Disagreements are rejected, and exact or near duplicates (normalised hash, 5-word-shingle Jaccard ≥ 0.6) are dropped. The bank is written after every accepted question, so a run can stop and resume. The script throttles to `--rpm`, backs off on 429/503, stops cleanly at `--max-calls` or a daily-quota error, and prints accepted/rejected/duplicate counts per topic.
 - **Monthly refresh:** raise `--per-cell` (e.g. +5) and re-run. Only the missing items are generated, and the prompt is told what already exists so it writes different questions. Then export, review, apply, commit. Rejected items stay in the JSON (never served) so the reject decision is remembered.
 
+## 🧠 Claude-curated verified bank
+
+1,038 Claude-generated MCQs that passed an independent review (blind solve of every key, computed check of every
+`verify_code`, option and format checks, and a duplicate check against all existing banks) are served as
+`data/claude_bank_<family>.json`, one file per app:
+
+| Family | Items | Topics |
+|---|---|---|
+| `mgmt_law` | 458 | CAT DILR 60 · CAT Quant 53 · CAT VARC RC 60 · CLAT Legal Reasoning 119 · CLAT Logical Reasoning 57 · IPMAT Quant 51 · IPMAT Verbal 58 |
+| `sarkari` | 179 | Sarkari English 60 · Sarkari Quantitative Aptitude 59 · Sarkari Reasoning 60 |
+| `cuet` | 401 | CUET English RC 60 · CUET English Verbal Ability 57 · CUET General Mental Ability 52 · CUET Logical & Analytical Reasoning 60 · CUET Maths Section A 57 · CUET Maths Section B1 60 · CUET Quantitative Reasoning 55 |
+
+Each app loads only its own family's file (`bank.import_paths`), alongside the AptiSetu imports. Items show
+"✅ Verified (independent solve[, computed])" with source "Claude curated bank". Scheduled AI questions are
+still served first (freshest day first), and seen and excluded items are skipped as for every other bank.
+
+The sources live in `data/claude_curation/` (verified questions, manifest, re-included additions, final
+decisions and the full fixes record). Rebuild with `python3 -m scripts.import_claude_bank` (`--check` validates
+without writing). Ids such as `CL-ML-CLLR-F5-007` come from each item's source position, so re-runs give
+identical files and existing ids stay stable when items are added. To hold an item back, add its source to
+`exclusions` in `data/claude_curation/decisions.json` and re-run.
+
 ## 🧩 One codebase, several apps (exam families)
 
 Set `EXAM_FAMILY` in an app's Streamlit secrets (or env) to choose which app it runs as:
@@ -162,7 +185,7 @@ The CUET app ("CUET Adaptive Engine") is a separate Streamlit app from this same
    only accepts links with that note, so a payment in one app never unlocks another. Add the new app URL
    to your Razorpay website/app details.
 
-**Question bank.** The CUET app serves `data/aptisetu_cuet_bank.json` (408 AptiSetu CUET MCQs; 407 served:
+**Question bank.** The CUET app serves its Claude-curated bank (401 items, see above) and `data/aptisetu_cuet_bank.json` (408 AptiSetu CUET MCQs; 407 served:
 General Test 287, English 61, Maths 59). It is rebuilt from the AptiSetu source with
 `python scripts/import_aptisetu.py <aptisetu>/data/cuet.json --family cuet`, which applies
 `data/aptisetu_curation/cuet/`: verified ids (independent solve), the exclusion of one ambiguous item, 28
