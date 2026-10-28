@@ -1,0 +1,3610 @@
+{
+ "summary": {
+  "checked": 494,
+  "static_errors": 2,
+  "static_warnings": 0,
+  "numeric_mismatch": 3,
+  "llm_solved": 8,
+  "llm_errors": 0,
+  "llm_disagreements": 0,
+  "llm_ambiguous": 0,
+  "flagged": 3
+ },
+ "llm_status": "partial: 8/494 solved; resume with --llm (already-solved items are skipped)",
+ "results": {
+  "AS-QA-CQ2": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 25.0,
+    "derived": "B"
+   },
+   "llm": {
+    "answer": "B",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-CQ4": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 25000.0,
+    "derived": "B"
+   },
+   "llm": {
+    "answer": "B",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-CQ6": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 100.0,
+    "derived": "B"
+   },
+   "llm": {
+    "answer": "B",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-CQ7": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 1200.0,
+    "derived": null
+   },
+   "llm": {
+    "answer": "C",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-CQ8": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ9": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": "B"
+   },
+   "llm": {
+    "answer": "B",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-CQ11": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 9.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ12": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 20.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ13": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 21.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-CQ15": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 58.32,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ16": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   },
+   "llm": {
+    "answer": "A",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-CQ17": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 10000.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ18": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 3000.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ20": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 72.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ21": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 144.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ23": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 7.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ25": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 80.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ27": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 36.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ29": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-QA-CQ30": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ32": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ33": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ34": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 512.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ36": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ39": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 195.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ40": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 48.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ41": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 243.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ42": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 2401.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ44": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 10.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ46": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 60.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ47": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 54.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ48": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ50": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 240.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ51": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 216.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ54": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 1296.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ55": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 126.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ56": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ57": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ58": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ60": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 62.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ61": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 76.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ63": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 12.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ64": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 1.5,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ66": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 12.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ69": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ72": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 10.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ73": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 4.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ74": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 13.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ77": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 12.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ78": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ81": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 16.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ83": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ85": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 15.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ87": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 15.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ88": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 0.8,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ89": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 1500.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ92": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ93": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 10.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ94": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 9.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-CQ96": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 900.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ97": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 50.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ100": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ101": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 16.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-CQ103": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 93.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ104": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ105": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 4.8,
+    "derived": "D"
+   }
+  },
+  "AS-QA-CQ106": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [
+    "error: explanation concludes 6, which is option B, but key is A (8 cm)"
+   ],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ108": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 54.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ109": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 49.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ111": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 81.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-CQ112": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 23.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ113": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 37.5,
+    "derived": "D"
+   }
+  },
+  "AS-QA-CQ114": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 190.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ116": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ117": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 8000.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-CQ120": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-CQ121": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ122": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 10.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ126": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [
+    "error: explanation concludes 8, which is option C, but key is A (4)"
+   ],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ128": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 105.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ131": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ133": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ134": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 25.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-CQ136": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 60.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-CQ138": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ139": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ141": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-QA-CQ144": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ145": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ146": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ148": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ154": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 36.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ155": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-CQ157": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 2880.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-CQ158": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-QA-CQ159": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 9.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M1-QA-02": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M1-QA-05": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 30000.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M1-QA-07": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 17.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M1-QA-08": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 20.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M1-QA-11": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 16.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M1-QA-12": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M1-QA-14": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 43.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M1-QA-15": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 10.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M1-QA-16": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 87.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M1-QA-17": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M1-QA-18": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 54.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M1-QA-19": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 420.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M1-QA-21": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 84.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M1-QA-22": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 23.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M2-QA-01": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 26.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M2-QA-03": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 9.6,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M2-QA-05": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 20.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M2-QA-06": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 2400.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M2-QA-07": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 1.5,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M2-QA-09": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M2-QA-11": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 52.0,
+    "derived": null
+   },
+   "llm": {
+    "answer": "B",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-M2-QA-14": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 9.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M2-QA-15": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 12.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M2-QA-16": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 100.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M2-QA-18": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M2-QA-20": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 150.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M2-QA-21": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M2-QA-22": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 1200.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M3-QA-01": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 12.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M3-QA-02": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 29400.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M3-QA-04": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 1.5,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M3-QA-06": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 72.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M3-QA-07": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 2109.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M3-QA-08": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 13.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M3-QA-09": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 13.0,
+    "derived": "A"
+   },
+   "llm": {
+    "answer": "A",
+    "ambiguous": false
+   }
+  },
+  "AS-QA-M3-QA-12": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 2080.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M3-QA-13": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 29.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M3-QA-15": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M3-QA-16": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 15.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M3-QA-17": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 27.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M3-QA-19": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 78.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M3-QA-22": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 7.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M4-QA-02": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 22.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M4-QA-04": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 58.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M4-QA-06": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 10000.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M4-QA-07": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 85000.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M4-QA-09": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 123.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M4-QA-10": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 106.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M4-QA-11": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M4-QA-13": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 366.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M4-QA-14": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M4-QA-15": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 45.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M4-QA-18": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 343.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M4-QA-19": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 401.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M4-QA-20": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 900.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M4-QA-21": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 7.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M5-QA-01": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 60000.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M5-QA-02": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 2000.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M5-QA-04": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 45.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M5-QA-05": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 14.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M5-QA-07": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 50000.0,
+    "derived": "A"
+   }
+  },
+  "AS-QA-M5-QA-08": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M5-QA-10": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M5-QA-13": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 27.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M5-QA-14": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 11.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M5-QA-16": {
+   "topic": "CAT Quant",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 148.0,
+    "derived": "B"
+   }
+  },
+  "AS-QA-M5-QA-17": {
+   "topic": "CAT Quant",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 8.0,
+    "derived": "D"
+   }
+  },
+  "AS-QA-M5-QA-18": {
+   "topic": "CAT Quant",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 2772.0,
+    "derived": "C"
+   }
+  },
+  "AS-QA-M5-QA-19": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 729.0,
+    "derived": null
+   }
+  },
+  "AS-QA-M5-QA-22": {
+   "topic": "CAT Quant",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 97.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD1": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-CD2": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-CD4": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-CD5": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-CD7": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD8": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": "B"
+   }
+  },
+  "AS-DI-CD9": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD13": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 40.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD14": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 40.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD15": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 33.33,
+    "derived": null
+   }
+  },
+  "AS-DI-CD16": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 18.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD19": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-CD20": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-CD22": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 1.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD24": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 6.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD27": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 7392.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD29": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD30": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD31": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD32": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 3.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD33": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-DI-CD35": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 5.0,
+    "derived": null
+   }
+  },
+  "AS-DI-DS1-CIRCULAR1-02": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-CIRCULAR1-03": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-CIRCULAR1-04": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-LINEAR2-07": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-LINEAR2-08": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-TOURN3-12": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-TABLE4-17": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 65.0,
+    "derived": null
+   }
+  },
+  "AS-DI-DS1-RANK5-19": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS1-RANK5-21": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-TOURN1-01": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-TOURN1-04": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-TABLE2-10": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 50.0,
+    "derived": null
+   }
+  },
+  "AS-DI-DS2-LINEAR3-12": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-LINEAR3-13": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-CIRCULAR4-15": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-GROUP5-19": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-GROUP5-20": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DS2-GROUP5-21": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M1-LINEAR1-02": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M1-LINEAR1-05": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M1-TOURN2-07": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M1-TOURN2-08": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M1-CIRCULAR3-14": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M1-TABLE4-17": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 20.0,
+    "derived": null
+   }
+  },
+  "AS-DI-M2-CIRCULAR1-01": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M2-CIRCULAR1-04": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M2-LINEAR3-11": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M2-LINEAR3-13": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M2-LINEAR3-14": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M2-TOURN4-18": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-TOURN1-01": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-TOURN1-05": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-LINEAR2-08": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-LINEAR2-09": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-CIRCULAR3-12": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-GROUP4-15": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-GROUP4-16": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-GROUP4-17": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M3-TABLE5-22": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 20.0,
+    "derived": null
+   }
+  },
+  "AS-DI-M4-TABLE1-02": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": {
+    "final_number": 50.0,
+    "derived": null
+   }
+  },
+  "AS-DI-M4-CIRCULAR2-09": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M4-LINEAR3-12": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M4-LINEAR3-14": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M4-TOURN4-15": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-LINEAR1-01": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-LINEAR1-03": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-TOURN2-06": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-CIRCULAR3-12": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-CIRCULAR3-13": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-TABLE4-18": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 80.0,
+    "derived": null
+   }
+  },
+  "AS-DI-M5-RANK5-19": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-RANK5-20": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-M5-RANK5-22": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-LINEAR1-01": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-LINEAR1-03": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-CIRCULAR2-06": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-TOURN3-11": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-TABLE4-18": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 15.0,
+    "derived": null
+   }
+  },
+  "AS-DI-DP-LINEAR6-26": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-LINEAR6-27": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-CIRCULAR7-29": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-TOURN8-34": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-TABLE9-40": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": {
+    "final_number": 25.0,
+    "derived": null
+   }
+  },
+  "AS-DI-DP-LINEAR11-47": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-CIRCULAR12-51": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-CIRCULAR12-53": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-CIRCULAR12-54": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-TOURN13-56": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-TOURN13-58": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-GROUP16-70": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-GROUP16-71": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-GROUP16-72": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-GROUP17-74": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-GROUP17-75": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-GROUP17-77": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-RANK18-79": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-RANK18-81": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-RANK18-82": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-RANK19-83": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-DP-RANK19-84": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW1-01": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW1-02": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW1-03": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW1-05": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW2-01": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW2-02": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW2-03": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW2-05": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW3-01": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW3-02": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW3-03": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-ROW3-05": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED1-01": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED1-02": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED1-03": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED1-05": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED2-01": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED2-02": {
+   "topic": "CAT DILR",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED2-03": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-SCHED2-05": {
+   "topic": "CAT DILR",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-DI-EZ-TAB1-01": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 86.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB1-05": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 2023.0,
+    "derived": "C"
+   }
+  },
+  "AS-DI-EZ-TAB2-01": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 121.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB2-05": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 121.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB3-01": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 73.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB3-05": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 73.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB4-01": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 134.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB4-05": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 2.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB5-01": {
+   "topic": "CAT DILR",
+   "key": "D",
+   "static": [],
+   "numeric": {
+    "final_number": 114.0,
+    "derived": null
+   }
+  },
+  "AS-DI-EZ-TAB5-05": {
+   "topic": "CAT DILR",
+   "key": "C",
+   "static": [],
+   "numeric": {
+    "final_number": 114.0,
+    "derived": null
+   }
+  },
+  "AS-VR-CV1": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV2": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV3": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV4": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV5": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV6": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV7": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV8": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV9": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV10": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV11": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV12": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV13": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV14": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV15": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-CV16": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-01": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-02": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-03": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-04": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-05": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-06": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-07": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-08": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-09": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-10": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-11": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-12": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-13": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-14": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-15": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M1-16": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-01": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-02": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-03": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-04": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-05": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-06": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-07": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-08": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-09": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-10": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-11": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-12": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-13": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-14": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-15": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M2-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-01": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-02": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-03": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-04": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-05": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-06": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-07": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-08": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-09": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-10": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-11": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-12": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-13": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-14": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-15": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M3-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-01": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-02": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-03": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-04": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-05": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-06": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-07": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-08": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-09": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-10": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-11": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-12": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-13": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-14": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-15": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M4-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-01": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-02": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-03": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-04": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-05": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-06": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-07": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-08": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-09": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-10": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-11": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-12": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-13": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-14": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-15": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-M5-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-01": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-02": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-03": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-04": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-11": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-12": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-13": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-14": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-21": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-22": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-23": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-24": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-31": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-32": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-33": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-34": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-41": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-42": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-43": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-EZV-44": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-01": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-02": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-03": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-04": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-05": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-06": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-07": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-08": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-09": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-10": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-11": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-12": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-13": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-14": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-15": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR1-16": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-01": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-02": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-03": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-04": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-05": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-06": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-07": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-08": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-09": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-10": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-11": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-12": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-13": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-14": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-15": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR2-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-01": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-02": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-03": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-04": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-05": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-06": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-07": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-08": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-09": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-10": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-11": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-12": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-13": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-14": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-15": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-PR3-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-01": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-02": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-03": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-04": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-05": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-06": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-07": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-08": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-09": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-10": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-11": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-12": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-13": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-14": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-15": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S1-16": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-01": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-02": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-03": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-04": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-05": {
+   "topic": "CAT VARC RC",
+   "key": "C",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-06": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-07": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-08": {
+   "topic": "CAT VARC RC",
+   "key": "B",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-09": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-10": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-11": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-12": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-13": {
+   "topic": "CAT VARC RC",
+   "key": "A",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-14": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-15": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  },
+  "AS-VR-S2-16": {
+   "topic": "CAT VARC RC",
+   "key": "D",
+   "static": [],
+   "numeric": null
+  }
+ }
+}
