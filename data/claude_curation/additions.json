@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "description": "Items re-included after review with the option fixes listed in decisions.json (original text kept here)."
+  },
+  "items": [
+    {
+      "source": "file-1 #62",
+      "question": {
+        "exam": "Sarkari",
+        "topic": "Sarkari Reasoning",
+        "difficulty": "Easy",
+        "concept_tag": "Analogy - number pair with a consecutive multiplier",
+        "question_text": "Find the number that completes the analogy: 7 : 56 :: 9 : ?",
+        "options": {
+          "A": "90",
+          "B": "81",
+          "C": "72",
+          "D": "100"
+        },
+        "correct_answer": "A",
+        "trap_type": "Wrong operation pattern (square)",
+        "pedagogical_explanation": "56 = 7 × 8, so the first number is multiplied by the next number: n × (n+1). For 9 the answer is 9 × 10 = 90. Shortcut: factorise the second number and see whether it contains the first number; 56 = 7 × 8 is a quick giveaway. Trap (B): 81 is 9², from assuming a squaring analogy as in 8 : 64. Trap (C): 72 is 9 × 8, copying the multiplier 8 from the example instead of moving it to 10. Trap (D): 100 is (9+1)², squaring the next number.",
+        "verify_code": "k = 56 // 7 - 7\nanswer = 9 * (9 + k)"
+      }
+    },
+    {
+      "source": "file-1 #138",
+      "question": {
+        "exam": "Sarkari",
+        "topic": "Sarkari English",
+        "difficulty": "Easy",
+        "concept_tag": "Prepositions - prefer to",
+        "question_text": "Fill in the blank: She prefers tea ____ coffee.",
+        "options": {
+          "A": "than",
+          "B": "to",
+          "C": "from",
+          "D": "over"
+        },
+        "correct_answer": "B",
+        "trap_type": "Than used after prefer",
+        "pedagogical_explanation": "The verb 'prefer' is followed by 'to' when two things are compared: prefer tea to coffee. Rule: prefer ... to; never prefer ... than. Trap (A): 'than' is used after comparatives such as better and more, so students carry it over to prefer. Trap (C): 'from' belongs to words like different from. Trap (D): 'over' feels natural in speech ('chose tea over coffee') but is not the standard fixed form after prefer."
+      }
+    }
+  ]
+}

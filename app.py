@@ -52,8 +52,8 @@ parse_question_json = engine.parse_question_json
 def load_pool() -> list[dict]:
     """Seed bank + scheduled (pre-generated) AI bank + imports, rejected items excluded. No API call needed.
     pick_unseen serves the scheduled AI questions first."""
-    imported = [q for p in qbank.IMPORT_PATHS for q in qbank.load_json_bank(p)["questions"]
-                if q["topic"] in FAMILY_TOPICS]  # CAT and CUET AptiSetu imports
+    imported = [q for p in qbank.import_paths(FAMILY["key"]) for q in qbank.load_json_bank(p)["questions"]
+                if q["topic"] in FAMILY_TOPICS]  # AptiSetu imports + this family's Claude-curated bank
     pool = qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"], imported)
     return [q for q in pool if q["topic"] in FAMILY_TOPICS]  # only this app's exams
 
@@ -262,7 +262,7 @@ def daily_challenge() -> dict:
                 if q.get("review_status") == "approved" and q.get("verified") and q["topic"] in FAMILY_TOPICS]
     base = load_bank() + approved   # only faculty-approved AI items join the shared daily question
     if not base:  # app with no seed bank yet (CUET): rotate through its verified, served imports instead
-        imported = [q for q in load_pool() if q["source"] == "AptiSetu bank" and q.get("verified")]
+        imported = [q for q in load_pool() if q["source"] in qbank.IMPORT_SOURCES and q.get("verified")]
         return dict(engine.daily_pick(imported, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     q = dict(engine.daily_pick(base, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     return q if q["id"].startswith("AI-") else mark_seed(q)

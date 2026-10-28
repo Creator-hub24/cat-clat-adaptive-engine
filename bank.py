@@ -13,7 +13,20 @@ SEED_PATH = ROOT / "data" / "sample_bank.json"
 AI_BANK_PATH = ROOT / "data" / "ai_bank.json"
 APTISETU_PATH = ROOT / "data" / "aptisetu_bank.json"  # imported by scripts/import_aptisetu.py
 APTISETU_CUET_PATH = ROOT / "data" / "aptisetu_cuet_bank.json"  # import_aptisetu.py --family cuet
-IMPORT_PATHS = [APTISETU_PATH, APTISETU_CUET_PATH]  # every imported bank the apps serve from (filtered by topic)
+IMPORT_PATHS = [APTISETU_PATH, APTISETU_CUET_PATH]  # AptiSetu banks the apps serve from (filtered by topic)
+CLAUDE_FAMILIES = ("mgmt_law", "sarkari", "cuet")  # families with a Claude-curated bank (scripts/import_claude_bank.py)
+APTISETU_SOURCE = "AptiSetu bank"
+CLAUDE_SOURCE = "Claude curated bank"
+IMPORT_SOURCES = (APTISETU_SOURCE, CLAUDE_SOURCE)
+
+
+def claude_bank_path(family: str) -> Path:
+    return ROOT / "data" / f"claude_bank_{family}.json"
+
+
+def import_paths(family: str) -> list[Path]:
+    """Imported banks one app serves: the AptiSetu banks plus that family's own Claude-curated bank only."""
+    return IMPORT_PATHS + ([claude_bank_path(family)] if family in CLAUDE_FAMILIES else [])
 REVIEW_STATUSES = ("unreviewed", "approved", "rejected")
 NEAR_DUP_JACCARD = 0.6
 
@@ -90,7 +103,8 @@ def serving_pool(seed: list[dict], ai: list[dict], imported: list[dict] | None =
     for q in servable_imports(imported or []):
         # verified/verification come from the import (data/aptisetu_curation/verified_ids.json); items that were
         # not independently checked keep verified=False and show as unverified
-        out.append(dict(q, source="AptiSetu bank", verified=bool(q.get("verified")),
+        # Claude-curated items name their bank in import_source (data/claude_curation, every item verified)
+        out.append(dict(q, source=q.get("import_source") or APTISETU_SOURCE, verified=bool(q.get("verified")),
                         verification=list(q.get("verification") or [])))
     return out
 
@@ -103,8 +117,8 @@ def servable_imports(questions: list[dict]) -> list[dict]:
 def pick_unseen(pool: list[dict], topic: str, difficulty: str, seen: set, rng) -> dict | None:
     """Unseen question for this topic+level; None if the user has exhausted that cell.
     Scheduled (pre-generated) AI questions come first, freshest generation day first, so today's new
-    questions are served before older ones; the rest of the bank (seed, family sample bank, AptiSetu
-    imports) is used only once this user has seen every scheduled one in the cell."""
+    questions are served before older ones; the rest of the bank (seed, family sample bank, AptiSetu and
+    Claude-curated imports) is used only once this user has seen every scheduled one in the cell."""
     fresh = [q for q in pool if q["topic"] == topic and q["difficulty"] == difficulty and q["id"] not in seen]
     scheduled = [q for q in fresh if q.get("scheduled_ai")]
     if scheduled:  # freshest batch first: the most recent generation day among unseen scheduled items

@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "description": "Final curation decisions applied by scripts/import_claude_bank.py on every run."
+  },
+  "text_fixes": [
+    {
+      "source": "file-1 #62",
+      "field": "options.C",
+      "old": "72",
+      "new": "99",
+      "reason": "9 x 8 = 72 also fits a 'multiply by 8' reading of 7 : 56, so C is replaced to leave one defensible answer (key A = 90)."
+    },
+    {
+      "source": "file-1 #62",
+      "field": "pedagogical_explanation",
+      "old": "Trap (C): 72 is 9 × 8, copying the multiplier 8 from the example instead of moving it to 10.",
+      "new": "Trap (C): 99 is 9 × 11, skipping past the next number (10) to the one after it.",
+      "reason": "Explanation follows the new option C."
+    },
+    {
+      "source": "file-1 #138",
+      "field": "options.D",
+      "old": "over",
+      "new": "against",
+      "reason": "'prefer tea over coffee' is accepted in modern usage, so D is replaced to leave one defensible answer (key B = 'to')."
+    },
+    {
+      "source": "file-1 #138",
+      "field": "pedagogical_explanation",
+      "old": "Trap (D): 'over' feels natural in speech ('chose tea over coffee') but is not the standard fixed form after prefer.",
+      "new": "Trap (D): 'against' borrows the idea of weighing one thing against another, but the fixed pattern is prefer ... to.",
+      "reason": "Explanation follows the new option D."
+    }
+  ],
+  "topic_retags": [
+    {
+      "source_prefix": "file-5",
+      "index_from": 0,
+      "index_to": 39,
+      "from": "CLAT RC",
+      "to": "CLAT Legal Reasoning",
+      "reason": "Legal-principle passages (batches 41-42), tagged like batch 40."
+    }
+  ],
+  "dropped": [
+    {
+      "source": "file-1 #25",
+      "reason": "Near-duplicate of AS-CU-QR-G-Q141 (same template, numbers swapped)."
+    }
+  ],
+  "exclusions": []
+}
