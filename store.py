@@ -24,6 +24,8 @@ DEFAULT_FAMILY = "mgmt_law"
 # Per-app Pro (supabase/migrations/2026-10-28_pro_entitlements.sql): one row per (user_id, exam_family).
 ENTITLEMENT_FIELDS = ("pro_until", "pro_purchases", "pending_payment_ref")
 ENTITLEMENT_TABLE = "pro_entitlements"
+PAYMENTS_TABLE = "consumed_payments"  # one row per Razorpay payment ref: Pro is extended once per payment
+USER_TABLES = ("attempts", ENTITLEMENT_TABLE, "usage_guard", "abuse_events", PAYMENTS_TABLE)  # rows keyed by user_id
 GUARD_TABLE = "usage_guard"      # per (user_id, exam_family): session token, IST-day AI count, cooldown
 ABUSE_TABLE = "abuse_events"     # append-only log of speed-check triggers (for manual review only)
 GUARD_FIELDS = ("session_token", "session_started_at", "ai_day", "ai_used", "cooldown_until")
@@ -118,7 +120,15 @@ class MemoryStore:
         self.attempts: list[dict] = []
         self.reports: list[dict] = []
         self.guards: dict[tuple[str, str], dict] = {}
+        self.consumed: dict[str, dict] = {}  # shared across families, like the DB table
         self.abuse: list[dict] = []
+
+    def consume_payment(self, ref, uid):
+        """True = first use of this payment ref (extend Pro); False = already used (do not extend)."""
+        if ref in self.consumed:
+            return False
+        self.consumed[ref] = {"user_id": uid, "exam_family": self.family}
+        return True
 
     def load_guard(self, uid):
         return copy.deepcopy(self.guards.get((uid, self.family)))
@@ -154,6 +164,7 @@ class MemoryStore:
         self.entitlements = {k: v for k, v in self.entitlements.items() if k[0] != uid}
         self.attempts = [a for a in self.attempts if a["user_id"] != uid]
         self.guards = {k: v for k, v in self.guards.items() if k[0] != uid}
+        self.consumed = {k: v for k, v in self.consumed.items() if v["user_id"] != uid}
         self.abuse = [a for a in self.abuse if a["user_id"] != uid]
 
 
@@ -228,6 +239,20 @@ class SupabaseStore:
             if self.family != DEFAULT_FAMILY and (profile.get("pro_until") or profile.get("pending_payment_ref")):
                 raise  # other apps store Pro only here: never silently lose a paid entitlement  # mgmt_law: profiles row above already holds Pro
 
+    def consume_payment(self, ref, uid):
+        """Insert-before-extend. True = this call consumed the ref; False = it was already consumed
+        (unique violation: another session/replay won, so do NOT extend); None = table unavailable
+        (caller falls back to the old behaviour)."""
+        try:
+            self.db.table(PAYMENTS_TABLE).insert({"payment_ref": ref, "user_id": uid,
+                                                  "exam_family": self.family}).execute()
+            return True
+        except Exception as e:
+            msg = f"{getattr(e, 'code', '')} {e}".lower()
+            if "23505" in msg or "duplicate key" in msg or "unique" in msg:
+                return False
+            return None
+
     # ---- fair use (all best-effort: a missing table never breaks practice)
     def load_guard(self, uid):
         try:
@@ -271,7 +296,14 @@ class SupabaseStore:
         self.db.table("attempts").insert(row).execute()
 
     def delete_all(self, uid):
-        self.db.table("attempts").delete().eq("user_id", uid).execute()
+        # Explicit deletes (not only FK cascade) so erasure works even if a table lacks the FK.
+        # question_reports holds no user identifier, so there is nothing to delete there.
+        for table in USER_TABLES:
+            try:
+                self.db.table(table).delete().eq("user_id", uid).execute()
+            except Exception:
+                if table == "attempts":
+                    raise
         self.db.table("profiles").delete().eq("user_id", uid).execute()
 
 

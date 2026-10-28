@@ -254,6 +254,16 @@ def count_ai_question():
         s.db.save_guard(s.uid, {"ai_day": today, "ai_used": s.pro_ai_used})
 
 
+def apply_verified_payment(ref: str):
+    """Record the payment ref before extending Pro. False = already consumed (replay or another
+    session won the race); True/None = go ahead (None: consumed_payments table missing)."""
+    s = st.session_state
+    db = s.get("db") or get_store()
+    if not db or not hasattr(db, "consume_payment"):
+        return None
+    return db.consume_payment(ref, s.get("uid"))
+
+
 def user_is_pro() -> bool:
     s = st.session_state
     return storage.is_pro({"pro_until": s.get("pro_until")})
@@ -452,6 +462,12 @@ with st.sidebar:
             if s.get("pending_ref") and st.button("I've paid, verify", width="stretch"):
                 try:
                     if payments.verify_paid(rz_id, rz_secret, s.pending_ref, price, exam_family=FAMILY["key"]):
+                        if apply_verified_payment(s.pending_ref) is False:
+                            s.pending_ref = None
+                            s.pop("pay_url", None)
+                            persist()
+                            st.info("This payment was already applied to your Pro plan.")
+                            st.rerun()
                         prof = payments.extend_pro(profile_from_state())
                         s.plan, s.pro_until, s.pending_ref = prof["plan"], prof["pro_until"], None
                         s.pro_purchases = prof["pro_purchases"]

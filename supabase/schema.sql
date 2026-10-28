@@ -91,3 +91,15 @@ create table if not exists public.abuse_events (
 create index if not exists abuse_events_user_idx on public.abuse_events (user_id, exam_family, created_at desc);
 alter table public.abuse_events enable row level security;
 revoke all on public.abuse_events from anon, authenticated;
+
+-- v0.6: see supabase/migrations/2026-10-28_consumed_payments.sql
+-- user_id is nullable and has no FK so the record survives (as an anonymous ref) and never blocks inserts.
+create table if not exists public.consumed_payments (
+  payment_ref text primary key,
+  user_id     text,
+  exam_family text not null default 'mgmt_law',
+  created_at  timestamptz not null default now()
+);
+create index if not exists consumed_payments_user_idx on public.consumed_payments (user_id);
+alter table public.consumed_payments enable row level security;
+revoke all on public.consumed_payments from anon, authenticated;
