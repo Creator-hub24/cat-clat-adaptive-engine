@@ -52,10 +52,10 @@
         "D": "1"
       },
       "correct_answer": "A",
-      "pedagogical_explanation": "Step-by-step solution:\n1. Reading Signal / Global Invariant: In a round-robin tournament with 4 teams, total matches = 4C2 = 6 matches.\n2. In every match, whether there is a decisive winner (2 points to winner, 0 to loser) or a draw (1 point to each team), exactly 2 points are distributed in total.\n3. Therefore, the sum of points of all 4 teams must equal 6 matches × 2 points/match = 12 points.\n4. Sum of points of Alpha, Beta, and Gamma = 5 + 3 + 1 = 9 points.\n5. Points of Delta = 12 - 9 = 3 points.\n\nMain Distractor Analysis:\nOption D (1 point) is the main trap. Students often mistakenly assume that because Alpha won 2 games and Beta won 1 game, all wins in the tournament belong to them, meaning Delta must have won 0 games, lost 2, and drawn 1 (giving 1 point). However, Delta actually won 1 game (against Beta), giving Delta 1 win, 1 draw, and 1 loss = 3 points. Using the global sum property avoids constructing detailed match-by-match outcomes entirely.",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Reading Signal / Global Invariant: In a round-robin tournament with 4 teams, total matches = 4C2 = 6 matches.\n2. In every match, whether there is a decisive winner (2 points to winner, 0 to loser) or a draw (1 point to each team), exactly 2 points are distributed in total.\n3. Therefore, the sum of points of all 4 teams must equal 6 matches × 2 points/match = 12 points.\n4. Sum of points of Alpha, Beta, and Gamma = 5 + 3 + 1 = 9 points.\n5. Points of Delta = 12 - 9 = 3 points.\n\nMain Distractor Analysis:\nOption D (1 point) is the main trap. Students often mistakenly assume that because Alpha won 2 games and Beta won 1 game, all wins in the tournament belong to them, meaning Delta must have won 0 games, lost 2, and drawn 1 (giving 1 point). In fact, Delta's record can vary, but its points are always 3: the six matches give 12 points in total (2 per match), and 12 - (5 + 3 + 1) = 3. Using the global sum property avoids constructing detailed match-by-match outcomes entirely.",
       "trap_type": "Assuming zero wins for Delta without checking match matrices",
       "concept_tag": "Tournament - total points conservation principle",
-      "verify_code": "total_matches = 6\npts_per_match = 2\ntotal_pts = total_matches * pts_per_match\ndelta_pts = total_pts - (5 + 3 + 1)\noptions = {3: 'A', 2: 'B', 4: 'C', 1: 'D'}\nanswer = options[delta_pts]",
+      "verify_code": "import itertools\nteams = [\"Alpha\", \"Beta\", \"Gamma\", \"Delta\"]\nmatches = list(itertools.combinations(teams, 2))\ngiven = {\"Alpha\": (2, 0, 1), \"Beta\": (1, 1, 1), \"Gamma\": (0, 2, 1)}  # (won, lost, drawn)\nanswers = set()\nfor res in itertools.product((0, 1, 2), repeat=len(matches)):  # 0: first wins, 1: second wins, 2: draw\n    rec = {t: [0, 0, 0] for t in teams}\n    for (a, b), r in zip(matches, res):\n        if r == 2:\n            rec[a][2] += 1\n            rec[b][2] += 1\n        else:\n            w, l = (a, b) if r == 0 else (b, a)\n            rec[w][0] += 1\n            rec[l][1] += 1\n    if all(tuple(rec[t]) == v for t, v in given.items()):\n        answers.add(2 * rec[\"Delta\"][0] + rec[\"Delta\"][2])\nanswer = next(iter(answers)) if len(answers) == 1 else None\n",
       "id": "AI-CD-8325e27d",
       "topic": "CAT DILR",
       "difficulty": "Easy",
@@ -64,6 +64,7 @@
       "verified": true,
       "verification": [
         "computed",
+        "unique solution",
         "independent solve"
       ],
       "text_hash": "8325e27d044d2000e3d1957054522cdfe8a27dc8f680f9d557b48b337eae4dec",
@@ -73,7 +74,8 @@
       "verified_independent": true,
       "reviewed_at": "2026-10-27T04:17:51.273112+00:00",
       "reviewed_by": "vaibhav",
-      "review_note": "Pre-check: 6 matches x2 = 12 pts, others 9, Delta 3; W/L and draw parity force 1W1L1D. Key A correct, consistent."
+      "review_note": "Pre-check: 6 matches x2 = 12 pts, others 9, Delta 3; W/L and draw parity force 1W1L1D. Key A correct, consistent.",
+      "verified_unique": true
     },
     {
       "question_text": "Passage: Under the doctrine of vicarious liability, an employer is held legally responsible for any wrongful act committed by their employee, provided the act takes place within the course of employment. An act is within the course of employment if it is expressly authorized by the employer, or if it is an unauthorized manner of performing an authorized task. However, if an employee commits a wrongful act while engaged in a personal task that has no connection to their employment duties, the employer is not vicariously liable for that act.\n\nFact Situation: Suresh is employed as a delivery driver for a bakery and is instructed to deliver cakes using the company van along a specified route. While driving along the delivery route to make a scheduled delivery, Suresh negligently hits a parked car. Applying the principle, is the bakery vicariously liable for the damage?",
@@ -181,7 +183,7 @@
       "pedagogical_explanation": "Step 1: Calculate the total number of matches. In a 4-team round-robin, matches = 4C2 = 6. Step 2: Determine possible W-D-L records for each team based on 3 matches. Alpha (7 pts) must be 2W-1D-0L. Delta (1 pt) must be 0W-1D-2L. Beta (4 pts) must be 1W-1D-1L. Gamma (3 pts) could be 1W-0D-2L OR 0W-3D-0L. Step 3: Use the 'Conservation of Draws' principle. Every draw involves two teams, so the sum of the 'Draw' column must be even. Alpha(1) + Beta(1) + Delta(1) = 3. For the sum to be even, Gamma must have an odd number of draws. Thus, Gamma must have 3 draws (0W-3D-0L). Step 4: If Gamma drew all 3 matches, it means Alpha vs Gamma, Beta vs Gamma, and Delta vs Gamma were all draws. Shortcut: Total points in a 6-match tournament with no draws is 18 (6*3). Here, total points = 15. Since each draw reduces the total point pool by 1 (3 vs 1+1), there must be exactly 3 drawn matches. This confirms Gamma (3 draws) is the only way to reach 6 total draw-slots.",
       "trap_type": "Procedural error - failing to check draw parity",
       "concept_tag": "Tournament - Round Robin with Points",
-      "verify_code": "import itertools\n\ndef solve():\n    teams = ['Alpha', 'Beta', 'Gamma', 'Delta']\n    matches = list(itertools.combinations(teams, 2))\n    # Results: 0: Team1 wins, 1: Team2 wins, 2: Draw\n    for results in itertools.product([0, 1, 2], repeat=6):\n        points = {t: 0 for t in teams}\n        match_map = {}\n        for i, (t1, t2) in enumerate(matches):\n            res = results[i]\n            match_map[(t1, t2)] = res\n            if res == 0:\n                points[t1] += 3\n            elif res == 1:\n                points[t2] += 3\n            else:\n                points[t1] += 1\n                points[t2] += 1\n        \n        if points['Alpha'] == 7 and points['Beta'] == 4 and points['Gamma'] == 3 and points['Delta'] == 1:\n            # Found the unique configuration\n            # Check if Alpha vs Gamma is a draw (result code 2)\n            if match_map[('Alpha', 'Gamma')] == 2:\n                return 'C'\n    return None\n\nanswer = solve()",
+      "verify_code": "import itertools\nteams = [\"Alpha\", \"Beta\", \"Gamma\", \"Delta\"]\nmatches = list(itertools.combinations(teams, 2))\ntarget = {\"Alpha\": 7, \"Beta\": 4, \"Gamma\": 3, \"Delta\": 1}\nopts = {\"A\": (\"Alpha\", \"Beta\"), \"B\": (\"Beta\", \"Delta\"), \"C\": (\"Alpha\", \"Gamma\"), \"D\": (\"Alpha\", \"Delta\")}\nanswers = set()\nfor res in itertools.product((0, 1, 2), repeat=len(matches)):  # 0: first wins, 1: second wins, 2: draw\n    pts = {t: 0 for t in teams}\n    for (a, b), r in zip(matches, res):\n        if r == 2:\n            pts[a] += 1\n            pts[b] += 1\n        else:\n            pts[a if r == 0 else b] += 3\n    if pts == target:\n        drawn = {m for m, r in zip(matches, res) if r == 2}\n        answers.add(\"\".join(k for k, m in sorted(opts.items()) if m in drawn))\nanswer = next(iter(answers)) if len(answers) == 1 else None\n",
       "id": "AI-CD-41a29c0d",
       "topic": "CAT DILR",
       "difficulty": "Moderate",
@@ -190,6 +192,7 @@
       "verified": true,
       "verification": [
         "computed",
+        "unique solution",
         "independent solve"
       ],
       "text_hash": "41a29c0daf4636e72efe310ab79d8b811696e02d71291019674fa018f0721d76",
@@ -199,7 +202,8 @@
       "verified_independent": true,
       "reviewed_at": "2026-10-27T04:17:51.273190+00:00",
       "reviewed_by": "vaibhav",
-      "review_note": "Pre-check: 18-15 = 3 draws, draw-count forces Gamma 3 draws, A beats B,D and B beats D. Unique. Key C correct."
+      "review_note": "Pre-check: 18-15 = 3 draws, draw-count forces Gamma 3 draws, A beats B,D and B beats D. Unique. Key C correct.",
+      "verified_unique": true
     },
     {
       "question_text": "Passage: \nDefamation occurs when a person communicates a false statement of fact to a third party that causes injury to the reputation of another. However, the doctrine of 'Qualified Privilege' protects communications made in good faith on a subject in which the party communicating has a legal or social duty to a person having a corresponding interest or duty. This protection is lost only if the statement is made with 'Actual Malice'—defined as making a statement with the knowledge that it is false or with a reckless disregard for the truth. For the purposes of this principle, 'reckless disregard' requires a high degree of awareness of probable falsity; simple negligence, such as an honest mistake or a failure to double-check facts, does not constitute Actual Malice.\n\nFact Situation: \nArjun, an HR Executive at a firm, receives a reference check call from a recruiter regarding a former employee, Sameer. Arjun searches the company database and finds a record stating Sameer was 'dismissed for financial misappropriation.' Arjun conveys this to the recruiter. It is later revealed that the database entry was a clerical error—Sameer had actually resigned voluntarily, and the 'misappropriation' note belonged to a different employee. Arjun had failed to verify the employee ID number before speaking. Sameer sues Arjun for defamation.",
@@ -397,7 +401,7 @@
       "pedagogical_explanation": "Step 1 (Conservation): The total sum of ages is 20 + 22 + 24 + 26 + 28 + 30 = 150. Let the sums of the three pairs be S1, S2, and S3. Since S1 = S2 + 2 and S2 = S3 + 2, we have (S2 + 2) + S2 + (S2 - 2) = 150, which simplifies to 3 * S2 = 150. Thus, S2 = 50, S1 = 52, and S3 = 48.\nStep 2 (Pair Analysis): R's pair has a difference of 4. Possible pairs from the set with a difference of 4 are {24, 20} (sum 44), {26, 22} (sum 48), and {28, 24} (sum 52). Since only 48 and 52 are valid pair sums, R's pair is either {26, 22} or {28, 24}.\nStep 3 (Refinement): If R's pair is {28, 24}, it must be Pair 1 (sum 52). But Q is also in Pair 1. If Q is one of {28, 24} and R is the other, R would be 4 years older than Q, meaning R=28 and Q=24. However, the clue states Q is older than his partner, which would make Q=28. This results in Q=R, which is impossible. Thus, R's pair must be {26, 22}, making it Pair 3 (sum 48). Since P=22, R must be 26.\nStep 4 (Final Assignment): Remaining ages are {20, 24, 28, 30}. S1 is 52 and S2 is 50. The only way to form these sums is {28, 24} and {30, 20}. Since Q is in Pair 1 and older than his partner, Q=28 and his partner is 24. We verify with the last clue: T is 6 years older than S. With S=24, T must be 30. This fits perfectly as T=30 and U=20 form Pair 2.",
       "trap_type": "Misidentifying the partner",
       "concept_tag": "Sum conservation and logical deduction",
-      "verify_code": "import itertools\n\ndef solve():\n    ages = [20, 22, 24, 26, 28, 30]\n    # S1=52, S2=50, S3=48 based on 150 total and difference of 2\n    for p in itertools.permutations(ages):\n        P, Q, R, S, T, U = p\n        if P != 22: continue\n        if T != S + 6: continue\n        \n        # Try all possible ways to partition the 6 people into 3 pairs\n        # Q must be in Pair 1 (Sum 52)\n        # R must be 4 older than his partner\n        names = ['P', 'Q', 'R', 'S', 'T', 'U']\n        val = {'P':P, 'Q':Q, 'R':R, 'S':S, 'T':T, 'U':U}\n        \n        # Q is in Pair 1, so find Q's partner\n        for partner_q in [n for n in names if n != 'Q']:\n            if val['Q'] + val[partner_q] == 52:\n                if val['Q'] > val[partner_q]:\n                    # Check R's pair\n                    for partner_r in [n for n in names if n not in ['Q', partner_q, 'R']]:\n                        if val['R'] == val[partner_r] + 4:\n                            sum_r = val['R'] + val[partner_r]\n                            # The last pair must be the remaining two people\n                            others = [n for n in names if n not in ['Q', partner_q, 'R', partner_r]]\n                            sum_other = val[others[0]] + val[others[1]]\n                            \n                            # Sums must be 52, 50, 48 in some order corresponding to Pair 1, 2, 3\n                            # Q is in Pair 1 (52), R's pair must be 50 or 48\n                            if sum_r in [50, 48] and sum_other in [50, 48] and sum_r != sum_other:\n                                if sum_r == 48 and sum_other == 50:\n                                    return val[partner_q]\n    return None\n\nanswer = solve()",
+      "verify_code": "import itertools\nnames = [\"P\", \"Q\", \"R\", \"S\", \"T\", \"U\"]\nanswers = set()\nfor ages in itertools.permutations([20, 22, 24, 26, 28, 30]):\n    a = dict(zip(names, ages))\n    if a[\"P\"] != 22 or a[\"T\"] != a[\"S\"] + 6:\n        continue\n    for order in itertools.permutations(names):  # (order[0], order[1]) = Pair 1, then Pair 2, Pair 3\n        if order[0] > order[1] or order[2] > order[3] or order[4] > order[5]:\n            continue\n        pairs = [order[0:2], order[2:4], order[4:6]]\n        s = [a[x] + a[y] for x, y in pairs]\n        if s[0] != s[1] + 2 or s[1] != s[2] + 2 or \"Q\" not in pairs[0]:\n            continue\n        mate = {x: y for x, y in pairs}\n        mate.update({y: x for x, y in pairs})\n        if a[\"Q\"] > a[mate[\"Q\"]] and a[\"R\"] == a[mate[\"R\"]] + 4:\n            answers.add(a[mate[\"Q\"]])\nanswer = next(iter(answers)) if len(answers) == 1 else None\n",
       "id": "AI-CD-ef4ab39a",
       "topic": "CAT DILR",
       "difficulty": "CAT-Level",
@@ -406,6 +410,7 @@
       "verified": true,
       "verification": [
         "computed",
+        "unique solution",
         "independent solve"
       ],
       "text_hash": "ef4ab39a0476071d5a71c7c29bef10afaab12b0d35e72e2d4b5425041eeaea6e",
@@ -415,7 +420,8 @@
       "verified_independent": true,
       "reviewed_at": "2026-10-27T04:17:51.273319+00:00",
       "reviewed_by": "vaibhav",
-      "review_note": "Pre-check: pair sums 52/50/48; only {24,28},{20,30},{22,26} has a 4-gap pair; Q=28 with 24, R=26 with P, S=24 T=30 U=20. Unique. Key B correct."
+      "review_note": "Pre-check: pair sums 52/50/48; only {24,28},{20,30},{22,26} has a 4-gap pair; Q=28 with 24, R=26 with P, S=24 T=30 U=20. Unique. Key B correct.",
+      "verified_unique": true
     },
     {
       "question_text": "Passage: No person can claim damages for harm resulting from a risk they voluntarily assumed with full knowledge of its nature and extent. Exceptionally, this defence (voluntary assumption of risk) does not apply to a rescuer who acts under a legal, moral, or social duty to rescue a person from imminent peril created by the defendant's negligence, unless the rescuer's intervention is grossly disproportionate to the threat posed.\n\nFact Situation: Bhavin negligently leaves his horse unfastened on a busy street. The horse bolts toward a crowded pavement where young children are playing. Seeing the imminent danger, Arjun, a bystander, leaps into the street and successfully stops the horse, saving the children but suffering serious injuries. Arjun sues Bhavin for damages. Bhavin argues that Arjun voluntarily exposed himself to a known danger and therefore cannot recover damages. Which of the following is correct?",

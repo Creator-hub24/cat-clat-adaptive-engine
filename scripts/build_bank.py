@@ -2,7 +2,8 @@
 """Build / top up data/ai_bank.json with verified Gemini questions.
 
 Uses the app's own prompt layer (prompts.py) and verification pipeline (llm.generate_verified):
-Quant/DILR verify_code computed in the sandbox, an independent second solve for every section,
+Quant/DILR verify_code computed in the sandbox (required for both; CAT DILR code must also list every consistent
+answer in `answers`, exactly one value equal to the key), an independent second solve for every section,
 reject on any disagreement. Accepted questions are deduped (normalised hash + 5-gram Jaccard) and
 written to the bank after EACH acceptance, so the script can be stopped and resumed at any time.
 
@@ -160,6 +161,10 @@ def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_f
             try:
                 q = llm.generate_verified(client, prompts.model_candidates(), topic, diff, prompt,
                                           prompts.SYSTEM_PROMPT, max_tries=max_tries_per_q, log=reasons)
+                gap = missing_required_checks(topic, q)
+                if gap:  # second line of defence: never bank an item without its required computed checks
+                    reasons.append(gap)
+                    raise RuntimeError(gap)
             except QuotaStop:
                 raise
             except Exception as e:
@@ -182,13 +187,25 @@ def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_f
             q.update({"id": f"AI-{topic_prefix(topic)}-{h[:8]}",
                       "text_hash": h, "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
                       "review_status": "unreviewed", "verified_computed": "computed" in q["verification"],
-                      "verified_independent": "independent solve" in q["verification"]})
+                      "verified_independent": "independent solve" in q["verification"],
+                      **({"verified_unique": "unique solution" in q["verification"]}
+                         if topic in engine.UNIQUE_ANSWER_TOPICS else {})})
             q.pop("source", None)
             qs.append(q)
             st["accepted"] = st.get("accepted", 0) + 1
             bank.save_json_bank(data, out_path)
             log(f"✓ {topic} / {diff} [{q['model']}] {q['id']}  ({cell_counts(qs)[(topic, diff)]}/{per_cell})")
     return data
+
+
+def missing_required_checks(topic: str, q: dict) -> str | None:
+    """Reason an item lacks a check its topic requires (verify_code for Quant/DILR, uniqueness for DILR)."""
+    checks = q.get("verification") or []
+    if topic in engine.CODE_REQUIRED_TOPICS and "computed" not in checks:
+        return f"{topic} item has no computed verify_code check"
+    if topic in engine.UNIQUE_ANSWER_TOPICS and "unique solution" not in checks:
+        return f"{topic} item has no uniqueness check (verify_code must assign `answers`)"
+    return None
 
 
 def main(argv=None):
