@@ -15,13 +15,17 @@ DIFFICULTIES = ["Easy", "Moderate", "CAT-Level"]
 REVIEW_INTERVALS = [3, 7, 15]  # questions answered before a mistake comes back
 STEP_UP_AFTER = 2
 STEP_DOWN_AFTER = 2
-RC_TOPICS = {"CAT VARC RC", "CLAT RC", "CLAT Legal Reasoning", "CLAT Current Affairs & GK"}
+RC_TOPICS = {"CAT VARC RC", "CLAT RC", "CLAT Legal Reasoning", "CLAT Current Affairs & GK",
+             "CUET English Reading Comprehension"}
 # Topics whose facts must be grounded in a cited source (source_url + as_of). The LLM generator has no
 # web access, so these are never auto/live generated: served only from the hand-verified seed bank.
-NO_AI_GENERATION_TOPICS = {"CLAT Current Affairs & GK", "Sarkari General Awareness"}
+NO_AI_GENERATION_TOPICS = {"CLAT Current Affairs & GK", "Sarkari General Awareness", "CUET General Knowledge"}
 GROUNDED_KEYS = ("source_url", "as_of")
-COMPUTABLE_TOPICS = {"CAT Quant", "CAT DILR", "IPMAT Quant", "Sarkari Quantitative Aptitude"}
-QUANT_TOPICS = {"CAT Quant", "IPMAT Quant", "Sarkari Quantitative Aptitude"}  # verify_code required
+COMPUTABLE_TOPICS = {"CAT Quant", "CAT DILR", "IPMAT Quant", "Sarkari Quantitative Aptitude",
+                     "CUET Quantitative Reasoning", "CUET General Mental Ability", "CUET Logical & Analytical Reasoning",
+                     "CUET Maths Section A", "CUET Maths Section B1"}  # verify_code checked when given
+QUANT_TOPICS = {"CAT Quant", "IPMAT Quant", "Sarkari Quantitative Aptitude",
+                "CUET Quantitative Reasoning"}  # verify_code required
 REQUIRED_KEYS = {"question_text", "options", "correct_answer", "pedagogical_explanation",
                  "trap_type", "concept_tag"}
 

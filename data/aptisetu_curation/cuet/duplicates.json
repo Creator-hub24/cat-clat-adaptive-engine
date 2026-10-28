@@ -1,0 +1,117 @@
+{
+ "_doc": "Same question (or the same item with trivially changed numbers) under different ids: 'drop' is left out of the bank, 'keep' is served. One item is kept per duplicate group, preferring the CUET-native UG id.",
+ "pairs": [
+  {
+   "keep": "AS-CU-QR-UG1",
+   "drop": "AS-CU-QR-G-Q1"
+  },
+  {
+   "keep": "AS-CU-QR-UG1",
+   "drop": "AS-CU-QR-G-Q128"
+  },
+  {
+   "keep": "AS-CU-QR-UG3",
+   "drop": "AS-CU-QR-G-Q2"
+  },
+  {
+   "keep": "AS-CU-QR-UG4",
+   "drop": "AS-CU-QR-G-Q91"
+  },
+  {
+   "keep": "AS-CU-QR-UG9",
+   "drop": "AS-CU-QR-G-Q13"
+  },
+  {
+   "keep": "AS-CU-QR-UG9",
+   "drop": "AS-CU-QR-G-Q71"
+  },
+  {
+   "keep": "AS-CU-QR-UG10",
+   "drop": "AS-CU-QR-G-Q14"
+  },
+  {
+   "keep": "AS-CU-QR-UG11",
+   "drop": "AS-CU-QR-G-Q15"
+  },
+  {
+   "keep": "AS-CU-QR-UG16",
+   "drop": "AS-CU-QR-G-Q34"
+  },
+  {
+   "keep": "AS-CU-QR-UG17",
+   "drop": "AS-CU-QR-G-Q77"
+  },
+  {
+   "keep": "AS-CU-QR-UG18",
+   "drop": "AS-CU-QR-G-Q78"
+  },
+  {
+   "keep": "AS-CU-QR-UG19",
+   "drop": "AS-CU-QR-G-Q41"
+  },
+  {
+   "keep": "AS-CU-QR-UG22",
+   "drop": "AS-CU-QR-G-Q45"
+  },
+  {
+   "keep": "AS-CU-QR-UG23",
+   "drop": "AS-CU-QR-G-Q44"
+  },
+  {
+   "keep": "AS-CU-QR-UG23",
+   "drop": "AS-CU-QR-G-Q83"
+  },
+  {
+   "keep": "AS-CU-GMA-UG62",
+   "drop": "AS-CU-GMA-G-R32"
+  },
+  {
+   "keep": "AS-CU-GMA-UG62",
+   "drop": "AS-CU-GMA-G-R68"
+  },
+  {
+   "keep": "AS-CU-GMA-UG72",
+   "drop": "AS-CU-GMA-G-R76"
+  },
+  {
+   "keep": "AS-CU-QR-G-Q16",
+   "drop": "AS-CU-QR-G-Q133"
+  },
+  {
+   "keep": "AS-CU-QR-G-Q52",
+   "drop": "AS-CU-QR-G-Q118"
+  },
+  {
+   "keep": "AS-CU-QR-G-Q33",
+   "drop": "AS-CU-QR-G-Q143"
+  },
+  {
+   "keep": "AS-CU-LAR-UG49",
+   "drop": "AS-CU-LAR-G-R12"
+  },
+  {
+   "keep": "AS-CU-GMA-G-R17",
+   "drop": "AS-CU-GMA-G-R70"
+  },
+  {
+   "keep": "AS-CU-GMA-UG70",
+   "drop": "AS-CU-GMA-G-R27"
+  },
+  {
+   "keep": "AS-CU-LAR-UG50",
+   "drop": "AS-CU-LAR-G-R13"
+  },
+  {
+   "keep": "AS-CU-GMA-UG63",
+   "drop": "AS-CU-GMA-G-R69"
+  },
+  {
+   "keep": "AS-CU-GMA-UG66",
+   "drop": "AS-CU-GMA-G-R39"
+  },
+  {
+   "keep": "AS-CU-GMA-UG67",
+   "drop": "AS-CU-GMA-G-R109"
+  }
+ ]
+}

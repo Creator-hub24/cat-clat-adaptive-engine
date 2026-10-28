@@ -60,7 +60,7 @@ def independent_solve(client, models, q, writer_model=None) -> tuple[str | None,
 
 def missing_stem(topic: str, text: str) -> str | None:
     """Live finding: models sometimes return an RC passage with no question after it."""
-    if topic == "CAT VARC RC":  # CLAT principle-fact items legitimately imply the question
+    if topic in ("CAT VARC RC", "CUET English Reading Comprehension"):  # CLAT principle-fact items imply the question
         tail = text.strip()[-400:]
         if "?" not in tail and not tail.rstrip().endswith(":"):
             return "question_text has no question stem after the passage"
@@ -103,6 +103,10 @@ def generate_verified(client, models, topic, difficulty, prompt, system, max_tri
             log.append(f"try {attempt}: independent solver said {ans} (ambiguous={ambiguous}) vs key {q['correct_answer']}")
             continue
         checks.append("independent solve")
+        if topic.startswith("CUET"):  # CUET text never carries a raw '|' (it could render as a markdown table)
+            q["question_text"] = q["question_text"].replace("|", "∣")
+            q["options"] = {k: str(v).replace("|", "∣") for k, v in q["options"].items()}
+            q["pedagogical_explanation"] = str(q.get("pedagogical_explanation", "")).replace("|", "∣")
         q.update({"id": f"AI-{random.randint(10000, 99999)}", "topic": topic, "difficulty": difficulty,
                   "exam": topic.split()[0], "source": "AI", "model": model_used,
                   "verified": True, "verification": checks})

@@ -1,0 +1,27 @@
+{
+ "_doc": "Text fixes applied at import time, before the option shuffle. 'find' must occur exactly once in 'field' (default question_text).",
+ "stem_fixes": [
+  {
+   "id": "AS-CU-MA-UM1",
+   "field": "pedagogical_explanation",
+   "find": "The third multiplies entry by entry, and the fourth adds the matrices.",
+   "replace": "Option C multiplies entry by entry, and Option D adds the matrices.",
+   "why": "Ordinal references to options must become letters so the option shuffle can remap them."
+  }
+ ],
+ "option_shuffle": {
+  "_doc": "Rebalance answer positions per topic. Each series gets an equal share of A/B/C/D keys; option references in explanations are remapped. Items with options_fixed (source 'fixed': option order carries meaning) are never moved. after_duplicate_drop: duplicates are dropped before the shuffle so the shipped keys are balanced.",
+  "seed": "aptisetu-cuet-2026-10-28",
+  "series": [
+   "AS-CU-QR-",
+   "AS-CU-GMA-",
+   "AS-CU-LAR-",
+   "AS-CU-GK-",
+   "AS-CU-RC-",
+   "AS-CU-VA-",
+   "AS-CU-MA-",
+   "AS-CU-MB-"
+  ],
+  "after_duplicate_drop": true
+ }
+}

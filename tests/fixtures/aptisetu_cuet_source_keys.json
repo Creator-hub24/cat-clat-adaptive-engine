@@ -1,0 +1,4086 @@
+{
+ "_doc": "AptiSetu CUET source (data/cuet.json) converted with import_aptisetu.convert_cuet BEFORE curation and the option shuffle: option texts in source order and the source key letter. Lets CI check that every shuffled key still points at the same answer text and that fixed-order items were not moved, without the AptiSetu source checkout.",
+ "source_items": 436,
+ "items": {
+  "AS-CU-QR-UG1": {
+   "source_key": "A",
+   "options": [
+    "4% decrease",
+    "No change",
+    "4% increase",
+    "2% decrease"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG2": {
+   "source_key": "A",
+   "options": [
+    "35%",
+    "37.5%",
+    "30%",
+    "40%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG3": {
+   "source_key": "A",
+   "options": [
+    "20%",
+    "25%",
+    "15%",
+    "22.5%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG4": {
+   "source_key": "A",
+   "options": [
+    "15%",
+    "12%",
+    "18%",
+    "72%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG5": {
+   "source_key": "A",
+   "options": [
+    "₹600",
+    "₹640",
+    "₹580",
+    "₹680"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG6": {
+   "source_key": "A",
+   "options": [
+    "25%",
+    "20%",
+    "33⅓%",
+    "30%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG7": {
+   "source_key": "A",
+   "options": [
+    "₹1,200",
+    "₹800",
+    "₹1,600",
+    "₹900"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG8": {
+   "source_key": "A",
+   "options": [
+    "30 years",
+    "25 years",
+    "35 years",
+    "42 years"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG9": {
+   "source_key": "A",
+   "options": [
+    "₹1,200",
+    "₹1,000",
+    "₹1,260",
+    "₹400"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG10": {
+   "source_key": "A",
+   "options": [
+    "₹2,100",
+    "₹2,000",
+    "₹2,210",
+    "₹1,100"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG11": {
+   "source_key": "A",
+   "options": [
+    "₹20",
+    "₹40",
+    "₹10",
+    "₹80"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG12": {
+   "source_key": "A",
+   "options": [
+    "26",
+    "2",
+    "18",
+    "34"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG13": {
+   "source_key": "A",
+   "options": [
+    "55.5 kg",
+    "40.5 kg",
+    "45 kg",
+    "70.5 kg"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG14": {
+   "source_key": "A",
+   "options": [
+    "20 m/s",
+    "25 m/s",
+    "72 m/s",
+    "12 m/s"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG15": {
+   "source_key": "A",
+   "options": [
+    "30 s",
+    "20 s",
+    "25 s",
+    "45 s"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG16": {
+   "source_key": "A",
+   "options": [
+    "48 km/h",
+    "50 km/h",
+    "45 km/h",
+    "52 km/h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG17": {
+   "source_key": "A",
+   "options": [
+    "6 days",
+    "12.5 days",
+    "5 days",
+    "8 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG18": {
+   "source_key": "A",
+   "options": [
+    "30 days",
+    "8 days",
+    "32 days",
+    "24 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG19": {
+   "source_key": "A",
+   "options": [
+    "180",
+    "90",
+    "360",
+    "6"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG20": {
+   "source_key": "A",
+   "options": [
+    "28",
+    "24",
+    "52",
+    "20"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG21": {
+   "source_key": "A",
+   "options": [
+    "180",
+    "120",
+    "216",
+    "2,148"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG22": {
+   "source_key": "A",
+   "options": [
+    "12",
+    "−2",
+    "2",
+    "−12"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG23": {
+   "source_key": "A",
+   "options": [
+    "23",
+    "25",
+    "27",
+    "21"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG24": {
+   "source_key": "A",
+   "options": [
+    "3 and 1/2",
+    "−3 and −1/2",
+    "3 and −1/2",
+    "6 and 1"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG25": {
+   "source_key": "A",
+   "options": [
+    "80°",
+    "60°",
+    "90°",
+    "100°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG26": {
+   "source_key": "A",
+   "options": [
+    "12 cm",
+    "8 cm",
+    "18 cm",
+    "√194 cm"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG27": {
+   "source_key": "A",
+   "options": [
+    "₹1,560",
+    "₹12,000",
+    "₹780",
+    "₹1,300"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG28": {
+   "source_key": "A",
+   "options": [
+    "1,540 cm³",
+    "440 cm³",
+    "3,080 cm³",
+    "154 cm³"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG29": {
+   "source_key": "A",
+   "options": [
+    "7",
+    "5",
+    "6.57",
+    "8"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-UG30": {
+   "source_key": "A",
+   "options": [
+    "Mode 7, median 6",
+    "Mode 4, median 6",
+    "Mode 7, median 5",
+    "Mode 7, median 7"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG31": {
+   "source_key": "B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG32": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG33": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG34": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG35": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG36": {
+   "source_key": "B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG37": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG38": {
+   "source_key": "C",
+   "options": [
+    "Only assumption I is implicit",
+    "Only assumption II is implicit",
+    "Both I and II are implicit",
+    "Neither I nor II is implicit"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG39": {
+   "source_key": "A",
+   "options": [
+    "Only assumption I is implicit",
+    "Only assumption II is implicit",
+    "Both I and II are implicit",
+    "Neither I nor II is implicit"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG40": {
+   "source_key": "A",
+   "options": [
+    "Both A and R are true, and R is the correct explanation of A",
+    "Both A and R are true, but R is not the correct explanation of A",
+    "A is true, but R is false",
+    "A is false, but R is true"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG41": {
+   "source_key": "C",
+   "options": [
+    "Both A and R are true, and R is the correct explanation of A",
+    "Both A and R are true, but R is not the correct explanation of A",
+    "A is true, but R is false",
+    "A is false, but R is true"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG42": {
+   "source_key": "D",
+   "options": [
+    "Both A and R are true, and R is the correct explanation of A",
+    "Both A and R are true, but R is not the correct explanation of A",
+    "A is true, but R is false",
+    "A is false, but R is true"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG43": {
+   "source_key": "B",
+   "options": [
+    "Both A and R are true, and R is the correct explanation of A",
+    "Both A and R are true, but R is not the correct explanation of A",
+    "A is true, but R is false",
+    "A is false, but R is true"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG44": {
+   "source_key": "A",
+   "options": [
+    "R",
+    "T",
+    "Q",
+    "P"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG45": {
+   "source_key": "A",
+   "options": [
+    "C",
+    "E",
+    "F",
+    "D"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG46": {
+   "source_key": "A",
+   "options": [
+    "A",
+    "E",
+    "C",
+    "F"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG47": {
+   "source_key": "A",
+   "options": [
+    "E and F",
+    "B and E",
+    "A and C",
+    "C and E"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG48": {
+   "source_key": "A",
+   "options": [
+    "B and D",
+    "A and D",
+    "B and C",
+    "D and F"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG49": {
+   "source_key": "A",
+   "options": [
+    "Brother",
+    "Cousin",
+    "Nephew",
+    "Uncle"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG50": {
+   "source_key": "A",
+   "options": [
+    "Granddaughter",
+    "Daughter",
+    "Niece",
+    "Sister"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG51": {
+   "source_key": "A",
+   "options": [
+    "Brother-in-law",
+    "Father-in-law",
+    "Brother",
+    "Son-in-law"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG52": {
+   "source_key": "A",
+   "options": [
+    "D",
+    "C",
+    "A",
+    "Cannot be determined"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG53": {
+   "source_key": "A",
+   "options": [
+    "B",
+    "A",
+    "E",
+    "C"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG54": {
+   "source_key": "A",
+   "options": [
+    "Q",
+    "P",
+    "T",
+    "S"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG55": {
+   "source_key": "A",
+   "options": [
+    "Thursday",
+    "Tuesday",
+    "Monday",
+    "Friday"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG56": {
+   "source_key": "A",
+   "options": [
+    "5",
+    "15",
+    "25",
+    "0"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG57": {
+   "source_key": "A",
+   "options": [
+    "10",
+    "15",
+    "5",
+    "20"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-UG58": {
+   "source_key": "A",
+   "options": [
+    "Statement I alone is sufficient, but II alone is not",
+    "Statement II alone is sufficient, but I alone is not",
+    "Both statements together are needed; neither alone is sufficient",
+    "Each statement alone is sufficient"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG59": {
+   "source_key": "D",
+   "options": [
+    "Statement I alone is sufficient, but II alone is not",
+    "Statement II alone is sufficient, but I alone is not",
+    "Both statements together are needed; neither alone is sufficient",
+    "Each statement alone is sufficient"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-UG60": {
+   "source_key": "C",
+   "options": [
+    "Statement I alone is sufficient, but II alone is not",
+    "Statement II alone is sufficient, but I alone is not",
+    "Both statements together are needed; neither alone is sufficient",
+    "Each statement alone is sufficient"
+   ],
+   "fixed": true
+  },
+  "AS-CU-GMA-UG61": {
+   "source_key": "A",
+   "options": [
+    "127",
+    "126",
+    "95",
+    "125"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG62": {
+   "source_key": "A",
+   "options": [
+    "42",
+    "40",
+    "36",
+    "44"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG63": {
+   "source_key": "A",
+   "options": [
+    "N",
+    "M",
+    "O",
+    "L"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG64": {
+   "source_key": "A",
+   "options": [
+    "121",
+    "88",
+    "111",
+    "132"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG65": {
+   "source_key": "A",
+   "options": [
+    "Cut",
+    "Sharp",
+    "Kitchen",
+    "Steel"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG66": {
+   "source_key": "C",
+   "options": [
+    "23",
+    "29",
+    "33",
+    "37"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG67": {
+   "source_key": "A",
+   "options": [
+    "Moon",
+    "Mercury",
+    "Venus",
+    "Mars"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG68": {
+   "source_key": "A",
+   "options": [
+    "BQQMF",
+    "BOOKD",
+    "ZOOKD",
+    "BQQME"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG69": {
+   "source_key": "A",
+   "options": [
+    "40",
+    "38",
+    "42",
+    "36"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG70": {
+   "source_key": "A",
+   "options": [
+    "5 km, South-East",
+    "5 km, North-East",
+    "7 km, South",
+    "4 km, East"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG71": {
+   "source_key": "A",
+   "options": [
+    "West",
+    "East",
+    "South",
+    "North"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG72": {
+   "source_key": "A",
+   "options": [
+    "75°",
+    "90°",
+    "60°",
+    "105°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG73": {
+   "source_key": "A",
+   "options": [
+    "Tuesday",
+    "Monday",
+    "Wednesday",
+    "Sunday"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG74": {
+   "source_key": "A",
+   "options": [
+    "23",
+    "26",
+    "20",
+    "30"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-UG75": {
+   "source_key": "A",
+   "options": [
+    "29th",
+    "28th",
+    "30th",
+    "27th"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG76": {
+   "source_key": "A",
+   "options": [
+    "26 January 1950",
+    "26 November 1949",
+    "15 August 1947",
+    "26 January 1949"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG77": {
+   "source_key": "A",
+   "options": [
+    "Article 51A",
+    "Article 21",
+    "Article 32",
+    "Article 44"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG78": {
+   "source_key": "A",
+   "options": [
+    "Article 32",
+    "Article 14",
+    "Article 19",
+    "Article 368"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG79": {
+   "source_key": "A",
+   "options": [
+    "250",
+    "245",
+    "238",
+    "552"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG80": {
+   "source_key": "A",
+   "options": [
+    "35 years",
+    "25 years",
+    "30 years",
+    "40 years"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG81": {
+   "source_key": "A",
+   "options": [
+    "Odisha",
+    "Gujarat",
+    "Tripura",
+    "Mizoram"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG82": {
+   "source_key": "A",
+   "options": [
+    "Godavari",
+    "Krishna",
+    "Kaveri",
+    "Narmada"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG83": {
+   "source_key": "A",
+   "options": [
+    "Sri Lanka",
+    "Maldives",
+    "Myanmar",
+    "Bangladesh"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG84": {
+   "source_key": "A",
+   "options": [
+    "Sabarmati Ashram",
+    "Champaran",
+    "Bardoli",
+    "Kheda"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG85": {
+   "source_key": "A",
+   "options": [
+    "W. C. Bonnerjee",
+    "Dadabhai Naoroji",
+    "A. O. Hume",
+    "Surendranath Banerjee"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG86": {
+   "source_key": "A",
+   "options": [
+    "Ibrahim Lodi",
+    "Hemu",
+    "Rana Sanga",
+    "Sher Shah Suri"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG87": {
+   "source_key": "A",
+   "options": [
+    "Vitamin C",
+    "Vitamin A",
+    "Vitamin D",
+    "Vitamin K"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG88": {
+   "source_key": "A",
+   "options": [
+    "Ampere",
+    "Volt",
+    "Ohm",
+    "Watt"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG89": {
+   "source_key": "A",
+   "options": [
+    "Phase out substances that deplete the ozone layer",
+    "Protect wetlands of international importance",
+    "Ban trade in endangered species",
+    "Set targets for forest cover"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GK-UG90": {
+   "source_key": "A",
+   "options": [
+    "Wetlands",
+    "Tigers",
+    "Coral reefs only",
+    "Mountain glaciers"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q3": {
+   "source_key": "B",
+   "options": [
+    "144",
+    "156",
+    "160",
+    "152"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q4": {
+   "source_key": "B",
+   "options": [
+    "65,000",
+    "66,000",
+    "64,500",
+    "67,200"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q5": {
+   "source_key": "B",
+   "options": [
+    "250",
+    "300",
+    "350",
+    "400"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q7": {
+   "source_key": "B",
+   "options": [
+    "20%",
+    "25%",
+    "22.5%",
+    "18%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q8": {
+   "source_key": "A",
+   "options": [
+    "₹1,020",
+    "₹1,050",
+    "₹1,000",
+    "₹1,080"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q9": {
+   "source_key": "B",
+   "options": [
+    "30%",
+    "26%",
+    "28%",
+    "24%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q10": {
+   "source_key": "B",
+   "options": [
+    "₹1,200",
+    "₹1,260",
+    "₹1,250",
+    "₹1,197"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q16": {
+   "source_key": "C",
+   "options": [
+    "10%",
+    "12%",
+    "12.5%",
+    "15%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q18": {
+   "source_key": "B",
+   "options": [
+    "₹600",
+    "₹800",
+    "₹900",
+    "₹720"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q19": {
+   "source_key": "A",
+   "options": [
+    "8 : 12 : 15",
+    "2 : 3 : 5",
+    "8 : 12 : 13",
+    "6 : 9 : 10"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q20": {
+   "source_key": "B",
+   "options": [
+    "₹5,000",
+    "₹6,000",
+    "₹7,500",
+    "₹9,000"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q21": {
+   "source_key": "A",
+   "options": [
+    "12",
+    "12.5",
+    "13",
+    "144"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q23": {
+   "source_key": "B",
+   "options": [
+    "22",
+    "28",
+    "26",
+    "30"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q24": {
+   "source_key": "B",
+   "options": [
+    "5",
+    "5.5",
+    "6",
+    "10"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q25": {
+   "source_key": "B",
+   "options": [
+    "44 years",
+    "45 years",
+    "46 years",
+    "31 years"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q26": {
+   "source_key": "B",
+   "options": [
+    "1 : 2",
+    "2 : 1",
+    "3 : 2",
+    "2 : 3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q28": {
+   "source_key": "A",
+   "options": [
+    "7.2 days",
+    "7.5 days",
+    "6 days",
+    "15 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q29": {
+   "source_key": "B",
+   "options": [
+    "3 days",
+    "4 days",
+    "5 days",
+    "6 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q30": {
+   "source_key": "B",
+   "options": [
+    "25 days",
+    "30 days",
+    "20 days",
+    "35 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q31": {
+   "source_key": "B",
+   "options": [
+    "15 h",
+    "18 h",
+    "12 h",
+    "3.6 h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q33": {
+   "source_key": "C",
+   "options": [
+    "8 s",
+    "9 s",
+    "10 s",
+    "12 s"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q35": {
+   "source_key": "B",
+   "options": [
+    "20 s",
+    "25 s",
+    "15 s",
+    "30 s"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q36": {
+   "source_key": "A",
+   "options": [
+    "2 h",
+    "2.5 h",
+    "3 h",
+    "1.5 h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q38": {
+   "source_key": "C",
+   "options": [
+    "10",
+    "11",
+    "12",
+    "13"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q39": {
+   "source_key": "B",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q40": {
+   "source_key": "B",
+   "options": [
+    "6",
+    "12",
+    "18",
+    "24"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q42": {
+   "source_key": "C",
+   "options": [
+    "18",
+    "20",
+    "24",
+    "36"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q46": {
+   "source_key": "A",
+   "options": [
+    "13",
+    "25",
+    "11",
+    "37"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q47": {
+   "source_key": "A",
+   "options": [
+    "144",
+    "136",
+    "150",
+    "126"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q49": {
+   "source_key": "B",
+   "options": [
+    "16π cm²",
+    "25π cm²",
+    "36π cm²",
+    "100π cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q50": {
+   "source_key": "B",
+   "options": [
+    "20 cm",
+    "40 cm",
+    "96 cm",
+    "48 cm"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q51": {
+   "source_key": "B",
+   "options": [
+    "108°",
+    "120°",
+    "135°",
+    "144°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q52": {
+   "source_key": "A",
+   "options": [
+    "125 cm³",
+    "216 cm³",
+    "100 cm³",
+    "150 cm³"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q53": {
+   "source_key": "A",
+   "options": [
+    "9√3 cm²",
+    "18√3 cm²",
+    "12√3 cm²",
+    "36 cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q66": {
+   "source_key": "B",
+   "options": [
+    "35%",
+    "32%",
+    "30%",
+    "34%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q67": {
+   "source_key": "B",
+   "options": [
+    "10,000",
+    "12,000",
+    "15,000",
+    "14,400"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q69": {
+   "source_key": "B",
+   "options": [
+    "10%",
+    "8%",
+    "12%",
+    "6%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q72": {
+   "source_key": "A",
+   "options": [
+    "₹100",
+    "₹50",
+    "₹110",
+    "₹200"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q74": {
+   "source_key": "B",
+   "options": [
+    "3 : 4 : 5",
+    "9 : 12 : 10",
+    "9 : 8 : 10",
+    "6 : 8 : 5"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q75": {
+   "source_key": "A",
+   "options": [
+    "32",
+    "30",
+    "34",
+    "36"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q76": {
+   "source_key": "B",
+   "options": [
+    "2 : 3",
+    "3 : 2",
+    "1 : 2",
+    "4 : 3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q79": {
+   "source_key": "D",
+   "options": [
+    "45 km/h",
+    "72 km/h",
+    "60 km/h",
+    "54 km/h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q80": {
+   "source_key": "A",
+   "options": [
+    "24 km/h",
+    "25 km/h",
+    "26 km/h",
+    "22.5 km/h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q82": {
+   "source_key": "A",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "6"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q84": {
+   "source_key": "A",
+   "options": [
+    "154 cm²",
+    "144 cm²",
+    "164 cm²",
+    "176 cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q86": {
+   "source_key": "A",
+   "options": [
+    "84",
+    "80",
+    "88",
+    "96"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q87": {
+   "source_key": "D",
+   "options": [
+    "20%",
+    "27%",
+    "3%",
+    "17%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q88": {
+   "source_key": "A",
+   "options": [
+    "16.67%",
+    "20%",
+    "15%",
+    "18%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q89": {
+   "source_key": "B",
+   "options": [
+    "450",
+    "500",
+    "550",
+    "600"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q92": {
+   "source_key": "C",
+   "options": [
+    "₹950",
+    "₹1,050",
+    "₹1,000",
+    "₹1,100"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q93": {
+   "source_key": "A",
+   "options": [
+    "₹880",
+    "₹860",
+    "₹800",
+    "₹900"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q95": {
+   "source_key": "B",
+   "options": [
+    "30%",
+    "28%",
+    "25%",
+    "32%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q96": {
+   "source_key": "D",
+   "options": [
+    "6%",
+    "10%",
+    "9%",
+    "8%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q97": {
+   "source_key": "A",
+   "options": [
+    "₹832",
+    "₹800",
+    "₹864",
+    "₹900"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q98": {
+   "source_key": "D",
+   "options": [
+    "₹5,800",
+    "₹6,500",
+    "₹6,200",
+    "₹6,000"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q100": {
+   "source_key": "C",
+   "options": [
+    "₹1,200",
+    "₹1,400",
+    "₹1,500",
+    "₹1,600"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q101": {
+   "source_key": "A",
+   "options": [
+    "15",
+    "12",
+    "9",
+    "18"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q102": {
+   "source_key": "A",
+   "options": [
+    "10 L",
+    "8 L",
+    "12 L",
+    "15 L"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q103": {
+   "source_key": "B",
+   "options": [
+    "17",
+    "19",
+    "21",
+    "23"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q104": {
+   "source_key": "C",
+   "options": [
+    "70 kg",
+    "72 kg",
+    "73 kg",
+    "75 kg"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q105": {
+   "source_key": "D",
+   "options": [
+    "₹36",
+    "₹38",
+    "₹40",
+    "₹39"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q106": {
+   "source_key": "B",
+   "options": [
+    "24 days",
+    "30 days",
+    "28 days",
+    "32 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q107": {
+   "source_key": "C",
+   "options": [
+    "3 days",
+    "5 days",
+    "4 days",
+    "6 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q108": {
+   "source_key": "C",
+   "options": [
+    "8 hours",
+    "12 hours",
+    "10 hours",
+    "15 hours"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q109": {
+   "source_key": "A",
+   "options": [
+    "6 hours",
+    "5 hours",
+    "7 hours",
+    "8 hours"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q110": {
+   "source_key": "A",
+   "options": [
+    "5 hours",
+    "4 hours",
+    "6 hours",
+    "7.5 hours"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q111": {
+   "source_key": "C",
+   "options": [
+    "4 hours",
+    "6 hours",
+    "5 hours",
+    "7 hours"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q113": {
+   "source_key": "A",
+   "options": [
+    "127",
+    "121",
+    "113",
+    "131"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q114": {
+   "source_key": "B",
+   "options": [
+    "4",
+    "2",
+    "6",
+    "8"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q115": {
+   "source_key": "C",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "4"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q116": {
+   "source_key": "D",
+   "options": [
+    "49",
+    "51",
+    "55",
+    "53"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q117": {
+   "source_key": "A",
+   "options": [
+    "84 cm²",
+    "78 cm²",
+    "72 cm²",
+    "90 cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q119": {
+   "source_key": "D",
+   "options": [
+    "340 cm²",
+    "400 cm²",
+    "480 cm²",
+    "440 cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q126": {
+   "source_key": "D",
+   "options": [
+    "12%",
+    "14%",
+    "18%",
+    "15%"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q127": {
+   "source_key": "A",
+   "options": [
+    "64",
+    "56",
+    "72",
+    "80"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q129": {
+   "source_key": "A",
+   "options": [
+    "₹46,000",
+    "₹45,000",
+    "₹44,000",
+    "₹47,500"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q130": {
+   "source_key": "C",
+   "options": [
+    "₹750",
+    "₹850",
+    "₹800",
+    "₹900"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q132": {
+   "source_key": "B",
+   "options": [
+    "₹3,000",
+    "₹3,600",
+    "₹3,200",
+    "₹3,900"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q134": {
+   "source_key": "A",
+   "options": [
+    "₹10,000",
+    "₹8,000",
+    "₹12,000",
+    "₹15,000"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q135": {
+   "source_key": "D",
+   "options": [
+    "7 : 5",
+    "5 : 4",
+    "6 : 5",
+    "7 : 6"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q136": {
+   "source_key": "D",
+   "options": [
+    "18",
+    "24",
+    "22",
+    "20"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q137": {
+   "source_key": "C",
+   "options": [
+    "63",
+    "65",
+    "64",
+    "66"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q139": {
+   "source_key": "D",
+   "options": [
+    "6 days",
+    "10 days",
+    "9 days",
+    "8 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q140": {
+   "source_key": "D",
+   "options": [
+    "4 days",
+    "7 days",
+    "6 days",
+    "5 days"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q141": {
+   "source_key": "A",
+   "options": [
+    "3 hours",
+    "2 hours",
+    "4 hours",
+    "5 hours"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q142": {
+   "source_key": "A",
+   "options": [
+    "48 km/h",
+    "45 km/h",
+    "50 km/h",
+    "52 km/h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q145": {
+   "source_key": "C",
+   "options": [
+    "14 km/h",
+    "15 km/h",
+    "16 km/h",
+    "18 km/h"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q146": {
+   "source_key": "C",
+   "options": [
+    "24",
+    "41",
+    "29",
+    "53"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q147": {
+   "source_key": "D",
+   "options": [
+    "665",
+    "700",
+    "770",
+    "735"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q148": {
+   "source_key": "B",
+   "options": [
+    "56",
+    "58",
+    "60",
+    "62"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q150": {
+   "source_key": "C",
+   "options": [
+    "64 cm²",
+    "80 cm²",
+    "72 cm²",
+    "96 cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-QR-G-Q151": {
+   "source_key": "D",
+   "options": [
+    "33 cm",
+    "66 cm",
+    "55 cm",
+    "44 cm"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R1": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R2": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R3": {
+   "source_key": "D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R4": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R5": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R8": {
+   "source_key": "B",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "No one"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R9": {
+   "source_key": "A",
+   "options": [
+    "C",
+    "E",
+    "F",
+    "A"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R10": {
+   "source_key": "B",
+   "options": [
+    "B",
+    "F",
+    "C",
+    "E"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R14": {
+   "source_key": "B",
+   "options": [
+    "Sister",
+    "Sister-in-law",
+    "Cousin",
+    "Aunt"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R15": {
+   "source_key": "C",
+   "options": [
+    "Father",
+    "Uncle",
+    "Grandfather",
+    "Brother"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R17": {
+   "source_key": "A",
+   "options": [
+    "EPH",
+    "CNF",
+    "EOH",
+    "DPH"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R18": {
+   "source_key": "B",
+   "options": [
+    "45",
+    "47",
+    "49",
+    "52"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R19": {
+   "source_key": "A",
+   "options": [
+    "WVHP",
+    "XVHP",
+    "WUHP",
+    "WVIP"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R20": {
+   "source_key": "A",
+   "options": [
+    "9-14-11",
+    "9-13-11",
+    "8-14-11",
+    "9-14-12"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R22": {
+   "source_key": "A",
+   "options": [
+    "P",
+    "Q",
+    "S",
+    "R"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R23": {
+   "source_key": "B",
+   "options": [
+    "R",
+    "S",
+    "P",
+    "Q"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R24": {
+   "source_key": "B",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R25": {
+   "source_key": "B",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R26": {
+   "source_key": "C",
+   "options": [
+    "Ana",
+    "Ben",
+    "Cara",
+    "Cannot be determined"
+   ],
+   "fixed": true
+  },
+  "AS-CU-GMA-G-R28": {
+   "source_key": "B",
+   "options": [
+    "North",
+    "East",
+    "South",
+    "West"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R29": {
+   "source_key": "A",
+   "options": [
+    "6 m east",
+    "6 m west",
+    "10 m north",
+    "16 m east"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R30": {
+   "source_key": "B",
+   "options": [
+    "North",
+    "South",
+    "East",
+    "West"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R33": {
+   "source_key": "C",
+   "options": [
+    "63",
+    "64",
+    "65",
+    "66"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R34": {
+   "source_key": "B",
+   "options": [
+    "T",
+    "U",
+    "V",
+    "S"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R35": {
+   "source_key": "B",
+   "options": [
+    "15",
+    "17",
+    "19",
+    "16"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R37": {
+   "source_key": "A",
+   "options": [
+    "DW",
+    "DV",
+    "EW",
+    "CW"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R38": {
+   "source_key": "C",
+   "options": [
+    "27",
+    "64",
+    "100",
+    "125"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R40": {
+   "source_key": "C",
+   "options": [
+    "Square",
+    "Rectangle",
+    "Triangle",
+    "Rhombus"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R41": {
+   "source_key": "C",
+   "options": [
+    "169",
+    "289",
+    "324",
+    "361"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R42": {
+   "source_key": "D",
+   "options": [
+    "ACE",
+    "BDF",
+    "GIK",
+    "MOP"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R43": {
+   "source_key": "B",
+   "options": [
+    "120°",
+    "130°",
+    "140°",
+    "150°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R44": {
+   "source_key": "A",
+   "options": [
+    "90°",
+    "180°",
+    "270°",
+    "45°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R45": {
+   "source_key": "B",
+   "options": [
+    "10",
+    "11",
+    "12",
+    "24"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R46": {
+   "source_key": "B",
+   "options": [
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Tuesday"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R49": {
+   "source_key": "B",
+   "options": [
+    "F",
+    "G",
+    "H",
+    "E"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R50": {
+   "source_key": "B",
+   "options": [
+    "N",
+    "O",
+    "P",
+    "E"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R51": {
+   "source_key": "B",
+   "options": [
+    "R",
+    "S",
+    "T",
+    "H"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R52": {
+   "source_key": "B",
+   "options": [
+    "P",
+    "Q",
+    "J",
+    "R"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R54": {
+   "source_key": "B",
+   "options": [
+    "A < C",
+    "A > C",
+    "A = C",
+    "Cannot be determined"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R55": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R56": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R57": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-GMA-G-R59": {
+   "source_key": "B",
+   "options": [
+    "18th",
+    "19th",
+    "20th",
+    "17th"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R60": {
+   "source_key": "B",
+   "options": [
+    "25",
+    "24",
+    "23",
+    "26"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R61": {
+   "source_key": "C",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R64": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R65": {
+   "source_key": "D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-GMA-G-R67": {
+   "source_key": "B",
+   "options": [
+    "36",
+    "48",
+    "42",
+    "54"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R71": {
+   "source_key": "D",
+   "options": [
+    "DCJ",
+    "CBJ",
+    "CCH",
+    "CCJ"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R72": {
+   "source_key": "D",
+   "options": [
+    "Sister",
+    "Grandmother",
+    "Aunt",
+    "Mother"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R73": {
+   "source_key": "B",
+   "options": [
+    "Grandfather",
+    "Great-grandfather",
+    "Uncle",
+    "Father"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R74": {
+   "source_key": "D",
+   "options": [
+    "8 km east",
+    "3 km west",
+    "5 km north",
+    "3 km east"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R75": {
+   "source_key": "B",
+   "options": [
+    "25 m east",
+    "25 m west",
+    "20 m west",
+    "15 m west"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R77": {
+   "source_key": "A",
+   "options": [
+    "Wednesday",
+    "Tuesday",
+    "Thursday",
+    "Monday"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R78": {
+   "source_key": "C",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "O"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R79": {
+   "source_key": "A",
+   "options": [
+    "M",
+    "L",
+    "N",
+    "K"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R80": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-GMA-G-R82": {
+   "source_key": "C",
+   "options": [
+    "24th",
+    "25th",
+    "26th",
+    "27th"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R83": {
+   "source_key": "A",
+   "options": [
+    "P",
+    "Q",
+    "S",
+    "T"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R84": {
+   "source_key": "C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R85": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R88": {
+   "source_key": "B",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "E"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R90": {
+   "source_key": "A",
+   "options": [
+    "B",
+    "D",
+    "E",
+    "C"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R91": {
+   "source_key": "D",
+   "options": [
+    "Uncle",
+    "Cousin",
+    "Brother or sister",
+    "Nephew or niece"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R92": {
+   "source_key": "B",
+   "options": [
+    "Cousin",
+    "Sister",
+    "Aunt",
+    "Niece"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R93": {
+   "source_key": "D",
+   "options": [
+    "Brother",
+    "Uncle",
+    "Nephew",
+    "Cousin"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R94": {
+   "source_key": "D",
+   "options": [
+    "OLZSD",
+    "OKZSF",
+    "QMBUF",
+    "OKZSD"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R95": {
+   "source_key": "C",
+   "options": [
+    "ki",
+    "ma",
+    "ta",
+    "lo"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R98": {
+   "source_key": "B",
+   "options": [
+    "11 years",
+    "13 years",
+    "12 years",
+    "14 years"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R99": {
+   "source_key": "C",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R101": {
+   "source_key": "A",
+   "options": [
+    "10 m south",
+    "10 m north",
+    "6 m south",
+    "14 m south"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R102": {
+   "source_key": "C",
+   "options": [
+    "North-East",
+    "South-West",
+    "North-West",
+    "South-East"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R103": {
+   "source_key": "B",
+   "options": [
+    "6 km west",
+    "6 km east",
+    "8 km east",
+    "10 km east"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R104": {
+   "source_key": "C",
+   "options": [
+    "148",
+    "156",
+    "158",
+    "162"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R105": {
+   "source_key": "D",
+   "options": [
+    "181",
+    "189",
+    "193",
+    "191"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R106": {
+   "source_key": "B",
+   "options": [
+    "29",
+    "31",
+    "33",
+    "35"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R108": {
+   "source_key": "B",
+   "options": [
+    "16",
+    "50",
+    "49",
+    "25"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R110": {
+   "source_key": "B",
+   "options": [
+    "14",
+    "52",
+    "49",
+    "35"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R111": {
+   "source_key": "B",
+   "options": [
+    "90°",
+    "100°",
+    "110°",
+    "120°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R112": {
+   "source_key": "B",
+   "options": [
+    "Sunday",
+    "Tuesday",
+    "Monday",
+    "Wednesday"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R114": {
+   "source_key": "D",
+   "options": [
+    "9",
+    "12",
+    "11",
+    "10"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R115": {
+   "source_key": "A",
+   "options": [
+    "P",
+    "O",
+    "Q",
+    "R"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R116": {
+   "source_key": "B",
+   "options": [
+    "G",
+    "H",
+    "I",
+    "R"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R117": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R118": {
+   "source_key": "B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-GMA-G-R120": {
+   "source_key": "B",
+   "options": [
+    "12",
+    "13",
+    "14",
+    "15"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R121": {
+   "source_key": "B",
+   "options": [
+    "38",
+    "39",
+    "40",
+    "41"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R122": {
+   "source_key": "A",
+   "options": [
+    "14",
+    "13",
+    "12",
+    "15"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R123": {
+   "source_key": "D",
+   "options": [
+    "32",
+    "33",
+    "36",
+    "34"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R124": {
+   "source_key": "B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-LAR-G-R126": {
+   "source_key": "A",
+   "options": [
+    "F",
+    "E",
+    "D",
+    "C"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R128": {
+   "source_key": "C",
+   "options": [
+    "Son",
+    "Daughter",
+    "Son or daughter",
+    "Nephew"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R129": {
+   "source_key": "A",
+   "options": [
+    "Cousin",
+    "Brother",
+    "Nephew",
+    "Uncle"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R130": {
+   "source_key": "A",
+   "options": [
+    "QNDC",
+    "QNCD",
+    "OJXU",
+    "QMDC"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R131": {
+   "source_key": "B",
+   "options": [
+    "mi",
+    "ka",
+    "to",
+    "se"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R132": {
+   "source_key": "A",
+   "options": [
+    "100",
+    "96",
+    "88",
+    "104"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R133": {
+   "source_key": "A",
+   "options": [
+    "720",
+    "600",
+    "240",
+    "840"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R134": {
+   "source_key": "C",
+   "options": [
+    "E",
+    "G",
+    "F",
+    "H"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R135": {
+   "source_key": "D",
+   "options": [
+    "14 m west",
+    "4 m north",
+    "10 m south",
+    "4 m south"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R136": {
+   "source_key": "A",
+   "options": [
+    "North-West",
+    "North-East",
+    "South-East",
+    "South-West"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R138": {
+   "source_key": "D",
+   "options": [
+    "Thursday",
+    "Sunday",
+    "Saturday",
+    "Friday"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R139": {
+   "source_key": "D",
+   "options": [
+    "N",
+    "Q",
+    "P",
+    "O"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R140": {
+   "source_key": "B",
+   "options": [
+    "25th",
+    "27th",
+    "26th",
+    "28th"
+   ],
+   "fixed": false
+  },
+  "AS-CU-GMA-G-R141": {
+   "source_key": "B",
+   "options": [
+    "Python",
+    "Excel",
+    "Ruby",
+    "C++"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R142": {
+   "source_key": "D",
+   "options": [
+    "Ravi",
+    "Uma",
+    "Tarun",
+    "Sita"
+   ],
+   "fixed": false
+  },
+  "AS-CU-LAR-G-R143": {
+   "source_key": "A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither follows"
+   ],
+   "fixed": true
+  },
+  "AS-CU-RC-UE1": {
+   "source_key": "A",
+   "options": [
+    "explain what mangroves are, why they are valuable and why protecting them is difficult",
+    "encourage the building of fish farms along tropical coasts",
+    "argue that mangroves should replace coastal towns",
+    "compare mangroves with tropical rainforests"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE2": {
+   "source_key": "A",
+   "options": [
+    "take in air, because the mud holds very little oxygen",
+    "filter salt out of seawater",
+    "trap sediment carried by rivers",
+    "store carbon in the soil"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE3": {
+   "source_key": "A",
+   "options": [
+    "Providing timber for shipbuilding",
+    "Protecting the shore from erosion",
+    "Sheltering young fish, crabs and prawns",
+    "Storing carbon"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE4": {
+   "source_key": "A",
+   "options": [
+    "local communities are not involved in planting and protecting them",
+    "seedlings are planted in sheltered mud",
+    "the water has a mix of fresh and salt water",
+    "restoration projects are carried out"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE5": {
+   "source_key": "A",
+   "options": [
+    "It had stopped working around the time Meera's grandmother died",
+    "Meera's grandfather disliked listening to the news",
+    "It had been lent to Meera's uncle",
+    "Its glass valves had been removed"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE6": {
+   "source_key": "A",
+   "options": [
+    "was quietly watching Meera's work with interest",
+    "was angry with Meera for opening the radio",
+    "was reading slowly because of poor eyesight",
+    "had fallen asleep in his chair"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE7": {
+   "source_key": "A",
+   "options": [
+    "That most broken things are not as broken as people believe",
+    "That old radios cannot be repaired",
+    "That soldering is too dangerous for beginners",
+    "That valves are more reliable than wires"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE8": {
+   "source_key": "A",
+   "options": [
+    "fixing the radio also brought back, for her grandfather, a connection to his late wife",
+    "she had also fixed the cracked dial",
+    "she would now open a repair shop of her own",
+    "the radio would never break again"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE9": {
+   "source_key": "A",
+   "options": [
+    "Hyperbole",
+    "Simile",
+    "Onomatopoeia",
+    "Alliteration"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE10": {
+   "source_key": "A",
+   "options": [
+    "Personification",
+    "Hyperbole",
+    "Irony",
+    "Onomatopoeia"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE11": {
+   "source_key": "A",
+   "options": [
+    "are secretly glad that the rain has come",
+    "are angrier about the mud than they were about the heat",
+    "want the hot weather to return",
+    "are about to close their shops"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE12": {
+   "source_key": "A",
+   "options": [
+    "a welcome relief from something unpleasant",
+    "a punishment",
+    "a weather forecast",
+    "a public celebration"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE13": {
+   "source_key": "A",
+   "options": [
+    "Hard-working",
+    "Careless",
+    "Intelligent",
+    "Fortunate"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE14": {
+   "source_key": "A",
+   "options": [
+    "Frank",
+    "Secretive",
+    "Polite",
+    "Cunning"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE15": {
+   "source_key": "A",
+   "options": [
+    "Plentiful",
+    "Scarce",
+    "Costly",
+    "Ancient"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE16": {
+   "source_key": "A",
+   "options": [
+    "Opaque",
+    "Clear",
+    "Fragile",
+    "Bright"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE17": {
+   "source_key": "A",
+   "options": [
+    "Contract",
+    "Enlarge",
+    "Extend",
+    "Explode"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE18": {
+   "source_key": "A",
+   "options": [
+    "reached",
+    "arrived",
+    "done",
+    "made up"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE19": {
+   "source_key": "A",
+   "options": [
+    "at, in",
+    "in, at",
+    "on, with",
+    "with, on"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE20": {
+   "source_key": "A",
+   "options": [
+    "were",
+    "was",
+    "is",
+    "has been"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE21": {
+   "source_key": "B",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "fixed": true
+  },
+  "AS-CU-VA-UE22": {
+   "source_key": "C",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "fixed": true
+  },
+  "AS-CU-VA-UE23": {
+   "source_key": "A",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "fixed": true
+  },
+  "AS-CU-VA-UE24": {
+   "source_key": "A",
+   "options": [
+    "QPRS",
+    "PRQS",
+    "QRSP",
+    "RSQP"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE25": {
+   "source_key": "A",
+   "options": [
+    "QPRS",
+    "PQRS",
+    "PSQR",
+    "RPQS"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE26": {
+   "source_key": "A",
+   "options": [
+    "PQRS",
+    "PRQS",
+    "QRPS",
+    "RQSP"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE27": {
+   "source_key": "A",
+   "options": [
+    "a–iii, b–iv, c–i, d–ii",
+    "a–iv, b–iii, c–ii, d–i",
+    "a–iii, b–i, c–iv, d–ii",
+    "a–ii, b–iv, c–i, d–iii"
+   ],
+   "fixed": true
+  },
+  "AS-CU-RC-UE28": {
+   "source_key": "A",
+   "options": [
+    "stepwells: their purpose, beauty, decline and revival",
+    "how piped water systems are built in cities",
+    "the history of trade routes in western India",
+    "the sculptures found in temples"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE29": {
+   "source_key": "A",
+   "options": [
+    "the people who paid for them saw giving water as an act of merit",
+    "kings wanted to attract foreign traders",
+    "the carvings kept the water cool",
+    "villagers used the sculptures to measure the water level"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE30": {
+   "source_key": "A",
+   "options": [
+    "The arrival of piped water and hand pumps",
+    "A shortage of stone for repairs",
+    "Laws that banned their use",
+    "Heavy rainfall that flooded them"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE31": {
+   "source_key": "A",
+   "options": [
+    "Stepwells were used to irrigate large farms",
+    "Stepwells gave travellers a cool place to rest",
+    "Some stepwells have been cleared of silt by volunteers",
+    "Rani ki Vav is a World Heritage site"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE32": {
+   "source_key": "A",
+   "options": [
+    "old structures that store rainwater could help regions where groundwater is falling",
+    "stepwells should replace all modern water supply",
+    "volunteers dislike modern technology",
+    "stepwells can only be useful as tourist sites"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE33": {
+   "source_key": "A",
+   "options": [
+    "replay and strengthen what was learned during the day",
+    "stop storing information",
+    "forget unimportant details completely",
+    "work faster than during the day"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE34": {
+   "source_key": "A",
+   "options": [
+    "Their body clock shifts later, so they feel sleepy late at night",
+    "They have more homework than younger children",
+    "They dislike waking up to alarms",
+    "Their schools are far from home"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE35": {
+   "source_key": "A",
+   "options": [
+    "cautious",
+    "dismissive",
+    "enthusiastic",
+    "indifferent"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE36": {
+   "source_key": "A",
+   "options": [
+    "sleep contributes to learning instead of wasting study time",
+    "students should never study at night",
+    "studying is more tiring than sleeping",
+    "a break from studying is the same as sleeping"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE37": {
+   "source_key": "A",
+   "options": [
+    "An occasional late night may be unavoidable, but regular short sleep can harm learning",
+    "Students should avoid studying after sunset",
+    "Sleep has no effect on attention",
+    "Later school start times always improve results"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE38": {
+   "source_key": "A",
+   "options": [
+    "He felt nervous and defensive in a new place",
+    "He was carrying valuable books",
+    "He wanted to leave quickly",
+    "He was angry with his teacher"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE39": {
+   "source_key": "A",
+   "options": [
+    "He had decided it was easier not to try to make friends",
+    "He had a test to prepare for",
+    "The teacher asked him to stay",
+    "He was feeling unwell"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE40": {
+   "source_key": "A",
+   "options": [
+    "is friendly and makes light of his own loneliness at the back",
+    "is making fun of Arjun",
+    "is proud of the last bench",
+    "dislikes the other students"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE41": {
+   "source_key": "A",
+   "options": [
+    "Difficulties become easier when people help each other",
+    "Group work is always faster",
+    "Mr Rao only gives homework to students who sit alone",
+    "Arjun should not ask any questions"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE42": {
+   "source_key": "A",
+   "options": [
+    "Arjun now feels less isolated than he did that morning",
+    "the last bench is closer to the board than the others",
+    "Arjun has decided to leave the school",
+    "Imran will move to another seat"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE43": {
+   "source_key": "A",
+   "options": [
+    "handwriting still has value and should be kept alongside typing",
+    "typing should replace handwriting completely",
+    "keyboards are harmful to students",
+    "handwriting is faster than typing"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE44": {
+   "source_key": "A",
+   "options": [
+    "Handwriting is slow, so the writer must decide what matters",
+    "Handwritten notes are neater",
+    "Pens help people stay awake",
+    "Handwriting is easier to read later"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE45": {
+   "source_key": "A",
+   "options": [
+    "a skill that has become outdated",
+    "a dangerous habit",
+    "a modern invention",
+    "an expensive hobby"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE46": {
+   "source_key": "A",
+   "options": [
+    "use the pen to think and the keyboard to produce",
+    "give up keyboards for good",
+    "type all our notes",
+    "write only signatures by hand"
+   ],
+   "fixed": false
+  },
+  "AS-CU-RC-UE47": {
+   "source_key": "A",
+   "options": [
+    "Typing is always worse than handwriting",
+    "Keyboards are indispensable for long documents",
+    "A signature is still trusted as proof of presence",
+    "Some studies link handwritten notes with better understanding"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE48": {
+   "source_key": "A",
+   "options": [
+    "Cautious",
+    "Reckless",
+    "Generous",
+    "Lazy"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE49": {
+   "source_key": "A",
+   "options": [
+    "Hide",
+    "Reveal",
+    "Protect",
+    "Admire"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE50": {
+   "source_key": "A",
+   "options": [
+    "Rare",
+    "Plentiful",
+    "Heavy",
+    "Ancient"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE51": {
+   "source_key": "A",
+   "options": [
+    "Miserly",
+    "Kind",
+    "Wealthy",
+    "Polite"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE52": {
+   "source_key": "A",
+   "options": [
+    "Defeat",
+    "Triumph",
+    "Success",
+    "Glory"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE53": {
+   "source_key": "A",
+   "options": [
+    "to",
+    "with",
+    "from",
+    "of"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE54": {
+   "source_key": "A",
+   "options": [
+    "since",
+    "for",
+    "from",
+    "at"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE55": {
+   "source_key": "A",
+   "options": [
+    "received",
+    "have received",
+    "were receiving",
+    "are given"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE56": {
+   "source_key": "A",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE57": {
+   "source_key": "B",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "fixed": true
+  },
+  "AS-CU-VA-UE58": {
+   "source_key": "A",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "fixed": true
+  },
+  "AS-CU-VA-UE59": {
+   "source_key": "A",
+   "options": [
+    "PRQS",
+    "PQRS",
+    "RPQS",
+    "SPRQ"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE60": {
+   "source_key": "A",
+   "options": [
+    "Polyglot",
+    "Pedant",
+    "Philanthropist",
+    "Pessimist"
+   ],
+   "fixed": false
+  },
+  "AS-CU-VA-UE61": {
+   "source_key": "A",
+   "options": [
+    "Aviary",
+    "Apiary",
+    "Aquarium",
+    "Armoury"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM1": {
+   "source_key": "A",
+   "options": [
+    "[1, 2; −1, 8]",
+    "[2, 1; 4, 7]",
+    "[2, 0; −3, 8]",
+    "[3, 1; 2, 6]"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM2": {
+   "source_key": "A",
+   "options": [
+    "0",
+    "1",
+    "3",
+    "It depends on A"
+   ],
+   "fixed": true
+  },
+  "AS-CU-MA-UM3": {
+   "source_key": "A",
+   "options": [
+    "[2, −3; −1, 2]",
+    "[2, 3; 1, 2]",
+    "[−2, 3; 1, −2]",
+    "[2, −1; −3, 2]"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM4": {
+   "source_key": "A",
+   "options": [
+    "22",
+    "−22",
+    "26",
+    "34"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM5": {
+   "source_key": "A",
+   "options": [
+    "7.5 square units",
+    "15 square units",
+    "10 square units",
+    "6 square units"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM6": {
+   "source_key": "A",
+   "options": [
+    "−6",
+    "4",
+    "6",
+    "0"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM7": {
+   "source_key": "A",
+   "options": [
+    "(−1, 1)",
+    "(1, ∞)",
+    "(−∞, −1)",
+    "(0, 3)"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM8": {
+   "source_key": "A",
+   "options": [
+    "9",
+    "5",
+    "2",
+    "13"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM9": {
+   "source_key": "A",
+   "options": [
+    "1",
+    "e",
+    "e − 1",
+    "e − 2"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM10": {
+   "source_key": "A",
+   "options": [
+    "(1/3) tan⁻¹(x/3) + C",
+    "tan⁻¹(x/3) + C",
+    "(1/9) tan⁻¹(x/9) + C",
+    "(1/3) log∣x² + 9∣ + C"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM11": {
+   "source_key": "A",
+   "options": [
+    "π/4",
+    "π/2",
+    "1/2",
+    "π"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM12": {
+   "source_key": "A",
+   "options": [
+    "9 square units",
+    "27 square units",
+    "3 square units",
+    "6 square units"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM13": {
+   "source_key": "A",
+   "options": [
+    "Order 2, degree 3",
+    "Order 3, degree 2",
+    "Order 2, degree 4",
+    "Order 4, degree 3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM14": {
+   "source_key": "A",
+   "options": [
+    "6",
+    "2/3",
+    "9",
+    "5"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM15": {
+   "source_key": "A",
+   "options": [
+    "5/36",
+    "1/6",
+    "1/9",
+    "7/36"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM16": {
+   "source_key": "A",
+   "options": [
+    "11",
+    "9",
+    "8",
+    "12"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM17": {
+   "source_key": "A",
+   "options": [
+    "an equivalence relation",
+    "reflexive and symmetric, but not transitive",
+    "symmetric, but not reflexive",
+    "neither reflexive nor symmetric"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM18": {
+   "source_key": "A",
+   "options": [
+    "24",
+    "64",
+    "81",
+    "12"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM19": {
+   "source_key": "A",
+   "options": [
+    "−π/6",
+    "7π/6",
+    "5π/6",
+    "π/6"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM20": {
+   "source_key": "A",
+   "options": [
+    "4",
+    "2",
+    "0",
+    "No value of k"
+   ],
+   "fixed": true
+  },
+  "AS-CU-MB-UM21": {
+   "source_key": "A",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM22": {
+   "source_key": "A",
+   "options": [
+    "20π cm²/s",
+    "10π cm²/s",
+    "25π cm²/s",
+    "4π cm²/s"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM23": {
+   "source_key": "A",
+   "options": [
+    "√41 square units",
+    "41 square units",
+    "√11 square units",
+    "7 square units"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM24": {
+   "source_key": "A",
+   "options": [
+    "60°",
+    "45°",
+    "90°",
+    "30°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM25": {
+   "source_key": "A",
+   "options": [
+    "P(A ∣ B) = 0.5, and A and B are independent",
+    "P(A ∣ B) = 0.4, and A and B are independent",
+    "P(A ∣ B) = 0.5, and A and B are not independent",
+    "P(A ∣ B) = 0.2, and A and B are mutually exclusive"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM26": {
+   "source_key": "A",
+   "options": [
+    "3/5",
+    "1/2",
+    "3/10",
+    "2/5"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM27": {
+   "source_key": "A",
+   "options": [
+    "[7, 10; 15, 22]",
+    "[1, 4; 9, 16]",
+    "[5, 6; 11, 16]",
+    "[2, 4; 6, 8]"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM28": {
+   "source_key": "A",
+   "options": [
+    "45",
+    "15",
+    "135",
+    "25"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM29": {
+   "source_key": "A",
+   "options": [
+    "12",
+    "7",
+    "10",
+    "15"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM30": {
+   "source_key": "A",
+   "options": [
+    "2",
+    "0",
+    "6",
+    "−2"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM31": {
+   "source_key": "A",
+   "options": [
+    "16",
+    "4",
+    "64",
+    "12"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM32": {
+   "source_key": "A",
+   "options": [
+    "1",
+    "0",
+    "e",
+    "2"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM33": {
+   "source_key": "A",
+   "options": [
+    "9/5",
+    "2",
+    "1",
+    "5/9"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM34": {
+   "source_key": "A",
+   "options": [
+    "y = 2x − 1",
+    "y = x",
+    "y = 2x + 1",
+    "y = x²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM35": {
+   "source_key": "A",
+   "options": [
+    "100 cm²",
+    "80 cm²",
+    "96 cm²",
+    "120 cm²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM36": {
+   "source_key": "A",
+   "options": [
+    "(1/2) log(x² + 1) + C",
+    "log(x² + 1) + C",
+    "tan⁻¹ x + C",
+    "(1/2) tan⁻¹ x + C"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM37": {
+   "source_key": "A",
+   "options": [
+    "(e − 1)/3",
+    "e − 1",
+    "e/3",
+    "(e + 1)/3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM38": {
+   "source_key": "A",
+   "options": [
+    "sin⁻¹(x/2) + C",
+    "sin⁻¹ x + C",
+    "(1/2) sin⁻¹(x/2) + C",
+    "cos⁻¹(x/2) + C"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM39": {
+   "source_key": "A",
+   "options": [
+    "1/6 square unit",
+    "1/3 square unit",
+    "1/2 square unit",
+    "1 square unit"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM40": {
+   "source_key": "A",
+   "options": [
+    "x²",
+    "e^{2x}",
+    "1/x²",
+    "2x"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM41": {
+   "source_key": "A",
+   "options": [
+    "e",
+    "1",
+    "2",
+    "e²"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM42": {
+   "source_key": "A",
+   "options": [
+    "15/16",
+    "7/8",
+    "1/16",
+    "3/4"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM43": {
+   "source_key": "A",
+   "options": [
+    "64",
+    "512",
+    "8",
+    "27"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM44": {
+   "source_key": "A",
+   "options": [
+    "neither one-one nor onto",
+    "one-one but not onto",
+    "onto but not one-one",
+    "both one-one and onto"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM45": {
+   "source_key": "A",
+   "options": [
+    "25",
+    "9",
+    "17",
+    "5"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM46": {
+   "source_key": "A",
+   "options": [
+    "π",
+    "π/2",
+    "3π/4",
+    "2π"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM47": {
+   "source_key": "A",
+   "options": [
+    "4/5",
+    "3/5",
+    "5/4",
+    "3/4"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM48": {
+   "source_key": "A",
+   "options": [
+    "2π/3",
+    "π/3",
+    "−π/3",
+    "4π/3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM49": {
+   "source_key": "A",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "1/2"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM50": {
+   "source_key": "A",
+   "options": [
+    "2",
+    "1.5",
+    "2.5",
+    "3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM51": {
+   "source_key": "A",
+   "options": [
+    "16",
+    "−16",
+    "2",
+    "0"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM52": {
+   "source_key": "A",
+   "options": [
+    "36 cm³/s",
+    "12 cm³/s",
+    "24 cm³/s",
+    "54 cm³/s"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM53": {
+   "source_key": "A",
+   "options": [
+    "60°",
+    "30°",
+    "45°",
+    "90°"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM54": {
+   "source_key": "A",
+   "options": [
+    "−1/3",
+    "1/3",
+    "3",
+    "−3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM55": {
+   "source_key": "A",
+   "options": [
+    "8/3",
+    "3",
+    "11/3",
+    "2/3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM56": {
+   "source_key": "A",
+   "options": [
+    "2/7",
+    "2/3",
+    "3/7",
+    "6/7"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM57": {
+   "source_key": "A",
+   "options": [
+    "A and B are independent",
+    "A and B are mutually exclusive",
+    "P(A ∩ B) = 0.2",
+    "P(A ∣ B) = 0.6"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MB-UM58": {
+   "source_key": "A",
+   "options": [
+    "2 and 4/3",
+    "2 and 2/3",
+    "6 and 4/3",
+    "1/3 and 2/3"
+   ],
+   "fixed": false
+  },
+  "AS-CU-MA-UM59": {
+   "source_key": "A",
+   "options": [
+    "8",
+    "11",
+    "12",
+    "9"
+   ],
+   "fixed": false
+  }
+ }
+}

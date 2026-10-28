@@ -1,0 +1,10 @@
+{
+ "_doc": "Imported but not served until fixed. Remove an entry (after fixing the source or adding a fix) and re-run the import to restore it.",
+ "items": [
+  {
+   "id": "AS-CU-LAR-G-R92",
+   "category": "ambiguous",
+   "reason": "'My grandfather's only son' can be the speaker's father (paternal grandfather) or, for a maternal grandfather, the speaker's maternal uncle, so more than one option can be defended."
+  }
+ ]
+}
