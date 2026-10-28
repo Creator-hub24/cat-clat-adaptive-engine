@@ -25,7 +25,14 @@ COMPUTABLE_TOPICS = {"CAT Quant", "CAT DILR", "IPMAT Quant", "Sarkari Quantitati
                      "CUET Quantitative Reasoning", "CUET General Mental Ability", "CUET Logical & Analytical Reasoning",
                      "CUET Maths Section A", "CUET Maths Section B1"}  # verify_code checked when given
 QUANT_TOPICS = {"CAT Quant", "IPMAT Quant", "Sarkari Quantitative Aptitude",
-                "CUET Quantitative Reasoning"}  # verify_code required
+                "CUET Quantitative Reasoning"}
+# New AI items in these topics must carry verify_code (no code -> rejected and regenerated)
+CODE_REQUIRED_TOPICS = QUANT_TOPICS | {"CAT DILR"}
+# New AI items in these topics must also meet the uniqueness contract: verify_code assigns `answers`, the
+# answer to the question in EVERY arrangement consistent with the givens (brute force). Accepted only when
+# exactly one distinct value results and it matches the key. Enforced at generation time only, so existing
+# bank items without `answers` keep being served.
+UNIQUE_ANSWER_TOPICS = {"CAT DILR"}
 REQUIRED_KEYS = {"question_text", "options", "correct_answer", "pedagogical_explanation",
                  "trap_type", "concept_tag"}
 
@@ -201,15 +208,38 @@ safe = {n: getattr(builtins, n) for n in (
 safe["__import__"] = guarded_import
 g = {"__builtins__": safe}
 exec(compile(code, "<verify>", "exec"), g)
-ans = g.get("answer")
-if isinstance(ans, fractions.Fraction):
-    ans = float(ans)
-print(json.dumps({"answer": ans}))
+def norm(v):
+    if isinstance(v, fractions.Fraction):
+        v = float(v)
+    if isinstance(v, float) and v.is_integer():
+        v = int(v)
+    if isinstance(v, (list, tuple, set, frozenset)):
+        return [norm(x) for x in (sorted(v, key=repr) if isinstance(v, (set, frozenset)) else v)]
+    return v
+ans = norm(g.get("answer"))
+out = {"answer": ans}
+if "answers" in g:
+    raw = g["answers"]
+    if isinstance(raw, (list, tuple, set, frozenset)):
+        distinct = {}
+        for a in raw:
+            a = norm(a)
+            distinct.setdefault(json.dumps(a, sort_keys=True, default=str), a)
+        out["answers"] = list(distinct.values())
+    else:
+        out["answers"] = None  # present but not a collection: contract not met
+print(json.dumps(out, default=str))
 '''
 
 
 def run_verify_code(code: str, timeout: float = 3.0):
     """Run model/seed verify_code in a locked-down subprocess. The code must set `answer`."""
+    return run_verify_code_full(code, timeout)["answer"]
+
+
+def run_verify_code_full(code: str, timeout: float = 3.0) -> dict:
+    """Like run_verify_code, but returns {"answer": ..., "answers": [...]} ("answers" only when the code
+    assigns it: the distinct answers over every consistent arrangement; None if it is not a collection)."""
     check_code(code)
     try:
         p = subprocess.run([sys.executable, "-I", "-S", "-c", _RUNNER], input=code, text=True,
@@ -218,7 +248,41 @@ def run_verify_code(code: str, timeout: float = 3.0):
         raise TimeoutError("verify_code timed out") from e
     if p.returncode != 0:
         raise RuntimeError((p.stderr or "verify failed").strip().splitlines()[-1][:200])
-    return json.loads(p.stdout.strip().splitlines()[-1])["answer"]
+    return json.loads(p.stdout.strip().splitlines()[-1])
+
+
+def check_unique_answers(result: dict, options: dict, key: str) -> str | None:
+    """Uniqueness contract (UNIQUE_ANSWER_TOPICS). None if met, else the reason it is not."""
+    if "answers" not in result:
+        return "verify_code does not assign `answers` (all consistent answers)"
+    answers = result["answers"]
+    if answers is None:
+        return "`answers` must be a list or set of the answer in every consistent arrangement"
+    if not answers:
+        return "no arrangement satisfies the conditions (`answers` is empty)"
+    if len(answers) != 1:
+        return f"setup is not unique: {len(answers)} different answers fit ({answers[:4]!r})"
+    if not answer_matches_key(answers[0], options, key):
+        return f"the only consistent answer {answers[0]!r} does not match key {key}"
+    if result.get("answer") is not None and not answer_matches_key(result["answer"], options, key):
+        return f"`answer` {result['answer']!r} does not match key {key}"
+    return None
+
+
+def uses_answers_contract(code: str | None) -> bool:
+    """True if verify_code assigns a name `answers` (static check, no execution)."""
+    try:
+        tree = ast.parse(code or "")
+    except SyntaxError:
+        return False
+    for node in ast.walk(tree):
+        targets = (node.targets if isinstance(node, ast.Assign) else
+                   [node.target] if isinstance(node, (ast.AugAssign, ast.AnnAssign)) else [])
+        for t in targets:
+            for n in ast.walk(t):
+                if isinstance(n, ast.Name) and n.id == "answers":
+                    return True
+    return False
 
 
 _NUM = re.compile(r"-?\d[\d,]*(?:\.\d+)?(?:\s*/\s*\d+)?")

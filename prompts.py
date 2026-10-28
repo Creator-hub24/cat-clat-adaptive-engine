@@ -36,7 +36,7 @@ DIFFICULTY_RUBRIC = {
 TOPIC_RULES = {
     "CAT Quant": "verify_code is REQUIRED. Use clean integers. Every distractor must be the result of a specific, nameable mistake (e.g. additive fallacy, wrong base, ordered vs unordered). Mention the fastest shortcut.",
     "CAT VARC RC": "Write an ORIGINAL 120-220 word passage (no copyrighted text) followed by one question. Distractors must follow the taxonomy: Extreme scope, Out-of-scope, Half-true, Reversal. Label the trap type of each wrong option in the explanation.",
-    "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building. When the set needs data, present it as a GitHub-markdown table inside question_text. Where the answer is computable, include verify_code.",
+    "CAT DILR": "Write a small self-contained set (arrangement, tournament, scheduling or table). It MUST have exactly one solution; verify uniqueness in the explanation by showing why other cases fail. Prefer sets that reward a global check (conservation, parity) before grid-building. When the set needs data, present it as a GitHub-markdown table inside question_text. verify_code is REQUIRED and must brute-force the set: enumerate EVERY arrangement/outcome (itertools.permutations/product), keep those satisfying all the givens, and assign `answers` = the set of values the question asks for across all kept arrangements (option values or letters), plus `answer`. The item is accepted only if `answers` has exactly one value and it matches the key, so never hard-code a case, never stop at the first solution, and never reuse a shortcut you derived by hand. Example ending: answers = {who_on_floor4(s) for s in solutions}; answer = next(iter(answers)).",
     "CLAT RC": "Write an ORIGINAL legal-principle passage (100-200 words) and a fact situation. The answer must follow ONLY from the stated principle, not outside legal knowledge. Include an exception in the principle at Moderate+.",
     "CLAT Legal Reasoning": "CLAT UG style: write an ORIGINAL passage (about 350-450 words) that states one or more legal principles or rules (with an exception or condition at Moderate+), followed by a short fact situation and one question. The answer must follow STRICTLY from the stated principle, never from outside legal knowledge or general morality. Vary the area (contract, tort, criminal law, constitutional law/fundamental rights, consumer law, IPR). Distractors must be realistic traps: applying general morality or fairness, ignoring the exception or one of several conditions, reversing the principle, or importing an outside rule. Name the trap behind each wrong option in the explanation.",
     "CLAT Logical Reasoning": "Argument-based (assumption, strengthen/weaken, inference, conditional logic). Use the negation test or contrapositive in the explanation.",
@@ -71,6 +71,8 @@ Pedagogical constraints you must obey:
 6. verify_code: short plain Python that computes the answer and assigns it to a variable named `answer`
    (a number equal to the correct option's value, or the correct option letter). Only math, itertools and
    fractions may be imported. No input, files, network or printing needed.
+   For CAT DILR, verify_code must also assign `answers`: the set of answers over EVERY arrangement that
+   satisfies the givens (found by brute force). It must contain exactly one value, the correct one.
 7. Tabular data must be written as a markdown table inside question_text. Never use HTML."""
 
 REQUIRED_KEYS = engine.REQUIRED_KEYS
@@ -85,11 +87,17 @@ def retrieve_examples(bank: list[dict], topic: str, difficulty: str, k: int = 2)
     return [q for q in ranked if score(q) > 0][:k]
 
 
+def shot_fields(topic: str, ex: dict) -> dict:
+    """Few-shot example fields. For uniqueness-contract topics (CAT DILR), an example's verify_code is shown
+    only if it already assigns `answers`, so the model never copies an older single-answer style."""
+    keys = list(REQUIRED_KEYS) + ["verify_code"]
+    if topic in engine.UNIQUE_ANSWER_TOPICS and not engine.uses_answers_contract(ex.get("verify_code")):
+        keys.remove("verify_code")
+    return {k: ex[k] for k in keys if k in ex}
+
+
 def build_prompt(topic: str, difficulty: str, examples: list[dict], avoid: list[str] | None = None) -> str:
-    shots = "\n\n".join(
-        json.dumps({k: ex[k] for k in list(REQUIRED_KEYS) + ["verify_code"] if k in ex}, ensure_ascii=False)
-        for ex in examples
-    )
+    shots = "\n\n".join(json.dumps(shot_fields(topic, ex), ensure_ascii=False) for ex in examples)
     return f"""Topic: {topic}
 Difficulty: {difficulty}
 Difficulty rubric: {DIFFICULTY_RUBRIC[difficulty]}

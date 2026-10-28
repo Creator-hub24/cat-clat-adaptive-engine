@@ -2,7 +2,8 @@
 
 Pipeline per attempt (max 2 attempts, then the caller falls back to the seed bank):
 1. Generate question JSON (+ verify_code for computable topics).
-2. If verify_code present: run in sandbox and require it to match the key (Quant must pass this).
+2. If verify_code present: run in sandbox and require it to match the key (required for Quant and CAT DILR).
+   CAT DILR code must also list every consistent answer in `answers`; exactly one value, equal to the key.
 3. Independent second solve (separate call, key withheld); must agree with the key.
 """
 from __future__ import annotations
@@ -87,16 +88,26 @@ def generate_verified(client, models, topic, difficulty, prompt, system, max_tri
         code = q.get("verify_code")
         if topic in engine.COMPUTABLE_TOPICS and code:
             try:
-                val = engine.run_verify_code(code)
+                res = engine.run_verify_code_full(code)
             except Exception as e:
                 log.append(f"try {attempt}: verify_code failed ({e})")
                 continue
+            val = res.get("answer")
+            if topic in engine.UNIQUE_ANSWER_TOPICS:
+                why = engine.check_unique_answers(res, q["options"], q["correct_answer"])
+                if why:
+                    log.append(f"try {attempt}: uniqueness check failed ({why})")
+                    continue
+                if val is None:  # the single consistent answer stands in for `answer`
+                    val = res["answers"][0]
             if not engine.answer_matches_key(val, q["options"], q["correct_answer"]):
                 log.append(f"try {attempt}: computed {val!r} does not match key {q['correct_answer']}")
                 continue
             checks.append("computed")
-        elif topic in engine.QUANT_TOPICS:
-            log.append(f"try {attempt}: Quant question returned no verify_code")
+            if topic in engine.UNIQUE_ANSWER_TOPICS:
+                checks.append("unique solution")
+        elif topic in engine.CODE_REQUIRED_TOPICS:
+            log.append(f"try {attempt}: {topic} question returned no verify_code")
             continue
         ans, ambiguous = independent_solve(client, models, q, model_used)
         if ambiguous or ans != q["correct_answer"]:

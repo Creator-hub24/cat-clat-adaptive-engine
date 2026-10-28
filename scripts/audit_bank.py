@@ -101,7 +101,29 @@ def static_issues(q: dict) -> list[str]:
             others = [k for k, n in zip(opts, nums) if n is not None and abs(fn - n) <= 1e-6 * max(1, abs(n))]
             if others and key not in others:
                 out.append(f"error: explanation concludes {fn:g}, which is option {others[0]}, but key is {key} ({opts[key]})")
+    out += dilr_code_issues(q)
     return out
+
+
+def dilr_code_issues(q: dict, run: bool = True) -> list[str]:
+    """CAT DILR verify_code checks (topics in engine.UNIQUE_ANSWER_TOPICS). Flags an item with no verify_code
+    or with code that does not assign `answers` (the uniqueness contract); with run=True, code that meets the
+    contract is executed in the sandbox and must give exactly one consistent answer equal to the key."""
+    if q.get("topic") not in engine.UNIQUE_ANSWER_TOPICS:
+        return []
+    code = q.get("verify_code")
+    if not code:
+        return ["warn: DILR item has no verify_code (answer not computed)"]
+    if not engine.uses_answers_contract(code):
+        return ["warn: DILR verify_code does not list all consistent answers (`answers`), so uniqueness is unchecked"]
+    if not run:
+        return []
+    try:
+        res = engine.run_verify_code_full(code)
+    except Exception as e:
+        return [f"error: DILR verify_code failed to run ({str(e)[:120]})"]
+    why = engine.check_unique_answers(res, q.get("options") or {}, str(q.get("correct_answer") or "").strip().upper())
+    return [f"error: DILR uniqueness check failed ({why})"] if why else []
 
 
 def numeric_check(q: dict) -> dict | None:
