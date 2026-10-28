@@ -68,5 +68,122 @@ def test_shipped_bank_is_valid_and_served():
     seed = bank.load_json_bank(bank.SEED_PATH)["questions"]
     base = bank.serving_pool(seed, [])
     pool = bank.serving_pool(seed, [], qs)
-    assert pool[:len(base)] == base and len(pool) == len(base) + len(qs)
+    served = [q for q in qs if not q.get("excluded")]
+    assert pool[:len(base)] == base and len(pool) == len(base) + len(served)
     assert all(q["source"] == "AptiSetu bank" for q in pool[len(base):])
+
+
+# ---------------------------------------------------------------- curation (data/aptisetu_curation)
+import re  # noqa: E402
+from collections import Counter  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+CUR = imp.load_curation()
+SHIPPED = bank.load_json_bank(bank.APTISETU_PATH)["questions"]
+BY_ID = {q["id"]: q for q in SHIPPED}
+SEED = bank.load_json_bank(bank.SEED_PATH)["questions"]
+SERVED = [q for q in bank.serving_pool(SEED, [], SHIPPED) if q["source"] == "AptiSetu bank"]
+SERIES = CUR["fixes"]["option_shuffle"]["series"]
+
+
+def test_verified_flag_applied():
+    verified = set(CUR["verified"]["ids"])
+    assert len(verified) == 492
+    for q in SHIPPED:
+        assert q["verified"] is (q["id"] in verified)
+        if q["verified"]:
+            assert q["verification"] and "independent solve" in q["verification"]
+    # every served AptiSetu item is verified, and the pool passes the flag through (no blanket label)
+    assert SERVED and all(q["verified"] and q["verification"] for q in SERVED)
+    unverified = dict(SHIPPED[0], id="AS-QA-X", verified=False)
+    unverified.pop("verification", None)
+    (q,) = [p for p in bank.serving_pool([], [], [unverified])]
+    assert q["verified"] is False and q["verification"] == []
+
+
+def test_exclusions_kept_but_not_served():
+    ex = {e["id"]: e for e in CUR["exclusions"]["items"]}
+    assert len(ex) == 21
+    assert Counter(e["category"] for e in ex.values()) == {"ambiguous": 2, "answer_giveaway": 15, "unknown_person": 4}
+    served = {q["id"] for q in SERVED}
+    for i, e in ex.items():
+        assert BY_ID[i]["excluded"]["reason"] == e["reason"]  # record kept in the bank for a later fix
+        assert i not in served
+    assert all(not q.get("excluded") for q in SERVED)
+    assert len(SERVED) == len(SHIPPED) - len(ex) == 469
+
+
+def test_duplicates_dropped_and_no_duplicate_stems():
+    for p in CUR["duplicates"]["pairs"]:
+        assert p["drop"] not in BY_ID and p["keep"] in BY_ID
+    full = Counter(bank.normalize(q["question_text"]) for q in SHIPPED)
+    assert max(full.values()) == 1
+    qa = Counter(bank.normalize(q["question_text"]) for q in SHIPPED if q["topic"] == "CAT Quant")
+    assert max(qa.values()) == 1
+    assert len({q["text_hash"] for q in SHIPPED}) == len(SHIPPED)
+
+
+def test_key_distribution_balanced():
+    for p in SERIES:
+        c = Counter(q["correct_answer"] for q in SHIPPED if q["id"].startswith(p))
+        n = sum(c.values())
+        assert n == 16 and all(abs(c[k] - n / 4) <= 1 for k in "ABCD"), (p, c)
+    for topic in ("CAT Quant", "CAT DILR", "CAT VARC RC"):
+        c = Counter(q["correct_answer"] for q in SERVED if q["topic"] == topic)
+        assert max(c.values()) / sum(c.values()) < 0.4 and min(c.values()) / sum(c.values()) > 0.12, (topic, c)
+
+
+def test_shuffled_keys_map_to_same_option_text():
+    snap = json.loads((Path(__file__).parent / "fixtures" / "aptisetu_shuffled_keys.json").read_text(encoding="utf-8"))
+    items = snap["items"]
+    assert len(items) == 96 == sum(1 for q in SHIPPED if imp.series_of(q["id"], SERIES))
+    moved = 0
+    for i, s in items.items():
+        q = BY_ID[i]
+        assert q["options"][q["correct_answer"]] == s["key_text"], i
+        assert len(set(q["options"].values())) == 4
+        moved += q["correct_answer"] != s["source_key"]
+        # multi-option dismissals in the explanation never name the key after remapping
+        for ref in re.findall(r"\bOptions\s+((?:[A-D])(?:(?:,\s*|\s+and\s+|\s+or\s+)[A-D])+)", q["pedagogical_explanation"]):
+            assert q["correct_answer"] not in ref, (i, ref)
+        assert not re.search(r"\bOptions?\s+[1-4]\b", q["pedagogical_explanation"]), i
+    assert moved > 50
+
+
+def test_balanced_shuffle_remaps_options_and_refs():
+    items = [{"id": f"S-{k}", "options": dict(zip("ABCD", ["w", "x", "y", "z"])), "correct_answer": "B",
+              "pedagogical_explanation": "Option B is right. Options 1 and 4 are wrong; Option C too."} for k in range(8)]
+    maps = imp.balanced_shuffle(items, ["S-"], "t")
+    assert Counter(q["correct_answer"] for q in items) == {k: 2 for k in "ABCD"}
+    for q in items:
+        m = maps[q["id"]]
+        assert q["options"][q["correct_answer"]] == "x"
+        assert all(q["options"][m[o]] == t for o, t in zip("ABCD", "wxyz"))
+        assert q["pedagogical_explanation"] == (f"Option {m['B']} is right. Options {m['A']} and {m['D']} are wrong; "
+                                                f"Option {m['C']} too.")
+    again = [dict(q, options=dict(zip("ABCD", "wxyz")), correct_answer="B",
+                  pedagogical_explanation="Option B") for q in items]
+    imp.balanced_shuffle(again, ["S-"], "t")
+    assert [q["correct_answer"] for q in again] == [q["correct_answer"] for q in items]  # deterministic seed
+
+
+def test_table_inside_paragraph_becomes_markdown_table():
+    blocks = imp.html_to_blocks("<p>Intro.<table><tr><th></th><th>X</th></tr><tr><td>P</td><td>5</td></tr></table></p>"
+                                "<p>After.</p>")
+    assert blocks == ["Intro.", "|  | X |\n|---|---|\n| P | 5 |", "After."]
+    for i in ("DS1-TABLE4-17", "DS2-TABLE2-10", "M1-TABLE4-17", "M3-TABLE5-22", "M4-TABLE1-02", "M5-TABLE4-18",
+              "DP-TABLE4-18", "DP-TABLE9-40"):
+        t = BY_ID["AS-DI-" + i]["question_text"]
+        assert "\n|---|---|---|---|\n" in t and len(re.findall(r"^\| ", t, re.M)) == 5, i
+
+
+def test_stem_fixes_use_mcq_wording():
+    assert "Which option gives the ratio" in BY_ID["AS-QA-M3-QA-04"]["question_text"]
+    assert "which option gives k" in BY_ID["AS-QA-M3-QA-17"]["question_text"]
+    assert not [q["id"] for q in SERVED if re.search(r"\bEnter (the|your)\b", q["question_text"])]
+    bad = [dict(SHIPPED[0], id="Z")]
+    try:
+        imp.apply_stem_fixes(bad, [{"id": "Z", "find": "no such text", "replace": "x"}])
+        raise AssertionError("missing fix text must fail loudly")
+    except ValueError:
+        pass

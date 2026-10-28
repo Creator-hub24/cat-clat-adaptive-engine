@@ -1,0 +1,389 @@
+{
+ "_doc": "Key option text and pre-shuffle key letter of each shuffled AptiSetu item, captured before the option shuffle.",
+ "items": {
+  "AS-VR-CV1": {
+   "source_key": "B",
+   "key_text": "the decline of repair is driven mainly by shifting relative prices, so policy should narrow the cost gap rather than appeal to values"
+  },
+  "AS-VR-CV2": {
+   "source_key": "B",
+   "key_text": "Repair productivity has barely changed, while wages must keep pace with an economy in which manufactured goods keep getting cheaper"
+  },
+  "AS-VR-CV3": {
+   "source_key": "B",
+   "key_text": "A tax cut on repair services is likely to do more to increase repair than an awareness campaign"
+  },
+  "AS-VR-CV4": {
+   "source_key": "A",
+   "key_text": "In a region where subsidies made repair clearly cheaper than replacement, repair rates did not rise at all"
+  },
+  "AS-VR-CV5": {
+   "source_key": "B",
+   "key_text": "illustrate a case in which our judgements of blame seem to depend on something outside the agents' control"
+  },
+  "AS-VR-CV6": {
+   "source_key": "B",
+   "key_text": "would leave little or nothing open to moral judgement, since so much that shapes us is beyond our control"
+  },
+  "AS-VR-CV7": {
+   "source_key": "B",
+   "key_text": "acknowledging its consistency while doubting that it fits our moral experience"
+  },
+  "AS-VR-CV8": {
+   "source_key": "B",
+   "key_text": "The author leans towards accepting moral luck, even if this makes morality less tidy and less fair"
+  },
+  "AS-VR-CV9": {
+   "source_key": "B",
+   "key_text": "publication incentives and many small analytical choices that can make chance patterns look like real findings"
+  },
+  "AS-VR-CV10": {
+   "source_key": "B",
+   "key_text": "Whether a significant result reflects a real effect depends partly on the hypothesis's prior plausibility and the study's statistical power"
+  },
+  "AS-VR-CV11": {
+   "source_key": "B",
+   "key_text": "make the decision to publish independent of whether the results turn out to be striking"
+  },
+  "AS-VR-CV12": {
+   "source_key": "B",
+   "key_text": "the problem is not exploration itself but presenting after-the-fact findings as if they had been predicted"
+  },
+  "AS-VR-CV13": {
+   "source_key": "C",
+   "key_text": "a translation is best seen as one partial reading rather than a replacement, so many translations reflect a poem's richness rather than failure"
+  },
+  "AS-VR-CV14": {
+   "source_key": "B",
+   "key_text": "keep a poem's form and particulars while losing its living effect"
+  },
+  "AS-VR-CV15": {
+   "source_key": "B",
+   "key_text": "Their being admired in this way hints that they may have moved away from the source poem"
+  },
+  "AS-VR-CV16": {
+   "source_key": "B",
+   "key_text": "Publishing the original with a literal and a freer version, along with notes on puns and allusions"
+  },
+  "AS-VR-M1-01": {
+   "source_key": "B",
+   "key_text": "waste time but can be justified where a visible, equal rule of allocation is valued"
+  },
+  "AS-VR-M1-02": {
+   "source_key": "C",
+   "key_text": "Because waiting charges everyone in a currency that is distributed roughly equally"
+  },
+  "AS-VR-M1-03": {
+   "source_key": "D",
+   "key_text": "evidence that the queue has become a disguised form of price rationing"
+  },
+  "AS-VR-M1-04": {
+   "source_key": "A",
+   "key_text": "illustrate that time and money are not exchanged at the same rate by everyone"
+  },
+  "AS-VR-M1-05": {
+   "source_key": "A",
+   "key_text": "such seed is adapted to climatic conditions that will not persist over the tree's life"
+  },
+  "AS-VR-M1-06": {
+   "source_key": "C",
+   "key_text": "the reply concedes that the precise best match of tree to site cannot be known in advance"
+  },
+  "AS-VR-M1-07": {
+   "source_key": "A",
+   "key_text": "A problem is stated, a solution proposed, objections raised, a reply assessed, and one objection judged more serious"
+  },
+  "AS-VR-M1-08": {
+   "source_key": "A",
+   "key_text": "Organisms introduced with moved seed may spread beyond the planted stand"
+  },
+  "AS-VR-M1-09": {
+   "source_key": "D",
+   "key_text": "restoration involves interpretive choices and should be presented as argument rather than revelation"
+  },
+  "AS-VR-M1-10": {
+   "source_key": "C",
+   "key_text": "technical analysis can identify what it is made of but not why it was applied"
+  },
+  "AS-VR-M1-11": {
+   "source_key": "A",
+   "key_text": "patina may itself distort the work, so preserving it is also a choice with consequences"
+  },
+  "AS-VR-M1-12": {
+   "source_key": "A",
+   "key_text": "Publishing a report listing which layers were removed, the evidence for each decision, and the uncertainties that remain"
+  },
+  "AS-VR-M1-13": {
+   "source_key": "A",
+   "key_text": "argue that regret is a value-relative judgement and can therefore be rational"
+  },
+  "AS-VR-M1-14": {
+   "source_key": "C",
+   "key_text": "A person who has openly given up caring about social status still regrets not attending a prestigious party"
+  },
+  "AS-VR-M1-15": {
+   "source_key": "A",
+   "key_text": "People's reported values frequently shift within days in response to passing feelings"
+  },
+  "AS-VR-M1-16": {
+   "source_key": "A",
+   "key_text": "reassessing the past because one's questions or commitments have changed is a normal feature of reasoned judgement"
+  },
+  "AS-VR-M2-01": {
+   "source_key": "D",
+   "key_text": "explaining why the return of museum objects is slower than a moral framing of the debate suggests"
+  },
+  "AS-VR-M2-02": {
+   "source_key": "B",
+   "key_text": "the object legally belongs to the state and its removal requires legislative action"
+  },
+  "AS-VR-M2-03": {
+   "source_key": "D",
+   "key_text": "In several countries, museum directors can deaccession objects on their own authority but routinely decline to."
+  },
+  "AS-VR-M2-04": {
+   "source_key": "D",
+   "key_text": "sympathetic to their goal but critical of how they frame and target the issue"
+  },
+  "AS-VR-M2-05": {
+   "source_key": "D",
+   "key_text": "the aquifer is initially drawing on water stored over a long period"
+  },
+  "AS-VR-M2-06": {
+   "source_key": "B",
+   "key_text": "gives individual users a reason to conserve that serves their own long-term interest"
+  },
+  "AS-VR-M2-07": {
+   "source_key": "B",
+   "key_text": "show that the time lag also undermines efforts at recovery, not only the detection of overuse"
+  },
+  "AS-VR-M2-08": {
+   "source_key": "B",
+   "key_text": "In practice it is used to justify continued extraction, so the deeper deficit is institutional rather than informational."
+  },
+  "AS-VR-M2-09": {
+   "source_key": "A",
+   "key_text": "the real challenge of translation lies in conveying associations and texture, not in finding equivalents for supposedly untranslatable concepts"
+  },
+  "AS-VR-M2-10": {
+   "source_key": "B",
+   "key_text": "a compressed, ready-made unit for the concept"
+  },
+  "AS-VR-M2-11": {
+   "source_key": "B",
+   "key_text": "problems of tone and association affect even common words, not only exotic ones"
+  },
+  "AS-VR-M2-12": {
+   "source_key": "D",
+   "key_text": "A novel's translation conveys every event and statement correctly, yet readers of the original find its humour and formality strangely altered."
+  },
+  "AS-VR-M2-13": {
+   "source_key": "D",
+   "key_text": "Benchmarks are useful but tend to become targets in themselves, so gains on them need independent corroboration."
+  },
+  "AS-VR-M2-14": {
+   "source_key": "A",
+   "key_text": "the collective search adapts methods to regularities specific to the fixed test"
+  },
+  "AS-VR-M2-15": {
+   "source_key": "C",
+   "key_text": "replacing benchmarks does not fully escape the influence of the benchmarks replaced"
+  },
+  "AS-VR-M2-16": {
+   "source_key": "D",
+   "key_text": "the quirks of different evaluation settings are unlikely to coincide with those of the original benchmark"
+  },
+  "AS-VR-M3-01": {
+   "source_key": "C",
+   "key_text": "the benefits of choice depend on conditions that reforms often fail to secure"
+  },
+  "AS-VR-M3-02": {
+   "source_key": "A",
+   "key_text": "congestion rather than reward"
+  },
+  "AS-VR-M3-03": {
+   "source_key": "C",
+   "key_text": "risk sorting pupils by circumstance even if providers are rewarded for attracting them"
+  },
+  "AS-VR-M3-04": {
+   "source_key": "D",
+   "key_text": "point out a distributional cost that can arise when choice is introduced without its supporting conditions"
+  },
+  "AS-VR-M3-05": {
+   "source_key": "B",
+   "key_text": "narrow the spawning window to a few nights within the season"
+  },
+  "AS-VR-M3-06": {
+   "source_key": "A",
+   "key_text": "fertilisation success depends on the presence of gametes from other colonies at the same time"
+  },
+  "AS-VR-M3-07": {
+   "source_key": "D",
+   "key_text": "maturation timing and the lunar cue may shift relative to each other because only one responds to temperature"
+  },
+  "AS-VR-M3-08": {
+   "source_key": "A",
+   "key_text": "draw a general lesson from tentative evidence of declining synchrony"
+  },
+  "AS-VR-M3-09": {
+   "source_key": "D",
+   "key_text": "serve a forward-looking purpose of allowing people to rely on settled matters and rebuild their lives"
+  },
+  "AS-VR-M3-10": {
+   "source_key": "C",
+   "key_text": "show that evidence decay cannot be the whole rationale for limitation periods"
+  },
+  "AS-VR-M3-11": {
+   "source_key": "B",
+   "key_text": "the debtor regains an incentive to earn and return to productive life"
+  },
+  "AS-VR-M3-12": {
+   "source_key": "C",
+   "key_text": "A man whose minor conviction was legally expunged keeps losing job offers because employers find old news reports about it online."
+  },
+  "AS-VR-M3-13": {
+   "source_key": "A",
+   "key_text": "such services are planned by reference to mapped streets and registered addresses"
+  },
+  "AS-VR-M3-14": {
+   "source_key": "D",
+   "key_text": "appreciative but alert to the risks of visibility"
+  },
+  "AS-VR-M3-15": {
+   "source_key": "D",
+   "key_text": "illustrate how the same information can be used against the people it describes"
+  },
+  "AS-VR-M3-16": {
+   "source_key": "D",
+   "key_text": "The benefits of being mapped depend largely on who controls how the data are used."
+  },
+  "AS-VR-M4-01": {
+   "source_key": "A",
+   "key_text": "boredom is a useful signal whose value is lost when it is immediately silenced"
+  },
+  "AS-VR-M4-02": {
+   "source_key": "D",
+   "key_text": "are unpleasant in order to prompt action"
+  },
+  "AS-VR-M4-03": {
+   "source_key": "C",
+   "key_text": "sceptical, regarding the evidence as weak and possibly confounded"
+  },
+  "AS-VR-M4-04": {
+   "source_key": "D",
+   "key_text": "An employee who finds his job unrewarding fills every idle moment with videos, and so never considers whether to seek a different role."
+  },
+  "AS-VR-M4-05": {
+   "source_key": "D",
+   "key_text": "creativity in cuisine persists without legal protection, sustained partly by informal norms whose reach is limited"
+  },
+  "AS-VR-M4-06": {
+   "source_key": "C",
+   "key_text": "the copier is a distant or large operation with no interest in the community's opinion"
+  },
+  "AS-VR-M4-07": {
+   "source_key": "C",
+   "key_text": "In a region that briefly granted legal protection to recipes, the rate of new dishes fell as leading chefs relied on their protected signature dishes."
+  },
+  "AS-VR-M4-08": {
+   "source_key": "A",
+   "key_text": "explain the legal reasoning by which recipes are treated as functional rather than expressive"
+  },
+  "AS-VR-M4-09": {
+   "source_key": "D",
+   "key_text": "most species have not been described, and estimating them requires assumptions"
+  },
+  "AS-VR-M4-10": {
+   "source_key": "C",
+   "key_text": "assumes taxonomic effort has been spread evenly, which is not the case"
+  },
+  "AS-VR-M4-11": {
+   "source_key": "C",
+   "key_text": "the threshold of genetic difference chosen to separate microbial species"
+  },
+  "AS-VR-M4-12": {
+   "source_key": "A",
+   "key_text": "the question of species numbers divides into sub-questions with different degrees of uncertainty, which a single figure obscures"
+  },
+  "AS-VR-M4-13": {
+   "source_key": "D",
+   "key_text": "the design of waiting rooms significantly affects how people experience a service and deserves more attention"
+  },
+  "AS-VR-M4-14": {
+   "source_key": "D",
+   "key_text": "Uncertainty about how long the wait will be"
+  },
+  "AS-VR-M4-15": {
+   "source_key": "D",
+   "key_text": "recognises that the observed association may not reflect a causal effect of design"
+  },
+  "AS-VR-M4-16": {
+   "source_key": "D",
+   "key_text": "anticipate the objection that such improvements are trivial and respond that they form part of the service itself"
+  },
+  "AS-VR-M5-01": {
+   "source_key": "A",
+   "key_text": "showing how a famous example of lock-in rested on weak evidence and spread because it suited a theory"
+  },
+  "AS-VR-M5-02": {
+   "source_key": "C",
+   "key_text": "there was little difference in speed between them"
+  },
+  "AS-VR-M5-03": {
+   "source_key": "A",
+   "key_text": "it gave a teachable concrete case for a theoretical possibility economists wanted to discuss"
+  },
+  "AS-VR-M5-04": {
+   "source_key": "D",
+   "key_text": "A widely cited study of a medical treatment is later found to rest on a small, flawed sample, but it had been repeated in textbooks because it neatly illustrated a popular hypothesis."
+  },
+  "AS-VR-M5-05": {
+   "source_key": "A",
+   "key_text": "aviation's success depends on features other fields often lack, so they should borrow its principle rather than its procedures"
+  },
+  "AS-VR-M5-06": {
+   "source_key": "B",
+   "key_text": "Its investigators are better paid than those in other fields."
+  },
+  "AS-VR-M5-07": {
+   "source_key": "C",
+   "key_text": "struggle to turn individual lessons into improvements that apply broadly"
+  },
+  "AS-VR-M5-08": {
+   "source_key": "B",
+   "key_text": "inclined to overlook the conditions that make aviation's approach work"
+  },
+  "AS-VR-M5-09": {
+   "source_key": "A",
+   "key_text": "traffic noise drowns out lower notes"
+  },
+  "AS-VR-M5-10": {
+   "source_key": "B",
+   "key_text": "at least some of the change reflects flexible behaviour rather than inherited traits"
+  },
+  "AS-VR-M5-11": {
+   "source_key": "D",
+   "key_text": "females in cities retain a preference for lower songs"
+  },
+  "AS-VR-M5-12": {
+   "source_key": "C",
+   "key_text": "Changes in urban birdsong reflect a compromise among competing pressures, which a single explanation can obscure."
+  },
+  "AS-VR-M5-13": {
+   "source_key": "D",
+   "key_text": "the cautionary function of signing and whether digital agreements can recover it"
+  },
+  "AS-VR-M5-14": {
+   "source_key": "A",
+   "key_text": "requirements that slow people down so that they notice they are committing to something"
+  },
+  "AS-VR-M5-15": {
+   "source_key": "C",
+   "key_text": "reserved for agreements that genuinely deserve it"
+  },
+  "AS-VR-M5-16": {
+   "source_key": "D",
+   "key_text": "illustrate how digital consent lacks any marker distinguishing a consequential act from a trivial one"
+  }
+ }
+}
