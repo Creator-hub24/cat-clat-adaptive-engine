@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-27T09:05:54.759019+00:00",
+    "updated_at": "2026-10-28T09:06:24.362103+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -1054,33 +1054,502 @@
       "review_status": "unreviewed",
       "verified_computed": false,
       "verified_independent": true
+    },
+    {
+      "concept_tag": "Tort - Volenti Non Fit Injuria",
+      "trap_type": "Ignoring implied consent through conduct by requiring an express written waiver",
+      "options": {
+        "A": "Yes, because stadium authorities are under an absolute legal duty to guarantee the physical safety of every ticket-paying spectator.",
+        "B": "No, because Karan knowingly and voluntarily accepted the inherent and customary risk of a flying ball by buying a ticket and attending the match.",
+        "C": "Yes, because Karan never signed a written waiver form explicitly consenting to take the risk of physical injury.",
+        "D": "No, because Karan was contributorily negligent in failing to duck or catch the ball when it flew towards his seat."
+      },
+      "question_text": "Passage:\nUnder the law of torts, the doctrine of *volenti non fit injuria* ('no injury is done to a willing person') acts as a complete defence against a claim for damages. Under this legal doctrine, if a person voluntarily consents to suffer harm, or knowingly and willingly agrees to run the risk of a specific injury, they cannot subsequently maintain an action in tort for any damage resulting from that risk.\n\nTo successfully invoke the defence of *volenti non fit injuria*, two essential elements must be established:\nFirst, the plaintiff must have had full knowledge of both the existence and the extent of the risk involved in the relevant activity. A mere generic awareness that some risk exists is insufficient; the plaintiff must fully understand and appreciate the specific nature and degree of danger.\nSecond, the plaintiff, having full knowledge of the risk, must have voluntarily agreed—either expressly through written or oral words, or impliedly through clear conduct—to undergo that exact risk.\n\nAn important limitation applies regarding negligence: consent given by a spectator or participant to the inherent and customary risks naturally associated with a sport does not amount to consent to injury caused by another person's independent negligence or deliberate misconduct. However, where an injury arises purely from an ordinary, inherent risk of the activity that the spectator voluntarily attended, the defence applies fully.\n\nFacts:\nKaran purchased a ticket and attended a professional cricket match at a stadium. During the game, a batsman hit a hard shot that flew into the spectator stands and struck Karan on the shoulder, causing a minor injury. Karan sued the stadium authorities for damages, arguing that they failed to prevent the ball from hitting him. The stadium authorities proved that Karan was a regular cricket fan who fully knew that balls frequently fly into the stands during matches.\n\nIs the stadium authority liable to compensate Karan?",
+      "pedagogical_explanation": "1. Step-by-Step Solution:\n- Apply the legal principle: *volenti non fit injuria* applies when (1) the plaintiff has full knowledge and appreciation of the risk, and (2) voluntarily agrees to run that risk either expressly or impliedly through conduct.\n- Fact application: Karan knew cricket balls regularly fly into the stands (full knowledge/appreciation). By voluntarily purchasing a ticket and attending the match, his conduct implied consent to the inherent, customary risks of attending a cricket match.\n- No independent negligence or reckless act by the stadium is stated in the facts.\n- Therefore, the stadium authority is exonerated under *volenti non fit injuria*, making option (B) the correct answer.\n\n2. Shortcut / Reading Signal:\nLook for the phrase 'impliedly through clear conduct' in the principle and match it with Karan's action of buying a ticket and attending despite full knowledge.\n\n3. Trap Analysis:\n- Main Distractor Trap (C): Requires an express written waiver. This is a trap because the passage explicitly states consent can be 'impliedly through clear conduct'. Demanding a written form imports an extra condition not present in the rule.\n- Trap (A): Imports an outside rule of absolute duty / strict liability, which contradicts the principle set out in the passage.\n- Trap (D): Introduces 'contributory negligence' (duty to duck), an outside legal concept completely absent from the passage.",
+      "correct_answer": "B",
+      "verify_code": "",
+      "id": "AI-CLG-67188434",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "67188434c7e1daed853ae59f148bff7f4f2feed9d8f3c6f4d206478c09a7542a",
+      "created_at": "2026-10-28T08:35:45.125065+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Geometric Progression - infinite series",
+      "trap_type": "Forgetting to take square root of r^2",
+      "options": {
+        "A": "1/3",
+        "B": "2/3",
+        "C": "4/9",
+        "D": "5/9"
+      },
+      "question_text": "The sum of an infinite geometric series with positive terms is 18, and the sum of its first two terms is 10. What is the common ratio of the series?",
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Sum of an infinite GP is S_inf = a / (1 - r) = 18, which gives a = 18(1 - r).\n2. Sum of the first two terms is S_2 = a + ar = a(1 + r) = 10.\n3. Substitute a from step 1 into step 2: 18(1 - r)(1 + r) = 10 => 18(1 - r^2) = 10.\n4. Simplify: 1 - r^2 = 10/18 = 5/9 => r^2 = 4/9.\n5. Since all terms are positive, r = sqrt(4/9) = 2/3.\n\nShortcut: Use the direct relation S_2 = S_inf * (1 - r^2). Thus, 1 - r^2 = S_2 / S_inf = 10/18 = 5/9, giving r = sqrt(4/9) = 2/3 in under 20 seconds.\n\nMain Distractor: C (4/9) is the main distractor, resulting from correctly solving 1 - r^2 = 5/9 to get r^2 = 4/9, but forgetting to take the square root at the final step. Option D (5/9) comes from taking 1 - r^2 directly as r.",
+      "verify_code": "from fractions import Fraction\nimport math\n\nS_inf = 18\nS_2 = 10\nr_sq = 1 - Fraction(S_2, S_inf)\nr = math.sqrt(r_sq)\nanswer = 'B' if abs(r - 2/3) < 1e-9 else 'A'",
+      "id": "AI-IQ-5b9cc685",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "5b9cc68544d4028fa783e71d96aaedb48a4dd0add1ec62674c3116cb9dee5992",
+      "created_at": "2026-10-28T08:36:14.315955+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Grammar - Dangling Modifiers",
+      "trap_type": "Dangling modifier trap (attaching the participial action to an inanimate object)",
+      "options": {
+        "A": "Having worked late into the night preparing the quarterly presentation, the laptop crashed before the analyst could save her work.",
+        "B": "Having worked late into the night preparing the quarterly presentation, the analyst lost her work when the laptop suddenly crashed.",
+        "C": "Having worked late into the night preparing the quarterly presentation, a sudden crash of the laptop wiped out the analyst's work.",
+        "D": "Preparing the quarterly presentation late into the night, the laptop's crash prevented the analyst from saving her work."
+      },
+      "question_text": "Identify the grammatically correct version of the underlined part:\n\n**Having worked late into the night preparing the quarterly presentation**, the laptop crashed before the analyst could save her work.",
+      "pedagogical_explanation": "Grammar shortcut: An introductory participial phrase (such as 'Having worked late...') must logically modify the subject that immediately follows the comma. An inanimate object like a laptop cannot work late into the night preparing reports; only 'the analyst' can perform that action. Option B correctly places 'the analyst' as the subject immediately after the comma. Main distractor A is wrong because it creates a classic dangling modifier error by attaching the action of working late to 'the laptop'. Options C and D repeat the exact same dangling error with 'a sudden crash' and 'the laptop's crash'.",
+      "correct_answer": "B",
+      "verify_code": "",
+      "id": "AI-IV-49b30e9d",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "49b30e9d435f9f10ff782a28e0d7f7e1b6da9104278d905f056cb7a156fb12a3",
+      "created_at": "2026-10-28T08:36:54.768573+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Contract Law - Doctrine of Frustration and Self-Induced Impossibility",
+      "trap_type": "Applying the general rule while ignoring the exception (Self-Induced Frustration)",
+      "options": {
+        "A": "Yes, because the temporary loss of voice made performance physically impossible, which automatically discharges both parties under frustration.",
+        "B": "No, because Aravind voluntarily chose to undergo elective surgery despite knowing the inherent risk, making the impossibility self-induced.",
+        "C": "No, because medical emergencies and health conditions can never be claimed as grounds for frustration in personal service contracts.",
+        "D": "Yes, because a 20% risk was low enough that the vocal loss constitutes an unforeseen supervening medical event beyond his control."
+      },
+      "question_text": "Passage:\nUnder the law of contract, a contract is deemed frustrated and automatically dissolved when an unforeseen, supervening event occurs after the formation of the contract, making the performance of the contract legally or physically impossible, or radically transforming the obligation into something entirely different from what was originally contemplated by the parties. Frustration discharges both parties from their future obligations under the contract.\n\nHowever, the doctrine of frustration is subject to three strict conditions and exceptions:\nFirst, the supervening event must not be caused by the fault, negligence, or deliberate act of either party (a situation known as 'self-induced frustration'). If a party's own voluntary act or omission brings about the impossibility, that party cannot rely on frustration to escape liability for breach of contract.\nSecond, the contract must not contain an express or implied provision (such as a force majeure clause) that explicitly allocates the risk of the supervening event to one of the parties. If the contract allocates the risk, the express terms govern, and the contract is not frustrated.\nThird, a mere increase in financial difficulty, commercial hardship, or reduced profitability does not constitute frustration. Performance must become impossible or radically altered, not merely more expensive.\n\nFacts:\nAravind, a renowned singer, contracted with Zenith Cultural Club to perform at a concert on 15th November for ₹2,000,000. Zenith paid Aravind an advance of ₹500,000. The contract contained no clause regarding cancellation or unexpected events. On 10th November, Aravind voluntarily decided to undergo an elective, non-emergency cosmetic vocal enhancement surgery. His surgeon explicitly warned him that there was a 20% risk of vocal cord inflammation requiring two weeks of complete voice rest. Aravind proceeded with the surgery. Due to post-surgery inflammation, Aravind lost his voice on 14th November and could not perform. Zenith sued Aravind for breach of contract. Aravind defended by claiming the contract was frustrated due to unforeseen medical impossibility.\n\nIs Aravind's defense of frustration legally valid?",
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step resolution:\n1. Identify the core legal rule and exceptions: Frustration discharges a contract when an unforeseen event makes performance physically impossible. However, Exception 1 specifies that 'self-induced frustration'—impossibility caused by the voluntary act, fault, or deliberate decision of a party—cannot be relied upon to claim frustration.\n2. Apply to facts: Aravind's surgery was 'elective, non-emergency,' and he proceeded 'voluntarily' after being explicitly warned of the 20% risk. Choosing to undergo a non-essential procedure knowing it carries a risk of disabling his voice means the resulting impossibility was brought about by his own voluntary act.\n3. Conclusion: Because the impossibility was self-induced, Aravind cannot claim frustration. Zenith's suit for breach succeeds.\n\nReading Signal: Look for factual modifiers indicating choice/fault ('voluntarily', 'elective', 'warned him of risk') and match them against the text's exception ('voluntary act or omission', 'self-induced frustration').\n\nMain Distractor Analysis:\n- Option A is the main distractor (Trap Type: Applying the general rule while ignoring the exception). It correctly identifies physical impossibility, but fails to check whether that impossibility was self-induced by Aravind's elective decision.\n\nOther Traps:\n- Option C (Trap Type: Overgeneralization/Extraneous Rule): The passage never states that medical conditions can 'never' frustrate personal service contracts; non-self-induced medical emergencies (e.g., an unexpected accident) could. C invents an absolute prohibition not in the text.\n- Option D (Trap Type: Irrelevant Fact/Probability Distractor): It focuses on the 20% probability figure to claim the outcome was 'unforeseen', ignoring the principle that taking a voluntary elective risk makes the frustration self-induced regardless of the exact percentage.",
+      "verify_code": "def solve():\n    voluntary_act = True\n    known_risk = True\n    self_induced = voluntary_act and known_risk\n    if self_induced:\n        return 'B'\n    return 'A'\n\nanswer = solve()",
+      "id": "AI-CLG-5c295776",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "5c29577675107d9799bffda2a725ccdd11afe67b7ae4b997c6f7ff1b54dbb5b1",
+      "created_at": "2026-10-28T08:37:35.834668+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Logarithms - change of base and quadratic reduction",
+      "trap_type": "Stopping at transformed variable y instead of solving for original variable x",
+      "options": {
+        "A": "5",
+        "B": "32",
+        "C": "12",
+        "D": "13"
+      },
+      "question_text": "What is the sum of all real values of x satisfying the logarithmic equation log_x(2) * log_(x/16)(2) = log_(x/64)(2)?",
+      "correct_answer": "C",
+      "pedagogical_explanation": "Shortcut: Apply the reciprocal change-of-base property log_b(a) = 1 / log_a(b). Letting y = log_2(x), the terms rewrite as 1/y, 1/(y - 4), and 1/(y - 6). The equation becomes (1/y) * (1/(y - 4)) = 1/(y - 6). Cross-multiplying yields y - 6 = y(y - 4) => y^2 - 5y + 6 = 0. Factoring gives roots y = 2 and y = 3. Re-substituting y = log_2(x): x = 2^2 = 4 and x = 2^3 = 8. Checking domain restrictions, both x = 4 and x = 8 keep all bases positive and non-1. Thus, the sum of all valid values of x is 4 + 8 = 12.\n\nMain Distractor Analysis:\nOption A (5) is the main trap caused by a conceptual oversight: students correctly solve the transformed quadratic to get y = 2 and y = 3, but prematurely sum these values (2 + 3 = 5) without converting back to x. Option B (32) calculates the product of the solutions (4 * 8) instead of their sum. Option D (13) incorrectly computes x as y^2 rather than 2^y, giving x = 4 and x = 9.",
+      "verify_code": "y1, y2 = 2, 3\nx1, x2 = 2**y1, 2**y2\nans = x1 + x2\nanswer = 'C' if ans == 12 else 'A'",
+      "id": "AI-IQ-f1f5c6e2",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "f1f5c6e2b713dd1199cd4f29a4fd80def41b4082953df0ac67cb027bc0069333",
+      "created_at": "2026-10-28T08:38:11.601658+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Sentence Correction - Subject-Verb Agreement (Proximity Rule)",
+      "trap_type": "Over-generalization of singular rule for 'neither'",
+      "options": {
+        "A": "Neither the principal investigator nor her junior research associates was capable of explaining the sudden discrepancy in the telemetry data.",
+        "B": "Neither the principal investigator nor her junior research associates were capable of explaining the sudden discrepancy in the telemetry data.",
+        "C": "Neither the junior research associates nor the principal investigator were capable of explaining the sudden discrepancy in the telemetry data.",
+        "D": "Neither the principal investigator or her junior research associates was capable of explaining the sudden discrepancy in the telemetry data."
+      },
+      "question_text": "Which of the following sentences is grammatically correct?",
+      "pedagogical_explanation": "Grammar shortcut: When two subjects are connected by the correlative conjunction 'neither... nor', the verb must agree in number with the subject closest to it (the Rule of Proximity).\n\n1. Check conjunction pairing: 'Neither' must be paired with 'nor', making D incorrect for using 'or'.\n2. Evaluate proximity in B: The noun phrase closest to the verb is 'junior research associates' (plural), which correctly takes the plural verb 'were'.\n3. Evaluate A: 'was' is incorrect because the adjacent noun phrase 'associates' is plural.\n4. Evaluate C: The word order is reversed, placing the singular 'principal investigator' next to the verb, which would require 'was', rendering 'were' incorrect.\n\nMain distractor A represents a classic IPMAT trap: candidates memorize that 'neither' as a standalone pronoun takes a singular verb (e.g., 'neither of them is ready') and erroneously apply a strict singular verb rule even when 'nor' joins a plural subject adjacent to the verb.",
+      "correct_answer": "B",
+      "verify_code": "answer = 'B'",
+      "id": "AI-IV-e31c11a5",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "e31c11a5852e3cd71f3fd4888da2cacf3be5827de0c770deb646023f885f0838",
+      "created_at": "2026-10-28T08:38:44.353511+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Tort Law - Private Necessity and Landowner Interference",
+      "trap_type": "Applying the general compensation rule of Private Necessity while ignoring the landowner forfeiture exception",
+      "options": {
+        "A": "Yes, because Private Necessity is a qualified defence that requires the actor to pay full compensation for any actual material damage caused to the property owner's dock.",
+        "B": "No, because David's act of mooring his boat fell under the doctrine of Public Necessity, which grants absolute immunity from paying any damages.",
+        "C": "No, because Rohan forcibly interfered with David's lawful exercise of Private Necessity, thereby forfeiting his right to claim compensation for the resulting destruction of the dock.",
+        "D": "Yes, because David entered Rohan's private dock without prior permission, making him a trespasser strictly liable for all resulting harm."
+      },
+      "question_text": "Passage:\nUnder the law of torts, intentional interference with another person's land or goods constitutes trespass. However, the doctrine of necessity provides a valid legal defence where an act that would otherwise be actionable as trespass is committed under an imminent and severe threat to prevent a greater harm.\n\nThe law distinguishes between Public Necessity and Private Necessity based on whose interests are being protected:\n\n1. Public Necessity: An act is justified under Public Necessity if it is committed to avert an imminent, severe, and widespread danger to the general public or community, such as destroying a private building to prevent a raging wildfire from engulfing an entire city. In cases of Public Necessity, the defence is absolute. The actor bears no legal liability whatsoever and is not required to compensate the owner for any property damage caused.\n\n2. Private Necessity: An act is justified under Private Necessity when it is committed solely to preserve the life, body, or property of the actor or a specific third person against an imminent peril. Unlike Public Necessity, Private Necessity is a qualified defence. While it privileges the entry or use of another's property—meaning the actor cannot be treated as a wrongful trespasser, sued for nominal damages, or forcibly ejected—it does not extinguish the obligation to pay for actual damage caused. The actor remains strictly liable to compensate the property owner for all actual material harm inflicted on the owner's property while exercising this privilege.\n\n3. Rule of Non-Interference: Because an actor operating under Private Necessity is legally privileged to be on the property, the landowner has no legal right to forcibly resist, eject, or interfere with the actor's entry or stay. If the landowner intentionally or forcibly repels or interferes with an actor who is lawfully exercising the privilege of Private Necessity, the landowner commits a tort against the actor and forfeits any right to claim compensation for any subsequent loss or damage to the landowner's property caused directly or indirectly as a result of that interference.\n\nFacts:\nCaptain David was navigating his private boat with two guests when a sudden, violent storm erupted, creating an imminent risk of capsizing and drowning. To save himself and his guests, David moored his boat to a private dock owned by Rohan without seeking permission. The mooring itself caused no damage to the dock.\n\nMinutes later, Rohan saw David's boat docked at his private property. Ignoring David's pleas that leaving would mean certain death in the storm, Rohan forcibly unmoored David's boat and pushed it back into the turbulent water. A violent wave immediately drove the unmoored boat heavily back into the dock, completely smashing and destroying the dock (causing a loss of Rs. 5,00,000) and severely damaging David's boat. Rohan filed a lawsuit against David to recover Rs. 5,00,000 as compensation for the destruction of his dock.\n\nIs Rohan entitled to recover Rs. 5,00,000 as compensation for his destroyed dock from David?",
+      "pedagogical_explanation": "To solve this strictly according to the passage:\n1. Identify the defence category: David acted to save his own life and the lives of two guests. Since this protected specific individuals rather than averting a widespread public disaster, it falls under Private Necessity (Rule 2), not Public Necessity (Rule 1).\n2. Apply the default rule vs exception: Under Rule 2, an actor exercising Private Necessity normally remains liable for actual material damage caused to the property. However, Rule 3 introduces a specific override: if the landowner forcibly interferes with or repels an actor lawfully exercising Private Necessity, the landowner forfeits any right to claim compensation for subsequent losses caused by that interference.\n3. Evaluate the facts: David was lawfully exercising Private Necessity. Rohan forcibly unmoored and pushed David's boat into the storm. This active interference directly caused the wave to hurl the boat into the dock, destroying it. Under Rule 3, Rohan's forcible interference forfeits his right to claim compensation.\n\nTherefore, Rohan cannot recover the Rs. 5,00,000: (C).\n\nTrap Analysis:\n- Option A (Main Distractor): Correctly identifies Private Necessity as a qualified defence requiring compensation for material damage (Rule 2), but commits the critical error of ignoring Rule 3 (the forfeiture exception due to the landowner's forcible interference).\n- Option B: Incorrectly classifies saving three individuals as Public Necessity. Public necessity requires averting widespread public disaster (e.g., stopping a city-wide fire).\n- Option D: Ignores the doctrine of necessity entirely, treating David as an unprivileged trespasser.",
+      "correct_answer": "C",
+      "verify_code": "answer = 'C'",
+      "id": "AI-CLG-12b5d23a",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "12b5d23acb2030fea2802e89d398718d6b6dc7be03eabcab428be175949a1dcc",
+      "created_at": "2026-10-28T08:39:23.822864+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Logarithms - symmetry and existence of roots using Intermediate Value Theorem",
+      "trap_type": "Confusing the axis of symmetry / midpoint of roots with the sum of roots",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6"
+      },
+      "question_text": "What is the sum of all real solutions to the equation:\n$$\\log_2(x^2 - 4x + 5) + \\log_3(x^2 - 4x + 10) = 3 - (x - 2)^2$$",
+      "correct_answer": "C",
+      "pedagogical_explanation": "1. **Substitute to simplify:** Notice that $x^2 - 4x + 5 = (x - 2)^2 + 1$ and $x^2 - 4x + 10 = (x - 2)^2 + 9$. Let $u = (x - 2)^2$. Since $x$ is real, $u \\ge 0$.\n\n2. **Rewrite the equation in terms of $u$:**\n$$\\log_2(u + 1) + \\log_3(u + 9) = 3 - u$$\nRearranging gives $h(u) = \\log_2(u + 1) + \\log_3(u + 9) + u - 3 = 0$.\n\n3. **Analyze existence and uniqueness of $u$:**\n- $h(u)$ is strictly increasing for $u \\ge 0$ because each term ($\\log_2(u+1)$, $\\log_3(u+9)$, and $u$) is strictly increasing.\n- Evaluate at boundaries: $h(0) = \\log_2(1) + \\log_3(9) + 0 - 3 = 0 + 2 - 3 = -1 < 0$.\n- $h(1) = \\log_2(2) + \\log_3(10) + 1 - 3 = 1 + \\log_3(10) - 2 = \\log_3(10) - 1 > 0$ (since $10 > 3$).\n- By the Intermediate Value Theorem, there exists a **unique** root $u_0 \\in (0, 1)$.\n\n4. **Find the sum of $x$ values:**\nSince $u_0 > 0$, solving $(x - 2)^2 = u_0$ yields two distinct real solutions:\n$$x_1 = 2 + \\sqrt{u_0} \\quad \\text{and} \\quad x_2 = 2 - \\sqrt{u_0}$$\nTheir sum is $x_1 + x_2 = (2 + \\sqrt{u_0}) + (2 - \\sqrt{u_0}) = 4$.\n\n**Shortcut / Reading Signal:**\nRecognize the functional symmetry about $x = 2$: the equation depends solely on $(x - 2)^2$. Any valid solution $x$ must have a symmetric counterpart $4 - x$. Once you confirm that a unique positive value $u_0$ exists, the two roots are symmetric about 2, making their sum immediately $2 \\times 2 = 4$ without needing to calculate $u_0$ explicitly.\n\n**Main Distractor Trap:**\nOption B (2) is the primary trap. Solvers often identify $x = 2$ as the axis of symmetry and mistakenly output $2$ itself—confusing the midpoint of the roots with the sum of the roots, or incorrectly assuming $x = 2$ ($u = 0$) is a root without checking $h(0) = -1 \\neq 0$.",
+      "verify_code": "import math\ndef h(u):\n    return math.log2(u + 1) + math.log(u + 9, 3) + u - 3\na, b = 0.0, 1.0\nfor _ in range(100):\n    mid = (a + b) / 2\n    if h(mid) > 0:\n        b = mid\n    else:\n        a = mid\nu0 = (a + b) / 2\nx1 = 2 + math.sqrt(u0)\nx2 = 2 - math.sqrt(u0)\nval = round(x1 + x2)\nanswer = {0:'A', 2:'B', 4:'C', 6:'D'}[val]",
+      "id": "AI-IQ-c349f3de",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "c349f3dea37ba2f78adc9a85b16e47e2bce8bd20c83c8846106c77d413690601",
+      "created_at": "2026-10-28T08:40:47.316230+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Critical Reasoning - Core Flaw",
+      "trap_type": "Temporal symptom trap (Option A) vs Systemic conceptual insight (Option B)",
+      "options": {
+        "A": "Confusing short-term financial gains with long-term stability due to an inability to forecast multi-generational crop lifecycles.",
+        "B": "Mistaking the supporting elements of a complex system for redundant noise simply because they do not directly yield the target commodity.",
+        "C": "Selecting a tree species whose high resource consumption rate inevitably depleted soil nutrients faster than native species.",
+        "D": "Prioritizing commercial profitability over ecological sustainability through an intentional disregard for nature."
+      },
+      "question_text": "Passage:\nIn eighteenth-century Prussia, state foresters sought to maximize timber yields by replacing natural, diverse woodlands with neatly planted monocultures of Norway spruce. Initially, production soared, prompting bureaucrats to celebrate the triumph of rational management. However, by the second generation, yields collapsed precipitously: standardized soil lost its nutrients, pests decimated the uniform canopy, and the lack of undergrowth led to severe erosion. What the planners had dismissed as unnecessary chaos in native forests was, in fact, the essential ecological infrastructure that sustained long-term growth.\n\nWhich of the following best describes the fundamental flaw in the foresters' approach?",
+      "pedagogical_explanation": "1. Step-by-Step Analysis:\n- The text contrasts what the foresters saw ('unnecessary chaos' to be eliminated for efficiency) with what that 'chaos' actually was ('essential ecological infrastructure').\n- The foresters isolated one visible, profitable output (timber) and eliminated everything else (undergrowth, species variety, soil complexity), failing to realize those unharvested elements were precisely what made timber growth possible.\n- Thus, their conceptual error was treating systemic support structures as useless clutter simply because those elements did not directly generate the target commodity. This makes (B) the correct answer.\n\n2. Reading Signal / Insight:\nFocus on the final contrast sentence: 'What the planners had dismissed as unnecessary chaos... was, in fact, the essential ecological infrastructure.' The passage moves beyond a mere history of failure to critique a specific cognitive bias: mistaking systemic complexity for inefficiency.\n\n3. Trap Analysis:\n- Option A (Main Distractor): Very tempting to hasty readers because the text mentions initial success followed by second-generation collapse. However, A wrongly frames the error as a temporal forecasting mistake about 'lifecycles'. The flaw was not bad timing calculations; it was a fundamental mischaracterization of ecosystemic dependencies.\n- Option C (Narrow Specificity Trap): Blames the particular choice of tree (Norway spruce). The text makes clear that the monocultural, non-systemic approach—not just the tree species—caused the collapse.\n- Option D (Moral Projection Trap): Imports external moral judgments ('intentional disregard'). The bureaucrats believed they were achieving 'rational management', not committing an ethical breach.",
+      "correct_answer": "B",
+      "verify_code": "",
+      "id": "AI-IV-ce4e9d2d",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ce4e9d2dee69d66c0cac7330b7a25d19a95d08a0fbefa8240c0a49635d6934db",
+      "created_at": "2026-10-28T08:42:03.792790+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Four colleagues—Arun, Barun, Charan, and Darun—each own exactly one car from the following four brands: Audi, BMW, Chevrolet, and Dodge. No two colleagues own the same brand of car. The following information is known:\n\n1. Arun owns neither the Audi nor the Dodge.\n2. Barun owns the Chevrolet.\n3. Charan does not own the Dodge.\n\nWho owns the Audi?",
+      "options": {
+        "A": "Arun",
+        "B": "Barun",
+        "C": "Charan",
+        "D": "Darun"
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "To solve this, we use a process of elimination (Cross-grid method):\n1. From Clue 2, Barun = Chevrolet. This removes Chevrolet from the options for the other three people.\n2. From Clue 1, Arun does not own Audi or Dodge. Since Barun already owns the Chevrolet, the only remaining option for Arun is BMW.\n3. Now we have two cars left: Audi and Dodge, and two people: Charan and Darun.\n4. From Clue 3, Charan does not own the Dodge. Therefore, Charan must own the Audi.\n5. By elimination, Darun owns the Dodge.\n\nShortcut: Always look for the person with the most 'negative' constraints (Arun) after the 'positive' constraint (Barun) is applied.",
+      "trap_type": "Misinterpreting negative constraints",
+      "concept_tag": "Logic Puzzle - Cross-grid elimination",
+      "verify_code": "import itertools\npeople = ['Arun', 'Barun', 'Charan', 'Darun']\ncars = ['Audi', 'BMW', 'Chevrolet', 'Dodge']\nresults = []\nfor p in itertools.permutations(cars):\n    # p[0]=Arun, p[1]=Barun, p[2]=Charan, p[3]=Darun\n    cond1 = (p[0] != 'Audi' and p[0] != 'Dodge')\n    cond2 = (p[1] == 'Chevrolet')\n    cond3 = (p[2] != 'Dodge')\n    if cond1 and cond2 and cond3:\n        results.append(p)\n# results[0] is ('BMW', 'Chevrolet', 'Audi', 'Dodge')\n# Find who owns Audi\nowner_index = results[0].index('Audi')\nanswer = 'ABCD'[owner_index]",
+      "id": "AI-CD-f3cfa41f",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "f3cfa41f365bc0b73d3e35aed55d58e271f639d8cee821ae8bf6f8196af992db",
+      "created_at": "2026-10-28T08:42:35.313904+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Statement: 'The university has decided to make introductory computer programming a mandatory course for all history and literature majors. This move will significantly improve the job prospects of these graduates, given that the modern workforce is increasingly tech-centric.'\n\nWhich of the following is an assumption the argument depends on?",
+      "options": {
+        "A": "Every history and literature student will successfully master complex programming languages.",
+        "B": "Employers in the tech-centric workforce value programming skills even in candidates applying for roles traditionally filled by humanities majors.",
+        "C": "History and literature majors are currently the least employable graduates in the university system.",
+        "D": "A background in humanities is no longer relevant to the modern job market."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve this, use the Negation Test: If we assume the opposite of (B)—that employers do NOT value programming skills when hiring for humanities-related roles—the conclusion that these graduates' job prospects will improve falls apart. Therefore, (B) is a necessary link. (A) is the 'Sufficiency' trap; the argument doesn't require mastery of 'complex' languages by 'every' student to see an improvement. (C) is a 'Comparison' trap; the argument claims an improvement for these specific students, not a comparison with others. (D) is an 'Extreme' trap; the argument suggests adding a skill, not that the original degree is now useless.",
+      "trap_type": "Extreme scope/Necessity vs Sufficiency",
+      "concept_tag": "Assumption",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CLR-c8034281",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c8034281f08d5272b7931e3e22b1aa5c70a6303d10eee8601d98afd2756db68e",
+      "created_at": "2026-10-28T08:42:51.923494+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A software firm allocates four projects (P1, P2, P3, and P4) to four leads (L1, L2, L3, and L4). Each project starts in a different month from January to April. Each project takes exactly two months to complete (e.g., a project starting in January ends at the end of February). The office has a policy that at most two projects can be running during any single month. The following information is known:\n\n1. Project P1 starts in January.\n2. Project P4 starts exactly two months after Project P2 starts.\n3. L3 is the lead for the project that starts in March.\n4. L1's project starts earlier than L2's project, but L1 is not the lead for Project P1.\n5. Project P3 is not led by L4.\n\nWhich project is led by L2?",
+      "options": {
+        "A": "P1",
+        "B": "P2",
+        "C": "P3",
+        "D": "P4"
+      },
+      "correct_answer": "D",
+      "pedagogical_explanation": "Step 1: Determine the project start months. P1 starts in Jan. P4 starts 2 months after P2. The possible start months are Jan, Feb, Mar, Apr. If P2 started in Jan, P4 would start in Mar. But P1 starts in Jan. Thus, P2 must start in Feb and P4 must start in Apr. The remaining project, P3, must start in Mar. Sequence: Jan (P1), Feb (P2), Mar (P3), Apr (P4).\nStep 2: Check the overlap constraint. Jan: P1. Feb: P1, P2. Mar: P2, P3. Apr: P3, P4. May: P4. At no point are more than 2 projects running. This is valid.\nStep 3: Assign Leads. L3 is Mar (P3). L1 starts before L2, and L1 is not Jan (P1). The available start months for L1 and L2 are Jan, Feb, and Apr. Since L1 is not Jan and must be before L2, L1 must be Feb (P2) and L2 must be Apr (P4). This leaves L4 for Jan (P1). \nStep 4: Verify. P3 is led by L3, so the condition 'P3 is not led by L4' is satisfied. L2 leads P4.",
+      "trap_type": "Premature lock-in",
+      "concept_tag": "Scheduling with Overlap Constraints",
+      "verify_code": "import itertools\n\nmonths = ['Jan', 'Feb', 'Mar', 'Apr']\nprojects = ['P1', 'P2', 'P3', 'P4']\nleads = ['L1', 'L2', 'L3', 'L4']\n\n# Find project sequence\n# P1 is Jan (index 0). P4 = P2 + 2.\n# Possible indices for P2: 1 (Feb). If P2=1, P4=3 (Apr). P3=2 (Mar).\nproj_order = ['P1', 'P2', 'P3', 'P4'] # Jan, Feb, Mar, Apr\n\n# Lead assignments to months 0, 1, 2, 3\nvalid_leads = []\nfor p in itertools.permutations(leads):\n    # p[0] is Jan lead, p[1] is Feb lead, etc.\n    cond3 = (p[2] == 'L3')\n    cond4a = (leads.index(p[0]) < leads.index(p[1]) or leads.index(p[0]) < leads.index(p[2]) or leads.index(p[0]) < leads.index(p[3])) # L1 before L2 logic below\n    # Correct cond4: index of L1 in p < index of L2 in p\n    idx_L1 = p.index('L1')\n    idx_L2 = p.index('L2')\n    cond4 = (idx_L1 < idx_L2) and (p[0] != 'L1')\n    cond5 = (p[proj_order.index('P3')] != 'L4')\n    \n    if cond3 and cond4 and cond5:\n        valid_leads.append(p)\n\n# Result: valid_leads[0] is ('L4', 'L1', 'L3', 'L2')\n# L2 is month index 3, which is P4.\nanswer = 'D' if valid_leads[0][3] == 'L2' else 'X'",
+      "id": "AI-CD-bb05ab5a",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "bb05ab5ae307afcbaf3f0c46f823d68264a33eca51c487fbb96c6417fcb62e9c",
+      "created_at": "2026-10-28T08:46:41.156103+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "The 'Green-Shield' certification is awarded to any commercial air filter whose components consist of at least 50% recycled fiber by weight. A major manufacturer recently redesigned its 'Pure-Air' filter to meet this standard, increasing the recycled fiber content from 20% in the old model to 50% in the new model. The manufacturer's spokesperson announced: 'This transition ensures that each Pure-Air filter produced now results in a smaller absolute weight of newly-mined (non-recycled) fiber being contributed to the environment compared to the previous model.'\n\nWhich of the following is an assumption required by the spokesperson's conclusion?",
+      "options": {
+        "A": "The total weight of fiber in the new Pure-Air filter is not 60% or more greater than the total weight of fiber in the old model.",
+        "B": "The new Pure-Air filters are not significantly more expensive to manufacture than the previous 20% recycled fiber models.",
+        "C": "The manufacturer does not plan to increase the total number of Pure-Air filters it produces and sells annually.",
+        "D": "The process of recycling fiber does not consume more energy than the process of mining and processing new fiber."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The conclusion claims an absolute reduction in the weight of a specific component (non-recycled fiber) based on a change in its percentage. To solve this, use the Negation Test: If the total weight of the filter increased significantly, even a higher percentage of recycled material might not reduce the absolute weight of the 'bad' material. \n\nStep 1: Calculate the 'bad' material in the old model: 100% - 20% = 80% non-recycled.\nStep 2: Calculate the 'bad' material in the new model: 100% - 50% = 50% non-recycled.\nStep 3: Compare. For the new model (50%) to be less than the old model (80%), the total weight must not have increased by a factor of 80/50 (which is 1.6). \n\nIf we negate (A) and assume the weight increased by 60% (factor of 1.6) or more, then 50% of the new weight would be equal to or greater than 80% of the old weight. This would falsify the spokesperson's claim of a 'smaller absolute weight.' Therefore, (A) is a necessary logical assumption.",
+      "trap_type": "Confusing percentages with absolute quantities",
+      "concept_tag": "Assumption - Percentage vs Absolute",
+      "verify_code": "old_bad_percent = 0.80\nnew_bad_percent = 0.50\n# If weight increases by 60%, new_weight = 1.6 * old_weight\n# new_absolute = 0.50 * 1.6 = 0.80\n# old_absolute = 0.80 * 1.0 = 0.80\n# At 60% increase, they are equal. Above 60%, new is heavier.\nanswer = 'A'",
+      "id": "AI-CLR-84058589",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "84058589f9bb99c44065edb4924057891bf07217ed52821bd2822e91ef477f42",
+      "created_at": "2026-10-28T08:47:26.434570+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: The general rule of 'caveat emptor' (buyer beware) dictates that a seller is not responsible for the fitness of goods for any particular purpose. However, an exception exists: where a buyer makes known to the seller the specific purpose for which the goods are required, showing that the buyer relies on the seller's skill or judgment, there is an implied condition that the goods shall be reasonably fit for that purpose. Notwithstanding this exception, in the case of a contract for the sale of a specified article under its patent or other trade name, there is no implied condition as to its fitness for any particular purpose, even if the buyer has expressed a specific need.\n\nFact Situation: Rohan is a professional chef who needs a high-heat resistant oil for deep-frying. He visits 'Oil-Experts,' a specialty store. He tells the manager, 'I need an oil that can withstand 400 degrees without smoking.' The manager is about to recommend a refined avocado oil. However, Rohan points to a bottle on the shelf and says, 'I've heard great things about \"Arctic-Pure Virgin Coconut Oil\"; I'll take five liters of that.' The manager knows that this specific brand of virgin oil smokes at 350 degrees, but he processes the sale. Rohan's kitchen is damaged by smoke during the first use. Is the store liable?",
+      "options": {
+        "A": "Yes, because Rohan clearly disclosed the specific purpose and temperature requirement to the manager.",
+        "B": "Yes, because the manager as an expert had a duty to warn Rohan that the oil was unsuitable.",
+        "C": "No, because by requesting the oil by its specific trade name, Rohan negated the implied condition of fitness.",
+        "D": "No, because the rule of caveat emptor always protects the seller in high-end commercial transactions."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "The passage provides a three-layered rule. 1. General rule: Buyer beware. 2. Exception: If the buyer discloses the purpose and relies on the seller, the seller is liable for fitness. 3. Exception to the exception: If the buyer buys a product under a 'patent or trade name', the seller's liability for fitness is removed, regardless of whether the purpose was disclosed. Here, Rohan specifically asked for 'Arctic-Pure Virgin Coconut Oil' by its trade name. This triggers the 'Notwithstanding' clause of the passage. Even though he disclosed his need for 400-degree resistance, the trade name purchase overrides the seller's obligation to ensure fitness for that purpose. (C) correctly identifies this insight. (A) is the main distractor because it stops at the first exception and ignores the final clause. (B) introduces an external 'duty to warn' not mentioned in the text.",
+      "trap_type": "Ignoring the 'exception to the exception' (the trade name clause)",
+      "concept_tag": "Legal RC - Caveat Emptor and Trade Name Exception",
+      "verify_code": "def check_liability():\n    purpose_disclosed = True\n    reliance_on_seller = True\n    trade_name_used = True\n    \n    # Rule 1: General rule is no liability\n    liability = False\n    \n    # Rule 2: If purpose disclosed and reliance shown, liability = True\n    if purpose_disclosed and reliance_on_seller:\n        liability = True\n        \n    # Rule 3: If trade name used, liability = False (overrides Rule 2)\n    if trade_name_used:\n        liability = False\n        \n    return 'C' if liability == False else 'A'\n\nanswer = check_liability()",
+      "id": "AI-CR-996e7f9d",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "996e7f9d4d49d6f2a8509d7f04fe645f42daf70298df0b450318ea203fcd170c",
+      "created_at": "2026-10-28T08:57:42.106445+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A technology firm, 'Smarter Systems', transitioned its entire software engineering department to a permanent remote-work model last year. Internal data recently revealed that the total number of software bugs resolved by the department per month has increased by 30% compared to the previous year when employees worked in the office. Based on this data, the HR Director concluded that the remote-work environment has inherently increased the efficiency and focus of the engineering team.\n\nWhich of the following is an assumption required by the HR Director’s argument?",
+      "options": {
+        "A": "Software engineers at Smarter Systems are generally more satisfied with their jobs in a remote-work setting than in an office setting.",
+        "B": "The 30% increase in bug resolutions was not primarily achieved by a significant increase in the total number of engineers employed by the firm.",
+        "C": "Every individual engineer in the department has seen an increase in their personal bug-resolution rate since the transition.",
+        "D": "The software bugs assigned to the team during the remote-work period were, on average, more complex than those assigned in the previous year."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The argument moves from an aggregate metric (total resolutions) to a qualitative conclusion about efficiency (output per unit of input). To validate this jump, we must assume that the 'input' (the number of engineers) did not increase at a rate that explains the 'output' growth. \n\nStep 1: Identify the Conclusion — Remote work increased the efficiency of the team.\nStep 2: Identify the Evidence — Total bug resolutions rose by 30%.\nStep 3: Apply the Negation Test to B — 'The increase was primarily due to a significant increase in the number of engineers.' If the firm hired 50% more engineers to get a 30% increase in resolutions, the team actually became *less* efficient. Since the negation destroys the argument, B is a necessary assumption.\n\nShortcut: Whenever an argument uses 'Total/Gross' figures to claim 'Efficiency/Rate' improvements, look for an assumption that the denominator (the size of the group or time spent) remained stable.",
+      "trap_type": "Denominator Neglect (Aggregate vs. Ratio)",
+      "concept_tag": "Necessary Assumption",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CLR-7da0af83",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7da0af83433a8b542578afa4dd20350fed02a9b324ec1392b8fa6b6eb410d998",
+      "created_at": "2026-10-28T08:58:24.217068+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A juice vendor mixes 12 liters of orange juice costing ₹40 per liter with 8 liters of pomegranate juice costing ₹70 per liter. What is the cost price per liter of the resulting blend?",
+      "options": {
+        "A": "₹55",
+        "B": "₹52",
+        "C": "₹58",
+        "D": "₹46"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To find the average cost of a mixture, we use the Weighted Average formula: (n1*v1 + n2*v2) / (n1 + n2). Step 1: Calculate total cost = (12 liters * ₹40) + (8 liters * ₹70) = 480 + 560 = ₹1040. Step 2: Calculate total quantity = 12 + 8 = 20 liters. Step 3: Average price = 1040 / 20 = ₹52 per liter. Shortcut (Alligation Ratio): The ratio of quantities is 12:8, which simplifies to 3:2. The price gap is 70 - 40 = 30. The average price will be closer to the cheaper juice in the inverse ratio. The deviation from ₹40 = [2 / (3+2)] * 30 = 12. So, 40 + 12 = 52. Trap (A): Simple average (40+70)/2 = 55. This occurs when students ignore the volume weights.",
+      "trap_type": "Simple arithmetic mean",
+      "concept_tag": "Mixtures - Weighted Average",
+      "verify_code": "answer = (12 * 40 + 8 * 70) / (12 + 8)\nif answer == 52: answer = 'B'",
+      "id": "AI-CQ-18bd78b8",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "18bd78b87d6b18161dc60298f8a2358a31f91d6a3170390889010c9776d4e28f",
+      "created_at": "2026-10-28T08:58:36.987069+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 8,
-      "rejected": 0,
-      "accepted": 8
+      "attempts": 11,
+      "rejected": 2,
+      "accepted": 9
     },
     "CAT VARC RC": {
-      "attempts": 11,
-      "rejected": 3,
+      "attempts": 15,
+      "rejected": 7,
       "accepted": 8
     },
     "CAT DILR": {
-      "attempts": 10,
-      "rejected": 4,
-      "accepted": 6
-    },
-    "CLAT RC": {
-      "attempts": 8,
-      "rejected": 0,
+      "attempts": 14,
+      "rejected": 6,
       "accepted": 8
     },
-    "CLAT Logical Reasoning": {
+    "CLAT RC": {
       "attempts": 11,
+      "rejected": 2,
+      "accepted": 9
+    },
+    "CLAT Logical Reasoning": {
+      "attempts": 14,
       "rejected": 5,
-      "accepted": 6
+      "accepted": 9
+    },
+    "CLAT Legal Reasoning": {
+      "attempts": 3,
+      "rejected": 0,
+      "accepted": 3
+    },
+    "IPMAT Quant": {
+      "attempts": 4,
+      "rejected": 1,
+      "accepted": 3
+    },
+    "IPMAT Verbal": {
+      "attempts": 3,
+      "rejected": 0,
+      "accepted": 3
     }
   }
 }
