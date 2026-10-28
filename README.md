@@ -129,6 +129,7 @@ Set `EXAM_FAMILY` in an app's Streamlit secrets (or env) to choose which app it 
 |---|---|---|
 | `mgmt_law` (default) | CAT · CLAT · IPMAT | live |
 | `sarkari` | SSC CGL/CHSL · Railway NTPC/Group D · Bank IBPS/SBI PO/Clerk | live |
+| `cuet` | CUET UG: General Test · English · Maths | ready (see below) |
 | `medical` | NEET UG | coming soon |
 | `engineering` | JEE Main | coming soon |
 
@@ -140,6 +141,36 @@ To deploy a new app: Streamlit Community Cloud → New app → same repo, branch
 in Secrets paste the same keys as the existing app plus `EXAM_FAMILY = "sarkari"` and that app's own
 `APP_URL`. Add the new app URL to the Google OAuth redirect URIs (`<APP_URL>/oauth2callback`, also set as
 `redirect_uri` in its `[auth]` secrets) and to your Razorpay website/app details.
+
+### 🎓 Deploying the CUET app
+
+The CUET app ("CUET Adaptive Engine") is a separate Streamlit app from this same repo:
+
+1. **Database (once):** in Supabase → SQL Editor run `supabase/migrations/2026-10-28_cuet_family.sql`
+   (after `2026-10-28_exam_families.sql`). It adds `'cuet'` to the `pro_entitlements.exam_family` check so
+   CUET Pro gets its own row. Until it runs, the CUET app works for practice but shows
+   "Pro coming soon for this app (database setup pending)" and never shows a pay button.
+2. **App:** Streamlit Community Cloud → New app → repo `Creator-hub24/cat-clat-adaptive-engine`, branch `main`,
+   file `app.py`.
+3. **Secrets:** paste the same secrets as the existing app (`SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, `PEPPER`,
+   `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `[auth]`), then set `EXAM_FAMILY = "cuet"`, this app's own
+   `APP_URL`, and `redirect_uri = "<APP_URL>/oauth2callback"` in its `[auth]` block. Keep `PEPPER` identical
+   so signed-in users map to the same account. `RAZORPAY_PAYMENT_LINK` (the static fallback link) is used
+   only by the default app.
+4. **Google OAuth:** add `<APP_URL>/oauth2callback` to the OAuth client's authorised redirect URIs.
+5. **Razorpay:** same account and keys. Payment links carry `notes.exam_family = "cuet"` and the CUET app
+   only accepts links with that note, so a payment in one app never unlocks another. Add the new app URL
+   to your Razorpay website/app details.
+
+**Question bank.** The CUET app serves `data/aptisetu_cuet_bank.json` (408 AptiSetu CUET MCQs; 407 served:
+General Test 287, English 61, Maths 59). It is rebuilt from the AptiSetu source with
+`python scripts/import_aptisetu.py <aptisetu>/data/cuet.json --family cuet`, which applies
+`data/aptisetu_curation/cuet/`: verified ids (independent solve), the exclusion of one ambiguous item, 28
+duplicate drops, fixes, and a seeded balanced option shuffle (items whose option order carries meaning
+are never shuffled). HTML is converted to plain text, matrices are written `[a, b; c, d]`, and `|` is
+written as `∣` so nothing can render as a table. To add AI questions offline (same verification
+pipeline, never at runtime): `python scripts/build_bank.py --family cuet` (CUET General Knowledge is never
+generated).
 
 ## ☁️ Deploy to Streamlit Community Cloud
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.

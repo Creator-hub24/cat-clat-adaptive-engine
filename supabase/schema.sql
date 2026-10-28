@@ -50,10 +50,10 @@ revoke all on public.question_reports from anon, authenticated;
 -- v0.4: intro price marker (see supabase/migrations/2026-10-27_pro_purchases.sql)
 alter table public.profiles add column if not exists pro_purchases int not null default 0;
 
--- v0.5: exam families (see supabase/migrations/2026-10-28_exam_families.sql)
+-- v0.5: exam families (see supabase/migrations/2026-10-28_exam_families.sql; 'cuet' added by 2026-10-28_cuet_family.sql)
 create table if not exists public.pro_entitlements (
   user_id              text not null references public.profiles(user_id) on delete cascade,
-  exam_family          text not null check (exam_family in ('mgmt_law','sarkari','medical','engineering')),
+  exam_family          text not null check (exam_family in ('mgmt_law','sarkari','cuet','medical','engineering')),
   pro_until            date,
   pro_purchases        int  not null default 0,
   pending_payment_ref  text,

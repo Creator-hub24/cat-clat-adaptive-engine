@@ -12,6 +12,8 @@ ROOT = Path(__file__).parent
 SEED_PATH = ROOT / "data" / "sample_bank.json"
 AI_BANK_PATH = ROOT / "data" / "ai_bank.json"
 APTISETU_PATH = ROOT / "data" / "aptisetu_bank.json"  # imported by scripts/import_aptisetu.py
+APTISETU_CUET_PATH = ROOT / "data" / "aptisetu_cuet_bank.json"  # import_aptisetu.py --family cuet
+IMPORT_PATHS = [APTISETU_PATH, APTISETU_CUET_PATH]  # every imported bank the apps serve from (filtered by topic)
 REVIEW_STATUSES = ("unreviewed", "approved", "rejected")
 NEAR_DUP_JACCARD = 0.6
 

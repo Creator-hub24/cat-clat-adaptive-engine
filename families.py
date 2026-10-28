@@ -44,6 +44,24 @@ FAMILIES: dict[str, dict] = {
         "level_labels": {"CAT-Level": "Exam-Level"},
         "coming_soon": False,
     },
+    "cuet": {
+        "name": "CUET Adaptive Engine",
+        "title": "CUET UG Adaptive Practice Engine",
+        "sidebar_title": "🎓 CUET Engine",
+        "tagline": "CUET UG General Test, English and Maths practice: verified questions, named traps, speed tracking.",
+        "icon": "🎓",
+        "badge": "🎓",
+        "accent": "#D97706",   # amber
+        "accent2": "#F59E0B",  # lighter amber
+        "sections": {
+            "General Test": ["CUET Quantitative Reasoning", "CUET General Mental Ability",
+                             "CUET Logical & Analytical Reasoning", "CUET General Knowledge"],
+            "English": ["CUET English Reading Comprehension", "CUET English Verbal Ability"],
+            "Mathematics": ["CUET Maths Section A", "CUET Maths Section B1"],
+        },
+        "level_labels": {"CAT-Level": "Exam-Level"},
+        "coming_soon": False,
+    },
     "medical": {
         "name": "NEET Adaptive Engine",
         "title": "NEET UG Adaptive Practice Engine",

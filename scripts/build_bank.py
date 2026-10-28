@@ -7,6 +7,11 @@ reject on any disagreement. Accepted questions are deduped (normalised hash + 5-
 written to the bank after EACH acceptance, so the script can be stopped and resumed at any time.
 
   GEMINI_API_KEY=... python scripts/build_bank.py --per-cell 14 --rpm 8 --max-calls 450
+  GEMINI_API_KEY=... python scripts/build_bank.py --family cuet --per-cell 14   # CUET app topics
+
+--family picks the app whose topics are generated (default mgmt_law: CAT, CLAT, IPMAT). Few-shot examples and
+the duplicate check use that family's own bank (seed or sample bank plus its verified AptiSetu import), so CUET
+questions are styled on CUET items, not CAT ones. All families share data/ai_bank.json; each app serves its topics.
 
 Free tier: keep --rpm under your model's RPM limit; --max-calls caps a run below the daily quota.
 """
@@ -27,6 +32,7 @@ sys.path.insert(0, str(ROOT))
 
 import bank  # noqa: E402
 import engine  # noqa: E402
+import families  # noqa: E402
 import llm  # noqa: E402
 import prompts  # noqa: E402
 
@@ -86,7 +92,12 @@ class ThrottledClient:
 
 # Explicit prefixes where the initials rule would clash ("CLAT Legal Reasoning" -> CLR, already CLAT Logical Reasoning).
 ID_PREFIX_OVERRIDES = {"CLAT Legal Reasoning": "CLG", "CLAT Current Affairs & GK": "CGK",
-                       "Sarkari Quantitative Aptitude": "SQA", "Sarkari General Awareness": "SGA"}
+                       "Sarkari Quantitative Aptitude": "SQA", "Sarkari General Awareness": "SGA",
+                       # CUET: initials would clash (CUET General Knowledge -> CGK) or contain '&'
+                       "CUET Quantitative Reasoning": "CUQR", "CUET General Mental Ability": "CUGMA",
+                       "CUET Logical & Analytical Reasoning": "CULAR", "CUET General Knowledge": "CUGK",
+                       "CUET English Reading Comprehension": "CURC", "CUET English Verbal Ability": "CUVA",
+                       "CUET Maths Section A": "CUMA", "CUET Maths Section B1": "CUMB"}
 
 
 def topic_prefix(topic: str) -> str:
@@ -94,20 +105,40 @@ def topic_prefix(topic: str) -> str:
     return ID_PREFIX_OVERRIDES.get(topic) or topic.split()[0][0] + "".join(w[0] for w in topic.split()[1:])
 
 
+def family_examples(family: str | None = None) -> list[dict]:
+    """Reference bank for few-shot examples and duplicate checks. mgmt_law: the seed bank (unchanged behaviour);
+    other families: their sample bank plus their verified, served AptiSetu imports."""
+    fam = families.resolve_family(family or families.DEFAULT_FAMILY)
+    if fam == families.DEFAULT_FAMILY:
+        return bank.load_json_bank(bank.SEED_PATH)["questions"]
+    topics = families.family_topics(fam)
+    own = bank.load_json_bank(bank.ROOT / "data" / f"sample_bank_{fam}.json")["questions"]
+    imported = [q for p in bank.IMPORT_PATHS for q in bank.servable_imports(bank.load_json_bank(p)["questions"])
+                if q.get("verified")]
+    return [q for q in own + imported if q["topic"] in topics]
+
+
+def family_topics_to_generate(family: str | None = None) -> list[str]:
+    secs = prompts.sections_for(family or families.DEFAULT_FAMILY)
+    return [t for sec in secs.values() for t in sec if t not in engine.NO_AI_GENERATION_TOPICS]
+
+
 def cell_counts(questions):
     return Counter((q["topic"], q["difficulty"]) for q in questions)
 
 
 def build(client, per_cell: int, out_path: Path, max_tries_per_q: int = 2, max_fail_per_cell: int = 6,
-          topics=None, difficulties=None, log=print) -> dict:
+          topics=None, difficulties=None, log=print, family: str | None = None) -> dict:
     data = bank.load_json_bank(out_path)
     data.setdefault("meta", {}).update({"version": 1, "generator": "scripts/build_bank.py"})
     qs = data.setdefault("questions", [])
     stats = data.setdefault(STATS_KEY, {})
-    seed = bank.load_json_bank(bank.SEED_PATH)["questions"]
-    # Current-affairs topics need web-grounded facts the generator cannot verify: never auto-generated.
-    topics = topics or [t for sec in prompts.SECTIONS.values() for t in sec
-                        if t not in engine.NO_AI_GENERATION_TOPICS]
+    if family is None and topics:  # e.g. --topic "CUET Maths Section A": use that topic's app bank
+        found = {families.topic_family(t) for t in topics}
+        family = found.pop() if len(found) == 1 else None
+    seed = family_examples(family)
+    # Current-affairs / GK topics need web-grounded facts the generator cannot verify: never auto-generated.
+    topics = topics or family_topics_to_generate(family)
     difficulties = difficulties or prompts.DIFFICULTIES
     cells = [(t, d) for d in difficulties for t in topics]
     # round-robin across cells so a quota stop still leaves an even spread
@@ -166,6 +197,8 @@ def main(argv=None):
     ap.add_argument("--rpm", type=float, default=8, help="request ceiling per minute (free tier ~10)")
     ap.add_argument("--max-calls", type=int, default=450, help="hard cap on API calls this run")
     ap.add_argument("--out", type=Path, default=bank.AI_BANK_PATH)
+    ap.add_argument("--family", choices=[k for k, f in families.FAMILIES.items() if not f["coming_soon"]],
+                    help="app whose topics are generated (default: mgmt_law, or the family of the --topic values)")
     ap.add_argument("--topic", action="append")
     ap.add_argument("--difficulty", action="append")
     a = ap.parse_args(argv)
@@ -174,7 +207,7 @@ def main(argv=None):
         sys.exit("GEMINI_API_KEY is not set")
     client = ThrottledClient(llm.make_client(key), a.rpm, a.max_calls)
     try:
-        data = build(client, a.per_cell, a.out, topics=a.topic, difficulties=a.difficulty)
+        data = build(client, a.per_cell, a.out, topics=a.topic, difficulties=a.difficulty, family=a.family)
         print("Done: all cells full (or skipped after repeated failures).")
     except QuotaStop as e:
         print(f"Stopped early: {e}. Progress is saved; re-run to resume.")

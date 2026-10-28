@@ -52,8 +52,9 @@ parse_question_json = engine.parse_question_json
 def load_pool() -> list[dict]:
     """Seed bank + scheduled (pre-generated) AI bank + imports, rejected items excluded. No API call needed.
     pick_unseen serves the scheduled AI questions first."""
-    pool = qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"],
-                              qbank.load_json_bank(qbank.APTISETU_PATH)["questions"])
+    imported = [q for p in qbank.IMPORT_PATHS for q in qbank.load_json_bank(p)["questions"]
+                if q["topic"] in FAMILY_TOPICS]  # CAT and CUET AptiSetu imports
+    pool = qbank.serving_pool(load_bank(), qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"], imported)
     return [q for q in pool if q["topic"] in FAMILY_TOPICS]  # only this app's exams
 
 
@@ -260,6 +261,9 @@ def daily_challenge() -> dict:
     approved = [q for q in qbank.load_json_bank(qbank.AI_BANK_PATH)["questions"]
                 if q.get("review_status") == "approved" and q.get("verified") and q["topic"] in FAMILY_TOPICS]
     base = load_bank() + approved   # only faculty-approved AI items join the shared daily question
+    if not base:  # app with no seed bank yet (CUET): rotate through its verified, served imports instead
+        imported = [q for q in load_pool() if q["source"] == "AptiSetu bank" and q.get("verified")]
+        return dict(engine.daily_pick(imported, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     q = dict(engine.daily_pick(base, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     return q if q["id"].startswith("AI-") else mark_seed(q)
 
@@ -409,9 +413,17 @@ with st.sidebar:
                                                 app_name=FAMILY["name"], exam_family=FAMILY["key"])
                     s.pending_ref, s.pay_url = link["reference_id"], link["short_url"]
                     persist()
+                    if not getattr(s.db, "entitlements_ok", True) and FAMILY["key"] != families.DEFAULT_FAMILY:
+                        # the payment ref could not be stored (e.g. pro_entitlements not migrated for this app):
+                        # never show a pay button whose payment this app could not record
+                        s.pending_ref = None
+                        s.pop("pay_url", None)
+                        st.rerun()
                 except Exception as e:
                     st.error(f"Could not create payment link: {e}")
-            pay_url = s.get("pay_url") or (secret("RAZORPAY_PAYMENT_LINK") if not s.get("pending_ref") else None)
+            # the static fallback link has no reference/exam_family note, so only the default app may show it
+            static_link = secret("RAZORPAY_PAYMENT_LINK") if FAMILY["key"] == families.DEFAULT_FAMILY else None
+            pay_url = s.get("pay_url") or (static_link if not s.get("pending_ref") else None)
             if pay_url:
                 st.link_button(f"Pay ₹{price // 100} securely on Razorpay ↗" if s.get("pay_url")
                                else "Pay securely on Razorpay ↗", pay_url, width="stretch")
