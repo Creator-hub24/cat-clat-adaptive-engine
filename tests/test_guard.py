@@ -16,8 +16,8 @@ def test_pro_cap_counts_only_today():
     assert guard.ai_used_today({"ai_day": "2026-10-27", "ai_used": 100}, now) == 100
     assert guard.ai_used_today({"ai_day": "2026-10-26", "ai_used": 100}, now) == 0
     assert guard.ai_used_today(None, now) == 0
-    assert guard.PRO_DAILY_AI_CAP == 100
-    assert not guard.pro_cap_reached(99) and guard.pro_cap_reached(100)
+    assert guard.PRO_DAILY_AI_CAP == 50
+    assert not guard.pro_cap_reached(49) and guard.pro_cap_reached(50)
 
 
 def test_speed_check():
@@ -63,5 +63,5 @@ def test_wording_mentions_fair_use():
     src = open("app.py").read()
     assert "unlimited AI questions" not in src and "unlimited fresh questions" not in src
     assert "Unlimited practice" in src
-    assert guard.FAIR_USE_NOTE == ("Pro includes up to 100 fresh AI questions per day; "
+    assert guard.FAIR_USE_NOTE == ("Pro includes up to 50 fresh AI questions per day; "
                                    "question-bank practice is unlimited.")

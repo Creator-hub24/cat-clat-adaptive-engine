@@ -79,3 +79,49 @@ def test_bank_exhausted_and_ai_blocked_returns_none():
     pf, c = prefetch.Prefetcher(), Calls()
     c.ok_start = c.ok_serve = False
     assert run(pf, c, bank_q=None, wait=5) == (None, "none")
+
+
+def test_after_50_cap_pro_gets_bank_questions():
+    import guard
+    used = {"n": 0}
+    pf, c = prefetch.Prefetcher(), Calls()
+    c.ok_serve = c.ok_start = None  # replaced by cap-driven gates below
+
+    def gate():
+        return not guard.pro_cap_reached(used["n"])
+
+    def make_job():
+        c.started += 1
+        return lambda: {"id": f"AI-{c.started}", "source": "AI"}
+
+    def go(bank_id):
+        return prefetch.serve_pro(pf, ("T", "Easy"), bank=lambda: {"id": bank_id}, may_serve_ai=gate,
+                                  may_start_ai=gate, make_job=make_job,
+                                  on_ai_served=lambda q: used.__setitem__("n", used["n"] + 1))
+    assert guard.PRO_DAILY_AI_CAP == 50
+    srcs = []
+    for i in range(60):
+        settle(pf)
+        srcs.append(go(f"B{i}")[1])
+    assert used["n"] == 50                      # exactly the cap is served as AI
+    assert srcs[-5:] == ["bank"] * 5            # afterwards: bank questions, no errors
+    started_at_cap = c.started
+    go("Bx")
+    assert c.started == started_at_cap          # no new AI generation once capped
+
+
+def test_solver_uses_primary_model_first():
+    import llm
+    import prompts
+    assert prompts.MODEL_CANDIDATES[0] == "gemini-3.6-flash"
+    seen = []
+
+    class M:
+        def generate_content(self, model, contents, config):
+            seen.append(model)
+            return type("R", (), {"text": '{"answer": "A", "ambiguous": false}'})()
+
+    client = type("C", (), {"models": M()})()
+    llm.independent_solve(client, list(prompts.MODEL_CANDIDATES),
+                          {"question_text": "q", "options": {"A": "1", "B": "2"}}, "gemini-3.6-flash")
+    assert seen == ["gemini-3.6-flash"]

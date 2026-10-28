@@ -568,7 +568,7 @@ with tab_practice:
                         st.text(str(e)[:1500])
         elif q is None and api_key and live_ok:
             st.warning("You've done every bank question at this level and today's free AI questions are used up. "
-                       "Upgrade to Pro for unlimited practice (up to 100 fresh AI questions a day); serving a question from another level for now.")
+                       "Upgrade to Pro for unlimited practice (up to 50 fresh AI questions a day); serving a question from another level for now.")
         elif q is None:
             st.info("You've done every bank question at this level, so here is one from another level of this topic.")
         set_current(q or seed_question(topic, difficulty, s.seen))

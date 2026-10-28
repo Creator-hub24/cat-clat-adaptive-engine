@@ -156,3 +156,27 @@ Each cell shows low / high thinking.
   - Gemini free tier is 20 requests/day/model, as above.
   - All three need a paid key for production. Check the per-minute limits against the expected number of concurrent Pro users.
 - Prices change often (Gemini has an announced increase on 2027-01-01). Re-fetch the three pages before deciding.
+
+## 6. Chosen config (decision 2026-10-28)
+
+**Setup**
+- **Pro cap:** `PRO_DAILY_AI_CAP = 50` fresh AI questions per user per IST day. After the cap, Pro users keep getting unlimited question-bank practice.
+- **Model:** `gemini-3.6-flash` is first in the chain for the writer call (question + explanation) and for the independent solve. The other models in `prompts.MODEL_CANDIDATES` are used only if a call errors or the model is unavailable.
+- **Thinking:** `llm.call_model` sets no `thinking_config`, so each model's default thinking applies. Real cost will fall between the low and high columns below; measure `thoughts_token_count` to pin it down.
+
+Per-question cost and Razorpay net are from sections 1 and 3 (₹88/US$, ×1.3 retries).
+
+| User | AI q/month | Prices | Cost low / high thinking | Margin at ₹999 (net ₹975) | Margin at ₹499 (net ₹487) |
+|---|---|---|---|---|---|
+| Typical, 20/day | 600 | 2026 | ₹245 / ₹837 | ₹731 / ₹139 | ₹243 / ₹-349 |
+| Typical, 20/day | 600 | 2027 | ₹489 / ₹1,673 | ₹486 / ₹-698 | ₹-2 / ₹-1,186 |
+| Typical, 30/day | 900 | 2026 | ₹367 / ₹1,255 | ₹609 / ₹-279 | ₹120 / ₹-768 |
+| Typical, 30/day | 900 | 2027 | ₹734 / ₹2,510 | ₹242 / ₹-1,534 | ₹-246 / ₹-2,022 |
+| Cap-hitting, 50/day | 1,500 | 2026 | ₹611 / ₹2,091 | ₹364 / ₹-1,116 | ₹-124 / ₹-1,604 |
+| Cap-hitting, 50/day | 1,500 | 2027 | ₹1,223 / ₹4,183 | ₹-247 / ₹-3,207 | ₹-735 / ₹-3,696 |
+
+**Reading**
+- At ₹999 with 2026 prices, every user is profitable with low thinking. With high (default-like) thinking, only a 20/day user is.
+- From 2027-01-01 the doubled Gemini price makes a cap-hitting user loss-making even with low thinking.
+- At the ₹499 intro price, most cases lose money. This is acceptable only as a one-month acquisition cost.
+- Main levers: set a low `thinking_budget`, a lower cap in 2027, or the Claude Haiku 5.5 option (section 5).

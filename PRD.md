@@ -116,7 +116,7 @@ Aspirants are often students and working professionals who don't want their prep
 | Assumption | Value | Basis |
 |---|---|---|
 | ARPU (Pro) | ₹999 / month | List price; ignores annual discounts |
-| Gross margin | Depends on AI usage; see [docs/COSTS.md](docs/COSTS.md) | Estimated ₹0.4–₹1.4 per verified AI question (gemini-3.6-flash, 2026 prices; about 2× from 2027-01-01). At ₹999 a light Pro user (20 AI q/day) costs ₹245–₹837 a month; a user at the 100/day cap costs ₹1.2k–₹4.2k, so the cap, thinking budget and bank/AI mix need tuning |
+| Gross margin | Depends on AI usage; see [docs/COSTS.md](docs/COSTS.md) | Estimated ₹0.4–₹1.4 per verified AI question (gemini-3.6-flash, 2026 prices; about 2× from 2027-01-01). At ₹999 a light Pro user (20 AI q/day) costs ₹245–₹837 a month; a user at the 50/day cap costs ₹611–₹2,091 (2026) or ₹1,223–₹4,183 (2027 prices); see "Chosen config" in COSTS.md |
 | Average paid lifetime | 6 months | CAT prep cycle is ~6–9 months; churn is mostly seasonal after the exam |
 | LTV | 999 × 0.85 × 6 ≈ **₹5,100** | |
 | Blended CAC | **≤ ₹1,500** | Mix of organic (YouTube/Telegram content from faculty, daily-challenge sharing) and paid Instagram/YouTube ads |

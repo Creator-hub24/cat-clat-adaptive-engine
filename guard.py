@@ -11,7 +11,7 @@ from __future__ import annotations
 import datetime as dt
 import uuid
 
-PRO_DAILY_AI_CAP = 100
+PRO_DAILY_AI_CAP = 50
 SPEED_WINDOW_S = 60
 SPEED_MAX_IN_WINDOW = 8        # >= 8 AI requests within 60 s
 MIN_HUMAN_GAP_S = 5
@@ -19,8 +19,8 @@ FAST_GAPS_IN_A_ROW = 4         # 4 consecutive gaps under 5 s
 COOLDOWN_S = 10 * 60
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
-FAIR_USE_NOTE = "Pro includes up to 100 fresh AI questions per day; question-bank practice is unlimited."
-CAP_MESSAGE = ("You've used today's 100 fresh AI questions (Pro fair use). Question-bank practice is still "
+FAIR_USE_NOTE = "Pro includes up to 50 fresh AI questions per day; question-bank practice is unlimited."
+CAP_MESSAGE = ("You've used today's 50 fresh AI questions (Pro fair use). Question-bank practice is still "
                "unlimited, so here is a verified bank question. Fresh AI questions are back after midnight IST.")
 COOLDOWN_MESSAGE = ("Whoa, that's faster than anyone can read a question! Fresh AI questions are paused for a "
                     "few minutes. Bank questions keep coming meanwhile.")

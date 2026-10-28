@@ -32,7 +32,7 @@
 - **Error log + spaced repetition:** mistakes come back after 3 → 7 → 15 questions.
 - **Weakness heatmap:** accuracy by topic × difficulty, a speed breakdown (on time / too slow / wrong), and the traps you fall for most.
 - **Streaks & a daily micro-challenge** (cycles through the whole seed bank before repeating).
-- **Freemium + Pro:** 10 AI questions/day free; **Pro: ₹500 off the first month (₹499), then ₹999/month**: Unlimited practice (Pro includes up to 100 fresh AI questions per day per app, counted by IST day; question-bank practice is unlimited). Very fast repeated AI requests trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets fresh AI questions; paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
+- **Freemium + Pro:** 10 AI questions/day free; **Pro: ₹500 off the first month (₹499), then ₹999/month**: Unlimited practice (Pro includes up to 50 fresh AI questions per day per app, counted by IST day; question-bank practice is unlimited). Very fast repeated AI requests trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets fresh AI questions; paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
 - **Optional Google sign-in:** saves your progress across devices. Guest mode works without it.
 - **Privacy-first:** only a hashed ID is stored (HMAC-SHA256 of your email + a server secret). No email, name or photo. One-click **Download my data** and **Delete my data**. See **[PRIVACY.md](PRIVACY.md)**.
 - **Always-on demo:** with no API key, the app serves 45 original seed questions (9 per section, across all three difficulties). All answer keys are hand-checked, and every Quant key is also verified by computation in the test suite.
@@ -46,8 +46,9 @@ retrieve_examples()  ← data/sample_bank.json (seed bank / RAG corpus)
         │
         ▼
 build_prompt() + SYSTEM_PROMPT  ──►  Gemini (JSON mode), first available of:
-        │                           GEMINI_MODEL (optional) → gemini-3.8-flash
-        │                           → gemini-flash-latest → gemini-2.5-flash
+        │                           GEMINI_MODEL (optional) → gemini-3.6-flash (primary)
+        │                           → fallbacks on error: 3.5-flash → 3-flash-preview
+        │                             → 3.8-flash → 3.7-flash → flash-latest
         │                                   │
         │                         parse → sandbox verify_code → independent solve
         │                         ── fail ×2 ──► seed fallback
