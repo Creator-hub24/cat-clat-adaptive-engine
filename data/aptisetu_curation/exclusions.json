@@ -1,0 +1,110 @@
+{
+ "_doc": "Imported but not served until fixed. Remove an entry (after fixing the source or adding a fix) and re-run the import to restore it.",
+ "items": [
+  {
+   "id": "AS-DI-M3-GROUP4-16",
+   "category": "ambiguous",
+   "reason": "Bad stem: 'If Charu is in Camp North, which team is Charu in?' gives the answer in the premise."
+  },
+  {
+   "id": "AS-DI-M5-RANK5-19",
+   "category": "ambiguous",
+   "reason": "Bad stem: 'If Rohan was ranked 4 in Round 2, who was ranked 4 in Round 2?' gives the answer in the premise."
+  },
+  {
+   "id": "AS-DI-M4-CIRCULAR2-09",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked position is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-DP-CIRCULAR12-51",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue; the options also include Hina, the person asked about, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-DP-RANK18-81",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked rank is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-ROW1-05",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-ROW2-02",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-ROW2-03",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-SCHED1-02",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-SCHED1-03",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-SCHED2-02",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-SCHED2-03",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the answer is stated directly in a clue, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-TAB1-05",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked total is already printed in the table, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-TAB2-05",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked total is already printed in the table, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-TAB3-05",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked total is already printed in the table, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-TAB4-05",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked total is already printed in the table, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-EZ-TAB5-05",
+   "category": "answer_giveaway",
+   "reason": "Key is correct but the asked total is already printed in the table, so it tests nothing."
+  },
+  {
+   "id": "AS-DI-M3-CIRCULAR3-12",
+   "category": "unknown_person",
+   "reason": "Key is correct by elimination but the question asks about Zoya, who is not introduced in the set."
+  },
+  {
+   "id": "AS-DI-M4-LINEAR3-12",
+   "category": "unknown_person",
+   "reason": "Key is correct by elimination but the question asks about Dev, who is not introduced in the set."
+  },
+  {
+   "id": "AS-DI-M4-LINEAR3-14",
+   "category": "unknown_person",
+   "reason": "Key is correct by elimination but the question asks about Dev, who is not introduced in the set."
+  },
+  {
+   "id": "AS-DI-DP-LINEAR11-47",
+   "category": "unknown_person",
+   "reason": "Key is correct by elimination but the set says six cyclists but names only five."
+  }
+ ]
+}

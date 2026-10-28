@@ -1,0 +1,21 @@
+{
+ "_doc": "Same question imported twice under different ids: 'drop' is left out of the bank, 'keep' is served.",
+ "pairs": [
+  {
+   "keep": "AS-QA-CQ9",
+   "drop": "AS-QA-CQ92"
+  },
+  {
+   "keep": "AS-QA-CQ32",
+   "drop": "AS-QA-CQ100"
+  },
+  {
+   "keep": "AS-QA-CQ122",
+   "drop": "AS-QA-M1-QA-15"
+  },
+  {
+   "keep": "AS-QA-CQ17",
+   "drop": "AS-QA-M4-QA-06"
+  }
+ ]
+}

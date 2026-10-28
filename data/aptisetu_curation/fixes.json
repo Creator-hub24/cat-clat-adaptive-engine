@@ -1,0 +1,27 @@
+{
+ "_doc": "Text fixes applied at import time. 'find' must occur exactly once in question_text.",
+ "stem_fixes": [
+  {
+   "id": "AS-QA-M3-QA-04",
+   "find": "Enter the ratio A : B as a single number A/B.",
+   "replace": "Which option gives the ratio A : B, written as the single number A/B?"
+  },
+  {
+   "id": "AS-QA-M3-QA-17",
+   "find": "Enter your answer as a multiple of √3 (e.g. 27 if the area is 27√3).",
+   "replace": "If the area is k√3 cm², which option gives k?"
+  }
+ ],
+ "option_shuffle": {
+  "_doc": "Rebalance answer positions in series whose keys were skewed. Each series gets an equal share of A/B/C/D keys; option references in explanations are remapped.",
+  "seed": "aptisetu-2026-10-28",
+  "series": [
+   "AS-VR-CV",
+   "AS-VR-M1-",
+   "AS-VR-M2-",
+   "AS-VR-M3-",
+   "AS-VR-M4-",
+   "AS-VR-M5-"
+  ]
+ }
+}
