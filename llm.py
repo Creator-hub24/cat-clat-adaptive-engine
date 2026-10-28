@@ -48,9 +48,9 @@ def call_model(client, models, contents, system, temperature):
 
 
 def independent_solve(client, models, q, writer_model=None) -> tuple[str | None, bool]:
-    """Separate call with the key withheld; prefers a different model from the writer."""
-    if writer_model in models and len(models) > 1:
-        models = [m for m in models if m != writer_model] + [writer_model]
+    """Separate call with the key withheld (temperature 0). Uses the same primary-first chain as the
+    writer (gemini-3.6-flash); fallbacks are only for errors/unavailability. writer_model is kept for
+    API compatibility."""
     opts = "\n".join(f"{k}) {v}" for k, v in q["options"].items())
     text, _ = call_model(client, models, f"{q['question_text']}\n\nOptions:\n{opts}", SOLVER_PROMPT, 0.0)
     data = engine.parse_json_blob(text)

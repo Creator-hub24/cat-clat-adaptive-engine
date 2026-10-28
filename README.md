@@ -25,14 +25,14 @@
 - **Adaptive difficulty per topic (default):** your level in each topic steps up after 2 consecutive correct answers *within the target time* and down after 2 consecutive wrong ones. Levels are saved for signed-in users. A manual override is in the sidebar.
 - **Answer-key checks on AI questions:** for Quant (and computable DILR) the model must also return a short Python `verify_code`, which runs in a restricted sandbox (3 s timeout; only `math`, `itertools` and `fractions`; no files or network) and must reproduce the key. Every AI question then gets a separate solve pass with the key hidden. If either check disagrees, the app regenerates (max 2 tries) and then falls back to a seed question. Questions that pass show a ✅ Verified badge. These checks reduce wrong keys; they do not eliminate them. Use **Report this question** (anonymous) when one slips through.
 - **Per-question timer:** targets of Easy ≈ 60 s, Moderate 90–120 s and CAT-Level 2–3 min, with RC targets scaled by passage length. Correct-but-slow answers are tagged **Right but too slow** in feedback and analytics.
-- **Pre-generated, verified question bank (default):** practice is served from the 45 hand-checked seed questions plus `data/ai_bank.json` (first batch: 7 live-generated, verified and spot-checked questions; the Gemini free tier allows only 20 requests/day per model, about 50 questions/day across the fallback models, so run `python scripts/build_bank.py --per-cell 14` daily to resume toward the ~210 target), a bank generated offline by `scripts/build_bank.py` through the same verification pipeline. No live API call happens per question, so the app costs nothing per user and keeps working under load or when the API is down. No question repeats for a user until the bank for that topic and level runs out (tracked across devices when signed in). Live AI generation runs only for Pro users, or for free users who have done every bank question at their level (within the daily cap). Items a faculty reviewer rejects are never served. Items not yet reviewed are labelled "faculty review pending".
+- **Pre-generated, verified question bank (default):** practice is served from the 45 hand-checked seed questions plus `data/ai_bank.json` (first batch: 7 live-generated, verified and spot-checked questions; the Gemini free tier allows only 20 requests/day per model, about 50 questions/day across the fallback models, so run `python scripts/build_bank.py --per-cell 14` daily to resume toward the ~210 target), a bank generated offline by `scripts/build_bank.py` through the same verification pipeline. No live API call happens per question, so the app costs nothing per user and keeps working under load or when the API is down. No question repeats for a user until the bank for that topic and level runs out (tracked across devices when signed in). There is no live AI at runtime for anyone (free or Pro): the only AI cost is the scheduled daily batch that tops up `data/ai_bank.json` through `scripts/build_bank.py`. Scheduled AI questions are served first, freshest generation day first (by `created_at`), so users see the newest questions before older ones; once a user has seen all of them for a topic and level, the rest of the bank (seed, family sample bank, AptiSetu imports) follows. Items a faculty reviewer rejects are never served. Items not yet reviewed are labelled "faculty review pending".
 - **CLAT Current Affairs & GK (verified bank only):** CLAT UG-style news passages (~300 words) on real events, with MCQs on the event and related static GK. Every seed question stores a `source_url` and an `as_of` date, and its facts were checked against that source. The generator has no web grounding, so this topic is **excluded from daily auto-generation** (`scripts/build_bank.py`) **and from live AI generation** (`engine.NO_AI_GENERATION_TOPICS`), instead of letting the model hallucinate current affairs. Refresh it by adding hand-verified seed questions with `source_url`/`as_of`.
 - **Strict JSON + validation:** fence stripping, trailing-comma repair, A–D normalisation and key checks.
 - **Pedagogical feedback:** the correct answer, the trap type of the main distractor (Extreme scope, Out-of-scope, Half-true, Reversal…), and a step-by-step explanation with the shortcut.
 - **Error log + spaced repetition:** mistakes come back after 3 → 7 → 15 questions.
 - **Weakness heatmap:** accuracy by topic × difficulty, a speed breakdown (on time / too slow / wrong), and the traps you fall for most.
 - **Streaks & a daily micro-challenge** (cycles through the whole seed bank before repeating).
-- **Freemium + Pro:** 10 AI questions/day free; **Pro: ₹500 off the first month (₹499), then ₹999/month**: Unlimited practice (Pro includes up to 100 fresh AI questions per day per app, counted by IST day; question-bank practice is unlimited). Very fast repeated AI requests trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets fresh AI questions; paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
+- **Freemium + Pro:** Free: 10 questions/day (counted by IST day; the daily challenge and mistake reviews are not counted); **Pro: ₹500 off the first month (₹499), then ₹999/month**: Unlimited verified practice + fresh questions added every day. For Pro, very fast repeated question requests (a script scraping the bank) trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets new questions; paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
 - **Optional Google sign-in:** saves your progress across devices. Guest mode works without it.
 - **Privacy-first:** only a hashed ID is stored (HMAC-SHA256 of your email + a server secret). No email, name or photo. One-click **Download my data** and **Delete my data**. See **[PRIVACY.md](PRIVACY.md)**.
 - **Always-on demo:** with no API key, the app serves 45 original seed questions (9 per section, across all three difficulties). All answer keys are hand-checked, and every Quant key is also verified by computation in the test suite.
@@ -46,8 +46,9 @@ retrieve_examples()  ← data/sample_bank.json (seed bank / RAG corpus)
         │
         ▼
 build_prompt() + SYSTEM_PROMPT  ──►  Gemini (JSON mode), first available of:
-        │                           GEMINI_MODEL (optional) → gemini-3.8-flash
-        │                           → gemini-flash-latest → gemini-2.5-flash
+        │                           GEMINI_MODEL (optional) → gemini-3.6-flash (primary)
+        │                           → fallbacks on error: 3.5-flash → 3-flash-preview
+        │                             → 3.8-flash → 3.7-flash → flash-latest
         │                                   │
         │                         parse → sandbox verify_code → independent solve
         │                         ── fail ×2 ──► seed fallback
@@ -87,8 +88,7 @@ cd cat-clat-adaptive-engine
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# optional: enable AI generation (without it the app runs in seed-bank demo mode)
-export GEMINI_API_KEY="your-key"        # or copy .streamlit/secrets.toml.example to .streamlit/secrets.toml
+# the app itself never calls Gemini; GEMINI_API_KEY is only needed for scripts/build_bank.py
 
 streamlit run app.py
 ```
@@ -98,7 +98,7 @@ Every service is optional. If its secrets are missing, the app falls back: guest
 
 | Feature | Secrets | Where |
 |---|---|---|
-| AI questions | `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) |
+| Daily bank building (`scripts/build_bank.py` only; the app does not use it) | `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) |
 | Google sign-in | `[auth]` block | Google Cloud Console → OAuth client (Web). Redirect URI: `https://<your-app>.streamlit.app/oauth2callback` |
 | Saved progress | `PEPPER`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY` | Supabase project → run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor |
 | Pro payments | `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `APP_URL` | Razorpay Dashboard → API Keys (test mode first) |
@@ -144,8 +144,8 @@ in Secrets paste the same keys as the existing app plus `EXAM_FAMILY = "sarkari"
 ## ☁️ Deploy to Streamlit Community Cloud
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
 2. **Create app** → repo `Creator-hub24/cat-clat-adaptive-engine`, branch `main`, file `app.py`.
-3. **Advanced settings → Secrets:** paste `GEMINI_API_KEY = "your-key"`.
-4. Deploy. Optionally set `GEMINI_MODEL` to pin a model; otherwise the fallback list above is used.
+3. **Advanced settings → Secrets:** paste the optional service secrets below. No `GEMINI_API_KEY` is needed: the app serves only the verified bank.
+4. Deploy.
 
 ## 🧭 Roadmap
 Mentor Meera's test builder, IRT-based adaptive sequencing. See [PRD.md §9](PRD.md#9-roadmap).

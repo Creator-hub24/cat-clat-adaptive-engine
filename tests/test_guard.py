@@ -11,13 +11,8 @@ def test_ist_day_boundary():
     assert guard.ist_today(dt.datetime(2026, 10, 27, 18, 31, tzinfo=dt.timezone.utc)) == "2026-10-28"
 
 
-def test_pro_cap_counts_only_today():
-    now = dt.datetime(2026, 10, 27, 6, 0, tzinfo=dt.timezone.utc)
-    assert guard.ai_used_today({"ai_day": "2026-10-27", "ai_used": 100}, now) == 100
-    assert guard.ai_used_today({"ai_day": "2026-10-26", "ai_used": 100}, now) == 0
-    assert guard.ai_used_today(None, now) == 0
-    assert guard.PRO_DAILY_AI_CAP == 100
-    assert not guard.pro_cap_reached(99) and guard.pro_cap_reached(100)
+def test_no_pro_ai_cap_any_more():
+    assert not hasattr(guard, "PRO_DAILY_AI_CAP") and not hasattr(guard, "CAP_MESSAGE")
 
 
 def test_speed_check():
@@ -63,5 +58,61 @@ def test_wording_mentions_fair_use():
     src = open("app.py").read()
     assert "unlimited AI questions" not in src and "unlimited fresh questions" not in src
     assert "Unlimited practice" in src
-    assert guard.FAIR_USE_NOTE == ("Pro includes up to 100 fresh AI questions per day; "
-                                   "question-bank practice is unlimited.")
+    assert guard.PRO_PITCH == "Unlimited verified practice + fresh questions added every day"
+    assert guard.PRO_NOTE == "Pro: Unlimited verified practice + fresh questions added every day."
+    for doc in ("app.py", "guard.py", "README.md", "PRD.md"):
+        text = open(doc, encoding="utf-8").read()
+        assert "50 fresh AI" not in text and "up to 50" not in text and "10 AI questions" not in text, doc
+    assert guard.FREE_NOTE == "Free: 10 questions/day."
+    assert "10 AI questions" not in src
+
+
+# ---------------------------------------------------------------- free tier: 10 bank questions / IST day
+def test_free_counter_counts_only_today():
+    now = dt.datetime(2026, 10, 28, 6, 0, tzinfo=dt.timezone.utc)
+    assert guard.free_used_today("2026-10-28", 7, now) == 7
+    assert guard.free_used_today("2026-10-27", 7, now) == 0
+    assert guard.free_used_today(None, None, now) == 0
+    assert guard.FREE_DAILY_QUESTION_CAP == 10
+    assert not guard.free_cap_reached(9) and guard.free_cap_reached(10)
+
+
+def test_free_cap_is_10_total_then_message():
+    served, used = [], 0
+    for i in range(12):
+        q, used, note = guard.serve_free(used, bank=lambda i=i: {"id": f"B{i}"}, fallback=lambda: {"id": "F"})
+        served.append(q)
+    assert [q["id"] for q in served[:10]] == [f"B{i}" for i in range(10)]
+    assert served[10] is None and served[11] is None and used == 10
+    q, used2, note = guard.serve_free(10, bank=lambda: {"id": "x"}, fallback=lambda: {"id": "y"})
+    assert q is None and used2 == 10 and note == guard.FREE_CAP_MESSAGE
+    assert guard.FREE_CAP_MESSAGE.startswith("You've used today's 10 free questions.")
+
+
+def test_free_fallback_counts_once_and_bank_not_called_after_cap():
+    calls = []
+    q, used, note = guard.serve_free(3, bank=lambda: None, fallback=lambda: {"id": "other-level"})
+    assert q["id"] == "other-level" and used == 4 and note == "level_exhausted"
+    q, used, note = guard.serve_free(4, bank=lambda: None, fallback=lambda: None)
+    assert q is None and used == 4  # nothing served, nothing counted
+    guard.serve_free(10, bank=lambda: calls.append("b"), fallback=lambda: calls.append("f"))
+    assert calls == []
+
+
+def test_no_live_ai_at_runtime():
+    import inspect
+    import os
+    assert set(inspect.signature(guard.serve_free).parameters) == {"used_today", "bank", "fallback", "cap"}
+    src = open("app.py").read()
+    for live in ("import llm", "llm.", "generate_verified", "make_client", "GEMINI_API_KEY", "prefetch",
+                 "generate_ai_question", "FREE_DAILY_AI_LIMIT", "build_prompt"):
+        assert live not in src, live
+    assert not os.path.exists("prefetch.py")
+
+
+def test_pro_exhausted_level_message_and_gate_only_for_pro():
+    src = open("app.py").read()
+    pro_branch = src[src.index("        if pro:\n            gate_msg = serve_gate()"):src.index("q, s.ai_used, note = guard.serve_free(")]
+    assert "guard.PRO_LEVEL_DONE_MESSAGE" in pro_branch and "seed_question(" in pro_branch
+    assert "ai_used" not in pro_branch  # Pro never touches the free counter
+    assert guard.PRO_LEVEL_DONE_MESSAGE.startswith("You've done every question at this level.")

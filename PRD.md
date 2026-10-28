@@ -37,7 +37,7 @@ A practice engine that writes CAT and CLAT questions the way a senior faculty me
 | F3 | Error log + spaced repetition | Wrong answers enter a queue and come back after 3, 7 and 15 further questions, then graduate. | ✅ (saved when signed in) |
 | F4 | Weakness heatmap | Accuracy % by topic × difficulty, plus a "traps you fall for most" chart. | ✅ |
 | F5 | Streaks & daily micro-challenge | Correct-answer streak, plus one deterministic challenge question per day. | ✅ |
-| F6 | Freemium meter | 10 AI questions per day free; the seed bank is always available. | ✅ (client-side) |
+| F6 | Freemium meter | Free: 10 questions/day (IST day), served from the verified bank only (scheduled AI questions first). | ✅ (client-side) |
 | F7 | Graceful offline mode | With no API key, or if the model fails, the app serves curated seed questions so the demo always works. | ✅ |
 | F9 | Adaptive difficulty | Per-topic level; up after 2 consecutive on-time correct answers, down after 2 wrong; manual override. | ✅ v0.3 |
 | F10 | Answer-key verification | Sandboxed `verify_code` for Quant/DILR, an independent solve pass for all sections, max 2 regenerations, then seed fallback; Verified badge; anonymous Report button. | ✅ v0.3 |
@@ -111,12 +111,12 @@ Aspirants are often students and working professionals who don't want their prep
 ## 7. Unit economics
 > ⚠️ **All numbers below are planning assumptions for a pre-launch product, not measured data.** They exist to show the model is viable and to say what must be true.
 
-**Pricing:** Free tier = 10 AI questions/day + full seed bank. **Pro = ₹999/month** for unlimited adaptive mocks, full analytics history and the faculty test builder.
+**Pricing:** Free: 10 questions/day from the verified bank. **Pro = ₹999/month**: unlimited verified practice + fresh questions added every day, unlimited adaptive mocks, full analytics history and the faculty test builder.
 
 | Assumption | Value | Basis |
 |---|---|---|
 | ARPU (Pro) | ₹999 / month | List price; ignores annual discounts |
-| Gross margin | ~85% | Gemini Flash cost per question is a fraction of a rupee; at ~600 questions/month per heavy user, inference + hosting ≈ ₹100–150 |
+| Gross margin | High: no per-user AI cost; see [docs/COSTS.md](docs/COSTS.md) | No live AI at runtime. The only AI cost is the scheduled daily bank-building batch (₹0.4–₹1.4 per verified question with gemini-3.6-flash, 2026 prices), shared by all users |
 | Average paid lifetime | 6 months | CAT prep cycle is ~6–9 months; churn is mostly seasonal after the exam |
 | LTV | 999 × 0.85 × 6 ≈ **₹5,100** | |
 | Blended CAC | **≤ ₹1,500** | Mix of organic (YouTube/Telegram content from faculty, daily-challenge sharing) and paid Instagram/YouTube ads |
@@ -126,7 +126,7 @@ Aspirants are often students and working professionals who don't want their prep
 What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. CAT + CLAT + GMAT bundles, or carrying over to the next year's attempt).
 
 ### 7.1 Monetisation implementation (v0.2)
-- **Free:** 10 AI questions/day plus the unlimited seed bank. **Pro:** ₹999 for 30 days, unlimited AI questions.
+- **Free:** 10 questions/day, from the verified bank only (no live AI). **Pro:** ₹999 for 30 days: unlimited verified practice + fresh questions added every day.
 - **Flow:** the app creates a per-user Razorpay Payment Link (`reference_id` = hashed user ID + timestamp). The user pays on Razorpay and clicks **"I've paid, verify"**. The server checks the link's status through the Razorpay API and extends `pro_until` by 30 days (stacking on any remaining time).
 - **Next:** a Razorpay webhook for automatic activation, then Subscriptions for auto-renew.
 
@@ -151,7 +151,7 @@ What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. 
 - **v0.1 (shipped):** Streamlit prototype, 5 sections, seed bank, AI generation, session analytics.
 - **v0.2 (shipped):** Optional Google sign-in, Supabase storage keyed by hashed IDs, data export/delete, server-side metering for signed-in users, Razorpay Pro.
 - **v0.3 (shipped):** Adaptive per-topic difficulty, answer-key verification (sandboxed computation + independent solve), anonymous question reports, per-question timer with "Right but too slow", a 45-question seed bank, a daily challenge that cycles the whole bank, and review intervals 3 → 7 → 15.
-- **v0.4 (shipped):** Pre-generated verified AI bank (`scripts/build_bank.py`), faculty review loop (CSV export → approve/reject → apply), bank-first serving with no live API call per question, per-user no-repeat across sessions, live AI only for Pro or once a user exhausts a topic/level. Monthly refresh: top up each topic × level, review, commit.
+- **v0.4 (shipped):** Pre-generated verified AI bank (`scripts/build_bank.py`), faculty review loop (CSV export → approve/reject → apply), bank-first serving with no live API call per question, per-user no-repeat across sessions, live AI only for Pro or once a user exhausts a topic/level. Since v0.4.1 there is no live AI at runtime: questions come only from the bank, topped up daily by a scheduled batch (freshest first). Monthly refresh: top up each topic × level, review, commit.
 - **v0.4.x:** Mentor Meera's test builder: batch generation, edit, PDF export, batch analytics.
 - **v0.5:** Replace the 2-up/2-down rule with an Elo/IRT-style ability estimate per topic and full-length timed sectionals.
 - **v1.0:** Payments (Razorpay), mobile-friendly frontend, a ChromaDB corpus of 1,000+ reviewed items.
@@ -164,5 +164,5 @@ What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. 
 | Freemium limit bypass | Signed-in users are metered server-side in Supabase; guest sessions are still client-side (accepted for the demo) |
 | Data breach / privacy | Only hashed IDs + practice stats are stored; RLS on; service key server-side; export/delete in-app |
 | Payment spoofing | Pro is granted only after a server-side Razorpay API check of the link status; no client-side trust |
-| API cost spikes | Bank-first serving (no per-question API call for free users), live AI only for Pro, daily caps, seed fallback |
+| API cost spikes | No runtime AI calls for any user; the only AI spend is the scheduled daily batch, which has a fixed size |
 | Seasonal churn after the exam | Bundle the next attempt and adjacent exams (CLAT → AILET, CAT → XAT/GMAT) |

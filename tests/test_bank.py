@@ -135,3 +135,39 @@ def test_daily_quota_skips_model_then_stops(tmp_path):
     n = len(bank.load_json_bank(out)["questions"])
     assert n >= 3                                    # kept working on later models after the first ran out
     assert all(v <= 4 for v in fake.used.values())   # never hammered an exhausted model
+
+
+def test_pick_unseen_prefers_scheduled_ai_then_falls_back():
+    seed = [{"id": f"S{i}", "topic": "T", "difficulty": "Easy", "question_text": "q", "options": {}} for i in range(3)]
+    ai = [{"id": f"AI-{i}", "topic": "T", "difficulty": "Easy", "verified": True} for i in range(2)]
+    ai.append({"id": "AI-rej", "topic": "T", "difficulty": "Easy", "verified": True, "review_status": "rejected"})
+    imported = [{"id": "AS1", "topic": "T", "difficulty": "Easy"}]
+    pool = bank.serving_pool(seed, ai, imported)
+    seen, rng, order = set(), random.Random(1), []
+    while (q := bank.pick_unseen(pool, "T", "Easy", seen, rng)) is not None:
+        order.append(q["id"]); seen.add(q["id"])
+    assert set(order[:2]) == {"AI-0", "AI-1"}              # scheduled AI questions first
+    assert set(order[2:]) == {"S0", "S1", "S2", "AS1"}      # then the rest of the bank
+    assert "AI-rej" not in order and len(order) == len(set(order)) == 6  # no repeats, rejected excluded
+    assert bank.pick_unseen(pool, "T", "Hard", set(), rng) is None
+
+
+def test_pick_unseen_scheduled_first_is_per_topic_level():
+    pool = bank.serving_pool([{"id": "S", "topic": "T", "difficulty": "Easy", "question_text": "q", "options": {}}],
+                             [{"id": "AI-h", "topic": "T", "difficulty": "Hard", "verified": True}])
+    assert bank.pick_unseen(pool, "T", "Easy", set(), random.Random(0))["id"] == "S"
+    assert bank.pick_unseen(pool, "T", "Hard", set(), random.Random(0))["id"] == "AI-h"
+
+
+def test_pick_unseen_freshest_scheduled_batch_first():
+    ai = [{"id": "AI-old", "topic": "T", "difficulty": "Easy", "verified": True, "created_at": "2026-10-20T03:00:00+00:00"},
+          {"id": "AI-new1", "topic": "T", "difficulty": "Easy", "verified": True, "created_at": "2026-10-28T03:00:00+00:00"},
+          {"id": "AI-new2", "topic": "T", "difficulty": "Easy", "verified": True, "created_at": "2026-10-28T04:00:00+00:00"},
+          {"id": "AI-nodate", "topic": "T", "difficulty": "Easy", "verified": True}]
+    seed = [{"id": "S", "topic": "T", "difficulty": "Easy", "question_text": "q", "options": {}}]
+    pool = bank.serving_pool(seed, ai)
+    seen, rng, order = set(), random.Random(3), []
+    while (q := bank.pick_unseen(pool, "T", "Easy", seen, rng)) is not None:
+        order.append(q["id"]); seen.add(q["id"])
+    assert set(order[:2]) == {"AI-new1", "AI-new2"}
+    assert order[2:] == ["AI-old", "AI-nodate", "S"]
