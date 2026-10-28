@@ -17,6 +17,7 @@ import bank as qbank
 import engine
 import families
 import guard
+import prefetch
 import llm
 import payments
 import prompts
@@ -213,7 +214,7 @@ def hydrate_from_store():
                         "session_started_at": dt.datetime.now(dt.timezone.utc).isoformat()})
 
 
-def ai_gate(pro: bool) -> str | None:
+def ai_gate(pro: bool, record: bool = True) -> str | None:
     """None if a fresh AI question may be generated now, else the friendly message to show.
     Every check degrades gracefully: if usage_guard is missing, only in-session state is used."""
     s = st.session_state
@@ -232,6 +233,8 @@ def ai_gate(pro: bool) -> str | None:
         s.pro_ai_used = 0
     if pro and guard.pro_cap_reached(s.pro_ai_used):
         return guard.CAP_MESSAGE
+    if not record:  # serving an already-generated question: cap/session/cooldown only
+        return None
     s.ai_req_times = (s.ai_req_times + [now])[-20:]
     if guard.too_fast(s.ai_req_times, now):
         until = guard.cooldown_until(now)
@@ -241,6 +244,47 @@ def ai_gate(pro: bool) -> str | None:
             s.db.log_abuse(s.uid, "speed", f"cooldown {guard.COOLDOWN_S}s")
         return guard.COOLDOWN_MESSAGE
     return None
+
+
+def ai_job(topic: str, difficulty: str, api_key: str):
+    """Build everything that needs Streamlit here (cached bank, prompt); the returned callable
+    runs in a worker thread and only calls the LLM."""
+    examples = retrieve_examples(load_bank(), topic, difficulty)
+    prompt, models = build_prompt(topic, difficulty, examples), list(MODEL_CANDIDATES)
+
+    def run():
+        return llm.generate_verified(llm.make_client(api_key), models, topic, difficulty, prompt, SYSTEM_PROMPT)
+    return run
+
+
+def serve_pro_question(topic: str, difficulty: str, api_key: str) -> dict | None:
+    """Pro: instant bank question (or a ready prefetched AI one), next AI question prefetched."""
+    s = st.session_state
+    if "prefetcher" not in s:
+        s.prefetcher = prefetch.Prefetcher()
+    msgs = []
+
+    def may(record):
+        m = ai_gate(True, record=record)
+        if m:
+            msgs.append(m)
+        return m is None
+
+    def served(_q):
+        s.ai_used += 1
+        count_ai_question()
+        persist()
+
+    with st.spinner("Getting your next question..."):
+        q, src = prefetch.serve_pro(
+            s.prefetcher, (topic, difficulty),
+            bank=lambda: bank_question(topic, difficulty, s.seen),
+            may_serve_ai=lambda: may(False), may_start_ai=lambda: may(True),
+            make_job=lambda: ai_job(topic, difficulty, api_key), on_ai_served=served,
+            wait_if_empty=120)
+    if msgs and src != "prefetch":
+        st.info(msgs[-1])
+    return q
 
 
 def count_ai_question():
@@ -498,9 +542,12 @@ with tab_practice:
         # Default: serve from the verified bank, no live API call. Live AI only for Pro users,
         # or when this user has exhausted the bank for this topic+level (free users: daily cap).
         live_ok = topic not in engine.NO_AI_GENERATION_TOPICS  # current affairs: verified bank only
-        q = None if pro and api_key and live_ok else bank_question(topic, difficulty, s.seen)
         gate_msg = None
-        if q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
+        if pro and api_key and live_ok:  # Pro: instant question + background AI prefetch
+            q, gate_msg = serve_pro_question(topic, difficulty, api_key), "pro"
+        else:
+            q = bank_question(topic, difficulty, s.seen)
+        if gate_msg is None and q is None and api_key and live_ok and (pro or s.ai_used < FREE_DAILY_AI_LIMIT):
             gate_msg = ai_gate(pro)
             if gate_msg:  # fair use / speed check / other device: keep serving bank questions
                 st.info(gate_msg)
