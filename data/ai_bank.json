@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-28T09:06:24.362103+00:00",
+    "updated_at": "2026-10-29T09:12:20.847379+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -1514,48 +1514,473 @@
       "review_status": "unreviewed",
       "verified_computed": true,
       "verified_independent": true
+    },
+    {
+      "question_text": "Passage: The law of the land grants every individual a fundamental right to defend their own body, and the body of any other person, against any offense affecting the human body. This is known as the Right of Private Defence. The underlying philosophy is that the state cannot be present everywhere to protect every citizen at every moment; thus, a citizen is entitled to use force to protect themselves when faced with immediate peril. However, this right is not an absolute license to use violence and is strictly governed by several conditions set forth in the legal code.\n\nThe first condition relates to the commencement of the right. The right of private defense commences as soon as a reasonable apprehension of danger to the body arises from an attempt or threat to commit an offense, even if the offense itself has not yet been committed. A person is not required by law to wait until they are actually struck or wounded. If a reasonable person in the same circumstances would feel their safety is at risk due to the actions or words of another, the right to use defensive force is triggered.\n\nThe second condition concerns the duration of the right. The right of private defense continues only so long as such apprehension of danger to the body continues. This means that the moment the assailant is disarmed, rendered helpless, or takes to flight, the right of the defender to use force against them immediately ceases. Any force used after the threat has been effectively neutralized is considered an act of retaliation or punishment, rather than defense, and is not protected by law.\n\nFurthermore, the law emphasizes that the right is purely defensive and not punitive. It is meant to shield the citizen, not to empower them to dispense justice on the spot. Even if the assailant has committed a heinous crime, the defender's right to use force is strictly limited to what is necessary to stop the immediate threat. The law explicitly states that the right in no case extends to the inflicting of more harm than it is necessary to inflict for the purpose of defense.\n\nFacts: Vikram was walking home through a deserted alley at night. Suddenly, a man named Sameer jumped out from behind a dumpster, brandishing a large kitchen knife. Sameer shouted, \"Give me your wallet or I'll gut you!\" Vikram, a trained wrestler, managed to grab Sameer’s wrist, twist it until the knife fell to the ground, and then pinned Sameer to the floor. While Sameer was pinned down and unarmed, crying out that he surrendered, Vikram noticed a thick wooden plank lying nearby. Feeling a rush of adrenaline and anger at being threatened, Vikram picked up the plank and struck Sameer’s leg with full force, causing a fracture. Sameer later sued Vikram for causing grievous hurt.\n\nQuestion: Is Vikram protected by the right of private defense for striking Sameer with the wooden plank?",
+      "options": {
+        "A": "No, because the right of private defense ends when the apprehension of danger ceases; once Sameer was pinned and unarmed, the danger had passed.",
+        "B": "Yes, because Sameer was the initial aggressor and Vikram was acting under the stress of a life-threatening encounter.",
+        "C": "No, because Vikram should have called the police immediately upon seeing Sameer instead of engaging in a physical struggle.",
+        "D": "Yes, because the law allows a person to use any amount of force to ensure that a criminal who threatened their life cannot attack again."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The passage clearly stipulates that the right of private defense 'continues only so long as such apprehension of danger to the body continues.' In the facts, once Vikram pinned Sameer and Sameer was unarmed and surrendering, any reasonable apprehension of immediate danger had ceased. Therefore, the subsequent act of striking Sameer with a plank was not for defense but was an act of retaliation. Option A correctly identifies this temporal limitation. Option B is a trap as it relies on the 'heat of the moment' and the fact that Sameer was the aggressor—factors that might evoke sympathy but do not provide the legal justification of private defense under these specific rules. Option C is a trap regarding 'recourse to authorities'; this rule only applies if there is time *before* the threat manifests, which was not the case here. Option D incorrectly suggests the right is absolute and allows for preventive/punitive force, contradicting the 'proportionality' and 'duration' rules in the passage.",
+      "trap_type": "Ignoring the temporal limit of the right (cessation of apprehension)",
+      "concept_tag": "Criminal Law - Right of Private Defence",
+      "verify_code": "apprehension_of_danger_at_time_of_strike = False\nright_exists = apprehension_of_danger_at_time_of_strike\nif not right_exists:\n    answer = 'A'\nelse:\n    answer = 'B'",
+      "id": "AI-CLG-6743fe3f",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6743fe3fd89439003c591ef9318ed2e68311b729da8bbb1b869fb2ab3d70d3eb",
+      "created_at": "2026-10-29T08:37:40.410104+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "If the sum of the roots of the quadratic equation x^2 - (k + 2)x + (2k + 1) = 0 is equal to the product of its roots, what is the value of k?",
+      "options": {
+        "A": "-1",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "For a quadratic equation ax^2 + bx + c = 0, the sum of roots is -b/a and the product of roots is c/a. Here, a = 1, b = -(k + 2), and c = (2k + 1). Step 1: Sum of roots = -[-(k + 2)]/1 = k + 2. Step 2: Product of roots = (2k + 1)/1 = 2k + 1. Step 3: Set them equal as per the question: k + 2 = 2k + 1. Solving for k, we get k = 1. Shortcut: When a = 1, the condition 'sum = product' simply means -b = c. Here, (k + 2) = (2k + 1), leading directly to k = 1.",
+      "trap_type": "Sign error in sum of roots formula",
+      "concept_tag": "Quadratic Equations - Vieta's Formulas",
+      "verify_code": "def solve():\n    # x^2 - (k+2)x + (2k+1) = 0\n    # Sum = k+2\n    # Product = 2k+1\n    # k+2 = 2k+1 => k = 1\n    for k in range(-10, 10):\n        sum_roots = k + 2\n        prod_roots = 2 * k + 1\n        if sum_roots == prod_roots:\n            return k\nanswer = 'B' if solve() == 1 else 'A'",
+      "id": "AI-IQ-efcf7a08",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "efcf7a0827f7c42244667a989a7f52e7756d615f8ce7c7423115971358e80850",
+      "created_at": "2026-10-29T08:38:11.481108+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "concept_tag": "Grammar - Parallelism with correlative conjunctions",
+      "correct_answer": "B",
+      "options": {
+        "A": "but also expanding its operations into emerging Asian markets",
+        "B": "but also to expand its operations into emerging Asian markets",
+        "C": "but expanding its operations into emerging Asian markets as well",
+        "D": "but also expanded its operations into emerging Asian markets"
+      },
+      "pedagogical_explanation": "Grammar rule: Correlative conjunctions such as 'not only... but also' must connect parallel grammatical structures. In the sentence, 'not only' is followed by an infinitive phrase ('to overhaul the company's supply chain'). Therefore, 'but also' must be followed by a parallel infinitive phrase ('to expand its operations...'). Option B correctly restores this parallel structure. Main distractor A ('but also expanding...') mixes an infinitive ('to overhaul') with a participle/gerund ('expanding'), a classic faulty parallelism error that sounds deceptively natural in informal speech.",
+      "question_text": "Identify the grammatically correct version of the underlined part:\n\nThe new CEO promised not only to overhaul the company’s supply chain **but also expanding its operations into emerging Asian markets**.",
+      "trap_type": "Faulty parallelism trap (mixing infinitive with participle)",
+      "verify_code": "",
+      "id": "AI-IV-c4bad197",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c4bad1975ef8db49f901c5ce54737810db24d49853aea41d2aedc03535d49617",
+      "created_at": "2026-10-29T08:38:26.307379+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Under the law of torts, an employer is vicariously liable for the wrongful or negligent acts of an employee, provided those acts are committed in the 'course of employment.' An act is considered to be in the course of employment if it is either an act authorized by the employer or an unauthorized mode of performing an authorized act.\n\nAn employer is not liable for an act committed by an employee if the act is an independent venture undertaken solely for personal benefit, entirely disconnected from the assigned duties. Crucially, where an employee is performing an authorized task to advance the employer's business, an express prohibition or restriction issued by the employer regarding how or under what conditions the task should be performed does not, by itself, take the employee's act out of the course of employment. However, if the employee's forbidden act alters the very nature of the task so that the employee is no longer performing the assigned duty at all, the employer will not be held liable.\n\nFacts: Arjun is employed as a delivery driver by QuickBites, a catering service. His job is to deliver boxed meals to corporate clients using a company-owned van. QuickBites issued a strict written policy prohibiting all delivery drivers from carrying any unauthorized passengers in company vehicles under any circumstances. One afternoon, while driving along his assigned delivery route to deliver lunch to a client, Arjun saw his friend, Rohan, caught in a sudden downpour. Arjun allowed Rohan into the van to drop him off at a location further along the same route. While driving along this route toward the client's office with Rohan in the passenger seat, Arjun negligently ran a red light and struck a car owned by Priya, causing extensive damage. Priya files a lawsuit against QuickBites seeking compensation for the damage to her car.\n\nIs QuickBites vicariously liable for the damage caused to Priya's car?",
+      "options": {
+        "A": "No, because Arjun breached QuickBites' express written prohibition by carrying an unauthorized passenger in the vehicle.",
+        "B": "Yes, because Arjun was driving along his assigned delivery route to advance QuickBites' business when the negligent collision occurred.",
+        "C": "No, because taking Rohan into the van turned the entire delivery journey into an independent personal venture.",
+        "D": "Yes, because an employer is strictly liable for any vehicular collision caused by an employee operating a company-owned vehicle."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To determine vicarious liability, apply the passage's rules sequentially:\n1. Was Arjun performing an authorized task? Yes, driving along the assigned route to deliver lunch to a client.\n2. Did the violation of the express prohibition (carrying a passenger) remove the act from the 'course of employment'? The passage explicitly states: 'an express prohibition... does not, by itself, take the employee's act out of the course of employment' if performed to advance the employer's business.\n3. Did picking up Rohan alter the very nature of the task? No, Arjun remained on the assigned route performing the delivery duty.\nTherefore, QuickBites is vicariously liable: (B).\n\nTrap Analysis:\n- Option A (Main Distractor): Fallacy of relying on express prohibition while ignoring the specific rule stating that prohibition alone does not relieve the employer of liability if the employee was advancing the business.\n- Option C: Mischaracterizes the fact pattern—carrying a passenger on the same route did not convert the entire journey into a purely personal enterprise disconnected from work.\n- Option D: Assumes an absolute rule of strict liability for company vehicles, which is nowhere supported by the passage.",
+      "trap_type": "Over-relying on an express prohibition while ignoring the rule governing business advancement",
+      "concept_tag": "Tort law - vicarious liability and course of employment",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CLG-f4fa78a7",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f4fa78a7451e305e2a1895fe11008dc5a2bfa41622992132f7c9c60d5052790e",
+      "created_at": "2026-10-29T08:38:52.663851+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Choose the grammatically correct sentence that maintains logical comparison and parallel structure:",
+      "options": {
+        "A": "The cinematography in the new film is not only more immersive than the last film but also more evocative of noir aesthetics.",
+        "B": "The cinematography in the new film is not only more immersive than that of the last film but also it evokes noir aesthetics.",
+        "C": "The cinematography in the new film is not only more immersive than that of the last film but also more evocative of noir aesthetics.",
+        "D": "The cinematography in the new film is more immersive than the last film's and is also more evocative than noir aesthetics."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "This question tests two core IPMAT concepts: Logical Comparison and Parallelism with correlative conjunctions. (1) Logical Comparison: We must compare 'cinematography' with 'cinematography'. Option A fails by comparing 'cinematography' to a 'film' (a category error). Option C correctly uses 'that of' to refer back to the cinematography. (2) Parallelism: The structure 'not only X but also Y' requires X and Y to be grammatically identical. In Option C, X is an adjective phrase ('more immersive...') and Y is an adjective phrase ('more evocative...'). Option B fails this because 'it evokes' is a clause, which is not parallel to the adjective 'more immersive'. Option D changes the meaning by suggesting the cinematography is more evocative 'than' aesthetics themselves, which is logically flawed.",
+      "trap_type": "Faulty Comparison (Illogical Comparison)",
+      "concept_tag": "Sentence Correction - Parallelism and Comparison",
+      "verify_code": "answer = 'C'",
+      "id": "AI-IV-7aeb78b1",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7aeb78b1db83b8d911bf0b3434a4d8c39a4d2b8de1aa19412cf5a692eb5ce242",
+      "created_at": "2026-10-29T08:40:04.241624+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Under the law of torts, the defense of volenti non fit injuria provides that no legal wrong is done to a person who knowingly and voluntarily consents to undergo a risk of harm. A plaintiff who voluntarily exposes themselves to a known danger cannot recover damages for injuries resulting from that danger.\n\nHowever, this rule is subject to specific principles governing rescue attempts:\n1. The Rescue Exception: The defense of volenti non fit injuria does not bar a claim brought by a plaintiff who suffers injury while attempting to rescue a person facing imminent danger of death or serious injury, provided the rescue effort was reasonable. A rescuer acting under the moral compulsion of an emergency is deemed not to have acted voluntarily.\n2. The Defendant Negligence Requirement: The Rescue Exception applies ONLY IF the imminent danger to the imperiled person was created by a negligent or wrongful act of the defendant. If the defendant committed no negligent or wrongful act in creating the danger, the Rescue Exception cannot be invoked against that defendant, and the defense of volenti non fit injuria will apply to bar the rescuer's action.\n\nFacts: A major fire erupted at a warehouse owned by Apex Logistics. The fire was caused entirely by an unprecedented freak lightning strike that breached a fully compliant, state-of-the-art surge protection system; Apex was guilty of no negligence or statutory breach. Hearing screams, Dev, a passerby, saw an employee trapped inside the flaming structure. Realizing the employee faced imminent death, Dev dashed inside and successfully dragged the employee out, but suffered severe burns in the process. Dev sues Apex Logistics for compensation. Apex asserts the defense of volenti non fit injuria, arguing that Dev voluntarily risked entering a burning structure.\n\nIs Apex Logistics liable to pay compensation to Dev?",
+      "options": {
+        "A": "Yes, because Dev entered the building to rescue a person facing imminent danger of death, bringing his claim within the Rescue Exception.",
+        "B": "No, because Dev voluntarily ran into a burning structure with full knowledge of the danger, so the defense of volenti non fit injuria applies regardless of how the emergency arose.",
+        "C": "No, because the danger to the trapped employee was not caused by any negligence of Apex Logistics, so the Rescue Exception does not apply to override volenti non fit injuria.",
+        "D": "Yes, because owners of dangerous premises owe an absolute duty of care to rescuers, making them strictly liable for injuries sustained during rescue attempts."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "To determine liability, we must apply the principles in sequence:\n1. General Rule: Dev voluntarily entered a burning structure (volenti non fit injuria applies generally).\n2. Exception: Dev was performing a rescue of a person in imminent danger. Under Rule 1, rescuers are not deemed voluntary risk-takers.\n3. Limitation on Exception (The Critical Switch): Under Rule 2, the Rescue Exception ONLY applies if the defendant caused the danger through negligence or a wrongful act. The facts explicitly state that Apex was 'guilty of no negligence' (the fire was caused by a freak lightning strike).\n\nSince the prerequisite of defendant negligence is missing, Dev cannot invoke the Rescue Exception. Thus, the general defense of volenti non fit injuria stands, barring Dev's claim: (C).\n\nShortcut / Reading Signal: Look for conditional triggers like 'ONLY IF'. Whenever a passage states 'Exception X applies ONLY IF Condition Y', locate Condition Y in the facts immediately.\n\nWhy Main Distractor (A) is Wrong: Trap A focuses exclusively on Rule 1 (Dev's intention to rescue from imminent danger) while ignoring Rule 2 (the requirement of defendant negligence). Hasty solvers fall into this trap by stopping at the first rule that matches the hero's actions without checking the defendant's culpability.",
+      "trap_type": "Applying an exception without checking all prerequisite conditions (ignoring the defendant negligence requirement)",
+      "concept_tag": "Tort Law - Volenti Non Fit Injuria and Rescue Exception",
+      "verify_code": "answer = 'C'",
+      "id": "AI-CLG-f7d2eae3",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f7d2eae33d1c0b41c03cf86988fd95cbfca138e349e1ab65ad2f08cbcd32d5ee",
+      "created_at": "2026-10-29T08:40:31.059824+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Let $P(x)$ be a polynomial of degree $4$ such that $P(1) = 2$, $P(2) = 4$, $P(3) = 6$, $P(4) = 8$, and $P(5) = 34$. What is the value of $P(6)$?",
+      "options": {
+        "A": "12",
+        "B": "132",
+        "C": "120",
+        "D": "182"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Identify the auxiliary polynomial: Notice that for $x = 1, 2, 3, 4$, $P(x) = 2x$. Define the auxiliary polynomial $Q(x) = P(x) - 2x$.\n2. Formulate $Q(x)$: Since $P(x)$ has degree 4, $Q(x)$ is also a degree 4 polynomial. Its roots are $x = 1, 2, 3, 4$. Thus, $Q(x) = c(x-1)(x-2)(x-3)(x-4)$ for some constant $c$.\n3. Find the leading coefficient $c$: Use the given value $P(5) = 34$. \n   $Q(5) = P(5) - 2(5) = 34 - 10 = 24$.\n   Also, $Q(5) = c(5-1)(5-2)(5-3)(5-4) = 24c$.\n   Equating the two gives $24c = 24 \\implies c = 1$.\n4. Calculate $P(6)$:\n   $Q(6) = 1 \\cdot (6-1)(6-2)(6-3)(6-4) = 5 \\cdot 4 \\cdot 3 \\cdot 2 = 120$.\n   Since $P(x) = Q(x) + 2x$, we have $P(6) = Q(6) + 2(6) = 120 + 12 = 132$.\n\nShortcut / Reading Signal:\nWhenever a polynomial $P(x)$ matches a lower-degree function $g(x)$ at $n$ points, define $Q(x) = P(x) - g(x) = c \\prod_{i=1}^n (x - x_i)$. This bypasses solving a $5 \\times 5$ linear system.\n\nMain Distractor Analysis:\n- Option C (120) is the main distractor: The student correctly evaluates $Q(6) = 120$ but forgets to add back $2x = 12$ to obtain $P(6)$.\n- Option A (12): Extrapolates the linear sequence $2, 4, 6, 8$ to $P(6) = 12$, ignoring $P(5) = 34$.\n- Option D (182): Forgets to subtract $2(5) = 10$ from $P(5)$ when finding $c$, writing $24c = 34 \\implies c = 34/24$, leading to $P(6) = (34/24) \\times 120 + 12 = 182$.",
+      "trap_type": "Forgetting the linear offset term (+2x) when converting back from the auxiliary polynomial to P(x)",
+      "concept_tag": "Polynomials - Remainder Theorem and Auxiliary Polynomials",
+      "verify_code": "def P(x):\n    return 1 * (x - 1) * (x - 2) * (x - 3) * (x - 4) + 2 * x\nval = P(6)\nanswer = {12: 'A', 132: 'B', 120: 'C', 182: 'D'}[val]",
+      "id": "AI-IQ-4d7ebb5d",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "4d7ebb5d49551233bb2599db987344cede8e9cdd86084a2c6ae0ae0656bbd2a6",
+      "created_at": "2026-10-29T08:40:59.959899+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage:\nArchival historians have long attributed the rise of 17th-century Dutch merchant guilds to a unique culture of mutual trust and shared contractual honor. However, institutional economists note that guild enforcement flourished exclusively in regions where state courts were weak or absent. Where reliable state courts existed, merchants systematically bypassed guild arbitration, relying instead on legal institutions. The economists thus conclude that guild cohesion was not driven by intrinsic moral commitments, but was merely a functional substitute for absent state legal infrastructure.\n\nWhich of the following, if true, would most seriously weaken the institutional economists' conclusion?",
+      "options": {
+        "A": "In regions with weak state courts, non-guild merchants suffered significantly higher rates of contract default than guild members did.",
+        "B": "Dutch merchant guilds maintained their internal contract enforcement mechanisms with undiminished rigor even after strong state courts became accessible.",
+        "C": "State court judges in 17th-century Holland were frequently recruited from the leadership ranks of prominent merchant guilds.",
+        "D": "Overall guild membership declined sharply during broader macroeconomic downturns, regardless of local court strength."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Identify the conclusion: Economists claim that guild enforcement was 'merely a functional substitute' for weak state courts, implying it would be abandoned once effective state courts were present.\n2. Identify the logical vulnerability: The economists rely on the premise that strong courts cause merchants to completely abandon guild enforcement mechanisms.\n3. Evaluate Option B: If guilds maintained their internal enforcement mechanisms with undiminished rigor *even after* strong state courts became available, then guild enforcement was NOT merely a temporary substitute for absent courts. It had persistent, intrinsic value, directly refuting the economists' conclusion.\n\nWhy the main distractor is wrong:\n- Trap A (Main Distractor): Option A shows that guild enforcement successfully prevented defaults where courts were weak. This proves that guilds were indeed effective substitutes for courts, which STRENGTHENS the economists' thesis rather than weakening it. Hasty solvers misread 'weaken the argument' as 'find a negative fact about guilds'.\n- Option C introduces personal background without affecting how contract enforcement functions operated.\n- Option D brings in an external factor (recessions) that does not address the core relationship between court strength and guild enforcement.",
+      "trap_type": "Strengthens the argument instead of weakening it (confusing functional efficacy with logical refutation)",
+      "concept_tag": "Critical Reasoning - Weaken the Argument",
+      "verify_code": "",
+      "id": "AI-IV-4e4a9334",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "4e4a9334812bb28956ebb6c7f0768774dc348a2a540d92df76da460d9c75d5d3",
+      "created_at": "2026-10-29T08:41:25.642686+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Linguists traditionally viewed irregular verbs as historical remnants—awkward fossils of older grammatical systems that survived through sheer frequency of use. Because everyday words like 'be' or 'have' are uttered thousands of times a day, their irregularities are continually reinforced in speakers' memories, shielding them from the regularizing pressure that smooths out rarer verbs over centuries. However, recent corpus studies reveal that frequency alone does not guarantee survival. When a high-frequency irregular form shares close phonetic similarity with a burgeoning regular pattern, cognitive interference often overrides frequency, accelerating its regularization rather than inhibiting it. Moreover, social prestige frequently intervenes: certain rare irregular forms persist indefinitely simply because elite institutions deliberately codify and preserve them as markers of education, defying natural statistical decay. Irregularity, then, is not merely a passive byproduct of memory and repetition; it is an active battleground between cognitive convenience and social signaling.\n\nWhich of the following statements can be most logically inferred from the passage?",
+      "options": {
+        "A": "High frequency of usage is neither strictly necessary nor entirely sufficient for an irregular verb form to resist regularization.",
+        "B": "Rare irregular verbs are significantly more likely to persist if they exhibit close phonetic similarity to emergent regular patterns.",
+        "C": "Elite institutions codify rare irregular verbs primarily to mitigate the cognitive interference that speakers experience in daily communication.",
+        "D": "Social prestige consistently overrides cognitive convenience whenever the two evolutionary forces clash in natural speech."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step 1: Analyze the passage's argument structure. The author challenges the traditional view that frequency alone explains irregular verb survival. In paragraph 1, the author demonstrates that high frequency is not sufficient ('frequency alone does not guarantee survival' because phonetic interference can accelerate regularization). In the next sentence, the author shows that high frequency is not necessary ('certain rare irregular forms persist indefinitely simply because elite institutions deliberately codify... them').\nStep 2: Synthesizing these two premises directly yields Option A: high frequency is neither necessary (rare forms can persist via prestige) nor sufficient (high-frequency forms can still regularize due to phonetic interference).\n\nReading signal: Notice contrastive transition words like 'However' and 'Moreover', which introduce the two separate exceptions to the frequency-based model.\n\nTrap analysis of incorrect options:\n- Option B is a REVERSAL: The passage states that phonetic similarity to regular patterns accelerates regularization (erodes irregularity), rather than promoting persistence.\n- Option C is a HALF-TRUE / DISTORTION (the main distractor): The passage mentions elite institutions codifying rare forms, but their motivation is to serve as 'markers of education' (social signaling), not to ease cognitive processing. Conflating the motive of institutions with the cognitive concepts mentioned elsewhere in the passage is a classic CAT trap.\n- Option D is an EXTREME SCOPE trap: The passage describes a 'battleground' between these forces, never asserting that social prestige 'consistently' or always triumphs.",
+      "trap_type": "Half-true / Distortion",
+      "concept_tag": "RC - inference",
+      "id": "AI-CVR-ff76049f",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-flash-latest",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ff76049fdfadb1ae261c4937102addc765b233546735f1ab181eb2645dcc72d8",
+      "created_at": "2026-10-29T08:45:38.423897+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "If $x, y$, and $z$ are real numbers such that $x + y + z = 12$ and $x^2 + y^2 + z^2 = 54$, what is the maximum possible value that $x$ can take?",
+      "options": {
+        "A": "4",
+        "B": "6",
+        "C": "7",
+        "D": "9"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To maximize one variable (say $x$) in a system where the sum and the sum of squares are fixed, the remaining variables ($y$ and $z$) must be equal to each other. This is the 'Symmetric Equality Principle'. \nStep 1: Set $y = z$. From the first equation, $2y = 12 - x$, so $y = (12-x)/2$. \nStep 2: Substitute this into the second equation: $x^2 + 2[(12-x)/2]^2 = 54$. \nStep 3: Simplify: $x^2 + (144 - 24x + x^2)/2 = 54$. Multiply by 2: $2x^2 + 144 - 24x + x^2 = 108$. \nStep 4: Rearrange into a quadratic: $3x^2 - 24x + 36 = 0$, which simplifies to $x^2 - 8x + 12 = 0$. \nStep 5: Factorize: $(x-6)(x-2) = 0$. The roots are $x=6$ and $x=2$. Thus, the maximum value is 6 and the minimum is 2. \nShortcut: The discriminant of the quadratic in $y, z$ must be non-negative. $y+z = 12-x$ and $2yz = (12-x)^2 - (54-x^2)$. Using $(y+z)^2 \\ge 4yz$ leads to the same inequality.",
+      "trap_type": "Symmetry misinterpretation",
+      "concept_tag": "Algebra - Optimization and Inequalities",
+      "verify_code": "import math\n# We need to find the max x such that y, z are real\n# x + y + z = 12, x^2 + y^2 + z^2 = 54\n# y + z = 12 - x\n# y^2 + z^2 = 54 - x^2\n# For y, z to be real: (y+z)^2 <= 2(y^2 + z^2)\n# (12-x)^2 <= 2(54 - x^2)\n# 144 - 24x + x^2 <= 108 - 2x^2\n# 3x^2 - 24x + 36 <= 0\n# x^2 - 8x + 12 <= 0\n# (x-2)(x-6) <= 0\n# Max x is 6\nanswer = 'B'\nanswers = {6}",
+      "id": "AI-CQ-dd5f1444",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "dd5f1444a2ee34b708aff0fd21059538d49600e9694f5c20c861e4c7ab62f7f3",
+      "created_at": "2026-10-29T08:46:38.170012+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: The sunk-cost fallacy—the tendency to continue an endeavor once an investment in money, effort, or time has been made—is typically categorized as a cognitive glitch, a failure of human rationality. Economists insist that only marginal costs and benefits should matter. However, evolutionary biologists observe that 'persistence' in the face of mounting costs is not unique to humans. Many species exhibit behaviors where past investment dictates future effort, even when the immediate probability of success is low. This suggests that what we dismiss as a psychological error might be a deeply rooted biological heuristic. In nature, environments are rarely 'clean' enough for a perfect calculation of future utility. A bird that abandons a nest after a predator attack loses not just the eggs, but the time-sensitive window of the breeding season. Here, the 'fallacy' functions as a commitment device, preventing premature abandonment in a world of noisy signals. The human error, then, is perhaps not the persistence itself, but the application of an ancestral biological survival mechanism to modern abstract markets where 'seasons' do not exist and signals are less ambiguous.\n\nWhich of the following best expresses the central thesis of the passage?",
+      "options": {
+        "A": "The sunk-cost fallacy is an economically sound strategy when dealing with volatile and ambiguous modern markets.",
+        "B": "What is categorized as a failure of logic in modern economics may be a survival heuristic inherited from ancestral biological contexts.",
+        "C": "Both humans and animals are biologically hardwired to prioritize past investments over the calculation of future marginal utility.",
+        "D": "Modern economic systems have rendered ancestral survival mechanisms like the sunk-cost fallacy obsolete and dangerous."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The passage follows a classic 're-evaluation' structure. Step 1: State the conventional view (sunk-cost is a 'glitch'). Step 2: Introduce a counter-perspective (evolutionary biology shows it in other species). Step 3: Provide the insight/reframe (it's a 'commitment device' for noisy environments). Step 4: Draw a conclusion (human error is misapplying this old tool to new contexts). The central thesis must bridge the 'glitch' and the 'biological origin', which (B) does perfectly. The signal 'This suggests that what we dismiss as a psychological error might be a deeply rooted biological heuristic' is the core of the argument. (C) is the main distractor; it is a 'Half-true' trap. While the passage says both humans and animals show this behavior, (C) merely describes the phenomenon without capturing the author's primary argument that it is an *adaptive heuristic* rather than just a hardwired flaw. (A) is an 'Extreme/Misinterpretation'—the author says humans *misapply* it to modern markets, not that it is 'economically sound' there. (D) is 'Extreme scope'—while the author suggests it's a misapplication, calling it 'dangerous' adds a moral/safety weight not present in the text.",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - central argument and author's nuance",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CVR-23df232a",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "23df232ac3bf464383e76e6312850763f47f7364992a70a44ba5cee2ae87a6a9",
+      "created_at": "2026-10-29T08:47:09.012606+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five students—Adi, Ben, Cam, Dan, and Eli—each take exactly three subjects from the following five: History, Geography, Political Science, Economics, and Psychology. It is known that:\n\n1. Each subject is taken by exactly three students.\n2. No two students take the exact same set of three subjects.\n3. Adi takes History, Geography, and Political Science.\n4. Eli takes neither History nor Geography.\n5. Dan does not take History.\n6. Ben and Adi share exactly two subjects.\n7. Cam and Adi share exactly one subject.\n8. Ben and Eli share exactly one subject, and that subject is Economics.\n\nWhich of the following is the set of subjects taken by Dan?",
+      "options": {
+        "A": "Economics, Geography, Psychology",
+        "B": "Geography, Political Science, Psychology",
+        "C": "Economics, Geography, Political Science",
+        "D": "Economics, Political Science, Psychology"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1 (Negative Space Insight): There are 15 total subject-slots (5 students × 3 subjects). Since each subject is taken by 3 students, the 'slots' for each subject are also 15. If we know who doesn't take a subject, we can find who does. History is not taken by Eli (Clue 4) and Dan (Clue 5). Since only 3 slots exist, History must be taken by Adi, Ben, and Cam.\nStep 2 (Forced Eli): Eli takes 3 subjects but cannot take History or Geography. Therefore, Eli's set must be {Political Science, Economics, Psychology}.\nStep 3 (Refining Ben): Ben takes History (from Step 1). He shares exactly two subjects with Adi {Hist, Geog, Pol}. Since Ben and Eli share ONLY Economics (Clue 8), Ben cannot take Political Science or Psychology (as Eli takes those). Thus, Ben's second shared subject with Adi must be Geography. Ben's set is {History, Geography, Economics}.\nStep 4 (Refining Cam): Cam takes History. He shares only one subject with Adi {Hist, Geog, Pol}. That shared subject is History. Thus, Cam cannot take Geography or Political Science. His remaining two subjects must be Economics and Psychology. Cam's set is {History, Economics, Psychology}.\nStep 5 (Finalizing Dan): Count the occurrences. Political Science is taken by Adi and Eli; the third slot must go to Dan. Geography is taken by Adi and Ben; the third slot must go to Dan. Psychology is taken by Eli and Cam; the third slot must go to Dan. Therefore, Dan takes {Geography, Political Science, Psychology}.",
+      "trap_type": "Exhaustive vs. Selective Logic",
+      "concept_tag": "Set Theory - Subject Conservation",
+      "verify_code": "import itertools\nstudents = ['Adi', 'Ben', 'Cam', 'Dan', 'Eli']\nsubjects = ['Econ', 'Geog', 'Hist', 'Pol', 'Psy']\npossible_sets = list(itertools.combinations(subjects, 3))\nsolutions = []\nfor combo in itertools.permutations(possible_sets, 5):\n    # combo order: Adi, Ben, Cam, Dan, Eli\n    all_chosen = [sub for s_set in combo for sub in s_set]\n    if any(all_chosen.count(sub) != 3 for sub in subjects): continue\n    if set(combo[0]) != {'Hist', 'Geog', 'Pol'}: continue\n    if 'Hist' in combo[4] or 'Geog' in combo[4]: continue\n    if 'Hist' in combo[3]: continue\n    if len(set(combo[1]) & set(combo[0])) != 2: continue\n    if len(set(combo[2]) & set(combo[0])) != 1: continue\n    if set(combo[1]) & set(combo[4]) != {'Econ'}: continue\n    solutions.append(combo)\n\ndef get_dan_set(sol):\n    dan_set = set(sol[3])\n    if dan_set == {'Geog', 'Pol', 'Psy'}: return 'B'\n    if dan_set == {'Econ', 'Geog', 'Psy'}: return 'A'\n    if dan_set == {'Econ', 'Geog', 'Pol'}: return 'C'\n    if dan_set == {'Econ', 'Pol', 'Psy'}: return 'D'\n    return None\n\nanswers = {get_dan_set(s) for s in solutions}\nanswer = next(iter(answers))",
+      "id": "AI-CD-7cd7d79f",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "7cd7d79f9a86710cd1cc393b336797aedab1763414c648635a9653d0f26f63d5",
+      "created_at": "2026-10-29T08:51:07.582007+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "Passage: Modern board game design has undergone a significant shift in philosophy since the mid-1990s. Traditional games like Monopoly or Risk often relied on player elimination, where participants were forced out of the game long before it concluded. This often left players bored or frustrated, waiting on the sidelines for friends to finish. In contrast, the \"Eurogame\" movement introduced mechanics that keep all players engaged until the final turn. Instead of destroying opponents, players focus on building personal resource engines or optimizing their own scoring efficiency. This design shift emphasizes the \"player experience\" over raw conflict. While some critics argue this reduces the competitive tension of gaming, the commercial success of titles like Catan or Wingspan suggests that audiences prefer cooperative competition—where the winner is the one who built the best system, not the one who survived the longest.\n\nAccording to the passage, what is a key distinction between traditional games and the Eurogame movement?",
+      "options": {
+        "A": "Traditional games often sideline players through elimination, while Eurogames keep all players involved until the game ends.",
+        "B": "Eurogames focus on cooperative play to ensure that players are never frustrated or bored.",
+        "C": "Traditional games focus on optimizing scoring efficiency, whereas Eurogames rely on destroying opponents.",
+        "D": "Modern audiences have rejected traditional games because they are more difficult to master than Eurogames."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The passage directly contrasts the two styles using the signal phrase 'In contrast.' It states that traditional games (like Monopoly/Risk) rely on 'player elimination' which leaves people 'waiting on the sidelines,' whereas Eurogames use mechanics that 'keep all players engaged until the final turn.' Option A accurately reflects this comparison. \n- Option B is a 'Half-true/Extreme' trap: While the passage mentions engagement and 'cooperative competition,' it does not say the play is 'cooperative' (team-based), and 'never frustrated' is an extreme claim not supported by the text. \n- Option C is a 'Reversal': It swaps the mechanics of the two game types. \n- Option D is 'Out-of-scope': The passage mentions commercial success but does not discuss the difficulty of mastering the games.",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - detail",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CVR-1a1e1fc2",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "1a1e1fc27ab186a6b3fb95060f7cd367f1da72a3e2d3f149f8a1e1b3fe58cc76",
+      "created_at": "2026-10-29T08:51:30.338673+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Defamation is the publication of a false statement that harms the reputation of an individual. For a statement to be legally actionable as defamation, it must satisfy three conditions: (1) the statement must be false, (2) it must refer to the plaintiff, and (3) it must be published. 'Publication' in legal terms means the statement is communicated to at least one person other than the person being defamed. If a statement, however false or insulting, is communicated only to the person it concerns, no defamation has occurred.\n\nFact Situation: Mr. Khanna is angry with his assistant, Rohan, for a clerical error. He sends a private, password-protected email to Rohan, calling him a 'habitual thief and a fraud.' No one else has access to Rohan's email account, and no one else sees the email. Rohan, feeling insulted, sues Mr. Khanna for defamation.",
+      "options": {
+        "A": "Mr. Khanna is liable because calling someone a 'thief' is a false statement that harms their reputation.",
+        "B": "Mr. Khanna is not liable because the statement was not communicated to a third party.",
+        "C": "Mr. Khanna is liable because the email was sent intentionally to Rohan.",
+        "D": "Mr. Khanna is not liable because the statement was made in a professional capacity regarding a work error."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve this, we must strictly apply the three-part test provided in the passage. While the statement is false (based on the context of a clerical error) and refers to the plaintiff (Rohan), it fails the third requirement: 'Publication'. The passage defines publication as communication to 'at least one person other than the person being defamed'. Since the email was private and password-protected, and only Rohan read it, there was no publication. Therefore, no defamation occurred. The shortcut here is to identify the 'third party' requirement immediately upon seeing a private communication. Trap (A) is the main distractor because it focuses on the 'harm' and 'falsity' (Conditions 1 and 2) while ignoring the mandatory 'publication' rule.",
+      "trap_type": "Ignoring a mandatory condition of the rule",
+      "concept_tag": "Legal RC - Defamation and Publication",
+      "verify_code": "def check_liability():\n    false_statement = True\n    refers_to_plaintiff = True\n    published_to_third_party = False\n    \n    # Defamation requires ALL three conditions to be True\n    is_defamation = false_statement and refers_to_plaintiff and published_to_third_party\n    \n    if not is_defamation:\n        return 'B'\n    else:\n        return 'A'\n\nanswer = check_liability()",
+      "id": "AI-CR-d3e60fa3",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d3e60fa38087178f33b817c192cae0b739021b74175d4811c0adbda8ea508037",
+      "created_at": "2026-10-29T08:55:44.701096+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A local school decided to delay its start time from 8:00 AM to 9:00 AM to improve student academic performance. The principal justified this by stating that the extra hour would allow students to get more sleep, which is directly linked to better cognitive function.\n\nWhich of the following is an assumption the principal's argument depends on?",
+      "options": {
+        "A": "Students will not offset the later start time by going to bed later than usual.",
+        "B": "Most students in the school currently perform below the national average in standardized tests.",
+        "C": "Cognitive function is the most important factor in determining a student's career success.",
+        "D": "The school's teachers do not have a preference for the earlier start time."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "To find the necessary assumption, we use the Negation Test: if the statement is false, the argument must collapse. If we negate (A), it becomes: 'Students WILL offset the later start time by going to bed later.' If students stay up an hour later, the 9:00 AM start time does not result in any extra sleep. If they don't get more sleep, the principal's mechanism for improving performance (more sleep -> better cognitive function) fails. Thus, (A) is essential. Option (C) is a classic 'Extreme' trap; the argument requires that cognitive function affects performance, not that it is the 'most important' factor for career success. Options (B) and (D) are irrelevant to the causal link between sleep and academic improvement.",
+      "trap_type": "Extreme scope",
+      "concept_tag": "Assumption",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CLR-1135e821",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "1135e821b91bac112dd69d5ae75acb8b723b85c12e1ecd1adef54534e1f413de",
+      "created_at": "2026-10-29T08:56:15.184358+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 11,
-      "rejected": 2,
-      "accepted": 9
+      "attempts": 13,
+      "rejected": 3,
+      "accepted": 10
     },
     "CAT VARC RC": {
-      "attempts": 15,
-      "rejected": 7,
-      "accepted": 8
+      "attempts": 19,
+      "rejected": 8,
+      "accepted": 11
     },
     "CAT DILR": {
-      "attempts": 14,
-      "rejected": 6,
-      "accepted": 8
+      "attempts": 17,
+      "rejected": 8,
+      "accepted": 9
     },
     "CLAT RC": {
-      "attempts": 11,
-      "rejected": 2,
-      "accepted": 9
+      "attempts": 14,
+      "rejected": 4,
+      "accepted": 10
     },
     "CLAT Logical Reasoning": {
-      "attempts": 14,
-      "rejected": 5,
-      "accepted": 9
+      "attempts": 17,
+      "rejected": 7,
+      "accepted": 10
     },
     "CLAT Legal Reasoning": {
-      "attempts": 3,
+      "attempts": 6,
       "rejected": 0,
-      "accepted": 3
+      "accepted": 6
     },
     "IPMAT Quant": {
-      "attempts": 4,
-      "rejected": 1,
-      "accepted": 3
+      "attempts": 8,
+      "rejected": 3,
+      "accepted": 5
     },
     "IPMAT Verbal": {
-      "attempts": 3,
+      "attempts": 6,
       "rejected": 0,
-      "accepted": 3
+      "accepted": 6
     }
   }
 }
