@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-30T09:16:35.459758+00:00",
+    "updated_at": "2026-10-31T09:15:07.072396+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -2369,48 +2369,473 @@
       "review_status": "unreviewed",
       "verified_computed": false,
       "verified_independent": true
+    },
+    {
+      "question_text": "Passage:\nUnder the law of contract, an agreement is enforceable by law only if the parties entering into it are competent to contract. A person is competent to contract if they have attained the age of majority (eighteen years of age), are of sound mind, and are not disqualified by law.\n\nAn agreement entered into by a minor (a person below eighteen years of age) is completely void from the start (void ab initio). Because a minor’s agreement is void from the very beginning, it cannot be ratified or validated by the minor even after reaching the age of majority. Consequently, a minor cannot be compelled to pay money owed under such an agreement or be held liable for breach of contract.\n\nAn exception exists in respect of 'necessaries' suited to the minor's condition in life. If a person supplies a minor with necessaries (such as basic food, shelter, or basic education), that person is entitled to be reimbursed from the minor's property. However, luxury goods, recreational items, or non-essential high-end gadgets do not qualify as necessaries, and no claim lies for their cost.\n\nFacts:\nKaran, a 17-year-old high school student, wanted a high-end gaming laptop worth ₹1,20,000 to play newly released video games. He entered into a written agreement with 'TechWorld', an electronics store, to purchase the laptop on monthly installments. TechWorld delivered the laptop immediately. Karan paid the first installment but stopped paying thereafter. When TechWorld demanded the remaining money, Karan refused to pay, stating that he was a minor when he signed the contract. TechWorld files a suit against Karan to recover the balance amount.\n\nWill TechWorld succeed in recovering the balance amount from Karan?",
+      "options": {
+        "A": "Yes, because TechWorld performed its part of the contract in good faith by delivering the laptop.",
+        "B": "No, because the agreement with a minor is void from the start, and a gaming laptop is a luxury item rather than a necessary.",
+        "C": "Yes, because any item bought by a minor for personal use creates a legal obligation to pay.",
+        "D": "No, but TechWorld can enforce the contract and recover the money once Karan turns eighteen."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step resolution:\n1. Identify the age of the contracting party: Karan is 17 years old, which makes him a minor under the rule.\n2. Apply the general rule: The passage states that an agreement with a minor is void ab initio (void from the very beginning), creating no legal liability or debt.\n3. Check the exception: The passage allows reimbursement only for 'necessaries' (basic food, shelter, basic education). A high-end gaming laptop purchased for playing video games is explicitly categorized under non-essential high-end gadgets / luxury items, so the exception does not apply.\n4. Conclusion: TechWorld cannot enforce the contract or recover any money from Karan.\n\nWrong options analysis:\n- Option A (Trap: Fairness/Performance Trap): Focuses on TechWorld's good faith delivery. Under legal principles, moral fairness or performance by one party cannot make a void contract valid.\n- Option C (Trap: Over-expansion of Exception): Claims personal use creates an obligation, ignoring the strict condition that only 'necessaries' qualify for reimbursement.\n- Option D (Trap: Ratification Fallacy): Suggests post-majority enforcement, which directly violates the principle stating a minor's agreement 'cannot be ratified or validated by the minor even after reaching the age of majority.'",
+      "trap_type": "Ignoring minor's incapacity based on good faith performance",
+      "concept_tag": "Contract - Capacity to Contract (Minor's Agreement)",
+      "verify_code": "",
+      "id": "AI-CLG-7aac18f8",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7aac18f8cc3e45060998bbfc2d74bab9f5f87ab78aec8defaf3af6062b5ae960",
+      "created_at": "2026-10-31T08:38:15.365251+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Alice and Bob are attempting to solve a logic puzzle independently. The probability that Alice solves it is 1/3, and the probability that Bob solves it is 1/2. What is the probability that the puzzle is solved by at least one of them?",
+      "options": {
+        "A": "2/3",
+        "B": "5/6",
+        "C": "1/6",
+        "D": "1/3"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Shortcut: For independent events, the probability of 'at least one' occurring is $1 - P(\\text{none})$. \n1. Calculate the probability of failure for each: $P(\\text{Alice fails}) = 1 - 1/3 = 2/3$ and $P(\\text{Bob fails}) = 1 - 1/2 = 1/2$.\n2. Since they solve independently, the probability that both fail is the product of their individual failure probabilities: $(2/3) \\times (1/2) = 1/3$.\n3. The probability that at least one solves it is $1 - P(\\text{both fail}) = 1 - 1/3 = 2/3$.\nAlternatively, using the Inclusion-Exclusion Principle: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = 1/3 + 1/2 - (1/3 \\times 1/2) = 5/6 - 1/6 = 4/6 = 2/3$.",
+      "trap_type": "Ignoring mutual exclusivity",
+      "concept_tag": "Probability - Independent Events",
+      "verify_code": "from fractions import Fraction\npa = Fraction(1, 3)\npb = Fraction(1, 2)\np_none = (1 - pa) * (1 - pb)\np_at_least_one = 1 - p_none\nanswer = 'A' if p_at_least_one == Fraction(2, 3) else 'B'",
+      "id": "AI-IQ-5df8de8d",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "5df8de8d56feb024433a3826a9bd4b5f01d20f777be5535f2c1c875cb1cc21b5",
+      "created_at": "2026-10-31T08:39:02.077195+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Identify the grammatically correct version of the underlined part:\n\nThe final decision regarding the distribution of funds was kept strictly **between the chief auditor and I** during the entire review.",
+      "options": {
+        "A": "between the chief auditor and I",
+        "B": "between the chief auditor and me",
+        "C": "between the chief auditor and myself",
+        "D": "between the chief auditor and him"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Identify the preposition 'between'. Prepositions must be followed by object pronouns (objective case), not subject pronouns (nominative case).\nStep 2: The first-person singular objective pronoun is 'me', making 'between the chief auditor and me' grammatically correct.\nShortcut: Drop the other noun to test the pronoun in isolation: you would say 'kept strictly between me', never 'kept strictly between I'.\nMain Distractor (A): Option A falls for the hypercorrection trap. Speakers often mistakenly believe 'and I' is always more formal or correct than 'and me', ignoring the grammatical rule governing prepositions. Option C incorrectly uses the reflexive pronoun 'myself', which requires the subject of the clause to be 'I'. Option D changes the first-person pronoun to a third-person pronoun, altering the intended meaning.",
+      "trap_type": "Hypercorrection trap (using nominative case 'I' instead of objective case 'me' after a preposition)",
+      "concept_tag": "Grammar - Pronoun Case after Prepositions",
+      "verify_code": "answer = 'B'",
+      "id": "AI-IV-ac605c70",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ac605c7009597e4ef49866b2295032f903b43901fc92f9612a3cd63c6d350ef4",
+      "created_at": "2026-10-31T08:40:19.242194+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage:\nBailment is the delivery of goods by one person to another for some purpose, upon a contract that they shall, when the purpose is accomplished, be returned or otherwise disposed of according to the directions of the person delivering them. The person delivering the goods is called the 'bailor', and the person to whom they are delivered is called the 'bailee'.\n\nIn all cases of bailment, the bailee is bound to take as much care of the goods bailed to him as a man of ordinary prudence would, under similar circumstances, take of his own goods of the same bulk, quality, and value as the goods bailed. If the bailee has taken the amount of care described above, he is not responsible for the loss, destruction, or deterioration of the thing bailed, in the absence of any special contract. \n\nHowever, a specific rule applies to the unauthorized use of goods. If the bailee makes any use of the goods bailed which is not according to the conditions of the bailment, the bailee is liable to make compensation to the bailor for any damage arising to the goods from or during such use. This liability for inconsistent use is absolute; the bailee remains liable for any damage occurring during such unauthorized use even if the damage was caused by an unpredictable event or an 'Act of God', and even if the bailee was otherwise as careful as a person of ordinary prudence.\n\nFacts:\nArjun leaves his vintage 1960s watch with his friend, Kabir, for safekeeping while Arjun is moving houses. Arjun explicitly tells Kabir: \"Keep it in your locked safe; do not wear it or take it out of the house.\" Kabir, wanting to show the watch to a watch enthusiast friend, wears it to a local cafe. While Kabir is sitting at the cafe, a sudden and unprecedented freak lightning strike hits a nearby pole, causing a heavy decorative light fixture in the cafe to fall and crush the watch on Kabir’s wrist. Kabir argues that he is not liable because the lightning strike was an unpredictable 'Act of God' and he was sitting quietly, taking all reasonable care of the watch.\n\nIs Kabir liable for the damage to the watch?",
+      "options": {
+        "A": "No, because the destruction was caused by an 'Act of God' which is an unpredictable event beyond Kabir's control.",
+        "B": "Yes, because Kabir used the watch in a manner inconsistent with the conditions of the bailment, making him liable for damage during such use.",
+        "C": "No, because Kabir took as much care of the watch as a man of ordinary prudence would by sitting quietly in a cafe.",
+        "D": "Yes, but only if Arjun can prove that Kabir was negligent in choosing where to sit in the cafe."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The passage establishes two tiers of liability. Generally, a bailee is only liable if they fail to act with 'ordinary prudence'. However, the 'twist' in the principle is the rule on inconsistent use. Arjun gave a specific condition: 'do not wear it or take it out of the house'. Kabir violated this by wearing it to a cafe. According to the principle, once a bailee uses goods inconsistently with the bailment conditions, they are liable for any damage arising 'during such use', regardless of whether they were careful or if the cause was an 'Act of God'. Since the watch was crushed while Kabir was wearing it (unauthorized use), his liability is absolute. (B) correctly identifies this. (A) and (C) fail because they apply the general rule of prudence and ignore the specific rule for inconsistent use. (D) incorrectly imports a requirement of negligence which the passage expressly waives for unauthorized use.",
+      "trap_type": "Ignoring the absolute liability triggered by a breach of specific bailment conditions (Inconsistent Use).",
+      "concept_tag": "Law of Bailment - Duty of Care and Inconsistent Use",
+      "verify_code": "def check_liability():\n    # Conditions\n    bailee_took_ordinary_care = True\n    use_was_inconsistent = True\n    damage_during_inconsistent_use = True\n    \n    # Principle: If use is inconsistent, bailee is liable for damage during such use \n    # regardless of ordinary care.\n    if use_was_inconsistent and damage_during_inconsistent_use:\n        liable = True\n    elif not bailee_took_ordinary_care:\n        liable = True\n    else:\n        liable = False\n        \n    return 'B' if liable else 'A'\n\nanswer = check_liability()",
+      "id": "AI-CLG-e50da7ed",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "e50da7ed839d9c4d23597d7e9f5d9910900363c07ae69397a610d9a35c0d4da1",
+      "created_at": "2026-10-31T08:41:24.777947+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Identify the grammatically correct sentence from the following options.",
+      "options": {
+        "A": "The principal investigator, along with his team of dedicated research fellows, is presenting the findings, which demonstrate a significant shift in climate patterns.",
+        "B": "The principal investigator, along with his team of dedicated research fellows, are presenting the findings, which demonstrate a significant shift in climate patterns.",
+        "C": "The principal investigator, along with his team of dedicated research fellows, is presenting the findings, which demonstrates a significant shift in climate patterns.",
+        "D": "The principal investigator, along with his team of dedicated research fellows, are presenting the findings, which demonstrates a significant shift in climate patterns."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "This question tests two distinct agreement rules. First, the subject-verb agreement for the main clause: the subject is 'The principal investigator' (singular). Phrases such as 'along with', 'as well as', or 'together with' are prepositional and do not create a compound subject. Therefore, the main verb must be 'is', not 'are'. This eliminates B and D. Second, the relative pronoun 'which' refers to its immediate antecedent, 'findings' (plural). Consequently, the following verb must be 'demonstrate' (plural), not 'demonstrates'. This eliminates C. Shortcut: When you see commas setting off an 'along with' phrase, mentally cross it out to find the true subject. Rule of proximity: Relative pronouns usually refer to the noun immediately preceding them.",
+      "trap_type": "Intervening phrase subject-verb agreement and relative pronoun antecedent error",
+      "concept_tag": "Sentence Correction - Subject-Verb Agreement",
+      "verify_code": "answer = 'A'",
+      "id": "AI-IV-350fa327",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "350fa32749992ae5584ae5db499a26a88388a2088839481487cedc84fcb8b759",
+      "created_at": "2026-10-31T08:42:20.337420+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Let $f(x) = \\frac{x^2}{x^2 + (1 - x)^2}$. What is the value of the sum:\n$$S = f\\left(\\frac{1}{100}\\right) + f\\left(\\frac{2}{100}\\right) + f\\left(\\frac{3}{100}\\right) + \\dots + f\\left(\\frac{99}{100}\\right)$$",
+      "options": {
+        "A": "49",
+        "B": "49.5",
+        "C": "50",
+        "D": "99"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Test for functional symmetry by evaluating $f(1-x)$:\n$$f(1-x) = \\frac{(1-x)^2}{(1-x)^2 + x^2}$$\n\nStep 2: Add $f(x)$ and $f(1-x)$:\n$$f(x) + f(1-x) = \\frac{x^2 + (1-x)^2}{x^2 + (1-x)^2} = 1$$\n\nStep 3: Pair the terms of the sum such that the inputs add up to 1:\n$$\\left[f\\left(\\frac{1}{100}\\right) + f\\left(\\frac{99}{100}\\right)\\right] + \\left[f\\left(\\frac{2}{100}\\right) + f\\left(\\frac{98}{100}\\right)\\right] + \\dots + \\left[f\\left(\\frac{49}{100}\\right) + f\\left(\\frac{51}{100}\\right)\\right]$$\nThere are 49 such complementary pairs, contributing $49 \\times 1 = 49$ to the total sum.\n\nStep 4: Account for the middle term, $f\\left(\\frac{50}{100}\\right) = f\\left(\\frac{1}{2}\\right)$:\n$$f\\left(\\frac{1}{2}\\right) = \\frac{(1/2)^2}{(1/2)^2 + (1/2)^2} = \\frac{1/4}{2/4} = 0.5$$\n\nStep 5: Add the paired sum and the middle term:\n$$S = 49 + 0.5 = 49.5$$\n\nShortcut / Signal: Whenever a problem asks for a large finite sum of a rational function $f(x)$ where inputs are symmetrically spaced between 0 and 1, always check the invariant $f(x) + f(1-x)$.\n\nMain Distractor Trap (A = 49): This occurs when a solver successfully discovers the $f(x) + f(1-x) = 1$ identity and finds the 49 pairs, but completely forgets to evaluate the unpaired center term $f(1/2)$. Trap C (50) comes from hastily assuming there are 50 full pairs because the terms go up to 100.",
+      "trap_type": "Unpaired middle term omission",
+      "concept_tag": "Functions - symmetry and functional equations",
+      "verify_code": "def f(x):\n    return (x**2) / (x**2 + (1-x)**2)\nanswer = sum(f(k/100) for k in range(1, 100))",
+      "id": "AI-CQ-67a7f60c",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "67a7f60c44c126753ef65394cd47c046d7f81055eb144bf7257c89a8d61bc6bf",
+      "created_at": "2026-10-31T08:43:01.829944+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Architectural preservationists often operate under the mandate of restoring buildings to a specific \"golden era,\" purging later additions to capture an original architectural intent. Yet this obsession with purity misconstrues the very nature of built heritage. Buildings are not static sculptures frozen in time; they are palimpsests shaped by successive generations of human occupancy. Stripping a nineteenth-century façade to reveal a medieval core does not recover authenticity; it actively erases centuries of lived history to satisfy a modern aesthetic fantasy of antiquity. Authentic conservation requires honoring the layers of time—the alterations, adaptive reuses, and even stylistic incongruities—that document how a structure actually functioned within its community. To freeze a structure at its genesis is to turn living history into a sterile museum piece.\n\nWhich of the following best captures the central argument of the passage?",
+      "options": {
+        "A": "Restoring a structure to its original design paradoxically compromises its authenticity by wiping away the material record of its subsequent use.",
+        "B": "Authentic conservation is best achieved by identifying and reinstating the single historical era in which a building was most socially functional.",
+        "C": "Stripping modern additions inevitably damages the original medieval core of historical buildings, creating sterile museum pieces.",
+        "D": "Architectural preservationists must view buildings as static historical monuments to successfully shield their original design intent from modern distortion."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step-by-step Solution:\n1. Identify the pivot signal: The author opens with the conventional preservationist approach (restoring to a original 'golden era'), then introduces a strong contrast signal ('Yet this obsession with purity misconstrues...').\n2. Extract the main insight: The author argues that buildings are 'palimpsests' (layered documents). Authenticity does not lie in a pristine original state ('genesis'), but in the accumulated layers of human use and adaptation across time.\n3. Evaluate options against this thesis:\n- Option A accurately reframes the paradox: attempting to restore an 'original' state actually erases authentic history (the lived layers).\n- Option B (Main Distractor - HALF-TRUE): Re-uses text-adjacent concepts ('authentic conservation', 'functional'), but advocates picking a 'single historical era', which is precisely the single-era focus the author criticizes as a 'sterile' approach.\n- Option C (EXTREME SCOPE / MISINTERPRETATION): The text states that stripping a façade to reveal a medieval core erases later history, not that it physically damages the medieval core itself.\n- Option D (REVERSAL): The author explicitly rejects the premise that buildings are 'static sculptures frozen in time'.\n\nThinking Error on Distractor B: Test-takers often fall for options that recycle key vocabulary ('authentic conservation', 'socially functional') without checking if the option's core recommendation contradicts the author's primary argument against singling out one era.",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - central argument and author's nuance",
+      "id": "AI-CVR-66456910",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6645691030562daaec7a96e67c1a91a53a58a99068d58dd0796c607abd643d9e",
+      "created_at": "2026-10-31T08:43:50.116858+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: A contract is discharged under the doctrine of frustration if an unforeseen event occurs after the contract is formed, which is not the fault of either party, and which makes performance physically or legally impossible, or transforms the obligation into something radically different from what was undertaken. However, the doctrine of frustration does not apply if the parties have made express provision in the contract for the occurrence of such an event, or if the event was foreseeable. Furthermore, a mere increase in the cost of performance or a change in market conditions that makes the contract less profitable does not constitute frustration.\n\nFact Situation: Dev, a renowned sculptor, is contracted by the City Council to create and install a marble statue in the Central Park by December. The contract includes a clause: 'In the event of any natural disaster or site unavailability, Dev shall deliver the sculpture to the City Museum instead, and the Council shall pay the full price.' In November, a freak lightning strike destroys the park's foundations, and the park is closed indefinitely for safety reasons. Dev claims the contract is frustrated because the 'open-air public experience' intended for the statue is now impossible. The Council insists he deliver it to the Museum as per the clause. Is the contract frustrated?",
+      "options": {
+        "A": "Yes, because the lightning strike was an unforeseen act of God that made the original performance impossible.",
+        "B": "Yes, because the 'open-air public experience' was the fundamental purpose of the contract, which is now destroyed.",
+        "C": "No, because the contract expressly provided for the contingency of site unavailability.",
+        "D": "No, because lightning strikes are foreseeable events in open public parks and should have been guarded against."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "To solve this, identify the 'Non-linear jump': the transition from the general rule (frustration via impossibility) to the specific exception (express provision). While the lightning strike makes the original performance (statue in the park) impossible, the passage explicitly states that frustration 'does not apply if the parties have made express provision in the contract for the occurrence of such an event.' The contract specifically mentioned 'site unavailability' and provided an alternative (the City Museum). Therefore, the contract remains valid and enforceable under the alternative terms. Signal: Look for 'However' or 'Exception' in legal principles; they usually dictate the answer in CLAT. Trap (B) is the main distractor because it appeals to the 'radical difference' part of the rule, but the express provision exception takes precedence.",
+      "trap_type": "Ignoring the contractual allocation of risk (Express Provision)",
+      "concept_tag": "Legal RC - Doctrine of Frustration and Express Clauses",
+      "verify_code": "def check_frustration():\n    # Conditions for frustration\n    unforeseen_event = True\n    no_fault = True\n    performance_impossible = True\n    \n    # Exceptions to frustration\n    express_provision_exists = True # The clause about the Museum\n    event_foreseeable = False\n    \n    # Logic from passage: \n    # frustration = (unforeseen and no_fault and impossible) AND NOT (express_provision or foreseeable)\n    is_frustrated = (unforeseen_event and no_fault and performance_impossible) and not (express_provision_exists or event_foreseeable)\n    \n    if not is_frustrated:\n        return 'C'\n    else:\n        return 'A'\n\nanswer = check_frustration()",
+      "id": "AI-CR-f0c7eb6a",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f0c7eb6afc7c1cae8d03901346b63d0cd3eef2fcb948236f6cb6db1218b4da67",
+      "created_at": "2026-10-31T08:50:45.720881+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A research firm conducted a study on the origins of entrepreneurial success. They analyzed 500 founders of 'Unicorn' startups (valued at over $1 billion) and discovered a striking pattern:\n\n| Attribute | Successful Founders (n=500) |\n| :--- | :--- |\n| Participated in competitive sports in youth | 82% |\n| Attended a top-tier university | 75% |\n| Started a business before age 25 | 60% |\n\nThe lead researcher concluded: 'The discipline and resilience forged in the arena of competitive youth sports are the key factors that allow these founders to survive the high-pressure environment of a startup and achieve elite-level success.'\n\nWhich of the following, if true, most seriously weakens the researcher’s conclusion?",
+      "options": {
+        "A": "Many founders of successful startups who did not play competitive sports achieved success through alternative methods of building resilience.",
+        "B": "A study of 500 founders whose startups failed within the first three years found that 85% of them had participated in competitive youth sports.",
+        "C": "The physical discipline required for sports is fundamentally different from the mental resilience required to manage a corporate entity.",
+        "D": "Most children from high-income families, who are statistically more likely to start businesses, are also more likely to be enrolled in competitive sports programs."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The researcher's argument follows a classic 'Correlation implies Causation' flaw. The evidence shows a high incidence of sports backgrounds among successful founders (82%). To weaken this, we need to show that this trait is not a differentiator for success. \n\n(B) provides the 'Control Group' insight. If 85% of failed founders also have sports backgrounds, then 'sports participation' is a common trait among all founders (regardless of outcome) rather than a driver of success specifically. \n\nUsing the Negation Test on the researcher's hidden assumption: The researcher assumes that the rate of sports participation is significantly higher in successful founders than in the general or unsuccessful population. If we negate this (i.e., the rate is the same or higher in failures), the conclusion that sports is the 'key factor' for success collapses. \n\n(A) is a 'Necessity vs. Sufficiency' trap; just because sports aren't necessary for everyone doesn't mean they aren't a driver for those who have them. (D) suggests an alternate correlation (wealth), but (B) is a more direct attack on the causal link by showing the effect does not follow the cause.",
+      "trap_type": "Confusion of Necessity vs. Sufficiency",
+      "concept_tag": "Causal Reasoning - Control Group Insight",
+      "verify_code": "import math\n# Logic check: If P(Sports|Success) = 0.82 and P(Sports|Failure) = 0.85,\n# the Likelihood Ratio P(Sports|Success) / P(Sports|Failure) is < 1.\n# This means having a sports background slightly increases the probability of failure,\n# or at least fails to increase the probability of success.\nsuccess_rate_sports = 0.82\nfailure_rate_sports = 0.85\n\n# The conclusion is weakened if the trait is not a predictor.\n# Since failure_rate >= success_rate, the 'driver' claim is invalidated.\nanswer = 'B' if failure_rate_sports >= success_rate_sports else 'None'\nanswers = {answer}",
+      "id": "AI-CLR-3cee1f3b",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3cee1f3b4c99f6fa0b99bb59d69b4aa9288acf87159b03a012e256b837cbed7e",
+      "created_at": "2026-10-31T08:51:19.280963+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "### Passage\n\nIn the law of contracts, an agreement is formed only when an offer is accepted and the acceptance is communicated to the offeror. The 'Postal Rule' (or 'Mailbox Rule') serves as a significant exception to this general principle. It provides that where the use of the post is a reasonable, authorized, or prescribed method of communication, the acceptance is deemed complete and the contract is formed the moment the offeree deposits the letter in the post box, provided it is correctly addressed and stamped. The rationale is that the post office acts as the common agent for both parties. Consequently, the contract is binding even if the letter is delayed or lost in the mail.\n\nHowever, the Postal Rule is a rule of convenience and can be displaced. If the offeror, as the 'master of the offer,' specifies that the acceptance must be actually received to be effective (e.g., using phrases like 'receipt by me' or 'notice to me'), the Postal Rule is excluded. In such cases, the general rule of communication applies, and the contract is only formed when the acceptance reaches the offeror. For instantaneous modes of communication, such as emails or telephone calls, the Postal Rule typically does not apply; the contract is formed only when the acceptance is received by the offeror.\n\nAn offeror is generally free to revoke an offer at any time before the acceptance is complete. Crucially, a revocation is only effective when it is actually communicated to (received by) the offeree. This means the revocation must be received by the offeree before they have completed the act of acceptance. If the Postal Rule applies, the revocation must reach the offeree before they post the letter. If the Postal Rule is excluded by the terms of the offer, the revocation must reach the offeree before their acceptance reaches the offeror.\n\n### Facts\nOn October 1, Mr. X sends a letter to Mr. Y offering to sell his vintage car for $50,000. The letter states: \"I must receive your written acceptance by October 10 for this deal to be binding. Please use the post for your reply.\" Mr. Y receives the letter on October 3. On October 5, at 9:00 AM, Mr. X changes his mind and sends an email to Mr. Y revoking the offer. At 10:00 AM on October 5, Mr. Y, who has not yet checked his email, posts a letter of acceptance. At 11:00 AM on October 5, Mr. Y checks his inbox and reads Mr. X’s revocation email. Mr. X receives the letter of acceptance on October 8. \n\nIs there a binding contract between Mr. X and Mr. Y?",
+      "options": {
+        "A": "Yes, a contract was formed on October 5 at 10:00 AM, as the Postal Rule applies once the letter of acceptance is posted.",
+        "B": "No, because the revocation was communicated to Mr. Y at 11:00 AM on October 5, which was before the acceptance reached Mr. X.",
+        "C": "No, because Mr. X revoked the offer at 9:00 AM on October 5, and an offeror can revoke an offer at any time before it is received.",
+        "D": "Yes, a contract was formed on October 8 because the revocation via email was invalid as the offer was made and requested to be accepted via post."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve this, we must determine when acceptance was 'complete' and when revocation was 'effective.' \n1. **Acceptance Timing:** Although the offer suggested using the post, it explicitly stated: 'I must receive your written acceptance.' This phrase excludes the Postal Rule. Therefore, acceptance is only complete upon receipt (October 8). \n2. **Revocation Timing:** The passage states revocation is effective when received/communicated. Mr. Y received/read the email at 11:00 AM on October 5. \n3. **Comparison:** Since the revocation became effective (Oct 5) before the acceptance was complete (Oct 8), the offer was successfully terminated. \n**Shortcut:** Look for 'receipt' requirements in the offer. They are the 'kryptonite' to the Postal Rule.",
+      "trap_type": "Ignoring the exclusion of the Postal Rule by specific offer terms",
+      "concept_tag": "Contract Law - Postal Rule and Revocation",
+      "verify_code": "import datetime\n\n# Dates and events\noffer_received = datetime.datetime(2023, 10, 3)\nrevocation_sent = datetime.datetime(2023, 10, 5, 9, 0)\nacceptance_posted = datetime.datetime(2023, 10, 5, 10, 0)\nrevocation_received = datetime.datetime(2023, 10, 5, 11, 0)\nacceptance_received = datetime.datetime(2023, 10, 8)\n\n# Logic check\n# 1. Does Postal Rule apply? No, because of 'I must receive'\n# 2. Acceptance is complete at acceptance_received\n# 3. Revocation is effective at revocation_received\n\ncontract_formed = acceptance_received < revocation_received\n# Since Oct 8 is NOT before Oct 5 11:00 AM, contract_formed is False.\n\nanswer = 'B' if not contract_formed else 'A'",
+      "id": "AI-CLG-8d17787e",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "8d17787e5133847851d9b95a3e351c8adc9035d53ae968f8100f47350106c4eb",
+      "created_at": "2026-10-31T08:51:49.083375+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Let $P(x) = x^4 - 6x^3 + 7x^2 - 5x + 1$ be a polynomial with roots $\\alpha, \\beta, \\gamma, \\text{ and } \\delta$. What is the value of the expression:\n$$\\frac{1}{1-\\alpha} + \\frac{1}{1-\\beta} + \\frac{1}{1-\\gamma} + \\frac{1}{1-\\delta}$$",
+      "options": {
+        "A": "2.5",
+        "B": "-2.5",
+        "C": "5.0",
+        "D": "6.0"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "To solve this efficiently, we use the property of the logarithmic derivative of a polynomial. For any polynomial $P(x) = c(x-r_1)(x-r_2)...(x-r_n)$, the derivative $P'(x)$ satisfies the relation $\\frac{P'(x)}{P(x)} = \\sum_{i=1}^n \\frac{1}{x-r_i}$. \n\nStep 1: Identify the target expression as $\\sum \\frac{1}{1-r_i}$, which matches the identity at $x=1$.\nStep 2: Calculate $P(1) = 1^4 - 6(1)^3 + 7(1)^2 - 5(1) + 1 = 1 - 6 + 7 - 5 + 1 = -2$.\nStep 3: Find the derivative $P'(x) = 4x^3 - 18x^2 + 14x - 5$.\nStep 4: Calculate $P'(1) = 4(1)^3 - 18(1)^2 + 14(1) - 5 = 4 - 18 + 14 - 5 = -5$.\nStep 5: Compute the ratio $\\frac{P'(1)}{P(1)} = \\frac{-5}{-2} = 2.5$.\n\nShortcut: Instead of using Vieta's formulas to find symmetric sums (which is computationally heavy for degree 4), recognize that $\\frac{P'(k)}{P(k)}$ always yields the sum of reciprocals of $(k - \\text{roots})$.",
+      "trap_type": "Sign error or reciprocal confusion",
+      "concept_tag": "Polynomials - Logarithmic Derivative Identity",
+      "verify_code": "from fractions import Fraction\n\ndef poly(x):\n    return x**4 - 6*x**3 + 7*x**2 - 5*x + 1\n\ndef d_poly(x):\n    return 4*x**3 - 18*x**2 + 14*x - 5\n\n# Using the identity P'(1)/P(1) = sum(1/(1-root))\nval = Fraction(d_poly(1), poly(1))\nanswer = float(val)\n\n# Verification via sum of roots logic\n# Let y = 1/(1-x) => x = (y-1)/y\n# Substituting into P(x) and looking at sum of roots -coeff_y3 / coeff_y4\n# (y-1)^4 - 6y(y-1)^3 + 7y^2(y-1)^2 - 5y^3(y-1) + y^4 = 0\n# coeff y^4: 1 - 6 + 7 - 5 + 1 = -2\n# coeff y^3: -4 - 6(-3) + 7(-2) - 5(-1) = -4 + 18 - 14 + 5 = 5\n# sum = -5 / -2 = 2.5\nassert answer == 2.5",
+      "id": "AI-IQ-945af75f",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "945af75f4763ca356f3ecb8c9e20e5a5a0133e5d836d405a20404ee155f5652e",
+      "created_at": "2026-10-31T08:52:42.604935+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A delivery executive travels from a warehouse to a customer's location at a constant speed of 30 km/h and returns to the warehouse along the same route at a constant speed of 20 km/h. What is his average speed for the entire round trip in km/h?",
+      "options": {
+        "A": "25",
+        "B": "24",
+        "C": "26",
+        "D": "22.5"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To find the average speed, we must use the formula: Total Distance / Total Time. Let the distance between the warehouse and the location be $D$. The time taken to go is $D/30$ and the time taken to return is $D/20$. Total distance is $2D$. Total time is $(D/30 + D/20) = (2D+3D)/60 = 5D/60 = D/12$. Average Speed = $2D / (D/12) = 24$ km/h. Shortcut: When distances are equal, the average speed is the Harmonic Mean of the speeds: $2xy / (x+y) = 2(30)(20) / (30+20) = 1200 / 50 = 24$. The Arithmetic Mean (Option A) is a trap because speed is inversely proportional to time; the executive spends more time traveling at the slower speed (20 km/h) than at the faster speed (30 km/h), so the average must be closer to 20 than to 30.",
+      "trap_type": "Arithmetic Mean Fallacy",
+      "concept_tag": "Time Speed Distance - Average Speed",
+      "verify_code": "v1, v2 = 30, 20\nanswer_numeric = (2 * v1 * v2) / (v1 + v2)\nanswer = 'B' if answer_numeric == 24 else None",
+      "id": "AI-CQ-15921f8c",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "15921f8c646ba0d47b7d8ce9f0b24a933f3511a6b9ed2a7be365dea066727d0a",
+      "created_at": "2026-10-31T08:55:33.598633+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: The dominance of the glass-and-steel skyscraper in urban architecture is beginning to wane as designers acknowledge the 'sick building syndrome' associated with sealed environments. Modern architects are increasingly pivoting toward biophilic design—a philosophy that integrates natural light, ventilation, and living vegetation into the structural core. Unlike the mid-century trend of creating hermetically sealed boxes that relied entirely on artificial climate control, biophilic structures prioritize the psychological and physiological well-being of their occupants. Research suggests that employees in offices with natural greenery and sunlight report lower stress levels and higher productivity. However, this transition is not merely about aesthetics or employee comfort; it is a response to the massive carbon footprint of cooling glass towers. By utilizing passive cooling techniques and green walls, new buildings can significantly reduce their energy consumption. Consequently, the move toward 'living' buildings represents a convergence of environmental necessity and human-centric design.\n\nAccording to the passage, the shift toward biophilic design is driven by:",
+      "options": {
+        "A": "a combination of environmental requirements and the physical and mental health of occupants.",
+        "B": "a primary desire to improve the visual appeal of city skylines.",
+        "C": "the complete inability of glass towers to maintain a stable internal temperature.",
+        "D": "a return to the energy-efficient building methods of the mid-century era."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The passage identifies two main drivers for the shift. First, it mentions 'psychological and physiological well-being' (human-centric design). Second, it identifies the 'massive carbon footprint' and 'energy consumption' (environmental necessity). Option A correctly synthesizes these two points. The reading signal is the word 'Consequently' in the final sentence, which summarizes the two prongs of the argument. Option B is a 'Half-true' trap; while aesthetics are mentioned, the passage explicitly states the transition is 'not merely about aesthetics.' Option C is 'Extreme scope'; the passage says glass towers have a high carbon footprint for cooling, not that they are 'completely unable' to maintain temperature. Option D is a 'Reversal'; the passage describes mid-century buildings as 'hermetically sealed boxes' that relied on artificial control, the very thing modern design is moving away from.",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - detail",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CVR-14354ffc",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "14354ffc3d99d18b5bc56d7d2a67eeead273311666c89c2dcd7e3fc615b7f95e",
+      "created_at": "2026-10-31T08:55:50.835530+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five books—Physics, Chemistry, Biology, Mathematics, and History—are arranged on a shelf from left to right in five distinct positions (1st to 5th).\n\n1. The Mathematics book is not at either end of the shelf.\n2. Physics is placed immediately to the left of History.\n3. Biology is at the extreme right end (5th position).\n4. There are exactly two books between Chemistry and Physics.\n\nWhich book is in the third position from the left?",
+      "options": {
+        "A": "Physics",
+        "B": "Chemistry",
+        "C": "Mathematics",
+        "D": "History"
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "Let's solve this step-by-step using the given constraints:\n1. From clue 3, we know the 5th position is Biology: [_ , _ , _ , _ , Biology].\n2. From clue 4, Chemistry and Physics have two books between them. This means their positions must be (1, 4) or (2, 5). Since Biology is already at 5, they must occupy positions 1 and 4.\n3. Now consider clue 2: Physics is immediately to the left of History (P, H). \n   - If Physics were at position 4, History would have to be at position 5. But Biology is at 5. This is impossible.\n   - Therefore, Physics must be at position 1 and History at position 2.\n4. If Physics is at 1, then Chemistry must be at position 4 (to maintain the 2-book gap).\n5. We are left with position 3 for the only remaining book, Mathematics. \n6. Final check: Mathematics is at position 3, which satisfies clue 1 (not at ends). The final order is: Physics, History, Mathematics, Chemistry, Biology.\n\nShortcut: Use the 'anchor' (Biology at 5) and the 'block' (PH) to eliminate the gap possibilities for Chemistry and Physics quickly.",
+      "trap_type": "Constraint contradiction",
+      "concept_tag": "Linear Arrangement - Fixed positions and relative spacing",
+      "verify_code": "import itertools\nbooks = ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'History']\nsolutions = []\nfor p in itertools.permutations(books):\n    if p[0] == 'Mathematics' or p[4] == 'Mathematics': continue\n    if p[4] != 'Biology': continue\n    idx_p = p.index('Physics')\n    idx_h = p.index('History')\n    if idx_h != idx_p + 1: continue\n    idx_c = p.index('Chemistry')\n    if abs(idx_c - idx_p) != 3: continue\n    solutions.append(p)\nmapping = {'Physics': 'A', 'Chemistry': 'B', 'Mathematics': 'C', 'History': 'D'}\nanswers = {mapping[s[2]] for s in solutions}\nanswer = next(iter(answers))",
+      "id": "AI-CD-532c3125",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "532c31259f1835d03f165472a91dd67d13406796ae190137047e7191f067cf97",
+      "created_at": "2026-10-31T08:56:16.645088+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "Passage: Deep-sea marine archaeology was long constrained by technological reach, but recent advances in autonomous underwater vehicles have exposed remarkably intact wooden shipwrecks in cold, anoxic waters such as the Black Sea. In such oxygen-depleted depths, wood-boring bivalves like Teredo navalis cannot survive, leaving structural timber, cordage, and delicate carvings preserved for millennia.\n\nYet, this unprecedented preservative environment creates a profound conservation paradox upon recovery. When centuries-old waterlogged wood is brought to the surface, the loss of ambient hydrostatic pressure and sudden exposure to atmospheric oxygen cause rapid cellular collapse and microbial degradation unless the water within the cell walls is meticulously displaced by synthetic polymers like polyethylene glycol. Because this stabilization process is exceedingly slow and costly, raised hulls frequently suffer irreversible structural damage in terrestrial facilities. Consequently, several maritime conservators now advocate a policy of deliberate non-recovery: documenting wrecks with high-resolution photogrammetry while leaving the physical artifacts undisturbed on the seafloor, arguing that benign neglect in an anoxic environment offers far better stewardship than well-intentioned excavation.\n\nBased on the passage, the author's discussion of deep-sea shipwreck conservation implies that:",
+      "options": {
+        "A": "Leaving waterlogged wooden artifacts in their undisturbed marine environment often yields better preservation outcomes than excavating them for land-based conservation.",
+        "B": "High-resolution digital photogrammetry has made the physical recovery of deep-sea shipwrecks completely unnecessary for all historical and archaeological research.",
+        "C": "Synthetic polymers like polyethylene glycol accelerate cellular collapse in ancient timber when exposed to atmospheric oxygen.",
+        "D": "Deep-sea timber remains intact primarily because immense hydrostatic pressure suppresses the destructive activity of wood-boring bivalves."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Identify the core thesis and conclusion of the passage. The author establishes that deep, anoxic seabed conditions preserve wooden hulls intact, whereas bringing them to the surface triggers rapid cellular collapse and decay unless treated with slow, costly synthetic polymers. Because terrestrial facilities frequently fail to prevent irreversible damage, conservators advocate leaving the wrecks where they are ('benign neglect in an anoxic environment offers far better stewardship than well-intentioned excavation').\n2. Evaluate Option A: It accurately synthesizes this conclusion—the natural marine setting preserves the artifacts better than terrestrial recovery reliably can.\n\nReading signal: Notice the structural transition 'Yet, this unprecedented preservative environment creates a profound conservation paradox upon recovery...' followed by the conclusion 'Consequently, several maritime conservators now advocate a policy of deliberate non-recovery...'. Tracing the author's pivot from discovery to the paradox of recovery reveals the main point.\n\nWhy the distractors fail:\n- Main Distractor (D) [Trap: Half-true / False causal link]: The passage mentions both hydrostatic pressure and wood-boring bivalves, but they belong to separate causal chains. Bivalves cannot survive due to 'oxygen-depleted depths' (anoxia), not hydrostatic pressure. Hydrostatic pressure is relevant only to the structural collapse that happens *after* retrieval. Test-takers who speed-read and rely on memory of isolated keywords frequently conflate these two causes.\n- Option B [Trap: Extreme scope]: The passage states that photogrammetry is used to document wrecks when choosing non-recovery, not that physical recovery is 'completely unnecessary for all historical and archaeological research.'\n- Option C [Trap: Reversal]: Polyethylene glycol is used to *prevent* cellular collapse by displacing water; it does not accelerate decay.",
+      "trap_type": "Half-true / False causal link",
+      "concept_tag": "RC - inference",
+      "id": "AI-CVR-174d8a60",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-flash-latest",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "174d8a606a88a5e2498e3ab2e494d50706e30b8f1155a6c9d7c471bd52045ceb",
+      "created_at": "2026-10-31T09:13:37.852910+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 16,
-      "rejected": 5,
-      "accepted": 11
+      "attempts": 19,
+      "rejected": 6,
+      "accepted": 13
     },
     "CAT VARC RC": {
+      "attempts": 26,
+      "rejected": 11,
+      "accepted": 15
+    },
+    "CAT DILR": {
       "attempts": 23,
       "rejected": 11,
       "accepted": 12
     },
-    "CAT DILR": {
-      "attempts": 20,
-      "rejected": 9,
-      "accepted": 11
-    },
     "CLAT RC": {
-      "attempts": 17,
-      "rejected": 6,
-      "accepted": 11
+      "attempts": 19,
+      "rejected": 7,
+      "accepted": 12
     },
     "CLAT Logical Reasoning": {
-      "attempts": 20,
-      "rejected": 9,
-      "accepted": 11
+      "attempts": 22,
+      "rejected": 10,
+      "accepted": 12
     },
     "CLAT Legal Reasoning": {
-      "attempts": 10,
+      "attempts": 13,
       "rejected": 1,
-      "accepted": 9
+      "accepted": 12
     },
     "IPMAT Quant": {
-      "attempts": 12,
-      "rejected": 4,
-      "accepted": 8
+      "attempts": 16,
+      "rejected": 6,
+      "accepted": 10
     },
     "IPMAT Verbal": {
-      "attempts": 9,
-      "rejected": 0,
-      "accepted": 9
+      "attempts": 12,
+      "rejected": 1,
+      "accepted": 11
     }
   }
 }
