@@ -32,7 +32,7 @@
 - **Error log + spaced repetition:** mistakes come back after 3 → 7 → 15 questions.
 - **Weakness heatmap:** accuracy by topic × difficulty, a speed breakdown (on time / too slow / wrong), and the traps you fall for most.
 - **Streaks & a daily micro-challenge** (cycles through the whole seed bank before repeating).
-- **Freemium + Pro:** Free: 10 questions/day (counted by IST day; the daily challenge and mistake reviews are not counted); **Pro: ₹500 off the first month (₹499), then ₹999/month**: Unlimited verified practice + fresh questions added every day. For Pro, very fast repeated question requests (a script scraping the bank) trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets new questions; paid through Razorpay Payment Links. Each payment unlocks 30 days; there is no auto-debit, so you pay again each month only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` once to record the intro offer) (no card data touches the app).
+- **Freemium + Pro:** Free: 10 questions/day (counted by IST day; the daily challenge and mistake reviews are not counted); **Pro: ₹499/month or ₹999 for 3 months; Founding 500 offer: the first 500 paying users of each app get their first month for ₹199 (MRP ₹999)**: Unlimited verified practice + fresh questions added every day. For Pro, very fast repeated question requests (a script scraping the bank) trigger a 10-minute cooldown (logged in `abuse_events`, never an automatic ban), and only the most recent sign-in per app gets new questions; paid through Razorpay Payment Links. Each payment unlocks 30 days (90 on the 3-month plan); there is no auto-debit, so you pay again only if you want to continue (run `supabase/migrations/2026-10-27_pro_purchases.sql` and `supabase/migrations/2026-10-31_launch_offer.sql` once; until the second one is run the launch offer stays hidden) (no card data touches the app).
 - **Optional Google sign-in:** saves your progress across devices. Guest mode works without it.
 - **Privacy-first:** only a hashed ID is stored (HMAC-SHA256 of your email + a server secret). No email, name or photo. One-click **Download my data** and **Delete my data**. See **[PRIVACY.md](PRIVACY.md)**.
 - **Always-on demo:** with no API key, the app serves 45 original seed questions (9 per section, across all three difficulties). All answer keys are hand-checked, and every Quant key is also verified by computation in the test suite.
@@ -157,7 +157,7 @@ Set `EXAM_FAMILY` in an app's Streamlit secrets (or env) to choose which app it 
 | `engineering` | JEE Main | coming soon |
 
 Each app has its own branding, question bank (`data/sample_bank_<family>.json`), progress and Pro
-(the first-month ₹499 offer applies once per app). All apps share one Supabase project and one Razorpay
+(the Founding 500 ₹199 first month is counted per app and applies once per user per app). All apps share one Supabase project and one Razorpay
 account. Run `supabase/migrations/2026-10-28_exam_families.sql` once before deploying a second app.
 
 To deploy a new app: Streamlit Community Cloud → New app → same repo, branch `main`, file `app.py`, then

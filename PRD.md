@@ -111,7 +111,7 @@ Aspirants are often students and working professionals who don't want their prep
 ## 7. Unit economics
 > ⚠️ **All numbers below are planning assumptions for a pre-launch product, not measured data.** They exist to show the model is viable and to say what must be true.
 
-**Pricing:** Free: 10 questions/day from the verified bank. **Pro = ₹999/month**: unlimited verified practice + fresh questions added every day, unlimited adaptive mocks, full analytics history and the faculty test builder.
+**Pricing:** Free: 10 questions/day from the verified bank. **Pro = ₹499/month or ₹999 for 3 months** (Founding 500: first month ₹199 for the first 500 paying users per app): unlimited verified practice + fresh questions added every day, unlimited adaptive mocks, full analytics history and the faculty test builder.
 
 | Assumption | Value | Basis |
 |---|---|---|
@@ -126,7 +126,7 @@ Aspirants are often students and working professionals who don't want their prep
 What must hold for >3:1: CAC stays under ~₹1,700, *or* lifetime goes up (e.g. CAT + CLAT + GMAT bundles, or carrying over to the next year's attempt).
 
 ### 7.1 Monetisation implementation (v0.2)
-- **Free:** 10 questions/day, from the verified bank only (no live AI). **Pro:** ₹999 for 30 days: unlimited verified practice + fresh questions added every day.
+- **Free:** 10 questions/day, from the verified bank only (no live AI). **Pro:** ₹499 for 30 days or ₹999 for 90 days: unlimited verified practice + fresh questions added every day.
 - **Flow:** the app creates a per-user Razorpay Payment Link (`reference_id` = hashed user ID + timestamp). The user pays on Razorpay and clicks **"I've paid, verify"**. The server checks the link's status through the Razorpay API and extends `pro_until` by 30 days (stacking on any remaining time).
 - **Next:** a Razorpay webhook for automatic activation, then Subscriptions for auto-renew.
 

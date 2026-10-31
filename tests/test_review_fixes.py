@@ -90,7 +90,7 @@ def test_supabase_consume_payment_outcomes():
 
 def test_app_inserts_before_extending():
     src = (ROOT / "app.py").read_text()
-    i, j = src.index("apply_verified_payment(s.pending_ref)"), src.index("prof = payments.extend_pro(")
+    i, j = src.index("apply_verified_payment(s.pending_ref, plan)"), src.index("prof = payments.extend_pro(")
     assert i < j
 
 
@@ -139,3 +139,35 @@ def test_all_bank_verify_code_still_passes():
                 assert engine.answer_matches_key(ans, q["options"], q["correct_answer"]), q.get("id")
                 n += 1
     assert n > 0
+
+
+def test_supabase_consume_payment_records_plan_and_tolerates_old_table():
+    st, db = _sb()
+    assert st.consume_payment("plink_1", "u", "launch") is True
+    assert db.table.return_value.insert.call_args[0][0]["plan"] == "launch"
+    calls = []
+
+    def ins(row):
+        calls.append(row)
+        m = MagicMock()
+        if "plan" in row:
+            m.execute.side_effect = Exception("Could not find the 'plan' column of 'consumed_payments'")
+        return m
+    st2, db2 = _sb()
+    db2.table.return_value.insert.side_effect = ins
+    assert st2.consume_payment("plink_2", "u", "monthly") is True
+    assert len(calls) == 2 and "plan" not in calls[1]
+
+
+def test_supabase_launch_claims():
+    st, db = _sb()
+    q = db.table.return_value.select.return_value.eq.return_value.eq.return_value
+    q.execute.return_value.count = 7
+    assert st.launch_claims() == 7
+    q.execute.side_effect = Exception("column consumed_payments.plan does not exist")
+    assert st.launch_claims() is None
+
+
+def test_launch_offer_migration():
+    sql = (ROOT / "supabase/migrations/2026-10-31_launch_offer.sql").read_text()
+    assert "add column if not exists plan text" in sql
