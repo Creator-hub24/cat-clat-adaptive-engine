@@ -9,7 +9,6 @@ import requests
 API = "https://api.razorpay.com/v1"
 PRO_DAYS = 30
 LAUNCH_SEATS = 500  # "Founding 500": the first 500 paying users of each app get their first month at Rs 199
-MRP_PAISE = 99900   # shown struck through next to the launch price
 
 # plan key -> (amount in paise, days of Pro, description). The user picks a plan; the amount is fixed per plan.
 PLANS = {

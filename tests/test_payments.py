@@ -32,7 +32,7 @@ class FakeHttp:
 def test_plan_prices_and_days():
     assert {k: v[:2] for k, v in payments.PLANS.items()} == {
         "launch": (19900, 30), "monthly": (49900, 30), "quarterly": (99900, 90)}
-    assert payments.LAUNCH_SEATS == 500 and payments.MRP_PAISE == 99900
+    assert payments.LAUNCH_SEATS == 500 and not hasattr(payments, "MRP_PAISE")
 
 
 def test_plans_for_launch_seats():

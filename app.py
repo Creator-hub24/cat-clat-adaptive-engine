@@ -403,7 +403,7 @@ with st.sidebar:
         st.subheader("Go Pro · ₹499/month or ₹999 for 3 months")
         if launch:
             left = payments.LAUNCH_SEATS - claims
-            st.markdown(f"🚀 **Founding 500 offer: first month** ~~₹{payments.MRP_PAISE // 100}~~ "
+            st.markdown(f"🚀 **Founding 500 offer: first month** ~~₹{payments.PRO_PRICE_PAISE // 100}~~ "
                         f"**₹{payments.LAUNCH_PRICE_PAISE // 100}** · {left} of {payments.LAUNCH_SEATS} spots left")
         st.markdown(f"**{guard.PRO_PITCH}**")
         st.caption("Each payment unlocks Pro for its plan's period (30 days, or 90 days on the 3-month plan). "
