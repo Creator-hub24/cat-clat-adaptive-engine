@@ -123,12 +123,16 @@ class MemoryStore:
         self.consumed: dict[str, dict] = {}  # shared across families, like the DB table
         self.abuse: list[dict] = []
 
-    def consume_payment(self, ref, uid):
+    def consume_payment(self, ref, uid, plan=None):
         """True = first use of this payment ref (extend Pro); False = already used (do not extend)."""
         if ref in self.consumed:
             return False
-        self.consumed[ref] = {"user_id": uid, "exam_family": self.family}
+        self.consumed[ref] = {"user_id": uid, "exam_family": self.family, "plan": plan}
         return True
+
+    def launch_claims(self):
+        """How many Founding-500 (launch) payments this app has recorded."""
+        return sum(1 for v in self.consumed.values() if v["exam_family"] == self.family and v.get("plan") == "launch")
 
     def load_guard(self, uid):
         return copy.deepcopy(self.guards.get((uid, self.family)))
@@ -239,18 +243,34 @@ class SupabaseStore:
             if self.family != DEFAULT_FAMILY and (profile.get("pro_until") or profile.get("pending_payment_ref")):
                 raise  # other apps store Pro only here: never silently lose a paid entitlement  # mgmt_law: profiles row above already holds Pro
 
-    def consume_payment(self, ref, uid):
+    def consume_payment(self, ref, uid, plan=None):
         """Insert-before-extend. True = this call consumed the ref; False = it was already consumed
         (unique violation: another session/replay won, so do NOT extend); None = table unavailable
-        (caller falls back to the old behaviour)."""
+        (caller falls back to the old behaviour). The plan is recorded so launch seats can be counted;
+        before supabase/migrations/2026-10-31_launch_offer.sql the row is inserted without it."""
+        row = {"payment_ref": ref, "user_id": uid, "exam_family": self.family}
+        rows = [{**row, "plan": plan}, row] if plan else [row]
+        for i, r in enumerate(rows):
+            try:
+                self.db.table(PAYMENTS_TABLE).insert(r).execute()
+                return True
+            except Exception as e:
+                msg = f"{getattr(e, 'code', '')} {e}".lower()
+                if "23505" in msg or "duplicate key" in msg or "unique" in msg:
+                    return False
+                if i == 0 and len(rows) > 1 and "plan" in msg:
+                    continue  # plan column not migrated yet: record the ref without it
+                return None
+        return None
+
+    def launch_claims(self):
+        """Founding-500 (launch) payments recorded for this app, or None if they can't be counted
+        (migration not run): the launch offer then stays hidden rather than over-promising seats."""
         try:
-            self.db.table(PAYMENTS_TABLE).insert({"payment_ref": ref, "user_id": uid,
-                                                  "exam_family": self.family}).execute()
-            return True
-        except Exception as e:
-            msg = f"{getattr(e, 'code', '')} {e}".lower()
-            if "23505" in msg or "duplicate key" in msg or "unique" in msg:
-                return False
+            res = (self.db.table(PAYMENTS_TABLE).select("payment_ref", count="exact")
+                   .eq("exam_family", self.family).eq("plan", "launch").execute())
+            return int(res.count) if res.count is not None else None
+        except Exception:
             return None
 
     # ---- fair use (all best-effort: a missing table never breaks practice)

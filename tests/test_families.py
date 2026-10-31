@@ -88,13 +88,13 @@ def test_pro_and_intro_offer_are_per_family():
     sk.profiles, sk.attempts = law.profiles, law.attempts          # same database
     sk.entitlements = law.entitlements
     p, _ = law.load(uid)
-    assert payments.price_for(p) == payments.INTRO_PRICE_PAISE
+    assert payments.price_for(p, 0) == payments.LAUNCH_PRICE_PAISE
     law.save_profile(uid, payments.extend_pro(p, today=dt.date(2026, 10, 27)))
     p_law, _ = law.load(uid)
     assert store.is_pro(p_law, dt.date(2026, 11, 1)) and payments.price_for(p_law) == payments.PRO_PRICE_PAISE
     p_sk, _ = sk.load(uid)
     assert not store.is_pro(p_sk, dt.date(2026, 11, 1))
-    assert payments.price_for(p_sk) == payments.INTRO_PRICE_PAISE   # own first-ever offer
+    assert payments.price_for(p_sk, 0) == payments.LAUNCH_PRICE_PAISE   # own first-ever offer
     sk.save_profile(uid, payments.extend_pro(p_sk, today=dt.date(2026, 10, 27)))
     assert law.profiles[uid]["pro_purchases"] == 1                  # sarkari never touches profiles' Pro
 
@@ -162,7 +162,7 @@ def test_payment_link_names_app_and_family_checked():
             r.json.return_value = {"payment_links": H.links}
             return r
     h = H()
-    payments.create_link("k", "s", "u" * 64, payments.INTRO_PRICE_PAISE, http=h,
+    payments.create_link("k", "s", "u" * 64, "launch", http=h,
                          app_name="Sarkari Exam Adaptive Engine", exam_family="sarkari")
     assert H.posted["description"].startswith("Sarkari Exam Adaptive Engine")
     assert H.posted["notes"]["exam_family"] == "sarkari"

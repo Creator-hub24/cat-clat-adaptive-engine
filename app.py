@@ -213,14 +213,20 @@ def serve_gate() -> str | None:
     return None
 
 
-def apply_verified_payment(ref: str):
+def apply_verified_payment(ref: str, plan: str | None = None):
     """Record the payment ref before extending Pro. False = already consumed (replay or another
     session won the race); True/None = go ahead (None: consumed_payments table missing)."""
     s = st.session_state
     db = s.get("db") or get_store()
     if not db or not hasattr(db, "consume_payment"):
         return None
-    return db.consume_payment(ref, s.get("uid"))
+    return db.consume_payment(ref, s.get("uid"), plan)
+
+
+def launch_claims():
+    """Founding-500 seats taken in this app, or None if they can't be counted (offer stays hidden)."""
+    db = st.session_state.get("db")
+    return db.launch_claims() if db is not None and hasattr(db, "launch_claims") else None
 
 
 def user_is_pro() -> bool:
@@ -391,15 +397,17 @@ with st.sidebar:
             st.logout()
     # ---- Pro upgrade
     if not pro:
-        price = payments.price_for(profile_from_state())
-        intro = price == payments.INTRO_PRICE_PAISE
-        st.subheader("Go Pro · first month ₹499, then ₹999/month" if intro else "Go Pro · ₹999/month")
-        if intro:
-            st.markdown("🎉 **First-time offer: ₹500 off your first month** · ~~₹999~~ **₹499**")
+        claims = launch_claims()
+        offer = payments.plans_for(profile_from_state(), claims)
+        launch = offer[0] == "launch"
+        st.subheader("Go Pro · ₹499/month or ₹999 for 3 months")
+        if launch:
+            left = payments.LAUNCH_SEATS - claims
+            st.markdown(f"🚀 **Founding 500 offer: first month** ~~₹{payments.PRO_PRICE_PAISE // 100}~~ "
+                        f"**₹{payments.LAUNCH_PRICE_PAISE // 100}** · {left} of {payments.LAUNCH_SEATS} spots left")
         st.markdown(f"**{guard.PRO_PITCH}**")
-        st.caption(("Intro offer for your first Pro month. " if intro else "")
-                   + "Each payment unlocks Pro for 30 days. There is no auto-debit: when it ends, you pay again "
-                   "(₹999) only if you want to continue.")
+        st.caption("Each payment unlocks Pro for its plan's period (30 days, or 90 days on the 3-month plan). "
+                   "There is no auto-debit: when it ends, you pay again only if you want to continue.")
         rz_id, rz_secret = secret("RAZORPAY_KEY_ID"), secret("RAZORPAY_KEY_SECRET")
         if s.get("db") is not None and not getattr(s.db, "entitlements_ok", True) and FAMILY["key"] != families.DEFAULT_FAMILY:
             st.caption("Pro coming soon for this app (database setup pending).")
@@ -407,11 +415,16 @@ with st.sidebar:
             st.caption("Pro coming soon." if not (rz_id and rz_secret)
                        else "Sign in to upgrade (Pro is tied to your saved account).")
         else:
-            if st.button("Upgrade to Pro", width="stretch"):
+            labels = {"launch": f"First month ₹{payments.LAUNCH_PRICE_PAISE // 100} (Founding 500)",
+                      "monthly": f"Monthly · ₹{payments.PRO_PRICE_PAISE // 100}",
+                      "quarterly": f"3 months · ₹{payments.QUARTERLY_PRICE_PAISE // 100} (best value)"}
+            clicked = [plan for plan in offer if st.button(labels[plan], width="stretch", key=f"buy_{plan}")]
+            chosen = clicked[0] if clicked else None
+            if chosen:
                 try:
-                    link = payments.create_link(rz_id, rz_secret, s.uid, price, secret("APP_URL"),
+                    link = payments.create_link(rz_id, rz_secret, s.uid, chosen, secret("APP_URL"),
                                                 app_name=FAMILY["name"], exam_family=FAMILY["key"])
-                    s.pending_ref, s.pay_url = link["reference_id"], link["short_url"]
+                    s.pending_ref, s.pay_url, s.pay_amount = link["reference_id"], link["short_url"], link["amount"]
                     persist()
                     if not getattr(s.db, "entitlements_ok", True) and FAMILY["key"] != families.DEFAULT_FAMILY:
                         # the payment ref could not be stored (e.g. pro_entitlements not migrated for this app):
@@ -425,18 +438,20 @@ with st.sidebar:
             static_link = secret("RAZORPAY_PAYMENT_LINK") if FAMILY["key"] == families.DEFAULT_FAMILY else None
             pay_url = s.get("pay_url") or (static_link if not s.get("pending_ref") else None)
             if pay_url:
-                st.link_button(f"Pay ₹{price // 100} securely on Razorpay ↗" if s.get("pay_url")
+                st.link_button(f"Pay ₹{s.get('pay_amount', 0) // 100} securely on Razorpay ↗" if s.get("pay_url")
                                else "Pay securely on Razorpay ↗", pay_url, width="stretch")
             if s.get("pending_ref") and st.button("I've paid, verify", width="stretch"):
                 try:
-                    if payments.verify_paid(rz_id, rz_secret, s.pending_ref, price, exam_family=FAMILY["key"]):
-                        if apply_verified_payment(s.pending_ref) is False:
+                    plan = payments.paid_plan(rz_id, rz_secret, s.pending_ref,
+                                              payments.plans_payable(profile_from_state()), exam_family=FAMILY["key"])
+                    if plan:
+                        if apply_verified_payment(s.pending_ref, plan) is False:
                             s.pending_ref = None
                             s.pop("pay_url", None)
                             persist()
                             st.info("This payment was already applied to your Pro plan.")
                             st.rerun()
-                        prof = payments.extend_pro(profile_from_state())
+                        prof = payments.extend_pro(profile_from_state(), days=payments.PLANS[plan][1])
                         s.plan, s.pro_until, s.pending_ref = prof["plan"], prof["pro_until"], None
                         s.pro_purchases = prof["pro_purchases"]
                         s.pop("pay_url", None)

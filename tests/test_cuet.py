@@ -207,7 +207,7 @@ def test_cuet_pro_is_separate():
     p, _ = law.load(uid)
     law.save_profile(uid, payments.extend_pro(p, today=dt.date(2026, 10, 27)))
     p_cu, _ = cu.load(uid)
-    assert not store.is_pro(p_cu, dt.date(2026, 11, 1)) and payments.price_for(p_cu) == payments.INTRO_PRICE_PAISE
+    assert not store.is_pro(p_cu, dt.date(2026, 11, 1)) and payments.price_for(p_cu, 0) == payments.LAUNCH_PRICE_PAISE
     cu.save_profile(uid, payments.extend_pro(p_cu, today=dt.date(2026, 10, 27)))
     assert store.is_pro(cu.load(uid)[0], dt.date(2026, 11, 1))
     assert law.profiles[uid]["pro_purchases"] == 1                 # CUET Pro lives only in pro_entitlements
@@ -228,7 +228,7 @@ def test_cuet_payment_link_and_verify_family():
             r.json.return_value = {"payment_links": H.links}
             return r
     h, f = H(), families.FAMILIES["cuet"]
-    payments.create_link("k", "s", "u" * 64, payments.INTRO_PRICE_PAISE, http=h, app_name=f["name"],
+    payments.create_link("k", "s", "u" * 64, "launch", http=h, app_name=f["name"],
                          exam_family="cuet")
     assert H.posted["notes"]["exam_family"] == "cuet" and H.posted["description"].startswith("CUET Adaptive Engine")
     link = {"status": "paid", "reference_id": "r", "amount": 49900, "amount_paid": 49900,
