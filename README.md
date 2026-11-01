@@ -147,12 +147,13 @@ identical files and existing ids stay stable when items are added. To hold an it
 ## 🧩 Multi-model Sarkari verified bank
 
 Independently verified Sarkari items from Gemini Argon 4.0 batches 1–6 plus model-comparison
-Quant runs (Meta AI, Claude Sonnet 5, Claude Sonnet 5.5 Medium, SuperGrok, ChatGPT Go) are served as
+Quant runs (Meta AI, Claude Sonnet 5, Claude Sonnet 5.5 Medium, SuperGrok, ChatGPT Go) and two Meta AI
+Hard Quant batches (`meta_hard_p1`/`meta_hard_p2`: 8 CAT-Level, 9 Moderate, 3 Easy) are served as
 `data/multi_model_bank_sarkari.json` (the Gemini compare file is omitted — it duplicates batch 4):
 
 | Family | Items | Topics |
 |--------|------:|--------|
-| `sarkari` | 151 | Sarkari Quantitative Aptitude 80 · Sarkari Reasoning 36 · Sarkari English 35 |
+| `sarkari` | 171 | Sarkari Quantitative Aptitude 100 · Sarkari Reasoning 36 · Sarkari English 35 |
 
 Sources live in `data/multi_model_curation/` (verified questions, manifest with per-item model/batch,
 faculty flags, cross-dedupe drop log). Rebuild with `python3 -m scripts.import_multi_model_bank`

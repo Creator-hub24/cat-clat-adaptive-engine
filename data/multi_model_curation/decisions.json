@@ -242,10 +242,143 @@
     {
       "source": "batch-6 #6",
       "flag": "'lest … should' exam convention; bare subjunctive also correct but not an option."
+    },
+    {
+      "source": "meta-hard-p1 #2",
+      "flag": "Wrong-number series rebuilt during verification (5,7,17,58,231,1166,7009); second look recommended. Distractors are 'blame a neighbour' by nature."
+    },
+    {
+      "source": "meta-hard-p1 #3",
+      "flag": "Traps apply partial difference patterns (n^3, n^3+2n, n^3+n) only at step 4; weaker distractors."
+    },
+    {
+      "source": "meta-hard-p1 #4",
+      "flag": "Traps A/B are other partners' shares (wrong-target), not computation slips."
+    },
+    {
+      "source": "meta-hard-p1 #8",
+      "flag": "One trap is P and Q's combined share (wrong-target)."
+    },
+    {
+      "source": "meta-hard-p1 #9",
+      "flag": "Trap relies on dropping the sign of s = -3.5."
+    },
+    {
+      "source": "meta-hard-p1 #0",
+      "flag": "Relabelled Moderate; confirm."
+    },
+    {
+      "source": "meta-hard-p1 #1",
+      "flag": "Relabelled Moderate; confirm."
+    },
+    {
+      "source": "meta-hard-p1 #7",
+      "flag": "Relabelled Moderate; confirm."
+    },
+    {
+      "source": "meta-hard-p2 #8",
+      "flag": "Similarity 0.72 vs a Gemini compare cylinder-to-cones item (same template, different numbers/ask); confirm distinct."
+    },
+    {
+      "source": "meta-hard-p2 #1",
+      "flag": "Caselet traps are close in value (1384/1398/1402 vs 1410); valid but tight."
+    },
+    {
+      "source": "meta-hard-p2 #2",
+      "flag": "Quadratic comparison uses 4 options (no x<=y / x=y); unambiguous as given. verify_code returns option text so it survives the shuffle."
+    },
+    {
+      "source": "meta-hard-p2 #9",
+      "flag": "4-option DS without 'either alone'; unambiguous. verify_code returns option text so it survives the shuffle."
+    },
+    {
+      "source": "meta-hard-p2 #0",
+      "flag": "Stems keep Meta AI's 'plus/minus/divided by' wording; readable, differs from house style."
     }
   ],
   "option_shuffle": {
     "_doc": "Per-item seeded option shuffle so answer keys are not patterned. Remaps Trap (X), Option X, and verify_code OPTS/answer letters.",
     "seed": "multi-model-sarkari-2026-11-01"
+  },
+  "difficulty_relabels": [
+    {
+      "source": "meta-hard-p1 #0",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "single-step pie DI"
+    },
+    {
+      "source": "meta-hard-p1 #1",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "single multiplication table DI"
+    },
+    {
+      "source": "meta-hard-p1 #7",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "prelims-level average replacement"
+    },
+    {
+      "source": "meta-hard-p2 #0",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "single comparison bar DI"
+    },
+    {
+      "source": "meta-hard-p2 #2",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "standard quadratic comparison"
+    },
+    {
+      "source": "meta-hard-p2 #3",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "prelims simplification"
+    },
+    {
+      "source": "meta-hard-p2 #4",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "direct multiplication CI"
+    },
+    {
+      "source": "meta-hard-p2 #5",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "standard successive discount"
+    },
+    {
+      "source": "meta-hard-p2 #6",
+      "from": "CAT-Level",
+      "to": "Easy",
+      "reason": "one-step train crossing"
+    },
+    {
+      "source": "meta-hard-p2 #7",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "standard two-bag probability"
+    },
+    {
+      "source": "meta-hard-p2 #8",
+      "from": "CAT-Level",
+      "to": "Easy",
+      "reason": "direct volume equation"
+    },
+    {
+      "source": "meta-hard-p2 #9",
+      "from": "CAT-Level",
+      "to": "Easy",
+      "reason": "basic boat DS"
+    }
+  ],
+  "difficulty_relabels_doc": "Applied during verification (already reflected in raw/meta_hard_*_passing.json); recorded here for audit.",
+  "meta_hard_cross_dedupe": {
+    "threshold": 0.8,
+    "pool": "seed + AI + AptiSetu + sample + Claude banks + multi_model_bank_sarkari (2296 items)",
+    "max_sim": 0.731,
+    "drops": 0
   }
 }

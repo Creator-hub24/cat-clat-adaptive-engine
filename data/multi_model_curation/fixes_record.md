@@ -28,3 +28,13 @@ Listed in `decisions.json` → `faculty_flags` (convention notes and sight-check
 ## Ids
 
 `MM-SK-<topic>-<batchcode>-<index>` e.g. `MM-SK-SQA-GB1-003`, `MM-SK-SQA-C55-002`.
+
+## Meta AI Hard Quant batches (meta_hard_p1 / meta_hard_p2)
+
+20 Meta AI Sarkari Quant items submitted as "Hard" (manifest n=151–170, sources `meta-hard-p1 #0..9` / `meta-hard-p2 #0..9`, ids `MM-SK-SQA-MH1-*` / `MM-SK-SQA-MH2-*`).
+
+- All 20 answer keys were correct on blind solve. 18/20 needed repairs: most traps were rebuilt from real slips, hard-coded `verify_code` was rewritten to compute the answer, and wording was tightened. The p1 wrong-number series (#2) was rebuilt.
+- Difficulty relabels: 12 of 20 moved down (see `decisions.json` → `difficulty_relabels`). Final mix: **8 CAT-Level, 9 Moderate, 3 Easy**.
+- `meta-hard-p2 #2` (quadratic comparison) and `#9` (data sufficiency) return option **text** from `verify_code`, so the seeded shuffle cannot desync the key. All 20 were checked against every one of the 24 option permutations.
+- Re-deduped at ≥ 0.80 against seed + AI + AptiSetu + sample + Claude banks + the existing multi-model bank (2296 items): max similarity 0.731, **0 dropped**.
+- Faculty flags are added to `decisions.json` → `faculty_flags`.
