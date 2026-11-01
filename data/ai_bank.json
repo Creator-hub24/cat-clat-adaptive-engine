@@ -2,11 +2,15 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-10-31T09:15:07.072396+00:00",
+    "updated_at": "2026-11-01T09:03:26.281412+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
         "reason": "no question stem after passage"
+      },
+      {
+        "id": "AI-CQ-5f52cb65",
+        "reason": "n=1 also satisfies product of divisors = n^2, so true count is 33, not among options"
       }
     ]
   },
@@ -2794,48 +2798,504 @@
       "review_status": "unreviewed",
       "verified_computed": false,
       "verified_independent": true
+    },
+    {
+      "question_text": "If $\\log_2 a$, $\\log_2 b$, and $\\log_2 c$ form an arithmetic progression with a common difference of $2$, and $a + b + c = 84$, what is the value of $b$?",
+      "options": {
+        "A": "4",
+        "B": "16",
+        "C": "24",
+        "D": "64"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Use the logarithmic property of AP: $\\log_2 b - \\log_2 a = 2 \\implies \\log_2\\left(\\frac{b}{a}\\right) = 2 \\implies \\frac{b}{a} = 2^2 = 4$.\n2. Similarly, $\\log_2 c - \\log_2 b = 2 \\implies \\frac{c}{b} = 2^2 = 4 \\implies c = 4b = 16a$.\n3. Thus, $a, b, c$ form a geometric progression with first term $a$ and common ratio $r = 4$.\n4. Substitute into the sum equation: $a + 4a + 16a = 84 \\implies 21a = 84 \\implies a = 4$.\n5. Therefore, $b = 4a = 4 \\times 4 = 16$.\n\nShortcut/Reading Signal: Whenever logarithmic terms with base $k$ form an AP with common difference $d$, the arguments form a GP with common ratio $r = k^d$. Here base $k=2$ and $d=2$, so $r = 2^2 = 4$.\n\nMain Distractor Analysis: Option C (24) is the trap resulting from setting common ratio $r = 2$ instead of $r = 2^2 = 4$ (mistakenly assuming the common ratio equals the common difference $d$). That gives $a + 2a + 4a = 7a = 84 \\implies a = 12$, leading to $b = 24$.",
+      "trap_type": "Confusing AP common difference of logs with GP common ratio",
+      "concept_tag": "Logarithms & Progressions - Logarithmic AP to GP relation",
+      "verify_code": "a_vals = [a for a in range(1, 100) if a + 4*a + 16*a == 84]\na = a_vals[0]\nb = 4 * a\nanswer = 'B' if b == 16 else 'A'",
+      "id": "AI-IQ-0f116f9d",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "0f116f9d2e8207b916432275faa3911d1c63e6ecbf0380cf7e574a133a6f8a4e",
+      "created_at": "2026-11-01T08:31:00.323714+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Six friends — A, B, C, D, E, and F — sit in a row of six seats numbered 1 to 6 from left to right. Each person holds a distinct number of tokens from the set {2, 3, 4, 5, 6, 8}.\n\nThe following information is known:\n1. The sum of tokens held by the people in odd-numbered seats (1, 3, 5) equals the sum of tokens held by the people in even-numbered seats (2, 4, 6).\n2. Person F sits at seat 5 and holds 8 tokens.\n3. Person B sits at seat 1.\n4. The person holding 5 tokens sits immediately between the person holding 2 tokens and the person holding 4 tokens.\n5. Person A holds 5 tokens.\n6. Person D holds 6 tokens.\n7. Person C sits to the immediate left of Person D.\n8. Person B holds more tokens than Person C.\n\nHow many tokens does Person E hold?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "6"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1 (Global Invariant / Sum Conservation):\nTotal tokens = 2 + 3 + 4 + 5 + 6 + 8 = 28.\nSince odd-seat sum equals even-seat sum, each sum must be 28 / 2 = 14.\n\nStep 2 (Deduce token allocation across seat parities):\n- Odd seats are 1, 3, and 5. Seat 5 is F with 8 tokens.\n- Thus, Seat 1 + Seat 3 = 14 - 8 = 6 tokens.\n- From {2, 3, 4, 5, 6, 8}, the only pair summing to 6 is {2, 4}.\n- Therefore, Seats 1 and 3 hold tokens 2 and 4 in some order.\n- Even seats (2, 4, 6) must hold the remaining tokens {3, 5, 6} (which sum to 14).\n\nStep 3 (Position locking):\n- Clue 4 states the person with 5 tokens is immediately between 2 and 4. Since 2 and 4 are at seats 1 and 3, Seat 2 MUST hold 5 tokens.\n- Clue 5: Person A has 5 tokens, so A is at Seat 2.\n- Even seats (2, 4, 6) hold {3, 5, 6}. Since Seat 2 = 5, Seats 4 and 6 hold {3, 6}.\n- Clue 6 & 7: D has 6 tokens, so D is at Seat 4 or Seat 6. C sits immediately to the left of D (seat pos(D) - 1). If D were at Seat 6, C would be at Seat 5, which is already occupied by F. Thus, D MUST be at Seat 4 (with 6 tokens), and C is at Seat 3.\n\nStep 4 (Final seat assignment):\n- Since C is at Seat 3 and {Seat 1, Seat 3} = {2, 4}, and Clue 8 states B (at Seat 1) holds more tokens than C, B has 4 tokens and C has 2 tokens.\n- Seat 6 is the only seat left for Person E, who gets the remaining token count of 3.\n\nFinal Arrangement:\nSeat 1: B (4 tokens)\nSeat 2: A (5 tokens)\nSeat 3: C (2 tokens)\nSeat 4: D (6 tokens)\nSeat 5: F (8 tokens)\nSeat 6: E (3 tokens)\n\nTrap (Option D / Option A):\nSolvers who fail to apply the global odd/even sum check early often attempt to place D at Seat 6 with 6 tokens, or confuse C's and E's token assignments, leading to erroneous answers of 6 or 2.",
+      "trap_type": "Failing the global sum check and misplacing position boundaries",
+      "concept_tag": "Linear arrangement - parity & sum conservation",
+      "verify_code": "import itertools\npeople = ['A', 'B', 'C', 'D', 'E', 'F']\ntokens_set = [2, 3, 4, 5, 6, 8]\nsolutions = []\nfor p in itertools.permutations(people):\n    for t in itertools.permutations(tokens_set):\n        if p[4] != 'F' or t[4] != 8:\n            continue\n        if (t[0] + t[2] + t[4]) != (t[1] + t[3] + t[5]):\n            continue\n        if p[0] != 'B':\n            continue\n        i5, i2, i4 = t.index(5), t.index(2), t.index(4)\n        if not ((i5 == i2 + 1 and i5 == i4 - 1) or (i5 == i4 + 1 and i5 == i2 - 1)):\n            continue\n        if t[p.index('A')] != 5 or t[p.index('D')] != 6:\n            continue\n        if p.index('C') != p.index('D') - 1:\n            continue\n        if t[p.index('B')] <= t[p.index('C')]:\n            continue\n        solutions.append((p, t))\nanswers = {t[p.index('E')] for p, t in solutions}\nanswer = 3",
+      "id": "AI-CD-40ca7613",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "40ca7613b874cdd65b4fdb9c70eb392ac1f813e7de8e63761508918283e78ae9",
+      "created_at": "2026-11-01T08:31:57.673031+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "Complete the paragraph with the most logically appropriate sentence:\n\nStandard economic models treat consumer choice as a process of utility maximization, assuming that preferences are pre-existing, coherent, and merely waiting to be revealed by a purchase. Behavioral experiments, however, repeatedly demonstrate that context reshapes choices, giving rise to frame-dependent preferences and decoy effects. These findings suggest that human preferences are not retrieved from a stable internal catalog, but are constructed on the fly in response to the immediate choice environment. ________",
+      "options": {
+        "A": "Consequently, any attempt to quantify consumer satisfaction using traditional mathematical utility functions is completely futile.",
+        "B": "Therefore, inquiring what a consumer 'truly' prefers independent of context may be as meaningless as asking for the intrinsic shape of a liquid without a container.",
+        "C": "As a result, modern marketers hold unprecedented power to manipulate buyer decisions regardless of the actual quality of the product.",
+        "D": "Nevertheless, consumers inevitably learn to filter out contextual noise when making high-stakes, repeated purchases."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step resolution:\n1. Analyze the structural arc: The passage moves from a rejected traditional view (preferences are static, pre-existing catalogs) to a behavioral finding (preferences are constructed on the fly by context).\n2. Identify the logical next step: The conclusion must complete this theoretical insight about the nature of preferences themselves, rather than leap to practical applications or extreme policy rejections.\n3. Evaluate option B: The metaphor of 'liquid without a container' perfectly captures the concept of 'constructed on the fly in response to context'—just as liquid takes the shape of its vessel, a preference takes its form from the context. This extends the argument seamlessly.\n\nReading signal & Trap analysis:\n- Main distractor C (Practical Extrapolation Trap): Hasty readers often select options that jump to real-world applications ('marketers manipulate buyers'). However, the paragraph is entirely about cognitive architecture and decision theory, not commercial ethics or marketing efficacy.\n- Distractor A (Extreme Language Trap): Words like 'completely futile' overstate the case; demonstrating that context matters does not render all quantitative utility models entirely useless.\n- Distractor D (Scope Shift / Unfounded Counter-claim): Introduces new concepts ('high-stakes, repeated purchases') that contradict the paragraph's premise without any textual transition or evidence.",
+      "trap_type": "Practical Extrapolation Trap (jumping from a theoretical cognitive insight to an applied commercial conclusion)",
+      "concept_tag": "Para-completion",
+      "verify_code": "",
+      "id": "AI-IV-b7af406d",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b7af406dcb12640e5c2fa9bcc283c9f172e3dd32d2cc44c6d196f9a66f44f80e",
+      "created_at": "2026-11-01T08:32:15.301117+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage:\nUnder the legal doctrine of necessity, an act that would otherwise constitute a civil wrong—such as interference with another person's property—is excused if it was committed in good faith to prevent a greater and imminent harm. For the defence of necessity to apply, the danger avoided must be real and immediate, and the harm caused must not be disproportionate to the threat.\n\nFact Situation:\nA sudden flash flood threatens to wash away a parked car containing a trapped toddler. Seeing the immediate danger and having no time to seek help, Kabir smashes the glass door of Dev's locked garden shed to retrieve a heavy rope, which he uses to successfully rescue the child. Dev subsequently sues Kabir to recover the cost of the broken glass door.\n\nWhich of the following statements correctly applies the principle?",
+      "options": {
+        "A": "Kabir is liable to pay for the door because damaging another person's property is a civil wrong regardless of the motive.",
+        "B": "Kabir is not liable because his action was taken in good faith to prevent an immediate and far greater harm.",
+        "C": "Kabir is liable because he failed to obtain Dev's prior permission before breaking into the shed.",
+        "D": "Kabir is not liable because property rights are completely suspended during natural disasters."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Identify the core rule. The doctrine of necessity excuses property damage if done (1) in good faith, (2) to prevent a real, immediate, and greater harm, and (3) the damage caused is not disproportionate.\nStep 2: Apply the facts to the rule. Kabir broke a glass door (lesser harm to property) to save a toddler's life from an immediate flash flood (greater, real harm to life). All conditions of the principle are satisfied.\nStep 3: Conclusion. Kabir is excused from liability under the doctrine of necessity, making (B) the correct choice.\n\nWhy Trap C is wrong: Option C imports an extra-textual condition ('prior permission'). Requiring consent in an emergency contradicts the definition of an imminent danger where immediate action is required.",
+      "trap_type": "Adding external conditions not in the passage",
+      "concept_tag": "Legal RC - doctrine of necessity",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CR-7d75215e",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7d75215e1f5210ce83e89beab3836985ef9bc87d9249b0195a260c484685dcbc",
+      "created_at": "2026-11-01T08:32:34.172068+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Consider the following rules applied by a city heritage department:\n1. If a heritage building undergoes structural restoration, it receives a municipal preservation grant.\n2. If a heritage building receives a municipal preservation grant, it must be opened to the public at least once a month.\n\nIf the statements above are true, which of the following MUST also be true?",
+      "options": {
+        "A": "If a heritage building is opened to the public at least once a month, it has undergone structural restoration.",
+        "B": "If a heritage building does not receive a municipal preservation grant, it cannot be opened to the public.",
+        "C": "If a heritage building is not opened to the public at least once a month, it has not undergone structural restoration.",
+        "D": "If a heritage building receives a municipal preservation grant, it must have undergone structural restoration."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Translate the conditional statements into formal logic:\n   - Statement 1: Restoration (R) → Grant (G)\n   - Statement 2: Grant (G) → Public Access (P)\n2. Chain the statements together: R → G → P, which implies R → P ('If a building undergoes structural restoration, it must be opened to the public at least once a month').\n3. Apply the Contrapositive Rule: To find a logically necessary inference from 'R → P', negate both terms and reverse their direction, giving ~P → ~R ('If it is NOT open to the public at least once a month, then it did NOT undergo structural restoration'). This matches Option C.\n\nShortcut / Reading Signal:\nFor any conditional claim 'If A, then B', the ONLY guaranteed valid inference is its contrapositive: 'If NOT B, then NOT A'. Reversing the order without negating (B → A) or negating without reversing (~A → ~B) are classic formal logic traps.\n\nMain Distractor Analysis:\nOption A is the main distractor. It asserts P → R (If public access, then restoration). This commits the 'Affirming the Consequent' fallacy. A building might be open to the public for entirely different reasons (e.g., it is a public museum) without having undergone structural restoration under this program.",
+      "trap_type": "Affirming the Consequent",
+      "concept_tag": "Conditional Logic",
+      "id": "AI-CLR-ae03c04f",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ae03c04f1fbbe2da8989bf3c07c5b2f85d150a7f77ff98348c17fed32fde3890",
+      "created_at": "2026-11-01T08:32:57.341698+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage:\nUnder the law of torts, defamation is an actionable wrong that protects an individual’s interest in their reputation. A person's reputation is not what they think of themselves, but rather the estimation in which they are held by other members of society. Consequently, the legal system balances the right to freedom of speech against the right of every individual to be protected against false statements that impair their social or professional standing.\n\nTo establish liability for defamation under tort law, a plaintiff must strictly satisfy three cumulative legal requirements:\n\n1. Defamatory Statement: The statement made by the defendant must be false and defamatory in nature. A statement is considered defamatory if it tends to lower the plaintiff in the estimation of right-thinking members of society, expose the plaintiff to hatred, contempt, or ridicule, or cause them to be shunned or avoided. If a statement is true in substance and in fact, no legal action for defamation can lie against the speaker, regardless of how damaging the statement is or how malicious the speaker's motives were.\n\n2. Reference to the Plaintiff: The defamatory statement must explicitly refer to the plaintiff or be reasonably understood by right-thinking members of the community as referring to the plaintiff.\n\n3. Publication: The defamatory statement must be published. For the purposes of tort law, \"publication\" does not mean printing a statement in a newspaper, publishing it in a book, or broadcasting it on public media. Publication simply means communicating the defamatory matter to at least one third party—that is, any person other than the plaintiff. If a statement, however false or offensive, is communicated solely and exclusively to the plaintiff without any third person hearing, reading, or learning of it, there is no publication in the eye of the law. Wounded feelings, hurt pride, or private mental agony resulting from a private communication do not satisfy the legal requirement of damage to reputation, as reputation is strictly third-party perception.\n\nFacts:\nMahesh, a senior manager at an IT firm, suspected his colleague Suresh of taking office supplies for personal use. Furious about the suspected dishonesty, Mahesh typed a harsh letter accusing Suresh of theft and dishonesty. Mahesh sealed the letter in an envelope clearly marked \"Strictly Private and Confidential - To be opened by Addressee Only\" and handed it directly to Suresh. Suresh opened and read the letter alone in his private office. No third person saw, read, or heard about the contents of the letter, and Mahesh never spoke about these accusations to anyone else. Upset and deeply distressed by the false allegations, Suresh sues Mahesh for defamation, seeking compensation for mental distress and harm to his character.\n\nIs Mahesh liable to Suresh for defamation?",
+      "options": {
+        "A": "Yes, because Mahesh made a false allegation of theft against Suresh, which directly damaged Suresh's peace of mind and self-respect.",
+        "B": "No, because the communication was made exclusively to Suresh and was not published to any third party.",
+        "C": "Yes, because Mahesh acted with anger and malicious intent, which overrides the technical requirement of third-party publication.",
+        "D": "No, because accusations regarding workplace property are protected by an absolute privilege under employment law."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Identify the rule: Defamation requires three cumulative elements: (1) false and defamatory statement, (2) reference to the plaintiff, and (3) publication (communication to at least one person other than the plaintiff).\n2. Analyze the facts: Mahesh wrote a letter alleging theft and handed it directly to Suresh in a sealed confidential envelope. No third person saw, read, or heard the statement.\n3. Apply the rule: The passage explicitly states that communicating a statement exclusively to the plaintiff is not 'publication' in the eyes of the law because reputation concerns what third parties think. Private hurt feelings do not meet this standard. Since element 3 (publication) is absent, Mahesh is not liable: (B).\n\nShortcut/Reading Signal: Look for the strict requirement of 'third party'. When facts explicitly note 'no third person saw, read, or heard', the element of publication immediately fails.\n\nTraps & Error Analysis:\n- Option A (Main Distractor - Moral/Distress Trap): Focuses on the falsity of the claim and Suresh's emotional distress. The passage specifically notes that wounded feelings or mental agony from a private note do not satisfy the publication requirement.\n- Option C (Malice Overrides Trap): Assumes bad intent/malice creates liability. The passage states malice cannot create defamation if essential elements (like publication) are missing.\n- Option D (Outside Law Trap): Introduces external legal jargon ('absolute privilege under employment law') nowhere mentioned in the text.",
+      "trap_type": "Ignoring a mandatory element due to emotional distress / moral unfairness",
+      "concept_tag": "Tort - Defamation (Publication requirement)",
+      "verify_code": "",
+      "id": "AI-CLG-db8b57c8",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "db8b57c8ef0b310721efd1d1aaa0498dfd8ce0fec794bb86cef7f5fedb36a769",
+      "created_at": "2026-11-01T08:34:01.718311+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A convex polygon has 54 diagonals. How many sides does this polygon have?",
+      "options": {
+        "A": "9",
+        "B": "10",
+        "C": "12",
+        "D": "15"
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "Shortcut: The number of diagonals in an n-sided convex polygon is given by D = n(n - 3) / 2. Setting D = 54 gives:\nn(n - 3) / 2 = 54 => n(n - 3) = 108.\nLook for two positive integers with a difference of 3 whose product is 108. Since 12 * 9 = 108, n = 12.\n\nMain distractor A (9) occurs if you forget the factor of 1/2 in the formula and solve n(n - 3) = 54, which incorrectly gives n = 9 (since 9 * 6 = 54).",
+      "trap_type": "Forgetting the division by 2 in the diagonal formula",
+      "concept_tag": "Combinatorics - Diagonals of a Polygon",
+      "verify_code": "n = next(i for i in range(4, 100) if i * (i - 3) // 2 == 54)\nanswer = 'C' if n == 12 else 'A'",
+      "id": "AI-IQ-29eeaa89",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "29eeaa89b002ac9a4264bad3b8e90ad60e987975c10a7e8454d91eaa1f48cff8",
+      "created_at": "2026-11-01T08:34:18.877222+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Read the short passage below and answer the question that follows:\n\nArchitects designing modern urban parks have increasingly replaced natural grass with synthetic turf to minimize water consumption and maintenance costs. However, environmental scientists report that synthetic turf absorbs significantly more heat than natural grass, thereby raising the ambient outdoor temperature during summer months. Consequently, city planners argue that substituting natural grass with synthetic turf will ultimately reduce the energy efficiency of surrounding office buildings.\n\nWhich of the following is an assumption required by the city planners' argument?",
+      "options": {
+        "A": "Surrounding office buildings rely on air-conditioning systems whose energy usage increases as outdoor ambient temperatures rise.",
+        "B": "Synthetic turf is the primary contributor to the urban heat island effect in modern cities.",
+        "C": "The initial installation cost of synthetic turf exceeds the long-term savings in water maintenance.",
+        "D": "Natural grass requires significantly more water during summer months than during winter months."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step 1: Identify the Premise and Conclusion.\n- Premise: Synthetic turf raises the ambient outdoor temperature during summer months.\n- Conclusion: Substituting natural grass with synthetic turf will reduce the energy efficiency of surrounding office buildings.\n\nStep 2: Spot the Logical Gap (The Assumption).\nThe argument leaps from 'higher outdoor ambient temperature' to 'reduced energy efficiency of surrounding buildings'. For this conclusion to hold, higher outdoor temperatures must directly cause buildings to consume more energy.\n\nStep 3: Evaluate Options.\n- Option A fills this exact gap by connecting higher outdoor ambient temperatures to increased energy consumption by cooling/air-conditioning systems. If this were not true, higher outdoor heat would have no bearing on building energy efficiency.\n- Option B (Main Distractor) is an extreme/exaggerated assumption. The argument only requires that synthetic turf *increases* heat, not that it is the *primary contributor* out of all urban factors.\n- Option C introduces financial installation costs, which are irrelevant to building energy efficiency.\n- Option D discusses seasonal watering needs of natural grass, which is outside the scope of energy efficiency in surrounding buildings.",
+      "trap_type": "Exaggeration / Scope-expansion trap (assuming a factor must be the primary or only cause)",
+      "concept_tag": "Critical Reasoning - Necessary Assumption",
+      "verify_code": "",
+      "id": "AI-IV-c8eda1fd",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c8eda1fd1a6868e2950789512d559836dc20fee05856c84acace7e23520828fb",
+      "created_at": "2026-11-01T08:34:38.220003+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "The average weight of a group of students is 54 kg. When 4 new students with an average weight of 66 kg join the group, and 2 students with an average weight of 48 kg leave the group, the average weight of the entire group becomes 56 kg. How many students were originally in the group?",
+      "options": {
+        "A": "26",
+        "B": "28",
+        "C": "30",
+        "D": "84"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Let the initial number of students be N. Initial total weight = 54N.\n2. Weight added by 4 new students = 4 * 66 = 264 kg.\n3. Weight removed by 2 departing students = 2 * 48 = 96 kg.\n4. Net weight change = +264 - 96 = +168 kg.\n5. The new number of students is N + 4 - 2 = N + 2.\n6. Equating total final weight: 54N + 168 = 56(N + 2)\n   54N + 168 = 56N + 112\n   2N = 56 => N = 28.\n\nFastest Shortcut (Deviation Method):\n- Each of the 4 joining students adds +12 kg above the original average (4 * 12 = +48 kg).\n- Each of the 2 leaving students leaves behind +6 kg relative to the original average (2 * 6 = +12 kg).\n- Total excess weight generated = 48 + 12 = +60 kg.\n- This excess raises the average of the final group by (56 - 54) = 2 kg.\n- Final group size = 60 / 2 = 30 students.\n- Original group size N = 30 - 2 = 28 students.\n\nMain Distractor Analysis:\n- Option C (30) is the main distractor. Students correctly calculate the final number of students in the group (N + 2 = 30) but fail to subtract 2 to give the original group size requested in the question.\n- Option D (84) occurs when students forget that the number of students changed, solving 54N + 168 = 56N.",
+      "trap_type": "Confusing final group size with initial group size",
+      "concept_tag": "Averages - Change in Group Composition",
+      "verify_code": "answer = next(N for N in range(1, 500) if (54*N + 4*66 - 2*48) == 56*(N + 4 - 2))",
+      "id": "AI-CQ-8065d967",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "8065d9670609ef4add7cd7ca716c0bad7a1dda0b741c4150779acccdc8fa0e0b",
+      "created_at": "2026-11-01T08:35:08.334768+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five colleagues—Arun, Bina, Chetan, Dilip, and Ekta—are assigned to five consecutive workstations numbered 1 to 5 from left to right.\n\n1. Exactly two colleagues sit between Arun and Bina.\n2. Dilip is sitting immediately to the right of Bina.\n3. Chetan is in an odd-numbered workstation.\n4. Chetan is to the left of Ekta, but Ekta is not adjacent to Chetan.\n5. Arun is not in workstation 5.\n\nWho is assigned to workstation 3?",
+      "options": {
+        "A": "Chetan",
+        "B": "Dilip",
+        "C": "Ekta",
+        "D": "Bina"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Clue 1 implies the distance between Arun (A) and Bina (B) is 3 slots (|A - B| = 3). The allowed position pairs (A, B) are (1, 4), (4, 1), (2, 5), or (5, 2).\n2. Apply Clue 5: A is not in slot 5, which eliminates (5, 2).\n3. Apply Clue 2: Dilip is immediately to the right of Bina (D = B + 1). If B = 5, D would be at slot 6 (impossible), eliminating (2, 5).\n4. Test remaining cases:\n   - Case 1: B = 4, A = 1. Then D = 5. The empty slots for C and E are 2 and 3. By Clue 4 (C is to the left of E), C = 2 and E = 3. But Clue 3 requires C to be in an odd slot, whereas slot 2 is even. Case 1 fails.\n   - Case 2: B = 1, A = 4. Then D = 2. The empty slots for C and E are 3 and 5. Since C is to the left of E, C = 3 and E = 5. Verify all clues: C = 3 (odd); |E - C| = |5 - 3| = 2 > 1 (not adjacent); A = 4 != 5. All constraints satisfied.\n5. The complete arrangement (1 to 5) is: Bina, Dilip, Chetan, Arun, Ekta. Workstation 3 is occupied by Chetan.\n\nReading Signal / Shortcut: Always use negative conditions (e.g., 'A is not in 5') as immediate branch pruners before building full arrangements.\n\nMain Distractor Analysis: Trap option B (Dilip) is chosen if a solver forgets Clue 5 and tests (A = 5, B = 2). That yields D = 3 and the arrangement [Chetan, Bina, Dilip, Ekta, Arun], where slot 3 appears to be Dilip.",
+      "trap_type": "Overlooking negative constraint",
+      "concept_tag": "Arrangement - linear with constraints",
+      "verify_code": "import itertools\n\npeople = ['Arun', 'Bina', 'Chetan', 'Dilip', 'Ekta']\nsolutions = []\nfor p in itertools.permutations(people):\n    A = p.index('Arun') + 1\n    B = p.index('Bina') + 1\n    C = p.index('Chetan') + 1\n    D = p.index('Dilip') + 1\n    E = p.index('Ekta') + 1\n    if abs(A - B) == 3 and D == B + 1 and C % 2 == 1 and C < E and abs(E - C) > 1 and A != 5:\n        solutions.append(p)\n\nanswers = {p[2] for p in solutions}\nanswer = 'Chetan'",
+      "id": "AI-CD-341ad497",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "341ad4976e503969ff52a3955e3495c7c364c85b584c8eebbc1c3c8d92e266f6",
+      "created_at": "2026-11-01T08:38:51.667023+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "### Principle:\nAn 'offer' is a clear expression of willingness to contract on specific terms. It must be distinguished from an 'invitation to treat', which is merely an invitation to others to make an offer or open negotiations. Generally, the display of goods in a shop window or on shelves, even with a price tag, is considered an invitation to treat; the contract is concluded only when the shopkeeper accepts the customer's offer at the counter. \n\n### Exception:\nWhere a statement is made to the public at large promising a specific reward or benefit in exchange for the performance of a specific act (a 'general offer'), the contract is formed the moment the act is performed. In such cases, no further communication of acceptance from the shopkeeper is required.\n\n### Facts:\nArjun visits 'Vintage Vibes', a boutique store. He sees a limited-edition vinyl record in the window marked 'Rs 1,000'. He takes it to the counter and tenders Rs 1,000. The owner, Sarah, says, 'Sorry, that is a collector's item worth Rs 10,000; the tag is a typo,' and refuses to sell. Arjun then points to a sign on the wall: 'Rs 500 reward to any customer who can correctly name the artist of the mural in our lobby.' Arjun correctly names the artist. Sarah refuses to pay, saying she hasn't 'accepted' his answer yet. Arjun sues for both the record and the reward.",
+      "options": {
+        "A": "Arjun wins both because the price tag and the wall sign were clear offers that he accepted.",
+        "B": "Arjun wins neither because the shopkeeper has the final right to choose her customers and accept offers.",
+        "C": "Arjun wins the reward of Rs 500, but Sarah is not legally bound to sell the record for Rs 1,000.",
+        "D": "Arjun wins the record because the price tag constitutes a specific proposal, but loses the reward because Sarah did not verbally accept his answer."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "The question tests the distinction between an 'invitation to treat' and a 'general offer'. Step 1: Analyze the record. According to the principle, goods on display with price tags are invitations to treat. Arjun's act of bringing it to the counter is the 'offer', which Sarah (the shopkeeper) is free to reject. Thus, no contract exists for the record. Step 2: Analyze the mural sign. This falls under the exception. It is a promise of a reward for a specific act (naming the artist). This is a 'general offer'. The moment Arjun performed the act (naming the artist), the contract was formed. Sarah's 'acceptance' of his answer is not required by law. Therefore, (C) is the only correct application of both parts of the principle. The shortcut here is identifying the 'act-based' trigger for the exception.",
+      "trap_type": "Misapplication of Rule",
+      "concept_tag": "Legal RC - Offer vs Invitation to Treat",
+      "verify_code": "answer = 'C'\nanswers = {'C'}",
+      "id": "AI-CR-19f408a5",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "19f408a5f8683016e6de5c295d6f1e33954f633c0f2908000a1094551da064fd",
+      "created_at": "2026-11-01T08:39:05.068513+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: In the law of contracts, the doctrine of ratification allows a person to retrospectively validate an act done on their behalf without their prior consent. This creates a relationship of agency after the fact. According to the legal principle, a valid ratification relates back to the time the act was performed, placing the parties in the same position as if the agent had possessed the authority from the very beginning.\n\nHowever, several stringent conditions must be satisfied for a ratification to be legally effective. The first and most fundamental condition is that the agent must have purported to act as an agent for a principal who is in contemplation at the time of the act. This means the agent must, at the time of the transaction, disclose to the third party that they are acting on behalf of another, even if the specific name of the principal is not mentioned, provided the principal is identifiable. If a person acts in their own name, intending the act to be for their own benefit or even for the benefit of another but without disclosing that they are an agent, that 'other' person cannot later step in and ratify the act. The contract remains solely between the person who signed it and the third party.\n\nSecond, the principal must have been in existence and legally competent to enter into the contract at the time the act was performed by the agent. Third, no valid ratification can be made by a person whose knowledge of the facts of the case is materially defective. The principal must have full knowledge of all material facts involved in the transaction at the time of ratification. Finally, ratification cannot be used to validate an act that is void or illegal from the outset.\n\nFacts: Sameer is an art dealer who knows that his client, Maya, is looking for a specific painting by a famous artist. Sameer finds the painting at an auction held by 'Art-House'. He bids for it and wins. While bidding, Sameer does not mention Maya’s name or state to Art-House that he is buying it for anyone else; he signs the purchase agreement in his own name, 'Sameer'. The next day, Sameer tells Maya about the purchase. Maya is delighted and tells Sameer, 'I accept this purchase as if I had authorized you to buy it for me. I will pay Art-House the full amount.' However, Art-House refuses to deliver the painting to Maya, claiming they only have a contract with Sameer.\n\nCan Maya validly ratify Sameer's act to become the Principal in the contract with Art-House?",
+      "options": {
+        "A": "Yes, because Maya expressed a clear intent to be bound by the contract and was the person Sameer intended to benefit.",
+        "B": "Yes, because the doctrine of ratification allows a principal to retrospectively validate an act done on their behalf.",
+        "C": "No, because Sameer did not purport to act on Maya’s behalf at the time of the auction and signed the agreement in his own name.",
+        "D": "No, because ratification is only valid if the principal is present at the time the agent performs the act."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "The passage establishes a mandatory condition for ratification: the agent must 'purport to act as an agent' at the time of the transaction. If the agent acts in their own name without disclosing they are an agent, the principal cannot later ratify. In the facts, Sameer signed the agreement in his own name and did not mention he was acting for Maya or anyone else. Therefore, the first condition fails: (C). Option A is a trap that relies on 'intent' and 'benefit', which the passage explicitly states is insufficient if the agent acts in their own name. Option B correctly identifies the general rule but ignores the specific limitation/exception regarding disclosure. Option D is incorrect as the passage implies the principal (Maya) does not need to be present or have given prior authority, provided the other conditions are met.",
+      "trap_type": "Ignoring a mandatory condition (the requirement for the agent to 'purport' to act for a principal at the time of the contract).",
+      "concept_tag": "Contract Law - Doctrine of Ratification",
+      "verify_code": "def check_ratification():\n    agent_purported_to_act_as_agent = False\n    principal_in_existence = True\n    principal_has_knowledge = True\n    \n    # Condition 1: Must purport to act as agent at the time of act\n    if not agent_purported_to_act_as_agent:\n        return 'C'\n    return 'A'\n\nanswer = check_ratification()",
+      "id": "AI-CLG-58e406fe",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "58e406fe99789bbaee5b218e2514c53d7a11cdd9db82023dba57f0e6b83624fa",
+      "created_at": "2026-11-01T08:49:31.965053+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Identify the grammatically correct sentence from the options below:",
+      "options": {
+        "A": "The board of directors demands that the CEO justifies the expenditure and is held accountable for the deficit.",
+        "B": "The board of directors demands that the CEO justify the expenditure and be held accountable for the deficit.",
+        "C": "The board of directors demands that the CEO justify the expenditure and is held accountable for the deficit.",
+        "D": "The board of directors demands that the CEO justifies the expenditure and be held accountable for the deficit."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "This question tests the 'Subjunctive Mood', which is triggered by verbs of requirement, suggestion, or necessity (such as demand, insist, suggest, recommend) followed by 'that'. (a) In the subjunctive mood, the verb takes its base form (the bare infinitive) regardless of the subject's number or person. Thus, 'CEO justify' is correct even though 'CEO' is singular. (b) Parallelism must be maintained: both verbs in the 'that' clause ('justify' and 'be') must be in the subjunctive form. Option B correctly uses 'justify' and 'be'. (c) The reading signal is the word 'demands', which alerts you to look for the base form of subsequent verbs. (d) The main distractor is A, which applies standard Subject-Verb agreement rules ('CEO justifies'). While this looks correct in a normal indicative sentence, the subjunctive mood overrides standard agreement.",
+      "trap_type": "Standard Subject-Verb Agreement applied to a Subjunctive trigger",
+      "concept_tag": "Sentence Correction - Subjunctive Mood",
+      "verify_code": "answer = 'B'",
+      "id": "AI-IV-63606da5",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "63606da5524460216d287c3d89996dc70c0f465c8a6700c6fdae404525f273ca",
+      "created_at": "2026-11-01T08:49:55.249899+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: The Social Brain Hypothesis posits that primate encephalization was driven by the cognitive demands of navigating complex social hierarchies. This narrative—that we evolved large brains to track alliances and outmaneuver rivals—is compelling because it mirrors our own anthropocentric preoccupations. However, recent comparative studies of primate lineages complicate this picture. Data suggests that diet, rather than group size, is a more robust predictor of brain volume. Frugivores (fruit-eaters), who must navigate vast territories to find ephemeral food sources, possess significantly larger brains than folivores (leaf-eaters), for whom food is ubiquitous and easily located. This suggests that the 'ecological brain'—the need for sophisticated spatial mapping and memory—was the primary selection pressure. If so, the social complexity we prize is not the engine of our intelligence, but its passenger: a secondary development made possible by the cognitive surplus required to locate high-energy food. In this view, we did not evolve large brains to live in groups; we live in complex groups because we already had the brains to manage them.\n\nBased on the passage, which of the following best captures the author’s critique of the Social Brain Hypothesis?",
+      "options": {
+        "A": "It incorrectly identifies a consequence of increased cognitive capacity as its original evolutionary cause.",
+        "B": "It fails to acknowledge that social complexity is a necessary prerequisite for the development of foraging skills.",
+        "C": "It is fundamentally flawed because it relies on anthropocentric biases rather than empirical primate data.",
+        "D": "It suggests that the cognitive demands of social living are mutually exclusive from those of ecological navigation."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The author’s central move is a reversal of causality. The passage concludes with the insight: 'we did not evolve large brains to live in groups; we live in complex groups because we already had the brains to manage them.' This indicates that social complexity is a 'secondary development' (consequence) rather than the 'engine' (cause). Option A captures this 'byproduct vs catalyst' insight perfectly. (B) is a REVERSAL of the author's logic, which suggests foraging came first. (C) is HALF-TRUE; while the author mentions 'anthropocentric preoccupations,' this is presented as the reason why the theory is *popular*, not the primary empirical evidence used to *refute* it (the frugivore data is the refutation). (D) is EXTREME; the author suggests one followed the other, not that they cannot both exist or are 'mutually exclusive.'",
+      "trap_type": "Half-true",
+      "concept_tag": "RC - author's tone and argument structure",
+      "verify_code": "answer = 'A'",
+      "id": "AI-CVR-9dc98a15",
+      "topic": "CAT VARC RC",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9dc98a1515d03ac6a5f7c112b762dd1da093a90933026cf24b20499003f56176",
+      "created_at": "2026-11-01T08:51:50.998259+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: A person who finds a lost object acquires a legal right to keep it against everyone except the true owner. However, an exception occurs if the object is found on land or premises occupied by someone else. In such cases, the occupier has a superior right to the finder only if the occupier has manifested a clear intention to exercise control over the premises and everything on it. In law, such intention is generally not manifested in 'public' parts of a property (where the public has free access), but it is presumed in 'private' or 'restricted' parts where access is strictly regulated by the occupier.\n\nFact Situation: Rohan is a member of 'The Grand Library'. While browsing books in the Main Reading Hall, which is open to all members, he finds a vintage fountain pen on the floor. Later, he is granted special permission to enter the 'Archival Vault'—a highly restricted area accessible only to senior researchers—to consult a rare manuscript. There, he finds a diamond tie-pin on the floor. The Library Manager claims both the pen and the tie-pin. Who has the superior right to these items?",
+      "options": {
+        "A": "Rohan has the superior right to both the fountain pen and the diamond tie-pin.",
+        "B": "The Library has the superior right to both the fountain pen and the diamond tie-pin.",
+        "C": "Rohan has the superior right to the fountain pen, but the Library has the superior right to the tie-pin.",
+        "D": "The Library has the superior right to the fountain pen, but Rohan has the superior right to the tie-pin."
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "To solve this, we must apply the 'Manifestation of Control' test from the passage to two different locations. (1) The Main Reading Hall is described as 'open to all members'. According to the principle, in 'public' parts of a property, the occupier (the Library) does not manifest sufficient control to override a finder's right. Thus, Rohan, as the finder, has the right to the fountain pen. (2) The 'Archival Vault' is a 'highly restricted area'. The principle states that in restricted parts, the intention to control is presumed. Therefore, the occupier (the Library) has a superior right to the tie-pin found there. Combining these, we get Option C. The shortcut is to identify the 'public vs. private' trigger words in the fact situation and map them to the exception in the principle.",
+      "trap_type": "Failure to distinguish sub-environments within a single property",
+      "concept_tag": "Legal RC - Finder's Rights and Occupier's Control",
+      "verify_code": "def determine_rights():\n    # Locations\n    reading_hall = {'type': 'public', 'item': 'pen'}\n    archival_vault = {'type': 'restricted', 'item': 'tie-pin'}\n    \n    def get_superior_right(area):\n        if area['type'] == 'public':\n            return 'Rohan' # Finder prevails\n        else:\n            return 'Library' # Occupier prevails due to presumed control\n            \n    pen_right = get_superior_right(reading_hall)\n    tie_pin_right = get_superior_right(archival_vault)\n    \n    if pen_right == 'Rohan' and tie_pin_right == 'Library':\n        return 'C'\n    return None\n\nanswer = determine_rights()",
+      "id": "AI-CR-01e49111",
+      "topic": "CLAT RC",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "01e491118d733596a98326c374062d8e163195f8115b7f3f74b6d663c08bf4b8",
+      "created_at": "2026-11-01T08:52:25.541896+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Under the constitutional and legal doctrine of double jeopardy, no person shall be prosecuted and punished for the same offence more than once. The doctrine is rooted in the maxim nemo debet bis vexari pro una et eadem causa (no person should be twice vexed for one and the same cause). However, in legal reasoning, the protection is not a broad moral shield against being inconvenienced by multiple proceedings; rather, it is governed by precise, cumulative criteria. For the bar of double jeopardy to operate against a subsequent proceeding, three essential conditions must be concurrently established:\n\nFirst, the individual must have been formally accused of an 'offence', which the law strictly defines as an act or omission made punishable by any statute or penal law in force.\n\nSecond, the prior proceeding must have been conducted before a 'court of law' or a competent judicial tribunal. A judicial tribunal is an authority vested with the sovereign judicial power of the State to render a binding and definitive judgment on guilt or innocence. Crucially, domestic or departmental disciplinary proceedings conducted by an employer, administrative body, or statutory corporation—even when operating under statutory rules and empowered to impose severe sanctions such as termination of employment, demotion, or financial recovery—do not qualify as proceedings before a court of law. Such departmental inquiries are meant to enforce professional discipline, not to administer criminal justice.\n\nThird, the prior judicial proceeding must have concluded with both a prosecution and a punishment. 'Punishment' in this context means a penal sentence imposed by a competent court following a trial on the merits. Consequently, if a criminal complaint or proceeding is terminated prior to an adjudication of guilt on the merits—such as where a court dismisses the case or discharges the accused on a preliminary technical defect (including the lack of a mandatory statutory sanction or an incurable drafting irregularity in the charge sheet)—there has been no completed prosecution and no punishment. In such cases, the accused has not been placed in legal jeopardy, and the institution of fresh judicial proceedings after curing the formal defect is not barred by the rule against double jeopardy.\n\nFacts: Vikram, a senior engineer at a State-owned infrastructure corporation, was accused of demanding and accepting an illegal gratification of Rs 5,00,000 in exchange for clearing a contractor's bills. Upon discovering the misconduct, the corporation's internal vigilance committee initiated departmental disciplinary proceedings against Vikram. The committee found him guilty of gross professional misconduct and ordered his immediate dismissal from service, along with the forfeiture of his retirement gratuity.\n\nSimultaneously, the State anti-corruption bureau filed a criminal complaint against Vikram before a Special Judicial Magistrate, charging him under the Prevention of Corruption Act. However, at the initial hearing, before any charges were formally framed or any witnesses examined, the Magistrate dismissed the complaint and discharged Vikram solely because the investigating agency had failed to procure the mandatory sanction from the competent government authority prior to initiating the prosecution.\n\nThree months later, after obtaining the requisite statutory sanction, the anti-corruption bureau filed a fresh criminal complaint before the same Magistrate on the identical set of facts and bribery charges. Vikram challenges the fresh prosecution, contending that it violates the rule against double jeopardy because: (i) he has already suffered punitive consequences through dismissal and forfeiture, and (ii) he has already faced judicial proceedings on these identical allegations before the same court.\n\nWill Vikram's challenge succeed under the rule stated in the passage?",
+      "options": {
+        "A": "Yes, because while the internal corporate inquiry was non-judicial, the dismissal of the initial complaint by the Special Judicial Magistrate constituted a formal judicial determination on the identical allegations, barring fresh proceedings.",
+        "B": "No, because the corporate inquiry was an administrative disciplinary proceeding rather than a trial before a court of law, and the initial criminal complaint terminated on a preliminary technical defect without resulting in a conviction and punishment.",
+        "C": "Yes, because subjecting an individual to repeated criminal filings on identical facts after a judicial dismissal constitutes oppressive and vexatious litigation, violating the fundamental spirit of double jeopardy.",
+        "D": "No, because the rule against double jeopardy applies only when an accused has been formally acquitted on the merits, and an administrative dismissal overrides any subsequent criminal immunity."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step breakdown:\n1. Vikram raises two distinct grounds to invoke double jeopardy: (i) the departmental inquiry and penalties, and (ii) the prior dismissal by the Special Judicial Magistrate.\n2. Evaluate Ground (i) against Condition 2: The passage explicitly states that departmental/domestic proceedings by an employer or statutory body—even if imposing termination or forfeiture—are NOT proceedings before a 'court of law'. Thus, the departmental inquiry cannot trigger double jeopardy.\n3. Evaluate Ground (ii) against Condition 3: The initial criminal case was indeed before a court of law, but Condition 3 requires that the prior judicial proceeding must have ended in BOTH a prosecution and a punishment (conviction on merits). The passage expressly provides that where a case terminates on a preliminary technical defect (such as the absence of a mandatory sanction) before charges or evidence, 'there has been no completed prosecution and no punishment', and fresh proceedings after curing the defect are NOT barred.\n4. Since neither prior proceeding satisfies the cumulative test, Vikram's challenge must fail: (B) is the correct answer.\n\nReading Signal / Insight:\nIn multi-layered Legal Reasoning problems, track each prior event independently against the multi-part legal test. Do not combine the judicial status of Event 2 with the punitive outcome of Event 1.\n\nWhy the distractors are wrong:\n- Trap A (The Main Distractor): The candidate correctly identifies that departmental inquiries do not count as a court, but leaps to the conclusion that because the Magistrate is a court of law, the dismissal bars a fresh complaint. This ignores the explicit condition that the judicial proceeding must result in *prosecution and punishment on the merits*; a dismissal on a preliminary technical defect does not create double jeopardy.\n- Trap C (General Fairness / Moral Equivalence): Assumes that facing two complaints is 'vexatious litigation'. The passage expressly warns that double jeopardy is not a general moral shield against inconvenience, but requires strict adherence to the defined three-part rule.\n- Trap D (Rule Distortion): Misstates the doctrine by asserting that double jeopardy requires an acquittal (the passage specifies 'prosecution and punishment', i.e., conviction) and introduces an irrelevant concept of administrative dismissal overriding immunity.",
+      "trap_type": "Satisfying the forum requirement (court of law) while ignoring the outcome requirement (conviction and punishment on merits)",
+      "concept_tag": "Constitutional and Criminal Law - Double Jeopardy",
+      "verify_code": "",
+      "id": "AI-CLG-78de867a",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-flash-latest",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "78de867a498d9dfad6c7b3a6307edd04612a0a41c3486b82f4ceed609e784b9d",
+      "created_at": "2026-11-01T08:59:40.297492+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 19,
-      "rejected": 6,
-      "accepted": 13
-    },
-    "CAT VARC RC": {
-      "attempts": 26,
-      "rejected": 11,
+      "attempts": 22,
+      "rejected": 7,
       "accepted": 15
     },
+    "CAT VARC RC": {
+      "attempts": 29,
+      "rejected": 13,
+      "accepted": 16
+    },
     "CAT DILR": {
-      "attempts": 23,
-      "rejected": 11,
-      "accepted": 12
+      "attempts": 26,
+      "rejected": 12,
+      "accepted": 14
     },
     "CLAT RC": {
+      "attempts": 23,
+      "rejected": 8,
+      "accepted": 15
+    },
+    "CLAT Logical Reasoning": {
+      "attempts": 25,
+      "rejected": 12,
+      "accepted": 13
+    },
+    "CLAT Legal Reasoning": {
+      "attempts": 16,
+      "rejected": 1,
+      "accepted": 15
+    },
+    "IPMAT Quant": {
       "attempts": 19,
       "rejected": 7,
       "accepted": 12
     },
-    "CLAT Logical Reasoning": {
-      "attempts": 22,
-      "rejected": 10,
-      "accepted": 12
-    },
-    "CLAT Legal Reasoning": {
-      "attempts": 13,
-      "rejected": 1,
-      "accepted": 12
-    },
-    "IPMAT Quant": {
-      "attempts": 16,
-      "rejected": 6,
-      "accepted": 10
-    },
     "IPMAT Verbal": {
-      "attempts": 12,
+      "attempts": 15,
       "rejected": 1,
-      "accepted": 11
+      "accepted": 14
     }
   }
 }
