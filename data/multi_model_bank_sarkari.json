@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": 1,
-    "source": "data/multi_model_curation (Gemini + model-compare, independently verified)",
+    "source": "data/multi_model_curation (Gemini + model-compare + Meta AI Hard, independently verified)",
     "author": "Vaibhav Gupta",
     "family": "sarkari",
-    "count": 151,
+    "count": 171,
     "topics": {
       "Sarkari English": 35,
-      "Sarkari Quantitative Aptitude": 80,
+      "Sarkari Quantitative Aptitude": 100,
       "Sarkari Reasoning": 36
     },
     "models": {
@@ -15,7 +15,7 @@
       "Claude Sonnet 5": 10,
       "Claude Sonnet 5.5 Medium": 8,
       "Gemini Argon 4.0": 107,
-      "Meta AI": 9,
+      "Meta AI": 29,
       "SuperGrok": 8
     }
   },
@@ -2728,6 +2728,566 @@
         "computed"
       ],
       "text_hash": "10ade09f691f0ad6dbddcf8b0ee26a36747573e65fcd3d1d93271bcfde5dc357"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-000",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Pie Chart DI",
+      "question_text": "Total annual budget of Ayodhya Development Authority is ₹800 Cr.\nSector | Percentage\nRoad | 30%\nWater | 18%\nElectricity | 22%\nSanitation | 10%\nParks | 8%\nAdmin | 12%\nDue to cost overrun, Road expenditure exceeds its allocated budget by 15%. This extra amount is managed by deducting equally from Parks and Admin budgets. What will be the new Parks budget in Crores?",
+      "options": {
+        "A": "64 Cr",
+        "B": "46 Cr",
+        "C": "54.4 Cr",
+        "D": "28 Cr"
+      },
+      "correct_answer": "B",
+      "trap_type": "Full deduction from Parks, No deduction assumption, Direct percent cut on Parks",
+      "pedagogical_explanation": "Road allocation = 30% of 800 = 240 Cr. 15% overrun = 36 Cr extra. Split equally = 18 Cr each from Parks and Admin. Parks original = 8% of 800 = 64 Cr. New Parks = 64-18 = 46 Cr. Trap (D): Deducts entire 36 Cr from Parks only: 64-36=28 Cr. Trap (A): Assumes Parks unchanged and all cut from Admin, so 64 Cr. Trap (C): Applies 15% cut directly on Parks: 64*0.85=54.4 Cr.",
+      "verify_code": "answer = 800*8/100 - (800*30/100*15/100)/2",
+      "source_ref": "multi:meta-hard-p1 #0",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "e5e9023f6af9ad3994fdd88bc55281eab600399180b2a216b0d37d2d925f2911"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-001",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Table DI Missing",
+      "question_text": "Table shows loan data for three branches in FY 2024.\nBranch | Total Applicants | Approval Rate | Total Disbursed (Rs Cr) | Avg Loan per Approved (Rs lakh)\nA | 16000 | 75% | ? | 4.8\nB | ? | 60% | 324 | 4.5\nC | 15000 | ? | 540 | 6.0\nIf 1 Cr = 100 lakh, find the total amount disbursed by branch A (in Rs Cr).",
+      "options": {
+        "A": "576 Cr",
+        "B": "460.8 Cr",
+        "C": "600 Cr",
+        "D": "768 Cr"
+      },
+      "correct_answer": "A",
+      "trap_type": "Total applicants instead of approved, Wrong approval rate, Rounded avg loan",
+      "pedagogical_explanation": "Branch A approved = 16000*75% = 12000. Disbursed = 12000*4.8 lakh = 57600 lakh = 576 Cr (divide by 100). Branch B approved = 324 Cr = 32400 lakh /4.5 =7200, so applicants =12000. Branch C approved =54000/6=9000, rate=60%. Trap (D): Uses total applicants 16000*4.8 lakh =768 Cr ignoring approval filter. Trap (B): Uses 60% from Branch B for A: 16000*60%=9600*4.8=460.8 Cr. Trap (C): Rounds 4.8 to 5 lakh: 12000*5=60000 lakh=600 Cr.",
+      "verify_code": "answer = 16000*75/100*4.8/100",
+      "source_ref": "multi:meta-hard-p1 #1",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "4edf044ccf66e47e1c13a859cd8d655ddd257e7408120478fa00a919fc1a88bb"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-002",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Wrong Number Series",
+      "question_text": "Find the wrong number in the series: 5, 7, 17, 58, 231, 1166, 7009",
+      "options": {
+        "A": "58",
+        "B": "17",
+        "C": "231",
+        "D": "1166"
+      },
+      "correct_answer": "A",
+      "trap_type": "Blames the earlier term, Error propagation blame, Wrong added prime",
+      "pedagogical_explanation": "Pattern: multiply by 1, 2, 3, 4, 5, 6 and add the primes 2, 3, 5, 7, 11, 13. 5*1+2=7, 7*2+3=17, 17*3+5=56 but 58 is given, 56*4+7=231, 231*5+11=1166, 1166*6+13=7009. So 58 is wrong; it should be 56. Trap (B): Sees the break between 17 and 58 and blames 17 without checking that 7*2+3=17 fits. Trap (C): Error propagation: computes 58*4+7=239, finds 231, and blames 231, not noticing 231=56*4+7. Trap (D): Adds 13 instead of 11 at the fifth step (231*5+13=1168) and blames 1166.",
+      "verify_code": "answer = [a for a, b in zip([5,7,17,58,231,1166,7009], [5,5*1+2,7*2+3,17*3+5,(17*3+5)*4+7,((17*3+5)*4+7)*5+11,(((17*3+5)*4+7)*5+11)*6+13]) if a != b][0]",
+      "source_ref": "multi:meta-hard-p1 #2",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "ede74eb29b1049583cf7740f6b5d74ae4c73080444e8f2bc8c910778e98a89c6"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-003",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Missing Number Series",
+      "question_text": "Find the missing number in the series: 10, 12, 24, 60, ?, 290, 542",
+      "options": {
+        "A": "140",
+        "B": "132",
+        "C": "128",
+        "D": "124"
+      },
+      "correct_answer": "A",
+      "trap_type": "Cube only, Cube plus 2n, Cube plus n",
+      "pedagogical_explanation": "Difference pattern = n^3 + n^2 for n=1,2,3... 12-10=2=1+1, 24-12=12=8+4, 60-24=36=27+9, next diff =64+16=80, so ?=60+80=140, next 125+25=150 gives 290, next 216+36=252 gives 542. Trap (D): Adds only n^3: 60+64=124. Trap (B): Adds n^3+2n: 64+8=72, 60+72=132. Trap (C): Adds n^3+n: 64+4=68, 60+68=128.",
+      "verify_code": "answer = 60 + 4*4*4 + 4*4",
+      "source_ref": "multi:meta-hard-p1 #3",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "590ff485d79303b5c9618983ef4de48f558390fba0170b1c6ed9d1d9f97e5fdc"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-004",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Partnership",
+      "question_text": "Raghav, Suresh and Tanya start a business for 12 months.\nRaghav invests Rs 18000 for first 5 months and then increases his investment by 50% for remaining 7 months.\nSuresh invests Rs 24000 for first 8 months and then decreases his investment by 25% for remaining 4 months.\nTanya invests Rs 16000 for first 3 months, then doubles it for next 6 months and then invests half of second period amount for last 3 months.\nTotal profit at year end is Rs 207750. What is Suresh's share in profit?",
+      "options": {
+        "A": "72000",
+        "B": "66000",
+        "C": "69750",
+        "D": "69250"
+      },
+      "correct_answer": "B",
+      "trap_type": "Raghav share swap, Tanya share max, Equal division fallacy",
+      "pedagogical_explanation": "Weighted capital: Raghav=18000*5+27000*7=279000, Suresh=24000*8+18000*4=264000, Tanya=16000*3+32000*6+16000*3=288000, total=831000. Profit ratio same as weighted. Suresh=264000/831000*207750=264*250=66000. Trap (C): Takes Raghav's share 279*250=69750 confusing partners. Trap (A): Takes Tanya's share 288*250=72000 as max. Trap (D): Divides total equally 207750/3=69250 ignoring investment differences.",
+      "verify_code": "answer = 207750*(24000*8+18000*4)/(18000*5+27000*7+24000*8+18000*4+16000*3+32000*6+16000*3)",
+      "source_ref": "multi:meta-hard-p1 #4",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "058dbfb9516b5fbb7d792b720e6c0498a3f96c82567c77b61b467557c12c8fa8"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-005",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Ages",
+      "question_text": "Four years ago, the ratio of ages of Aarav and Bina was 5:6. Six years hence, the ratio of ages of Bina and Chirag will be 5:7. Sum of their present ages is 113 years. What is present age of Chirag in years?",
+      "options": {
+        "A": "50",
+        "B": "34",
+        "C": "56",
+        "D": "46"
+      },
+      "correct_answer": "A",
+      "trap_type": "Age at the wrong time point, Future age as present, Wrong person",
+      "pedagogical_explanation": "Let Bina present = B. Aarav = (5B+4)/6 from (A-4)/(B-4)=5/6. Chirag = (7B+12)/5 from (B+6)/(C+6)=5/7. Sum = (5B+4)/6 + B + (7B+12)/5 =113 gives B=34, Aarav=29, Chirag=50. Trap (D): Gives Chirag's age four years ago (50-4=46), mixing up the two time points. Trap (C): Gives Chirag's age six years hence (50+6=56), forgetting to subtract 6 after using the 5:7 ratio. Trap (B): Stops after solving for Bina and gives her age, 34.",
+      "verify_code": "answer = (7*((113*30-20-72)/97)+12)/5",
+      "source_ref": "multi:meta-hard-p1 #5",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "672e45de0cccc9e03cb63c0ac02abeaa78cad66ff9893596bde8da613a91dcb9"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-006",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Income Expenditure Ratio",
+      "question_text": "The ratio of monthly incomes of Anil and Sunil is 8:5 and ratio of their monthly expenditures is 5:3. Anil saves Rs 7000 more than Sunil. Sunil saves 20% of his income. What is Anil's monthly expenditure in Rs?",
+      "options": {
+        "A": "168000",
+        "B": "140000",
+        "C": "218750",
+        "D": "84000"
+      },
+      "correct_answer": "B",
+      "trap_type": "Person swap, Wrong percent base, Income as expenditure",
+      "pedagogical_explanation": "Let income 8x,5x and exp 5y,3y. Savings Anil=8x-5y, Sunil=5x-3y. Difference 3x-2y=7000. Sunil saves 20%: 5x-3y=x =>4x=3y =>y=4x/3. So x/3=7000 =>x=21000, y=28000. Anil exp=5y=140000. Trap (D): Gives Sunil exp 3y=84000 swapping persons. Trap (C): Takes Sunil's saving as 20% of his expenditure, not his income: 5x-3y=0.6y gives x=31500, y=43750, so 5y=218750. Trap (A): Gives Anil's income 8x=168000 instead of his expenditure.",
+      "verify_code": "answer = 5*4*(7000*3)/3",
+      "source_ref": "multi:meta-hard-p1 #6",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "aad0ad1e43787ac93723893298049b97512ae3cf25e9e01c503ad7f5eff93738"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-007",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Average Replacement",
+      "question_text": "Average weight of 18 students in a class is 54 kg. Two students with average weight 60 kg leave the class and two new students join. The average weight then becomes 55.5 kg. If weight of one new student is 58 kg, what is weight of other new student in kg?",
+      "options": {
+        "A": "147",
+        "B": "89",
+        "C": "87",
+        "D": "65"
+      },
+      "correct_answer": "B",
+      "trap_type": "Increase counted for new students only, Forgets the known student, Uses leaving average",
+      "pedagogical_explanation": "Old total=18*54=972. Leaving total=2*60=120, remaining=852. New total=18*55.5=999. New two total=999-852=147. One is 58, other=89. Trap (D): Counts the 1.5 kg rise only for the two new students (1.5*2=3), so they weigh 120+3=123 together and the other is 123-58=65. Trap (A): Stops at the combined weight of the two new students, 147, and forgets to subtract 58. Trap (C): Subtracts average leaving 60 instead of given 58: 147-60=87.",
+      "verify_code": "answer = 18*55.5 - 18*54 + 120 - 58",
+      "source_ref": "multi:meta-hard-p1 #7",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "9ecea0f52cb2126be4e0352958b569f584932c5d5a9b8fc151b53df16c6d2e70"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-008",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Work Wages",
+      "question_text": "P can complete a project in 25 days, Q in 20 days and R in 30 days. They are hired for total wages Rs 18600. Work pattern: Days 1-5 P and R work together, Days 6-10 Q and R work together, remaining work is completed by R alone. Wages are distributed in proportion to work done by each. What is R's share of wages in Rs?",
+      "options": {
+        "A": "10230",
+        "B": "16430",
+        "C": "8370",
+        "D": "4030"
+      },
+      "correct_answer": "A",
+      "trap_type": "Solo work only, Double-counted remaining work, Combined share of P and Q",
+      "pedagogical_explanation": "Work: P=5/25=12/60, Q=5/20=15/60, Phase1 R=5/30=10/60, Phase2 R=5/30=10/60, remaining 13/60 done by R alone, so R total=33/60. Wages: P=12/60*18600=3720, Q=15/60*18600=4650, R=33/60*18600=10230. Trap (D): Credits R only for the work done alone (13/60), giving 13/60*18600=4030. Trap (B): Finds the remaining work as 1-12/60-15/60=33/60, ignoring R's work in days 1-10, then adds R's 20/60: 53/60*18600=16430. Trap (C): Gives the combined share of P and Q, 3720+4650=8370.",
+      "verify_code": "answer = 18600*(10/30 + (1 - 5/25 - 5/20 - 10/30))",
+      "source_ref": "multi:meta-hard-p1 #8",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "716677913a51a7babb9408432f5ee9accdadaa5478add4e3685030d39da0ae26"
+    },
+    {
+      "id": "MM-SK-SQA-MH1-009",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Boats Streams",
+      "question_text": "Two ghats X and Y on river Ganga are 144 km apart. Boat A starts from X downstream towards Y and Boat B starts from Y upstream towards X at same time. Boat A speed in still water is 16 km/hr and Boat B speed in still water is 14 km/hr. They meet at a point 84 km from X. Find speed of stream in km/hr.",
+      "options": {
+        "A": "1.5",
+        "B": "3.6",
+        "C": "3.5",
+        "D": "2.5"
+      },
+      "correct_answer": "A",
+      "trap_type": "Distance swap, One-boat formula on two boats, Stream ignored for one boat",
+      "pedagogical_explanation": "Let stream=s. Downstream speed A=16+s covers 84 km, upstream B=14-s covers 60 km in same time t. So t=84/(16+s)=60/(14-s). Solve 84*(14-s)=60*(16+s) =>1176-84s=960+60s =>216=144s =>s=1.5 km/hr. Trap (C): Swaps the distances, 60/(16+s)=84/(14-s), which gives s=-3.5, and drops the sign. Trap (D): Finds the meeting time 144/30=4.8 hr and the ground speeds 84/4.8=17.5 and 60/4.8=12.5, then applies the one-boat formula (downstream-upstream)/2=2.5 to two different boats. Trap (B): Ignores the stream for Boat B: 84/(16+s)=60/14 gives s=3.6.",
+      "verify_code": "answer = (84*14-60*16)/(84+60)",
+      "source_ref": "multi:meta-hard-p1 #9",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p1",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "87d0b986b2e8bd4eb4ee059d32ffdd0a3dc6f66ba7c47e82edf788b90f5e2c63"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-000",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Bar Graph DI",
+      "question_text": "Bar graph shows UPI transactions (in lakh) of 5 banks in 2022 and 2023.\nBank | 2022 | 2023\nSBI | 420 | 504\nHDFC | 380 | 456\nICICI | 320 | 384\nPNB | 260 | 312\nAxis | 300 | 345\nTotal transactions of SBI and HDFC in 2023 together is what percent more than total transactions of PNB and Axis in 2022 together?",
+      "options": {
+        "A": "41.67%",
+        "B": "171.43%",
+        "C": "71.43%",
+        "D": "46.12%"
+      },
+      "correct_answer": "C",
+      "trap_type": "Difference as percent of the larger total, Percent of instead of percent more, Wrong year for the base",
+      "pedagogical_explanation": "SBI plus HDFC 2023 =504 plus 456 =960. PNB plus Axis 2022 =260 plus 300 =560. Percent more = (960 minus 560) divided by 560 times 100 =400 divided by 560 times 100 =71.43 percent. Trap (A): Divides the difference by the larger total: 400/960*100=41.67%. Trap (B): Finds 960 as a percent of 560 (171.43%) instead of percent more. Trap (D): Takes PNB plus Axis for 2023 (312+345=657) as the base: (960-657)/657*100=46.12%.",
+      "verify_code": "answer = round((504+456-260-300)/(260+300)*100, 2)",
+      "source_ref": "multi:meta-hard-p2 #0",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "de5aadd9a48d572636bc416390b8bc8181eea5ecf29220fcb2a36a697f2bc644"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-001",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Caselet DI",
+      "question_text": "In Prayagraj Coaching Centre, 2400 students enrolled for three exams: PO, SSC and Railways. PO is 45% of total. SSC is 800 students. Remaining are Railways. In PO, male to female ratio is 5:4. In SSC, 55% are males. In Railways, female are 40%. 70% of PO males, 60% of PO females, 50% of SSC males, 40% of SSC females, 75% of Railways males and 50% of Railways females cleared prelims. What is total number of students who cleared prelims?",
+      "options": {
+        "A": "1384",
+        "B": "1402",
+        "C": "1398",
+        "D": "1410"
+      },
+      "correct_answer": "D",
+      "trap_type": "Railways gender split swapped, PO ratio reversed, SSC gender split swapped",
+      "pedagogical_explanation": "Total 2400, PO=1080, SSC=800, Railways=520. PO male=600 female=480, SSC male=440 female=360, Railways female=208 male=312. Cleared: PO male 420, PO female 288, SSC male 220, SSC female 144, Railways male 234, Railways female 104, total 1410. Trap (A): Reads 'female are 40%' in Railways as male 40%: 208 males and 312 females clear 156+156=312, total 1384. Trap (C): Reverses the PO ratio to 4:5 (480 males, 600 females): 336+360=696, total 1398. Trap (B): Applies 55% to SSC females instead of males: 180+176=356, total 1402.",
+      "verify_code": "answer = 1080*5/9*0.7 + 1080*4/9*0.6 + 800*0.55*0.5 + 800*0.45*0.4 + (2400-1080-800)*0.6*0.75 + (2400-1080-800)*0.4*0.5",
+      "source_ref": "multi:meta-hard-p2 #1",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "04d9e3b62cef51d8420f774c10502c4aaf35ee68ea242e7a3f83fde3262f1414"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-002",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Quadratic Comparison",
+      "question_text": "I. 6x^2 + 23x + 20 = 0\nII. 8y^2 + 26y + 21 = 0\nWhat is relation between x and y?",
+      "options": {
+        "A": "x < y",
+        "B": "x >= y",
+        "C": "x > y",
+        "D": "No relation can be established"
+      },
+      "correct_answer": "D",
+      "trap_type": "Compares larger roots only, Compares smaller roots only, Assumes greater equal",
+      "pedagogical_explanation": "I: 6x^2+23x+20=0 discriminant 49, roots = minus 4 divided by 3 = minus 1.33 and minus 2.5. II: 8y^2+26y+21=0 discriminant 4, roots = minus 1.5 and minus 1.75. x = minus1.33 is greater than y = minus1.5 but x = minus2.5 is less than y = minus1.5, so no consistent relation. Trap (C): Compares minus1.33 greater than minus1.5 and concludes x greater than y. Trap (A): Compares minus2.5 less than minus1.5 and concludes x less than y. Trap (B): Sees that the larger x root beats both y roots and settles for x >= y without checking the other x root, -2.5.",
+      "verify_code": "answer = (lambda xs, ys: 'x > y' if all(x > y for x in xs for y in ys) else 'x < y' if all(x < y for x in xs for y in ys) else 'x >= y' if all(x >= y for x in xs for y in ys) else 'x <= y' if all(x <= y for x in xs for y in ys) else 'No relation can be established')([(-23+pow(23*23-4*6*20, 0.5))/12, (-23-pow(23*23-4*6*20, 0.5))/12], [(-26+pow(26*26-4*8*21, 0.5))/16, (-26-pow(26*26-4*8*21, 0.5))/16])",
+      "source_ref": "multi:meta-hard-p2 #2",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "1e1999bee1c207bfea3885ee81c6bcb623d1010ca1cc95f9f321389abd2dc271"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-003",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Simplification",
+      "question_text": "What approximate value will come in place of question mark? ((24.97)^2 - (14.97)^2)/10.03 + 17.98% of 449.98 = ?",
+      "options": {
+        "A": "121",
+        "B": "91",
+        "C": "166",
+        "D": "130"
+      },
+      "correct_answer": "A",
+      "trap_type": "(a-b) squared for a^2-b^2, Adds the squares, Uses 20 percent",
+      "pedagogical_explanation": "Rounding to whole numbers, 25 squared =625, 15 squared =225, difference 400 divided by 10 =40. 18 percent of 450 =81. Total 121. Trap (B): Uses (25-15)^2=100 instead of 25^2-15^2: 100/10+81=91. Trap (C): Adds the squares: (625+225)/10+81=166. Trap (D): Rounds 17.98% up to 20%: 40+90=130.",
+      "verify_code": "answer = round((24.97*24.97-14.97*14.97)/10.03 + 17.98*449.98/100)",
+      "source_ref": "multi:meta-hard-p2 #3",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "73d11b8c9fb5797f636fd7144b85817497020e85357e240e82428c3d3ee1f6d9"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-004",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Compound Interest Different Rates",
+      "question_text": "Rs 18000 is invested at compound interest with rates 10% for first year, 12% for second year and 15% for third year. What is compound interest earned after 3 years?",
+      "options": {
+        "A": "6660",
+        "B": "7502.4",
+        "C": "25502.4",
+        "D": "9375.75"
+      },
+      "correct_answer": "B",
+      "trap_type": "Simple interest sum, Flat 15 percent, Amount instead of interest",
+      "pedagogical_explanation": "Year1: 18000 times 1.10 =19800, Year2: 19800 times 1.12 =22176, Year3: 22176 times 1.15 =25502.4, interest =7502.4. Trap (A): Adds the rates as simple interest: 37% of 18000=6660. Trap (D): Uses 15% for all three years: 18000*(1.15^3-1)=9375.75. Trap (C): Reports the amount 25502.4 instead of the interest.",
+      "verify_code": "answer = round(18000*1.10*1.12*1.15 - 18000, 2)",
+      "source_ref": "multi:meta-hard-p2 #4",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "0a5c8a5e05585388fa10c3cc5f88203a6a6eb6a6cb5aa19c3dcdaf3344c170d3"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-005",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Successive Discounts",
+      "question_text": "An article is marked 40% above its cost price. Shopkeeper gives successive discounts of 20% and 10% on marked price and still makes a profit of Rs 96. What is cost price of article in Rs?",
+      "options": {
+        "A": "800",
+        "B": "12000",
+        "C": "16800",
+        "D": "960"
+      },
+      "correct_answer": "B",
+      "trap_type": "Subtracts discounts from markup, Marked price instead of cost price, Single discount only",
+      "pedagogical_explanation": "Let CP=100, MP=140, after 20 percent =112, after 10 percent =100.8, profit 0.8. If profit 96, CP =96 divided by 0.8 times 100 =12000. Trap (D): Subtracts the discounts from the markup (40-20-10=10% profit): CP=96/0.10=960. Trap (C): Solves correctly but reports the marked price, 1.4*12000=16800. Trap (A): Applies only the 20% discount: 112, profit 12%, CP=96/0.12=800.",
+      "verify_code": "answer = 96/(140*0.8*0.9/100 - 1)",
+      "source_ref": "multi:meta-hard-p2 #5",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "710e9d00baef745222c6e66a2563a5543c69fc89bdfa9d11a71e02573f4e0ea4"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-006",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Easy",
+      "concept_tag": "Train Crossing",
+      "question_text": "Train A length 275 m running at 54 kmph crosses Train B length 325 m running at 36 kmph in opposite direction. In how many seconds will they cross each other completely?",
+      "options": {
+        "A": "120 sec",
+        "B": "40 sec",
+        "C": "24 sec",
+        "D": "11 sec"
+      },
+      "correct_answer": "C",
+      "trap_type": "One train length only, Same direction speed, One train speed only",
+      "pedagogical_explanation": "Total distance =275 plus 325 =600 m. Relative speed opposite =54 plus 36 =90 kmph =25 mps. Time =600 divided by 25 =24 sec. Trap (D): Uses only Train A's length: 275/25=11 sec. Trap (A): Uses the same-direction relative speed 54-36=18 kmph=5 m/s: 600/5=120 sec. Trap (B): Uses only Train A's speed, 54 kmph=15 m/s: 600/15=40 sec.",
+      "verify_code": "answer = (275+325)/((54+36)*5/18)",
+      "source_ref": "multi:meta-hard-p2 #6",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "ba593b1e18a563f2ecaa910e2d103e39155a7b5aa4fd7e85246ed6a299f9d788"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-007",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Moderate",
+      "concept_tag": "Probability Two Bags",
+      "question_text": "Bag X contains 6 red, 4 blue, 5 black balls. Bag Y contains 5 red, 7 blue, 3 black balls. One ball is drawn from each bag. What is probability that both balls are of same colour?",
+      "options": {
+        "A": "73/450",
+        "B": "58/225",
+        "C": "73/225",
+        "D": "152/225"
+      },
+      "correct_answer": "C",
+      "trap_type": "Misses black, Halves as if a bag is chosen first, Different colours instead of same",
+      "pedagogical_explanation": "Total each bag 15. Same colour = RR plus BB plus BlackBlack = (6 divided by 15 times 5 divided by 15) plus (4 divided by 15 times 7 divided by 15) plus (5 divided by 15 times 3 divided by 15) =30 plus 28 plus 15 divided by 225 =73 divided by 225. Trap (B): Leaves out black: (30+28)/225=58/225. Trap (A): Multiplies by 1/2 as if one bag were chosen at random first: 73/450. Trap (D): Finds the probability of different colours, 1-73/225=152/225.",
+      "verify_code": "answer = (6*5 + 4*7 + 5*3)/(15*15)",
+      "source_ref": "multi:meta-hard-p2 #7",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "950e32ae51708eb32ff2b4f180497e27de9fc55c10065b7f6ad7aece24cd5135"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-008",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Easy",
+      "concept_tag": "Cylinder Cone Volume",
+      "question_text": "A metallic cylinder of radius 14 cm and height 21 cm is melted and recast into 7 identical cones of same radius as cylinder. What is height of each cone in cm?",
+      "options": {
+        "A": "63 cm",
+        "B": "1 cm",
+        "C": "3 cm",
+        "D": "9 cm"
+      },
+      "correct_answer": "D",
+      "trap_type": "Forgets divide by 7, Forgets one third, Divides by 3 instead of multiplying",
+      "pedagogical_explanation": "Cylinder volume = pi times r squared times h = pi times 196 times 21 =4116 pi. 7 cones volume =7 times one third pi r squared h cone =4116 pi => 7 divided by 3 times 196 times h cone =4116 => h cone =9 cm. Trap (A): Recasts into one cone: (1/3)*196*h=196*21 gives h=63 cm. Trap (C): Drops the 1/3 of the cone formula: 7*196*h=196*21 gives h=3 cm. Trap (B): Divides by 3 instead of multiplying: h=21/(7*3)=1 cm.",
+      "verify_code": "answer = 3*14*14*21/(7*14*14)",
+      "source_ref": "multi:meta-hard-p2 #8",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "0c63b2cbe6f7a57bb98c9bbcdf301715bb7f62d6f9d58c2fb443ca0d78c98dde"
+    },
+    {
+      "id": "MM-SK-SQA-MH2-009",
+      "exam": "Sarkari",
+      "topic": "Sarkari Quantitative Aptitude",
+      "difficulty": "Easy",
+      "concept_tag": "Data Sufficiency",
+      "question_text": "What is speed of boat in still water in kmph?\nStatement I: Boat goes 60 km downstream in 3 hours.\nStatement II: Boat goes 40 km upstream in 4 hours.",
+      "options": {
+        "A": "Both statements together are sufficient",
+        "B": "Statement I alone is sufficient",
+        "C": "Neither statement is sufficient",
+        "D": "Statement II alone is sufficient"
+      },
+      "correct_answer": "A",
+      "trap_type": "Downstream as still water, Upstream as still water, Neither sufficient",
+      "pedagogical_explanation": "From I downstream speed =60 divided by 3 =20 kmph, from II upstream speed =40 divided by 4 =10 kmph, still water = (20 plus 10) divided by 2 =15 kmph, need both. Trap (B): Thinks downstream speed alone is still water speed 20 kmph. Trap (D): Thinks upstream speed alone is still water speed 10 kmph. Trap (C): Thinks data insufficient because stream speed not given.",
+      "verify_code": "answer = (lambda eq1, eq2, unknowns: 'Statement I alone is sufficient' if eq1 >= unknowns else 'Statement II alone is sufficient' if eq2 >= unknowns else 'Both statements together are sufficient' if eq1 + eq2 >= unknowns and (60/3 + 40/4)/2 == 15 else 'Neither statement is sufficient')(1, 1, 2)",
+      "source_ref": "multi:meta-hard-p2 #9",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Meta AI",
+      "source_batch": "meta_hard_p2",
+      "verified": true,
+      "verification": [
+        "independent solve",
+        "computed"
+      ],
+      "text_hash": "6ad7a0b7504e5c5bda02e26a3b7f6548861384ab4665d068ab1bcccdfb0b79cd"
     },
     {
       "id": "MM-SK-SQA-MT-000",

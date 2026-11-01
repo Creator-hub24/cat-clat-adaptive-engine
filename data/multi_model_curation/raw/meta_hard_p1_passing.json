@@ -1,0 +1,172 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Pie Chart DI",
+  "question_text": "Total annual budget of Ayodhya Development Authority is ₹800 Cr.\nSector | Percentage\nRoad | 30%\nWater | 18%\nElectricity | 22%\nSanitation | 10%\nParks | 8%\nAdmin | 12%\nDue to cost overrun, Road expenditure exceeds its allocated budget by 15%. This extra amount is managed by deducting equally from Parks and Admin budgets. What will be the new Parks budget in Crores?",
+  "options": {
+   "A": "28 Cr",
+   "B": "46 Cr",
+   "C": "64 Cr",
+   "D": "54.4 Cr"
+  },
+  "correct_answer": "B",
+  "trap_type": "Full deduction from Parks, No deduction assumption, Direct percent cut on Parks",
+  "pedagogical_explanation": "Road allocation = 30% of 800 = 240 Cr. 15% overrun = 36 Cr extra. Split equally = 18 Cr each from Parks and Admin. Parks original = 8% of 800 = 64 Cr. New Parks = 64-18 = 46 Cr. Trap (A): Deducts entire 36 Cr from Parks only: 64-36=28 Cr. Trap (C): Assumes Parks unchanged and all cut from Admin, so 64 Cr. Trap (D): Applies 15% cut directly on Parks: 64*0.85=54.4 Cr.",
+  "verify_code": "answer = 800*8/100 - (800*30/100*15/100)/2"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Table DI Missing",
+  "question_text": "Table shows loan data for three branches in FY 2024.\nBranch | Total Applicants | Approval Rate | Total Disbursed (Rs Cr) | Avg Loan per Approved (Rs lakh)\nA | 16000 | 75% | ? | 4.8\nB | ? | 60% | 324 | 4.5\nC | 15000 | ? | 540 | 6.0\nIf 1 Cr = 100 lakh, find the total amount disbursed by branch A (in Rs Cr).",
+  "options": {
+   "A": "576 Cr",
+   "B": "768 Cr",
+   "C": "460.8 Cr",
+   "D": "600 Cr"
+  },
+  "correct_answer": "A",
+  "trap_type": "Total applicants instead of approved, Wrong approval rate, Rounded avg loan",
+  "pedagogical_explanation": "Branch A approved = 16000*75% = 12000. Disbursed = 12000*4.8 lakh = 57600 lakh = 576 Cr (divide by 100). Branch B approved = 324 Cr = 32400 lakh /4.5 =7200, so applicants =12000. Branch C approved =54000/6=9000, rate=60%. Trap (B): Uses total applicants 16000*4.8 lakh =768 Cr ignoring approval filter. Trap (C): Uses 60% from Branch B for A: 16000*60%=9600*4.8=460.8 Cr. Trap (D): Rounds 4.8 to 5 lakh: 12000*5=60000 lakh=600 Cr.",
+  "verify_code": "answer = 16000*75/100*4.8/100"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Wrong Number Series",
+  "question_text": "Find the wrong number in the series: 5, 7, 17, 58, 231, 1166, 7009",
+  "options": {
+   "A": "17",
+   "B": "231",
+   "C": "58",
+   "D": "1166"
+  },
+  "correct_answer": "C",
+  "trap_type": "Blames the earlier term, Error propagation blame, Wrong added prime",
+  "pedagogical_explanation": "Pattern: multiply by 1, 2, 3, 4, 5, 6 and add the primes 2, 3, 5, 7, 11, 13. 5*1+2=7, 7*2+3=17, 17*3+5=56 but 58 is given, 56*4+7=231, 231*5+11=1166, 1166*6+13=7009. So 58 is wrong; it should be 56. Trap (A): Sees the break between 17 and 58 and blames 17 without checking that 7*2+3=17 fits. Trap (B): Error propagation: computes 58*4+7=239, finds 231, and blames 231, not noticing 231=56*4+7. Trap (D): Adds 13 instead of 11 at the fifth step (231*5+13=1168) and blames 1166.",
+  "verify_code": "answer = [a for a, b in zip([5,7,17,58,231,1166,7009], [5,5*1+2,7*2+3,17*3+5,(17*3+5)*4+7,((17*3+5)*4+7)*5+11,(((17*3+5)*4+7)*5+11)*6+13]) if a != b][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Missing Number Series",
+  "question_text": "Find the missing number in the series: 10, 12, 24, 60, ?, 290, 542",
+  "options": {
+   "A": "124",
+   "B": "132",
+   "C": "128",
+   "D": "140"
+  },
+  "correct_answer": "D",
+  "trap_type": "Cube only, Cube plus 2n, Cube plus n",
+  "pedagogical_explanation": "Difference pattern = n^3 + n^2 for n=1,2,3... 12-10=2=1+1, 24-12=12=8+4, 60-24=36=27+9, next diff =64+16=80, so ?=60+80=140, next 125+25=150 gives 290, next 216+36=252 gives 542. Trap (A): Adds only n^3: 60+64=124. Trap (B): Adds n^3+2n: 64+8=72, 60+72=132. Trap (C): Adds n^3+n: 64+4=68, 60+68=128.",
+  "verify_code": "answer = 60 + 4*4*4 + 4*4"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Partnership",
+  "question_text": "Raghav, Suresh and Tanya start a business for 12 months.\nRaghav invests Rs 18000 for first 5 months and then increases his investment by 50% for remaining 7 months.\nSuresh invests Rs 24000 for first 8 months and then decreases his investment by 25% for remaining 4 months.\nTanya invests Rs 16000 for first 3 months, then doubles it for next 6 months and then invests half of second period amount for last 3 months.\nTotal profit at year end is Rs 207750. What is Suresh's share in profit?",
+  "options": {
+   "A": "69750",
+   "B": "72000",
+   "C": "66000",
+   "D": "69250"
+  },
+  "correct_answer": "C",
+  "trap_type": "Raghav share swap, Tanya share max, Equal division fallacy",
+  "pedagogical_explanation": "Weighted capital: Raghav=18000*5+27000*7=279000, Suresh=24000*8+18000*4=264000, Tanya=16000*3+32000*6+16000*3=288000, total=831000. Profit ratio same as weighted. Suresh=264000/831000*207750=264*250=66000. Trap (A): Takes Raghav's share 279*250=69750 confusing partners. Trap (B): Takes Tanya's share 288*250=72000 as max. Trap (D): Divides total equally 207750/3=69250 ignoring investment differences.",
+  "verify_code": "answer = 207750*(24000*8+18000*4)/(18000*5+27000*7+24000*8+18000*4+16000*3+32000*6+16000*3)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Ages",
+  "question_text": "Four years ago, the ratio of ages of Aarav and Bina was 5:6. Six years hence, the ratio of ages of Bina and Chirag will be 5:7. Sum of their present ages is 113 years. What is present age of Chirag in years?",
+  "options": {
+   "A": "46",
+   "B": "50",
+   "C": "56",
+   "D": "34"
+  },
+  "correct_answer": "B",
+  "trap_type": "Age at the wrong time point, Future age as present, Wrong person",
+  "pedagogical_explanation": "Let Bina present = B. Aarav = (5B+4)/6 from (A-4)/(B-4)=5/6. Chirag = (7B+12)/5 from (B+6)/(C+6)=5/7. Sum = (5B+4)/6 + B + (7B+12)/5 =113 gives B=34, Aarav=29, Chirag=50. Trap (A): Gives Chirag's age four years ago (50-4=46), mixing up the two time points. Trap (C): Gives Chirag's age six years hence (50+6=56), forgetting to subtract 6 after using the 5:7 ratio. Trap (D): Stops after solving for Bina and gives her age, 34.",
+  "verify_code": "answer = (7*((113*30-20-72)/97)+12)/5"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Income Expenditure Ratio",
+  "question_text": "The ratio of monthly incomes of Anil and Sunil is 8:5 and ratio of their monthly expenditures is 5:3. Anil saves Rs 7000 more than Sunil. Sunil saves 20% of his income. What is Anil's monthly expenditure in Rs?",
+  "options": {
+   "A": "84000",
+   "B": "218750",
+   "C": "168000",
+   "D": "140000"
+  },
+  "correct_answer": "D",
+  "trap_type": "Person swap, Wrong percent base, Income as expenditure",
+  "pedagogical_explanation": "Let income 8x,5x and exp 5y,3y. Savings Anil=8x-5y, Sunil=5x-3y. Difference 3x-2y=7000. Sunil saves 20%: 5x-3y=x =>4x=3y =>y=4x/3. So x/3=7000 =>x=21000, y=28000. Anil exp=5y=140000. Trap (A): Gives Sunil exp 3y=84000 swapping persons. Trap (B): Takes Sunil's saving as 20% of his expenditure, not his income: 5x-3y=0.6y gives x=31500, y=43750, so 5y=218750. Trap (C): Gives Anil's income 8x=168000 instead of his expenditure.",
+  "verify_code": "answer = 5*4*(7000*3)/3"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Average Replacement",
+  "question_text": "Average weight of 18 students in a class is 54 kg. Two students with average weight 60 kg leave the class and two new students join. The average weight then becomes 55.5 kg. If weight of one new student is 58 kg, what is weight of other new student in kg?",
+  "options": {
+   "A": "65",
+   "B": "89",
+   "C": "147",
+   "D": "87"
+  },
+  "correct_answer": "B",
+  "trap_type": "Increase counted for new students only, Forgets the known student, Uses leaving average",
+  "pedagogical_explanation": "Old total=18*54=972. Leaving total=2*60=120, remaining=852. New total=18*55.5=999. New two total=999-852=147. One is 58, other=89. Trap (A): Counts the 1.5 kg rise only for the two new students (1.5*2=3), so they weigh 120+3=123 together and the other is 123-58=65. Trap (C): Stops at the combined weight of the two new students, 147, and forgets to subtract 58. Trap (D): Subtracts average leaving 60 instead of given 58: 147-60=87.",
+  "verify_code": "answer = 18*55.5 - 18*54 + 120 - 58"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Work Wages",
+  "question_text": "P can complete a project in 25 days, Q in 20 days and R in 30 days. They are hired for total wages Rs 18600. Work pattern: Days 1-5 P and R work together, Days 6-10 Q and R work together, remaining work is completed by R alone. Wages are distributed in proportion to work done by each. What is R's share of wages in Rs?",
+  "options": {
+   "A": "10230",
+   "B": "4030",
+   "C": "16430",
+   "D": "8370"
+  },
+  "correct_answer": "A",
+  "trap_type": "Solo work only, Double-counted remaining work, Combined share of P and Q",
+  "pedagogical_explanation": "Work: P=5/25=12/60, Q=5/20=15/60, Phase1 R=5/30=10/60, Phase2 R=5/30=10/60, remaining 13/60 done by R alone, so R total=33/60. Wages: P=12/60*18600=3720, Q=15/60*18600=4650, R=33/60*18600=10230. Trap (B): Credits R only for the work done alone (13/60), giving 13/60*18600=4030. Trap (C): Finds the remaining work as 1-12/60-15/60=33/60, ignoring R's work in days 1-10, then adds R's 20/60: 53/60*18600=16430. Trap (D): Gives the combined share of P and Q, 3720+4650=8370.",
+  "verify_code": "answer = 18600*(10/30 + (1 - 5/25 - 5/20 - 10/30))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Boats Streams",
+  "question_text": "Two ghats X and Y on river Ganga are 144 km apart. Boat A starts from X downstream towards Y and Boat B starts from Y upstream towards X at same time. Boat A speed in still water is 16 km/hr and Boat B speed in still water is 14 km/hr. They meet at a point 84 km from X. Find speed of stream in km/hr.",
+  "options": {
+   "A": "3.5",
+   "B": "1.5",
+   "C": "2.5",
+   "D": "3.6"
+  },
+  "correct_answer": "B",
+  "trap_type": "Distance swap, One-boat formula on two boats, Stream ignored for one boat",
+  "pedagogical_explanation": "Let stream=s. Downstream speed A=16+s covers 84 km, upstream B=14-s covers 60 km in same time t. So t=84/(16+s)=60/(14-s). Solve 84*(14-s)=60*(16+s) =>1176-84s=960+60s =>216=144s =>s=1.5 km/hr. Trap (A): Swaps the distances, 60/(16+s)=84/(14-s), which gives s=-3.5, and drops the sign. Trap (C): Finds the meeting time 144/30=4.8 hr and the ground speeds 84/4.8=17.5 and 60/4.8=12.5, then applies the one-boat formula (downstream-upstream)/2=2.5 to two different boats. Trap (D): Ignores the stream for Boat B: 84/(16+s)=60/14 gives s=3.6.",
+  "verify_code": "answer = (84*14-60*16)/(84+60)"
+ }
+]

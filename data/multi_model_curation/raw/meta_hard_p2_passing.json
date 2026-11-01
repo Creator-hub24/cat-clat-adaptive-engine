@@ -1,0 +1,172 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Bar Graph DI",
+  "question_text": "Bar graph shows UPI transactions (in lakh) of 5 banks in 2022 and 2023.\nBank | 2022 | 2023\nSBI | 420 | 504\nHDFC | 380 | 456\nICICI | 320 | 384\nPNB | 260 | 312\nAxis | 300 | 345\nTotal transactions of SBI and HDFC in 2023 together is what percent more than total transactions of PNB and Axis in 2022 together?",
+  "options": {
+   "A": "41.67%",
+   "B": "71.43%",
+   "C": "171.43%",
+   "D": "46.12%"
+  },
+  "correct_answer": "B",
+  "trap_type": "Difference as percent of the larger total, Percent of instead of percent more, Wrong year for the base",
+  "pedagogical_explanation": "SBI plus HDFC 2023 =504 plus 456 =960. PNB plus Axis 2022 =260 plus 300 =560. Percent more = (960 minus 560) divided by 560 times 100 =400 divided by 560 times 100 =71.43 percent. Trap (A): Divides the difference by the larger total: 400/960*100=41.67%. Trap (C): Finds 960 as a percent of 560 (171.43%) instead of percent more. Trap (D): Takes PNB plus Axis for 2023 (312+345=657) as the base: (960-657)/657*100=46.12%.",
+  "verify_code": "answer = round((504+456-260-300)/(260+300)*100, 2)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Caselet DI",
+  "question_text": "In Prayagraj Coaching Centre, 2400 students enrolled for three exams: PO, SSC and Railways. PO is 45% of total. SSC is 800 students. Remaining are Railways. In PO, male to female ratio is 5:4. In SSC, 55% are males. In Railways, female are 40%. 70% of PO males, 60% of PO females, 50% of SSC males, 40% of SSC females, 75% of Railways males and 50% of Railways females cleared prelims. What is total number of students who cleared prelims?",
+  "options": {
+   "A": "1410",
+   "B": "1384",
+   "C": "1398",
+   "D": "1402"
+  },
+  "correct_answer": "A",
+  "trap_type": "Railways gender split swapped, PO ratio reversed, SSC gender split swapped",
+  "pedagogical_explanation": "Total 2400, PO=1080, SSC=800, Railways=520. PO male=600 female=480, SSC male=440 female=360, Railways female=208 male=312. Cleared: PO male 420, PO female 288, SSC male 220, SSC female 144, Railways male 234, Railways female 104, total 1410. Trap (B): Reads 'female are 40%' in Railways as male 40%: 208 males and 312 females clear 156+156=312, total 1384. Trap (C): Reverses the PO ratio to 4:5 (480 males, 600 females): 336+360=696, total 1398. Trap (D): Applies 55% to SSC females instead of males: 180+176=356, total 1402.",
+  "verify_code": "answer = 1080*5/9*0.7 + 1080*4/9*0.6 + 800*0.55*0.5 + 800*0.45*0.4 + (2400-1080-800)*0.6*0.75 + (2400-1080-800)*0.4*0.5"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Quadratic Comparison",
+  "question_text": "I. 6x^2 + 23x + 20 = 0\nII. 8y^2 + 26y + 21 = 0\nWhat is relation between x and y?",
+  "options": {
+   "A": "x > y",
+   "B": "x < y",
+   "C": "x >= y",
+   "D": "No relation can be established"
+  },
+  "correct_answer": "D",
+  "trap_type": "Compares larger roots only, Compares smaller roots only, Assumes greater equal",
+  "pedagogical_explanation": "I: 6x^2+23x+20=0 discriminant 49, roots = minus 4 divided by 3 = minus 1.33 and minus 2.5. II: 8y^2+26y+21=0 discriminant 4, roots = minus 1.5 and minus 1.75. x = minus1.33 is greater than y = minus1.5 but x = minus2.5 is less than y = minus1.5, so no consistent relation. Trap (A): Compares minus1.33 greater than minus1.5 and concludes x greater than y. Trap (B): Compares minus2.5 less than minus1.5 and concludes x less than y. Trap (C): Sees that the larger x root beats both y roots and settles for x >= y without checking the other x root, -2.5.",
+  "verify_code": "answer = (lambda xs, ys: 'x > y' if all(x > y for x in xs for y in ys) else 'x < y' if all(x < y for x in xs for y in ys) else 'x >= y' if all(x >= y for x in xs for y in ys) else 'x <= y' if all(x <= y for x in xs for y in ys) else 'No relation can be established')([(-23+pow(23*23-4*6*20, 0.5))/12, (-23-pow(23*23-4*6*20, 0.5))/12], [(-26+pow(26*26-4*8*21, 0.5))/16, (-26-pow(26*26-4*8*21, 0.5))/16])"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Simplification",
+  "question_text": "What approximate value will come in place of question mark? ((24.97)^2 - (14.97)^2)/10.03 + 17.98% of 449.98 = ?",
+  "options": {
+   "A": "91",
+   "B": "166",
+   "C": "121",
+   "D": "130"
+  },
+  "correct_answer": "C",
+  "trap_type": "(a-b) squared for a^2-b^2, Adds the squares, Uses 20 percent",
+  "pedagogical_explanation": "Rounding to whole numbers, 25 squared =625, 15 squared =225, difference 400 divided by 10 =40. 18 percent of 450 =81. Total 121. Trap (A): Uses (25-15)^2=100 instead of 25^2-15^2: 100/10+81=91. Trap (B): Adds the squares: (625+225)/10+81=166. Trap (D): Rounds 17.98% up to 20%: 40+90=130.",
+  "verify_code": "answer = round((24.97*24.97-14.97*14.97)/10.03 + 17.98*449.98/100)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Compound Interest Different Rates",
+  "question_text": "Rs 18000 is invested at compound interest with rates 10% for first year, 12% for second year and 15% for third year. What is compound interest earned after 3 years?",
+  "options": {
+   "A": "7502.4",
+   "B": "6660",
+   "C": "9375.75",
+   "D": "25502.4"
+  },
+  "correct_answer": "A",
+  "trap_type": "Simple interest sum, Flat 15 percent, Amount instead of interest",
+  "pedagogical_explanation": "Year1: 18000 times 1.10 =19800, Year2: 19800 times 1.12 =22176, Year3: 22176 times 1.15 =25502.4, interest =7502.4. Trap (B): Adds the rates as simple interest: 37% of 18000=6660. Trap (C): Uses 15% for all three years: 18000*(1.15^3-1)=9375.75. Trap (D): Reports the amount 25502.4 instead of the interest.",
+  "verify_code": "answer = round(18000*1.10*1.12*1.15 - 18000, 2)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Successive Discounts",
+  "question_text": "An article is marked 40% above its cost price. Shopkeeper gives successive discounts of 20% and 10% on marked price and still makes a profit of Rs 96. What is cost price of article in Rs?",
+  "options": {
+   "A": "960",
+   "B": "12000",
+   "C": "16800",
+   "D": "800"
+  },
+  "correct_answer": "B",
+  "trap_type": "Subtracts discounts from markup, Marked price instead of cost price, Single discount only",
+  "pedagogical_explanation": "Let CP=100, MP=140, after 20 percent =112, after 10 percent =100.8, profit 0.8. If profit 96, CP =96 divided by 0.8 times 100 =12000. Trap (A): Subtracts the discounts from the markup (40-20-10=10% profit): CP=96/0.10=960. Trap (C): Solves correctly but reports the marked price, 1.4*12000=16800. Trap (D): Applies only the 20% discount: 112, profit 12%, CP=96/0.12=800.",
+  "verify_code": "answer = 96/(140*0.8*0.9/100 - 1)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Train Crossing",
+  "question_text": "Train A length 275 m running at 54 kmph crosses Train B length 325 m running at 36 kmph in opposite direction. In how many seconds will they cross each other completely?",
+  "options": {
+   "A": "11 sec",
+   "B": "120 sec",
+   "C": "24 sec",
+   "D": "40 sec"
+  },
+  "correct_answer": "C",
+  "trap_type": "One train length only, Same direction speed, One train speed only",
+  "pedagogical_explanation": "Total distance =275 plus 325 =600 m. Relative speed opposite =54 plus 36 =90 kmph =25 mps. Time =600 divided by 25 =24 sec. Trap (A): Uses only Train A's length: 275/25=11 sec. Trap (B): Uses the same-direction relative speed 54-36=18 kmph=5 m/s: 600/5=120 sec. Trap (D): Uses only Train A's speed, 54 kmph=15 m/s: 600/15=40 sec.",
+  "verify_code": "answer = (275+325)/((54+36)*5/18)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Probability Two Bags",
+  "question_text": "Bag X contains 6 red, 4 blue, 5 black balls. Bag Y contains 5 red, 7 blue, 3 black balls. One ball is drawn from each bag. What is probability that both balls are of same colour?",
+  "options": {
+   "A": "73/225",
+   "B": "58/225",
+   "C": "73/450",
+   "D": "152/225"
+  },
+  "correct_answer": "A",
+  "trap_type": "Misses black, Halves as if a bag is chosen first, Different colours instead of same",
+  "pedagogical_explanation": "Total each bag 15. Same colour = RR plus BB plus BlackBlack = (6 divided by 15 times 5 divided by 15) plus (4 divided by 15 times 7 divided by 15) plus (5 divided by 15 times 3 divided by 15) =30 plus 28 plus 15 divided by 225 =73 divided by 225. Trap (B): Leaves out black: (30+28)/225=58/225. Trap (C): Multiplies by 1/2 as if one bag were chosen at random first: 73/450. Trap (D): Finds the probability of different colours, 1-73/225=152/225.",
+  "verify_code": "answer = (6*5 + 4*7 + 5*3)/(15*15)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Cylinder Cone Volume",
+  "question_text": "A metallic cylinder of radius 14 cm and height 21 cm is melted and recast into 7 identical cones of same radius as cylinder. What is height of each cone in cm?",
+  "options": {
+   "A": "63 cm",
+   "B": "9 cm",
+   "C": "3 cm",
+   "D": "1 cm"
+  },
+  "correct_answer": "B",
+  "trap_type": "Forgets divide by 7, Forgets one third, Divides by 3 instead of multiplying",
+  "pedagogical_explanation": "Cylinder volume = pi times r squared times h = pi times 196 times 21 =4116 pi. 7 cones volume =7 times one third pi r squared h cone =4116 pi => 7 divided by 3 times 196 times h cone =4116 => h cone =9 cm. Trap (A): Recasts into one cone: (1/3)*196*h=196*21 gives h=63 cm. Trap (C): Drops the 1/3 of the cone formula: 7*196*h=196*21 gives h=3 cm. Trap (D): Divides by 3 instead of multiplying: h=21/(7*3)=1 cm.",
+  "verify_code": "answer = 3*14*14*21/(7*14*14)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Data Sufficiency",
+  "question_text": "What is speed of boat in still water in kmph?\nStatement I: Boat goes 60 km downstream in 3 hours.\nStatement II: Boat goes 40 km upstream in 4 hours.",
+  "options": {
+   "A": "Statement I alone is sufficient",
+   "B": "Statement II alone is sufficient",
+   "C": "Neither statement is sufficient",
+   "D": "Both statements together are sufficient"
+  },
+  "correct_answer": "D",
+  "trap_type": "Downstream as still water, Upstream as still water, Neither sufficient",
+  "pedagogical_explanation": "From I downstream speed =60 divided by 3 =20 kmph, from II upstream speed =40 divided by 4 =10 kmph, still water = (20 plus 10) divided by 2 =15 kmph, need both. Trap (A): Thinks downstream speed alone is still water speed 20 kmph. Trap (B): Thinks upstream speed alone is still water speed 10 kmph. Trap (C): Thinks data insufficient because stream speed not given.",
+  "verify_code": "answer = (lambda eq1, eq2, unknowns: 'Statement I alone is sufficient' if eq1 >= unknowns else 'Statement II alone is sufficient' if eq2 >= unknowns else 'Both statements together are sufficient' if eq1 + eq2 >= unknowns and (60/3 + 40/4)/2 == 15 else 'Neither statement is sufficient')(1, 1, 2)"
+ }
+]

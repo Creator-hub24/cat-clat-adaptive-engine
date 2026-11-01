@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Position n in verified_questions.json -> source model/batch and original index. Gemini compare file omitted (duplicates batch 4)."
+    "description": "Position n in verified_questions.json -> source model/batch and original index. Gemini compare file omitted (duplicates batch 4). Meta AI Hard Quant batches meta_hard_p1/meta_hard_p2 appended (codes MH1/MH2)."
   },
   "items": [
     {
@@ -1210,6 +1210,166 @@
       "batch": "compare-chatgpt",
       "code": "CG",
       "index": 8
+    },
+    {
+      "n": 151,
+      "source": "meta-hard-p1 #0",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 0
+    },
+    {
+      "n": 152,
+      "source": "meta-hard-p1 #1",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 1
+    },
+    {
+      "n": 153,
+      "source": "meta-hard-p1 #2",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 2
+    },
+    {
+      "n": 154,
+      "source": "meta-hard-p1 #3",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 3
+    },
+    {
+      "n": 155,
+      "source": "meta-hard-p1 #4",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 4
+    },
+    {
+      "n": 156,
+      "source": "meta-hard-p1 #5",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 5
+    },
+    {
+      "n": 157,
+      "source": "meta-hard-p1 #6",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 6
+    },
+    {
+      "n": 158,
+      "source": "meta-hard-p1 #7",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 7
+    },
+    {
+      "n": 159,
+      "source": "meta-hard-p1 #8",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 8
+    },
+    {
+      "n": 160,
+      "source": "meta-hard-p1 #9",
+      "model": "Meta AI",
+      "batch": "meta_hard_p1",
+      "code": "MH1",
+      "index": 9
+    },
+    {
+      "n": 161,
+      "source": "meta-hard-p2 #0",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 0
+    },
+    {
+      "n": 162,
+      "source": "meta-hard-p2 #1",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 1
+    },
+    {
+      "n": 163,
+      "source": "meta-hard-p2 #2",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 2
+    },
+    {
+      "n": 164,
+      "source": "meta-hard-p2 #3",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 3
+    },
+    {
+      "n": 165,
+      "source": "meta-hard-p2 #4",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 4
+    },
+    {
+      "n": 166,
+      "source": "meta-hard-p2 #5",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 5
+    },
+    {
+      "n": 167,
+      "source": "meta-hard-p2 #6",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 6
+    },
+    {
+      "n": 168,
+      "source": "meta-hard-p2 #7",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 7
+    },
+    {
+      "n": 169,
+      "source": "meta-hard-p2 #8",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 8
+    },
+    {
+      "n": 170,
+      "source": "meta-hard-p2 #9",
+      "model": "Meta AI",
+      "batch": "meta_hard_p2",
+      "code": "MH2",
+      "index": 9
     }
   ]
 }
