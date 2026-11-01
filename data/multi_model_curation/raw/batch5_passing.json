@@ -1,0 +1,342 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Linear Seating Arrangement (Facing South)",
+  "question_text": "Six executives—P, Q, R, S, T, and U—are sitting in a straight row facing South. S sits second from the East end of the row. T sits second to the right of S. Only one person sits between T and P. Q sits to the immediate left of P, and R does not sit at any extreme end of the row. Who is sitting to the immediate left of T?",
+  "options": {
+   "A": "R",
+   "B": "Q",
+   "C": "S",
+   "D": "U"
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing left and right when all persons face South",
+  "pedagogical_explanation": "Step-by-step: Number the 6 seats from West to East as 1, 2, 3, 4, 5, and 6. Because everyone faces South, a person's right is towards the West (lower seat number) and their left is towards the East (higher seat number). S sits second from the East end, so S = Seat 5. T sits second to the right (West) of S, so T = Seat 3. Only one person sits between T (Seat 3) and P; since Seat 5 is occupied by S, P must be at Seat 1. Q sits to the immediate left (East) of P, so Q = Seat 2. Between the remaining Seats 4 and 6, R does not sit at an extreme end, so R = Seat 4 and U = Seat 6. The West-to-East arrangement is P - Q - T - R - S - U. Facing South, the person to the immediate left (East) of T (Seat 3) is at Seat 4, which is R. Trap (B): Treating 'immediate left of T' as West (North-facing orientation) instead of East gives Q at Seat 2. Trap (C): Reading 'immediate left of T' as 'second to the left of T' gives S at Seat 5. Trap (D): Overlooking the clue that R does not sit at an extreme end and placing U at Seat 4 gives U.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations('PQRSTU'):\n    s = {c: i + 1 for i, c in enumerate(p)}\n    if s['S'] != 5: continue\n    if s['T'] != s['S'] - 2: continue\n    if abs(s['T'] - s['P']) != 2: continue\n    if s['Q'] != s['P'] + 1: continue\n    if s['R'] in (1, 6): continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('T') + 1]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Circular Seating Arrangement (Facing Center)",
+  "question_text": "Seven doctors—K, L, M, N, O, P, and Q—are sitting around a circular table facing the center. L sits third to the right of K. N sits to the immediate left of L. M sits to the immediate left of K. O sits to the immediate right of P. Who sits to the immediate right of K?",
+  "options": {
+   "A": "N",
+   "B": "Q",
+   "C": "P",
+   "D": "M"
+  },
+  "correct_answer": "B",
+  "trap_type": "Confusing immediate left and immediate right on a circle",
+  "pedagogical_explanation": "Step-by-step: Number the 7 seats from 1 to 7 in counter-clockwise order (which corresponds to moving to the right when facing the center). Place K at Seat 1. L sits third to the right of K, so L = Seat 4. N sits to the immediate left (clockwise) of L, so N = Seat 3. M sits to the immediate left (clockwise) of K, so M = Seat 7. The remaining empty seats are 2, 5, and 6. Since O sits to the immediate right of P, P and O must occupy two consecutive counter-clockwise seats, which can only be P = Seat 5 and O = Seat 6. This leaves Q for Seat 2. Therefore, the person sitting to the immediate right of K (Seat 2) is Q. Trap (A): Taking 'second to the right of K' (Seat 3) instead of 'immediate right of K' gives N. Trap (C): Misplacing N to the immediate right of L (Seat 5), which forces the consecutive pair P and O into Seats 2 and 3, gives P at Seat 2. Trap (D): Confusing 'immediate right of K' with 'immediate left of K' (Seat 7) gives M.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations('LMNOPQ'):\n    seat = dict(zip('K' + ''.join(p), range(7)))\n    r = lambda x, k: (seat[x] + k) % 7\n    if seat['L'] != r('K', 3): continue\n    if seat['N'] != r('L', -1): continue\n    if seat['M'] != r('K', -1): continue\n    if seat['O'] != r('P', 1): continue\n    sols.append(seat)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['K'] + 1) % 7]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Six-Floor Apartment Puzzle",
+  "question_text": "Six people—E, F, G, H, I, and J—live on six different floors of a building numbered 1 to 6 from bottom to top. H lives on Floor 4. Only two people live between H and E. F lives immediately above G, and G lives on an even-numbered floor. I lives on an even-numbered floor. Who lives on Floor 5?",
+  "options": {
+   "A": "I",
+   "B": "F",
+   "C": "J",
+   "D": "G"
+  },
+  "correct_answer": "C",
+  "trap_type": "Placing I on Floor 5 by overlooking that I must live on an even-numbered floor",
+  "pedagogical_explanation": "Step-by-step: Number the floors from 1 (bottom) to 6 (top). H lives on Floor 4. Since two people live between H (Floor 4) and E, E must live on Floor 1. F lives immediately above G and G is on an even-numbered floor; the remaining even floors are Floor 2 and Floor 6. G cannot be on Floor 6 because F lives immediately above G, so G = Floor 2 and F = Floor 3. Now only Floors 5 and 6 remain for I and J. Since I lives on an even-numbered floor, I = Floor 6, which leaves J on Floor 5. Trap (A): Ignoring the clue that I lives on an even-numbered floor and placing I on Floor 5 gives I. Trap (B): Reversing 'F lives immediately above G' to 'G lives immediately above F' puts G on even Floor 6 and F on Floor 5, giving F. Trap (D): Ignoring the clue that G lives on an even-numbered floor allows G = Floor 5 with F = Floor 6, giving G.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations('EFGHIJ'):\n    f = {c: i + 1 for i, c in enumerate(p)}\n    if f['H'] != 4 or abs(f['H'] - f['E']) != 3: continue\n    if f['F'] != f['G'] + 1 or f['G'] % 2: continue\n    if f['I'] % 2: continue\n    sols.append(p)\nassert len(sols) == 1\nanswer = sols[0][4]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Five-Box Vertical Stack Puzzle",
+  "question_text": "Five boxes—P, Q, R, S, and T—are stacked one above the other from position 1 (bottom) to position 5 (top). Box R is placed at the exact middle position. Only one box is placed between R and P. Box S is placed immediately above Box Q, and Box Q is not at the bottom position. Which box is at the bottom position (position 1)?",
+  "options": {
+   "A": "Q",
+   "B": "S",
+   "C": "T",
+   "D": "P"
+  },
+  "correct_answer": "D",
+  "trap_type": "Placing P at the top (position 5) and forcing Q into the bottom position",
+  "pedagogical_explanation": "Step-by-step: Number the stack positions from 1 (bottom) to 5 (top). Box R is in the middle, so R = Position 3. Since one box is between R (Position 3) and P, P can be at Position 1 or Position 5. Box S is immediately above Box Q, requiring two consecutive empty positions—either (1, 2) or (4, 5). However, Q is not at Position 1 (bottom), so Q and S cannot occupy Positions 1 and 2. Therefore, Q = Position 4 and S = Position 5. Consequently, P must occupy Position 1 (bottom), and the remaining Box T occupies Position 2. Thus, Box P is at the bottom position. Trap (A): Overlooking the constraint that Q is not at the bottom position and placing (Q, S) at Positions (1, 2) gives Q. Trap (B): Reversing 'S is immediately above Q' to 'Q is immediately above S' at Positions (1, 2) gives S at Position 1. Trap (C): Confusing Position 2 with Position 1 after placing P at Position 1 gives T.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations('PQRST'):\n    f = {c: i + 1 for i, c in enumerate(p)}\n    if f['R'] != 3 or abs(f['R'] - f['P']) != 2: continue\n    if f['S'] != f['Q'] + 1 or f['Q'] == 1: continue\n    sols.append(p)\nassert len(sols) == 1\nanswer = sols[0][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coded Blood Relations",
+  "question_text": "If 'X + Y' means 'X is the father of Y', 'X - Y' means 'X is the mother of Y', 'X * Y' means 'X is the brother of Y', and 'X / Y' means 'X is the sister of Y', then in the expression 'P + Q * R - S', how is Q related to S?",
+  "options": {
+   "A": "Maternal Uncle",
+   "B": "Paternal Uncle",
+   "C": "Father",
+   "D": "Brother"
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing maternal uncle with paternal uncle by misreading R as the father of S",
+  "pedagogical_explanation": "Step-by-step: Decode the expression from left to right: 'P + Q' means P is the father of Q; 'Q * R' means Q is the brother of R (so Q is male); 'R - S' means R is the mother of S. Since Q is the brother of S's mother (R), Q is the Maternal Uncle of S. Trap (B): Misreading 'R - S' as 'R is the father of S' makes Q the father's brother, giving Paternal Uncle. Trap (C): Misreading 'Q * R' as Q being the husband of R gives Father. Trap (D): Stopping at the relation between Q and R ('Q is the brother of R') instead of finding Q's relation to S gives Brother.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Family Tree Blood Relation Puzzle",
+  "question_text": "In a family of six members—K, L, M, N, O, and P—K is the paternal grandfather of P. M is the father of P and the brother of N. L is the mother of P. O is the mother of M. How is O related to L?",
+  "options": {
+   "A": "Mother",
+   "B": "Mother-in-law",
+   "C": "Daughter-in-law",
+   "D": "Grandmother"
+  },
+  "correct_answer": "B",
+  "trap_type": "Reversing the subject and object of the relationship question",
+  "pedagogical_explanation": "Step-by-step: M is the father of P and L is the mother of P, which means M and L are a married couple (M is the husband, L is the wife). O is the mother of M, and K is the paternal grandfather of P (so K and O are the parents of M and N). Since O is the mother of L's husband (M), O is the Mother-in-law of L. Trap (A): Confusing L (the wife of M) with N (the sibling of M), which makes O her biological Mother. Trap (C): Answering 'How is L related to O?' (Daughter-in-law) instead of 'How is O related to L?'. Trap (D): Answering O's relation to P (Grandmother) instead of O's relation to L.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Multi-Turn Direction Sense and Shortest Distance",
+  "question_text": "Rohan starts from Point X and walks 12 meters North to Point Y. He then turns right and walks 9 meters to Point Z. Next, he turns right again and walks 4 meters to Point W, and finally turns left and walks 6 meters to reach Point V. What is the shortest straight-line distance between Point X and Point V?",
+  "options": {
+   "A": "√73 meters",
+   "B": "15 meters",
+   "C": "17 meters",
+   "D": "23 meters"
+  },
+  "correct_answer": "C",
+  "trap_type": "Turning West instead of East on the final left turn while facing South",
+  "pedagogical_explanation": "Step-by-step: Set Point X at the origin (0, 0). Walking 12m North to Y puts him at (0, 12). Turning right (East) and walking 9m to Z puts him at (9, 12). Turning right (South) and walking 4m to W reduces his Northward displacement to 12 - 4 = 8m, putting him at (9, 8) facing South. From South, a left turn is towards the East, so walking 6m East to V increases his Eastward displacement to 9 + 6 = 15m, putting him at (15, 8). By Pythagoras' theorem, shortest distance XV = sqrt(15^2 + 8^2) = sqrt(225 + 64) = sqrt(289) = 17 meters. Trap (A): Turning West instead of East on the final left turn puts V at (9 - 6, 8) = (3, 8), giving sqrt(3^2 + 8^2) = √73 meters. Trap (B): Stopping at Point Z and calculating the hypotenuse XZ = sqrt(12^2 + 9^2) = 15 meters. Trap (D): Adding the net horizontal and vertical displacements (15 + 8 = 23 meters) instead of applying Pythagoras' theorem.",
+  "verify_code": "x, y = 0, 0\nd = (0, 1)\nright = lambda v: (v[1], -v[0])\nleft = lambda v: (-v[1], v[0])\nx, y = x + 12 * d[0], y + 12 * d[1]\nd = right(d); x, y = x + 9 * d[0], y + 9 * d[1]\nd = right(d); x, y = x + 4 * d[0], y + 4 * d[1]\nd = left(d); x, y = x + 6 * d[0], y + 6 * d[1]\nanswer = (x * x + y * y) ** 0.5"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Shadow and Direction Sense at Sunrise",
+  "question_text": "One morning just after sunrise, Kavita and Meenal were standing in a park facing each other and talking. If Kavita's shadow fell exactly to the right of Meenal, in which direction was Kavita facing?",
+  "options": {
+   "A": "South",
+   "B": "East",
+   "C": "West",
+   "D": "North"
+  },
+  "correct_answer": "D",
+  "trap_type": "Reporting the direction Meenal was facing instead of Kavita",
+  "pedagogical_explanation": "Step-by-step: At sunrise, the sun is in the East, so all shadows fall towards the West. Since Kavita's shadow falls to the right of Meenal, Meenal's right-hand side must be West. A person whose right hand points West must be facing South. Therefore, Meenal is facing South. Since Kavita and Meenal are facing each other, Kavita is facing North. Trap (A): Stopping after finding the direction Meenal is facing (South) instead of Kavita's facing direction. Trap (B): Assuming that because the sun rises in the East, Kavita is facing East. Trap (C): Assuming Kavita is facing the direction of her shadow (West).",
+  "verify_code": "dirs = ['North', 'East', 'South', 'West']\nshadow = 'West'\nm = [f for f in dirs if dirs[(dirs.index(f) + 1) % 4] == shadow][0]\nanswer = dirs[(dirs.index(m) + 2) % 4]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Syllogism with 'Only a Few' and Possibility",
+  "question_text": "Statements: I. Only a few rivers are lakes. II. All lakes are oceans. Conclusions: 1. All rivers being oceans is a possibility. 2. Some rivers are definitely not lakes.",
+  "options": {
+   "A": "Both conclusions 1 and 2 follow",
+   "B": "Only conclusion 1 follows",
+   "C": "Only conclusion 2 follows",
+   "D": "Neither conclusion 1 nor 2 follows"
+  },
+  "correct_answer": "A",
+  "trap_type": "Treating 'Only a few rivers are lakes' as simple 'Some rivers are lakes' or extending the restriction to oceans",
+  "pedagogical_explanation": "Step-by-step: 'Only a few rivers are lakes' means two things simultaneously: 'Some rivers are lakes' AND 'Some rivers are NOT lakes'. Therefore, Conclusion 2 ('Some rivers are definitely not lakes') directly follows. Furthermore, while some rivers cannot be inside 'Lakes', the 'Oceans' circle contains 'Lakes' and can expand to encompass the entire 'Rivers' circle without forcing all rivers into 'Lakes'. Thus, Conclusion 1 ('All rivers being oceans is a possibility') also follows. Hence, both conclusions 1 and 2 follow. Trap (B): Treating 'Only a few A are B' as ordinary 'Some A are B' and rejecting Conclusion 2. Trap (C): Assuming that because some rivers cannot be lakes, those rivers cannot be oceans either, and rejecting Conclusion 1. Trap (D): Rejecting both possibility and negative deductions from 'Only a few'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Syllogism with Universal Negative and Possibility",
+  "question_text": "Statements: I. All clouds are rains. II. No rain is mist. Conclusions: 1. No cloud is mist. 2. Some clouds being mist is a possibility.",
+  "options": {
+   "A": "Only conclusion 2 follows",
+   "B": "Only conclusion 1 follows",
+   "C": "Either conclusion 1 or 2 follows",
+   "D": "Both conclusions 1 and 2 follow"
+  },
+  "correct_answer": "B",
+  "trap_type": "Treating a contradictory definite false statement as a valid possibility or an either-or pair",
+  "pedagogical_explanation": "Step-by-step: Since the 'Clouds' circle lies entirely inside the 'Rains' circle, and 'Rains' has zero overlap with 'Mist', 'Clouds' can never overlap with 'Mist'. Thus, Conclusion 1 ('No cloud is mist') is 100% definitely true. Because 'No cloud is mist' is definitely true, any overlap between clouds and mist is impossible, making Conclusion 2 ('Some clouds being mist is a possibility') definitely false. Therefore, only conclusion 1 follows. Trap (A): Assuming that any conclusion containing the word 'possibility' is automatically true. Trap (C): Seeing the complementary pair 'No cloud is mist' and 'Some clouds are mist' and selecting 'Either 1 or 2 follows', forgetting that either-or only applies when neither conclusion is definitely true on its own. Trap (D): Accepting both the definite negative and the positive possibility simultaneously.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Multi-Statement Coded Inequality",
+  "question_text": "Statements: P > Q >= R = S; S <= T < U. Conclusions: 1. P > S  2. R < U",
+  "options": {
+   "A": "Only conclusion 1 follows",
+   "B": "Only conclusion 2 follows",
+   "C": "Both conclusions 1 and 2 follow",
+   "D": "Neither conclusion 1 nor 2 follows"
+  },
+  "correct_answer": "C",
+  "trap_type": "Rejecting a strict inequality when >= or <= appears alongside > or < in the chain",
+  "pedagogical_explanation": "Step-by-step: Combine the two statements through the common element S: P > Q >= R = S <= T < U. For Conclusion 1 (P to S): the chain is P > Q >= R = S. Since there is at least one strict '>' sign in the same direction, P > S is definitely true. For Conclusion 2 (R to U): the chain is R = S <= T < U. Since there is a strict '<' sign between T and U in the same direction, R < U is definitely true. Thus, both conclusions 1 and 2 follow. Trap (A): Thinking that 'S <= T' blocks the strict inequality 'R < U' and accepting only Conclusion 1. Trap (B): Thinking that 'Q >= R' weakens 'P > Q' to 'P >= S' and accepting only Conclusion 2. Trap (D): Assuming that '>' and '<' in the combined chain always cancel out, even when conclusions are tested on separate halves of the chain.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Complementary Pair (Either-Or) Inequality",
+  "question_text": "Statements: K >= L = M; M >= N. Conclusions: 1. K > N  2. K = N",
+  "options": {
+   "A": "Only conclusion 1 follows",
+   "B": "Only conclusion 2 follows",
+   "C": "Both conclusions 1 and 2 follow",
+   "D": "Either conclusion 1 or 2 follows"
+  },
+  "correct_answer": "D",
+  "trap_type": "Treating K >= N as K > N definitely true instead of an Either-Or complementary pair",
+  "pedagogical_explanation": "Step-by-step: Combine the statements through M: K >= L = M >= N, which simplifies to the definite relation K >= N. This means K is either strictly greater than N (K > N) OR equal to N (K = N), but neither is guaranteed individually. Since Conclusion 1 states 'K > N' and Conclusion 2 states 'K = N', together they exhaust both cases of K >= N. Therefore, Either conclusion 1 or 2 follows. Trap (A): Treating two '>=' signs as combining into a strict '>' sign and selecting only conclusion 1. Trap (B): Focusing on 'L = M' and selecting only conclusion 2. Trap (C): Selecting 'Both follow' instead of 'Either-Or' when both components of K >= N are listed.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Vowel-Consonant Conditional Letter Coding",
+  "question_text": "In a certain code language, every consonant in a word is replaced by the third letter following it (+3) in the English alphabet, and every vowel is replaced by the second letter preceding it (-2) in the English alphabet. How will the word 'CROWN' be written in that code language?",
+  "options": {
+   "A": "FUMZQ",
+   "B": "FURZQ",
+   "C": "FUQZQ",
+   "D": "APRUL"
+  },
+  "correct_answer": "A",
+  "trap_type": "Applying the +3 consonant shift to the vowel 'O' as well",
+  "pedagogical_explanation": "Step-by-step: Identify consonants and vowels in 'CROWN': C(3), R(18), W(23), and N(14) are consonants (+3 shift), while O(15) is a vowel (-2 shift). Applying the rules: C(3)+3 = F(6); R(18)+3 = U(21); O(15)-2 = M(13); W(23)+3 = Z(26); N(14)+3 = Q(17). Combining these letters gives FUMZQ. Trap (B): Applying the +3 consonant shift to all letters including the vowel O (O(15)+3 = R(18)) produces FURZQ. Trap (C): Adding 2 instead of subtracting 2 for the vowel O (O(15)+2 = Q(17)) produces FUQZQ. Trap (D): Swapping the rules (subtracting 2 from consonants and adding 3 to vowels) produces APRUL.",
+  "verify_code": "answer = ''.join(chr(ord(c) - 2) if c in 'AEIOU' else chr(ord(c) + 3) for c in 'CROWN')"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Pairwise Cross-Shift Letter Coding",
+  "question_text": "In a certain code language, 'SILVER' is written as 'JTWMSF'. How will 'PLANET' be written in that language?",
+  "options": {
+   "A": "QMBOFU",
+   "B": "MQOBUF",
+   "C": "LPNATE",
+   "D": "KOMZSD"
+  },
+  "correct_answer": "B",
+  "trap_type": "Shifting letters by +1 without swapping adjacent pairs first",
+  "pedagogical_explanation": "Step-by-step: Divide the 6-letter word into three adjacent pairs, swap the two letters within each pair, and then shift every letter forward by +1. For 'SILVER': pairs (SI)(LV)(ER) swap to (IS)(VL)(RE), and shifting each letter by +1 gives JTWMSF. Applying the same two-step pattern to 'PLANET': pairs (PL)(AN)(ET) swap to (LP)(NA)(TE). Shifting each letter by +1 gives L+1=M, P+1=Q, N+1=O, A+1=B, T+1=U, and E+1=F, resulting in MQOBUF. Trap (A): Shifting each letter of 'PLANET' by +1 directly without swapping adjacent pairs produces QMBOFU. Trap (C): Swapping the adjacent pairs of 'PLANET' to get LPNATE but forgetting to add +1 to each letter. Trap (D): Swapping adjacent pairs and subtracting 1 (-1) instead of adding 1 (+1) produces KOMZSD.",
+  "verify_code": "w = 'PLANET'\nsw = ''.join(w[i + 1] + w[i] for i in range(0, len(w), 2))\nanswer = ''.join(chr(ord(c) + 1) for c in sw)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Two-Step Alternating Multiplier Number Series",
+  "question_text": "Select the number that will replace the question mark (?) in the following series: 5, 11, 21, 43, 85, ?",
+  "options": {
+   "A": "169",
+   "B": "170",
+   "C": "171",
+   "D": "127"
+  },
+  "correct_answer": "C",
+  "trap_type": "Applying ×2 - 1 instead of alternating ×2 + 1 and ×2 - 1",
+  "pedagogical_explanation": "Step-by-step: Examine how each term is generated from the previous term: 5 * 2 + 1 = 11; 11 * 2 - 1 = 21; 21 * 2 + 1 = 43; 43 * 2 - 1 = 85. The pattern alternates between (×2 + 1) and (×2 - 1). Since the last operation was (×2 - 1), the next operation must be (×2 + 1): 85 * 2 + 1 = 171. Trap (A): Repeating the previous step's (×2 - 1) operation instead of alternating to (×2 + 1) gives 85 * 2 - 1 = 169. Trap (B): Doubling 85 to 170 and forgetting the +1 offset. Trap (D): Repeating the last difference (85 - 43 = 42) and computing 85 + 42 = 127.",
+  "verify_code": "answer = 85 * 2 + 1"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Cubic Difference Step Number Series",
+  "question_text": "Find the missing number in the series: 14, 20, 44, 104, 224, ?",
+  "options": {
+   "A": "344",
+   "B": "404",
+   "C": "440",
+   "D": "434"
+  },
+  "correct_answer": "D",
+  "trap_type": "Adding 6^3 without subtracting 6, or assuming a constant second-order difference",
+  "pedagogical_explanation": "Step-by-step: Calculate the differences between consecutive terms: 20 - 14 = 6; 44 - 20 = 24; 104 - 44 = 60; 224 - 104 = 120. These differences follow the pattern (n^3 - n) for n = 2, 3, 4, 5: 2^3 - 2 = 6; 3^3 - 3 = 24; 4^3 - 4 = 60; 5^3 - 5 = 120. For the next step (n = 6), the difference is 6^3 - 6 = 216 - 6 = 210. Adding this to 224 gives 224 + 210 = 434. Trap (A): Repeating the last difference of 120 gives 224 + 120 = 344. Trap (B): Repeating the last second-order difference (120 - 60 = 60) so the next difference is 120 + 60 = 180, giving 224 + 180 = 404. Trap (C): Adding the full cube 6^3 = 216 without subtracting 6 gives 224 + 216 = 440.",
+  "verify_code": "answer = 224 + (6 ** 3 - 6)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Two-Step Opposite and Shift Letter Cluster Series",
+  "question_text": "Select the letter-cluster that can replace the question mark (?) in the following series: CXZ, FUW, IRT, LOQ, ?",
+  "options": {
+   "A": "OLN",
+   "B": "OMN",
+   "C": "ORN",
+   "D": "OLO"
+  },
+  "correct_answer": "A",
+  "trap_type": "Subtracting 2 instead of 3 on the second or third letter position",
+  "pedagogical_explanation": "Step-by-step: Analyze each letter position across the clusters separately. 1st letters: C(3), F(6), I(9), L(12) follow a +3 shift to give 12 + 3 = 15 (O). 2nd letters: X(24), U(21), R(18), O(15) follow a -3 shift to give 15 - 3 = 12 (L) (also note that the first two letters in every cluster are opposite alphabetical pairs summing to 27). 3rd letters: Z(26), W(23), T(20), Q(17) follow a -3 shift to give 17 - 3 = 14 (N). Combining them gives OLN. Trap (B): Subtracting 2 instead of 3 from the second letter O(15) - 2 = M(13) gives OMN. Trap (C): Applying the first position's +3 to the second letter as well, O(15) + 3 = R(18), gives ORN. Trap (D): Subtracting 2 instead of 3 from the third letter Q(17) - 2 = O(15) gives OLO.",
+  "verify_code": "answer = chr(ord('L') + 3) + chr(ord('O') - 3) + chr(ord('Q') - 3)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Position Interchange Row Ranking",
+  "question_text": "In a row of cadets facing North, Vikram is 15th from the left end and Rakesh is 18th from the right end. When they interchange their positions, Vikram becomes 22nd from the left end. How many cadets are there in the row?",
+  "options": {
+   "A": "40",
+   "B": "39",
+   "C": "38",
+   "D": "32"
+  },
+  "correct_answer": "B",
+  "trap_type": "Adding new left rank and old right rank without subtracting 1",
+  "pedagogical_explanation": "Step-by-step: After interchanging positions, Vikram moves to Rakesh's original seat. Therefore, Rakesh's original seat is both 22nd from the left end (Vikram's new position) and 18th from the right end (Rakesh's original position). Using the total formula on this single seat: Total cadets = (Left rank + Right rank) - 1 = 22 + 18 - 1 = 39. Trap (A): Adding 22 + 18 = 40 and forgetting to subtract 1 for counting the same seat from both ends. Trap (C): Subtracting 2 instead of 1 (22 + 18 - 2 = 38). Trap (D): Adding Vikram's old left rank and Rakesh's old right rank (15 + 18 - 1 = 32) instead of using Vikram's new rank after the swap.",
+  "verify_code": "answer = 22 + 18 - 1"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Sequential Machine Input-Output Shifting",
+  "question_text": "A number-arrangement machine rearranges a given input step by step by moving the smallest unarranged number to the extreme left end in each step while shifting the remaining numbers one position to the right. Input: 48  19  63  12  35  27. Which of the following will be Step III for the given input?",
+  "options": {
+   "A": "12  19  27  48  63  35",
+   "B": "12  19  27  35  48  63",
+   "C": "27  19  12  48  63  35",
+   "D": "19  12  48  63  35  27"
+  },
+  "correct_answer": "C",
+  "trap_type": "Placing newly arranged numbers in ascending order from the left instead of prepending each to the extreme left end",
+  "pedagogical_explanation": "Step-by-step: In each step, the machine moves the smallest unarranged number to the EXTREME LEFT end (prepend), pushing previously arranged numbers to the right. Input: 48  19  63  12  35  27. Step I (smallest is 12, moved to extreme left): 12  48  19  63  35  27. Step II (next smallest is 19, moved to extreme left ahead of 12): 19  12  48  63  35  27. Step III (next smallest is 27, moved to extreme left ahead of 19): 27  19  12  48  63  35. Trap (A): Placing each arranged number after the previously arranged numbers in ascending order (12, then 19, then 27) instead of at the extreme left end gives 12  19  27  48  63  35. Trap (B): Sorting the entire array in a single step gives 12  19  27  35  48  63. Trap (D): Stopping at Step II instead of completing Step III gives 19  12  48  63  35  27.",
+  "verify_code": "a = [48, 19, 63, 12, 35, 27]\ndone = []\nfor step in range(3):\n    rest = [x for x in a if x not in done]\n    m = min(rest)\n    done.append(m)\n    a = [m] + [x for x in a if x != m]\nans = '  '.join(str(x) for x in a)\nOPTS = {'A': '12  19  27  48  63  35', 'B': '12  19  27  35  48  63', 'C': '27  19  12  48  63  35', 'D': '19  12  48  63  35  27'}\nanswer = [k for k, v in OPTS.items() if v == ans][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Statement and Logical Conclusion",
+  "question_text": "Statement: Despite a 30% increase in the government subsidy on rooftop solar panels this year, residential adoption in Tier-2 cities has grown by less than 4%, largely due to lengthy bank loan approval processes and a shortage of certified local installers. Conclusions: 1. Financial subsidy alone is not sufficient to drive rapid residential solar adoption in Tier-2 cities. 2. Completely abolishing the rooftop solar subsidy will immediately increase residential solar adoption in Tier-2 cities.",
+  "options": {
+   "A": "Only conclusion 2 follows",
+   "B": "Both conclusions 1 and 2 follow",
+   "C": "Neither conclusion 1 nor 2 follows",
+   "D": "Only conclusion 1 follows"
+  },
+  "correct_answer": "D",
+  "trap_type": "Assuming that because a subsidy was insufficient on its own, removing it would reverse the problem",
+  "pedagogical_explanation": "Step-by-step: The statement explicitly notes that even with a 30% higher subsidy, growth remained below 4% because of procedural (loan approval) and operational (installer shortage) bottlenecks. This directly supports Conclusion 1: financial subsidy by itself is not sufficient to drive rapid adoption. Conclusion 2 is illogical and contradicts the premise, as abolishing the subsidy does not fix loan delays or installer shortages. Therefore, only conclusion 1 follows. Trap (A): Selecting the extreme contrarian conclusion (Conclusion 2) while ignoring the direct inference in Conclusion 1. Trap (B): Accepting Conclusion 2 alongside Conclusion 1. Trap (C): Rejecting Conclusion 1 by thinking the word 'not sufficient' goes beyond the statement.",
+  "verify_code": ""
+ }
+]

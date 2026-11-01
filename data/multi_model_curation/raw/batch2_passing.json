@@ -1,0 +1,342 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Number Series - Consecutive Multipliers",
+  "question_text": "Find the missing number in the given series: 7, 10, 16, 25, 37, ?",
+  "options": {
+   "A": "52",
+   "B": "49",
+   "C": "50",
+   "D": "55"
+  },
+  "correct_answer": "A",
+  "trap_type": "Last-two-terms difference fixation",
+  "pedagogical_explanation": "Step-by-step solution: Find the first-level differences between consecutive terms: 10 - 7 = 3; 16 - 10 = 6; 25 - 16 = 9; 37 - 25 = 12. The differences are consecutive multiples of 3 (3, 6, 9, 12). Thus, the next difference is 15. Adding 15 to the last term gives 37 + 15 = 52.\nTrap (B): Repeating the last difference (12) instead of incrementing it gives 37 + 12 = 49.\nTrap (C): Increasing the last difference by 1 instead of 3 (12 + 1 = 13) gives 37 + 13 = 50.\nTrap (D): Doubling the second-to-last difference (9 * 2 = 18) and adding to 37 gives 37 + 18 = 55.",
+  "verify_code": "answer = str(7 + sum(3 * i for i in range(1, 6)))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Number Series - Alternating Operations",
+  "question_text": "What will come in place of the question mark (?) in the following number series? 6, 13, 27, 55, ?",
+  "options": {
+   "A": "110",
+   "B": "111",
+   "C": "109",
+   "D": "83"
+  },
+  "correct_answer": "B",
+  "trap_type": "Omission of constant addition in *2+1 pattern",
+  "pedagogical_explanation": "Step-by-step solution: Each term is obtained by multiplying the previous term by 2 and adding 1. Check: 6 * 2 + 1 = 13; 13 * 2 + 1 = 27; 27 * 2 + 1 = 55. Applying the same rule to 55: 55 * 2 + 1 = 110 + 1 = 111.\nTrap (A): Forgetting to add +1 at the final step gives 55 * 2 = 110.\nTrap (C): Subtracting 1 instead of adding 1 at the final step gives 55 * 2 - 1 = 109.\nTrap (D): Repeating the last difference (55 - 27 = 28) instead of doubling it gives 55 + 28 = 83.",
+  "verify_code": "answer = str(55 * 2 + 1)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Letter Series - Constant Forward Shift",
+  "question_text": "Select the letter-cluster that can replace the question mark (?) in the following series: BDF, CFI, DHL, ?",
+  "options": {
+   "A": "EJM",
+   "B": "FJM",
+   "C": "EJO",
+   "D": "EJN"
+  },
+  "correct_answer": "C",
+  "trap_type": "Applying first-letter shift to all positions",
+  "pedagogical_explanation": "Step-by-step solution: Analyze each letter position separately using alphabetical values (A=1, B=2, ...). First letters: B(2), C(3), D(4) -> increases by +1, so next is E(5). Second letters: D(4), F(6), H(8) -> increases by +2, so next is J(10). Third letters: F(6), I(9), L(12) -> increases by +3, so next is O(15). Combining them gives EJO.\nTrap (A): Increasing the third letter by +1 instead of +3 (L + 1 = M) gives EJM.\nTrap (B): Increasing the first letter by +2 (D + 2 = F) and third letter by +1 (L + 1 = M) gives FJM.\nTrap (D): Increasing the third letter by +2 (matching the second letter's shift, L + 2 = N) gives EJN.",
+  "verify_code": "answer = chr(ord('D')+1) + chr(ord('H')+2) + chr(ord('L')+3)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Letter Series - Decreasing Shift",
+  "question_text": "Find the missing term in the series: Z, W, T, Q, ?",
+  "options": {
+   "A": "O",
+   "B": "P",
+   "C": "M",
+   "D": "N"
+  },
+  "correct_answer": "D",
+  "trap_type": "Off-by-one counting when subtracting alphabetical positions",
+  "pedagogical_explanation": "Step-by-step solution: Write the alphabetical positions of the given letters: Z(26), W(23), T(20), Q(17). Each letter decreases by 3 positions (26 - 3 = 23; 23 - 3 = 20; 20 - 3 = 17). Subtracting 3 from Q(17) gives 17 - 3 = 14, which corresponds to the letter N.\nTrap (A): Subtracting 2 instead of 3 (treating the gap of two letters between terms as a shift of -2) gives 17 - 2 = 15 (O).\nTrap (B): Subtracting 1 instead of 3 (taking the immediately preceding letter) gives 17 - 1 = 16 (P).\nTrap (C): Subtracting 4 instead of 3 due to inclusive counting gives 17 - 4 = 13 (M).",
+  "verify_code": "answer = chr(ord('Q') - 3)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Coding-Decoding - Progressive Positional Shift",
+  "question_text": "In a certain code language, 'MIND' is written as 'NKQH'. How will 'GOAL' be written in that language?",
+  "options": {
+   "A": "HQDP",
+   "B": "HPCO",
+   "C": "FMXH",
+   "D": "HQDO"
+  },
+  "correct_answer": "A",
+  "trap_type": "Uniform shift assumption",
+  "pedagogical_explanation": "Step-by-step solution: Compare 'MIND' to 'NKQH' by alphabetical position: M(13)+1 = N(14), I(9)+2 = K(11), N(14)+3 = Q(17), D(4)+4 = H(8). The pattern is a progressive forward shift of +1, +2, +3, +4. Applying this to 'GOAL': G(7)+1 = H(8), O(15)+2 = Q(17), A(1)+3 = D(4), L(12)+4 = P(16). So 'GOAL' becomes 'HQDP'.\nTrap (B): Applying +1, +1, +2, +3 (miscounting O->P as +1 and A->C as +2) gives HPCO.\nTrap (C): Shifting backward instead of forward (-1, -2, -3, -4) gives G-1 = F, O-2 = M, A-3 = X (wrapping past A), L-4 = H, so FMXH.\nTrap (D): Applying +3 instead of +4 to the fourth letter (L(12)+3 = O(15)) gives HQDO.",
+  "verify_code": "answer = ''.join(chr(ord(c) + i + 1) for i, c in enumerate('GOAL'))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Coding-Decoding - Alphabetical Sum",
+  "question_text": "In a certain code language, 'CAT' is coded as '24' and 'DOG' is coded as '26'. How will 'BAG' be coded in that language?",
+  "options": {
+   "A": "14",
+   "B": "10",
+   "C": "71",
+   "D": "21"
+  },
+  "correct_answer": "B",
+  "trap_type": "Multiplying instead of adding positional values",
+  "pedagogical_explanation": "Step-by-step solution: Each word is coded as the sum of the standard alphabetical positions (A=1, B=2, ..., Z=26) of its letters. For 'CAT': C(3) + A(1) + T(20) = 24. For 'DOG': D(4) + O(15) + G(7) = 26. Similarly, for 'BAG': B(2) + A(1) + G(7) = 10.\nTrap (A): Multiplying the positional values instead of adding them (2 * 1 * 7) gives 14.\nTrap (C): Using reverse alphabetical positions (Z=1, ..., B=25, A=26, G=20) and adding them (25 + 26 + 20) gives 71.\nTrap (D): Concatenating B(2) and A(1) as 21 and ignoring G (or adding 11 to 10 by misreading G as Q=17) gives 21.",
+  "verify_code": "answer = str(sum(ord(c) - 64 for c in 'BAG'))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Coding-Decoding - Adjacent Pair Swap",
+  "question_text": "In a certain code language, 'STAR' is written as 'TSRA'. How will 'GOLD' be written in that language?",
+  "options": {
+   "A": "DLOG",
+   "B": "GLOD",
+   "C": "OGDL",
+   "D": "OGLD"
+  },
+  "correct_answer": "C",
+  "trap_type": "Swapping only the first pair of letters",
+  "pedagogical_explanation": "Step-by-step solution: Look at the positions of letters in 'STAR' (1-S, 2-T, 3-A, 4-R) and 'TSRA' (2-T, 1-S, 4-R, 3-A). The word is divided into two pairs of adjacent letters, and both pairs are swapped: ST becomes TS, and AR becomes RA. Applying the same rule to 'GOLD': swap GO to get OG, and swap LD to get DL. Combining them gives 'OGDL'.\nTrap (A): Reversing the whole word gives DLOG.\nTrap (B): Swapping the middle two letters (O and L) while keeping the first and last letters fixed gives GLOD.\nTrap (D): Swapping the first two letters (GO -> OG) but forgetting to swap the last two letters (LD) gives OGLD.",
+  "verify_code": "w = 'GOLD'; answer = w[1] + w[0] + w[3] + w[2]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Number Analogy - Square Plus One",
+  "question_text": "Select the option that is related to the third number in the same way as the second number is related to the first number: 6 : 37 :: 8 : ?",
+  "options": {
+   "A": "64",
+   "B": "63",
+   "C": "49",
+   "D": "65"
+  },
+  "correct_answer": "D",
+  "trap_type": "Applying constant addition instead of squaring",
+  "pedagogical_explanation": "Step-by-step solution: The relationship between 6 and 37 is that the second number is 1 more than the square of the first number: 6^2 + 1 = 36 + 1 = 37. Applying the same rule to 8: 8^2 + 1 = 64 + 1 = 65.\nTrap (A): Squaring 8 (8^2 = 64) and forgetting to add 1 gives 64.\nTrap (B): Squaring 8 and subtracting 1 instead of adding 1 (8^2 - 1) gives 63.\nTrap (C): Treating the relation as 6 * 6 + 1 = 37 and multiplying 8 by 6 plus 1 (8 * 6 + 1) gives 49.",
+  "verify_code": "answer = 8 * 8 + 1"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Word Analogy - Instrument and Quantity",
+  "question_text": "Select the word that is related to the third word in the same way as the second word is related to the first word: Thermometer : Temperature :: Odometer : ?",
+  "options": {
+   "A": "Distance",
+   "B": "Speed",
+   "C": "Pressure",
+   "D": "Current"
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing odometer with speedometer",
+  "pedagogical_explanation": "Step-by-step solution: The first word is a measuring instrument and the second word is the physical quantity it measures. A Thermometer measures Temperature. Similarly, an Odometer is an instrument used in vehicles to measure the Distance travelled.\nTrap (B): Confusing an odometer with a speedometer (both are on a vehicle dashboard, and speedometer measures speed) gives Speed.\nTrap (C): Confusing an odometer with a barometer or manometer (which measure pressure) gives Pressure.\nTrap (D): Confusing an odometer with an ammeter (which measures electric current) gives Current.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Odd One Out - Perfect Squares vs Cubes",
+  "question_text": "Four numbers have been given, out of which three are alike in some manner and one is different. Select the number that is different.",
+  "options": {
+   "A": "16",
+   "B": "25",
+   "C": "27",
+   "D": "36"
+  },
+  "correct_answer": "C",
+  "trap_type": "Divisibility or digit-sum distraction over square/cube property",
+  "pedagogical_explanation": "Step-by-step solution: Analyze the mathematical nature of the four numbers: 16 = 4^2 (perfect square), 25 = 5^2 (perfect square), 27 = 3^3 (perfect cube, not a square), and 36 = 6^2 (perfect square). Since 16, 25, and 36 are perfect squares while 27 is a perfect cube, 27 is the odd one out.\nTrap (A): Noticing that 16 is a fourth power (2^4) while others are not gives 16.\nTrap (B): Noticing that 25 is a multiple of 5 while 16, 27, 36 are not gives 25.\nTrap (D): Noticing that 36 is divisible by both 2 and 3 (or 6) unlike the others gives 36.",
+  "verify_code": "answer = [k for k, v in {'A': 16, 'B': 25, 'C': 27, 'D': 36}.items() if int(v ** 0.5) ** 2 != v][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Odd One Out - Letter Cluster Gaps",
+  "question_text": "Three of the following four letter-clusters are alike in a certain way and one is different. Pick the odd one out.",
+  "options": {
+   "A": "BD",
+   "B": "SV",
+   "C": "JL",
+   "D": "NP"
+  },
+  "correct_answer": "B",
+  "trap_type": "Miscounting the gap between letters",
+  "pedagogical_explanation": "Write the alphabetical positions: B(2)-D(4) = +2, J(10)-L(12) = +2, N(14)-P(16) = +2, but S(19)-V(22) = +3. BD, JL and NP each skip exactly one letter (C, K, O), while SV skips two (T, U). So SV is the odd one out. Trap (A): BD is the only cluster whose letter positions are single-digit numbers, a surface feature that is not the pattern. Trap (C): JL is picked by miscounting J-K-L as a gap of two letters. Trap (D): NP is picked by miscounting N-O-P as +3.",
+  "verify_code": "answer = [k for k, v in {'A': 'BD', 'B': 'SV', 'C': 'JL', 'D': 'NP'}.items() if ord(v[1]) - ord(v[0]) != 2][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Blood Relations - Two-Generation Chain",
+  "question_text": "A is the brother of B. B is the mother of C. D is the father of A. How is D related to C?",
+  "options": {
+   "A": "Father",
+   "B": "Paternal Grandfather",
+   "C": "Maternal Uncle",
+   "D": "Maternal Grandfather"
+  },
+  "correct_answer": "D",
+  "trap_type": "Paternal vs Maternal lineage confusion",
+  "pedagogical_explanation": "Step-by-step solution: Trace the family tree generation by generation. 1) B is the mother of C (B is female, one generation above C). 2) A is the brother of B (so A is C's maternal uncle, and A and B are siblings). 3) D is the father of A. Since A and B are siblings, D is also the father of B. Because B is C's mother, B's father D is C's Maternal Grandfather.\nTrap (A): Skipping a generation and reading D as the father of C instead of A/B gives Father.\nTrap (B): Identifying D as a grandfather correctly but forgetting that B is the mother (female) rather than the father gives Paternal Grandfather.\nTrap (C): Confusing D's relation to C with A's relation to C (A is C's maternal uncle) gives Maternal Uncle.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Blood Relations - Pointing to a Person",
+  "question_text": "Pointing to a boy, Rina said, \"He is the son of the only son of my paternal grandfather.\" How is that boy related to Rina?",
+  "options": {
+   "A": "Son",
+   "B": "Brother",
+   "C": "Cousin",
+   "D": "Nephew"
+  },
+  "correct_answer": "B",
+  "trap_type": "Reversing generation or ignoring 'only son' constraint",
+  "pedagogical_explanation": "Rina's paternal grandfather is her father's father. His only son is therefore Rina's father. The son of Rina's father is Rina's brother. Trap (A): Son reads \"the son of the only son\" as if the only son were Rina herself or her husband. Trap (C): Cousin treats the grandfather's only son as Rina's uncle, but the only son of a paternal grandfather must be her father. Trap (D): Nephew treats the only son as Rina's brother, skipping one generation.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Direction Sense - Consecutive Turns",
+  "question_text": "Rohan walks 10 m North, then turns right and walks 15 m, and then turns right again and walks 10 m. How far and in which direction is he now from his starting point?",
+  "options": {
+   "A": "15 m West",
+   "B": "25 m East",
+   "C": "15 m East",
+   "D": "35 m East"
+  },
+  "correct_answer": "C",
+  "trap_type": "Reference point reversal (Starting point from End point)",
+  "pedagogical_explanation": "Step-by-step solution: Let the starting point be the origin (0, 0). 1) Rohan walks 10 m North to reach (0, 10). 2) Facing North, he turns right (which is East) and walks 15 m to reach (15, 10). 3) Facing East, he turns right again (which is South) and walks 10 m to reach (15, 0). The northward 10 m and southward 10 m cancel each other out. He is now at (15, 0), which is 15 m East of his starting point (0, 0).\nTrap (A): Confusing right turns with left turns (or finding the direction of the starting point from his final position) gives 15 m West.\nTrap (B): Adding the last two segments (15 m + 10 m) instead of cancelling the vertical movements gives 25 m East.\nTrap (D): Adding total distance walked (10 + 15 + 10 = 35 m) instead of finding net displacement gives 35 m East.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Direction Sense - Final Facing Direction",
+  "question_text": "Priya is facing East. She turns 90 degrees clockwise, and then turns 180 degrees anticlockwise. Which direction is she facing now?",
+  "options": {
+   "A": "South",
+   "B": "West",
+   "C": "East",
+   "D": "North"
+  },
+  "correct_answer": "D",
+  "trap_type": "Swapping clockwise and anticlockwise rotations",
+  "pedagogical_explanation": "Step-by-step solution: 1) Priya starts facing East. 2) Turning 90 degrees clockwise from East moves her to face South. 3) Turning 180 degrees anticlockwise (or in any direction) reverses her facing direction to the exact opposite of South, which is North. Alternatively, net rotation = 90° CW - 180° ACW = 90° ACW from East = North.\nTrap (A): Swapping clockwise and anticlockwise (turning 90° ACW to North, then 180° CW to South) or stopping after the first turn gives South.\nTrap (B): Applying the 180° turn from the initial direction (East -> West) while ignoring the 90° turn gives West.\nTrap (C): Treating 180° as a full circle back to the original direction gives East.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Ranking and Order - Total Persons in a Row",
+  "question_text": "In a row of students, Aman is 12th from the left end and 18th from the right end. How many students are there in the row?",
+  "options": {
+   "A": "29",
+   "B": "30",
+   "C": "31",
+   "D": "28"
+  },
+  "correct_answer": "A",
+  "trap_type": "Forgetting to subtract 1 for double-counting the same person",
+  "pedagogical_explanation": "Step-by-step solution: Use the standard ranking formula: Total persons = (Rank from Left + Rank from Right) - 1, because Aman is counted twice (once from the left and once from the right). Substituting the values: Total = 12 + 18 - 1 = 30 - 1 = 29.\nTrap (B): Simply adding the two ranks (12 + 18) without subtracting 1 double-counts Aman and gives 30.\nTrap (C): Adding 1 instead of subtracting 1 (12 + 18 + 1) gives 31.\nTrap (D): Subtracting 1 from BOTH ranks before adding ((12 - 1) + (18 - 1) = 11 + 17) excludes Aman completely and gives 28.",
+  "verify_code": "answer = str(12 + 18 - 1)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Ranking and Order - Finding Opposite Rank",
+  "question_text": "In a class of 40 students, Neha ranks 15th from the top. What is her rank from the bottom?",
+  "options": {
+   "A": "25th",
+   "B": "26th",
+   "C": "24th",
+   "D": "27th"
+  },
+  "correct_answer": "B",
+  "trap_type": "Forgetting to add 1 when subtracting rank from total",
+  "pedagogical_explanation": "Step-by-step solution: When the total number of students and rank from one end are given, the rank from the other end is calculated as: (Total - Given Rank) + 1. Subtracting 15 from 40 gives the 25 students below Neha. Adding 1 for Neha herself gives her rank from the bottom: (40 - 15) + 1 = 25 + 1 = 26th.\nTrap (A): Subtracting 15 from 40 directly (40 - 15 = 25) without adding 1 gives the number of students below her rather than her rank (25th).\nTrap (C): Subtracting 1 instead of adding 1 (40 - 15 - 1 = 24) gives 24th.\nTrap (D): Adding 2 instead of 1 due to inclusive counting error (40 - 15 + 2) gives 27th.",
+  "verify_code": "answer = 40 - 15 + 1"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Syllogism - All + All Deduction",
+  "question_text": "Statements:\n1. All pens are books.\n2. All books are tables.\nConclusions:\nI. All pens are tables.\nII. All tables are pens.\nWhich of the following options is correct?",
+  "options": {
+   "A": "Only Conclusion II follows",
+   "B": "Both Conclusions I and II follow",
+   "C": "Only Conclusion I follows",
+   "D": "Neither Conclusion I nor II follows"
+  },
+  "correct_answer": "C",
+  "trap_type": "Illicit conversion of universal affirmative ('All A are B' -> 'All B are A')",
+  "pedagogical_explanation": "Step-by-step solution: In a Venn diagram, the circle for 'Pens' is completely inside the circle for 'Books', and the circle for 'Books' is completely inside the circle for 'Tables'. Therefore, the circle for 'Pens' is completely inside 'Tables', so Conclusion I (\"All pens are tables\") definitely follows. However, the outer circle 'Tables' can have area outside 'Pens', so Conclusion II (\"All tables are pens\") does not definitely follow. Only Conclusion I follows.\nTrap (A): Reversing the subset direction (thinking the outer circle is inside the inner circle) gives Only Conclusion II follows.\nTrap (B): Assuming 'All A are B' means the sets A and B are identical (so 'All tables are pens' is also true) gives Both Conclusions I and II follow.\nTrap (D): Thinking that since 'pens' and 'tables' are not in the same single statement, no definite relation exists between them gives Neither Conclusion I nor II follows.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Seating Arrangement - Linear Row Facing North",
+  "question_text": "Five friends P, Q, R, S, and T are sitting in a row facing North. S is at the extreme left end. P is sitting at the exact center of the row. Q is to the immediate left of P. T is to the immediate right of P. Who is sitting at the extreme right end?",
+  "options": {
+   "A": "Q",
+   "B": "T",
+   "C": "P",
+   "D": "R"
+  },
+  "correct_answer": "D",
+  "trap_type": "Confusing 'immediate right of center' with 'extreme right end'",
+  "pedagogical_explanation": "Step-by-step solution: Draw 5 positions from left to right (1, 2, 3, 4, 5) facing North. 1) S is at the extreme left end -> Position 1 is S. 2) P is at the exact center -> Position 3 is P. 3) Q is to the immediate left of P -> Position 2 is Q. 4) T is to the immediate right of P -> Position 4 is T. 5) Only Position 5 (the extreme right end) remains empty, so the remaining person R sits at Position 5. Order: S - Q - P - T - R. Thus, R is at the extreme right end.\nTrap (A): Reversing left and right for North-facing persons and placing Q on the right gives Q.\nTrap (B): Mistaking T (who is the rightmost person explicitly placed in the clues at Position 4) as the extreme right end gives T.\nTrap (C): Misreading 'exact center' as the end position gives P.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Seating Arrangement - Circular Facing Center",
+  "question_text": "Four friends P, Q, R and S are sitting around a circular table facing the centre. Q is sitting to the immediate right of P. R is sitting opposite to P. Who is sitting to the immediate left of P?",
+  "options": {
+   "A": "S",
+   "B": "R",
+   "C": "Q",
+   "D": "Cannot be determined"
+  },
+  "correct_answer": "A",
+  "trap_type": "Facing-center vs Facing-outward left/right reversal",
+  "pedagogical_explanation": "With 4 seats, each person has one neighbour on the right, one on the left and one person opposite. Q is P's immediate right and R is opposite P, so the only seat left, P's immediate left, belongs to S. Trap (B): R is opposite P, not next to P. Trap (C): Q gets the answer by reversing left and right, as though the friends faced outward. Trap (D): \"Cannot be determined\" assumes more clues are needed, but with only 4 seats the last seat is fixed.",
+  "verify_code": ""
+ }
+]

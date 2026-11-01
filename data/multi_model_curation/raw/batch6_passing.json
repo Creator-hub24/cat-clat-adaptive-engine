@@ -1,0 +1,308 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Error Spotting: Subject-Verb Agreement with Parenthetical Additive",
+  "question_text": "Identify the segment that contains a grammatical error: (A) The chairperson of the tribunal, accompanied by two legal assessors, / (B) have scrutinized every deposition / (C) submitted before the statutory deadline. / (D) No error",
+  "options": {
+   "A": "The chairperson of the tribunal, accompanied by two legal assessors,",
+   "B": "have scrutinized every deposition",
+   "C": "submitted before the statutory deadline.",
+   "D": "No error"
+  },
+  "correct_answer": "B",
+  "trap_type": "Matching the verb to the nearest plural noun instead of the singular head subject",
+  "pedagogical_explanation": "When a singular subject ('The chairperson') is connected to another noun by parenthetical phrases such as 'accompanied by', 'along with', or 'as well as', the verb must agree with the main singular subject. Therefore, 'have scrutinized' in segment B must be replaced with 'has scrutinized'. Trap (A): Thinking 'accompanied by' is ungrammatical and should be 'accompanied with' (in standard grammar, 'accompanied by' is used for people). Trap (C): Thinking 'every deposition' requires a plural noun ('every depositions') or that 'before' is the wrong preposition. Trap (D): Matching the plural verb 'have' to the nearest plural noun 'assessors' and assuming the sentence has no error.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Error Spotting: Preposition after 'Comprise' in Active Voice",
+  "question_text": "Identify the segment that contains a grammatical error: (A) The newly constituted oversight panel / (B) comprises of seven retired judges / (C) with extensive experience in constitutional law. / (D) No error",
+  "options": {
+   "A": "The newly constituted oversight panel",
+   "B": "comprises of seven retired judges",
+   "C": "with extensive experience in constitutional law.",
+   "D": "No error"
+  },
+  "correct_answer": "B",
+  "trap_type": "Confusing 'comprise' with 'consist of' and adding a redundant 'of'",
+  "pedagogical_explanation": "In active voice, the transitive verb 'comprise' means 'consist of' and never takes the preposition 'of'. Therefore, 'comprises of' in segment B is erroneous and should simply be 'comprises seven retired judges'. Trap (A): Thinking the adverb 'newly' cannot modify the past participle 'constituted' before a noun. Trap (C): Assuming 'experience in' should be replaced by 'experience of' when referring to a professional field. Trap (D): Treating 'comprises of' as standard usage by analogy with 'consists of' and 'is composed of'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Error Spotting: Past Perfect in Conditional Clause",
+  "question_text": "Identify the segment that contains a grammatical error: (A) Had the logistics contractor anticipated / (B) the port strike earlier, / (C) they would reroute the perishable cargo via air freight. / (D) No error",
+  "options": {
+   "A": "Had the logistics contractor anticipated",
+   "B": "the port strike earlier,",
+   "C": "they would reroute the perishable cargo via air freight.",
+   "D": "No error"
+  },
+  "correct_answer": "C",
+  "trap_type": "Using 'would + V1' (Type 2 conditional) instead of 'would have + V3' (Type 3 conditional)",
+  "pedagogical_explanation": "The inverted clause 'Had the logistics contractor anticipated...' is a Type 3 conditional (Past Perfect: 'If they had anticipated...'), which refers to an unfulfilled past condition. The main clause must therefore use 'would have + past participle' ('would have rerouted'), making segment C erroneous. Trap (A): Thinking the inverted structure 'Had + subject + V3' without 'If' is grammatically incorrect. Trap (B): Thinking the comparative adverb 'earlier' cannot be used without an explicit 'than' clause. Trap (D): Overlooking the tense mismatch between 'Had anticipated' (past perfect) and 'would reroute' (conditional simple).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Error Spotting: Correct Sentence with 'Scarcely... when' Inversion",
+  "question_text": "Identify the segment that contains a grammatical error: (A) Scarcely had the auditor presented / (B) the preliminary findings to the board / (C) when the chief financial officer tendered his resignation. / (D) No error",
+  "options": {
+   "A": "Scarcely had the auditor presented",
+   "B": "the preliminary findings to the board",
+   "C": "when the chief financial officer tendered his resignation.",
+   "D": "No error"
+  },
+  "correct_answer": "D",
+  "trap_type": "Falsely flagging 'when' as 'than' after 'Scarcely'",
+  "pedagogical_explanation": "The sentence is completely grammatical. When a sentence begins with the negative adverb 'Scarcely' or 'Hardly', it takes subject-auxiliary inversion ('had the auditor presented') and is correctly paired with the conjunction 'when' (or 'before') introducing a simple past clause ('tendered'). Thus, option D ('No error') is correct. Trap (A): Thinking 'Scarcely had the auditor' should be in non-inverted order ('Scarcely the auditor had'). Trap (B): Thinking 'presented... to the board' requires 'before the board' instead of 'to'. Trap (C): Confusing the correlative pair 'Scarcely... when' with 'No sooner... than' and wrongly thinking 'when' must be 'than'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Sentence Improvement: Past Subjunctive after 'As though'",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nThe junior counsel addressed the bench as though **he is** the chief justice of the high court.",
+  "options": {
+   "A": "he was",
+   "B": "he has been",
+   "C": "he were",
+   "D": "No improvement required"
+  },
+  "correct_answer": "C",
+  "trap_type": "Picking 'he was' instead of the subjunctive 'he were' for an unreal hypothetical comparison",
+  "pedagogical_explanation": "Clauses introduced by 'as if' or 'as though' that express an unreal or counterfactual situation in the present/past take the past subjunctive form 'were' for all subjects, regardless of whether the subject is singular ('he'). Thus, 'he were' is correct. Trap (A): Matching the singular pronoun 'he' with the indicative past verb 'was' instead of the subjunctive 'were'. Trap (B): Using the present perfect 'he has been', which breaks both tense sequence and counterfactual mood. Trap (D): Retaining the present indicative 'he is', which violates the counterfactual meaning and past-tense sequence ('addressed').",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Sentence Improvement: 'Lest... should' Construction",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nStore the volatile reagent in an amber glass bottle lest exposure to sunlight **will degrade** its chemical potency.",
+  "options": {
+   "A": "would degrade",
+   "B": "should not degrade",
+   "C": "may degrade",
+   "D": "should degrade"
+  },
+  "correct_answer": "D",
+  "trap_type": "Adding a redundant 'not' after the inherently negative conjunction 'lest'",
+  "pedagogical_explanation": "In formal English grammar tested in Indian competitive exams, the conjunction 'lest' means 'for fear that' and is followed by the modal auxiliary 'should' (or the bare subjunctive) without a negative word. Therefore, 'should degrade' is correct. Trap (A): Treating the clause as a past conditional and using 'would degrade'. Trap (B): Inserting 'not' ('should not degrade'), which creates a double negative because 'lest' already carries a negative meaning. Trap (C): Using the modal 'may' (which pairs with 'so that') instead of 'should' (which pairs with 'lest').",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Double Fill in the Blank: Confusable Lexical Pairs",
+  "question_text": "Choose the most appropriate pair of words to fill in the blanks: The investigative journalist refused to _______ the identity of the whistleblower, even when threatened with _______ contempt proceedings.",
+  "options": {
+   "A": "divulge, imminent",
+   "B": "divulge, eminent",
+   "C": "conceal, imminent",
+   "D": "allude, imminent"
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing the homophones 'imminent' (about to happen) and 'eminent' (distinguished)",
+  "pedagogical_explanation": "'Divulge' means to reveal private or sensitive information, fitting 'refused to reveal the identity'. 'Imminent' means impending or about to happen soon, fitting 'threatened with impending contempt proceedings'. Trap (B): Confusing 'imminent' (impending) with its homophone 'eminent' (famous/distinguished, used for people). Trap (C): Overlooking 'refused to' and choosing 'conceal' (if she refused to conceal it, she would be revealing it, which contradicts being threatened with contempt). Trap (D): Using 'allude' (which means to hint indirectly and requires the preposition 'to': 'allude to') as a direct transitive verb.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Double Fill in the Blank: Contrast and Tone",
+  "question_text": "Choose the most appropriate pair of words to fill in the blanks: Far from _______ the unrest among the factory workers, the management's curt circular only served to _______ their grievances.",
+  "options": {
+   "A": "aggravating, assuage",
+   "B": "assuaging, exacerbate",
+   "C": "placating, ameliorate",
+   "D": "condoning, vindicate"
+  },
+  "correct_answer": "B",
+  "trap_type": "Reversing the polarity of the two blanks in a 'Far from X, it only served to Y' contrast structure",
+  "pedagogical_explanation": "The structure 'Far from [doing X], the curt circular only served to [do Y]' requires X to be a positive/calming action and Y to be a negative/worsening action. 'Assuaging' (calming/relieving) and 'exacerbate' (worsen/intensify) fit both the syntax and logical contrast. Trap (A): Reversing the logical order by putting the negative word ('aggravating') in the first blank and the positive word ('assuage') in the second blank. Trap (C): Putting positive/improving words in both blanks ('placating' and 'ameliorate'), which destroys the contrast signaled by 'Far from... curt circular'. Trap (D): Selecting legalistic words ('condoning' and 'vindicate') that do not collocate with 'unrest' or 'grievances'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Cloze-Style Single Blank: Precise Contextual Collocation",
+  "question_text": "Select the most appropriate word to fill in the blank: Because the startup's revenue projections were built on overly optimistic assumptions, the venture capital firm deemed the business model financially _______.",
+  "options": {
+   "A": "infallible",
+   "B": "indelible",
+   "C": "intractable",
+   "D": "untenable"
+  },
+  "correct_answer": "D",
+  "trap_type": "Confusing look-alike negative adjectives ('intractable', 'infallible', 'indelible') with 'untenable'",
+  "pedagogical_explanation": "'Untenable' means not able to be maintained or defended against criticism or attack, which is the standard collocation for a flawed business model or argument. Trap (A): Reading the 'in-' of 'infallible' as signalling a flaw, whereas 'infallible' means incapable of making mistakes, the opposite of a model built on faulty assumptions. Trap (B): Confusing 'untenable' with 'indelible' (permanent/cannot be erased). Trap (C): Picking 'intractable' (hard to control or manage, used for stubborn problems or people) instead of 'untenable' (indefensible/unsustainable, used for models and positions).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Para Jumble: Pronoun Reference and Chronological Link",
+  "question_text": "Rearrange the following four sentences (P, Q, R, S) to form a coherent paragraph:\nP. Consequently, small-scale weavers struggled to procure raw silk at predictable prices.\nQ. For decades, the regional handloom cooperative operated without a centralized raw-material buffer stock.\nR. To address this vulnerability, the state textile board launched a price-stabilization fund last quarter.\nS. Whenever monsoon failures disrupted mulberry cultivation, middlemen hoarded supplies and inflated rates.",
+  "options": {
+   "A": "QSRP",
+   "B": "SQPR",
+   "C": "QSPR",
+   "D": "QPRS"
+  },
+  "correct_answer": "C",
+  "trap_type": "Placing R before P or breaking the cause-effect chain between S and P",
+  "pedagogical_explanation": "Sentence Q introduces the historical background (lack of a centralized buffer stock). Sentence S explains the specific mechanism of how this lack caused trouble during monsoon failures (middlemen hoarded supplies). Sentence P states the direct consequence ('Consequently, small-scale weavers struggled...'). Finally, Sentence R presents the recent solution ('To address this vulnerability...') launched last quarter. Thus, the correct sequence is QSPR. Trap (A): Placing R (the solution) before P (the consequence on weavers), leaving P dangling at the end. Trap (B): Starting with S before introducing the cooperative context in Q. Trap (D): Placing P immediately after Q, which separates S (middlemen hoarding supplies and inflating rates) from its direct consequence P (weavers struggling to procure silk at predictable prices).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Para Jumble: Contrast Transition and Demonstrative Pronoun",
+  "question_text": "Rearrange the following four sentences (P, Q, R, S) to form a coherent paragraph:\nP. Such thermal stability makes them ideal candidates for deep-space satellite enclosures.\nQ. Conventional aluminum alloys expand noticeably when exposed to extreme solar radiation.\nR. Ceramic-matrix composites, by contrast, retain their structural dimensions across wide temperature swings.\nS. Even a millimeter of warpage in orbit can misalign sensitive optical sensors.",
+  "options": {
+   "A": "QSRP",
+   "B": "QRSP",
+   "C": "SRQP",
+   "D": "QPSR"
+  },
+  "correct_answer": "A",
+  "trap_type": "Jumping from Q to R ('by contrast') and leaving S ('Even a millimeter of warpage') disconnected from Q",
+  "pedagogical_explanation": "Sentence Q introduces the problem with conventional aluminum alloys (they expand noticeably). Sentence S elaborates on why this expansion matters in space ('Even a millimeter of warpage in orbit can misalign...'). Sentence R introduces the contrasting material ('Ceramic-matrix composites, by contrast, retain their structural dimensions...'). Sentence P concludes with 'Such thermal stability makes them ideal...', where 'Such thermal stability' directly refers to retaining dimensions in R, and 'them' refers to ceramic-matrix composites. Thus, QSRP is the only coherent order. Trap (B): Placing R immediately after Q, which leaves S ('warpage') awkwardly between R (stability) and P ('Such thermal stability'). Trap (C): Starting with S ('Even a millimeter of warpage') before introducing what warps in Q. Trap (D): Placing P immediately after Q, which wrongly makes conventional aluminum alloys 'thermally stable'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Synonym of Less Common Word: 'Fastidious'",
+  "question_text": "Select the most appropriate SYNONYM of the word 'FASTIDIOUS'.",
+  "options": {
+   "A": "Punctilious",
+   "B": "Expeditious",
+   "C": "Abstemious",
+   "D": "Facetious"
+  },
+  "correct_answer": "A",
+  "trap_type": "Associating the root 'fast-' in 'fastidious' with speed ('expeditious') or fasting ('abstemious')",
+  "pedagogical_explanation": "'Fastidious' means very attentive to and concerned about accuracy and detail (hard to please). 'Punctilious' means showing great attention to detail or correct behavior, making it the exact synonym. Trap (B): Seeing the syllable 'fast' in 'fastidious' and mistakenly choosing 'expeditious' (which means fast/speedy). Trap (C): Associating 'fast' with 'fasting' (abstaining from food/drink) and choosing 'abstemious' (moderate in eating and drinking). Trap (D): Confusing 'fastidious' with the phonetically similar word 'facetious' (treating serious issues with inappropriate humor).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Antonym of Less Common Word: 'Equivocal'",
+  "question_text": "Select the most appropriate ANTONYM of the word 'EQUIVOCAL'.",
+  "options": {
+   "A": "Ambiguous",
+   "B": "Partisan",
+   "C": "Forthright",
+   "D": "Inaudible"
+  },
+  "correct_answer": "C",
+  "trap_type": "Picking the synonym ('Ambiguous') or misreading 'equi-' as 'equal/fair' and picking 'Partisan'",
+  "pedagogical_explanation": "'Equivocal' means open to more than one interpretation, vague, or evasive. Its antonym is 'Forthright' (direct, clear, and unambiguous). Trap (A): Selecting 'Ambiguous', which is the synonym of 'equivocal' rather than its antonym. Trap (B): Misinterpreting the prefix 'equi-' as meaning 'equal/impartial' (confusing it with 'equitable') and picking 'Partisan' (biased) as the opposite. Trap (D): Misinterpreting the root '-vocal' as referring to loudness of voice and picking 'Inaudible' as the opposite.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Antonym of Less Common Word: 'Pernicious'",
+  "question_text": "Select the most appropriate ANTONYM of the word 'PERNICIOUS'.",
+  "options": {
+   "A": "Deleterious",
+   "B": "Innocuous",
+   "C": "Penurious",
+   "D": "Parsimonious"
+  },
+  "correct_answer": "B",
+  "trap_type": "Picking the synonym ('Deleterious') or confusing 'pernicious' with look-alike words ('penurious')",
+  "pedagogical_explanation": "'Pernicious' means having a harmful effect, especially in a gradual or subtle way. Its antonym is 'Innocuous', which means completely harmless and inoffensive. Trap (A): Selecting 'Deleterious' (harmful/damaging), which is a direct synonym of 'pernicious' rather than its antonym. Trap (C): Confusing 'pernicious' with the phonetically similar word 'penurious' (extremely poor). Trap (D): Confusing 'pernicious' with 'parsimonious' (unwilling to spend money/stingy).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Idiom: 'Give someone a wide berth'",
+  "question_text": "Select the most appropriate meaning of the underlined idiom in the given sentence:\nAfter the vendor was blacklisted for falsifying quality certificates, procurement officers **gave him a wide berth**.",
+  "options": {
+   "A": "Granted him a generous extension of time",
+   "B": "Deliberately avoided and stayed away from him",
+   "C": "Allocated him a spacious warehouse",
+   "D": "Subjected him to a rigorous cross-examination"
+  },
+  "correct_answer": "B",
+  "trap_type": "Taking 'wide berth' literally as physical space/accommodation or as generous leeway",
+  "pedagogical_explanation": "Originating from nautical usage (keeping a safe distance from another ship or hazard at sea), the idiom 'give someone a wide berth' means to deliberately avoid or stay a safe distance away from someone or something. Trap (A): Misinterpreting 'wide berth' as 'broad leeway' or a generous time extension. Trap (C): Taking 'berth' literally in its railway/shipping sense of a sleeping space or dock and choosing 'allocated him a spacious warehouse'. Trap (D): Inferring from the context of 'blacklisted' that officers interrogated him rather than avoided him.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "One-Word Substitution: 'Sinecure'",
+  "question_text": "Select the word that can substitute the given phrase: An official position or office that provides a regular salary or status but requires little or no actual work.",
+  "options": {
+   "A": "Honorarium",
+   "B": "Plutocracy",
+   "C": "Sinecure",
+   "D": "Parole"
+  },
+  "correct_answer": "C",
+  "trap_type": "Confusing 'Sinecure' (paid job with no work) with 'Honorarium' (voluntary fee for unpaid service)",
+  "pedagogical_explanation": "'Sinecure' (from Latin 'sine cura', meaning 'without care') denotes an office or position that yields income or prestige while requiring minimal or no duties. Trap (A): Confusing 'sinecure' with 'honorarium', which is a token fee paid for a service actually rendered (often voluntary), not a salaried post with no duties. Trap (B): Picking 'plutocracy' (government by the wealthy) because the phrase mentions salary and status. Trap (D): Confusing an administrative term with 'parole' (conditional release of a prisoner).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Active to Passive Voice: Modal Perfect ('ought to have + V3')",
+  "question_text": "Select the correct passive form of the given sentence: The compliance officer ought to have verified the vendor's tax filings before releasing the tranche.",
+  "options": {
+   "A": "The vendor's tax filings ought to be verified by the compliance officer before releasing the tranche.",
+   "B": "The vendor's tax filings should have been verified by the compliance officer before releasing the tranche.",
+   "C": "The vendor's tax filings ought to have verified by the compliance officer before releasing the tranche.",
+   "D": "The vendor's tax filings ought to have been verified by the compliance officer before releasing the tranche."
+  },
+  "correct_answer": "D",
+  "trap_type": "Replacing 'ought to have' with 'ought to be' or omitting 'been' in modal perfect passive",
+  "pedagogical_explanation": "The active sentence uses the modal perfect structure 'ought to have + V3' ('ought to have verified'). In the passive voice, 'Modal + have + V3' transforms into 'Modal + have + been + V3' while preserving the exact modal verb ('ought to have been verified'). Trap (A): Changing the past modal perfect ('ought to have verified') into the present modal ('ought to be verified'). Trap (B): Substituting the modal 'should' for 'ought to' instead of retaining the original modal verb. Trap (C): Omitting the auxiliary participle 'been' ('ought to have verified'), which leaves the verb in the active voice.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Direct to Indirect Speech: Interrogative with Tense and Time Backshift",
+  "question_text": "Select the correct indirect form of the given sentence: The chief engineer said to the site supervisor, \"Did you calibrate the pressure gauges before the turbine trial yesterday?\"",
+  "options": {
+   "A": "The chief engineer asked the site supervisor whether he had calibrated the pressure gauges before the turbine trial the previous day.",
+   "B": "The chief engineer asked the site supervisor whether had he calibrated the pressure gauges before the turbine trial the previous day.",
+   "C": "The chief engineer asked the site supervisor whether he calibrated the pressure gauges before the turbine trial the previous day.",
+   "D": "The chief engineer asked the site supervisor whether he had calibrated the pressure gauges before the turbine trial yesterday."
+  },
+  "correct_answer": "A",
+  "trap_type": "Retaining interrogative inversion ('had he'), failing to backshift Simple Past to Past Perfect, or leaving 'yesterday' unchanged",
+  "pedagogical_explanation": "When converting a Yes/No question in the Simple Past ('Did you calibrate...') into indirect speech after a past reporting verb ('said to' -> 'asked'): (1) use 'whether' or 'if', (2) change inverted question order to statement order ('he had'), (3) backshift Simple Past to Past Perfect ('had calibrated'), and (4) change the time adverb 'yesterday' to 'the previous day'. Option A satisfies all four rules. Trap (B): Retaining the interrogative word order ('had he calibrated') after 'whether' instead of converting it to assertive order ('he had calibrated'). Trap (C): Failing to backshift the Simple Past ('calibrated') to the Past Perfect ('had calibrated'). Trap (D): Forgetting to convert the deictic time expression 'yesterday' into 'the previous day'.",
+  "verify_code": ""
+ }
+]
