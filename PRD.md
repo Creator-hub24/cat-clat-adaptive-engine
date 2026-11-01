@@ -42,7 +42,7 @@ A practice engine that writes CAT and CLAT questions the way a senior faculty me
 | F9 | Adaptive difficulty | Per-topic level; up after 2 consecutive on-time correct answers, down after 2 wrong; manual override. | ✅ v0.3 |
 | F10 | Answer-key verification | Sandboxed `verify_code` for Quant/DILR, an independent solve pass for all sections, max 2 regenerations, then seed fallback; Verified badge; anonymous Report button. | ✅ v0.3 |
 | F11 | Per-question timer | Difficulty-based targets, RC scaled by passage length; "Right but too slow" category. | ✅ v0.3 |
-| F12 | Verified question bank | Offline-generated, verified, deduped bank served by default; faculty approve/reject via CSV; monthly refresh. Cuts per-user inference cost to ~0 and removes API latency/outage risk. | ✅ v0.4 |
+| F12 | Verified question bank | Offline-generated, verified, deduped bank served by default (seed + AI + AptiSetu + Claude-curated + multi-model Sarkari); faculty approve/reject via CSV; monthly refresh. Cuts per-user inference cost to ~0 and removes API latency/outage risk. | ✅ v0.4 |
 | F8 | Faculty test builder (Meera) | Batch-generate a 10–20 question sectional, edit it, export as PDF/CSV. | Roadmap |
 
 ## 5. Pedagogical rationale (the differentiator)

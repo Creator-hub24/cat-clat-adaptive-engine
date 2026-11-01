@@ -1,0 +1,257 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "3-Year CI and SI Difference",
+  "question_text": "If the difference between the compound interest (compounded annually) and simple interest on a certain principal at 10% per annum for 3 years is Rs. 465, what is the principal amount?",
+  "options": {
+   "A": "Rs. 46,500",
+   "B": "Rs. 15,000",
+   "C": "Rs. 15,500",
+   "D": "Rs. 1,500"
+  },
+  "correct_answer": "B",
+  "trap_type": "Using the 2-year difference formula P(R/100)^2 or omitting the +R/100 term",
+  "pedagogical_explanation": "Step-by-step: For 3 years at 10% p.a., Simple Interest = 3 * 10% = 30% of Principal (P), while Compound Interest = [(1.10)^3 - 1] * 100% = (1.331 - 1) * 100% = 33.1% of P. The difference is 33.1% - 30% = 3.1% of P. Given 3.1% of P = Rs. 465 => (3.1 / 100) * P = 465 => P = 46,500 / 3.1 = Rs. 15,000. Shortcut: 3-year CI - SI difference = P * (R/100)^2 * (3 + R/100) = P * (1/100) * (3.1) = 465 => P = Rs. 15,000. Trap (A): Using the 2-year difference formula P * (R/100)^2 = 465 => P * (1/100) = 465 => Rs. 46,500. Trap (C): Multiplying the 2-year difference by 3 instead of 3.1 (using 3% of P = 465) gives 46,500 / 3 = Rs. 15,500. Trap (D): Writing 3.1% as 0.31 instead of 0.031 (a decimal slip), which gives 465 / 0.31 = Rs. 1,500.",
+  "verify_code": "answer = 465 * 1000 // (1331 - 1000 - 300)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Half-Yearly Compounding Interest",
+  "question_text": "What is the compound interest on a sum of Rs. 16,000 at 20% per annum for 1.5 years, when the interest is compounded half-yearly?",
+  "options": {
+   "A": "Rs. 4,800",
+   "B": "Rs. 5,120",
+   "C": "Rs. 5,296",
+   "D": "Rs. 3,360"
+  },
+  "correct_answer": "C",
+  "trap_type": "Using Simple Interest or forgetting to halve the annual rate for half-yearly periods",
+  "pedagogical_explanation": "Step-by-step: Since interest is compounded half-yearly, the rate per half-year is R = 20% / 2 = 10%, and the number of half-year periods in 1.5 years is n = 1.5 * 2 = 3. Amount = 16,000 * (1 + 10/100)^3 = 16,000 * (11/10)^3 = 16 * 1331 = Rs. 21,296. Compound Interest = 21,296 - 16,000 = Rs. 5,296. Shortcut: For 3 periods at 10%, effective CI rate is 33.1%. 33.1% of 16,000 = 160 * 33.1 = Rs. 5,296. Trap (A): Calculating Simple Interest instead of Compound Interest (16,000 * 20% * 1.5 = Rs. 4,800). Trap (B): Compounding annually for 1 year at 20% and then taking 10% for the remaining half-year: 16,000 * 1.20 * 1.10 - 16,000 = 21,120 - 16,000 = Rs. 5,120. Trap (D): Halving the rate to 10% but using only 2 periods instead of 3 (21% of 16,000 = Rs. 3,360).",
+  "verify_code": "answer = 16000 * 11 ** 3 // 10 ** 3 - 16000"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Time and Work with Worker Leaving Early",
+  "question_text": "A and B can complete a project in 18 days and 24 days respectively. They begin working together, but A leaves 3 days before the completion of the project. For how many total days did the project last?",
+  "options": {
+   "A": "9 days",
+   "B": "10.29 days",
+   "C": "20 days",
+   "D": "12 days"
+  },
+  "correct_answer": "D",
+  "trap_type": "Reporting the days A and B worked together instead of total project days",
+  "pedagogical_explanation": "Step-by-step: Let total work = LCM(18, 24) = 72 units. Efficiency of A = 72 / 18 = 4 units/day; Efficiency of B = 72 / 24 = 3 units/day. In the last 3 days, B works alone and completes 3 * 3 = 9 units. The remaining 72 - 9 = 63 units were completed by A and B working together at 4 + 3 = 7 units/day, which took 63 / 7 = 9 days. Therefore, total duration of the project = 9 + 3 = 12 days. Shortcut: Add A's 3 days of unperformed work (3 * 4 = 12 units) to total work and divide by combined efficiency: (72 + 12) / (4 + 3) = 84 / 7 = 12 days. Trap (A): Stopping at the 9 days that A and B worked together and forgetting to add the final 3 days. Trap (B): Dividing total work 72 directly by combined efficiency 7 (72 / 7 ≈ 10.29 days), ignoring A's departure. Trap (C): Misreading the question as A leaving 3 days after the start: together for 3 days = 21 units, B finishes the remaining 51 units alone in 51 / 3 = 17 days, total 3 + 17 = 20 days.",
+  "verify_code": "a, b = 72 // 18, 72 // 24\nanswer = (72 + 3 * a) // (a + b)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Pipes and Cisterns with Scheduled Closing",
+  "question_text": "Two inlet pipes P and Q can fill a cistern in 15 minutes and 20 minutes respectively. Both are opened together, but after a few minutes, pipe P is turned off and the cistern is completely filled in a total of 14 minutes. After how many minutes from the start was pipe P turned off?",
+  "options": {
+   "A": "4.5 minutes",
+   "B": "6 minutes",
+   "C": "9.5 minutes",
+   "D": "10.5 minutes"
+  },
+  "correct_answer": "A",
+  "trap_type": "Dividing remaining work by Q's efficiency instead of P's efficiency",
+  "pedagogical_explanation": "Step-by-step: Let total capacity = LCM(15, 20) = 60 units. Rate of P = 60 / 15 = 4 units/min; Rate of Q = 60 / 20 = 3 units/min. Since Q was open for the entire 14 minutes, Q alone filled 14 * 3 = 42 units. The remaining 60 - 42 = 18 units must have been filled by P before it was turned off. Time for which P was open = 18 / 4 = 4.5 minutes. Shortcut: Time P was open = [1 - (Total Time / Q's Time)] * P's Time = [1 - (14/20)] * 15 = (6/20) * 15 = 4.5 minutes. Trap (B): Dividing the remaining 18 units by Q's rate (3 units/min) instead of P's rate (4 units/min): 18 / 3 = 6 minutes. Trap (C): Reporting how long Q ran alone after P was closed (14 - 4.5 = 9.5 minutes) instead of when P was turned off. Trap (D): Dropping the '1 -' in the shortcut and computing (14/20) * 15 = 10.5 minutes, i.e. using the work Q did instead of the work left for P.",
+  "verify_code": "answer = (60 - 14 * (60 // 20)) / (60 // 15)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Relative Speed of Trains in Opposite Directions",
+  "question_text": "Two trains of lengths 180 meters and 220 meters are running on parallel tracks in opposite directions at speeds of 42 km/h and 30 km/h respectively. In how many seconds will they completely cross each other from the moment they meet?",
+  "options": {
+   "A": "120 seconds",
+   "B": "20 seconds",
+   "C": "5.56 seconds",
+   "D": "11 seconds"
+  },
+  "correct_answer": "B",
+  "trap_type": "Subtracting speeds instead of adding for opposite directions, or omitting km/h to m/s conversion",
+  "pedagogical_explanation": "Step-by-step: Total distance to be covered = sum of lengths of both trains = 180 + 220 = 400 meters. Since the trains move in opposite directions, their relative speed is the sum of their speeds = 42 + 30 = 72 km/h. Convert 72 km/h into m/s: 72 * (5 / 18) = 20 m/s. Time taken to cross = 400 / 20 = 20 seconds. Shortcut: Time = (L1 + L2) / [(S1 + S2) * (5/18)] = 400 / [72 * (5/18)] = 20 seconds. Trap (A): Subtracting the speeds as if the trains were moving in the same direction (42 - 30 = 12 km/h = 10/3 m/s), which gives 400 / (10/3) = 120 seconds. Trap (C): Dividing 400 meters directly by 72 km/h without converting km/h to m/s: 400 / 72 = 5.56 seconds. Trap (D): Using only the longer train's length (220 m) as the distance: 220 / 20 = 11 seconds.",
+  "verify_code": "answer = (180 + 220) * 18 // ((42 + 30) * 5)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Boats and Streams Round Trip",
+  "question_text": "A motorboat can travel at 12 km/h in still water. If the speed of the stream is 3 km/h, a man rows to a place 45 km away and comes back to the starting point. What is the total time taken for the round trip?",
+  "options": {
+   "A": "7.5 hours",
+   "B": "3 hours",
+   "C": "8 hours",
+   "D": "5 hours"
+  },
+  "correct_answer": "C",
+  "trap_type": "Dividing total distance by still-water speed and ignoring the stream effect",
+  "pedagogical_explanation": "Step-by-step: Downstream speed = Boat speed + Stream speed = 12 + 3 = 15 km/h. Upstream speed = Boat speed - Stream speed = 12 - 3 = 9 km/h. Time taken downstream = 45 / 15 = 3 hours. Time taken upstream = 45 / 9 = 5 hours. Total time for the round trip = 3 + 5 = 8 hours. Shortcut: Total Time = (2 * D * B) / (B^2 - S^2) = (2 * 45 * 12) / (144 - 9) = 1080 / 135 = 8 hours. Trap (A): Assuming the upstream and downstream stream effects cancel out and dividing total distance (90 km) by still-water speed (12 km/h): 90 / 12 = 7.5 hours. Trap (B): Calculating only the downstream time (45 / 15 = 3 hours) and forgetting the return trip. Trap (D): Calculating only the upstream time (45 / 9 = 5 hours) and forgetting the onward trip.",
+  "verify_code": "answer = 45 // (12 + 3) + 45 // (12 - 3)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Average with Data Entry Correction",
+  "question_text": "The average marks of 25 students in an examination was calculated as 64. Later, it was discovered that the marks of two students were wrongly entered as 48 and 54 instead of their actual marks of 73 and 79. What is the correct average marks of the class?",
+  "options": {
+   "A": "62",
+   "B": "65",
+   "C": "89",
+   "D": "66"
+  },
+  "correct_answer": "D",
+  "trap_type": "Subtracting the net correction instead of adding it, or correcting only one student's score",
+  "pedagogical_explanation": "Step-by-step: Sum of actual marks of the two students = 73 + 79 = 152. Sum of wrongly entered marks = 48 + 54 = 102. Since actual marks are higher, the total marks of the class must increase by 152 - 102 = 50 marks. Distributed across 25 students, the average increases by 50 / 25 = 2 marks. Correct average = 64 + 2 = 66. Shortcut: Correct Avg = Old Avg + [(Actual Sum - Wrong Sum) / N] = 64 + [(152 - 102) / 25] = 66. Trap (A): Subtracting the correction instead of adding it (64 - 2 = 62). Trap (B): Accounting for only one of the two 25-mark errors (64 + 25/25 = 65). Trap (C): Dividing the net correction of 50 by the 2 wrongly entered students instead of all 25 students: 64 + 50/2 = 89.",
+  "verify_code": "answer = 64 + ((73 + 79) - (48 + 54)) // 25"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Ratio of Ages Past and Future",
+  "question_text": "Four years ago, the ratio of the ages of Meera and Neha was 3 : 4. Six years from now, the ratio of their ages will be 4 : 5. What is the present age of Meera?",
+  "options": {
+   "A": "34 years",
+   "B": "30 years",
+   "C": "22 years",
+   "D": "44 years"
+  },
+  "correct_answer": "A",
+  "trap_type": "Stopping at the age 4 years ago or using only the 6-year future shift as the total gap",
+  "pedagogical_explanation": "Step-by-step: The time gap between '4 years ago' and '6 years from now' is 4 + 6 = 10 years. In the two ratios 3 : 4 and 4 : 5, both terms increase by exactly 1 unit (4 - 3 = 1 and 5 - 4 = 1). Therefore, 1 ratio unit = 10 years. Four years ago, Meera's age was 3 units = 3 * 10 = 30 years. Hence, Meera's present age is 30 + 4 = 34 years. Shortcut: Present Age = 3 * (4 + 6) + 4 = 34 years. Trap (B): Stopping at Meera's age 4 years ago (3 * 10 = 30 years) and forgetting to add 4 years to reach the present. Trap (C): Using only 6 years instead of 10 years as the multiplier (3 * 6 + 4 = 22 years). Trap (D): Calculating Neha's present age (4 * 10 + 4 = 44 years) instead of Meera's present age.",
+  "verify_code": "answer = 3 * (4 + 6) + 4"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Algebraic Simplification of Cubes",
+  "question_text": "Find the value of the expression: [(2.7)^3 + (1.3)^3] / [(2.7)^2 - (2.7 * 1.3) + (1.3)^2]",
+  "options": {
+   "A": "1.4",
+   "B": "4",
+   "C": "16",
+   "D": "3.51"
+  },
+  "correct_answer": "B",
+  "trap_type": "Confusing the sum-of-cubes identity with the difference-of-cubes identity (a - b)",
+  "pedagogical_explanation": "Step-by-step: Let a = 2.7 and b = 1.3. The given expression is in the standard algebraic form (a^3 + b^3) / (a^2 - ab + b^2). Using the algebraic identity a^3 + b^3 = (a + b)(a^2 - ab + b^2), the (a^2 - ab + b^2) term cancels out from the numerator and denominator, leaving simply (a + b) = 2.7 + 1.3 = 4. Shortcut: Whenever an expression has the form (a^3 + b^3)/(a^2 - ab + b^2), the answer is directly a + b = 2.7 + 1.3 = 4. Trap (A): Seeing the minus sign in the denominator (a^2 - ab + b^2) and mistakenly computing a - b = 2.7 - 1.3 = 1.4. Trap (C): Squaring (a + b) to get (2.7 + 1.3)^2 = 16. Trap (D): Multiplying a and b (2.7 * 1.3 = 3.51) instead of adding them.",
+  "verify_code": "a, b = 27, 13\nanswer = (a ** 3 + b ** 3) // (a * a - a * b + b * b) / 10"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "2D Mensuration: Wire Bent from Circle to Rectangle",
+  "question_text": "A copper wire, when bent in the form of a circle, encloses an area of 616 sq. cm. If the same wire is re-bent to form a rectangle whose length and breadth are in the ratio 6 : 5, what is the area of the rectangle? (Take pi = 22/7)",
+  "options": {
+   "A": "484 sq. cm",
+   "B": "30 sq. cm",
+   "C": "480 sq. cm",
+   "D": "1,920 sq. cm"
+  },
+  "correct_answer": "C",
+  "trap_type": "Forgetting the factor of 2 in the rectangle's perimeter formula 2(L + B)",
+  "pedagogical_explanation": "Step-by-step: Area of circle = pi * r^2 = (22/7) * r^2 = 616 => r^2 = 616 * 7 / 22 = 28 * 7 = 196 => r = 14 cm. Total length of the wire = Circumference of circle = 2 * (22/7) * 14 = 88 cm. For the rectangle, let length L = 6x and breadth B = 5x. Perimeter = 2(6x + 5x) = 22x = 88 cm => x = 4 cm. Thus, L = 24 cm and B = 20 cm. Area of the rectangle = 24 * 20 = 480 sq. cm. Shortcut: For r = 14, C = 88; L + B = 44 in ratio 6:5 gives L = 24, B = 20; Area = 480 sq. cm. Trap (A): Assuming the wire is bent into a square of side 88 / 4 = 22 cm, which gives 22^2 = 484 sq. cm. Trap (B): Multiplying the ratio units 6 * 5 = 30 sq. cm without scaling by x^2 = 16. Trap (D): Equating L + B = 88 instead of 2(L + B) = 88, which gives x = 8, L = 48, B = 40, and Area = 48 * 40 = 1,920 sq. cm.",
+  "verify_code": "r2 = 616 * 7 // 22\nr = 14\nassert r * r == r2\nper = 2 * 22 * r // 7\nx = per // 22\nanswer = 6 * x * 5 * x"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "3D Mensuration: Melting Cylinder into Cones",
+  "question_text": "A solid metallic cylinder of base radius 6 cm and height 14 cm is melted and recast into identical solid cones, each of base radius 3 cm and height 7 cm. How many such cones are formed?",
+  "options": {
+   "A": "8",
+   "B": "12",
+   "C": "48",
+   "D": "24"
+  },
+  "correct_answer": "D",
+  "trap_type": "Omitting the 1/3 factor in the cone volume formula or failing to square the radius ratio",
+  "pedagogical_explanation": "Step-by-step: Volume is conserved during melting. Volume of the cylinder = pi * R^2 * H = pi * (6^2) * 14 = 504 * pi cu. cm. Volume of one cone = (1/3) * pi * r^2 * h = (1/3) * pi * (3^2) * 7 = 21 * pi cu. cm. Number of cones = (504 * pi) / (21 * pi) = 24. Shortcut: N = 3 * (R/r)^2 * (H/h) = 3 * (6/3)^2 * (14/7) = 3 * 4 * 2 = 24. Trap (A): Forgetting the (1/3) factor in the volume of a cone (treating the small shapes as cylinders), which gives (6/3)^2 * (14/7) = 4 * 2 = 8. Trap (B): Failing to square the radius ratio (using R/r = 2 instead of (R/r)^2 = 4), which gives 3 * 2 * 2 = 12. Trap (C): Cubing the radius ratio as for similar solids ((R/r)^3 = 8 instead of (R/r)^2 = 4), giving 3 * 8 * 2 = 48.",
+  "verify_code": "answer = (6 ** 2 * 14 * 3) // (3 ** 2 * 7)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Algebra: Reciprocal Sum of Squares",
+  "question_text": "If x - (1 / x) = 5, then what is the value of x^2 + (1 / x^2)?",
+  "options": {
+   "A": "27",
+   "B": "23",
+   "C": "25",
+   "D": "29"
+  },
+  "correct_answer": "A",
+  "trap_type": "Subtracting 2 instead of adding 2 when squaring x - 1/x",
+  "pedagogical_explanation": "Step-by-step: Square both sides of the given equation x - (1 / x) = 5: [x - (1 / x)]^2 = 5^2 => x^2 - 2 * x * (1 / x) + (1 / x^2) = 25 => x^2 - 2 + (1 / x^2) = 25. Moving -2 to the right-hand side gives x^2 + (1 / x^2) = 25 + 2 = 27. Shortcut: If x - 1/x = k, then x^2 + 1/x^2 = k^2 + 2 = 5^2 + 2 = 27. Trap (B): Confusing the formula with that of (x + 1/x = k) and subtracting 2 instead of adding 2: 5^2 - 2 = 23. Trap (C): Simply squaring 5 to get 25 and ignoring the middle term (-2 * x * 1/x = -2). Trap (D): Adding 4 instead of 2 (confusing with the identity (x + 1/x)^2 = (x - 1/x)^2 + 4), which gives 25 + 4 = 29.",
+  "verify_code": "answer = 5 ** 2 + 2"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Geometry: Incentre Angle (Reverse)",
+  "question_text": "In triangle ABC, the internal bisectors of angle B and angle C intersect each other at point I. If angle BIC = 124 degrees, what is the measure of angle A?",
+  "options": {
+   "A": "34 degrees",
+   "B": "68 degrees",
+   "C": "56 degrees",
+   "D": "62 degrees"
+  },
+  "correct_answer": "B",
+  "trap_type": "Stopping at A/2, using the cyclic-quadrilateral or circumcentre relation instead of the incentre formula",
+  "pedagogical_explanation": "Step-by-step: In triangle BIC, angle IBC + angle ICB = 180 - 124 = 56 degrees. Since BI and CI are bisectors, (angle B + angle C) / 2 = 56, so angle B + angle C = 112 degrees. Hence angle A = 180 - 112 = 68 degrees. Shortcut: For the incentre I, angle BIC = 90 + (angle A / 2), so 124 = 90 + A/2, A/2 = 34 and A = 68 degrees. Trap (A): Stopping at A/2 = 124 - 90 = 34 degrees and forgetting to double. Trap (C): Treating A and angle BIC as supplementary (as in a cyclic quadrilateral): 180 - 124 = 56 degrees. Trap (D): Confusing I with the circumcentre O and using angle BOC = 2A: 124 / 2 = 62 degrees.",
+  "verify_code": "answer = 2 * (124 - 90)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Geometry: Chord Length in a Circle",
+  "question_text": "In a circle of radius 13 cm, a chord AB is drawn at a perpendicular distance of 5 cm from the center O. What is the length of the chord AB?",
+  "options": {
+   "A": "12 cm",
+   "B": "8 cm",
+   "C": "24 cm",
+   "D": "26 cm"
+  },
+  "correct_answer": "C",
+  "trap_type": "Stopping at half the chord length (AM = 12 cm) without doubling it",
+  "pedagogical_explanation": "Step-by-step: Let OM be the perpendicular drawn from the center O to the chord AB. By circle properties, OM bisects the chord AB, so AM = MB. In the right-angled triangle OMA, hypotenuse OA = 13 cm (radius) and OM = 5 cm. By Pythagoras' theorem, AM = sqrt(13^2 - 5^2) = sqrt(169 - 25) = sqrt(144) = 12 cm. Therefore, full length of chord AB = 2 * AM = 2 * 12 = 24 cm. Shortcut: Recognize the (5, 12, 13) Pythagorean triplet to get half-chord = 12 cm, and double it to 24 cm. Trap (A): Stopping after finding half the chord length (AM = 12 cm) and forgetting to multiply by 2. Trap (B): Subtracting the distance directly from the radius (13 - 5 = 8 cm) instead of using Pythagoras' theorem. Trap (D): Doubling the radius (13 * 2 = 26 cm, the diameter) instead of doubling the half-chord.",
+  "verify_code": "answer = 2 * int(round((13 ** 2 - 5 ** 2) ** 0.5))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Alligation in Weighted Class Averages",
+  "question_text": "In a coaching batch of 60 students, the average score of boys in a mock test is 65 and the average score of girls is 80. If the overall average score of the entire batch is 71, how many boys are there in the batch?",
+  "options": {
+   "A": "24",
+   "B": "30",
+   "C": "40",
+   "D": "36"
+  },
+  "correct_answer": "D",
+  "trap_type": "Not cross-subtracting in alligation (swapping the ratio of boys and girls)",
+  "pedagogical_explanation": "Step-by-step: Apply the rule of alligation. Write Boys' average (65) on the left, Girls' average (80) on the right, and Overall average (71) in the center. Cross-subtracting gives: Boys' share weight = 80 - 71 = 9; Girls' share weight = 71 - 65 = 6. Thus, the ratio of Boys : Girls = 9 : 6 = 3 : 2. Out of 60 students, number of boys = (3 / 5) * 60 = 36. Shortcut: Boys : Girls = (80 - 71) : (71 - 65) = 9 : 6 = 3 : 2; Boys = 60 * 3 / 5 = 36. Trap (A): Forgetting to cross-subtract in alligation and taking Boys : Girls as (71 - 65) : (80 - 71) = 2 : 3, which gives (2 / 5) * 60 = 24 (the number of girls). Trap (B): Assuming an equal split of boys and girls (60 / 2 = 30). Trap (C): Taking the girls-to-boys ratio 6/9 = 2/3 as the boys' fraction of the whole batch: (2/3) * 60 = 40.",
+  "verify_code": "answer = 60 * (80 - 71) // ((80 - 71) + (71 - 65))"
+ }
+]

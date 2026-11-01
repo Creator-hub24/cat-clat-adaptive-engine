@@ -1,0 +1,325 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Percentage Change and Base Shift",
+  "question_text": "The price of a monthly metro pass is increased by 25%. By what percentage must a commuter reduce their travel expenses to keep the total monthly expenditure on the metro unchanged?",
+  "options": {
+   "A": "20%",
+   "B": "25%",
+   "C": "80%",
+   "D": "33.33%"
+  },
+  "correct_answer": "A",
+  "trap_type": "Base value confusion",
+  "pedagogical_explanation": "Let the old price be Rs. 100. After a 25% increase it becomes Rs. 125. To keep spending at Rs. 100, the commuter must cut Rs. 25 out of the new Rs. 125, so the reduction = 25/125 × 100 = 20%. Shortcut: for an R% increase, reduction % = R/(100 + R) × 100 = 25/125 × 100 = 20%. Trap (B): 25% assumes a 25% rise is undone by a 25% cut. Trap (C): 80% is the fraction of usage kept (100/125), not the reduction. Trap (D): 33.33% divides 25 by 75 (100 − 25) instead of by the new base 125.",
+  "verify_code": "answer = (25 / (100 + 25)) * 100"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Successive Percentage Change",
+  "question_text": "The population of a town increases by 10% in the first year and increases by 20% in the second year. What is the net percentage increase in the population over the two years?",
+  "options": {
+   "A": "30%",
+   "B": "32%",
+   "C": "28%",
+   "D": "15%"
+  },
+  "correct_answer": "B",
+  "trap_type": "Direct addition of percentages",
+  "pedagogical_explanation": "Let the population be 100. After year 1 (+10%) it is 110; after year 2 (+20% of 110) it is 132. Net increase = 132 − 100 = 32%. Shortcut: net % change = x + y + xy/100 = 10 + 20 + (10 × 20)/100 = 32%. Trap (A): 30% just adds 10% + 20% and ignores the increase on the increase. Trap (C): 28% subtracts the product term: 10 + 20 − (10 × 20)/100. Trap (D): 15% averages the two rates.",
+  "verify_code": "answer = 10 + 20 + (10 * 20) / 100"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Marked Price, Discount and Profit",
+  "question_text": "A shopkeeper marks an article at Rs. 800 and allows a discount of 15% on it. If he still makes a profit of 36%, what is the cost price of the article?",
+  "options": {
+   "A": "Rs. 680",
+   "B": "Rs. 512",
+   "C": "Rs. 500",
+   "D": "Rs. 435.20"
+  },
+  "correct_answer": "C",
+  "trap_type": "Stop at Selling Price or linear percentage subtraction",
+  "pedagogical_explanation": "SP after a 15% discount = 800 × 0.85 = Rs. 680. A 36% profit means 1.36 × CP = 680, so CP = 680 ÷ 1.36 = Rs. 500. Shortcut: CP/MP = (100 − discount%)/(100 + profit%) = 85/136 = 5/8, so CP = 800 × 5/8 = Rs. 500. Trap (A): Rs. 680 stops at the selling price. Trap (B): Rs. 512 takes 36% off the marked price (800 × 0.64) and ignores the discount. Trap (D): Rs. 435.20 takes 36% off the selling price (680 × 0.64), treating profit as a percentage of SP instead of CP.",
+  "verify_code": "answer = int((800 * (100 - 15)) / (100 + 36))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "CP to SP Quantity Equivalence",
+  "question_text": "If the cost price of 18 notebooks is equal to the selling price of 15 notebooks, what is the profit percentage?",
+  "options": {
+   "A": "16.67%",
+   "B": "15%",
+   "C": "25%",
+   "D": "20%"
+  },
+  "correct_answer": "D",
+  "trap_type": "Dividing by CP quantity instead of SP quantity",
+  "pedagogical_explanation": "Step-by-step: Given 18 * CP = 15 * SP, so SP / CP = 18 / 15 = 6 / 5. Profit = SP - CP = 6 - 5 = 1 unit. Profit % = (Profit / CP) * 100 = (1 / 5) * 100 = 20%. Shortcut: Profit % = [(Articles bought - Articles sold) / Articles sold] * 100 = [(18 - 15) / 15] * 100 = 20%. Trap (A): Dividing the difference by 18 instead of 15: (3 / 18) * 100 = 16.67%. Trap (B): Directly taking the number 15 from the problem statement as 15%. Trap (C): Miscalculating the ratio 3/15 as 1/4 = 25%.",
+  "verify_code": "answer = ((18 - 15) / 15) * 100"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Dishonest Dealer",
+  "question_text": "A grocer professes to sell rice at cost price, but uses a false weight of 800 grams instead of 1 kilogram. Find his actual profit percentage.",
+  "options": {
+   "A": "25%",
+   "B": "20%",
+   "C": "0%",
+   "D": "80%"
+  },
+  "correct_answer": "A",
+  "trap_type": "Dividing error by true weight instead of false weight",
+  "pedagogical_explanation": "Let 1 gram cost Re. 1. The grocer charges for 1,000 g (SP = Rs. 1,000) but gives only 800 g (CP = Rs. 800). Profit = Rs. 200, so profit % = 200/800 × 100 = 25%. Shortcut: profit % = error/(true weight − error) × 100 = 200/800 × 100 = 25%. Trap (B): 20% divides the 200 g error by the true weight 1,000 g. Trap (C): 0% believes the claim that he sells at cost price and ignores the false weight. Trap (D): 80% reports 800/1000 × 100, the share of goods actually given.",
+  "verify_code": "answer = ((1000 - 800) / 800) * 100"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Combining Ratios",
+  "question_text": "A sum of Rs. 2,100 is divided among A, B, and C such that A : B = 2 : 3 and B : C = 4 : 5. What is the share of B?",
+  "options": {
+   "A": "Rs. 480",
+   "B": "Rs. 630",
+   "C": "Rs. 900",
+   "D": "Rs. 720"
+  },
+  "correct_answer": "D",
+  "trap_type": "Adding unaligned ratio terms directly",
+  "pedagogical_explanation": "Make B equal in both ratios (LCM of 3 and 4 is 12): A : B = 8 : 12 and B : C = 12 : 15, so A : B : C = 8 : 12 : 15, a total of 35 parts. One part = 2100 ÷ 35 = Rs. 60, so B's share = 12 × 60 = Rs. 720. Trap (A): Rs. 480 is A's share (8 × 60), not B's. Trap (B): Rs. 630 joins the ratios without making B equal, as A : B : C = 2 : 3 : 5, giving 2100 × 3/10. Trap (C): Rs. 900 is C's share (15 × 60).",
+  "verify_code": "answer = 2100 * 12 // (8 + 12 + 15)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Ratio Addition and Proportion",
+  "question_text": "Two numbers are in the ratio 3 : 5. If 10 is added to each number, the new ratio becomes 5 : 7. What is the smaller of the two original numbers?",
+  "options": {
+   "A": "25",
+   "B": "15",
+   "C": "10",
+   "D": "30"
+  },
+  "correct_answer": "B",
+  "trap_type": "Finding the larger number or the multiplier x",
+  "pedagogical_explanation": "Step-by-step: Let the numbers be 3x and 5x. According to the question, (3x + 10) / (5x + 10) = 5 / 7. Cross-multiplying gives 21x + 70 = 25x + 50 => 4x = 20 => x = 5. The smaller original number is 3x = 3 * 5 = 15. Shortcut: Both ratio terms increase by the same gap: (5 - 3) = 2 units and (7 - 5) = 2 units. Since 2 units = 10, 1 unit = 5. Smaller number = 3 * 5 = 15. Trap (A): Calculating the larger original number (5 * 5 = 25) instead of the smaller one. Trap (C): Confusing the gap of 2 units with 10 and stopping at 10. Trap (D): Multiplying 3 by the added value 10 directly (3 * 10 = 30).",
+  "verify_code": "answer = 3 * (10 // (5 - 3))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Coin Ratio Value vs Count",
+  "question_text": "A bag contains Re. 1, 50 paise, and 25 paise coins in the ratio 2 : 3 : 4. If the total value of the coins in the bag is Rs. 180, find the number of 50 paise coins.",
+  "options": {
+   "A": "60",
+   "B": "180",
+   "C": "120",
+   "D": "80"
+  },
+  "correct_answer": "C",
+  "trap_type": "Treating count ratio as value ratio or stopping at value of 50p coins",
+  "pedagogical_explanation": "Let the numbers of Re. 1, 50 paise and 25 paise coins be 2x, 3x and 4x. Total value = 2x × 1 + 3x × 0.50 + 4x × 0.25 = 2x + 1.5x + x = 4.5x rupees. 4.5x = 180 gives x = 40, so the number of 50 paise coins = 3x = 120. Shortcut: value ratio = (2 × 1) : (3 × 0.5) : (4 × 0.25) = 2 : 1.5 : 1, a total of 4.5 units = Rs. 180, so 1 unit = Rs. 40. The 50 paise coins are worth 1.5 × 40 = Rs. 60, which is 60 × 2 = 120 coins. Trap (A): 60 is the rupee value of the 50 paise coins, not their number. Trap (B): 180 treats 2 : 3 : 4 as a value ratio, takes 3/9 × 180 = Rs. 60 as the 50 paise share, then multiplies by 3 instead of 2. Trap (D): 80 is the number of Re. 1 coins (2 × 40).",
+  "verify_code": "answer = int(3 * (180 / (2 * 1 + 3 * 0.5 + 4 * 0.25)))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Average Replacement",
+  "question_text": "The average weight of 10 oarsmen in a boat is increased by 1.5 kg when one of the crew, who weighs 58 kg, is replaced by a new man. What is the weight of the new man?",
+  "options": {
+   "A": "59.5 kg",
+   "B": "43 kg",
+   "C": "73 kg",
+   "D": "68 kg"
+  },
+  "correct_answer": "C",
+  "trap_type": "Subtracting instead of adding total weight change",
+  "pedagogical_explanation": "Step-by-step: Total weight increase for 10 oarsmen = 10 * 1.5 kg = 15 kg. Since the average increased, the new man is heavier than the outgoing man by 15 kg. Weight of the new man = 58 + 15 = 73 kg. Shortcut: New Value = Old Value + (N * Change in Average) = 58 + (10 * 1.5) = 73 kg. Trap (A): Adding the average increase (1.5 kg) directly to 58 kg without multiplying by the number of people (58 + 1.5 = 59.5). Trap (B): Subtracting the total weight increase instead of adding (58 - 15 = 43). Trap (D): Adding 10 (the number of men) instead of 15 to 58 (58 + 10 = 68).",
+  "verify_code": "answer = int(58 + 10 * 1.5)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Average Inclusion",
+  "question_text": "The average age of 24 students in a class is 14 years. When the class teacher's age is included, the average increases by 1 year. What is the age of the class teacher?",
+  "options": {
+   "A": "38 years",
+   "B": "39 years",
+   "C": "15 years",
+   "D": "40 years"
+  },
+  "correct_answer": "B",
+  "trap_type": "Multiplying average increase by old group size instead of new group size",
+  "pedagogical_explanation": "Step-by-step: Total age of 24 students = 24 * 14 = 336 years. With the teacher included, total people = 25 and new average = 14 + 1 = 15 years. New total age = 25 * 15 = 375 years. Teacher's age = 375 - 336 = 39 years. Shortcut: New member's age = Old Average + (New Total Members * Increase in Average) = 14 + (25 * 1) = 39 years. Trap (A): Multiplying the increase of 1 year by 24 instead of 25: 14 + (24 * 1) = 38 years. Trap (C): Confusing the new average (15 years) with the teacher's age. Trap (D): Adding 25 to the new average 15 (15 + 25 = 40 years).",
+  "verify_code": "answer = (25 * 15) - (24 * 14)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Simple Interest Rate and Principal",
+  "question_text": "A sum of money at simple interest amounts to Rs. 1,380 in 2 years and Rs. 1,500 in 5 years. What is the principal sum?",
+  "options": {
+   "A": "Rs. 1,340",
+   "B": "Rs. 1,260",
+   "C": "Rs. 1,140",
+   "D": "Rs. 1,300"
+  },
+  "correct_answer": "D",
+  "trap_type": "Subtracting 1 year or 3 years of interest instead of 2 years",
+  "pedagogical_explanation": "Interest for (5 − 2) = 3 years = 1,500 − 1,380 = Rs. 120, so one year's interest = Rs. 40. Interest for 2 years = Rs. 80. Principal = 1,380 − 80 = Rs. 1,300. Shortcut: P = A2 − 2 × (A5 − A2)/3 = 1380 − 2 × 40 = 1300. Trap (A): Rs. 1,340 subtracts only one year's interest (1380 − 40). Trap (B): Rs. 1,260 subtracts three years' interest (1380 − 120). Trap (C): Rs. 1,140 treats Rs. 120 as one year's interest (1380 − 2 × 120).",
+  "verify_code": "answer = 1380 - 2 * ((1500 - 1380) // (5 - 2))"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "CI and SI 2-Year Difference",
+  "question_text": "The difference between the compound interest and simple interest on a sum of Rs. 8,000 for 2 years at 5% per annum (compounded annually) is:",
+  "options": {
+   "A": "Rs. 20",
+   "B": "Rs. 40",
+   "C": "Rs. 400",
+   "D": "Rs. 80"
+  },
+  "correct_answer": "A",
+  "trap_type": "Forgetting to square the rate or dividing by 100 instead of 10000",
+  "pedagogical_explanation": "SI for 2 years = 8000 × 5 × 2/100 = Rs. 800. CI = 8000 × [(1 + 5/100)^2 − 1] = 8000 × 41/400 = Rs. 820. Difference = 820 − 800 = Rs. 20. Shortcut: for 2 years, CI − SI = P × (R/100)^2 = 8000 × (5/100)^2 = 8000/400 = Rs. 20. Trap (B): Rs. 40 doubles the correct difference. Trap (C): Rs. 400 is one year's simple interest (8000 × 5/100). Trap (D): Rs. 80 uses 2R = 10% in the formula: 8000 × (10/100)^2.",
+  "verify_code": "answer = 8000 * 5 * 5 // (100 * 100)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Time and Work Combined Efficiency",
+  "question_text": "A can complete a piece of work in 12 days and B can complete the same work in 15 days. If they work together for 4 days, what fraction of the work is left unfinished?",
+  "options": {
+   "A": "3/5",
+   "B": "1/5",
+   "C": "2/5",
+   "D": "4/15"
+  },
+  "correct_answer": "C",
+  "trap_type": "Reporting work completed instead of work remaining",
+  "pedagogical_explanation": "Let the total work = LCM(12, 15) = 60 units. A does 60/12 = 5 units a day and B does 60/15 = 4 units a day, so together 9 units a day. In 4 days they do 36 units, leaving 60 − 36 = 24 units, which is 24/60 = 2/5 of the work. Shortcut: one day's work = 1/12 + 1/15 = 3/20, so 4 days' work = 3/5 and the work left = 1 − 3/5 = 2/5. Trap (A): 3/5 is the work completed, not the work left. Trap (B): 1/5 subtracts 4/5 instead of 3/5 from 1. Trap (D): 4/15 is only B's 4 days of work (4 × 1/15).",
+  "verify_code": "answer = 1 - 4 * (1/12 + 1/15)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Pipes and Cisterns with Outlet",
+  "question_text": "Pipe A can fill an empty tank in 10 hours, while Pipe B can empty the full tank in 15 hours. If both pipes are opened simultaneously when the tank is empty, how many hours will it take to fill the tank?",
+  "options": {
+   "A": "6 hours",
+   "B": "25 hours",
+   "C": "12.5 hours",
+   "D": "30 hours"
+  },
+  "correct_answer": "D",
+  "trap_type": "Adding efficiencies instead of subtracting the outlet pipe",
+  "pedagogical_explanation": "Step-by-step: Let tank capacity = LCM(10, 15) = 30 units. Pipe A fills 30 / 10 = +3 units/hour. Pipe B empties 30 / 15 = -2 units/hour. Net filling rate when both are open = 3 - 2 = 1 unit/hour. Time to fill 30 units = 30 / 1 = 30 hours. Shortcut: Net Time = (x * y) / (y - x) = (10 * 15) / (15 - 10) = 150 / 5 = 30 hours. Trap (A): Treating Pipe B as an inlet pipe and adding efficiencies: 30 / (3 + 2) = 6 hours. Trap (B): Simply adding the hours 10 + 15 = 25 hours. Trap (C): Taking the average of 10 and 15 hours: (10 + 15) / 2 = 12.5 hours.",
+  "verify_code": "answer = (10 * 15) // (15 - 10)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Work and Efficiency Ratio",
+  "question_text": "A is twice as efficient as B. If both working together can finish a job in 14 days, in how many days can A alone finish the job?",
+  "options": {
+   "A": "28 days",
+   "B": "21 days",
+   "C": "42 days",
+   "D": "7 days"
+  },
+  "correct_answer": "B",
+  "trap_type": "Doubling or halving combined days directly",
+  "pedagogical_explanation": "Step-by-step: Ratio of efficiency of A : B = 2 : 1. Combined efficiency = 2 + 1 = 3 units/day. Since they finish the job in 14 days together, Total Work = 14 * 3 = 42 units. Time taken by A alone = Total Work / A's efficiency = 42 / 2 = 21 days. Shortcut: A does 2/3 of the work per day, so A takes 14 * (3/2) = 21 days. Trap (A): Multiplying 14 by 2 = 28 days, forgetting that combined efficiency is 3 units, not 2. Trap (C): Finding the time taken by B alone (42 / 1 = 42 days) instead of A. Trap (D): Dividing 14 by 2 = 7 days (assuming A alone is faster than A and B working together).",
+  "verify_code": "answer = (14 * (2 + 1)) // 2"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Average Speed for Equal Distances",
+  "question_text": "A car travels from City P to City Q at a speed of 40 km/h and returns from City Q to City P along the same route at a speed of 60 km/h. What is the average speed of the car for the entire round trip?",
+  "options": {
+   "A": "50 km/h",
+   "B": "48 km/h",
+   "C": "24 km/h",
+   "D": "100 km/h"
+  },
+  "correct_answer": "B",
+  "trap_type": "Taking arithmetic mean instead of harmonic mean",
+  "pedagogical_explanation": "Take the distance P to Q as LCM(40, 60) = 120 km. Going takes 120/40 = 3 hours and returning takes 120/60 = 2 hours. Total distance = 240 km and total time = 5 hours, so average speed = 240/5 = 48 km/h. Shortcut: for equal distances, average speed = 2xy/(x + y) = (2 × 40 × 60)/(40 + 60) = 48 km/h. Trap (A): 50 km/h is the simple average (40 + 60)/2, which holds only for equal times. Trap (C): 24 km/h uses xy/(x + y) and forgets the factor 2. Trap (D): 100 km/h adds the two speeds.",
+  "verify_code": "answer = (2 * 40 * 60) // (40 + 60)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Train Crossing a Platform",
+  "question_text": "A train 150 meters long is running at a speed of 54 km/h. How much time will it take to completely cross a platform that is 210 meters long?",
+  "options": {
+   "A": "24 seconds",
+   "B": "10 seconds",
+   "C": "14 seconds",
+   "D": "6.67 seconds"
+  },
+  "correct_answer": "A",
+  "trap_type": "Omitting train length or platform length, or forgetting km/h to m/s conversion",
+  "pedagogical_explanation": "Step-by-step: First convert speed from km/h to m/s by multiplying by 5/18: Speed = 54 * (5 / 18) = 15 m/s. To cross a platform completely, the train must cover its own length plus the platform's length: Total Distance = 150 + 210 = 360 meters. Time = Distance / Speed = 360 / 15 = 24 seconds. Shortcut: Time = (L_train + L_platform) / [Speed * (5/18)] = 360 / 15 = 24 s. Trap (B): Using only the train's length: 150 / 15 = 10 seconds. Trap (C): Using only the platform's length: 210 / 15 = 14 seconds. Trap (D): Dividing total distance 360 directly by 54 km/h without converting units: 360 / 54 = 6.67 seconds.",
+  "verify_code": "answer = (150 + 210) // (54 * 5 // 18)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "LCM and HCF Product Property",
+  "question_text": "The HCF and LCM of two numbers are 12 and 144 respectively. If one of the numbers is 36, what is the other number?",
+  "options": {
+   "A": "12",
+   "B": "36",
+   "C": "4",
+   "D": "48"
+  },
+  "correct_answer": "D",
+  "trap_type": "Dividing LCM by HCF instead of applying Product = HCF * LCM",
+  "pedagogical_explanation": "For two numbers, product = HCF × LCM. So 36 × x = 12 × 144 and x = 1728/36 = 48. Check: HCF(36, 48) = 12 and LCM(36, 48) = 144. Shortcut: second number = HCF × LCM ÷ first number = 12 × 144 ÷ 36 = 48. Trap (A): 12 divides the LCM by the HCF (144/12). Trap (B): 36 assumes both numbers are equal. Trap (C): 4 divides the LCM by the given number (144/36) and forgets the HCF.",
+  "verify_code": "answer = (12 * 144) // 36"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Divisibility Rule of 9",
+  "question_text": "If the 6-digit number 47*382 is completely divisible by 9, what is the digit that must replace the asterisk (*)?",
+  "options": {
+   "A": "3",
+   "B": "2",
+   "C": "6",
+   "D": "0"
+  },
+  "correct_answer": "A",
+  "trap_type": "Applying divisibility of 3 or misadding the digit sum",
+  "pedagogical_explanation": "Step-by-step: A number is divisible by 9 if the sum of its digits is a multiple of 9. Sum of known digits = 4 + 7 + 3 + 8 + 2 = 24. Let the missing digit be x. Then 24 + x must be a multiple of 9. The next multiple of 9 after 24 is 27. Therefore, 24 + x = 27 => x = 3. Shortcut: Cast out nines: (7+2=9) and (4+3+8 = 15 -> 1+5 = 6). To reach 9, we need 9 - 6 = 3. Trap (B): Misadding the digits as 25 and taking 27 - 25 = 2. Trap (C): Finding the remainder when 24 is divided by 9 (which is 6) instead of subtracting 6 from 9. Trap (D): Confusing divisibility by 9 with divisibility by 3 (since 24 is already a multiple of 3, a student might pick 0).",
+  "verify_code": "answer = (9 - ((4 + 7 + 3 + 8 + 2) % 9)) % 9"
+ }
+]

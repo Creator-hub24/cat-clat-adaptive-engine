@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "description": "Import-time decisions for multi-model Sarkari curation."
+  },
+  "text_fixes": [],
+  "topic_retags": [],
+  "dropped": [
+    {
+      "source": "batch-1 #6",
+      "reason": "cross-dedupe sim=0.853 vs bank:aptisetu_cuet_bank.json"
+    },
+    {
+      "source": "batch-1 #11",
+      "reason": "cross-dedupe sim=0.807 vs bank:aptisetu_cuet_bank.json"
+    },
+    {
+      "source": "batch-2 #6",
+      "reason": "cross-dedupe sim=0.802 vs kept:batch-2 #4"
+    },
+    {
+      "source": "batch-2 #15",
+      "reason": "cross-dedupe sim=0.805 vs bank:aptisetu_cuet_bank.json"
+    },
+    {
+      "source": "batch-4b #10",
+      "reason": "cross-dedupe sim=0.813 vs bank:claude_bank_sarkari.json"
+    },
+    {
+      "source": "batch-5 #11",
+      "reason": "cross-dedupe sim=0.913 vs kept:batch-5 #10"
+    },
+    {
+      "source": "batch-5 #16",
+      "reason": "cross-dedupe sim=0.819 vs kept:batch-2 #2"
+    },
+    {
+      "source": "compare-meta #9",
+      "reason": "cross-dedupe sim=0.803 vs bank:aptisetu_cuet_bank.json"
+    },
+    {
+      "source": "compare-sonnet55 #1",
+      "reason": "cross-dedupe sim=0.87 vs kept:compare-claude5 #1"
+    },
+    {
+      "source": "compare-supergrok #1",
+      "reason": "cross-dedupe sim=0.814 vs bank:aptisetu_cuet_bank.json"
+    },
+    {
+      "source": "compare-chatgpt #9",
+      "reason": "cross-dedupe sim=0.826 vs bank:aptisetu_cuet_bank.json"
+    }
+  ],
+  "cross_dedupe_drops": [
+    {
+      "source": "batch-1 #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 6,
+      "sim": 0.853,
+      "against": "bank:aptisetu_cuet_bank.json",
+      "against_text": "AS-CU-QR-G-Q101",
+      "question_text": "Two numbers are in the ratio 3 : 5. If 10 is added to each number, the new ratio becomes 5 : 7. What is the smaller of t"
+    },
+    {
+      "source": "batch-1 #11",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 11,
+      "sim": 0.807,
+      "against": "bank:aptisetu_cuet_bank.json",
+      "against_text": "AS-CU-QR-UG11",
+      "question_text": "The difference between the compound interest and simple interest on a sum of Rs. 8,000 for 2 years at 5% per annum (comp"
+    },
+    {
+      "source": "batch-2 #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 6,
+      "sim": 0.802,
+      "against": "kept:batch-2 #4",
+      "against_text": "In a certain code language, 'MIND' is written as 'NKQH'. How",
+      "question_text": "In a certain code language, 'STAR' is written as 'TSRA'. How will 'GOLD' be written in that language?"
+    },
+    {
+      "source": "batch-2 #15",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 15,
+      "sim": 0.805,
+      "against": "bank:aptisetu_cuet_bank.json",
+      "against_text": "AS-CU-GMA-G-R120",
+      "question_text": "In a row of students, Aman is 12th from the left end and 18th from the right end. How many students are there in the row"
+    },
+    {
+      "source": "batch-4b #10",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 10,
+      "sim": 0.813,
+      "against": "bank:claude_bank_sarkari.json",
+      "against_text": "CL-SK-SQA-F1-027",
+      "question_text": "A solid metallic cylinder of base radius 6 cm and height 14 cm is melted and recast into identical solid cones, each of "
+    },
+    {
+      "source": "batch-5 #11",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 11,
+      "sim": 0.913,
+      "against": "kept:batch-5 #10",
+      "against_text": "Statements: P > Q >= R = S; S <= T < U. Conclusions: 1. P > ",
+      "question_text": "Statements: K >= L = M; M >= N. Conclusions: 1. K > N  2. K = N"
+    },
+    {
+      "source": "batch-5 #16",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 16,
+      "sim": 0.819,
+      "against": "kept:batch-2 #2",
+      "against_text": "Select the letter-cluster that can replace the question mark",
+      "question_text": "Select the letter-cluster that can replace the question mark (?) in the following series: CXZ, FUW, IRT, LOQ, ?"
+    },
+    {
+      "source": "compare-meta #9",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 9,
+      "sim": 0.803,
+      "against": "bank:aptisetu_cuet_bank.json",
+      "against_text": "AS-CU-QR-G-Q148",
+      "question_text": "If a + b = 8 and ab = 15, what is the value of a^2 + b^2?"
+    },
+    {
+      "source": "compare-sonnet55 #1",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 1,
+      "sim": 0.87,
+      "against": "kept:compare-claude5 #1",
+      "against_text": "A trader marks his goods 40% above the cost price and then a",
+      "question_text": "A trader marks an article 40% above its cost price and then allows a discount of 15% on the marked price. What is his pr"
+    },
+    {
+      "source": "compare-supergrok #1",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 1,
+      "sim": 0.814,
+      "against": "bank:aptisetu_cuet_bank.json",
+      "against_text": "AS-CU-QR-G-Q69",
+      "question_text": "A shopkeeper marks an article 50% above the cost price and then offers a discount of 20% on the marked price. What is th"
+    },
+    {
+      "source": "compare-chatgpt #9",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 9,
+      "sim": 0.826,
+      "against": "bank:aptisetu_cuet_bank.json",
+      "against_text": "AS-CU-QR-UG23",
+      "question_text": "If x + 1/x = 5, where x is nonzero, what is the value of x² + 1/x²?"
+    }
+  ],
+  "exclusions": [],
+  "faculty_flags": [
+    {
+      "source": "batch-1 #3",
+      "flag": "Near-dup concept vs bank 'CP of 20 = SP of 16' (different numbers); kept."
+    },
+    {
+      "source": "batch-1 #10",
+      "flag": "Numbers rewritten during verification (SI amounts); sight-check recommended."
+    },
+    {
+      "source": "batch-2 #9",
+      "flag": "Trap B (25 only multiple of 5) is arguably a valid alternative odd-one-out rule; square-vs-cube is intended."
+    },
+    {
+      "source": "batch-3 #19",
+      "flag": "Option A ('he is reading a novel now') acceptable in modern usage; B correct by exam backshift convention."
+    },
+    {
+      "source": "batch-3 #16",
+      "flag": "'prefer X to Y' is the exam answer; 'prefer X rather than Y' also standard but not among options."
+    },
+    {
+      "source": "batch-4a #0",
+      "flag": "Distractor D (Rs. 32,727) is a rounded value; acceptable."
+    },
+    {
+      "source": "batch-4a #4",
+      "flag": "Total profit rewritten 69,000→63,000 during verification; sight-check recommended."
+    },
+    {
+      "source": "batch-4b #13",
+      "flag": "Relabelled Easy (was Moderate)."
+    },
+    {
+      "source": "batch-4b #17",
+      "flag": "Rewritten (reverse incentre) during verification; needs sight-check."
+    },
+    {
+      "source": "batch-5 #1",
+      "flag": "Uses right=counter-clockwise for people facing centre (SSC convention)."
+    },
+    {
+      "source": "batch-5 #5",
+      "flag": "Closer to Easy (single in-law link); kept Moderate."
+    },
+    {
+      "source": "batch-5 #11",
+      "flag": "Tests Either-or rule for K≥N (SSC/IBPS); some faculty prefer not to test it."
+    },
+    {
+      "source": "batch-5 #19",
+      "flag": "Cause-effect conclusion depends on judgement; key D defensible."
+    },
+    {
+      "source": "batch-6 #0",
+      "flag": "Same rule as curation 'along with… are'; different sentence."
+    },
+    {
+      "source": "batch-6 #3",
+      "flag": "Scarcely…when; same rule as sample Hardly…when item, different format."
+    },
+    {
+      "source": "batch-6 #5",
+      "flag": "'as though he were' follows exam convention; 'was' accepted informally."
+    },
+    {
+      "source": "batch-6 #6",
+      "flag": "'lest … should' exam convention; bare subjunctive also correct but not an option."
+    }
+  ],
+  "option_shuffle": {
+    "_doc": "Per-item seeded option shuffle so answer keys are not patterned. Remaps Trap (X), Option X, and verify_code OPTS/answer letters.",
+    "seed": "multi-model-sarkari-2026-11-01"
+  }
+}

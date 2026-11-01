@@ -1,0 +1,155 @@
+[
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Successive percentage change",
+    "question_text": "The price of a gadget is first raised by 20%, then reduced by 25%, and finally raised by 10%. What is the net change in its price compared with the original price?",
+    "options": {
+      "A": "5% increase",
+      "B": "10% decrease",
+      "C": "1% decrease",
+      "D": "65% increase"
+    },
+    "correct_answer": "C",
+    "trap_type": "Adding successive percentages",
+    "pedagogical_explanation": "Step 1: Take the original price as 100. After +20% it is 120. Step 2: After -25% it is 120 x 0.75 = 90. Step 3: After +10% it is 90 x 1.10 = 99. Net change = 99 - 100 = 1% decrease. Shortcut: multiply the factors 1.20 x 0.75 x 1.10 = 0.99, so the price falls by 1%. Trap (A): Adding the percentages directly gives 20 - 25 + 10 = +5%, which is a 5% increase. Trap (B): Stopping after two steps gives 1.20 x 0.75 = 0.90, which is a 10% decrease, because the last 10% rise was forgotten. Trap (D): Treating the 25% decrease as an increase gives 1.20 x 1.25 x 1.10 = 1.65, which is a 65% increase.",
+    "verify_code": "answer = 100 - 120*75*110/10000"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Profit percent with markup and discount",
+    "question_text": "A trader marks an article 40% above its cost price and then allows a discount of 15% on the marked price. What is his profit percent?",
+    "options": {
+      "A": "19%",
+      "B": "25%",
+      "C": "34%",
+      "D": "40%"
+    },
+    "correct_answer": "A",
+    "trap_type": "Subtracting discount percent from markup percent",
+    "pedagogical_explanation": "Step 1: Let the cost price be 100. Marked price = 140. Step 2: Selling price = 140 x 0.85 = 119. Step 3: Profit = 119 - 100 = 19, so profit is 19%. Shortcut: net factor = 1.40 x 0.85 = 1.19, so the profit is 19%. Trap (B): Subtracting the percentages gives 40 - 15 = 25%, but the discount is on the marked price, not on the cost price. Trap (C): Applying the discount to the markup percent gives 40 x 0.85 = 34%, which wrongly treats the discount as a cut in profit percent. Trap (D): Ignoring the discount entirely gives the marked-up profit of 40%.",
+    "verify_code": "answer = 140*85/100 - 100"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Alligation of two mixtures",
+    "question_text": "Vessel A contains a milk and water mixture in the ratio 3 : 2 and vessel B contains it in the ratio 1 : 4. In what ratio (A : B) should the two mixtures be mixed to get a mixture with milk and water in the ratio 1 : 1?",
+    "options": {
+      "A": "1 : 3",
+      "B": "3 : 2",
+      "C": "1 : 1",
+      "D": "3 : 1"
+    },
+    "correct_answer": "D",
+    "trap_type": "Alligating on the wrong quantity (inverted or ratio-as-concentration)",
+    "pedagogical_explanation": "Step 1: Convert each mixture to the fraction of milk. A has 3/5 milk, B has 1/5 milk, and the target has 1/2 milk. Step 2: Use alligation. Quantity of A : Quantity of B = (target - B) : (A - target) = (1/2 - 1/5) : (3/5 - 1/2) = 3/10 : 1/10 = 3 : 1. Shortcut: milk fractions in tenths are A = 6, B = 2, mean = 5, so A : B = (5 - 2) : (6 - 5) = 3 : 1. Trap (A): Writing the differences the other way round gives 1 : 3, which is the inverted ratio. Trap (B): Alligating the milk-to-water ratios 3/2, 1/4 and 1 as if they were concentrations gives (1 - 1/4) : (3/2 - 1) = 3/4 : 1/2 = 3 : 2. Trap (C): Assuming equal quantities because the target ratio is 1 : 1 gives 1 : 1, but equal mixing gives only 2/5 milk, not 1/2.",
+    "verify_code": "milk_A = 3/5; milk_B = 1/5; target = 1/2\nratio_A_to_B = (target - milk_B) / (milk_A - target)\nOPTS = {'A': 1/3, 'B': 3/2, 'C': 1.0, 'D': 3.0}\nanswer = None\nfor k,v in OPTS.items():\n    if abs(ratio_A_to_B - v) < 1e-9:\n        answer = k\n        break"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Partnership with different time periods",
+    "question_text": "A invests Rs 36,000 for the full year. B invests Rs 48,000 and joins 3 months later. C invests Rs 24,000 and joins 6 months after the start. If the yearly profit is Rs 1,26,000, what is B's share?",
+    "options": {
+      "A": "Rs 56,000",
+      "B": "Rs 54,000",
+      "C": "Rs 25,200",
+      "D": "Rs 42,000"
+    },
+    "correct_answer": "B",
+    "trap_type": "Ignoring investment time or using joining time as duration",
+    "pedagogical_explanation": "Step 1: Find capital x months. A = 36,000 x 12 = 4,32,000. B stays 12 - 3 = 9 months, so B = 48,000 x 9 = 4,32,000. C stays 12 - 6 = 6 months, so C = 24,000 x 6 = 1,44,000. Step 2: Ratio = 432 : 432 : 144 = 3 : 3 : 1. Step 3: B's share = 3/7 x 1,26,000 = Rs 54,000. Shortcut: reduce the ratio to 3 : 3 : 1 and divide 1,26,000 by 7 to get 18,000 per part. Trap (A): Ignoring time and using only capital gives 36 : 48 : 24 = 3 : 4 : 2, so B gets 4/9 x 1,26,000 = Rs 56,000. Trap (C): Using B's joining delay (3 months) as his duration gives 432 : 144 : 144 = 3 : 1 : 1, so B gets 1/5 x 1,26,000 = Rs 25,200. Trap (D): Splitting equally among three partners gives 1,26,000 / 3 = Rs 42,000.",
+    "verify_code": "answer = 432000*126000/1008000"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Compound interest compounded half-yearly",
+    "question_text": "What is the compound interest on Rs 10,000 for 1.5 years at 20% per annum, compounded half-yearly?",
+    "options": {
+      "A": "Rs 3,000",
+      "B": "Rs 13,310",
+      "C": "Rs 7,280",
+      "D": "Rs 3,310"
+    },
+    "correct_answer": "D",
+    "trap_type": "Confusing simple interest or amount with compound interest",
+    "pedagogical_explanation": "Step 1: Half-yearly compounding means the rate per period is 20/2 = 10% and the number of periods is 1.5 x 2 = 3. Step 2: Amount = 10,000 x 1.1 x 1.1 x 1.1 = 13,310. Step 3: Compound interest = 13,310 - 10,000 = Rs 3,310. Shortcut: three successive 10% rises give 10% + 10% + 10% + 1% + 1% + 1% + 0.1% = 33.1%, which is Rs 3,310 on 10,000. Trap (A): Using simple interest gives 10,000 x 20 x 1.5 / 100 = Rs 3,000. Trap (B): Giving the amount instead of the interest gives Rs 13,310. Trap (C): Not halving the rate but still using 3 periods gives 10,000 x (1.2 x 1.2 x 1.2 - 1) = 10,000 x 0.728 = Rs 7,280.",
+    "verify_code": "answer = 10000*1331/1000 - 10000"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Pipes and cistern with a leak",
+    "question_text": "Pipes A and B can fill an empty tank in 12 hours and 18 hours respectively, while a leak C can empty a full tank in 36 hours. If all three work together, in how many hours will the tank become 2/3 full?",
+    "options": {
+      "A": "9 hours",
+      "B": "4 hours",
+      "C": "6 hours",
+      "D": "4.8 hours"
+    },
+    "correct_answer": "C",
+    "trap_type": "Treating the leak as an inlet, ignoring it, or ignoring the fraction",
+    "pedagogical_explanation": "Step 1: Take the tank as 36 units. A fills 3 units per hour, B fills 2 units per hour, and C empties 1 unit per hour. Net rate = 3 + 2 - 1 = 4 units per hour. Step 2: Full tank takes 36/4 = 9 hours. Step 3: For 2/3 of the tank, time = 2/3 x 9 = 6 hours. Shortcut: net work per hour is 1/9 of the tank, so 2/3 of the tank needs (2/3) x 9 = 6 hours. Trap (A): Forgetting the 2/3 fraction gives the time for a full tank, which is 9 hours. Trap (B): Treating the leak as another inlet gives a rate of 3 + 2 + 1 = 6 units per hour, so full time is 6 hours and 2/3 of it is 4 hours. Trap (D): Ignoring the leak gives a rate of 3 + 2 = 5 units per hour, so full time is 36/5 = 7.2 hours and 2/3 of it is 4.8 hours.",
+    "verify_code": "answer = 2*36/(3*4)"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Easy",
+    "concept_tag": "Average with replacement",
+    "question_text": "The average weight of 7 workers is 62 kg. When one worker weighing 70 kg is replaced by a new worker, the average weight falls by 3 kg. What is the weight of the new worker?",
+    "options": {
+      "A": "59 kg",
+      "B": "49 kg",
+      "C": "67 kg",
+      "D": "91 kg"
+    },
+    "correct_answer": "B",
+    "trap_type": "Forgetting to multiply the change in average by the number of items",
+    "pedagogical_explanation": "Step 1: The average falls by 3 kg across 7 workers, so the total weight falls by 7 x 3 = 21 kg. Step 2: The new worker weighs 21 kg less than the worker who left, so new weight = 70 - 21 = 49 kg. Shortcut: new weight = old weight - (number of workers x fall in average) = 70 - 7 x 3 = 49. Trap (A): Taking the new average (62 - 3 = 59) as the new worker's weight gives 59 kg. Trap (C): Subtracting only the fall in average from 70 and not multiplying by 7 gives 70 - 3 = 67 kg. Trap (D): Adding instead of subtracting the total change gives 70 + 21 = 91 kg.",
+    "verify_code": "answer = 70 - 7*3"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Melting and recasting solids",
+    "question_text": "A solid metal cylinder of diameter 12 cm and height 8 cm is melted and recast into solid spheres of radius 2 cm each. How many such spheres can be made?",
+    "options": {
+      "A": "9",
+      "B": "54",
+      "C": "27",
+      "D": "108"
+    },
+    "correct_answer": "C",
+    "trap_type": "Using a wrong volume formula or diameter as radius",
+    "pedagogical_explanation": "Step 1: Cylinder radius = 12/2 = 6 cm. Volume = pi x 6 x 6 x 8 = 288 pi cm cube. Step 2: Sphere volume = (4/3) x pi x 2 x 2 x 2 = 32 pi / 3 cm cube. Step 3: Number of spheres = 288 pi / (32 pi / 3) = 288 x 3 / 32 = 27. Shortcut: pi cancels, so the count is (6 x 6 x 8 x 3) / (4 x 8) = 27. Trap (A): Using the cone formula (1/3 pi r squared h) for the cylinder gives 96 pi, and 96 pi / (32 pi / 3) = 9. Trap (B): Using (4/3) pi r squared (square instead of cube) for the sphere gives 16 pi / 3, and 288 pi / (16 pi / 3) = 54. Trap (D): Using the diameter 12 as the radius gives a cylinder volume of pi x 12 x 12 x 8 = 1152 pi, and 1152 pi / (32 pi / 3) = 108.",
+    "verify_code": "answer = 6*6*8*3/(4*2*2*2)"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari Quantitative Aptitude",
+    "difficulty": "Moderate",
+    "concept_tag": "Linear equations on ages",
+    "question_text": "The sum of the present ages of a father and his son is 60 years. Five years ago, the father was 4 times as old as the son was at that time. What is the present age of the son?",
+    "options": {
+      "A": "15 years",
+      "B": "12 years",
+      "C": "10 years",
+      "D": "9 years"
+    },
+    "correct_answer": "A",
+    "trap_type": "Applying the age condition to present ages or reporting the wrong age",
+    "pedagogical_explanation": "Step 1: Let the son's present age be S, so the father's age is 60 - S. Step 2: Five years ago: (60 - S - 5) = 4 x (S - 5), which gives 55 - S = 4S - 20. Step 3: 75 = 5S, so S = 15 years (father is 45). Check: five years ago father was 40 and son was 10, and 40 = 4 x 10. Shortcut: sum of ages five years ago = 60 - 10 = 50, split in the ratio 4 : 1 gives 40 and 10, so the son is 10 + 5 = 15 now. Trap (B): Applying the 4 : 1 condition to present ages gives 60 / 5 = 12 for the son. Trap (C): Reporting the son's age five years ago instead of now gives 10. Trap (D): Using +5 instead of -5 (as if the condition were five years later) gives 60 - S + 5 = 4 x (S + 5), so 45 = 5S and S = 9.",
+    "verify_code": "answer = (60 - 5 + 4*5)/5"
+  }
+]

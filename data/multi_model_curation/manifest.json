@@ -1,0 +1,1215 @@
+{
+  "meta": {
+    "description": "Position n in verified_questions.json -> source model/batch and original index. Gemini compare file omitted (duplicates batch 4)."
+  },
+  "items": [
+    {
+      "n": 0,
+      "source": "batch-1 #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 0
+    },
+    {
+      "n": 1,
+      "source": "batch-1 #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 1
+    },
+    {
+      "n": 2,
+      "source": "batch-1 #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 2
+    },
+    {
+      "n": 3,
+      "source": "batch-1 #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 3
+    },
+    {
+      "n": 4,
+      "source": "batch-1 #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 4
+    },
+    {
+      "n": 5,
+      "source": "batch-1 #5",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 5
+    },
+    {
+      "n": 6,
+      "source": "batch-1 #7",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 7
+    },
+    {
+      "n": 7,
+      "source": "batch-1 #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 8
+    },
+    {
+      "n": 8,
+      "source": "batch-1 #9",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 9
+    },
+    {
+      "n": 9,
+      "source": "batch-1 #10",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 10
+    },
+    {
+      "n": 10,
+      "source": "batch-1 #12",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 12
+    },
+    {
+      "n": 11,
+      "source": "batch-1 #13",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 13
+    },
+    {
+      "n": 12,
+      "source": "batch-1 #14",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 14
+    },
+    {
+      "n": 13,
+      "source": "batch-1 #15",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 15
+    },
+    {
+      "n": 14,
+      "source": "batch-1 #16",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 16
+    },
+    {
+      "n": 15,
+      "source": "batch-1 #17",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 17
+    },
+    {
+      "n": 16,
+      "source": "batch-1 #18",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-1",
+      "code": "GB1",
+      "index": 18
+    },
+    {
+      "n": 17,
+      "source": "batch-2 #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 0
+    },
+    {
+      "n": 18,
+      "source": "batch-2 #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 1
+    },
+    {
+      "n": 19,
+      "source": "batch-2 #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 2
+    },
+    {
+      "n": 20,
+      "source": "batch-2 #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 3
+    },
+    {
+      "n": 21,
+      "source": "batch-2 #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 4
+    },
+    {
+      "n": 22,
+      "source": "batch-2 #5",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 5
+    },
+    {
+      "n": 23,
+      "source": "batch-2 #7",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 7
+    },
+    {
+      "n": 24,
+      "source": "batch-2 #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 8
+    },
+    {
+      "n": 25,
+      "source": "batch-2 #9",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 9
+    },
+    {
+      "n": 26,
+      "source": "batch-2 #10",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 10
+    },
+    {
+      "n": 27,
+      "source": "batch-2 #11",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 11
+    },
+    {
+      "n": 28,
+      "source": "batch-2 #12",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 12
+    },
+    {
+      "n": 29,
+      "source": "batch-2 #13",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 13
+    },
+    {
+      "n": 30,
+      "source": "batch-2 #14",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 14
+    },
+    {
+      "n": 31,
+      "source": "batch-2 #16",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 16
+    },
+    {
+      "n": 32,
+      "source": "batch-2 #17",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 17
+    },
+    {
+      "n": 33,
+      "source": "batch-2 #18",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 18
+    },
+    {
+      "n": 34,
+      "source": "batch-2 #19",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-2",
+      "code": "GB2",
+      "index": 19
+    },
+    {
+      "n": 35,
+      "source": "batch-3 #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 0
+    },
+    {
+      "n": 36,
+      "source": "batch-3 #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 1
+    },
+    {
+      "n": 37,
+      "source": "batch-3 #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 2
+    },
+    {
+      "n": 38,
+      "source": "batch-3 #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 3
+    },
+    {
+      "n": 39,
+      "source": "batch-3 #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 4
+    },
+    {
+      "n": 40,
+      "source": "batch-3 #5",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 5
+    },
+    {
+      "n": 41,
+      "source": "batch-3 #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 6
+    },
+    {
+      "n": 42,
+      "source": "batch-3 #7",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 7
+    },
+    {
+      "n": 43,
+      "source": "batch-3 #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 8
+    },
+    {
+      "n": 44,
+      "source": "batch-3 #9",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 9
+    },
+    {
+      "n": 45,
+      "source": "batch-3 #10",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 10
+    },
+    {
+      "n": 46,
+      "source": "batch-3 #11",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 11
+    },
+    {
+      "n": 47,
+      "source": "batch-3 #12",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 12
+    },
+    {
+      "n": 48,
+      "source": "batch-3 #13",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 13
+    },
+    {
+      "n": 49,
+      "source": "batch-3 #14",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 14
+    },
+    {
+      "n": 50,
+      "source": "batch-3 #15",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 15
+    },
+    {
+      "n": 51,
+      "source": "batch-3 #16",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-3",
+      "code": "GB3",
+      "index": 16
+    },
+    {
+      "n": 52,
+      "source": "batch-4a #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4a",
+      "code": "G4A",
+      "index": 0
+    },
+    {
+      "n": 53,
+      "source": "batch-4a #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4a",
+      "code": "G4A",
+      "index": 1
+    },
+    {
+      "n": 54,
+      "source": "batch-4a #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4a",
+      "code": "G4A",
+      "index": 2
+    },
+    {
+      "n": 55,
+      "source": "batch-4a #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4a",
+      "code": "G4A",
+      "index": 3
+    },
+    {
+      "n": 56,
+      "source": "batch-4a #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4a",
+      "code": "G4A",
+      "index": 4
+    },
+    {
+      "n": 57,
+      "source": "batch-4b #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 0
+    },
+    {
+      "n": 58,
+      "source": "batch-4b #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 1
+    },
+    {
+      "n": 59,
+      "source": "batch-4b #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 2
+    },
+    {
+      "n": 60,
+      "source": "batch-4b #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 3
+    },
+    {
+      "n": 61,
+      "source": "batch-4b #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 4
+    },
+    {
+      "n": 62,
+      "source": "batch-4b #5",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 5
+    },
+    {
+      "n": 63,
+      "source": "batch-4b #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 6
+    },
+    {
+      "n": 64,
+      "source": "batch-4b #7",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 7
+    },
+    {
+      "n": 65,
+      "source": "batch-4b #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 8
+    },
+    {
+      "n": 66,
+      "source": "batch-4b #9",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 9
+    },
+    {
+      "n": 67,
+      "source": "batch-4b #11",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 11
+    },
+    {
+      "n": 68,
+      "source": "batch-4b #12",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 12
+    },
+    {
+      "n": 69,
+      "source": "batch-4b #13",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 13
+    },
+    {
+      "n": 70,
+      "source": "batch-4b #14",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-4b",
+      "code": "G4B",
+      "index": 14
+    },
+    {
+      "n": 71,
+      "source": "batch-5 #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 0
+    },
+    {
+      "n": 72,
+      "source": "batch-5 #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 1
+    },
+    {
+      "n": 73,
+      "source": "batch-5 #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 2
+    },
+    {
+      "n": 74,
+      "source": "batch-5 #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 3
+    },
+    {
+      "n": 75,
+      "source": "batch-5 #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 4
+    },
+    {
+      "n": 76,
+      "source": "batch-5 #5",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 5
+    },
+    {
+      "n": 77,
+      "source": "batch-5 #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 6
+    },
+    {
+      "n": 78,
+      "source": "batch-5 #7",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 7
+    },
+    {
+      "n": 79,
+      "source": "batch-5 #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 8
+    },
+    {
+      "n": 80,
+      "source": "batch-5 #9",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 9
+    },
+    {
+      "n": 81,
+      "source": "batch-5 #10",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 10
+    },
+    {
+      "n": 82,
+      "source": "batch-5 #12",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 12
+    },
+    {
+      "n": 83,
+      "source": "batch-5 #13",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 13
+    },
+    {
+      "n": 84,
+      "source": "batch-5 #14",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 14
+    },
+    {
+      "n": 85,
+      "source": "batch-5 #15",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 15
+    },
+    {
+      "n": 86,
+      "source": "batch-5 #17",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 17
+    },
+    {
+      "n": 87,
+      "source": "batch-5 #18",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 18
+    },
+    {
+      "n": 88,
+      "source": "batch-5 #19",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-5",
+      "code": "GB5",
+      "index": 19
+    },
+    {
+      "n": 89,
+      "source": "batch-6 #0",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 0
+    },
+    {
+      "n": 90,
+      "source": "batch-6 #1",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 1
+    },
+    {
+      "n": 91,
+      "source": "batch-6 #2",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 2
+    },
+    {
+      "n": 92,
+      "source": "batch-6 #3",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 3
+    },
+    {
+      "n": 93,
+      "source": "batch-6 #4",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 4
+    },
+    {
+      "n": 94,
+      "source": "batch-6 #5",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 5
+    },
+    {
+      "n": 95,
+      "source": "batch-6 #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 6
+    },
+    {
+      "n": 96,
+      "source": "batch-6 #7",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 7
+    },
+    {
+      "n": 97,
+      "source": "batch-6 #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 8
+    },
+    {
+      "n": 98,
+      "source": "batch-6 #9",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 9
+    },
+    {
+      "n": 99,
+      "source": "batch-6 #10",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 10
+    },
+    {
+      "n": 100,
+      "source": "batch-6 #11",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 11
+    },
+    {
+      "n": 101,
+      "source": "batch-6 #12",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 12
+    },
+    {
+      "n": 102,
+      "source": "batch-6 #13",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 13
+    },
+    {
+      "n": 103,
+      "source": "batch-6 #14",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 14
+    },
+    {
+      "n": 104,
+      "source": "batch-6 #15",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 15
+    },
+    {
+      "n": 105,
+      "source": "batch-6 #16",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 16
+    },
+    {
+      "n": 106,
+      "source": "batch-6 #17",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-6",
+      "code": "GB6",
+      "index": 17
+    },
+    {
+      "n": 107,
+      "source": "compare-meta #0",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 0
+    },
+    {
+      "n": 108,
+      "source": "compare-meta #1",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 1
+    },
+    {
+      "n": 109,
+      "source": "compare-meta #2",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 2
+    },
+    {
+      "n": 110,
+      "source": "compare-meta #3",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 3
+    },
+    {
+      "n": 111,
+      "source": "compare-meta #4",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 4
+    },
+    {
+      "n": 112,
+      "source": "compare-meta #5",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 5
+    },
+    {
+      "n": 113,
+      "source": "compare-meta #6",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 6
+    },
+    {
+      "n": 114,
+      "source": "compare-meta #7",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 7
+    },
+    {
+      "n": 115,
+      "source": "compare-meta #8",
+      "model": "Meta AI",
+      "batch": "compare-meta",
+      "code": "MT",
+      "index": 8
+    },
+    {
+      "n": 116,
+      "source": "compare-claude5 #0",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 0
+    },
+    {
+      "n": 117,
+      "source": "compare-claude5 #1",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 1
+    },
+    {
+      "n": 118,
+      "source": "compare-claude5 #2",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 2
+    },
+    {
+      "n": 119,
+      "source": "compare-claude5 #3",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 3
+    },
+    {
+      "n": 120,
+      "source": "compare-claude5 #4",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 4
+    },
+    {
+      "n": 121,
+      "source": "compare-claude5 #5",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 5
+    },
+    {
+      "n": 122,
+      "source": "compare-claude5 #6",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 6
+    },
+    {
+      "n": 123,
+      "source": "compare-claude5 #7",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 7
+    },
+    {
+      "n": 124,
+      "source": "compare-claude5 #8",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 8
+    },
+    {
+      "n": 125,
+      "source": "compare-claude5 #9",
+      "model": "Claude Sonnet 5",
+      "batch": "compare-claude5",
+      "code": "CS5",
+      "index": 9
+    },
+    {
+      "n": 126,
+      "source": "compare-sonnet55 #0",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 0
+    },
+    {
+      "n": 127,
+      "source": "compare-sonnet55 #2",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 2
+    },
+    {
+      "n": 128,
+      "source": "compare-sonnet55 #3",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 3
+    },
+    {
+      "n": 129,
+      "source": "compare-sonnet55 #4",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 4
+    },
+    {
+      "n": 130,
+      "source": "compare-sonnet55 #5",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 5
+    },
+    {
+      "n": 131,
+      "source": "compare-sonnet55 #6",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 6
+    },
+    {
+      "n": 132,
+      "source": "compare-sonnet55 #7",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 7
+    },
+    {
+      "n": 133,
+      "source": "compare-sonnet55 #8",
+      "model": "Claude Sonnet 5.5 Medium",
+      "batch": "compare-sonnet55",
+      "code": "C55",
+      "index": 8
+    },
+    {
+      "n": 134,
+      "source": "compare-supergrok #0",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 0
+    },
+    {
+      "n": 135,
+      "source": "compare-supergrok #2",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 2
+    },
+    {
+      "n": 136,
+      "source": "compare-supergrok #3",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 3
+    },
+    {
+      "n": 137,
+      "source": "compare-supergrok #4",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 4
+    },
+    {
+      "n": 138,
+      "source": "compare-supergrok #5",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 5
+    },
+    {
+      "n": 139,
+      "source": "compare-supergrok #6",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 6
+    },
+    {
+      "n": 140,
+      "source": "compare-supergrok #7",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 7
+    },
+    {
+      "n": 141,
+      "source": "compare-supergrok #8",
+      "model": "SuperGrok",
+      "batch": "compare-supergrok",
+      "code": "SG",
+      "index": 8
+    },
+    {
+      "n": 142,
+      "source": "compare-chatgpt #0",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 0
+    },
+    {
+      "n": 143,
+      "source": "compare-chatgpt #1",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 1
+    },
+    {
+      "n": 144,
+      "source": "compare-chatgpt #2",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 2
+    },
+    {
+      "n": 145,
+      "source": "compare-chatgpt #3",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 3
+    },
+    {
+      "n": 146,
+      "source": "compare-chatgpt #4",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 4
+    },
+    {
+      "n": 147,
+      "source": "compare-chatgpt #5",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 5
+    },
+    {
+      "n": 148,
+      "source": "compare-chatgpt #6",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 6
+    },
+    {
+      "n": 149,
+      "source": "compare-chatgpt #7",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 7
+    },
+    {
+      "n": 150,
+      "source": "compare-chatgpt #8",
+      "model": "ChatGPT Go",
+      "batch": "compare-chatgpt",
+      "code": "CG",
+      "index": 8
+    }
+  ]
+}

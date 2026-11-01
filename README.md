@@ -65,7 +65,7 @@ cat-clat-adaptive-engine/
 ├── data/sample_bank.json         # 45 original seed questions (explanations, trap types, verify_code)
 ├── bank.py                       # AI-bank storage, dedupe, serving pool
 ├── prompts.py                    # Prompt layer shared by app + scripts
-├── scripts/                      # build_bank.py, export_review.py, apply_review.py, import_claude_bank.py
+├── scripts/                      # build_bank.py, export_review.py, apply_review.py, import_claude_bank.py, import_multi_model_bank.py
 ├── data/claude_bank_<family>.json  # Claude-curated verified bank per app (sources in data/claude_curation/)
 ├── review/ai_bank_review.csv     # faculty review sheet
 ├── data/ai_bank.json             # pre-generated verified questions
@@ -143,6 +143,23 @@ decisions and the full fixes record). Rebuild with `python3 -m scripts.import_cl
 without writing). Ids such as `CL-ML-CLLR-F5-007` come from each item's source position, so re-runs give
 identical files and existing ids stay stable when items are added. To hold an item back, add its source to
 `exclusions` in `data/claude_curation/decisions.json` and re-run.
+
+## 🧩 Multi-model Sarkari verified bank
+
+Independently verified Sarkari items from Gemini Argon 4.0 batches 1–6 plus model-comparison
+Quant runs (Meta AI, Claude Sonnet 5, Claude Sonnet 5.5 Medium, SuperGrok, ChatGPT Go) are served as
+`data/multi_model_bank_sarkari.json` (the Gemini compare file is omitted — it duplicates batch 4):
+
+| Family | Items | Topics |
+|--------|------:|--------|
+| `sarkari` | 151 | Sarkari Quantitative Aptitude 80 · Sarkari Reasoning 36 · Sarkari English 35 |
+
+Sources live in `data/multi_model_curation/` (verified questions, manifest with per-item model/batch,
+faculty flags, cross-dedupe drop log). Rebuild with `python3 -m scripts.import_multi_model_bank`
+(`--check` validates without writing). On every import, options are shuffled per item with a fixed
+seed (answer key, `Trap (X)` / `Option X` text, and `verify_code` letter mappings are remapped).
+Items show "✅ Verified (independent solve[, computed])" with source "Multi-model curated bank".
+
 
 ## 🧩 One codebase, several apps (exam families)
 

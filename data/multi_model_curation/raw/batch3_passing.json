@@ -1,0 +1,291 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Error Spotting - One of the + Plural Noun + Singular Verb",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error:\n(A) One of the newly recruited clerks / (B) have submitted the verification documents / (C) to the branch manager today. / (D) No error",
+  "options": {
+   "A": "One of the newly recruited clerks",
+   "B": "have submitted the verification documents",
+   "C": "to the branch manager today.",
+   "D": "No error"
+  },
+  "correct_answer": "B",
+  "trap_type": "Proximity agreement with plural object of preposition",
+  "pedagogical_explanation": "Step-by-step solution: In the structure 'One of the + plural noun', the true subject of the sentence is the singular pronoun 'One', while 'of the newly recruited clerks' is a prepositional phrase. Therefore, the verb must be singular ('has submitted' instead of 'have submitted'), placing the error in part (B).\nTrap (A): Thinking 'One' requires a singular noun ('clerk') after 'of the' leads to picking (A), whereas 'One of the' always selects one item from a plural group.\nTrap (C): Thinking 'submitted' requires the preposition 'for' or 'at' instead of 'to' leads to picking (C).\nTrap (D): Matching the plural verb 'have' with the adjacent plural noun 'clerks' (proximity error) makes the sentence appear grammatically correct, leading to (D).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Error Spotting - Superior/Inferior + Preposition 'to'",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error:\n(A) The new printer in our office / (B) is far superior than / (C) the old one in every respect. / (D) No error",
+  "options": {
+   "A": "The new printer in our office",
+   "B": "is far superior than",
+   "C": "the old one in every respect.",
+   "D": "No error"
+  },
+  "correct_answer": "B",
+  "trap_type": "Using 'than' instead of 'to' with Latin comparative adjectives",
+  "pedagogical_explanation": "Latin comparatives ending in '-ior' (superior, inferior, senior, junior, prior) take the preposition 'to', not 'than'. So 'superior than' must be 'superior to', and the error is in part (B).\nTrap (A): Thinking 'in our office' should be 'at our office' leads to (A), but 'in' is correct for a printer inside an office.\nTrap (C): Thinking 'the old one' needs to repeat the noun ('the old printer') or that 'in every respect' should be 'in all respect' leads to (C), but the segment is correct.\nTrap (D): Treating 'superior' like an ordinary comparative such as 'better than' makes 'superior than' sound natural, leading to (D).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Error Spotting - 'As well as' Subject-Verb Agreement",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error:\n(A) The station master, as well as his two assistants, / (B) opens the ticket counter / (C) at six o'clock every morning. / (D) No error",
+  "options": {
+   "A": "The station master, as well as his two assistants,",
+   "B": "opens the ticket counter",
+   "C": "at six o'clock every morning.",
+   "D": "No error"
+  },
+  "correct_answer": "D",
+  "trap_type": "Treating 'as well as' as equivalent to plural 'and'",
+  "pedagogical_explanation": "Step-by-step solution: When two nouns are joined by 'as well as', 'along with', or 'together with', the verb agrees with the first subject. Here, the first subject 'The station master' is singular, so the singular verb 'opens' is completely correct, and 'at six o'clock every morning' correctly uses the simple present for a habitual action. Therefore, there is no error (D).\nTrap (A): Assuming 'as well as' cannot follow commas or requires 'both' before the first subject leads to picking (A).\nTrap (B): Treating 'as well as' like 'and' (or matching the verb with the closer plural noun 'assistants') makes a student think 'opens' should be plural 'open', leading to (B).\nTrap (C): Confusing the preposition of exact clock time ('at six o'clock') with 'on' or 'in' leads to picking (C).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Fill in the Blank - Grammar (Prepositions of Time: Since vs For)",
+  "question_text": "Fill in the blank with the most appropriate option:\nMy elder sister has been preparing for the railway recruitment examination ________ November last year.",
+  "options": {
+   "A": "since",
+   "B": "for",
+   "C": "from",
+   "D": "by"
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing point of time ('since') with period of time ('for')",
+  "pedagogical_explanation": "Step-by-step solution: In the present perfect continuous tense ('has been preparing'), 'since' is used to denote a specific starting point in time ('November last year'). Therefore, 'since' (A) is the correct choice.\nTrap (B): Confusing a specific starting point ('November last year') with a duration or period of time (like 'six months') leads to picking 'for'.\nTrap (C): Direct translation from Indian languages (where 'se' translates to both 'from' and 'since') leads to picking 'from', which is not used with present perfect continuous to indicate past origin.\nTrap (D): Confusing the starting point of a continuous action with a deadline marker ('by') leads to picking 'by'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Fill in the Blank - Vocabulary (Homophones & Confusable Words)",
+  "question_text": "Fill in the blank with the most appropriate word:\nThe chief guest's inspiring speech had a positive ________ on all the young graduates in the auditorium.",
+  "options": {
+   "A": "affect",
+   "B": "effect",
+   "C": "effective",
+   "D": "affection"
+  },
+  "correct_answer": "B",
+  "trap_type": "Confusing the verb 'affect' with the noun 'effect'",
+  "pedagogical_explanation": "Step-by-step solution: The blank is preceded by the article 'a' and the adjective 'positive', and followed by the preposition 'on', which means a singular noun meaning 'result' or 'impact' is required. 'Effect' (B) is that noun.\nTrap (A): Confusing the homophones 'affect' (commonly a verb meaning to influence) and 'effect' (a noun meaning result) leads to picking 'affect'.\nTrap (C): Picking a word from the right root family that has the wrong part of speech ('effective' is an adjective, not a noun) leads to (C).\nTrap (D): Confusing the look-alike noun 'affection' (which means fondness or love) with 'effect' (impact) leads to (D).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Fill in the Blank - Grammar (First Conditional Tense)",
+  "question_text": "Fill in the blank with the correct verb form:\nIf the train ________ on time, we will reach the examination centre before the gates close.",
+  "options": {
+   "A": "will arrive",
+   "B": "arrived",
+   "C": "arrives",
+   "D": "arrive"
+  },
+  "correct_answer": "C",
+  "trap_type": "Using double 'will' in the conditional 'if' clause",
+  "pedagogical_explanation": "Step-by-step solution: In a First Conditional sentence expressing a likely future condition, the main clause takes 'will + base verb' ('will reach') and the 'if' clause takes the simple present tense. Since the subject 'the train' is singular, the singular present verb 'arrives' (C) is required.\nTrap (A): Matching the future tense of the main clause ('will reach') by putting 'will arrive' inside the 'if' clause (double-future error) leads to (A).\nTrap (B): Confusing the First Conditional with the Second Conditional ('If + simple past... would') leads to picking the past tense 'arrived'.\nTrap (D): Recognising that simple present tense is needed in the 'if' clause but forgetting to add '-s' for the third-person singular subject 'the train' leads to 'arrive'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Synonym - Common Exam Vocabulary",
+  "question_text": "Select the most appropriate SYNONYM of the given word:\nCANDID",
+  "options": {
+   "A": "Frank",
+   "B": "Sweet",
+   "C": "Secretive",
+   "D": "Careful"
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing 'candid' with phonetic look-alike 'candied'",
+  "pedagogical_explanation": "Step-by-step solution: 'Candid' means truthful, straightforward, and honest in expression. Its direct synonym is 'Frank' (A).\nTrap (B): Confusing 'candid' with the look-alike word 'candied' (coated with sugar) leads a student to pick 'Sweet'.\nTrap (C): Selecting the direct antonym ('Secretive' or guarded) instead of the synonym leads to (C).\nTrap (D): Confusing 'candid' with 'cautious' because both are common character-trait adjectives leads to 'Careful'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Antonym - Common Exam Vocabulary",
+  "question_text": "Select the most appropriate ANTONYM of the given word:\nOPTIMISTIC",
+  "options": {
+   "A": "Hopeful",
+   "B": "Optical",
+   "C": "Pessimistic",
+   "D": "Idealistic"
+  },
+  "correct_answer": "C",
+  "trap_type": "Picking the synonym ('Hopeful') when the antonym is asked",
+  "pedagogical_explanation": "Step-by-step solution: 'Optimistic' means hopeful and confident about the future. The opposite (antonym) is expecting the worst or seeing the negative side of things, which is 'Pessimistic' (C).\nTrap (A): Jumping at the most familiar meaning match ('Hopeful', which is the synonym) without noticing that the question asks for the ANTONYM leads to (A).\nTrap (B): Confusing the root of 'optimistic' with the similar-looking prefix 'opt-' in 'Optical' (relating to sight/vision) leads to (B).\nTrap (D): Confusing 'optimistic' with 'idealistic' (having high or unrealistic ideals) because both share the '-istic' suffix and positive tone leads to (D).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Antonym - Common Exam Vocabulary",
+  "question_text": "Select the most appropriate ANTONYM of the given word:\nEXPAND",
+  "options": {
+   "A": "Enlarge",
+   "B": "Spend",
+   "C": "Explain",
+   "D": "Contract"
+  },
+  "correct_answer": "D",
+  "trap_type": "Confusing 'expand' with look-alike 'expend' ('Spend') or picking the synonym",
+  "pedagogical_explanation": "Step-by-step solution: 'Expand' means to become or make larger or more extensive. Its direct antonym is 'Contract' (D), which means to decrease in size, number, or range.\nTrap (A): Selecting the direct synonym ('Enlarge') due to overlooking the instruction for an ANTONYM leads to (A).\nTrap (B): Confusing 'expand' with the spelling look-alike 'expend' (which means to spend or use up money/resources) leads to picking 'Spend'.\nTrap (C): Confusing 'expand on a topic' with 'Explain' (and forgetting that an antonym is required) leads to (C).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "One-Word Substitution - Life Histories",
+  "question_text": "Select the word which means the same as the group of words given:\nThe life history of a person written by another person",
+  "options": {
+   "A": "Autobiography",
+   "B": "Bibliography",
+   "C": "Biography",
+   "D": "Calligraphy"
+  },
+  "correct_answer": "C",
+  "trap_type": "Confusing 'Biography' (written by another) with 'Autobiography' (written by oneself)",
+  "pedagogical_explanation": "Step-by-step solution: 'Bio-' means life and '-graphy' means writing; the account of a person's life written by someone else is a 'Biography' (C).\nTrap (A): Overlooking the phrase 'by another person' and picking 'Autobiography' (which is a life history written by the person themselves) leads to (A).\nTrap (B): Confusing the root 'bio-' (life) with 'biblio-' (books) in 'Bibliography' (a list of books/sources referred to in a scholarly work) leads to (B).\nTrap (D): Picking 'Calligraphy' (decorative handwriting) purely because it shares the '-graphy' suffix relating to writing leads to (D).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "One-Word Substitution - Ability to Read/Write",
+  "question_text": "Select the word which means the same as the group of words given:\nA person who is unable to read or write",
+  "options": {
+   "A": "Illegible",
+   "B": "Illegal",
+   "C": "Ineligible",
+   "D": "Illiterate"
+  },
+  "correct_answer": "D",
+  "trap_type": "Confusing 'Illiterate' with 'Illegible' (handwriting that cannot be read)",
+  "pedagogical_explanation": "Step-by-step solution: Derived from the Latin 'literatus' (lettered), a person who cannot read or write is called 'Illiterate' (D).\nTrap (A): Confusing a person who cannot read ('Illiterate') with handwriting or print that is impossible to read ('Illegible') leads to (A).\nTrap (B): Picking 'Illegal' (contrary to law) due to the shared 'Ill-' prefix leads to (B).\nTrap (C): Confusing 'Illiterate' with the phonetic look-alike 'Ineligible' (not qualified for a post or examination) leads to (C).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Spelling - Double vs Single Consonants",
+  "question_text": "Select the CORRECTLY spelt word:",
+  "options": {
+   "A": "Committee",
+   "B": "Comittee",
+   "C": "Commitee",
+   "D": "Committe"
+  },
+  "correct_answer": "A",
+  "trap_type": "Dropping one of the three double-letter pairs (mm, tt, ee) in 'Committee'",
+  "pedagogical_explanation": "Step-by-step solution: The standard spelling of 'Committee' (A) uniquely contains three consecutive sets of double letters: double 'm' (mm), double 't' (tt), and double 'e' (ee).\nTrap (B): Applying the single-'m' spelling from words like 'comic' or forgetting to double the 'm' gives 'Comittee'.\nTrap (C): Doubling 'm' and 'e' but using a single 't' (by analogy with the root verb 'commit') gives 'Commitee'.\nTrap (D): Doubling 'm' and 't' but dropping the second 'e' at the end (thinking a single silent '-e' suffices) gives 'Committe'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Spelling - Vowel Confusion (-a- vs -e-)",
+  "question_text": "Select the CORRECTLY spelt word:",
+  "options": {
+   "A": "Seperate",
+   "B": "Separate",
+   "C": "Seperete",
+   "D": "Separete"
+  },
+  "correct_answer": "B",
+  "trap_type": "Spelling the middle unstressed vowel as 'e' ('Seperate') due to pronunciation",
+  "pedagogical_explanation": "Step-by-step solution: The correct spelling is 'Separate' (B), which has 'e' in the first syllable and 'a' in the second and third syllables (S-e-p-a-r-a-t-e).\nTrap (A): Spelling the word phonetically as 'Seperate' because the middle unstressed syllable sounds like a weak 'e' in everyday speech leads to (A).\nTrap (C): Assimilating all internal vowels to 'e' ('Seperete') leads to (C).\nTrap (D): Keeping the middle 'a' right but changing the final '-ate' suffix to '-ete' (by analogy with 'complete') leads to 'Separete'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Sentence Improvement - Prefer X to Y",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nMost commuters in the city **prefer travelling by metro than driving** their own cars.",
+  "options": {
+   "A": "prefer travelling by metro from driving",
+   "B": "prefers travelling by metro to driving",
+   "C": "prefer travelling by metro to driving",
+   "D": "No improvement required"
+  },
+  "correct_answer": "C",
+  "trap_type": "Using 'than' instead of 'to' with the verb 'prefer'",
+  "pedagogical_explanation": "Step-by-step solution: The verb 'prefer' takes the preposition 'to', not 'than' when comparing two nouns or gerunds ('prefer X to Y'). Since the subject 'Most commuters' is plural, the plural verb 'prefer' is required: 'prefer travelling by metro to driving' (C).\nTrap (A): Translating directly from vernacular phrasing where comparison uses 'from' ('se') leads to 'from driving'.\nTrap (B): Correcting 'than' to 'to' properly, but mistakenly changing the plural verb 'prefer' to singular 'prefers' (ignoring the plural subject 'commuters') leads to (B).\nTrap (D): Assuming 'prefer' works like a comparative phrase ('better than') and therefore needs 'than' leads to 'No improvement required'.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Sentence Improvement - Did + Base Verb",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nWhy **did you not attended** the orientation meeting yesterday?",
+  "options": {
+   "A": "did you not attends",
+   "B": "have you not attend",
+   "C": "No improvement required",
+   "D": "did you not attend"
+  },
+  "correct_answer": "D",
+  "trap_type": "Double past tense ('did' + V2/V3 'attended')",
+  "pedagogical_explanation": "Step-by-step solution: The auxiliary verbs 'do', 'does', and 'did' must always be followed by the base form (first form, V1) of the main verb. Since 'did' already marks the past tense for 'yesterday', 'attended' must be replaced with the base verb 'attend', giving 'did you not attend' (D).\nTrap (A): Removing '-ed' from 'attended' but mistakenly adding the singular '-s' ending ('attends') after 'did you' leads to (A).\nTrap (B): Switching the auxiliary to 'have' (which cannot be used with the past time marker 'yesterday' and would require 'attended', not 'attend') leads to (B).\nTrap (C): Thinking that because the sentence ends with 'yesterday', the main verb must also carry the past '-ed' suffix ('attended') leads to (C).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Active/Passive Voice - Simple Past Tense",
+  "question_text": "Select the option that expresses the given sentence in PASSIVE voice:\nThe technician repaired the faulty printer.",
+  "options": {
+   "A": "The faulty printer was repaired by the technician.",
+   "B": "The faulty printer is repaired by the technician.",
+   "C": "The faulty printer had been repaired by the technician.",
+   "D": "The faulty printer was being repaired by the technician."
+  },
+  "correct_answer": "A",
+  "trap_type": "Confusing voice conversion with tense backshift (like in indirect speech)",
+  "pedagogical_explanation": "Step-by-step solution: The active sentence is in the Simple Past tense ('repaired', V2). In passive voice, Simple Past converts to 'was/were + past participle (V3)'. Since the new subject 'The faulty printer' is singular, it becomes 'The faulty printer was repaired by the technician' (A).\nTrap (B): Using the Simple Present passive auxiliary 'is' instead of Simple Past 'was' leads to (B).\nTrap (C): Confusing Active/Passive conversion rules with Direct/Indirect speech rules (where Simple Past backshifts to Past Perfect 'had been repaired') leads to (C).\nTrap (D): Confusing Simple Past passive ('was repaired') with Past Continuous passive ('was being repaired') leads to (D).",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Direct/Indirect Speech - Assertive Sentence Backshift",
+  "question_text": "Select the option that expresses the given sentence in INDIRECT speech:\nRohan said, \"I am reading a novel now.\"",
+  "options": {
+   "A": "Rohan said that he is reading a novel now.",
+   "B": "Rohan said that he was reading a novel then.",
+   "C": "Rohan said that he was reading a novel now.",
+   "D": "Rohan said that I was reading a novel then."
+  },
+  "correct_answer": "B",
+  "trap_type": "Forgetting to change the time adverb 'now' to 'then' or pronoun 'I' to 'he'",
+  "pedagogical_explanation": "Step-by-step solution: When the reporting verb is in the past tense ('said'), four changes occur: 1) conjunction 'that' is added, 2) first-person pronoun 'I' changes to 'he' (matching 'Rohan'), 3) Present Continuous ('am reading') backshifts to Past Continuous ('was reading'), and 4) nearness adverb 'now' changes to 'then'. This produces 'Rohan said that he was reading a novel then' (B).\nTrap (A): Changing the pronoun to 'he' but forgetting both the tense backshift ('is reading') and the adverb change ('now') leads to (A).\nTrap (C): Backshifting the verb tense and pronoun correctly ('he was reading') but forgetting to convert the time adverb 'now' to 'then' leads to (C).\nTrap (D): Converting the tense and adverb ('was reading... then') correctly but failing to change the first-person pronoun 'I' to third-person 'he' leads to (D).",
+  "verify_code": ""
+ }
+]

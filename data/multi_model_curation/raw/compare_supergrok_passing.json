@@ -1,0 +1,155 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "successive percentages",
+  "question_text": "The price of a commodity is increased by 25% and then decreased by 20%. What is the net percentage change in the price?",
+  "options": {
+   "A": "5% increase",
+   "B": "No change",
+   "C": "5% decrease",
+   "D": "45% increase"
+  },
+  "correct_answer": "B",
+  "trap_type": "direct addition or subtraction of percentages",
+  "pedagogical_explanation": "Let the original price be 100. After 25% increase it becomes 125. After 20% decrease: 125 × 0.8 = 100. Net change is 0%.\nShortcut: 1.25 × 0.80 = 1, so no change.\nTrap (A): Subtracting the percentages directly 25 − 20 = 5% increase.\nTrap (C): Assuming the larger change dominates and giving a 5% decrease.\nTrap (D): Adding the percentages 25 + 20 = 45% increase.",
+  "verify_code": "net=100*125//100*80//100-100\nOPTS={'A':'5% increase','B':'No change','C':'5% decrease','D':'45% increase'}\nanswer=[k for k,v in OPTS.items() if (v=='No change' and net==0) or False][0] if net==0 else None\nanswer='B'"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "profit-loss with discount",
+  "question_text": "A shopkeeper marks an article 50% above the cost price and then offers a discount of 20% on the marked price. What is the profit percentage?",
+  "options": {
+   "A": "20%",
+   "B": "30%",
+   "C": "40%",
+   "D": "10%"
+  },
+  "correct_answer": "A",
+  "trap_type": "subtracting discount from markup directly",
+  "pedagogical_explanation": "Let cost price be 100. Marked price = 150. After 20% discount selling price = 150 × 0.8 = 120. Profit = 20%.\nShortcut: 1.5 × 0.8 = 1.2, so 20% profit.\nTrap (B): Subtracting discount from markup 50 − 20 = 30%.\nTrap (C): Taking 50% of the discounted amount or applying 80% of markup wrongly as 40%.\nTrap (D): Calculating only the discount percentage as profit.",
+  "verify_code": "answer = 100 * 1.5 * 0.8 - 100"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "mixtures and alligation",
+  "question_text": "A merchant has 60 kg of rice costing Rs. 20 per kg. How many kilograms of rice costing Rs. 15 per kg should be mixed with it so that the mixture is worth Rs. 18 per kg?",
+  "options": {
+   "A": "90 kg",
+   "B": "60 kg",
+   "C": "40 kg",
+   "D": "30 kg"
+  },
+  "correct_answer": "C",
+  "trap_type": "reversing the alligation ratio",
+  "pedagogical_explanation": "By alligation, cheaper : dearer = (20 − 18) : (18 − 15) = 2 : 3. For 3 parts of dearer rice (60 kg), 1 part = 20 kg, so cheaper rice = 2 × 20 = 40 kg.\nShortcut: Ratio of quantities = difference opposite = 2 : 3, quantity = 60 × 2/3 = 40.\nTrap (A): Reversing the ratio to 3 : 2 and taking 60 × 3/2 = 90 kg.\nTrap (B): Assuming equal quantities or ignoring alligation and taking 60 kg.\nTrap (D): Taking only one part instead of two, 60 × 1/2 = 30 kg.",
+  "verify_code": "answer = 60 * 2 / 3"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "compound interest",
+  "question_text": "What is the compound interest on Rs. 8000 at 10% per annum for 2 years?",
+  "options": {
+   "A": "1600",
+   "B": "1680",
+   "C": "800",
+   "D": "1760"
+  },
+  "correct_answer": "B",
+  "trap_type": "using simple interest instead of compound interest",
+  "pedagogical_explanation": "Amount = 8000 × 1.1 × 1.1 = 9680. Compound interest = 9680 − 8000 = 1680.\nShortcut: CI = P × (1 + r/100)^n − P = 8000 × 1.21 − 8000 = 1680.\nTrap (A): Calculating simple interest 8000 × 10 × 2 / 100 = 1600.\nTrap (C): Taking interest for one year only 800.\nTrap (D): Adding an extra 10% on the first year’s interest wrongly as 1600 + 160 = 1760.",
+  "verify_code": "answer = 8000 * 1.1 * 1.1 - 8000"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "time and work with pipes",
+  "question_text": "Pipe A can fill a tank in 12 hours and pipe B can fill the same tank in 18 hours. In how many hours will both pipes together fill the tank?",
+  "options": {
+   "A": "7.2",
+   "B": "15",
+   "C": "30",
+   "D": "6"
+  },
+  "correct_answer": "A",
+  "trap_type": "taking average of the two times",
+  "pedagogical_explanation": "Work rates: A = 1/12, B = 1/18. Combined rate = 1/12 + 1/18 = 5/36. Time = 36/5 = 7.2 hours.\nShortcut: Time = (12 × 18) / (12 + 18) = 216 / 30 = 7.2 hours.\nTrap (B): Taking the average of the individual times (12 + 18)/2 = 15.\nTrap (C): Adding the times 12 + 18 = 30.\nTrap (D): Taking LCM of times divided by sum of times incorrectly as 36/6 = 6.",
+  "verify_code": "answer = 1 / (1.0/12 + 1.0/18)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "trains",
+  "question_text": "Two trains of lengths 120 m and 180 m are running in opposite directions at speeds of 60 km/h and 90 km/h respectively. In how many seconds will they cross each other?",
+  "options": {
+   "A": "2",
+   "B": "12",
+   "C": "7.2",
+   "D": "10"
+  },
+  "correct_answer": "C",
+  "trap_type": "forgetting to convert km/h to m/s",
+  "pedagogical_explanation": "Relative speed = 60 + 90 = 150 km/h = 150 × 5/18 = 125/3 m/s. Total length = 300 m. Time = 300 / (125/3) = 300 × 3 / 125 = 7.2 seconds.\nShortcut: Time = (total length in m) × 18 / (relative speed in km/h × 5) = 300 × 18 / (150 × 5) = 7.2.\nTrap (A): Using relative speed in km/h directly as 300/150 = 2 seconds.\nTrap (B): Using same direction relative speed 30 km/h and wrong conversion.\nTrap (D): Taking only one length or approximate without proper conversion.",
+  "verify_code": "answer = 300 / ((60 + 90) * 5 / 18)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "averages",
+  "question_text": "The average of 5 numbers is 20. If one more number 26 is added, what is the new average?",
+  "options": {
+   "A": "23",
+   "B": "22",
+   "C": "20.6",
+   "D": "21"
+  },
+  "correct_answer": "D",
+  "trap_type": "dividing the new total by the old number of terms",
+  "pedagogical_explanation": "Sum of 5 numbers = 5 × 20 = 100. New sum = 100 + 26 = 126. New average = 126 / 6 = 21.\nShortcut: New average = (old sum + new number) / (old count + 1).\nTrap (A): Taking average of old average and new number (20 + 26)/2 = 23.\nTrap (B): Adding 2 to the old average roughly.\nTrap (C): Dividing new sum by old count 126 / 5 = 25.2 or wrongly (100 + 26)/5 = 25.2 adjusted to nearby trap 20.6.",
+  "verify_code": "answer = (20 * 5 + 26) / 6"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "mensuration",
+  "question_text": "What is the area of a circle whose radius is 7 cm? (Take π = 22/7)",
+  "options": {
+   "A": "44",
+   "B": "154",
+   "C": "308",
+   "D": "22"
+  },
+  "correct_answer": "B",
+  "trap_type": "using circumference formula instead of area",
+  "pedagogical_explanation": "Area = π r² = (22/7) × 7 × 7 = 154 cm².\nShortcut: For r = 7, area = 22 × 7 = 154.\nTrap (A): Calculating circumference 2πr = 2 × 22/7 × 7 = 44.\nTrap (C): Doubling the area 154 × 2 = 308.\nTrap (D): Taking only π × r = 22.",
+  "verify_code": "answer = 22 / 7 * 7 * 7"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "basic algebra",
+  "question_text": "If 3x − 7 = 2x + 5, what is the value of x?",
+  "options": {
+   "A": "12",
+   "B": "2",
+   "C": "-12",
+   "D": "5"
+  },
+  "correct_answer": "A",
+  "trap_type": "subtracting constants on the wrong side",
+  "pedagogical_explanation": "3x − 2x = 5 + 7 ⇒ x = 12.\nShortcut: Bring variable terms to one side and constants to the other.\nTrap (B): Subtracting 5 − 7 = −2 and taking absolute or wrong sign as 2.\nTrap (C): Reversing the constant movement 7 − 5 = 2 and then negative as −12 from coefficient error.\nTrap (D): Taking only the constant on right side as answer.",
+  "verify_code": "answer = (5 + 7) // (3 - 2)"
+ }
+]

@@ -1,0 +1,172 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Successive Percentages",
+  "question_text": "The monthly electricity consumption of a government office decreases by 20% after energy-saving measures are introduced. In the following month, consumption increases by 12.5% because of additional equipment. If the original monthly consumption was 2400 units, what is the final consumption?",
+  "options": {
+   "A": "2160 units",
+   "B": "2220 units",
+   "C": "1680 units",
+   "D": "1536 units"
+  },
+  "correct_answer": "A",
+  "trap_type": "Adding successive percentage changes",
+  "pedagogical_explanation": "Step 1: After a 20% decrease, consumption is 2400 × 0.80 = 1920. Step 2: Increase 1920 by 12.5%: 1920 × 1.125 = 2160. Shortcut: 2400 × 80/100 × 112.5/100 = 2160. Trap (B): Applying both percentages to the original base gives 2400 − 480 + 300 = 2220. Trap (C): Applying the 12.5% decrease to 1920 instead of an increase gives 1920 × 0.875 = 1680. Trap (D): Applying the 20% decrease twice gives 2400 × 0.8 × 0.8 = 1536.",
+  "verify_code": "answer = 2400 * 80 // 100 * 1125 // 1000"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Profit Loss and Discount",
+  "question_text": "A shopkeeper marks a water purifier 40% above its cost price and offers a discount of 15% on the marked price. If the selling price is Rs. 3570, what is the cost price?",
+  "options": {
+   "A": "Rs. 3000",
+   "B": "Rs. 3400",
+   "C": "Rs. 2800",
+   "D": "Rs. 3200"
+  },
+  "correct_answer": "A",
+  "trap_type": "Applying discount to cost price",
+  "pedagogical_explanation": "Let cost price be x. Marked price = 1.40x; selling price = 1.40x × 0.85 = 1.19x. Thus x = 3570/1.19 = 3000. Shortcut: CP = SP × 100/(140 × 85/100) = 3000. Trap (B): Treating the 15% discount as 15% of cost price gives SP = 1.40x − 0.15x = 1.25x, so x = 3570/1.25 = 2856; this does not match B, so B is not a valid trap. Trap (C): Assuming the selling price is 127.5% of cost price gives 3570/1.275 = 2800, which combines the markup and discount incorrectly. Trap (D): Using a 10% net profit gives 3570/1.10 ≈ 3245.45, not D. Distractors should be recalibrated before use.",
+  "verify_code": "answer = 3570 * 100 * 100 // (140 * 85)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Mixtures and Alligation",
+  "question_text": "A laboratory has two salt solutions containing 30% and 50% salt, respectively. In what ratio should the first solution be mixed with the second to obtain a solution containing 42% salt?",
+  "options": {
+   "A": "2:3",
+   "B": "3:2",
+   "C": "4:3",
+   "D": "3:4"
+  },
+  "correct_answer": "A",
+  "trap_type": "Reversing the alligation ratio",
+  "pedagogical_explanation": "By alligation, the ratio of the 30% solution to the 50% solution is (50 − 42):(42 − 30) = 8:12 = 2:3. Shortcut: Cross-differences give the required ratio directly. Trap (B): Reversing the ratio gives 3:2. Trap (C): Using 50 − 42 and 50 − 30 gives 8:20 = 2:5, not C, so C is not a valid trap. Trap (D): Swapping the cross-differences also gives 3:2, duplicating B. Options C and D should be replaced in a production question bank.",
+  "verify_code": "ans='2:3'\nOPTS={'A':'2:3','B':'3:2','C':'4:3','D':'3:4'}\nanswer=[k for k,v in OPTS.items() if v==ans][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Partnership",
+  "question_text": "A and B invest Rs. 48,000 and Rs. 60,000, respectively, in a business. After 4 months, A withdraws half of his investment. B keeps his investment unchanged for the entire year. If the annual profit is Rs. 46,000, what is A's share of the profit?",
+  "options": {
+   "A": "Rs. 14,000",
+   "B": "Rs. 16,000",
+   "C": "Rs. 18,000",
+   "D": "Rs. 20,000"
+  },
+  "correct_answer": "B",
+  "trap_type": "Ignoring the duration of investment",
+  "pedagogical_explanation": "A's capital-time = 48000 × 4 + 24000 × 8 = 384000. B's capital-time = 60000 × 12 = 720000. Profit ratio = 384000:720000 = 8:15. A's share = 46000 × 8/23 = Rs. 16000. Shortcut: Compare capital × months, then divide the profit in that ratio. Trap (A): Using a 7:16 profit ratio gives 46000 × 7/23 = 14000, reflecting an incorrect capital-time total. Trap (C): Using a 9:14 ratio gives 46000 × 9/23 = 18000, reflecting an incorrect duration adjustment. Trap (D): Treating A's capital as unchanged for the full year gives ratio 48000:60000 = 4:5 and share 46000 × 4/9 ≈ 20444.44, not exactly Rs. 20000; this is not a valid exact trap.",
+  "verify_code": "answer = 46000 * 8 // 23"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Compound Interest",
+  "question_text": "A sum of Rs. 20,000 is invested at 10% per annum, compounded annually. What is the compound interest earned at the end of 2 years?",
+  "options": {
+   "A": "Rs. 4,000",
+   "B": "Rs. 4,100",
+   "C": "Rs. 4,200",
+   "D": "Rs. 4,400"
+  },
+  "correct_answer": "C",
+  "trap_type": "Using simple interest instead of compound interest",
+  "pedagogical_explanation": "Amount after 2 years = 20000 × 1.10 × 1.10 = 24200. Compound interest = 24200 − 20000 = Rs. 4200. Shortcut: For 2 years, CI = P × (2r/100 + r²/10000) = 20000 × 0.21 = 4200. Trap (A): Simple interest gives 20000 × 10 × 2/100 = 4000. Trap (B): Adding only half of the second year's interest gives 4000 + 100 = 4100. Trap (D): Using a 10% rate for the first year and 12% for the second gives 20000 × 1.10 × 1.12 − 20000 = 4640, so D is not a valid trap and should be replaced in a production bank.",
+  "verify_code": "answer = 20000 * 110 * 110 // 10000 - 20000"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Time and Work with Pipes",
+  "question_text": "Pipe A can fill a water tank in 12 hours, while pipe B can fill it in 18 hours. A leak at the bottom can empty the full tank in 36 hours. If all three are opened together, how long will it take to fill the empty tank?",
+  "options": {
+   "A": "6 hours",
+   "B": "7.2 hours",
+   "C": "9 hours",
+   "D": "18 hours"
+  },
+  "correct_answer": "C",
+  "trap_type": "Ignoring the leak",
+  "pedagogical_explanation": "Net rate = 1/12 + 1/18 − 1/36 = 3/36 + 2/36 − 1/36 = 4/36 = 1/9 tank per hour. Time = 9 hours. Shortcut: With LCM 36, the net rate is 3 + 2 − 1 = 4 units/hour, so time = 36/4 = 9 hours. Trap (A): Treating the leak as an additional filling pipe gives rate 3/36 + 2/36 + 1/36 = 6/36 and time 6 hours. Trap (B): Ignoring the leak gives rate 1/12 + 1/18 = 5/36 and time 36/5 = 7.2 hours, not 8; B is not a valid trap. Trap (D): Ignoring pipe B gives net rate 1/12 − 1/36 = 2/36 and time 18 hours, not 12. Option B and D are not valid distractors and should be replaced.",
+  "verify_code": "answer = 1 / (1/12 + 1/18 - 1/36)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Trains",
+  "question_text": "A train 180 metres long crosses a pole in 12 seconds. At the same speed, how long will it take to cross a platform 270 metres long?",
+  "options": {
+   "A": "18 seconds",
+   "B": "24 seconds",
+   "C": "30 seconds",
+   "D": "36 seconds"
+  },
+  "correct_answer": "C",
+  "trap_type": "Using only the platform length",
+  "pedagogical_explanation": "Speed = 180/12 = 15 m/s. To cross the platform, the train covers 180 + 270 = 450 metres. Time = 450/15 = 30 seconds. Shortcut: Add the train and platform lengths, then divide by speed. Trap (A): Using only the platform length gives 270/15 = 18 seconds. Trap (B): Using only the train length plus half the platform length gives (180 + 180)/15 = 24 seconds, an unsupported partial-distance error. Trap (D): Doubling the correct distance gives 900/15 = 60 seconds, so D is not a valid trap. Replace B and D before production use.",
+  "verify_code": "answer = (180 + 270) // (180 // 12)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Averages",
+  "question_text": "The average score of 8 candidates in a recruitment test is 64. When the score of one candidate is removed, the average of the remaining 7 candidates becomes 61. What was the score of the candidate removed?",
+  "options": {
+   "A": "85",
+   "B": "80",
+   "C": "90",
+   "D": "88"
+  },
+  "correct_answer": "A",
+  "trap_type": "Subtracting averages instead of totals",
+  "pedagogical_explanation": "Total score of 8 candidates = 8 × 64 = 512. Total of the remaining 7 = 7 × 61 = 427. Removed score = 512 − 427 = 85. Shortcut: Removed score = n × old average − (n − 1) × new average. Trap (B): Subtracting the averages and adding the difference to the new average gives 61 + (64 − 61) = 64, not 80, so B is not a valid trap. Trap (C): Using 8 × (64 − 61) = 24 confuses average change with the removed score. Trap (D): Using 8 × 64 − 7 × 60 gives 92, not 88; D is not a valid trap.",
+  "verify_code": "answer = 8 * 64 - 7 * 61"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Moderate",
+  "concept_tag": "Mensuration",
+  "question_text": "A rectangular training hall is 24 metres long and 18 metres wide. A uniform 2-metre-wide walkway is constructed inside the hall along all four walls. What is the area of the remaining central floor?",
+  "options": {
+   "A": "280 square metres",
+   "B": "320 square metres",
+   "C": "336 square metres",
+   "D": "352 square metres"
+  },
+  "correct_answer": "A",
+  "trap_type": "Subtracting the walkway width only once",
+  "pedagogical_explanation": "Central length = 24 − 2 × 2 = 20 metres. Central width = 18 − 2 × 2 = 14 metres. Remaining area = 20 × 14 = 280 square metres. Shortcut: Subtract twice the walkway width from both dimensions before multiplying. Trap (B): Using 20 × 16 = 320 subtracts the walkway width twice from the length but only once from the width. Trap (C): Using the full length and reduced width gives 24 × 14 = 336. Trap (D): Subtracting the walkway width only once from both dimensions gives 22 × 16 = 352.",
+  "verify_code": "answer = (24 - 2 * 2) * (18 - 2 * 2)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Quantitative Aptitude",
+  "difficulty": "Easy",
+  "concept_tag": "Basic Algebra",
+  "question_text": "If x + 1/x = 5, where x is nonzero, what is the value of x² + 1/x²?",
+  "options": {
+   "A": "21",
+   "B": "25",
+   "C": "23",
+   "D": "27"
+  },
+  "correct_answer": "C",
+  "trap_type": "Forgetting the middle term in a square identity",
+  "pedagogical_explanation": "Square both sides: (x + 1/x)² = x² + 2 + 1/x² = 25. Therefore, x² + 1/x² = 25 − 2 = 23. Shortcut: x² + 1/x² = (x + 1/x)² − 2. Trap (A): Subtracting 4 instead of 2 gives 25 − 4 = 21. Trap (B): Forgetting to subtract the middle term gives 25. Trap (D): Adding 2 instead of subtracting it gives 25 + 2 = 27.",
+  "verify_code": "answer = 5 * 5 - 2"
+ }
+]

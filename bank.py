@@ -15,18 +15,29 @@ APTISETU_PATH = ROOT / "data" / "aptisetu_bank.json"  # imported by scripts/impo
 APTISETU_CUET_PATH = ROOT / "data" / "aptisetu_cuet_bank.json"  # import_aptisetu.py --family cuet
 IMPORT_PATHS = [APTISETU_PATH, APTISETU_CUET_PATH]  # AptiSetu banks the apps serve from (filtered by topic)
 CLAUDE_FAMILIES = ("mgmt_law", "sarkari", "cuet")  # families with a Claude-curated bank (scripts/import_claude_bank.py)
+MULTI_MODEL_FAMILIES = ("sarkari",)  # Gemini batches + model-compare bank (scripts/import_multi_model_bank.py)
 APTISETU_SOURCE = "AptiSetu bank"
 CLAUDE_SOURCE = "Claude curated bank"
-IMPORT_SOURCES = (APTISETU_SOURCE, CLAUDE_SOURCE)
+MULTI_MODEL_SOURCE = "Multi-model curated bank"
+IMPORT_SOURCES = (APTISETU_SOURCE, CLAUDE_SOURCE, MULTI_MODEL_SOURCE)
 
 
 def claude_bank_path(family: str) -> Path:
     return ROOT / "data" / f"claude_bank_{family}.json"
 
 
+def multi_model_bank_path(family: str) -> Path:
+    return ROOT / "data" / f"multi_model_bank_{family}.json"
+
+
 def import_paths(family: str) -> list[Path]:
-    """Imported banks one app serves: the AptiSetu banks plus that family's own Claude-curated bank only."""
-    return IMPORT_PATHS + ([claude_bank_path(family)] if family in CLAUDE_FAMILIES else [])
+    """Imported banks one app serves: AptiSetu, that family's Claude bank, and multi-model bank when present."""
+    paths = list(IMPORT_PATHS)
+    if family in CLAUDE_FAMILIES:
+        paths.append(claude_bank_path(family))
+    if family in MULTI_MODEL_FAMILIES:
+        paths.append(multi_model_bank_path(family))
+    return paths
 REVIEW_STATUSES = ("unreviewed", "approved", "rejected")
 NEAR_DUP_JACCARD = 0.6
 
