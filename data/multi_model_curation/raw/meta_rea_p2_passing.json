@@ -1,0 +1,155 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Linear Seating Mixed Facing",
+  "question_text": "Seven friends Aarti, Bhavya, Chetan, Divya, Esha, Farhan and Gaurav sit in a row. Some face North and some face South. Clues: Gaurav sits at the left end and faces North. Farhan sits at the right end and faces South. Divya sits exactly in the middle of the row and faces South. Chetan sits to the immediate right of Divya and faces the same direction as Divya. Only one person sits between Chetan and Esha. Esha and Bhavya both face the same direction as Gaurav. Bhavya sits to the immediate right of Esha. Aarti faces the direction opposite to Gaurav. Who sits second to the left of Chetan?",
+  "options": {
+   "A": "Esha",
+   "B": "Gaurav",
+   "C": "Divya",
+   "D": "Bhavya"
+  },
+  "correct_answer": "A",
+  "trap_type": "Using the viewer's left/right for a South-facing person or counting the wrong number of seats",
+  "pedagogical_explanation": "Step-by-step solution: Number the seats 1 to 7 from the left end. For a North-facing person, right is towards seat 7; for a South-facing person, right is towards seat 1 and left is towards seat 7. 1) Gaurav is at seat 1 (North) and Farhan at seat 7 (South). 2) Divya is in the middle, seat 4, facing South. 3) Chetan is to Divya's immediate right; Divya faces South, so her right is seat 3. Chetan is at seat 3 and faces South. 4) Only one person sits between Chetan and Esha, so Esha is at seat 1 or seat 5; seat 1 is taken, so Esha is at seat 5, facing North. 5) Bhavya is to the immediate right of Esha, who faces North, so Bhavya is at seat 6, facing North. 6) Aarti takes seat 2 and faces South. Row from the left: Gaurav, Aarti, Chetan, Divya, Esha, Bhavya, Farhan. Chetan faces South, so his left is towards seat 7; second to his left is seat 5, Esha.\nTrap (B): Using the viewer's left for Chetan (towards seat 1) instead of his own left moves to seat 1, giving Gaurav.\nTrap (C): Taking the immediate left of Chetan (one seat) instead of second to the left gives seat 4, Divya.\nTrap (D): Counting three seats to Chetan's left instead of two gives seat 6, Bhavya.",
+  "verify_code": "import itertools\nN = ['Aarti', 'Bhavya', 'Chetan', 'Divya', 'Esha', 'Farhan', 'Gaurav']\nsols = []\nfor p in itertools.permutations(N):\n    s = {n: i + 1 for i, n in enumerate(p)}\n    for fc in itertools.product('NS', repeat=7):\n        f = dict(zip(N, fc))\n        right = lambda n, k: s[n] + k if f[n] == 'N' else s[n] - k\n        if s['Gaurav'] != 1 or f['Gaurav'] != 'N': continue\n        if s['Farhan'] != 7 or f['Farhan'] != 'S': continue\n        if s['Divya'] != 4 or f['Divya'] != 'S': continue\n        if s['Chetan'] != right('Divya', 1) or f['Chetan'] != f['Divya']: continue\n        if abs(s['Chetan'] - s['Esha']) != 2: continue\n        if f['Esha'] != f['Gaurav'] or f['Bhavya'] != f['Gaurav']: continue\n        if s['Bhavya'] != right('Esha', 1): continue\n        if f['Aarti'] == f['Gaurav']: continue\n        sols.append((s, f))\nassert len(sols) == 1\ns, f = sols[0]\ninv = {v: k for k, v in s.items()}\nanswer = inv[s['Chetan'] + 2 if f['Chetan'] == 'S' else s['Chetan'] - 2]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Circular Seating",
+  "question_text": "Six friends Rohan, Sneha, Vikram, Priya, Karan and Ananya sit around a circular table facing the centre. Clues: Rohan sits opposite Priya. Sneha sits to the immediate left of Rohan. Vikram sits second to the right of Sneha. Ananya sits to the immediate right of Priya. Karan sits between Priya and Vikram. Who sits second to the left of Karan?",
+  "options": {
+   "A": "Sneha",
+   "B": "Ananya",
+   "C": "Rohan",
+   "D": "Vikram"
+  },
+  "correct_answer": "C",
+  "trap_type": "Mixing up left and right for centre-facing people or counting the wrong number of seats",
+  "pedagogical_explanation": "Step-by-step solution: For people facing the centre, left is clockwise and right is anticlockwise. Number the seats 0 to 5 clockwise, so left is +1 and right is -1. 1) Rohan is at seat 0 and Priya opposite at seat 3. 2) Sneha is to the immediate left of Rohan: seat 1. 3) Vikram is second to the right of Sneha: 1 - 2 = seat 5. 4) Ananya is to the immediate right of Priya: seat 2. 5) Karan takes seat 4, which lies between Priya (3) and Vikram (5). Second to the left of Karan is 4 + 2 = seat 0, Rohan.\nTrap (A): Counting three seats to the left of Karan (the person opposite him) instead of two gives seat 1, Sneha.\nTrap (B): Moving to the right (anticlockwise) instead of the left in the last step gives seat 2, Ananya.\nTrap (D): Taking the immediate left of Karan instead of second to the left gives seat 5, Vikram.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Sneha', 'Vikram', 'Priya', 'Karan', 'Ananya']):\n    s = {'Rohan': 0}\n    s.update({n: i + 1 for i, n in enumerate(p)})\n    if (s['Priya'] - s['Rohan']) % 6 != 3: continue\n    if s['Sneha'] != (s['Rohan'] + 1) % 6: continue\n    if s['Vikram'] != (s['Sneha'] - 2) % 6: continue\n    if s['Ananya'] != (s['Priya'] - 1) % 6: continue\n    if {(s['Karan'] - s['Priya']) % 6, (s['Karan'] - s['Vikram']) % 6} != {1, 5}: continue\n    sols.append(s)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['Karan'] + 2) % 6]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coded Inequality",
+  "question_text": "Statements: P > Q ≥ R < S ≤ T = U\nConclusions:\nI. Q > T\nII. Q ≤ T\nWhich of the conclusions is/are true?",
+  "options": {
+   "A": "Both Conclusions I and II are true",
+   "B": "Either Conclusion I or II is true",
+   "C": "Only Conclusion II is true",
+   "D": "Neither Conclusion I nor II is true"
+  },
+  "correct_answer": "B",
+  "trap_type": "Missing the either-or rule for a complementary pair, or chaining through opposite signs",
+  "pedagogical_explanation": "Step-by-step solution: 1) Q and T are linked only through R: Q ≥ R and R < S ≤ T. The signs point in opposite directions at R (Q ≥ R < S), so no definite relation between Q and T can be drawn. Conclusion I (Q > T) is not definitely true and Conclusion II (Q ≤ T) is not definitely true. 2) The two conclusions involve the same pair and together cover every case (Q > T or Q ≤ T), and exactly one of them must hold. So either I or II is true.\nTrap (A): Treating 'each is possible' as 'each is true' gives Both Conclusions I and II are true.\nTrap (C): Chaining across the break at R as if Q ≥ R < S ≤ T gave Q ≤ T accepts II as definite, giving Only Conclusion II is true.\nTrap (D): Rejecting both conclusions without checking the complementary-pair (either-or) rule gives Neither Conclusion I nor II is true.",
+  "verify_code": "import itertools\nV = ['P', 'Q', 'R', 'S', 'T', 'U']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    P, Q, R, S, T, U = vals\n    if P > Q >= R < S <= T == U:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda P, Q, R, S, T, U: Q > T)\nc2 = holds(lambda P, Q, R, S, T, U: Q <= T)\neither = holds(lambda P, Q, R, S, T, U: (Q > T) or (Q <= T)) and not c1 and not c2\nassert any(v[1] > v[4] for v in ok) and any(v[1] <= v[4] for v in ok)\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Blood Relation",
+  "question_text": "Six members Rajesh, Sunita, Amit, Priya, Karan and Neha are in a family. Rajesh is the father of Amit and Priya. Sunita is the wife of Rajesh. Amit is the brother of Priya. Karan is the son of Amit. Neha is the daughter of Priya. How is Karan related to Priya?",
+  "options": {
+   "A": "Son",
+   "B": "Cousin",
+   "C": "Brother",
+   "D": "Nephew"
+  },
+  "correct_answer": "D",
+  "trap_type": "Attaching the child to the wrong parent or answering for the wrong person",
+  "pedagogical_explanation": "Step-by-step solution: 1) Amit and Priya are siblings (children of Rajesh and Sunita). 2) Karan is the son of Amit. 3) The son of a person's brother is that person's nephew. So Karan is the Nephew of Priya.\nTrap (A): Attaching Karan to Priya instead of to Amit (Priya is Karan's aunt, not his mother) gives Son.\nTrap (B): Answering Karan's relation to Neha (Priya's daughter) instead of to Priya gives Cousin.\nTrap (C): Copying Amit's relation to Priya onto his son Karan gives Brother.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Direction Shadow",
+  "question_text": "In the evening, Sunita and Kavita are standing facing each other. Sunita's shadow falls exactly to her right. Which direction is Kavita facing?",
+  "options": {
+   "A": "North",
+   "B": "South",
+   "C": "East",
+   "D": "West"
+  },
+  "correct_answer": "B",
+  "trap_type": "Using the morning sun position or answering for the wrong person",
+  "pedagogical_explanation": "Step-by-step solution: 1) In the evening the sun is in the West, so shadows fall towards the East. 2) Sunita's shadow falls to her right, so East is on her right; a person with East on the right faces North. 3) Kavita stands facing Sunita, so Kavita faces the opposite direction, South.\nTrap (A): Answering Sunita's direction instead of Kavita's gives North.\nTrap (C): Taking the direction of the shadow (East) as the facing direction gives East.\nTrap (D): Taking the direction of the evening sun (West) as the facing direction gives West.",
+  "verify_code": "D = {'North': (0, 1), 'South': (0, -1), 'East': (1, 0), 'West': (-1, 0)}\nsun = D['West']\nshadow = (-sun[0], -sun[1])\nright = lambda v: (v[1], -v[0])\nsunita = [k for k, v in D.items() if right(v) == shadow][0]\nkavita = [k for k, v in D.items() if v == (-D[sunita][0], -D[sunita][1])][0]\nanswer = kavita"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Coding Decoding Sentence",
+  "question_text": "In a certain code language:\n'priya likes coffee' is written as 'ma ti na',\n'coffee is hot' is written as 'na ro ko', and\n'priya likes tea' is written as 'ma ti sa'.\nWhat is the code for 'tea'?",
+  "options": {
+   "A": "sa",
+   "B": "ma",
+   "C": "ti",
+   "D": "na"
+  },
+  "correct_answer": "A",
+  "trap_type": "Picking a code shared with another sentence instead of the code unique to the word",
+  "pedagogical_explanation": "Step-by-step solution: 1) 'priya likes' appears in the first and third sentences, and the common codes there are 'ma' and 'ti', so 'ma' and 'ti' stand for 'priya' and 'likes'. 2) 'coffee' appears in the first and second sentences, and the common code is 'na', so 'na' = coffee. 3) In the third sentence 'ma ti sa', removing 'ma' and 'ti' leaves 'sa', so 'tea' = sa.\nTrap (B): Taking the first code of the third sentence gives ma, which belongs to 'priya' or 'likes'.\nTrap (C): Taking the middle code of the third sentence gives ti, which belongs to 'priya' or 'likes'.\nTrap (D): Taking the last code of the first sentence (where 'coffee' stands in the same place as 'tea') gives na, the code for coffee.",
+  "verify_code": "S = {'priya likes coffee': 'ma ti na', 'coffee is hot': 'na ro ko', 'priya likes tea': 'ma ti sa'}\nW = {k: set(k.split()) for k in S}\nC = {k: set(v.split()) for k, v in S.items()}\ncand = set(C['priya likes tea'])\nfor k in S:\n    if k != 'priya likes tea':\n        cand -= C[k] if 'tea' not in W[k] else set()\nassert len(cand) == 1\nanswer = cand.pop()"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Alphabet Series",
+  "question_text": "What comes next in the series: A, C, F, J, O, ?",
+  "options": {
+   "A": "T",
+   "B": "V",
+   "C": "P",
+   "D": "U"
+  },
+  "correct_answer": "D",
+  "trap_type": "Repeating or skipping a gap, or applying the gap to the wrong term",
+  "pedagogical_explanation": "Step-by-step solution: Letter positions are A = 1, C = 3, F = 6, J = 10, O = 15. The gaps are +2, +3, +4, +5, so the next gap is +6: 15 + 6 = 21, which is U.\nTrap (A): Repeating the last gap (+5) instead of increasing it gives 20, T.\nTrap (B): Skipping a step and adding +7 gives 22, V.\nTrap (C): Adding the next gap (+6) to J instead of to O gives 16, P.",
+  "verify_code": "s = 'ACFJO'\np = [ord(c) - 64 for c in s]\ng = [b - a for a, b in zip(p, p[1:])]\nassert g == list(range(2, 6))\nanswer = chr(64 + p[-1] + g[-1] + 1)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Order Ranking",
+  "question_text": "In a row of 50 students facing North, Aman is 18th from the left end. What is his position from the right end?",
+  "options": {
+   "A": "33rd",
+   "B": "32nd",
+   "C": "31st",
+   "D": "68th"
+  },
+  "correct_answer": "A",
+  "trap_type": "Mishandling the +1 in end-position conversion",
+  "pedagogical_explanation": "Step-by-step solution: Position from the right = Total - Position from the left + 1 = 50 - 18 + 1 = 33. Aman is 33rd from the right end.\nTrap (B): Leaving out the +1 (50 - 18) gives 32nd.\nTrap (C): Subtracting 1 instead of adding it (50 - 18 - 1) gives 31st.\nTrap (D): Adding the two numbers (50 + 18) instead of subtracting gives 68th.",
+  "verify_code": "answer = 50 - 18 + 1"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Data Sufficiency",
+  "question_text": "Question: Who is the youngest among P, Q and R?\nStatements:\nI. P is younger than Q.\nII. Q is younger than R.\nWhich of the following is correct?",
+  "options": {
+   "A": "Statement I alone is sufficient",
+   "B": "Statement II alone is sufficient",
+   "C": "Both statements together are sufficient, but neither alone is sufficient",
+   "D": "Both statements together are not sufficient"
+  },
+  "correct_answer": "C",
+  "trap_type": "Treating one comparison as enough to rank three people",
+  "pedagogical_explanation": "Step-by-step solution: 1) Statement I alone: P is younger than Q, but R could be younger than P, so I alone is not sufficient. 2) Statement II alone: Q is younger than R, but P could be younger than Q, so II alone is not sufficient. 3) Together: P is younger than Q and Q is younger than R, so P is the youngest. Both statements together are sufficient, but neither alone is.\nTrap (A): Taking 'P is younger than Q' as proof that P is the youngest ignores R and accepts Statement I alone.\nTrap (B): Taking 'Q is younger than R' as proof that Q is the youngest ignores P and accepts Statement II alone.\nTrap (D): Testing each statement alone and never combining them gives Both statements together are not sufficient.",
+  "verify_code": "import itertools\norders = list(itertools.permutations('PQR'))\nI = lambda o: o.index('P') < o.index('Q')\nII = lambda o: o.index('Q') < o.index('R')\ndef suff(cond):\n    return len({o[0] for o in orders if cond(o)}) == 1\na, b, ab = suff(I), suff(II), suff(lambda o: I(o) and II(o))\nanswer = ('Statement I alone is sufficient' if a and not b else 'Statement II alone is sufficient' if b and not a else 'Both statements together are sufficient, but neither alone is sufficient' if ab and not a and not b else 'Both statements together are not sufficient')"
+ }
+]

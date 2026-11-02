@@ -38,3 +38,20 @@ Listed in `decisions.json` → `faculty_flags` (convention notes and sight-check
 - `meta-hard-p2 #2` (quadratic comparison) and `#9` (data sufficiency) return option **text** from `verify_code`, so the seeded shuffle cannot desync the key. All 20 were checked against every one of the 24 option permutations.
 - Re-deduped at ≥ 0.80 against seed + AI + AptiSetu + sample + Claude banks + the existing multi-model bank (2296 items): max similarity 0.731, **0 dropped**.
 - Faculty flags are added to `decisions.json` → `faculty_flags`.
+
+## Gemini batches 8–9 and Meta AI English/Reasoning batches (2026-11-02)
+
+74 items appended (manifest n=171–244). Index is the item's position in the original source file, so dropped items leave gaps.
+
+| Source | Model | Topic | Code | Items | Difficulty |
+|---|---|---|---|---:|---|
+| `batch-8 #i` | Gemini Argon 4.0 | Sarkari Reasoning | GB8 | 18 | 15 Moderate, 3 Easy |
+| `batch-9 #i` | Gemini Argon 4.0 | Sarkari English | GB9 | 19 | 17 Moderate, 2 CAT-Level |
+| `meta-eng-p1 #i` / `meta-eng-p2 #i` | Meta AI | Sarkari English | ME1 / ME2 | 8 + 10 | 9 Moderate, 9 Easy |
+| `meta-rea-p1 #i` / `meta-rea-p2 #i` | Meta AI | Sarkari Reasoning | MR1 / MR2 | 10 + 9 | 8 Moderate, 11 Easy |
+
+- Every key was checked by blind solve; batch-8 #1 had a wrong key and was repaired, broken seating clues were rebuilt, hard-coded `verify_code` was replaced with computing checks (option text or an `OPTS` map), and CAPITALS underlines were moved to the house `**...**` style. Each item survives all 24 option orders under the importer shuffle.
+- Dropped during verification: `batch-9 #11` (bank duplicate, "throw down the gauntlet"), `meta-eng-p1 #1` and `#2` (bank duplicates of CL-SK-SEN-F1-144 / -172), `meta-rea-p2 #6` (odd one out with no single-mistake distractors). `batch-8 #6` was held at 0.817 against MM-SK-SRE-GB2-017.
+- Re-deduped at ≥ 0.80 against seed + AI + AptiSetu + sample + Claude banks + the existing multi-model bank (2397 items) and pairwise within the 75 candidates. Max against the bank 0.782 (batch-8 #5 vs MM-SK-SRE-GB5-008). Within the candidates `batch-8 #8` scored 0.914 against `batch-8 #7` (same inequality template) and was **dropped**; the earlier item was kept.
+- Difficulty relabels and faculty flags are in `decisions.json` (`difficulty_relabels`, `faculty_flags`); the summary block is `gemini_meta_sarkari_import_2026_11_02`.
+

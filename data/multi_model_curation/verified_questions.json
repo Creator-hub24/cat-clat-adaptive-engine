@@ -2906,6 +2906,1264 @@
       "trap_type": "Downstream as still water, Upstream as still water, Neither sufficient",
       "pedagogical_explanation": "From I downstream speed =60 divided by 3 =20 kmph, from II upstream speed =40 divided by 4 =10 kmph, still water = (20 plus 10) divided by 2 =15 kmph, need both. Trap (A): Thinks downstream speed alone is still water speed 20 kmph. Trap (B): Thinks upstream speed alone is still water speed 10 kmph. Trap (C): Thinks data insufficient because stream speed not given.",
       "verify_code": "answer = (lambda eq1, eq2, unknowns: 'Statement I alone is sufficient' if eq1 >= unknowns else 'Statement II alone is sufficient' if eq2 >= unknowns else 'Both statements together are sufficient' if eq1 + eq2 >= unknowns and (60/3 + 40/4)/2 == 15 else 'Neither statement is sufficient')(1, 1, 2)"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Linear Seating Arrangement - Single Row Facing North",
+      "question_text": "Six executives—Aarav, Bhavya, Charan, Divya, Esha, and Farhan—are sitting in a straight row facing North, not necessarily in the same order. Divya sits third from the right end. Only one person sits between Divya and Farhan. Bhavya sits to the immediate left of Farhan. Aarav sits second to the left of Bhavya. Charan does not sit at any of the extreme ends of the row. Who sits second to the right of Aarav?",
+      "options": {
+        "A": "Bhavya",
+        "B": "Esha",
+        "C": "Divya",
+        "D": "Charan"
+      },
+      "correct_answer": "A",
+      "trap_type": "Counting the wrong number of seats or the wrong direction from the reference person",
+      "pedagogical_explanation": "Step-by-step solution: Number the six North-facing seats 1 to 6 from left to right. 1) Divya sits third from the right end, so Divya is at Seat 4. 2) Only one person sits between Divya and Farhan, so Farhan is at Seat 2 or Seat 6. 3) Bhavya sits to the immediate left of Farhan. If Farhan were at Seat 2, Bhavya would be at Seat 1 and Aarav (second to the left of Bhavya) would have no seat, so Farhan is at Seat 6 and Bhavya at Seat 5. 4) Aarav sits second to the left of Bhavya, so Aarav is at Seat 3. 5) Charan is not at an extreme end, so Charan is at Seat 2 and Esha at Seat 1. Final row (left to right): Esha, Charan, Aarav, Divya, Bhavya, Farhan. Second to the right of Aarav (Seat 3) is Seat 5, which is Bhavya.\nTrap (B): Moving two seats to the left of Aarav instead of the right lands on Seat 1, giving Esha.\nTrap (C): Moving only one seat (immediate right) instead of two lands on Seat 4, giving Divya.\nTrap (D): Taking the immediate left of Aarav instead of second to the right lands on Seat 2, giving Charan.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Aarav', 'Bhavya', 'Charan', 'Divya', 'Esha', 'Farhan']):\n    s = {n: i + 1 for i, n in enumerate(p)}\n    if s['Divya'] != 4: continue\n    if abs(s['Divya'] - s['Farhan']) != 2: continue\n    if s['Bhavya'] != s['Farhan'] - 1: continue\n    if s['Aarav'] != s['Bhavya'] - 2: continue\n    if s['Charan'] in (1, 6): continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('Aarav') + 2]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Circular Seating Arrangement - Facing Center",
+      "question_text": "Six doctors—Gaurav, Harish, Indu, Jatin, Kavya, and Lalit—are sitting around a circular table facing the center. Gaurav sits second to the right of Indu. Only two persons sit between Gaurav and Kavya. Harish sits to the immediate left of Kavya. Jatin is not an immediate neighbour of Indu. Who sits to the immediate right of Jatin?",
+      "options": {
+        "A": "Gaurav",
+        "B": "Indu",
+        "C": "Kavya",
+        "D": "Harish"
+      },
+      "correct_answer": "D",
+      "trap_type": "Reading the wrong neighbour (left vs right, or the wrong number of seats) in a centre-facing circle",
+      "pedagogical_explanation": "Step-by-step solution: For people facing the centre, 'right' is anticlockwise. Number the six seats 0 to 5 anticlockwise, so moving right is +1 and moving left is -1. 1) Place Indu at Seat 0. 2) Gaurav sits second to the right of Indu, so Gaurav is at Seat 2. 3) Only two persons sit between Gaurav and Kavya; in a 6-seat circle this means they sit opposite each other, so Kavya is at Seat 5. 4) Harish sits to the immediate left of Kavya, so Harish is at Seat 4. 5) Seats 1 and 3 remain. Seat 1 is next to Indu, and Jatin is not an immediate neighbour of Indu, so Jatin is at Seat 3 and Lalit at Seat 1. The immediate right of Jatin (Seat 3 + 1) is Seat 4, which is Harish.\nTrap (A): Taking the immediate left of Jatin (Seat 2) instead of the immediate right gives Gaurav.\nTrap (B): Taking the person sitting opposite Jatin (Seat 0) instead of the immediate right gives Indu.\nTrap (C): Moving two seats to the right of Jatin (Seat 5) instead of one gives Kavya.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Gaurav', 'Harish', 'Jatin', 'Kavya', 'Lalit']):\n    s = {'Indu': 0}\n    s.update({n: i + 1 for i, n in enumerate(p)})\n    if s['Gaurav'] != (s['Indu'] + 2) % 6: continue\n    if (s['Kavya'] - s['Gaurav']) % 6 != 3: continue\n    if s['Harish'] != (s['Kavya'] - 1) % 6: continue\n    if (s['Jatin'] - s['Indu']) % 6 in (1, 5): continue\n    sols.append(s)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['Jatin'] + 1) % 6]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Linear Seating Arrangement - Facing South",
+      "question_text": "Five chartered accountants—Manish, Nidhi, Omkar, Pooja, and Qasim—are sitting in a row facing South. Pooja sits at the extreme left end of the row (from their own South-facing perspective). Manish sits second to the right of Pooja. Only one person sits between Manish and Qasim. Nidhi sits to the immediate left of Manish. Who sits to the immediate right of Manish?",
+      "options": {
+        "A": "Nidhi",
+        "B": "Qasim",
+        "C": "Omkar",
+        "D": "Pooja"
+      },
+      "correct_answer": "C",
+      "trap_type": "Mixing up own left/right for South-facing people or counting the wrong number of seats",
+      "pedagogical_explanation": "Step-by-step solution: Everyone faces South, so use their own left and right. Number the five seats 0 to 4 from their own left to their own right (this is right to left for a viewer facing them). 1) Pooja sits at the extreme left end, so Pooja is at Seat 0. 2) Manish sits second to the right of Pooja, so Manish is at Seat 2. 3) Only one person sits between Manish and Qasim; Seat 0 is taken, so Qasim is at Seat 4. 4) Nidhi sits to the immediate left of Manish, so Nidhi is at Seat 1. 5) Omkar takes the remaining Seat 3. Order from their own left to right: Pooja, Nidhi, Manish, Omkar, Qasim. The immediate right of Manish is Seat 3, which is Omkar.\nTrap (A): Taking the immediate left of Manish instead of the immediate right gives Nidhi.\nTrap (B): Moving two seats to the right of Manish instead of one gives Qasim.\nTrap (D): Moving two seats to the left of Manish instead of one to the right gives Pooja.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Manish', 'Nidhi', 'Omkar', 'Pooja', 'Qasim']):\n    s = {n: i for i, n in enumerate(p)}\n    if s['Pooja'] != 0: continue\n    if s['Manish'] != s['Pooja'] + 2: continue\n    if abs(s['Manish'] - s['Qasim']) != 2: continue\n    if s['Nidhi'] != s['Manish'] - 1: continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('Manish') + 1]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Circular Seating Arrangement - Six People Facing Outward",
+      "question_text": "Six professors—Raghav, Suman, Tarun, Urvashi, Vikas, and Waseem—sit around a circular table facing outward (away from the center). Suman sits third to the right of Raghav. Tarun sits to the immediate left of Suman. Vikas sits second to the right of Tarun. Waseem sits to the immediate right of Raghav. Who sits directly opposite to Urvashi?",
+      "options": {
+        "A": "Tarun",
+        "B": "Vikas",
+        "C": "Waseem",
+        "D": "Raghav"
+      },
+      "correct_answer": "A",
+      "trap_type": "Selecting the immediate neighbour instead of the opposite person in a 6-seat circle",
+      "pedagogical_explanation": "Step-by-step solution: For people facing outward, 'right' is clockwise. Number the six seats 0 to 5 clockwise, so moving right is +1 and moving left is -1. 1) Place Raghav at Seat 0. 2) Suman sits third to the right of Raghav, so Suman is at Seat 3 (opposite Raghav). 3) Tarun sits to the immediate left of Suman, so Tarun is at Seat 2. 4) Vikas sits second to the right of Tarun, so Vikas is at Seat 4. 5) Waseem sits to the immediate right of Raghav, so Waseem is at Seat 1, and Urvashi takes the remaining Seat 5. In a 6-seat circle, the person opposite Seat 5 is at Seat (5 + 3) % 6 = 2, which is Tarun.\nTrap (B): Taking the immediate left of Urvashi (Seat 4) instead of the person opposite gives Vikas.\nTrap (C): Moving only two seats from Urvashi (Seat 1) instead of three gives Waseem.\nTrap (D): Taking the immediate right of Urvashi (Seat 0) instead of the person opposite gives Raghav.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Suman', 'Tarun', 'Urvashi', 'Vikas', 'Waseem']):\n    s = {'Raghav': 0}\n    s.update({n: i + 1 for i, n in enumerate(p)})\n    if s['Suman'] != (s['Raghav'] + 3) % 6: continue\n    if s['Tarun'] != (s['Suman'] - 1) % 6: continue\n    if s['Vikas'] != (s['Tarun'] + 2) % 6: continue\n    if s['Waseem'] != (s['Raghav'] + 1) % 6: continue\n    sols.append(s)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['Urvashi'] + 3) % 6]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Syllogism - Only a Few & Possibility",
+      "question_text": "Statements:\n1. Only a few mangoes are apples.\n2. All apples are bananas.\n3. No banana is a cherry.\nConclusions:\nI. Some mangoes are definitely not apples.\nII. Some mangoes are not cherries.\nWhich of the following options is correct?",
+      "options": {
+        "A": "Only Conclusion I follows",
+        "B": "Both Conclusions I and II follow",
+        "C": "Only Conclusion II follows",
+        "D": "Neither Conclusion I nor II follows"
+      },
+      "correct_answer": "B",
+      "trap_type": "Treating 'Only a few A are B' as ordinary 'Some A are B' and ignoring the 'Some A are not B' part",
+      "pedagogical_explanation": "Step-by-step solution: 1) 'Only a few mangoes are apples' means BOTH 'Some mangoes are apples' AND 'Some mangoes are not apples'. Therefore, Conclusion I ('Some mangoes are definitely not apples') directly follows. 2) Since some mangoes are apples, and all apples are bananas, those specific mangoes are also bananas. Because no banana is a cherry, the part of mangoes that lies inside apples (and bananas) can never be cherries. Therefore, Conclusion II ('Some mangoes are not cherries') also definitely follows. Hence, both Conclusions I and II follow.\nTrap (A): Failing to chain 'Some mangoes are apples' with 'All apples are bananas' and 'No banana is a cherry' leads to rejecting Conclusion II and picking Only Conclusion I follows.\nTrap (C): Treating 'Only a few mangoes are apples' as a standard 'Some mangoes are apples' (where 'All mangoes are apples' would be possible, making 'Some mangoes are not apples' doubtful) leads to rejecting Conclusion I and picking Only Conclusion II follows.\nTrap (D): Rejecting both negative conclusions under the false rule that positive statements cannot yield 'some... not' conclusions leads to Neither follows.",
+      "verify_code": "import itertools\nSETS = ['M', 'A', 'B', 'C']\nregions = [r for r in itertools.product([0, 1], repeat=len(SETS)) if any(r)]\ndef models():\n    for occ in itertools.product([0, 1], repeat=len(regions)):\n        live = [r for r, o in zip(regions, occ) if o]\n        if all(any(r[i] for r in live) for i in range(len(SETS))):\n            yield live\nix = {n: i for i, n in enumerate(SETS)}\nsome = lambda m, a, b: any(r[ix[a]] and r[ix[b]] for r in m)\nsome_not = lambda m, a, b: any(r[ix[a]] and not r[ix[b]] for r in m)\nall_ = lambda m, a, b: not some_not(m, a, b)\nno = lambda m, a, b: not some(m, a, b)\nfew = lambda m, a, b: some(m, a, b) and some_not(m, a, b)\nms = [m for m in models() if few(m, 'M', 'A') and all_(m, 'A', 'B') and no(m, 'B', 'C')]\nc1, c2 = lambda m: some_not(m, 'M', 'A'), lambda m: some_not(m, 'M', 'C')\nf1 = any(c1(m) for m in ms) if False else all(c1(m) for m in ms)\nf2 = any(c2(m) for m in ms) if False else all(c2(m) for m in ms)\nanswer = {(True, False): 'Only Conclusion I follows', (False, True): 'Only Conclusion II follows', (True, True): 'Both Conclusions I and II follow', (False, False): 'Neither Conclusion I nor II follows'}[(f1, f2)]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Syllogism - Only a Few & All Possibility Trap",
+      "question_text": "Statements:\n1. Only a few rivers are lakes.\n2. Some lakes are oceans.\nConclusions:\nI. All rivers being lakes is a possibility.\nII. All lakes being rivers is a possibility.\nWhich of the following options is correct?",
+      "options": {
+        "A": "Only Conclusion I follows",
+        "B": "Both Conclusions I and II follow",
+        "C": "Neither Conclusion I nor II follows",
+        "D": "Only Conclusion II follows"
+      },
+      "correct_answer": "D",
+      "trap_type": "Symmetrical restriction error on 'Only a few A are B'",
+      "pedagogical_explanation": "Step-by-step solution: The statement 'Only a few rivers are lakes' imposes a strict restriction on the subject ('rivers'): some rivers are lakes, and some rivers are definitely NOT lakes. Because some rivers are definitely not lakes, the entire set of rivers can NEVER go inside lakes—making Conclusion I ('All rivers being lakes is a possibility') false. However, the restriction applies only from rivers to lakes, not from lakes to rivers. The entire circle of 'lakes' can sit completely inside part of the 'rivers' circle while leaving other rivers outside lakes. Thus, Conclusion II ('All lakes being rivers is a possibility') is true. Only Conclusion II follows.\nTrap (A): Reversing the direction of the 'Only a few' restriction (thinking all rivers can be lakes, but not all lakes can be rivers) gives Only Conclusion I follows.\nTrap (B): Treating 'Only a few' as a simple 'Some' statement (where 'All' is possible in both directions) gives Both Conclusions I and II follow.\nTrap (C): Assuming 'Only a few rivers are lakes' forbids 'All' possibilities in both directions (symmetrical restriction error) gives Neither Conclusion I nor II follows.",
+      "verify_code": "import itertools\nSETS = ['R', 'L', 'O']\nregions = [r for r in itertools.product([0, 1], repeat=len(SETS)) if any(r)]\ndef models():\n    for occ in itertools.product([0, 1], repeat=len(regions)):\n        live = [r for r, o in zip(regions, occ) if o]\n        if all(any(r[i] for r in live) for i in range(len(SETS))):\n            yield live\nix = {n: i for i, n in enumerate(SETS)}\nsome = lambda m, a, b: any(r[ix[a]] and r[ix[b]] for r in m)\nsome_not = lambda m, a, b: any(r[ix[a]] and not r[ix[b]] for r in m)\nall_ = lambda m, a, b: not some_not(m, a, b)\nno = lambda m, a, b: not some(m, a, b)\nfew = lambda m, a, b: some(m, a, b) and some_not(m, a, b)\nms = [m for m in models() if few(m, 'R', 'L') and some(m, 'L', 'O')]\nc1, c2 = lambda m: all_(m, 'R', 'L'), lambda m: all_(m, 'L', 'R')\nf1 = any(c1(m) for m in ms) if True else all(c1(m) for m in ms)\nf2 = any(c2(m) for m in ms) if True else all(c2(m) for m in ms)\nanswer = {(True, False): 'Only Conclusion I follows', (False, True): 'Only Conclusion II follows', (True, True): 'Both Conclusions I and II follow', (False, False): 'Neither Conclusion I nor II follows'}[(f1, f2)]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Inequality - Two-Statement Comma Chain",
+      "question_text": "Statements: P >= Q = R > S; R <= T < U\nConclusions:\nI. P > S\nII. Q < U\nWhich of the following options is correct?",
+      "options": {
+        "A": "Only Conclusion I is true",
+        "B": "Only Conclusion II is true",
+        "C": "Both Conclusions I and II are true",
+        "D": "Neither Conclusion I nor II is true"
+      },
+      "correct_answer": "C",
+      "trap_type": "Missing the substitution of equal elements (Q = R) across comma-separated statements",
+      "pedagogical_explanation": "Step-by-step solution: 1) For Conclusion I (P > S): Trace the path from P to S in the first statement: P >= Q = R > S. Since the chain has >=, =, and strictly >, the strict inequality (>) dominates, making P > S definitely true. 2) For Conclusion II (Q < U): Combine the two statements via the common element R: Q = R <= T < U. Since the chain from Q to U has =, <=, and strictly <, the strict inequality (<) dominates, making Q < U definitely true. Therefore, both Conclusions I and II are true.\nTrap (A): Seeing opposing signs between the two statements (>= in the first and <= in the second) and assuming Q and U cannot be compared without noticing that Q = R starts to the left of <= T < U gives Only Conclusion I is true.\nTrap (B): Misreading P >= Q = R > S as requiring >= between P and S gives Only Conclusion II is true.\nTrap (D): Requiring every symbol in the chain to be strictly > or < for a strict conclusion to hold gives Neither is true.",
+      "verify_code": "import itertools\nV = ['P', 'Q', 'R', 'S', 'T', 'U']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    P, Q, R, S, T, U = vals\n    if P >= Q == R > S and R <= T < U:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda P, Q, R, S, T, U: P > S)\nc2 = holds(lambda P, Q, R, S, T, U: Q < U)\neither = holds(lambda P, Q, R, S, T, U: (P > S) or (Q < U)) and not c1 and not c2\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Coded Inequality - Symbol Translation",
+      "question_text": "In a certain code language:\n'X @ Y' means 'X is greater than Y'\n'X # Y' means 'X is greater than or equal to Y'\n'X $ Y' means 'X is equal to Y'\n'X % Y' means 'X is smaller than Y'\nStatements: A # B $ C @ D; C % E\nConclusions:\nI. A @ D\nII. E @ D\nWhich of the following options is correct?",
+      "options": {
+        "A": "Only Conclusion I is true",
+        "B": "Only Conclusion II is true",
+        "C": "Neither Conclusion I nor II is true",
+        "D": "Both Conclusions I and II are true"
+      },
+      "correct_answer": "D",
+      "trap_type": "Reversing the inequality direction when linking a reversed branch (C < E vs C > D)",
+      "pedagogical_explanation": "Step-by-step solution: Decode the symbols first: @ means >, # means >=, $ means =, and % means <. Now rewrite the statements: A >= B = C > D and C < E (which is equivalent to E > C). 1) Check Conclusion I (A @ D, i.e., A > D): From A >= B = C > D, the strict '>' dominates, so A > D is definitely true. 2) Check Conclusion II (E @ D, i.e., E > D): Combine E > C and C > D to get E > C > D, which means E > D is also definitely true. Thus, both Conclusions I and II are true.\nTrap (A): Seeing C > D and C < E with opposite-facing signs (< and >) and assuming E and D have a blocked relation (forgetting to flip C < E into E > C before chaining with C > D) gives Only Conclusion I is true.\nTrap (B): Misreading # (>=) as % (<) in the first statement blocks A > D and gives Only Conclusion II is true.\nTrap (C): Reading '@' as 'smaller than' in both conclusions (A < D and E < D) makes both false, giving Neither Conclusion I nor II is true.",
+      "verify_code": "import itertools\nV = ['A', 'B', 'C', 'D', 'E']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    A, B, C, D, E = vals\n    if A >= B == C > D and C < E:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda A, B, C, D, E: A > D)\nc2 = holds(lambda A, B, C, D, E: E > D)\neither = holds(lambda A, B, C, D, E: (A > D) or (E > D)) and not c1 and not c2\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Coded Blood Relations - Forward Coding",
+      "question_text": "If 'A + B' means 'A is the father of B', 'A - B' means 'A is the mother of B', 'A * B' means 'A is the brother of B', and 'A / B' means 'A is the sister of B', then how is Kartik related to Meera in the expression 'Kartik * Lata - Meera'?",
+      "options": {
+        "A": "Paternal Uncle",
+        "B": "Brother",
+        "C": "Maternal Uncle",
+        "D": "Niece"
+      },
+      "correct_answer": "C",
+      "trap_type": "Confusing Maternal Uncle with Paternal Uncle or reversing the direction of relation",
+      "pedagogical_explanation": "Step-by-step solution: Break the expression 'Kartik * Lata - Meera' into two segments: 1) 'Kartik * Lata' means Kartik is the brother of Lata (so Kartik is male, and Kartik and Lata are siblings). 2) 'Lata - Meera' means Lata is the mother of Meera (so Lata is female, one generation above Meera). Since Kartik is the brother of Meera's mother (Lata), Kartik is the Maternal Uncle of Meera.\nTrap (A): Identifying Kartik as an uncle correctly but misreading '-' as 'father of' instead of 'mother of' gives Paternal Uncle.\nTrap (B): Ignoring the generation gap created by '-' and treating all three people as siblings in the same generation gives Brother.\nTrap (D): Answering how Meera is related to Kartik (the reverse direction) instead of how Kartik is related to Meera gives Niece.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Coded Blood Relations - In-Law & Spousal Chain",
+      "question_text": "In a certain code language:\n'P @ Q' means 'P is the wife of Q'\n'P # Q' means 'P is the son of Q'\n'P $ Q' means 'P is the sister of Q'\nIn the expression 'Ritu $ Sameer # Tanuja @ Umesh', how is Umesh related to Ritu?",
+      "options": {
+        "A": "Father",
+        "B": "Mother",
+        "C": "Brother",
+        "D": "Maternal Uncle"
+      },
+      "correct_answer": "A",
+      "trap_type": "Misreading the spouse code '@' or answering for the wrong person",
+      "pedagogical_explanation": "Step-by-step solution: Decode the expression one link at a time. 1) 'Ritu $ Sameer' means Ritu is the sister of Sameer, so Ritu and Sameer are siblings. 2) 'Sameer # Tanuja' means Sameer is the son of Tanuja, so Tanuja is the parent of Sameer and Ritu. 3) 'Tanuja @ Umesh' means Tanuja is the wife of Umesh, so Tanuja is their mother and Umesh is her husband. Umesh is the husband of Ritu's mother, so Umesh is the Father of Ritu.\nTrap (B): Answering Tanuja's relation to Ritu instead of Umesh's gives Mother.\nTrap (C): Reading '@' as 'mother of' makes Umesh another child of Tanuja, giving Brother.\nTrap (D): Reading '@' as 'sister of' makes Umesh the brother of Ritu's mother, giving Maternal Uncle.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Coded Blood Relations - Backward/Reversed Operand Coding",
+      "question_text": "Read the following information carefully:\n'M & N' means 'N is the father of M'\n'M % N' means 'N is the mother of M'\n'M ^ N' means 'N is the husband of M'\nIn the expression 'Pooja % Rekha & Suresh', how is Suresh related to Pooja?",
+      "options": {
+        "A": "Father",
+        "B": "Maternal Grandfather",
+        "C": "Husband",
+        "D": "Paternal Grandfather"
+      },
+      "correct_answer": "B",
+      "trap_type": "Reading backward-coded definitions ('N is the father of M') as forward-coded ('M is the father of N')",
+      "pedagogical_explanation": "Step-by-step solution: Notice carefully that every rule defines the SECOND person (N) in terms of the FIRST person (M): 1) In 'Pooja % Rekha', the rule 'M % N means N is the mother of M' tells us that Rekha is the mother of Pooja. 2) In 'Rekha & Suresh', the rule 'M & N means N is the father of M' tells us that Suresh is the father of Rekha. Since Rekha is Pooja's mother and Suresh is Rekha's father, Suresh is the Maternal Grandfather of Pooja.\nTrap (A): Skipping the intermediate generation (Rekha) and linking Suresh directly as the parent of Pooja gives Father.\nTrap (C): Reading '%' forward ('Pooja is the mother of Rekha') while reading '&' correctly makes Pooja and Suresh the two parents of Rekha, giving Husband.\nTrap (D): Identifying the two-generation gap correctly (grandfather) but misreading '%' as 'father of' instead of 'mother of' gives Paternal Grandfather.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Direction Sense - Pythagorean Shortest Distance & Direction",
+      "question_text": "Vikram starts walking from Point A and walks 12 m North to reach Point B. From Point B, he turns right and walks 9 m to reach Point C. From Point C, he turns right again and walks 4 m to reach Point D. Finally, he turns left and walks 6 m to reach Point E. What is the shortest distance between Point A and Point E, and in which direction is Point E with respect to Point A?",
+      "options": {
+        "A": "17 m, North-East",
+        "B": "17 m, South-West",
+        "C": "23 m, North-East",
+        "D": "15 m, North-East"
+      },
+      "correct_answer": "A",
+      "trap_type": "Turning left from South as West instead of East, or reversing reference point",
+      "pedagogical_explanation": "Step-by-step solution: Place Point A at the origin (0, 0). 1) 12 m North takes Vikram to Point B (0, 12). 2) Turning right from North is East; walking 9 m East takes him to Point C (9, 12). 3) Turning right from East is South; walking 4 m South takes him to Point D (9, 8). 4) Turning left when facing South means turning East; walking 6 m East takes him to Point E (9 + 6, 8) = (15, 8). Now compute the shortest (straight-line) distance from A (0, 0) to E (15, 8) using the Pythagoras theorem: sqrt(15 * 15 + 8 * 8) = sqrt(225 + 64) = sqrt(289) = 17 m. Since x = +15 (East) and y = +8 (North), Point E is in the North-East direction with respect to Point A.\nTrap (B): Calculating the distance (17 m) correctly but finding the direction of Point A with respect to Point E (instead of E with respect to A) gives 17 m, South-West.\nTrap (C): Adding the net horizontal and vertical components (15 m + 8 m = 23 m) instead of using the Pythagorean theorem gives 23 m, North-East.\nTrap (D): Stopping at Point C (sqrt(12 * 12 + 9 * 9) = 15 m) or taking only the horizontal displacement (15 m) gives 15 m, North-East.",
+      "verify_code": "x, y = 0, 0\nd = (0, 1)\nright = lambda v: (v[1], -v[0])\nleft = lambda v: (-v[1], v[0])\nx, y = x + 12 * d[0], y + 12 * d[1]\nd = right(d); x, y = x + 9 * d[0], y + 9 * d[1]\nd = right(d); x, y = x + 4 * d[0], y + 4 * d[1]\nd = left(d); x, y = x + 6 * d[0], y + 6 * d[1]\ndist = round((x * x + y * y) ** 0.5)\nassert dist * dist == x * x + y * y and x > 0 and y > 0\nans = str(dist) + ' m, North-East'\nOPTS = {'A': '17 m, North-East', 'B': '17 m, South-West', 'C': '23 m, North-East', 'D': '15 m, North-East'}\nanswer = [k for k, v in OPTS.items() if v == ans][0]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Direction Sense - Rectangular Loop & Distance Calculation",
+      "question_text": "Ananya leaves her office and walks 15 m West to reach a bus stop. She then turns left and walks 20 m to reach a café. From the café, she turns left again and walks 27 m to reach a bookstore. Finally, she turns left and walks 25 m to reach her home. What is the shortest distance between her office and her home?",
+      "options": {
+        "A": "17 m",
+        "B": "12 m",
+        "C": "13 m",
+        "D": "7 m"
+      },
+      "correct_answer": "C",
+      "trap_type": "Adding instead of subtracting opposite parallel movements before applying Pythagoras",
+      "pedagogical_explanation": "Step-by-step solution: Set the office at the origin (0, 0). 1) Walking 15 m West reaches the bus stop at (-15, 0). 2) Turning left from West is South; walking 20 m South reaches the café at (-15, -20). 3) Turning left from South is East; walking 27 m East reaches the bookstore at (-15 + 27, -20) = (12, -20). 4) Turning left from East is North; walking 25 m North reaches her home at (12, -20 + 25) = (12, 5). Thus, her home is 12 m East and 5 m North of her office (0, 0). By the Pythagoras theorem, the shortest distance is sqrt(12 * 12 + 5 * 5) = sqrt(144 + 25) = sqrt(169) = 13 m.\nTrap (A): Adding the horizontal and vertical net displacements (12 m + 5 m) instead of computing the hypotenuse gives 17 m.\nTrap (B): Calculating only the horizontal displacement (27 - 15 = 12 m) and ignoring the 5 m vertical difference between 25 m North and 20 m South gives 12 m.\nTrap (D): Subtracting the net vertical distance from the net horizontal distance (12 m - 5 m) gives 7 m.",
+      "verify_code": "x, y = 0, 0\nd = (-1, 0)\nleft = lambda v: (-v[1], v[0])\nx, y = x + 15 * d[0], y + 15 * d[1]\nd = left(d); x, y = x + 20 * d[0], y + 20 * d[1]\nd = left(d); x, y = x + 27 * d[0], y + 27 * d[1]\nd = left(d); x, y = x + 25 * d[0], y + 25 * d[1]\ndist = round((x * x + y * y) ** 0.5)\nassert dist * dist == x * x + y * y\nanswer = dist"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Coding-Decoding - New Pattern (Length, Symbol, Last Letter Shift)",
+      "question_text": "In a certain code language:\n'TIGER' is coded as '5#S'\n'MONKEY' is coded as '6@Z'\n'LION' is coded as '4@O'\nBased on the same coding pattern, how will 'TRAIN' be coded in that language?",
+      "options": {
+        "A": "5@O",
+        "B": "5#N",
+        "C": "5#M",
+        "D": "5#O"
+      },
+      "correct_answer": "D",
+      "trap_type": "Taking the symbol from the wrong example or forgetting the +1 shift on the last letter",
+      "pedagogical_explanation": "Step-by-step solution: Analyze the three elements (Number, Symbol, Letter) of each code: 1) Number: 'TIGER' has 5 letters -> 5; 'MONKEY' has 6 letters -> 6; 'LION' has 4 letters -> 4. So the number represents the total number of letters in the word. For 'TRAIN', the length is 5. 2) Symbol: 'TIGER' (odd length, 5) has '#'; 'MONKEY' (even length, 6) and 'LION' (even length, 4) have '@'. Since 'TRAIN' has 5 letters (odd), its symbol is '#'. 3) Letter: Last letter of TIGER is R -> R + 1 = S; last letter of MONKEY is Y -> Y + 1 = Z; last letter of LION is N -> N + 1 = O. For 'TRAIN', the last letter is N, and N + 1 = O. Combining all three gives '5#O'.\nTrap (A): Copying the symbol from LION, the example whose last letter N matches TRAIN's, instead of using the odd/even word-length rule gives 5@O.\nTrap (B): Keeping the last letter 'N' unchanged instead of shifting it forward by +1 gives 5#N.\nTrap (C): Shifting the last letter backward by -1 (N - 1 = M) instead of forward by +1 gives 5#M.",
+      "verify_code": "ex = {'TIGER': '5#S', 'MONKEY': '6@Z', 'LION': '4@O'}\ncode = lambda w: str(len(w)) + ('#' if len(w) % 2 else '@') + chr(ord(w[-1]) + 1)\nassert all(code(w) == c for w, c in ex.items())\nOPTS = {'A': '5@O', 'B': '5#N', 'C': '5#M', 'D': '5#O'}\nanswer = [k for k, v in OPTS.items() if v == code('TRAIN')][0]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Coding-Decoding - Opposite Letters & Consonant/Vowel Shift",
+      "question_text": "In a certain code language, 'SMART' is written as 'HNZIG' and 'BRAIN' is written as 'YIZRM'. How will 'CLOUD' be written in that language?",
+      "options": {
+        "A": "XOLFZ",
+        "B": "XOLFW",
+        "C": "DMPVE",
+        "D": "XLOFW"
+      },
+      "correct_answer": "B",
+      "trap_type": "Missing that the middle letters L and O swap into each other's place under the opposite-letter rule",
+      "pedagogical_explanation": "Step-by-step solution: Observe the relation between each letter and its code using standard alphabetical positions (A=1 to Z=26): S(19)+H(8)=27, M(13)+N(14)=27, A(1)+Z(26)=27, R(18)+I(9)=27, T(20)+G(7)=27. Every letter is replaced by its reverse-alphabetical opposite pair (two letters whose positions sum to 27). Applying this rule to 'CLOUD': C(3) -> 24(X), L(12) -> 15(O), O(15) -> 12(L), U(21) -> 6(F), D(4) -> 23(W). Therefore, 'CLOUD' is coded as 'XOLFW'.\nTrap (A): Miscalculating the opposite of D(4) as Z(26) instead of W(23) gives XOLFZ.\nTrap (C): Applying a +1 shift to every letter (as M becomes N in SMART) instead of the opposite-letter rule gives DMPVE.\nTrap (D): Leaving L and O in their original places, because L and O are each other's opposites, instead of replacing each letter gives XLOFW.",
+      "verify_code": "opp = lambda w: ''.join(chr(155 - ord(c)) for c in w)\nassert opp('SMART') == 'HNZIG' and opp('BRAIN') == 'YIZRM'\nanswer = opp('CLOUD')"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Order and Ranking - Rank Interchange in a Row",
+      "question_text": "In a row of cadet applicants facing North, Deepak is 14th from the left end and Pranav is 19th from the right end. When they interchange their positions, Deepak becomes 23rd from the left end. What will be Pranav's new position from the right end after the interchange?",
+      "options": {
+        "A": "27th",
+        "B": "28th",
+        "C": "29th",
+        "D": "41st"
+      },
+      "correct_answer": "B",
+      "trap_type": "Subtracting 1 from the rank shift when transferring the increase to the second person",
+      "pedagogical_explanation": "Step-by-step solution: Method 1 (Direct Shift): Before the interchange, Deepak was 14th from the left; after moving to Pranav's seat, Deepak becomes 23rd from the left—an increase of 23 - 14 = +9 positions. By symmetry, Pranav's rank from the right end also increases by the exact same amount (+9): 19 + 9 = 28th. Method 2 (Via Total Persons): Since Deepak's new seat is Pranav's old seat, that seat is 23rd from the left and 19th from the right. Total persons = 23 + 19 - 1 = 41. Now Pranav is at Deepak's old seat (14th from the left), so Pranav's rank from the right is (41 - 14) + 1 = 28th.\nTrap (A): Calculating the total as 41 correctly, but forgetting to add +1 when finding Pranav's right-end rank (41 - 14 = 27) gives 27th.\nTrap (C): Adding 1 to the shift (19 + 9 + 1 = 29) due to confusing rank-difference formulas with total-person formulas gives 29th.\nTrap (D): Stopping after calculating the total number of cadets in the row (23 + 19 - 1 = 41) gives 41st.",
+      "verify_code": "total = 23 + 19 - 1\nanswer = total - 14 + 1"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Order and Ranking - Overlapping vs Non-Overlapping Row",
+      "question_text": "In a row of 45 students, Kritika is 18th from the left end and Roshan is 16th from the right end. How many students are sitting strictly between Kritika and Roshan?",
+      "options": {
+        "A": "11",
+        "B": "10",
+        "C": "12",
+        "D": "9"
+      },
+      "correct_answer": "A",
+      "trap_type": "Subtracting an extra 1 from (Total - Sum of Ranks) when calculating persons strictly between",
+      "pedagogical_explanation": "Step-by-step solution: First check whether the two ranks overlap by adding them: 18 (from left) + 16 (from right) = 34. Since 34 is less than the total number of students (45), it is a non-overlapping case. The number of students sitting strictly between them is simply Total - (Left Rank + Right Rank) = 45 - (18 + 16) = 45 - 34 = 11.\nTrap (B): Subtracting an extra 1 from the difference (45 - 34 - 1 = 10) by confusing the 'between' formula with the 'Total = L + R - 1' formula gives 10.\nTrap (C): Adding 1 to the difference (45 - 34 + 1 = 12) by confusing it with the 'Opposite Rank = Total - Rank + 1' formula gives 12.\nTrap (D): Excluding Kritika and Roshan a second time (45 - 34 - 2) gives 9.",
+      "verify_code": "answer = 45 - (18 + 16)"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Alphanumeric Series - Relative Positional Shift",
+      "question_text": "Study the following alphanumeric-symbol series carefully and answer the question below:\nM 4 # P 7 @ R 2 $ K 9 % T 5 & W 8 * Z 3\nWhich element is sixth to the left of the fifteenth element from the left end of the above arrangement?",
+      "options": {
+        "A": "2",
+        "B": "K",
+        "C": "$",
+        "D": "@"
+      },
+      "correct_answer": "C",
+      "trap_type": "Off-by-one counting from a reference element, or dropping the reference element",
+      "pedagogical_explanation": "Step-by-step solution: When both reference directions are from the same end ('left of the ... from the left end'), subtract the two positions: 15 - 6 = 9th element from the left end. Now count to the 9th element from the left in 'M(1) 4(2) #(3) P(4) 7(5) @(6) R(7) 2(8) $(9) K(10) ...': the 9th element from the left end is '$'.\nTrap (A): Counting 6 steps left from the 15th element inclusively (counting the 15th element '&' as 1 instead of 0, which lands on the 15 - 6 - 1 = 8th element) gives 2.\nTrap (B): Off-by-one error to the right (landing on the 10th element instead of the 9th element) gives K.\nTrap (D): Reading the question as 'sixth element from the left end' and ignoring the fifteenth-element reference gives @.",
+      "verify_code": "s = 'M 4 # P 7 @ R 2 $ K 9 % T 5 & W 8 * Z 3'.split()\nassert len(s) == 20 and s[14] == '&'\nanswer = s[15 - 6 - 1]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Error Spotting - Inversion after Negative Adverbials",
+      "question_text": "Identify the segment in the sentence that contains a grammatical error: Seldom our regional managers / have encountered such fierce resistance / from rural distributors regarding / the revised credit settlement cycle.",
+      "options": {
+        "A": "from rural distributors regarding",
+        "B": "Seldom our regional managers",
+        "C": "the revised credit settlement cycle.",
+        "D": "have encountered such fierce resistance"
+      },
+      "correct_answer": "B",
+      "trap_type": "Omission of Subject-Auxiliary Inversion",
+      "pedagogical_explanation": "When a sentence begins with a restrictive or negative adverb like 'Seldom', 'Rarely', or 'Never' for emphasis, subject-auxiliary inversion is mandatory. The auxiliary verb 'have' must precede the subject 'our regional managers', making the correct structure 'Seldom have our regional managers encountered...'. Trap (A): Students may falsely suspect 'regarding' requires the preposition 'to' after it, though 'regarding' functions correctly as a standalone preposition meaning 'about'. Trap (C): Candidates sometimes think a noun adjunct chain like 'credit settlement cycle' needs hyphens or prepositions, whereas compound nouns are standard in formal English. Trap (D): Test-takers often misidentify the present perfect 'have encountered' as needing past simple 'encountered', overlooking that the time-frame extends to the present and the error lies in the uninverted opening clause.",
+      "verify_code": "answer = \"Seldom our regional managers\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Error Spotting - Possessive Case before Gerund",
+      "question_text": "Identify the segment in the sentence that contains a grammatical error: The auditing committee objected / to the procurement officer / approving the emergency vendor contract / without soliciting three independent quotations.",
+      "options": {
+        "A": "The auditing committee objected",
+        "B": "without soliciting three independent quotations.",
+        "C": "to the procurement officer",
+        "D": "approving the emergency vendor contract"
+      },
+      "correct_answer": "C",
+      "trap_type": "Objective Noun Instead of Possessive Before Gerund",
+      "pedagogical_explanation": "In formal grammar, when a noun or pronoun precedes a gerund ('approving') that functions as the object of a preposition ('to'), the noun must be in the possessive case ('the procurement officer's') because the objection is directed at the action of approving, not at the person alone. Trap (A): Learners often think 'committee' must take a plural verb or requires an preposition other than 'to' after 'objected', though 'object to' with a singular collective noun is completely standard. Trap (B): Candidates may assume 'without soliciting' should be 'without to solicit', forgetting that prepositions like 'without' take gerund objects. Trap (D): Students frequently mistake 'approving' for a faulty participle and want to change it to 'to approve', missing that 'object to' requires a gerund phrase modified by a possessive noun.",
+      "verify_code": "answer = \"to the procurement officer\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Error Spotting - Correlative Conjunction Parallelism",
+      "question_text": "Identify the segment in the sentence that contains a grammatical error: The newly drafted municipal bylaws / aim not only to curb / unauthorized commercial construction / but also streamlining rainwater harvesting.",
+      "options": {
+        "A": "but also streamlining rainwater harvesting.",
+        "B": "The newly drafted municipal bylaws",
+        "C": "aim not only to curb",
+        "D": "unauthorized commercial construction"
+      },
+      "correct_answer": "A",
+      "trap_type": "Broken Parallelism in Correlative Conjunctions",
+      "pedagogical_explanation": "Correlative conjunctions ('not only... but also') must link grammatically identical structures. Because 'not only' is followed by the to-infinitive 'to curb', 'but also' must be followed by the parallel infinitive 'to streamline' (or 'curb' if 'to' preceded 'not only'), not the gerund 'streamlining'. Trap (B): Students sometimes confuse 'bylaws' as an uncountable singular noun, whereas it is a countable plural noun properly paired with the plural verb 'aim'. Trap (C): Candidates may believe 'aim' must be followed by 'at curbing' instead of 'to curb', though 'aim + to-infinitive' is standard formal usage. Trap (D): Test-takers occasionally assume 'construction' needs an indefinite article 'an', forgetting that 'construction' is uncountable here.",
+      "verify_code": "answer = \"but also streamlining rainwater harvesting.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Sentence Improvement - Mandative Subjunctive",
+      "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nThe tribunal mandated that the defaulting infrastructure firm **deposits twenty percent of the disputed amount** into an escrow account before Friday.",
+      "options": {
+        "A": "will deposit twenty percent of the disputed amount",
+        "B": "has deposited twenty percent of the disputed amount",
+        "C": "deposited twenty percent of the disputed amount",
+        "D": "deposit twenty percent of the disputed amount"
+      },
+      "correct_answer": "D",
+      "trap_type": "Sequence of Tenses and Singular Agreement Confusion",
+      "pedagogical_explanation": "Verbs of demand, recommendation, or mandate ('mandated', 'insisted', 'recommended') followed by a 'that' clause require the mandative subjunctive, which uses the bare infinitive form of the verb ('deposit') regardless of whether the subject is singular or the main verb is in the past tense. Trap (A): Test-takers see the future time marker 'before Friday' and insert 'will deposit', unaware that directive 'that' clauses take the base subjunctive rather than modal future. Trap (B): Students apply present perfect 'has deposited' to match a singular subject, overlooking the mandatory subjunctive mood after 'mandated'. Trap (C): Candidates blindly apply the sequence-of-tenses rule, matching past tense 'mandated' with past tense 'deposited'.",
+      "verify_code": "answer = \"deposit twenty percent of the disputed amount\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Sentence Improvement - Dangling Participle Resolution",
+      "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nHaving scrutinized the satellite soil moisture data for three months, **the drought-prone districts were granted immediate crop insurance relief**.",
+      "options": {
+        "A": "immediate crop insurance relief was granted to the drought-prone districts.",
+        "B": "the drought-prone districts had been granted immediate crop insurance relief.",
+        "C": "the agrarian ministry granted the drought-prone districts immediate crop insurance relief.",
+        "D": "granting immediate crop insurance relief to the drought-prone districts became necessary."
+      },
+      "correct_answer": "C",
+      "trap_type": "Passive Voice Retention Creating a Dangling Modifier",
+      "pedagogical_explanation": "An introductory participial phrase ('Having scrutinized...') must modify the grammatical subject immediately following the comma. Since districts or relief cannot scrutinize satellite data, the active agent ('the agrarian ministry') must be the subject of the main clause. Trap (A): Students shift the passive subject from 'districts' to 'relief', which still leaves the participle dangling because 'relief' cannot scrutinize data. Trap (B): Candidates change the tense to past perfect passive 'had been granted' to pair with 'Having scrutinized', failing to fix the illogical subject. Trap (D): Test-takers choose a gerund subject 'granting...', which still fails to supply a logical human or institutional agent for 'Having scrutinized'.",
+      "verify_code": "answer = \"the agrarian ministry granted the drought-prone districts immediate crop insurance relief.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "CAT-Level",
+      "concept_tag": "Sentence Improvement - Comparison of Attributes (That of / Those of)",
+      "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nThe thermal efficiency of the new solid-state transformer is markedly superior **to the conventional oil-cooled units** installed a decade ago.",
+      "options": {
+        "A": "than that of the conventional oil-cooled units",
+        "B": "to those of the conventional oil-cooled units",
+        "C": "No improvement",
+        "D": "to that of the conventional oil-cooled units"
+      },
+      "correct_answer": "D",
+      "trap_type": "Demonstrative Pronoun Number Mismatch and Latinate Comparator Error",
+      "pedagogical_explanation": "First, the Latinate adjective 'superior' takes the preposition 'to', never 'than'. Second, the comparison is between 'The thermal efficiency' (a singular uncountable noun) of one transformer and the thermal efficiency of oil-cooled units, requiring the singular demonstrative pronoun 'that of' to prevent comparing an abstract property directly to physical units. Trap (A): Students correctly notice the missing demonstrative pronoun 'that of' but pair 'superior' with the faulty conjunction 'than'. Trap (B): Candidates get lured by the plural noun 'units' at the end of the phrase and select 'those of', forgetting that the antecedent being replaced is singular ('efficiency'). Trap (C): Test-takers see that 'superior to' is already correct and accept the sentence, missing that it compares efficiency directly with physical units.",
+      "verify_code": "answer = \"to that of the conventional oil-cooled units\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Fill in the Blank - Close-Meaning Verb Collocation",
+      "question_text": "Select the most appropriate word to fill in the blank: Although the whistleblower provided several internal memos, the inquiry panel could not ________ the allegations without independent bank transaction logs.",
+      "options": {
+        "A": "consolidate",
+        "B": "corroborate",
+        "C": "collaborate",
+        "D": "fabricate"
+      },
+      "correct_answer": "B",
+      "trap_type": "Paronym and Semantic Near-Neighbor Confusion",
+      "pedagogical_explanation": "'Corroborate' specifically means to confirm or give support to a statement, theory, or finding (like allegations) using independent evidence. Trap (A): Students confuse 'consolidate' (to combine multiple things into a more effective or coherent whole) with confirming evidence. Trap (C): Candidates fall for the phonetic similarity of 'collaborate' (to work jointly on an activity), which is intransitive and cannot take 'allegations' as a direct object. Trap (D): Test-takers see 'allegations' and associate it with 'fabricate' (to invent false information), which contradicts the logic of an inquiry panel needing bank logs to verify claims.",
+      "verify_code": "answer = \"corroborate\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Fill in the Blank - Nuanced Adjectives of Brevity",
+      "question_text": "Select the most appropriate word to fill in the blank: Rather than delivering a rambling defence, the chief economist offered a ________ three-minute rebuttal that dismantled every criticism with precision.",
+      "options": {
+        "A": "curt",
+        "B": "fleeting",
+        "C": "succinct",
+        "D": "reticent"
+      },
+      "correct_answer": "C",
+      "trap_type": "Connotation and Collocation Mismatch Among Brevity Adjectives",
+      "pedagogical_explanation": "'Succinct' means briefly and clearly expressed, carrying a positive connotation of precision and effectiveness that contrasts with 'rambling'. Trap (A): Students pick 'curt' because it means brief, missing its negative connotation of rudely or brusquely short, which clashes with dismantling criticisms thoroughly and precisely. Trap (B): Candidates choose 'fleeting' (lasting for a very short time), which describes transient feelings or moments rather than the structured clarity of a speech. Trap (D): Test-takers confuse 'reticent' (unwilling to speak or reveal one's thoughts freely) with concise speech, though a reticent person avoids speaking altogether rather than delivering an effective rebuttal.",
+      "verify_code": "answer = \"succinct\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Fill in the Blank - Verbs of Mitigation vs Intensity",
+      "question_text": "Select the most appropriate word to fill in the blank: The central bank's surprise liquidity injection was designed to ________ investor anxiety following the sudden collapse of two regional lenders.",
+      "options": {
+        "A": "abstain",
+        "B": "aggravate",
+        "C": "condone",
+        "D": "allay"
+      },
+      "correct_answer": "D",
+      "trap_type": "Register Collocation and Polarity Reversal",
+      "pedagogical_explanation": "'Allay' means to diminish or put at rest (fear, suspicion, or worry), making 'allay anxiety' a classic formal collocation matching the remedial goal of a liquidity injection. Trap (A): Test-takers misread 'abstain' (to restrain oneself from doing something, always used with 'from') as a transitive verb meaning to stop or reduce. Trap (B): Students who focus only on 'collapse' and 'anxiety' choose 'aggravate' (make worse), reversing the intended stabilizing purpose of a central bank's liquidity injection. Trap (C): Candidates confuse 'condone' (to accept or overlook morally questionable behaviour) with 'console' or 'calm'.",
+      "verify_code": "answer = \"allay\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Cloze Test - Contextual Discourse Transition",
+      "question_text": "Read the three-sentence passage and select the most appropriate word for the blank: Coastal mangrove ecosystems act as natural bio-shields that absorb the kinetic energy of cyclonic storm surges. Despite their proven ecological value, thousands of hectares of tidal wetlands have been cleared over the last decade to accommodate commercial shrimp aquaculture. This short-sighted conversion has ________ left densely populated littoral villages exposed to catastrophic saline inundation.",
+      "options": {
+        "A": "ostensibly",
+        "B": "consequently",
+        "C": "deliberately",
+        "D": "paradoxically"
+      },
+      "correct_answer": "B",
+      "trap_type": "Misidentifying Direct Cause-Effect as Irony, Pretence or Intent",
+      "pedagogical_explanation": "Sentence 1 establishes that mangroves block storm surges, and Sentence 2 states they were cleared. Sentence 3 describes the direct, logical result of removing that barrier: villages are left exposed. 'Consequently' (as a result) accurately captures this direct cause-and-effect chain. Trap (A): Students choose 'ostensibly' (apparently or purportedly, but perhaps not actually) because it sounds formal, even though the exposure of villages is an actual fact, not a mere pretence. Trap (C): Candidates read 'short-sighted' as intent and pick 'deliberately', but the passage blames poor foresight, not a plan to expose the villages. Trap (D): Test-takers pick 'paradoxically' because clearing land for economic gain caused harm, but removing a flood barrier and then getting flooded is completely predictable, not a paradox.",
+      "verify_code": "answer = \"consequently\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Cloze Test - Contextual Lexical Precision",
+      "question_text": "Read the three-sentence passage and select the most appropriate word for the blank: While algorithmic hiring tools promise to eliminate human prejudice from initial resume screening, their objectivity depends entirely on the historical datasets used to train them. If a company's past recruitment records reflect decades of demographic imbalance, the machine-learning model will inevitably encode those same patterns as markers of merit. Far from eradicating workplace inequality, uncalibrated automation merely ________ pre-existing institutional biases under a veneer of mathematical neutrality.",
+      "options": {
+        "A": "perpetuates",
+        "B": "obviates",
+        "C": "repudiates",
+        "D": "instigates"
+      },
+      "correct_answer": "A",
+      "trap_type": "Origin vs Continuation Verb Confusion",
+      "pedagogical_explanation": "The passage explains that the model encodes 'past' patterns and 'pre-existing' biases, causing them to continue indefinitely under a new guise. 'Perpetuates' (makes something continue indefinitely) fits 'pre-existing biases' exactly. Trap (B): Students see 'eradicating' earlier in the sentence and pick 'obviates' (removes a need or difficulty), overlooking the contrast phrase 'Far from eradicating...'. Trap (C): Candidates confuse 'repudiates' (rejects or refuses to accept) with 'repeats' or 'replicates' due to phonetic similarity. Trap (D): Test-takers select 'instigates' (initiates or brings about for the first time), which contradicts the adjective 'pre-existing'—you cannot originate a bias that already exists.",
+      "verify_code": "answer = \"perpetuates\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Idioms and Phrases - Contextual Meaning",
+      "question_text": "Select the most appropriate meaning of the idiom 'to trim one's sails' as used in the sentence: With global venture capital drying up rapidly, several unicorn startups have been forced to trim their sails before the next quarterly audit.",
+      "options": {
+        "A": "To falsify accounting records to appear profitable to external auditors",
+        "B": "To pivot completely into an unrelated industry to survive",
+        "C": "To reduce spending and scale back ambitions to match limited resources",
+        "D": "To accelerate product launches ahead of the scheduled timeline"
+      },
+      "correct_answer": "C",
+      "trap_type": "Misinterpreting Nautical Metaphor as Deception or Speed",
+      "pedagogical_explanation": "'To trim one's sails' comes from adjusting a ship's sails to suit the wind; figuratively, it means to economize, cut expenses, or modify one's ambitions to adapt to changed, more restrictive circumstances. Trap (A): Students see 'before the next quarterly audit' and confuse 'trimming sails' with 'cooking the books' (financial manipulation). Trap (B): Candidates mistake adjusting sails for turning the entire ship around into a completely different industry. Trap (D): Test-takers think 'trimming' makes a vessel lighter and faster, leading them to pick accelerating launches despite the context of drying up capital.",
+      "verify_code": "answer = \"To reduce spending and scale back ambitions to match limited resources\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "One-Word Substitution - Governance and Politics",
+      "question_text": "Select the word that best substitutes the phrase: The practice of appointing friends and political associates to lucrative offices on the basis of personal favouritism rather than merit.",
+      "options": {
+        "A": "Plutocracy",
+        "B": "Kakistocracy",
+        "C": "Theocracy",
+        "D": "Cronyism"
+      },
+      "correct_answer": "D",
+      "trap_type": "Suffix '-cracy' Overgeneralization",
+      "pedagogical_explanation": "'Cronyism' specifically denotes the appointment of friends, associates, and political supporters to positions of authority without proper regard to their qualifications. Trap (A): Students gravitate toward words ending in '-cracy' when they see 'offices' and 'political' and pick 'Plutocracy', which means rule by the wealthy, not appointment by personal favouritism. Trap (B): Candidates choose 'Kakistocracy' (government by the least suitable or least qualified citizens) because patronage results in unmerited officials, missing that the definition specifically targets the practice of favouritism in appointments. Trap (C): Test-takers recognize '-cracy' as a government suffix and guess 'Theocracy' (rule by religious leaders).",
+      "verify_code": "answer = \"Cronyism\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "One-Word Substitution - Speech and Rhetoric",
+      "question_text": "Select the word that best substitutes the phrase: The use of ambiguous or evasive language in order to conceal the truth or avoid committing oneself to a clear position.",
+      "options": {
+        "A": "Soliloquy",
+        "B": "Equivocation",
+        "C": "Verbiage",
+        "D": "Circumlocution"
+      },
+      "correct_answer": "B",
+      "trap_type": "Wordiness vs Deliberate Ambiguity Confusion",
+      "pedagogical_explanation": "'Equivocation' (from Latin 'equal voice') precisely means using ambiguous language with more than one interpretation in order to mislead or avoid making a firm commitment. Trap (A): Students recognize the root '-loquy' (speech) and select 'Soliloquy', which actually means speaking one's thoughts aloud when alone on stage. Trap (C): Candidates confuse 'Verbiage' (excessively lengthy or technical speech) with evasive ambiguity. Trap (D): Test-takers frequently confuse 'Circumlocution' (using many words where fewer would do, talking in circles) with 'Equivocation', overlooking that the defining feature here is deliberate ambiguity ('double meaning') to avoid commitment rather than mere wordiness.",
+      "verify_code": "answer = \"Equivocation\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Para Jumble - Pronoun and Demonstrative Anchoring",
+      "question_text": "Rearrange the following four sentences (P, Q, R, S) to form a coherent paragraph:\nP: However, when those same synthetic fertilizers are applied excessively without organic soil amendments, they rapidly deplete native microbial diversity.\nQ: Consequently, agronomists now advocate integrated nutrient management to balance immediate crop output with long-term soil vitality.\nR: For over five decades, intensive grain farming across the Indo-Gangetic plain has relied heavily on chemical nitrogen and phosphorus inputs to maximize harvest yields.\nS: Deprived of these beneficial microorganisms, the compacted topsoil loses its natural moisture-retention capacity and requires progressively heavier irrigation each season.",
+      "options": {
+        "A": "RPQS",
+        "B": "RSPQ",
+        "C": "PRSQ",
+        "D": "RPSQ"
+      },
+      "correct_answer": "D",
+      "trap_type": "Premature Conclusion Placement Before Causal Chain Completion",
+      "pedagogical_explanation": "R is the independent opening sentence introducing the historical reliance on chemical inputs in the Indo-Gangetic plain. P follows R through the demonstrative phrase 'those same synthetic fertilizers' referring back to 'chemical nitrogen and phosphorus inputs' in R, and ends by introducing 'native microbial diversity'. S must follow P because 'Deprived of these beneficial microorganisms' links directly to 'native microbial diversity' in P. Finally, Q provides the concluding policy solution ('Consequently, agronomists now advocate...') addressing both crop output (R) and soil vitality (P/S). Trap (A): Test-takers jump from P directly to the conclusion Q, leaving S dangling at the end with its pronoun 'these beneficial microorganisms' disconnected from P. Trap (B): Students place S immediately after R, missing that R never mentions microorganisms for 'these beneficial microorganisms' in S to refer to. Trap (C): Candidates open with P, ignoring the contrastive 'However' and the anaphoric 'those same synthetic fertilizers'.",
+      "verify_code": "answer = \"RPSQ\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Para Jumble - Chronological Cause-Effect Progression",
+      "question_text": "Rearrange the following four sentences (P, Q, R, S) to form a coherent paragraph:\nP: Once this protective oxide layer is breached by chloride ions from de-icing salts, the underlying steel reinforcement begins to rust and expand internally.\nQ: Concrete bridges appear virtually indestructible from the outside, yet their structural longevity depends on a delicate chemical equilibrium within the material.\nR: Left unchecked, the resulting internal tensile stress eventually fractures the surrounding concrete cover, causing visible spalling and severe load-bearing failure.\nS: In newly poured concrete, a highly alkaline pore solution naturally forms a microscopic passive film around embedded steel bars, shielding them from corrosion.",
+      "options": {
+        "A": "QSPR",
+        "B": "SQPR",
+        "C": "QPSR",
+        "D": "QSRP"
+      },
+      "correct_answer": "A",
+      "trap_type": "Skipping the Intermediate Reference Link",
+      "pedagogical_explanation": "Q sets the broad thesis: concrete bridges look indestructible but depend on an internal chemical equilibrium. S explains what that equilibrium is in 'newly poured concrete': an alkaline solution forms a 'microscopic passive film' shielding the steel. P follows S because 'this protective oxide layer' in P refers back to 'a microscopic passive film' in S, describing how it gets breached and starts expanding. R concludes the sequence: 'the resulting internal tensile stress' refers to the steel expanding internally in P, leading to concrete fracture. Trap (B): Students start with S because it mentions 'newly poured concrete', leaving the general introductory statement Q awkwardly interrupting S and P. Trap (C): Candidates pair Q with P, overlooking that 'this protective oxide layer' in P has no antecedent in Q. Trap (D): Test-takers place R before P, which puts the fracturing of concrete ('resulting internal tensile stress') before the rust and expansion (P) that actually cause it.",
+      "verify_code": "answer = \"QSPR\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Reading Comprehension - Logical Inference",
+      "question_text": "Read the passage carefully and answer the question that follows:\nWhile municipal corporations across Tier-2 cities have invested heavily in automated mechanical sweepers to curb particulate pollution, ambient air quality indices near arterial roads have remained stubbornly stagnant. Field audits reveal that these vacuum-based machines are engineered for smooth, unbroken asphalt and lose over seventy percent of their suction efficiency when traversing potholed or unpaved road shoulders. Furthermore, because the sweepers operate exclusively between midnight and 4 AM to avoid traffic congestion, they fail to capture the continuous resuspension of silt caused by heavy daytime commercial vehicles. Without simultaneous investments in edge-to-edge road paving and daytime dust-suppression misting, mechanized sweeping functions more as a visible symbol of civic action than an effective respiratory safeguard.\n\nWhich of the following can be most reasonably inferred from the passage?",
+      "options": {
+        "A": "Automated mechanical sweepers actually generate more particulate pollution than traditional manual sweeping methods.",
+        "B": "Shifting mechanical sweeping schedules to peak daytime hours alone would fully resolve arterial road dust pollution.",
+        "C": "The effectiveness of standardized civic technology depends heavily on the quality of the underlying local infrastructure.",
+        "D": "Municipal corporations purchased mechanical sweepers primarily to deceive citizens rather than to improve air quality."
+      },
+      "correct_answer": "C",
+      "trap_type": "Extreme Extrapolation and Single-Factor Overgeneralization",
+      "pedagogical_explanation": "The passage notes that the sweepers are 'engineered for smooth, unbroken asphalt' and lose over 70% efficiency on potholed or unpaved shoulders, concluding that without 'edge-to-edge road paving', the technology fails to achieve its goal. This directly supports the inference that technological effectiveness is contingent upon baseline infrastructure quality. Trap (A): Students misread the failure to reduce pollution as actively generating more pollution than manual sweeping, which is never mentioned in the text. Trap (B): Candidates latch onto the midnight schedule issue and assume daytime operation alone would 'fully resolve' the problem, ignoring both traffic congestion and the 70% efficiency loss on unpaved shoulders. Trap (D): Test-takers misinterpret the final sentence ('functions more as a visible symbol...') as proof of malicious intent ('primarily to deceive'), confusing an unintended outcome with deliberate fraud.",
+      "verify_code": "answer = \"The effectiveness of standardized civic technology depends heavily on the quality of the underlying local infrastructure.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Reading Comprehension - Implicit Consequence Inference",
+      "question_text": "Read the passage carefully and answer the question that follows:\nRecent regulations mandating that pharmaceutical manufacturers print quick-response (QR) bar-codes on primary drug packaging were hailed as a definitive blow against counterfeit medicines. However, compliance data from semi-urban pharmacies indicates that fewer than four percent of retail buyers actually scan these codes prior to purchase. Most consumers rely instead on the familiarity of the chemist or the visual intactness of the blister pack, viewing digital verification as a tedious step reserved for expensive hospital injectables. Moreover, sophisticated counterfeiters have begun duplicating genuine batch QR codes onto spurious strips, meaning a casual scan merely confirms that a valid batch exists somewhere in the supply chain unless the portal tracks unique serial-level deactivations at the point of sale.\n\nBased on the passage, why is the current QR-code mandate insufficient to eradicate counterfeit medicines in semi-urban markets?",
+      "options": {
+        "A": "Semi-urban pharmacies lack the internet connectivity required for consumers to scan QR codes at the counter.",
+        "B": "Both low consumer verification habits and the absence of single-use serial deactivation allow cloned codes on fake strips to pass undetected.",
+        "C": "Pharmaceutical manufacturers have largely refused to print QR codes on inexpensive over-the-counter blister packs.",
+        "D": "Retail chemists in semi-urban areas actively discourage buyers from scanning packaging to protect their profit margins."
+      },
+      "correct_answer": "B",
+      "trap_type": "Unstated Assumption About Rural Infrastructure",
+      "pedagogical_explanation": "The passage identifies two distinct flaws: (1) fewer than 4% of buyers scan the codes due to reliance on chemist familiarity and viewing scanning as tedious, and (2) counterfeiters copy genuine batch codes, which pass a casual scan unless unique serial-level deactivations are tracked at the point of sale. Option B synthesizes both explicitly stated barriers. Trap (A): Students bring in outside stereotypes about 'semi-urban' areas lacking internet connectivity, whereas the passage attributes low scanning to consumer attitude ('viewing digital verification as a tedious step'), not network failure. Trap (C): Candidates misread the consumers' belief that scanning is 'reserved for expensive hospital injectables' as manufacturers refusing to print codes on cheaper drugs. Trap (D): Test-takers distort 'rely instead on the familiarity of the chemist' into chemists actively discouraging customers.",
+      "verify_code": "answer = \"Both low consumer verification habits and the absence of single-use serial deactivation allow cloned codes on fake strips to pass undetected.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Spelling - Double Consonant and Vowel Suffix Rules",
+      "question_text": "Select the correctly spelt word from the given options:",
+      "options": {
+        "A": "Connoisseur",
+        "B": "Connoiseur",
+        "C": "Connoissieur",
+        "D": "Conoisseur"
+      },
+      "correct_answer": "A",
+      "trap_type": "Single vs Double Consonant and Vowel Transposition",
+      "pedagogical_explanation": "The correct spelling of 'Connoisseur' (an expert judge in matters of taste) contains a double 'n', 'oi', double 's', and ends in '-eur' (c-o-n-n-o-i-s-s-e-u-r). Trap (B): Students remember the double 'n' but drop the second 's' because the '/s/' sound is voiced softly in pronunciation ('Connoiseur'). Trap (C): Candidates insert an extra 'i' before '-eur' by false analogy with words like 'monsieur' or 'financiers' ('Connoissieur'). Trap (D): Test-takers preserve the double 's' but simplify the first syllable to a single 'n' ('Conoisseur').",
+      "verify_code": "answer = \"Connoisseur\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Error Spotting",
+      "question_text": "Identify the segment in the sentence that contains a grammatical error:\n(A) Each of the trainees / (B) have completed / (C) their online module / (D) before the deadline.",
+      "options": {
+        "A": "Each of the trainees",
+        "B": "have completed",
+        "C": "their online module",
+        "D": "before the deadline."
+      },
+      "correct_answer": "B",
+      "trap_type": "Subject-verb agreement with Each, Proximity error with plural noun",
+      "pedagogical_explanation": "Each is singular and requires has, not have. Trainees is plural but Each governs singular verb. Trap (A): Thinks Each of the trainees is plural because trainees is plural. Trap (C): Thinks their is error but their is acceptable as generic singular. Trap (D): Thinks 'before the deadline' must be 'within the deadline', but both prepositions are correct here.",
+      "verify_code": "answer = \"have completed\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Sentence Improvement",
+      "question_text": "Select the most appropriate option to improve the underlined segment in the given sentence:\nThe flood victims **have been distributed food packets** by the local authorities.",
+      "options": {
+        "A": "have been distributed with food packets",
+        "B": "were distributed food packets",
+        "C": "have been distributing food packets",
+        "D": "have been given food packets"
+      },
+      "correct_answer": "D",
+      "trap_type": "Passive voice misassignment, Active vs passive confusion, Tense shift error",
+      "pedagogical_explanation": "Victims cannot be distributed, packets are distributed. Victims are given packets. Correct is have been given. Trap (A): Keeps victims as subject of distributed and adds with, still illogical. Trap (B): Changes only the tense; the real error, treating the victims as the things distributed, remains. Trap (C): Switches to the active 'have been distributing', which clashes with 'by the local authorities' and makes the victims the distributors.",
+      "verify_code": "answer = \"have been given food packets\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Vocab Fill",
+      "question_text": "Fill in the blank: Her ______ curiosity and eagerness to learn impressed everyone in the workshop.",
+      "options": {
+        "A": "childish",
+        "B": "childlike",
+        "C": "infantile",
+        "D": "juvenile"
+      },
+      "correct_answer": "B",
+      "trap_type": "Negative connotation confusion, Pejorative vs appreciative, Age-related insult",
+      "pedagogical_explanation": "Childlike means innocent and positive curiosity, suitable for praise. Childish, infantile, juvenile are negative and imply immaturity. Trap (A): Childish is negative, means silly and immature, not praise. Trap (C): Infantile is strongly negative and insulting. Trap (D): Juvenile is also negative and often used for delinquent behaviour.",
+      "verify_code": "answer = \"childlike\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Phrasal Verb",
+      "question_text": "Fill in the blank: The committee decided to look ______ the matter before taking a final decision.",
+      "options": {
+        "A": "into",
+        "B": "after",
+        "C": "up",
+        "D": "for"
+      },
+      "correct_answer": "A",
+      "trap_type": "Phrasal verb confusion - care vs investigate vs search",
+      "pedagogical_explanation": "Look into means investigate. Look after means take care, look up means search in dictionary, look for means search for something missing. Context is investigate matter, so into is correct. Trap (B): Thinks look after means handle matter, confuses care meaning. Trap (C): Thinks look up means check matter, confuses dictionary search. Trap (D): Thinks look for means search matter.",
+      "verify_code": "answer = \"into\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Idiom",
+      "question_text": "Select the most appropriate meaning of the underlined idiom:\n**To put all your eggs in one basket**",
+      "options": {
+        "A": "To be very organized",
+        "B": "To risk everything on a single venture",
+        "C": "To waste resources carelessly",
+        "D": "To diversify your investments"
+      },
+      "correct_answer": "B",
+      "trap_type": "Literal interpretation, Opposite meaning, Resource management confusion",
+      "pedagogical_explanation": "Idiom means to depend entirely on one plan and risk everything. Trap (A): Takes eggs in basket as organized storage, literal. Trap (C): Thinks putting all eggs together wastes them. Trap (D): Thinks opposite, diversification, confuses with not putting all eggs in one basket.",
+      "verify_code": "answer = \"To risk everything on a single venture\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Synonym",
+      "question_text": "Select the most appropriate synonym of the underlined word in the given sentence:\nThe finance minister described the budget as **prudent** and sustainable.",
+      "options": {
+        "A": "extravagant",
+        "B": "careless",
+        "C": "wise",
+        "D": "hasty"
+      },
+      "correct_answer": "C",
+      "trap_type": "Antonym confusion, Carelessness vs prudence, Haste confusion",
+      "pedagogical_explanation": "Prudent means wise and careful in managing resources. Wise is synonym. Trap (A): Extravagant is antonym meaning spending too much. Trap (B): Careless is antonym meaning not careful. Trap (D): Hasty is antonym implying rushed decision.",
+      "verify_code": "answer = \"wise\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Antonym",
+      "question_text": "Select the most appropriate antonym of the underlined word in the given sentence:\nThe government took steps to **mitigate** the effects of inflation.",
+      "options": {
+        "A": "lessen",
+        "B": "alleviate",
+        "C": "reduce",
+        "D": "aggravate"
+      },
+      "correct_answer": "D",
+      "trap_type": "Synonym confusion - lessen, alleviate, reduce all synonyms",
+      "pedagogical_explanation": "Mitigate means lessen or reduce severity, so antonym is aggravate meaning worsen. Trap (A): Lessen is synonym, confuses antonym with synonym. Trap (B): Alleviate is synonym meaning make less severe. Trap (C): Reduce is synonym meaning make smaller.",
+      "verify_code": "answer = \"aggravate\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Para Jumble",
+      "question_text": "Rearrange the following sentences P, Q, R and S into a logical paragraph.\nP) However, excessive dependence on technology may reduce critical thinking among students.\nQ) Artificial intelligence is transforming the way students learn in classrooms.\nR) Therefore, a balanced approach is needed to integrate AI effectively without losing human touch.\nS) Teachers can now use AI tools to create personalized lesson plans for each learner.",
+      "options": {
+        "A": "QSPR",
+        "B": "SQPR",
+        "C": "QPSR",
+        "D": "QSRP"
+      },
+      "correct_answer": "A",
+      "trap_type": "Wrong starter with example, Benefit after drawback, Conclusion in middle",
+      "pedagogical_explanation": "Q introduces AI in learning. S gives the benefit (personalized lesson plans). P, opening with 'However', presents the drawback, so it must follow a benefit. R, opening with 'Therefore', concludes with a balanced approach. Correct order: QSPR. Trap (B): Starts with the example S before the topic sentence Q introduces AI. Trap (C): Places the drawback P before the benefit S, so 'However' has nothing to contrast with. Trap (D): Places the conclusion R before the drawback P, so 'Therefore' has no balance to draw.",
+      "verify_code": "answer = \"QSPR\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Cloze Test",
+      "question_text": "Read the passage and fill the blank: India's digital payment ecosystem has grown rapidly in the last five years. Small vendors who once relied only on cash now accept UPI payments. Yet, concerns about fraud and failed transactions remain a ______ for first-time users.",
+      "options": {
+        "A": "incentive",
+        "B": "boon",
+        "C": "deterrent",
+        "D": "catalyst"
+      },
+      "correct_answer": "C",
+      "trap_type": "Positive vs negative connotation, Incentive vs deterrent confusion, Catalyst misinterpretation",
+      "pedagogical_explanation": "Concerns about fraud are negative, so blank needs negative word meaning obstacle. Deterrent fits. Trap (A): Incentive means motivation, opposite of concerns, positive. Trap (B): Boon means benefit, opposite of concerns. Trap (D): Catalyst means something that accelerates, positive and does not fit concerns.",
+      "verify_code": "answer = \"deterrent\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Cloze Test",
+      "question_text": "Read the passage and fill the blank: The forest department launched a campaign to revive the dying lake. Volunteers planted native trees along its banks. The initiative not only improved groundwater levels but also ______ local biodiversity.",
+      "options": {
+        "A": "depleted",
+        "B": "neglected",
+        "C": "destroyed",
+        "D": "enriched"
+      },
+      "correct_answer": "D",
+      "trap_type": "Opposite meaning error, Negative outcome assumption, Neglect confusion",
+      "pedagogical_explanation": "Planting native trees improves groundwater and enriches biodiversity, positive outcome. Enriched fits. Trap (A): Depleted means reduced, opposite of expected positive result of campaign. Trap (B): Neglected means ignored, does not fit not only but also positive structure. Trap (C): Destroyed is strong negative, opposite of revival.",
+      "verify_code": "answer = \"enriched\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Word Usage",
+      "question_text": "Select the sentence in which the word 'comprise' is used incorrectly.",
+      "options": {
+        "A": "The team is comprised of ten members.",
+        "B": "The book comprises five chapters.",
+        "C": "The committee comprises experts from various fields.",
+        "D": "The collection comprises old coins and stamps."
+      },
+      "correct_answer": "A",
+      "trap_type": "Comprised of misconception, Correct usage mistaken as error, Subject-verb confusion",
+      "pedagogical_explanation": "Comprise means consist of and does not take of after it in active form. Is comprised of is considered incorrect in strict usage, should be comprises or is composed of. A is incorrect. Trap (B): Thinks comprises five chapters needs of, but comprises alone is correct. Trap (C): Thinks comprises experts needs of. Trap (D): Thinks comprises old coins needs of.",
+      "verify_code": "answer = \"The team is comprised of ten members.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "One Word Substitution",
+      "question_text": "Choose the one word for: A person who leaves his own country to live permanently in another country.",
+      "options": {
+        "A": "Immigrant",
+        "B": "Refugee",
+        "C": "Nomad",
+        "D": "Emigrant"
+      },
+      "correct_answer": "D",
+      "trap_type": "Immigrant vs Emigrant confusion, Refugee political confusion, Nomad lifestyle confusion",
+      "pedagogical_explanation": "Emigrant is one who leaves own country to settle in another. Immigrant is one who enters another country. Trap (A): Immigrant focuses on entering new country, not leaving own, common reversal. Trap (B): Refugee leaves due to danger or persecution, not necessarily permanent settlement by choice. Trap (C): Nomad moves from place to place, no permanent settlement.",
+      "verify_code": "answer = \"Emigrant\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Spelling",
+      "question_text": "Pick the correctly spelt word.",
+      "options": {
+        "A": "Entrepreneur",
+        "B": "Entrepraneur",
+        "C": "Entreprenuer",
+        "D": "Enterpreneur"
+      },
+      "correct_answer": "A",
+      "trap_type": "eu vs en vowel error, a vs e middle vowel, Missing r",
+      "pedagogical_explanation": "Correct spelling is Entrepreneur. Trap (B): Entrepraneur uses a instead of e after pr. Trap (C): Entreprenuer reverses the final -eur to -uer. Trap (D): Enterpreneur writes the opening as enter- (from 'enterprise') instead of entre-.",
+      "verify_code": "answer = \"Entrepreneur\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Active Passive",
+      "question_text": "Choose the correct passive form of: The authorities have closed the main road for repair work.",
+      "options": {
+        "A": "The main road have been closed by the authorities for repair work.",
+        "B": "The main road is closed by the authorities for repair work.",
+        "C": "The main road has been closed by the authorities for repair work.",
+        "D": "The main road was closed by the authorities for repair work."
+      },
+      "correct_answer": "C",
+      "trap_type": "Subject-verb agreement have vs has, Present tense vs perfect, Past tense shift",
+      "pedagogical_explanation": "Present perfect active have closed becomes has been closed in passive, road is singular so has. Trap (A): Uses have been with singular road, agreement error. Trap (B): Uses simple present is closed, loses perfect aspect. Trap (D): Uses simple past was closed, changes tense from present perfect to past.",
+      "verify_code": "answer = \"The main road has been closed by the authorities for repair work.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Easy",
+      "concept_tag": "Direct Indirect",
+      "question_text": "Convert to indirect speech: He said, \"I have finished my work.\"",
+      "options": {
+        "A": "He said that he has finished his work.",
+        "B": "He said that he had finished his work.",
+        "C": "He said that he finished his work.",
+        "D": "He said that he had finished my work."
+      },
+      "correct_answer": "B",
+      "trap_type": "No tense backshift, Simple past instead of past perfect, Pronoun not changed",
+      "pedagogical_explanation": "Present perfect in direct becomes past perfect in indirect, my becomes his. He said that he had finished his work is correct. Trap (A): Keeps has finished, no backshift, common error. Trap (C): Uses simple past finished instead of past perfect. Trap (D): Keeps my instead of changing to his, pronoun error.",
+      "verify_code": "answer = \"He said that he had finished his work.\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Sentence Rearrangement First",
+      "question_text": "Four sentences P, Q, R, S form a paragraph. Which sentence should come FIRST?\nP) This has resulted in increased air pollution in metropolitan cities.\nQ) Private vehicle ownership has doubled in the last decade.\nR) Public transport remains unreliable and overcrowded in many areas.\nS) Urban mobility has become a major challenge for Indian cities.",
+      "options": {
+        "A": "P",
+        "B": "Q",
+        "C": "R",
+        "D": "S"
+      },
+      "correct_answer": "D",
+      "trap_type": "Effect as starter, Example as starter, Supporting detail as starter",
+      "pedagogical_explanation": "S is general introductory statement about urban mobility challenge, so it should start. R gives a cause (unreliable public transport), Q its consequence (more private vehicles), and P, with 'This', the result. Logical order S R Q P. Trap (A): P is result with This has resulted, cannot start without antecedent. Trap (B): Q is specific data about vehicle ownership, needs general context first. Trap (C): R is supporting detail about public transport, not broad opener.",
+      "verify_code": "answer = \"S\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Phrase Replacement",
+      "question_text": "Select the option that replaces the underlined phrase most concisely without changing the meaning:\nThe project was delayed **because of the fact that** the supplier failed to deliver materials on time.",
+      "options": {
+        "A": "due to the fact that",
+        "B": "because",
+        "C": "owing to the fact that",
+        "D": "No improvement"
+      },
+      "correct_answer": "B",
+      "trap_type": "Wordy synonym retention, Another wordy phrase, Accepting wordiness",
+      "pedagogical_explanation": "Because of the fact that is wordy, concise because is preferred. Trap (A): Replaces with equally wordy due to the fact that, no improvement in conciseness. Trap (C): Replaces with owing to the fact that, also wordy. Trap (D): Keeps the original because it is grammatical, missing that the question asks for the most concise form.",
+      "verify_code": "answer = \"because\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari English",
+      "difficulty": "Moderate",
+      "concept_tag": "Reading Comprehension",
+      "question_text": "Read the passage: Many companies have adopted hybrid work models in recent years. Employees work from office on some days and from home on others. Studies show that hybrid work improves work-life balance and reduces commuting stress. However, it requires strong self-discipline and clear communication. Managers need to set measurable goals rather than tracking hours.\nWhat can be inferred from the passage?",
+      "options": {
+        "A": "Hybrid work eliminates need for managers",
+        "B": "Hybrid work increases commuting stress",
+        "C": "Hybrid work calls for judging employees by results rather than hours",
+        "D": "Hybrid work is suitable only for senior employees"
+      },
+      "correct_answer": "C",
+      "trap_type": "Extreme inference elimination, Opposite of stated fact, Unstated restriction",
+      "pedagogical_explanation": "The passage says managers need to set measurable goals rather than track hours, so performance in hybrid work must be judged by results. Trap (A): Eliminates need for managers is extreme, passage says managers need to set goals. Trap (B): Increases commuting stress is opposite, passage says reduces. Trap (D): Suitable only for senior employees is not mentioned, passage talks about all employees.",
+      "verify_code": "answer = \"Hybrid work calls for judging employees by results rather than hours\""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Floor Puzzle",
+      "question_text": "Five friends Aarav, Bina, Chetan, Divya and Eshan live on five different floors from 1 to 5, floor 1 is bottom and floor 5 is top. Clues: Eshan lives on the topmost floor. Aarav lives on an even numbered floor but not on floor 2. Bina lives immediately above Chetan. Divya lives below Aarav. Chetan does not live on floor 1. Who lives on floor 3?",
+      "options": {
+        "A": "Bina",
+        "B": "Chetan",
+        "C": "Divya",
+        "D": "Aarav"
+      },
+      "correct_answer": "A",
+      "trap_type": "Reversing 'immediately above', dropping a negative clue, or reading the wrong floor",
+      "pedagogical_explanation": "Step-by-step solution: Floors are numbered 1 (bottom) to 5 (top). 1) Eshan lives on the topmost floor, so Eshan is on floor 5. 2) Aarav lives on an even floor other than 2, so Aarav is on floor 4. 3) Bina lives immediately above Chetan, so the pair (Chetan, Bina) takes two consecutive free floors among 1, 2 and 3: (1, 2) or (2, 3). Chetan does not live on floor 1, so Chetan is on floor 2 and Bina on floor 3. 4) Divya takes floor 1, which is below Aarav as required. Final order from bottom: Divya, Chetan, Bina, Aarav, Eshan. Floor 3 belongs to Bina.\nTrap (B): Reading 'Bina lives immediately above Chetan' the other way round puts Chetan on floor 3 and Bina on floor 2, giving Chetan.\nTrap (C): Ignoring the clue 'Chetan does not live on floor 1' puts Chetan on 1 and Bina on 2, leaving floor 3 for Divya.\nTrap (D): Reading the floor one place too high (floor 4 instead of floor 3) gives Aarav.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Aarav', 'Bina', 'Chetan', 'Divya', 'Eshan']):\n    f = {n: i + 1 for i, n in enumerate(p)}\n    if f['Eshan'] != 5: continue\n    if f['Aarav'] % 2 or f['Aarav'] == 2: continue\n    if f['Bina'] != f['Chetan'] + 1: continue\n    if f['Divya'] >= f['Aarav']: continue\n    if f['Chetan'] == 1: continue\n    sols.append(p)\nassert len(sols) == 1\nanswer = sols[0][2]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Box Stacking",
+      "question_text": "Five boxes belonging to Rohan, Sneha, Karan, Priya and Vikram are stacked one above another. Position 1 is the top and position 5 is the bottom. Clues: Vikram's box is at the bottom. Sneha's box is at the top. Rohan's box is immediately above Karan's box. Priya's box is below Rohan's box but not at the bottom. Karan's box is not adjacent to Vikram's box. Whose box is immediately below Karan's box?",
+      "options": {
+        "A": "Rohan",
+        "B": "Priya",
+        "C": "Vikram",
+        "D": "Sneha"
+      },
+      "correct_answer": "B",
+      "trap_type": "Reversing 'immediately above' or counting the wrong number of places from the reference box",
+      "pedagogical_explanation": "Step-by-step solution: 1) Sneha is at position 1 and Vikram at position 5. 2) Rohan is immediately above Karan, so (Rohan, Karan) is (2, 3) or (3, 4). 3) Karan is not adjacent to Vikram, so Karan is not at 4; hence Rohan is at 2 and Karan at 3. 4) Priya is below Rohan but not at the bottom, so Priya is at 4. Stack from top: Sneha, Rohan, Karan, Priya, Vikram. The box immediately below Karan (position 4) is Priya's.\nTrap (A): Reading 'Rohan is immediately above Karan' the other way round puts Karan at 2 and Rohan at 3, giving Rohan below Karan.\nTrap (C): Counting two places below Karan instead of one gives position 5, Vikram.\nTrap (D): Counting two places above Karan instead of one below gives position 1, Sneha.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Rohan', 'Sneha', 'Karan', 'Priya', 'Vikram']):\n    s = {n: i + 1 for i, n in enumerate(p)}\n    if s['Vikram'] != 5 or s['Sneha'] != 1: continue\n    if s['Rohan'] != s['Karan'] - 1: continue\n    if not (s['Priya'] > s['Rohan'] and s['Priya'] != 5): continue\n    if abs(s['Karan'] - s['Vikram']) == 1: continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('Karan') + 1]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Month Scheduling",
+      "question_text": "Five friends Ananya, Bhavesh, Chirag, Deepa and Farhan each have one meeting in a different month from January to May. Clues: Deepa's meeting is in January. Ananya's meeting is immediately before Farhan's meeting. Chirag's meeting is in May. Farhan's meeting is not in April. Who has the meeting in April?",
+      "options": {
+        "A": "Ananya",
+        "B": "Farhan",
+        "C": "Chirag",
+        "D": "Bhavesh"
+      },
+      "correct_answer": "D",
+      "trap_type": "Dropping the negative clue or reversing 'immediately before'",
+      "pedagogical_explanation": "Step-by-step solution: 1) Deepa is in January and Chirag in May, so February, March and April remain for Ananya, Bhavesh and Farhan. 2) Ananya is immediately before Farhan, so (Ananya, Farhan) is (February, March) or (March, April). 3) Farhan is not in April, so Ananya is in February and Farhan in March. 4) Bhavesh takes April. Order: Deepa, Ananya, Farhan, Bhavesh, Chirag. April belongs to Bhavesh.\nTrap (A): Reading the clue the other way round (Farhan immediately before Ananya) allows Farhan in March and Ananya in April, giving Ananya.\nTrap (B): Ignoring 'Farhan's meeting is not in April' allows Ananya in March and Farhan in April, giving Farhan.\nTrap (C): Answering for the last month (May) instead of April gives Chirag.",
+      "verify_code": "import itertools\nM = ['Jan', 'Feb', 'Mar', 'Apr', 'May']\nsols = []\nfor p in itertools.permutations(['Ananya', 'Bhavesh', 'Chirag', 'Deepa', 'Farhan']):\n    m = {n: i for i, n in enumerate(p)}\n    if m['Deepa'] != 0 or m['Chirag'] != 4: continue\n    if m['Farhan'] != m['Ananya'] + 1: continue\n    if m['Farhan'] == 3: continue\n    sols.append(p)\nassert len(sols) == 1\nanswer = sols[0][M.index('Apr')]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Syllogism",
+      "question_text": "Statements: No laptop is a tablet. Some tablets are phones. All phones are gadgets.\nConclusions: I. Some gadgets are tablets. II. No laptop is a phone. III. Some gadgets are not laptops.\nWhich conclusion(s) follow?",
+      "options": {
+        "A": "Only I follows",
+        "B": "All of I, II and III follow",
+        "C": "Only I and III follow",
+        "D": "Only III follows"
+      },
+      "correct_answer": "C",
+      "trap_type": "Accepting a 'No' conclusion that is only possible, or missing a conclusion reached through the tablet-gadget overlap",
+      "pedagogical_explanation": "Step-by-step solution: 1) Some tablets are phones and all phones are gadgets, so those tablets are gadgets: Some tablets are gadgets, which converts to Some gadgets are tablets. Conclusion I follows. 2) No laptop is a tablet says nothing about phones that are not tablets; a laptop may or may not be a phone, so 'No laptop is a phone' is only a possibility. Conclusion II does not follow. 3) The gadgets that are tablets cannot be laptops (no laptop is a tablet), so Some gadgets are not laptops. Conclusion III follows. Answer: Only I and III follow.\nTrap (A): Stopping after Conclusion I and missing that the same tablet-gadgets give III gives Only I follows.\nTrap (B): Treating 'No laptop is a tablet' plus 'Some tablets are phones' as 'No laptop is a phone' accepts II as well, giving All of I, II and III follow.\nTrap (D): Rejecting I because the statements never mention gadgets and tablets together gives Only III follows.",
+      "verify_code": "import itertools\nSETS = ['L', 'T', 'P', 'G']\nregions = [r for r in itertools.product([0, 1], repeat=len(SETS)) if any(r)]\ndef models():\n    for occ in itertools.product([0, 1], repeat=len(regions)):\n        live = [r for r, o in zip(regions, occ) if o]\n        if all(any(r[i] for r in live) for i in range(len(SETS))):\n            yield live\nix = {n: i for i, n in enumerate(SETS)}\nsome = lambda m, a, b: any(r[ix[a]] and r[ix[b]] for r in m)\nsome_not = lambda m, a, b: any(r[ix[a]] and not r[ix[b]] for r in m)\nall_ = lambda m, a, b: not some_not(m, a, b)\nno = lambda m, a, b: not some(m, a, b)\nms = [m for m in models() if no(m, 'L', 'T') and some(m, 'T', 'P') and all_(m, 'P', 'G')]\nf1 = all(some(m, 'G', 'T') for m in ms)\nf2 = all(no(m, 'L', 'P') for m in ms)\nf3 = all(some_not(m, 'G', 'L') for m in ms)\nanswer = {(True, False, True): 'Only I and III follow', (True, False, False): 'Only I follows', (True, True, True): 'All of I, II and III follow', (False, False, True): 'Only III follows'}[(f1, f2, f3)]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Input Output",
+      "question_text": "Input: 58 papaya 34 guava 91 orange 12 apple 47 banana\nA machine rearranges the input step by step. In each step exactly one element is moved to its final position from the left, alternating between words (in alphabetical order) and numbers (in ascending order), starting with a word. The final output is: apple 12 banana 34 guava 47 orange 58 papaya 91.\nStep 1: apple 58 papaya 34 guava 91 orange 12 47 banana\nStep 2: apple 12 58 papaya 34 guava 91 orange 47 banana\nWhat will be Step 3?",
+      "options": {
+        "A": "apple 12 banana 58 papaya 34 guava 91 orange 47",
+        "B": "apple 12 34 58 papaya guava 91 orange 47 banana",
+        "C": "apple 12 58 banana papaya 34 guava 91 orange 47",
+        "D": "apple 12 papaya 58 34 guava 91 orange 47 banana"
+      },
+      "correct_answer": "A",
+      "trap_type": "Moving the wrong element (wrong type or wrong word) or inserting it one place off",
+      "pedagogical_explanation": "Step-by-step solution: The pattern is word, number, word, number, ... Step 1 placed the first word (apple) at position 1 and Step 2 placed the smallest number (12) at position 2. Step 3 must place the next word in alphabetical order, banana, at position 3; every other element keeps its relative order. Banana is taken from the end of Step 2 and inserted after 12: apple 12 banana 58 papaya 34 guava 91 orange 47.\nTrap (B): Moving the next number (34) instead of the next word breaks the word-number alternation and gives apple 12 34 58 papaya guava 91 orange 47 banana.\nTrap (C): Inserting banana one place too far right (position 4) gives apple 12 58 banana papaya 34 guava 91 orange 47.\nTrap (D): Moving the first remaining word in the row (papaya) instead of the alphabetically next word gives apple 12 papaya 58 34 guava 91 orange 47 banana.",
+      "verify_code": "row = '58 papaya 34 guava 91 orange 12 apple 47 banana'.split()\nwords = sorted(x for x in row if not x.isdigit())\nnums = sorted((x for x in row if x.isdigit()), key=int)\norder = []\nfor w, n in zip(words, nums):\n    order += [w, n]\nsteps = []\nfor k, e in enumerate(order):\n    row.remove(e); row.insert(k, e)\n    steps.append(' '.join(row))\nassert steps[0] == 'apple 58 papaya 34 guava 91 orange 12 47 banana'\nassert steps[1] == 'apple 12 58 papaya 34 guava 91 orange 47 banana'\nOPTS = {'A': 'apple 12 banana 58 papaya 34 guava 91 orange 47', 'B': 'apple 12 34 58 papaya guava 91 orange 47 banana', 'C': 'apple 12 58 banana papaya 34 guava 91 orange 47', 'D': 'apple 12 papaya 58 34 guava 91 orange 47 banana'}\nanswer = [k for k, v in OPTS.items() if v == steps[2]][0]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Alphanumeric Series",
+      "question_text": "Arrangement: M 3 $ K 7 % L 9 & P 2 # Q 5 @ R 8 ^ S 4. Note left end is M and right end is 4. Which element is 4th to the left of the element which is 9th from the right end?",
+      "options": {
+        "A": "&",
+        "B": "R",
+        "C": "9",
+        "D": "L"
+      },
+      "correct_answer": "C",
+      "trap_type": "Off-by-one counting from an end or from the reference element, or moving the wrong way",
+      "pedagogical_explanation": "Step-by-step solution: Number the 20 elements from the left: M(1) 3(2) $(3) K(4) 7(5) %(6) L(7) 9(8) &(9) P(10) 2(11) #(12) Q(13) 5(14) @(15) R(16) 8(17) ^(18) S(19) 4(20). The 9th from the right end is position 20 - 9 + 1 = 12, which is #. The 4th element to the left of # is position 12 - 4 = 8, which is 9.\nTrap (A): Counting # itself as the first step (inclusive counting) moves only three places and lands on position 9, giving &.\nTrap (B): Moving 4 places to the right of # instead of the left lands on position 16, giving R.\nTrap (D): Forgetting the +1 when converting from the right end (20 - 9 = 11) and then moving 4 left lands on position 7, giving L.",
+      "verify_code": "s = 'M 3 $ K 7 % L 9 & P 2 # Q 5 @ R 8 ^ S 4'.split()\nassert len(s) == 20\nref = len(s) - 9\nanswer = s[ref - 4]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Statement Assumption",
+      "question_text": "Statement: The company has launched a new electric scooter and is advertising its range of 200 km on a single charge.\nAssumptions:\nI. People prefer electric scooters over petrol scooters.\nII. A long range is a feature that buyers of electric scooters want.\nWhich of the assumptions is/are implicit in the statement?",
+      "options": {
+        "A": "Only I is implicit",
+        "B": "Only II is implicit",
+        "C": "Both I and II are implicit",
+        "D": "Neither I nor II is implicit"
+      },
+      "correct_answer": "B",
+      "trap_type": "Preference over petrol assumed, Both assumed, Neither assumed",
+      "pedagogical_explanation": "Step-by-step solution: An assumption is implicit only if the statement cannot make sense without it. 1) Assumption I: Launching an electric scooter needs only some demand for electric scooters; it does not need people in general to prefer them over petrol scooters. I is not implicit. 2) Assumption II: The company chooses to advertise the 200 km range, which makes sense only if buyers value a long range. II is implicit. Answer: Only II is implicit.\nTrap (A): Reading the launch itself as proof that electric scooters are preferred over petrol ones accepts I instead of II.\nTrap (C): Accepting the over-general preference in I along with II gives Both I and II.\nTrap (D): Treating the advertisement as a plain fact with no assumption behind it rejects II as well, giving Neither.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Course of Action",
+      "question_text": "Statement: Many accidents have been reported on the highway due to large potholes. Courses of action: I. Government should get potholes repaired immediately. II. Government should ban all vehicles on the highway. Which course of action follows?",
+      "options": {
+        "A": "Only II follows",
+        "B": "Both I and II follow",
+        "C": "Neither I nor II follows",
+        "D": "Only I follows"
+      },
+      "correct_answer": "D",
+      "trap_type": "Extreme action accepted, Both extreme, No action",
+      "pedagogical_explanation": "Step-by-step solution: A course of action follows if it is practical and addresses the problem in the statement. 1) Course I: The accidents are caused by large potholes, so repairing them immediately removes the cause. I follows. 2) Course II: Banning all vehicles on the highway is impractical and stops all traffic instead of fixing the potholes. II does not follow. Answer: Only I follows.\nTrap (A): Choosing the extreme step because it would stop all accidents gives Only II follows.\nTrap (B): Accepting the ban along with the repair gives Both I and II follow.\nTrap (C): Treating an immediate repair as too costly to be practical rejects I as well, giving Neither.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Cause Effect",
+      "question_text": "Statements:\nI. The local administration has ordered the closure of schools for three days.\nII. A severe cyclonic storm is expected to hit the coastal region.\nWhich of the following best describes the relation between the two statements?",
+      "options": {
+        "A": "II is the cause and I is the effect",
+        "B": "I is the cause and II is the effect",
+        "C": "Both are independent causes",
+        "D": "Both are effects of a common cause"
+      },
+      "correct_answer": "A",
+      "trap_type": "Reversed cause effect, Independent causes misjudgement, Common cause confusion",
+      "pedagogical_explanation": "Step-by-step solution: The cyclone forecast (II) is a natural event that comes first; the administration closes schools (I) to keep students safe from it. So II is the cause and I is its effect. Answer: II is the cause and I is the effect.\nTrap (B): Reading the statements in their printed order (I first) reverses the direction, giving I as the cause and II as the effect.\nTrap (C): Missing the safety link between the forecast and the closure treats them as unrelated, giving Both are independent causes.\nTrap (D): Linking both to the season instead of to each other gives Both are effects of a common cause.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Calendar",
+      "question_text": "If 26th January 2024 was Friday, what day of the week was 26th January 2023?",
+      "options": {
+        "A": "Wednesday",
+        "B": "Thursday",
+        "C": "Friday",
+        "D": "Saturday"
+      },
+      "correct_answer": "B",
+      "trap_type": "Leap year double shift, Same day assumption, Forward shift",
+      "pedagogical_explanation": "Step-by-step solution: 1) The leap day of 2024 is 29 February 2024, which comes after 26 January 2024, so it is not inside the period from 26 January 2023 to 26 January 2024. 2) The period therefore has 365 days = 52 weeks + 1 odd day. 3) Going back one year from Friday shifts the day back by 1, so 26 January 2023 was a Thursday.\nTrap (A): Counting 29 February 2024 inside the period (2 odd days) and shifting back 2 gives Wednesday.\nTrap (C): Assuming the same date falls on the same weekday every year gives Friday.\nTrap (D): Shifting the odd day forward instead of backward gives Saturday.",
+      "verify_code": "leap = lambda y: y % 4 == 0 and (y % 100 != 0 or y % 400 == 0)\nmdays = lambda y: [31, 29 if leap(y) else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]\ndef ordinal(y, m, dd):\n    return sum(366 if leap(k) else 365 for k in range(1, y)) + sum(mdays(y)[:m - 1]) + dd\ndays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\ngap = ordinal(2024, 1, 26) - ordinal(2023, 1, 26)\nassert gap == 365\nanswer = days[(days.index('Friday') - gap) % 7]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Linear Seating Mixed Facing",
+      "question_text": "Seven friends Aarti, Bhavya, Chetan, Divya, Esha, Farhan and Gaurav sit in a row. Some face North and some face South. Clues: Gaurav sits at the left end and faces North. Farhan sits at the right end and faces South. Divya sits exactly in the middle of the row and faces South. Chetan sits to the immediate right of Divya and faces the same direction as Divya. Only one person sits between Chetan and Esha. Esha and Bhavya both face the same direction as Gaurav. Bhavya sits to the immediate right of Esha. Aarti faces the direction opposite to Gaurav. Who sits second to the left of Chetan?",
+      "options": {
+        "A": "Esha",
+        "B": "Gaurav",
+        "C": "Divya",
+        "D": "Bhavya"
+      },
+      "correct_answer": "A",
+      "trap_type": "Using the viewer's left/right for a South-facing person or counting the wrong number of seats",
+      "pedagogical_explanation": "Step-by-step solution: Number the seats 1 to 7 from the left end. For a North-facing person, right is towards seat 7; for a South-facing person, right is towards seat 1 and left is towards seat 7. 1) Gaurav is at seat 1 (North) and Farhan at seat 7 (South). 2) Divya is in the middle, seat 4, facing South. 3) Chetan is to Divya's immediate right; Divya faces South, so her right is seat 3. Chetan is at seat 3 and faces South. 4) Only one person sits between Chetan and Esha, so Esha is at seat 1 or seat 5; seat 1 is taken, so Esha is at seat 5, facing North. 5) Bhavya is to the immediate right of Esha, who faces North, so Bhavya is at seat 6, facing North. 6) Aarti takes seat 2 and faces South. Row from the left: Gaurav, Aarti, Chetan, Divya, Esha, Bhavya, Farhan. Chetan faces South, so his left is towards seat 7; second to his left is seat 5, Esha.\nTrap (B): Using the viewer's left for Chetan (towards seat 1) instead of his own left moves to seat 1, giving Gaurav.\nTrap (C): Taking the immediate left of Chetan (one seat) instead of second to the left gives seat 4, Divya.\nTrap (D): Counting three seats to Chetan's left instead of two gives seat 6, Bhavya.",
+      "verify_code": "import itertools\nN = ['Aarti', 'Bhavya', 'Chetan', 'Divya', 'Esha', 'Farhan', 'Gaurav']\nsols = []\nfor p in itertools.permutations(N):\n    s = {n: i + 1 for i, n in enumerate(p)}\n    for fc in itertools.product('NS', repeat=7):\n        f = dict(zip(N, fc))\n        right = lambda n, k: s[n] + k if f[n] == 'N' else s[n] - k\n        if s['Gaurav'] != 1 or f['Gaurav'] != 'N': continue\n        if s['Farhan'] != 7 or f['Farhan'] != 'S': continue\n        if s['Divya'] != 4 or f['Divya'] != 'S': continue\n        if s['Chetan'] != right('Divya', 1) or f['Chetan'] != f['Divya']: continue\n        if abs(s['Chetan'] - s['Esha']) != 2: continue\n        if f['Esha'] != f['Gaurav'] or f['Bhavya'] != f['Gaurav']: continue\n        if s['Bhavya'] != right('Esha', 1): continue\n        if f['Aarti'] == f['Gaurav']: continue\n        sols.append((s, f))\nassert len(sols) == 1\ns, f = sols[0]\ninv = {v: k for k, v in s.items()}\nanswer = inv[s['Chetan'] + 2 if f['Chetan'] == 'S' else s['Chetan'] - 2]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Circular Seating",
+      "question_text": "Six friends Rohan, Sneha, Vikram, Priya, Karan and Ananya sit around a circular table facing the centre. Clues: Rohan sits opposite Priya. Sneha sits to the immediate left of Rohan. Vikram sits second to the right of Sneha. Ananya sits to the immediate right of Priya. Karan sits between Priya and Vikram. Who sits second to the left of Karan?",
+      "options": {
+        "A": "Sneha",
+        "B": "Ananya",
+        "C": "Rohan",
+        "D": "Vikram"
+      },
+      "correct_answer": "C",
+      "trap_type": "Mixing up left and right for centre-facing people or counting the wrong number of seats",
+      "pedagogical_explanation": "Step-by-step solution: For people facing the centre, left is clockwise and right is anticlockwise. Number the seats 0 to 5 clockwise, so left is +1 and right is -1. 1) Rohan is at seat 0 and Priya opposite at seat 3. 2) Sneha is to the immediate left of Rohan: seat 1. 3) Vikram is second to the right of Sneha: 1 - 2 = seat 5. 4) Ananya is to the immediate right of Priya: seat 2. 5) Karan takes seat 4, which lies between Priya (3) and Vikram (5). Second to the left of Karan is 4 + 2 = seat 0, Rohan.\nTrap (A): Counting three seats to the left of Karan (the person opposite him) instead of two gives seat 1, Sneha.\nTrap (B): Moving to the right (anticlockwise) instead of the left in the last step gives seat 2, Ananya.\nTrap (D): Taking the immediate left of Karan instead of second to the left gives seat 5, Vikram.",
+      "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Sneha', 'Vikram', 'Priya', 'Karan', 'Ananya']):\n    s = {'Rohan': 0}\n    s.update({n: i + 1 for i, n in enumerate(p)})\n    if (s['Priya'] - s['Rohan']) % 6 != 3: continue\n    if s['Sneha'] != (s['Rohan'] + 1) % 6: continue\n    if s['Vikram'] != (s['Sneha'] - 2) % 6: continue\n    if s['Ananya'] != (s['Priya'] - 1) % 6: continue\n    if {(s['Karan'] - s['Priya']) % 6, (s['Karan'] - s['Vikram']) % 6} != {1, 5}: continue\n    sols.append(s)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['Karan'] + 2) % 6]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Coded Inequality",
+      "question_text": "Statements: P > Q ≥ R < S ≤ T = U\nConclusions:\nI. Q > T\nII. Q ≤ T\nWhich of the conclusions is/are true?",
+      "options": {
+        "A": "Both Conclusions I and II are true",
+        "B": "Either Conclusion I or II is true",
+        "C": "Only Conclusion II is true",
+        "D": "Neither Conclusion I nor II is true"
+      },
+      "correct_answer": "B",
+      "trap_type": "Missing the either-or rule for a complementary pair, or chaining through opposite signs",
+      "pedagogical_explanation": "Step-by-step solution: 1) Q and T are linked only through R: Q ≥ R and R < S ≤ T. The signs point in opposite directions at R (Q ≥ R < S), so no definite relation between Q and T can be drawn. Conclusion I (Q > T) is not definitely true and Conclusion II (Q ≤ T) is not definitely true. 2) The two conclusions involve the same pair and together cover every case (Q > T or Q ≤ T), and exactly one of them must hold. So either I or II is true.\nTrap (A): Treating 'each is possible' as 'each is true' gives Both Conclusions I and II are true.\nTrap (C): Chaining across the break at R as if Q ≥ R < S ≤ T gave Q ≤ T accepts II as definite, giving Only Conclusion II is true.\nTrap (D): Rejecting both conclusions without checking the complementary-pair (either-or) rule gives Neither Conclusion I nor II is true.",
+      "verify_code": "import itertools\nV = ['P', 'Q', 'R', 'S', 'T', 'U']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    P, Q, R, S, T, U = vals\n    if P > Q >= R < S <= T == U:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda P, Q, R, S, T, U: Q > T)\nc2 = holds(lambda P, Q, R, S, T, U: Q <= T)\neither = holds(lambda P, Q, R, S, T, U: (Q > T) or (Q <= T)) and not c1 and not c2\nassert any(v[1] > v[4] for v in ok) and any(v[1] <= v[4] for v in ok)\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Blood Relation",
+      "question_text": "Six members Rajesh, Sunita, Amit, Priya, Karan and Neha are in a family. Rajesh is the father of Amit and Priya. Sunita is the wife of Rajesh. Amit is the brother of Priya. Karan is the son of Amit. Neha is the daughter of Priya. How is Karan related to Priya?",
+      "options": {
+        "A": "Son",
+        "B": "Cousin",
+        "C": "Brother",
+        "D": "Nephew"
+      },
+      "correct_answer": "D",
+      "trap_type": "Attaching the child to the wrong parent or answering for the wrong person",
+      "pedagogical_explanation": "Step-by-step solution: 1) Amit and Priya are siblings (children of Rajesh and Sunita). 2) Karan is the son of Amit. 3) The son of a person's brother is that person's nephew. So Karan is the Nephew of Priya.\nTrap (A): Attaching Karan to Priya instead of to Amit (Priya is Karan's aunt, not his mother) gives Son.\nTrap (B): Answering Karan's relation to Neha (Priya's daughter) instead of to Priya gives Cousin.\nTrap (C): Copying Amit's relation to Priya onto his son Karan gives Brother.",
+      "verify_code": ""
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Moderate",
+      "concept_tag": "Direction Shadow",
+      "question_text": "In the evening, Sunita and Kavita are standing facing each other. Sunita's shadow falls exactly to her right. Which direction is Kavita facing?",
+      "options": {
+        "A": "North",
+        "B": "South",
+        "C": "East",
+        "D": "West"
+      },
+      "correct_answer": "B",
+      "trap_type": "Using the morning sun position or answering for the wrong person",
+      "pedagogical_explanation": "Step-by-step solution: 1) In the evening the sun is in the West, so shadows fall towards the East. 2) Sunita's shadow falls to her right, so East is on her right; a person with East on the right faces North. 3) Kavita stands facing Sunita, so Kavita faces the opposite direction, South.\nTrap (A): Answering Sunita's direction instead of Kavita's gives North.\nTrap (C): Taking the direction of the shadow (East) as the facing direction gives East.\nTrap (D): Taking the direction of the evening sun (West) as the facing direction gives West.",
+      "verify_code": "D = {'North': (0, 1), 'South': (0, -1), 'East': (1, 0), 'West': (-1, 0)}\nsun = D['West']\nshadow = (-sun[0], -sun[1])\nright = lambda v: (v[1], -v[0])\nsunita = [k for k, v in D.items() if right(v) == shadow][0]\nkavita = [k for k, v in D.items() if v == (-D[sunita][0], -D[sunita][1])][0]\nanswer = kavita"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Coding Decoding Sentence",
+      "question_text": "In a certain code language:\n'priya likes coffee' is written as 'ma ti na',\n'coffee is hot' is written as 'na ro ko', and\n'priya likes tea' is written as 'ma ti sa'.\nWhat is the code for 'tea'?",
+      "options": {
+        "A": "sa",
+        "B": "ma",
+        "C": "ti",
+        "D": "na"
+      },
+      "correct_answer": "A",
+      "trap_type": "Picking a code shared with another sentence instead of the code unique to the word",
+      "pedagogical_explanation": "Step-by-step solution: 1) 'priya likes' appears in the first and third sentences, and the common codes there are 'ma' and 'ti', so 'ma' and 'ti' stand for 'priya' and 'likes'. 2) 'coffee' appears in the first and second sentences, and the common code is 'na', so 'na' = coffee. 3) In the third sentence 'ma ti sa', removing 'ma' and 'ti' leaves 'sa', so 'tea' = sa.\nTrap (B): Taking the first code of the third sentence gives ma, which belongs to 'priya' or 'likes'.\nTrap (C): Taking the middle code of the third sentence gives ti, which belongs to 'priya' or 'likes'.\nTrap (D): Taking the last code of the first sentence (where 'coffee' stands in the same place as 'tea') gives na, the code for coffee.",
+      "verify_code": "S = {'priya likes coffee': 'ma ti na', 'coffee is hot': 'na ro ko', 'priya likes tea': 'ma ti sa'}\nW = {k: set(k.split()) for k in S}\nC = {k: set(v.split()) for k, v in S.items()}\ncand = set(C['priya likes tea'])\nfor k in S:\n    if k != 'priya likes tea':\n        cand -= C[k] if 'tea' not in W[k] else set()\nassert len(cand) == 1\nanswer = cand.pop()"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Alphabet Series",
+      "question_text": "What comes next in the series: A, C, F, J, O, ?",
+      "options": {
+        "A": "T",
+        "B": "V",
+        "C": "P",
+        "D": "U"
+      },
+      "correct_answer": "D",
+      "trap_type": "Repeating or skipping a gap, or applying the gap to the wrong term",
+      "pedagogical_explanation": "Step-by-step solution: Letter positions are A = 1, C = 3, F = 6, J = 10, O = 15. The gaps are +2, +3, +4, +5, so the next gap is +6: 15 + 6 = 21, which is U.\nTrap (A): Repeating the last gap (+5) instead of increasing it gives 20, T.\nTrap (B): Skipping a step and adding +7 gives 22, V.\nTrap (C): Adding the next gap (+6) to J instead of to O gives 16, P.",
+      "verify_code": "s = 'ACFJO'\np = [ord(c) - 64 for c in s]\ng = [b - a for a, b in zip(p, p[1:])]\nassert g == list(range(2, 6))\nanswer = chr(64 + p[-1] + g[-1] + 1)"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Order Ranking",
+      "question_text": "In a row of 50 students facing North, Aman is 18th from the left end. What is his position from the right end?",
+      "options": {
+        "A": "33rd",
+        "B": "32nd",
+        "C": "31st",
+        "D": "68th"
+      },
+      "correct_answer": "A",
+      "trap_type": "Mishandling the +1 in end-position conversion",
+      "pedagogical_explanation": "Step-by-step solution: Position from the right = Total - Position from the left + 1 = 50 - 18 + 1 = 33. Aman is 33rd from the right end.\nTrap (B): Leaving out the +1 (50 - 18) gives 32nd.\nTrap (C): Subtracting 1 instead of adding it (50 - 18 - 1) gives 31st.\nTrap (D): Adding the two numbers (50 + 18) instead of subtracting gives 68th.",
+      "verify_code": "answer = 50 - 18 + 1"
+    },
+    {
+      "exam": "Sarkari",
+      "topic": "Sarkari Reasoning",
+      "difficulty": "Easy",
+      "concept_tag": "Data Sufficiency",
+      "question_text": "Question: Who is the youngest among P, Q and R?\nStatements:\nI. P is younger than Q.\nII. Q is younger than R.\nWhich of the following is correct?",
+      "options": {
+        "A": "Statement I alone is sufficient",
+        "B": "Statement II alone is sufficient",
+        "C": "Both statements together are sufficient, but neither alone is sufficient",
+        "D": "Both statements together are not sufficient"
+      },
+      "correct_answer": "C",
+      "trap_type": "Treating one comparison as enough to rank three people",
+      "pedagogical_explanation": "Step-by-step solution: 1) Statement I alone: P is younger than Q, but R could be younger than P, so I alone is not sufficient. 2) Statement II alone: Q is younger than R, but P could be younger than Q, so II alone is not sufficient. 3) Together: P is younger than Q and Q is younger than R, so P is the youngest. Both statements together are sufficient, but neither alone is.\nTrap (A): Taking 'P is younger than Q' as proof that P is the youngest ignores R and accepts Statement I alone.\nTrap (B): Taking 'Q is younger than R' as proof that Q is the youngest ignores P and accepts Statement II alone.\nTrap (D): Testing each statement alone and never combining them gives Both statements together are not sufficient.",
+      "verify_code": "import itertools\norders = list(itertools.permutations('PQR'))\nI = lambda o: o.index('P') < o.index('Q')\nII = lambda o: o.index('Q') < o.index('R')\ndef suff(cond):\n    return len({o[0] for o in orders if cond(o)}) == 1\na, b, ab = suff(I), suff(II), suff(lambda o: I(o) and II(o))\nanswer = ('Statement I alone is sufficient' if a and not b else 'Statement II alone is sufficient' if b and not a else 'Both statements together are sufficient, but neither alone is sufficient' if ab and not a and not b else 'Both statements together are not sufficient')"
     }
   ]
 }

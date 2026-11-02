@@ -1,0 +1,138 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Error Spotting",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error:\n(A) Each of the trainees / (B) have completed / (C) their online module / (D) before the deadline.",
+  "options": {
+   "A": "Each of the trainees",
+   "B": "have completed",
+   "C": "their online module",
+   "D": "before the deadline."
+  },
+  "correct_answer": "B",
+  "trap_type": "Subject-verb agreement with Each, Proximity error with plural noun",
+  "pedagogical_explanation": "Each is singular and requires has, not have. Trainees is plural but Each governs singular verb. Trap (A): Thinks Each of the trainees is plural because trainees is plural. Trap (C): Thinks their is error but their is acceptable as generic singular. Trap (D): Thinks 'before the deadline' must be 'within the deadline', but both prepositions are correct here.",
+  "verify_code": "answer = \"have completed\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Sentence Improvement",
+  "question_text": "Select the most appropriate option to improve the underlined segment in the given sentence:\nThe flood victims **have been distributed food packets** by the local authorities.",
+  "options": {
+   "A": "have been distributed with food packets",
+   "B": "were distributed food packets",
+   "C": "have been distributing food packets",
+   "D": "have been given food packets"
+  },
+  "correct_answer": "D",
+  "trap_type": "Passive voice misassignment, Active vs passive confusion, Tense shift error",
+  "pedagogical_explanation": "Victims cannot be distributed, packets are distributed. Victims are given packets. Correct is have been given. Trap (A): Keeps victims as subject of distributed and adds with, still illogical. Trap (B): Changes only the tense; the real error, treating the victims as the things distributed, remains. Trap (C): Switches to the active 'have been distributing', which clashes with 'by the local authorities' and makes the victims the distributors.",
+  "verify_code": "answer = \"have been given food packets\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Vocab Fill",
+  "question_text": "Fill in the blank: Her ______ curiosity and eagerness to learn impressed everyone in the workshop.",
+  "options": {
+   "A": "childish",
+   "B": "childlike",
+   "C": "infantile",
+   "D": "juvenile"
+  },
+  "correct_answer": "B",
+  "trap_type": "Negative connotation confusion, Pejorative vs appreciative, Age-related insult",
+  "pedagogical_explanation": "Childlike means innocent and positive curiosity, suitable for praise. Childish, infantile, juvenile are negative and imply immaturity. Trap (A): Childish is negative, means silly and immature, not praise. Trap (C): Infantile is strongly negative and insulting. Trap (D): Juvenile is also negative and often used for delinquent behaviour.",
+  "verify_code": "answer = \"childlike\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Phrasal Verb",
+  "question_text": "Fill in the blank: The committee decided to look ______ the matter before taking a final decision.",
+  "options": {
+   "A": "into",
+   "B": "after",
+   "C": "up",
+   "D": "for"
+  },
+  "correct_answer": "A",
+  "trap_type": "Phrasal verb confusion - care vs investigate vs search",
+  "pedagogical_explanation": "Look into means investigate. Look after means take care, look up means search in dictionary, look for means search for something missing. Context is investigate matter, so into is correct. Trap (B): Thinks look after means handle matter, confuses care meaning. Trap (C): Thinks look up means check matter, confuses dictionary search. Trap (D): Thinks look for means search matter.",
+  "verify_code": "answer = \"into\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Idiom",
+  "question_text": "Select the most appropriate meaning of the underlined idiom:\n**To put all your eggs in one basket**",
+  "options": {
+   "A": "To be very organized",
+   "B": "To risk everything on a single venture",
+   "C": "To waste resources carelessly",
+   "D": "To diversify your investments"
+  },
+  "correct_answer": "B",
+  "trap_type": "Literal interpretation, Opposite meaning, Resource management confusion",
+  "pedagogical_explanation": "Idiom means to depend entirely on one plan and risk everything. Trap (A): Takes eggs in basket as organized storage, literal. Trap (C): Thinks putting all eggs together wastes them. Trap (D): Thinks opposite, diversification, confuses with not putting all eggs in one basket.",
+  "verify_code": "answer = \"To risk everything on a single venture\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Synonym",
+  "question_text": "Select the most appropriate synonym of the underlined word in the given sentence:\nThe finance minister described the budget as **prudent** and sustainable.",
+  "options": {
+   "A": "extravagant",
+   "B": "careless",
+   "C": "wise",
+   "D": "hasty"
+  },
+  "correct_answer": "C",
+  "trap_type": "Antonym confusion, Carelessness vs prudence, Haste confusion",
+  "pedagogical_explanation": "Prudent means wise and careful in managing resources. Wise is synonym. Trap (A): Extravagant is antonym meaning spending too much. Trap (B): Careless is antonym meaning not careful. Trap (D): Hasty is antonym implying rushed decision.",
+  "verify_code": "answer = \"wise\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Antonym",
+  "question_text": "Select the most appropriate antonym of the underlined word in the given sentence:\nThe government took steps to **mitigate** the effects of inflation.",
+  "options": {
+   "A": "lessen",
+   "B": "alleviate",
+   "C": "reduce",
+   "D": "aggravate"
+  },
+  "correct_answer": "D",
+  "trap_type": "Synonym confusion - lessen, alleviate, reduce all synonyms",
+  "pedagogical_explanation": "Mitigate means lessen or reduce severity, so antonym is aggravate meaning worsen. Trap (A): Lessen is synonym, confuses antonym with synonym. Trap (B): Alleviate is synonym meaning make less severe. Trap (C): Reduce is synonym meaning make smaller.",
+  "verify_code": "answer = \"aggravate\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Para Jumble",
+  "question_text": "Rearrange the following sentences P, Q, R and S into a logical paragraph.\nP) However, excessive dependence on technology may reduce critical thinking among students.\nQ) Artificial intelligence is transforming the way students learn in classrooms.\nR) Therefore, a balanced approach is needed to integrate AI effectively without losing human touch.\nS) Teachers can now use AI tools to create personalized lesson plans for each learner.",
+  "options": {
+   "A": "QSPR",
+   "B": "SQPR",
+   "C": "QPSR",
+   "D": "QSRP"
+  },
+  "correct_answer": "A",
+  "trap_type": "Wrong starter with example, Benefit after drawback, Conclusion in middle",
+  "pedagogical_explanation": "Q introduces AI in learning. S gives the benefit (personalized lesson plans). P, opening with 'However', presents the drawback, so it must follow a benefit. R, opening with 'Therefore', concludes with a balanced approach. Correct order: QSPR. Trap (B): Starts with the example S before the topic sentence Q introduces AI. Trap (C): Places the drawback P before the benefit S, so 'However' has nothing to contrast with. Trap (D): Places the conclusion R before the drawback P, so 'Therefore' has no balance to draw.",
+  "verify_code": "answer = \"QSPR\""
+ }
+]

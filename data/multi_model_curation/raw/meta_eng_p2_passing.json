@@ -1,0 +1,172 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Cloze Test",
+  "question_text": "Read the passage and fill the blank: India's digital payment ecosystem has grown rapidly in the last five years. Small vendors who once relied only on cash now accept UPI payments. Yet, concerns about fraud and failed transactions remain a ______ for first-time users.",
+  "options": {
+   "A": "incentive",
+   "B": "boon",
+   "C": "deterrent",
+   "D": "catalyst"
+  },
+  "correct_answer": "C",
+  "trap_type": "Positive vs negative connotation, Incentive vs deterrent confusion, Catalyst misinterpretation",
+  "pedagogical_explanation": "Concerns about fraud are negative, so blank needs negative word meaning obstacle. Deterrent fits. Trap (A): Incentive means motivation, opposite of concerns, positive. Trap (B): Boon means benefit, opposite of concerns. Trap (D): Catalyst means something that accelerates, positive and does not fit concerns.",
+  "verify_code": "answer = \"deterrent\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Cloze Test",
+  "question_text": "Read the passage and fill the blank: The forest department launched a campaign to revive the dying lake. Volunteers planted native trees along its banks. The initiative not only improved groundwater levels but also ______ local biodiversity.",
+  "options": {
+   "A": "depleted",
+   "B": "neglected",
+   "C": "destroyed",
+   "D": "enriched"
+  },
+  "correct_answer": "D",
+  "trap_type": "Opposite meaning error, Negative outcome assumption, Neglect confusion",
+  "pedagogical_explanation": "Planting native trees improves groundwater and enriches biodiversity, positive outcome. Enriched fits. Trap (A): Depleted means reduced, opposite of expected positive result of campaign. Trap (B): Neglected means ignored, does not fit not only but also positive structure. Trap (C): Destroyed is strong negative, opposite of revival.",
+  "verify_code": "answer = \"enriched\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Word Usage",
+  "question_text": "Select the sentence in which the word 'comprise' is used incorrectly.",
+  "options": {
+   "A": "The team is comprised of ten members.",
+   "B": "The book comprises five chapters.",
+   "C": "The committee comprises experts from various fields.",
+   "D": "The collection comprises old coins and stamps."
+  },
+  "correct_answer": "A",
+  "trap_type": "Comprised of misconception, Correct usage mistaken as error, Subject-verb confusion",
+  "pedagogical_explanation": "Comprise means consist of and does not take of after it in active form. Is comprised of is considered incorrect in strict usage, should be comprises or is composed of. A is incorrect. Trap (B): Thinks comprises five chapters needs of, but comprises alone is correct. Trap (C): Thinks comprises experts needs of. Trap (D): Thinks comprises old coins needs of.",
+  "verify_code": "answer = \"The team is comprised of ten members.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "One Word Substitution",
+  "question_text": "Choose the one word for: A person who leaves his own country to live permanently in another country.",
+  "options": {
+   "A": "Immigrant",
+   "B": "Refugee",
+   "C": "Nomad",
+   "D": "Emigrant"
+  },
+  "correct_answer": "D",
+  "trap_type": "Immigrant vs Emigrant confusion, Refugee political confusion, Nomad lifestyle confusion",
+  "pedagogical_explanation": "Emigrant is one who leaves own country to settle in another. Immigrant is one who enters another country. Trap (A): Immigrant focuses on entering new country, not leaving own, common reversal. Trap (B): Refugee leaves due to danger or persecution, not necessarily permanent settlement by choice. Trap (C): Nomad moves from place to place, no permanent settlement.",
+  "verify_code": "answer = \"Emigrant\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Spelling",
+  "question_text": "Pick the correctly spelt word.",
+  "options": {
+   "A": "Entrepreneur",
+   "B": "Entrepraneur",
+   "C": "Entreprenuer",
+   "D": "Enterpreneur"
+  },
+  "correct_answer": "A",
+  "trap_type": "eu vs en vowel error, a vs e middle vowel, Missing r",
+  "pedagogical_explanation": "Correct spelling is Entrepreneur. Trap (B): Entrepraneur uses a instead of e after pr. Trap (C): Entreprenuer reverses the final -eur to -uer. Trap (D): Enterpreneur writes the opening as enter- (from 'enterprise') instead of entre-.",
+  "verify_code": "answer = \"Entrepreneur\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Active Passive",
+  "question_text": "Choose the correct passive form of: The authorities have closed the main road for repair work.",
+  "options": {
+   "A": "The main road have been closed by the authorities for repair work.",
+   "B": "The main road is closed by the authorities for repair work.",
+   "C": "The main road has been closed by the authorities for repair work.",
+   "D": "The main road was closed by the authorities for repair work."
+  },
+  "correct_answer": "C",
+  "trap_type": "Subject-verb agreement have vs has, Present tense vs perfect, Past tense shift",
+  "pedagogical_explanation": "Present perfect active have closed becomes has been closed in passive, road is singular so has. Trap (A): Uses have been with singular road, agreement error. Trap (B): Uses simple present is closed, loses perfect aspect. Trap (D): Uses simple past was closed, changes tense from present perfect to past.",
+  "verify_code": "answer = \"The main road has been closed by the authorities for repair work.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Easy",
+  "concept_tag": "Direct Indirect",
+  "question_text": "Convert to indirect speech: He said, \"I have finished my work.\"",
+  "options": {
+   "A": "He said that he has finished his work.",
+   "B": "He said that he had finished his work.",
+   "C": "He said that he finished his work.",
+   "D": "He said that he had finished my work."
+  },
+  "correct_answer": "B",
+  "trap_type": "No tense backshift, Simple past instead of past perfect, Pronoun not changed",
+  "pedagogical_explanation": "Present perfect in direct becomes past perfect in indirect, my becomes his. He said that he had finished his work is correct. Trap (A): Keeps has finished, no backshift, common error. Trap (C): Uses simple past finished instead of past perfect. Trap (D): Keeps my instead of changing to his, pronoun error.",
+  "verify_code": "answer = \"He said that he had finished his work.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Sentence Rearrangement First",
+  "question_text": "Four sentences P, Q, R, S form a paragraph. Which sentence should come FIRST?\nP) This has resulted in increased air pollution in metropolitan cities.\nQ) Private vehicle ownership has doubled in the last decade.\nR) Public transport remains unreliable and overcrowded in many areas.\nS) Urban mobility has become a major challenge for Indian cities.",
+  "options": {
+   "A": "P",
+   "B": "Q",
+   "C": "R",
+   "D": "S"
+  },
+  "correct_answer": "D",
+  "trap_type": "Effect as starter, Example as starter, Supporting detail as starter",
+  "pedagogical_explanation": "S is general introductory statement about urban mobility challenge, so it should start. R gives a cause (unreliable public transport), Q its consequence (more private vehicles), and P, with 'This', the result. Logical order S R Q P. Trap (A): P is result with This has resulted, cannot start without antecedent. Trap (B): Q is specific data about vehicle ownership, needs general context first. Trap (C): R is supporting detail about public transport, not broad opener.",
+  "verify_code": "answer = \"S\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Phrase Replacement",
+  "question_text": "Select the option that replaces the underlined phrase most concisely without changing the meaning:\nThe project was delayed **because of the fact that** the supplier failed to deliver materials on time.",
+  "options": {
+   "A": "due to the fact that",
+   "B": "because",
+   "C": "owing to the fact that",
+   "D": "No improvement"
+  },
+  "correct_answer": "B",
+  "trap_type": "Wordy synonym retention, Another wordy phrase, Accepting wordiness",
+  "pedagogical_explanation": "Because of the fact that is wordy, concise because is preferred. Trap (A): Replaces with equally wordy due to the fact that, no improvement in conciseness. Trap (C): Replaces with owing to the fact that, also wordy. Trap (D): Keeps the original because it is grammatical, missing that the question asks for the most concise form.",
+  "verify_code": "answer = \"because\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Reading Comprehension",
+  "question_text": "Read the passage: Many companies have adopted hybrid work models in recent years. Employees work from office on some days and from home on others. Studies show that hybrid work improves work-life balance and reduces commuting stress. However, it requires strong self-discipline and clear communication. Managers need to set measurable goals rather than tracking hours.\nWhat can be inferred from the passage?",
+  "options": {
+   "A": "Hybrid work eliminates need for managers",
+   "B": "Hybrid work increases commuting stress",
+   "C": "Hybrid work calls for judging employees by results rather than hours",
+   "D": "Hybrid work is suitable only for senior employees"
+  },
+  "correct_answer": "C",
+  "trap_type": "Extreme inference elimination, Opposite of stated fact, Unstated restriction",
+  "pedagogical_explanation": "The passage says managers need to set measurable goals rather than track hours, so performance in hybrid work must be judged by results. Trap (A): Eliminates need for managers is extreme, passage says managers need to set goals. Trap (B): Increases commuting stress is opposite, passage says reduces. Trap (D): Suitable only for senior employees is not mentioned, passage talks about all employees.",
+  "verify_code": "answer = \"Hybrid work calls for judging employees by results rather than hours\""
+ }
+]

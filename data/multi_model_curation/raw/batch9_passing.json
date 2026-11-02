@@ -1,0 +1,325 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Error Spotting - Inversion after Negative Adverbials",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error: Seldom our regional managers / have encountered such fierce resistance / from rural distributors regarding / the revised credit settlement cycle.",
+  "options": {
+   "A": "from rural distributors regarding",
+   "B": "Seldom our regional managers",
+   "C": "the revised credit settlement cycle.",
+   "D": "have encountered such fierce resistance"
+  },
+  "correct_answer": "B",
+  "trap_type": "Omission of Subject-Auxiliary Inversion",
+  "pedagogical_explanation": "When a sentence begins with a restrictive or negative adverb like 'Seldom', 'Rarely', or 'Never' for emphasis, subject-auxiliary inversion is mandatory. The auxiliary verb 'have' must precede the subject 'our regional managers', making the correct structure 'Seldom have our regional managers encountered...'. Trap (A): Students may falsely suspect 'regarding' requires the preposition 'to' after it, though 'regarding' functions correctly as a standalone preposition meaning 'about'. Trap (C): Candidates sometimes think a noun adjunct chain like 'credit settlement cycle' needs hyphens or prepositions, whereas compound nouns are standard in formal English. Trap (D): Test-takers often misidentify the present perfect 'have encountered' as needing past simple 'encountered', overlooking that the time-frame extends to the present and the error lies in the uninverted opening clause.",
+  "verify_code": "answer = \"Seldom our regional managers\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Error Spotting - Possessive Case before Gerund",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error: The auditing committee objected / to the procurement officer / approving the emergency vendor contract / without soliciting three independent quotations.",
+  "options": {
+   "A": "The auditing committee objected",
+   "B": "without soliciting three independent quotations.",
+   "C": "to the procurement officer",
+   "D": "approving the emergency vendor contract"
+  },
+  "correct_answer": "C",
+  "trap_type": "Objective Noun Instead of Possessive Before Gerund",
+  "pedagogical_explanation": "In formal grammar, when a noun or pronoun precedes a gerund ('approving') that functions as the object of a preposition ('to'), the noun must be in the possessive case ('the procurement officer's') because the objection is directed at the action of approving, not at the person alone. Trap (A): Learners often think 'committee' must take a plural verb or requires an preposition other than 'to' after 'objected', though 'object to' with a singular collective noun is completely standard. Trap (B): Candidates may assume 'without soliciting' should be 'without to solicit', forgetting that prepositions like 'without' take gerund objects. Trap (D): Students frequently mistake 'approving' for a faulty participle and want to change it to 'to approve', missing that 'object to' requires a gerund phrase modified by a possessive noun.",
+  "verify_code": "answer = \"to the procurement officer\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Error Spotting - Correlative Conjunction Parallelism",
+  "question_text": "Identify the segment in the sentence that contains a grammatical error: The newly drafted municipal bylaws / aim not only to curb / unauthorized commercial construction / but also streamlining rainwater harvesting.",
+  "options": {
+   "A": "but also streamlining rainwater harvesting.",
+   "B": "The newly drafted municipal bylaws",
+   "C": "aim not only to curb",
+   "D": "unauthorized commercial construction"
+  },
+  "correct_answer": "A",
+  "trap_type": "Broken Parallelism in Correlative Conjunctions",
+  "pedagogical_explanation": "Correlative conjunctions ('not only... but also') must link grammatically identical structures. Because 'not only' is followed by the to-infinitive 'to curb', 'but also' must be followed by the parallel infinitive 'to streamline' (or 'curb' if 'to' preceded 'not only'), not the gerund 'streamlining'. Trap (B): Students sometimes confuse 'bylaws' as an uncountable singular noun, whereas it is a countable plural noun properly paired with the plural verb 'aim'. Trap (C): Candidates may believe 'aim' must be followed by 'at curbing' instead of 'to curb', though 'aim + to-infinitive' is standard formal usage. Trap (D): Test-takers occasionally assume 'construction' needs an indefinite article 'an', forgetting that 'construction' is uncountable here.",
+  "verify_code": "answer = \"but also streamlining rainwater harvesting.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Sentence Improvement - Mandative Subjunctive",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nThe tribunal mandated that the defaulting infrastructure firm **deposits twenty percent of the disputed amount** into an escrow account before Friday.",
+  "options": {
+   "A": "will deposit twenty percent of the disputed amount",
+   "B": "has deposited twenty percent of the disputed amount",
+   "C": "deposited twenty percent of the disputed amount",
+   "D": "deposit twenty percent of the disputed amount"
+  },
+  "correct_answer": "D",
+  "trap_type": "Sequence of Tenses and Singular Agreement Confusion",
+  "pedagogical_explanation": "Verbs of demand, recommendation, or mandate ('mandated', 'insisted', 'recommended') followed by a 'that' clause require the mandative subjunctive, which uses the bare infinitive form of the verb ('deposit') regardless of whether the subject is singular or the main verb is in the past tense. Trap (A): Test-takers see the future time marker 'before Friday' and insert 'will deposit', unaware that directive 'that' clauses take the base subjunctive rather than modal future. Trap (B): Students apply present perfect 'has deposited' to match a singular subject, overlooking the mandatory subjunctive mood after 'mandated'. Trap (C): Candidates blindly apply the sequence-of-tenses rule, matching past tense 'mandated' with past tense 'deposited'.",
+  "verify_code": "answer = \"deposit twenty percent of the disputed amount\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Sentence Improvement - Dangling Participle Resolution",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nHaving scrutinized the satellite soil moisture data for three months, **the drought-prone districts were granted immediate crop insurance relief**.",
+  "options": {
+   "A": "immediate crop insurance relief was granted to the drought-prone districts.",
+   "B": "the drought-prone districts had been granted immediate crop insurance relief.",
+   "C": "the agrarian ministry granted the drought-prone districts immediate crop insurance relief.",
+   "D": "granting immediate crop insurance relief to the drought-prone districts became necessary."
+  },
+  "correct_answer": "C",
+  "trap_type": "Passive Voice Retention Creating a Dangling Modifier",
+  "pedagogical_explanation": "An introductory participial phrase ('Having scrutinized...') must modify the grammatical subject immediately following the comma. Since districts or relief cannot scrutinize satellite data, the active agent ('the agrarian ministry') must be the subject of the main clause. Trap (A): Students shift the passive subject from 'districts' to 'relief', which still leaves the participle dangling because 'relief' cannot scrutinize data. Trap (B): Candidates change the tense to past perfect passive 'had been granted' to pair with 'Having scrutinized', failing to fix the illogical subject. Trap (D): Test-takers choose a gerund subject 'granting...', which still fails to supply a logical human or institutional agent for 'Having scrutinized'.",
+  "verify_code": "answer = \"the agrarian ministry granted the drought-prone districts immediate crop insurance relief.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "CAT-Level",
+  "concept_tag": "Sentence Improvement - Comparison of Attributes (That of / Those of)",
+  "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence:\nThe thermal efficiency of the new solid-state transformer is markedly superior **to the conventional oil-cooled units** installed a decade ago.",
+  "options": {
+   "A": "than that of the conventional oil-cooled units",
+   "B": "to those of the conventional oil-cooled units",
+   "C": "No improvement",
+   "D": "to that of the conventional oil-cooled units"
+  },
+  "correct_answer": "D",
+  "trap_type": "Demonstrative Pronoun Number Mismatch and Latinate Comparator Error",
+  "pedagogical_explanation": "First, the Latinate adjective 'superior' takes the preposition 'to', never 'than'. Second, the comparison is between 'The thermal efficiency' (a singular uncountable noun) of one transformer and the thermal efficiency of oil-cooled units, requiring the singular demonstrative pronoun 'that of' to prevent comparing an abstract property directly to physical units. Trap (A): Students correctly notice the missing demonstrative pronoun 'that of' but pair 'superior' with the faulty conjunction 'than'. Trap (B): Candidates get lured by the plural noun 'units' at the end of the phrase and select 'those of', forgetting that the antecedent being replaced is singular ('efficiency'). Trap (C): Test-takers see that 'superior to' is already correct and accept the sentence, missing that it compares efficiency directly with physical units.",
+  "verify_code": "answer = \"to that of the conventional oil-cooled units\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Fill in the Blank - Close-Meaning Verb Collocation",
+  "question_text": "Select the most appropriate word to fill in the blank: Although the whistleblower provided several internal memos, the inquiry panel could not ________ the allegations without independent bank transaction logs.",
+  "options": {
+   "A": "consolidate",
+   "B": "corroborate",
+   "C": "collaborate",
+   "D": "fabricate"
+  },
+  "correct_answer": "B",
+  "trap_type": "Paronym and Semantic Near-Neighbor Confusion",
+  "pedagogical_explanation": "'Corroborate' specifically means to confirm or give support to a statement, theory, or finding (like allegations) using independent evidence. Trap (A): Students confuse 'consolidate' (to combine multiple things into a more effective or coherent whole) with confirming evidence. Trap (C): Candidates fall for the phonetic similarity of 'collaborate' (to work jointly on an activity), which is intransitive and cannot take 'allegations' as a direct object. Trap (D): Test-takers see 'allegations' and associate it with 'fabricate' (to invent false information), which contradicts the logic of an inquiry panel needing bank logs to verify claims.",
+  "verify_code": "answer = \"corroborate\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Fill in the Blank - Nuanced Adjectives of Brevity",
+  "question_text": "Select the most appropriate word to fill in the blank: Rather than delivering a rambling defence, the chief economist offered a ________ three-minute rebuttal that dismantled every criticism with precision.",
+  "options": {
+   "A": "curt",
+   "B": "fleeting",
+   "C": "succinct",
+   "D": "reticent"
+  },
+  "correct_answer": "C",
+  "trap_type": "Connotation and Collocation Mismatch Among Brevity Adjectives",
+  "pedagogical_explanation": "'Succinct' means briefly and clearly expressed, carrying a positive connotation of precision and effectiveness that contrasts with 'rambling'. Trap (A): Students pick 'curt' because it means brief, missing its negative connotation of rudely or brusquely short, which clashes with dismantling criticisms thoroughly and precisely. Trap (B): Candidates choose 'fleeting' (lasting for a very short time), which describes transient feelings or moments rather than the structured clarity of a speech. Trap (D): Test-takers confuse 'reticent' (unwilling to speak or reveal one's thoughts freely) with concise speech, though a reticent person avoids speaking altogether rather than delivering an effective rebuttal.",
+  "verify_code": "answer = \"succinct\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Fill in the Blank - Verbs of Mitigation vs Intensity",
+  "question_text": "Select the most appropriate word to fill in the blank: The central bank's surprise liquidity injection was designed to ________ investor anxiety following the sudden collapse of two regional lenders.",
+  "options": {
+   "A": "abstain",
+   "B": "aggravate",
+   "C": "condone",
+   "D": "allay"
+  },
+  "correct_answer": "D",
+  "trap_type": "Register Collocation and Polarity Reversal",
+  "pedagogical_explanation": "'Allay' means to diminish or put at rest (fear, suspicion, or worry), making 'allay anxiety' a classic formal collocation matching the remedial goal of a liquidity injection. Trap (A): Test-takers misread 'abstain' (to restrain oneself from doing something, always used with 'from') as a transitive verb meaning to stop or reduce. Trap (B): Students who focus only on 'collapse' and 'anxiety' choose 'aggravate' (make worse), reversing the intended stabilizing purpose of a central bank's liquidity injection. Trap (C): Candidates confuse 'condone' (to accept or overlook morally questionable behaviour) with 'console' or 'calm'.",
+  "verify_code": "answer = \"allay\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Cloze Test - Contextual Discourse Transition",
+  "question_text": "Read the three-sentence passage and select the most appropriate word for the blank: Coastal mangrove ecosystems act as natural bio-shields that absorb the kinetic energy of cyclonic storm surges. Despite their proven ecological value, thousands of hectares of tidal wetlands have been cleared over the last decade to accommodate commercial shrimp aquaculture. This short-sighted conversion has ________ left densely populated littoral villages exposed to catastrophic saline inundation.",
+  "options": {
+   "A": "ostensibly",
+   "B": "consequently",
+   "C": "deliberately",
+   "D": "paradoxically"
+  },
+  "correct_answer": "B",
+  "trap_type": "Misidentifying Direct Cause-Effect as Irony, Pretence or Intent",
+  "pedagogical_explanation": "Sentence 1 establishes that mangroves block storm surges, and Sentence 2 states they were cleared. Sentence 3 describes the direct, logical result of removing that barrier: villages are left exposed. 'Consequently' (as a result) accurately captures this direct cause-and-effect chain. Trap (A): Students choose 'ostensibly' (apparently or purportedly, but perhaps not actually) because it sounds formal, even though the exposure of villages is an actual fact, not a mere pretence. Trap (C): Candidates read 'short-sighted' as intent and pick 'deliberately', but the passage blames poor foresight, not a plan to expose the villages. Trap (D): Test-takers pick 'paradoxically' because clearing land for economic gain caused harm, but removing a flood barrier and then getting flooded is completely predictable, not a paradox.",
+  "verify_code": "answer = \"consequently\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Cloze Test - Contextual Lexical Precision",
+  "question_text": "Read the three-sentence passage and select the most appropriate word for the blank: While algorithmic hiring tools promise to eliminate human prejudice from initial resume screening, their objectivity depends entirely on the historical datasets used to train them. If a company's past recruitment records reflect decades of demographic imbalance, the machine-learning model will inevitably encode those same patterns as markers of merit. Far from eradicating workplace inequality, uncalibrated automation merely ________ pre-existing institutional biases under a veneer of mathematical neutrality.",
+  "options": {
+   "A": "perpetuates",
+   "B": "obviates",
+   "C": "repudiates",
+   "D": "instigates"
+  },
+  "correct_answer": "A",
+  "trap_type": "Origin vs Continuation Verb Confusion",
+  "pedagogical_explanation": "The passage explains that the model encodes 'past' patterns and 'pre-existing' biases, causing them to continue indefinitely under a new guise. 'Perpetuates' (makes something continue indefinitely) fits 'pre-existing biases' exactly. Trap (B): Students see 'eradicating' earlier in the sentence and pick 'obviates' (removes a need or difficulty), overlooking the contrast phrase 'Far from eradicating...'. Trap (C): Candidates confuse 'repudiates' (rejects or refuses to accept) with 'repeats' or 'replicates' due to phonetic similarity. Trap (D): Test-takers select 'instigates' (initiates or brings about for the first time), which contradicts the adjective 'pre-existing'—you cannot originate a bias that already exists.",
+  "verify_code": "answer = \"perpetuates\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Idioms and Phrases - Contextual Meaning",
+  "question_text": "Select the most appropriate meaning of the idiom 'to trim one's sails' as used in the sentence: With global venture capital drying up rapidly, several unicorn startups have been forced to trim their sails before the next quarterly audit.",
+  "options": {
+   "A": "To falsify accounting records to appear profitable to external auditors",
+   "B": "To pivot completely into an unrelated industry to survive",
+   "C": "To reduce spending and scale back ambitions to match limited resources",
+   "D": "To accelerate product launches ahead of the scheduled timeline"
+  },
+  "correct_answer": "C",
+  "trap_type": "Misinterpreting Nautical Metaphor as Deception or Speed",
+  "pedagogical_explanation": "'To trim one's sails' comes from adjusting a ship's sails to suit the wind; figuratively, it means to economize, cut expenses, or modify one's ambitions to adapt to changed, more restrictive circumstances. Trap (A): Students see 'before the next quarterly audit' and confuse 'trimming sails' with 'cooking the books' (financial manipulation). Trap (B): Candidates mistake adjusting sails for turning the entire ship around into a completely different industry. Trap (D): Test-takers think 'trimming' makes a vessel lighter and faster, leading them to pick accelerating launches despite the context of drying up capital.",
+  "verify_code": "answer = \"To reduce spending and scale back ambitions to match limited resources\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "One-Word Substitution - Governance and Politics",
+  "question_text": "Select the word that best substitutes the phrase: The practice of appointing friends and political associates to lucrative offices on the basis of personal favouritism rather than merit.",
+  "options": {
+   "A": "Plutocracy",
+   "B": "Kakistocracy",
+   "C": "Theocracy",
+   "D": "Cronyism"
+  },
+  "correct_answer": "D",
+  "trap_type": "Suffix '-cracy' Overgeneralization",
+  "pedagogical_explanation": "'Cronyism' specifically denotes the appointment of friends, associates, and political supporters to positions of authority without proper regard to their qualifications. Trap (A): Students gravitate toward words ending in '-cracy' when they see 'offices' and 'political' and pick 'Plutocracy', which means rule by the wealthy, not appointment by personal favouritism. Trap (B): Candidates choose 'Kakistocracy' (government by the least suitable or least qualified citizens) because patronage results in unmerited officials, missing that the definition specifically targets the practice of favouritism in appointments. Trap (C): Test-takers recognize '-cracy' as a government suffix and guess 'Theocracy' (rule by religious leaders).",
+  "verify_code": "answer = \"Cronyism\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "One-Word Substitution - Speech and Rhetoric",
+  "question_text": "Select the word that best substitutes the phrase: The use of ambiguous or evasive language in order to conceal the truth or avoid committing oneself to a clear position.",
+  "options": {
+   "A": "Soliloquy",
+   "B": "Equivocation",
+   "C": "Verbiage",
+   "D": "Circumlocution"
+  },
+  "correct_answer": "B",
+  "trap_type": "Wordiness vs Deliberate Ambiguity Confusion",
+  "pedagogical_explanation": "'Equivocation' (from Latin 'equal voice') precisely means using ambiguous language with more than one interpretation in order to mislead or avoid making a firm commitment. Trap (A): Students recognize the root '-loquy' (speech) and select 'Soliloquy', which actually means speaking one's thoughts aloud when alone on stage. Trap (C): Candidates confuse 'Verbiage' (excessively lengthy or technical speech) with evasive ambiguity. Trap (D): Test-takers frequently confuse 'Circumlocution' (using many words where fewer would do, talking in circles) with 'Equivocation', overlooking that the defining feature here is deliberate ambiguity ('double meaning') to avoid commitment rather than mere wordiness.",
+  "verify_code": "answer = \"Equivocation\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Para Jumble - Pronoun and Demonstrative Anchoring",
+  "question_text": "Rearrange the following four sentences (P, Q, R, S) to form a coherent paragraph:\nP: However, when those same synthetic fertilizers are applied excessively without organic soil amendments, they rapidly deplete native microbial diversity.\nQ: Consequently, agronomists now advocate integrated nutrient management to balance immediate crop output with long-term soil vitality.\nR: For over five decades, intensive grain farming across the Indo-Gangetic plain has relied heavily on chemical nitrogen and phosphorus inputs to maximize harvest yields.\nS: Deprived of these beneficial microorganisms, the compacted topsoil loses its natural moisture-retention capacity and requires progressively heavier irrigation each season.",
+  "options": {
+   "A": "RPQS",
+   "B": "RSPQ",
+   "C": "PRSQ",
+   "D": "RPSQ"
+  },
+  "correct_answer": "D",
+  "trap_type": "Premature Conclusion Placement Before Causal Chain Completion",
+  "pedagogical_explanation": "R is the independent opening sentence introducing the historical reliance on chemical inputs in the Indo-Gangetic plain. P follows R through the demonstrative phrase 'those same synthetic fertilizers' referring back to 'chemical nitrogen and phosphorus inputs' in R, and ends by introducing 'native microbial diversity'. S must follow P because 'Deprived of these beneficial microorganisms' links directly to 'native microbial diversity' in P. Finally, Q provides the concluding policy solution ('Consequently, agronomists now advocate...') addressing both crop output (R) and soil vitality (P/S). Trap (A): Test-takers jump from P directly to the conclusion Q, leaving S dangling at the end with its pronoun 'these beneficial microorganisms' disconnected from P. Trap (B): Students place S immediately after R, missing that R never mentions microorganisms for 'these beneficial microorganisms' in S to refer to. Trap (C): Candidates open with P, ignoring the contrastive 'However' and the anaphoric 'those same synthetic fertilizers'.",
+  "verify_code": "answer = \"RPSQ\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Para Jumble - Chronological Cause-Effect Progression",
+  "question_text": "Rearrange the following four sentences (P, Q, R, S) to form a coherent paragraph:\nP: Once this protective oxide layer is breached by chloride ions from de-icing salts, the underlying steel reinforcement begins to rust and expand internally.\nQ: Concrete bridges appear virtually indestructible from the outside, yet their structural longevity depends on a delicate chemical equilibrium within the material.\nR: Left unchecked, the resulting internal tensile stress eventually fractures the surrounding concrete cover, causing visible spalling and severe load-bearing failure.\nS: In newly poured concrete, a highly alkaline pore solution naturally forms a microscopic passive film around embedded steel bars, shielding them from corrosion.",
+  "options": {
+   "A": "QSPR",
+   "B": "SQPR",
+   "C": "QPSR",
+   "D": "QSRP"
+  },
+  "correct_answer": "A",
+  "trap_type": "Skipping the Intermediate Reference Link",
+  "pedagogical_explanation": "Q sets the broad thesis: concrete bridges look indestructible but depend on an internal chemical equilibrium. S explains what that equilibrium is in 'newly poured concrete': an alkaline solution forms a 'microscopic passive film' shielding the steel. P follows S because 'this protective oxide layer' in P refers back to 'a microscopic passive film' in S, describing how it gets breached and starts expanding. R concludes the sequence: 'the resulting internal tensile stress' refers to the steel expanding internally in P, leading to concrete fracture. Trap (B): Students start with S because it mentions 'newly poured concrete', leaving the general introductory statement Q awkwardly interrupting S and P. Trap (C): Candidates pair Q with P, overlooking that 'this protective oxide layer' in P has no antecedent in Q. Trap (D): Test-takers place R before P, which puts the fracturing of concrete ('resulting internal tensile stress') before the rust and expansion (P) that actually cause it.",
+  "verify_code": "answer = \"QSPR\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Reading Comprehension - Logical Inference",
+  "question_text": "Read the passage carefully and answer the question that follows:\nWhile municipal corporations across Tier-2 cities have invested heavily in automated mechanical sweepers to curb particulate pollution, ambient air quality indices near arterial roads have remained stubbornly stagnant. Field audits reveal that these vacuum-based machines are engineered for smooth, unbroken asphalt and lose over seventy percent of their suction efficiency when traversing potholed or unpaved road shoulders. Furthermore, because the sweepers operate exclusively between midnight and 4 AM to avoid traffic congestion, they fail to capture the continuous resuspension of silt caused by heavy daytime commercial vehicles. Without simultaneous investments in edge-to-edge road paving and daytime dust-suppression misting, mechanized sweeping functions more as a visible symbol of civic action than an effective respiratory safeguard.\n\nWhich of the following can be most reasonably inferred from the passage?",
+  "options": {
+   "A": "Automated mechanical sweepers actually generate more particulate pollution than traditional manual sweeping methods.",
+   "B": "Shifting mechanical sweeping schedules to peak daytime hours alone would fully resolve arterial road dust pollution.",
+   "C": "The effectiveness of standardized civic technology depends heavily on the quality of the underlying local infrastructure.",
+   "D": "Municipal corporations purchased mechanical sweepers primarily to deceive citizens rather than to improve air quality."
+  },
+  "correct_answer": "C",
+  "trap_type": "Extreme Extrapolation and Single-Factor Overgeneralization",
+  "pedagogical_explanation": "The passage notes that the sweepers are 'engineered for smooth, unbroken asphalt' and lose over 70% efficiency on potholed or unpaved shoulders, concluding that without 'edge-to-edge road paving', the technology fails to achieve its goal. This directly supports the inference that technological effectiveness is contingent upon baseline infrastructure quality. Trap (A): Students misread the failure to reduce pollution as actively generating more pollution than manual sweeping, which is never mentioned in the text. Trap (B): Candidates latch onto the midnight schedule issue and assume daytime operation alone would 'fully resolve' the problem, ignoring both traffic congestion and the 70% efficiency loss on unpaved shoulders. Trap (D): Test-takers misinterpret the final sentence ('functions more as a visible symbol...') as proof of malicious intent ('primarily to deceive'), confusing an unintended outcome with deliberate fraud.",
+  "verify_code": "answer = \"The effectiveness of standardized civic technology depends heavily on the quality of the underlying local infrastructure.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Reading Comprehension - Implicit Consequence Inference",
+  "question_text": "Read the passage carefully and answer the question that follows:\nRecent regulations mandating that pharmaceutical manufacturers print quick-response (QR) bar-codes on primary drug packaging were hailed as a definitive blow against counterfeit medicines. However, compliance data from semi-urban pharmacies indicates that fewer than four percent of retail buyers actually scan these codes prior to purchase. Most consumers rely instead on the familiarity of the chemist or the visual intactness of the blister pack, viewing digital verification as a tedious step reserved for expensive hospital injectables. Moreover, sophisticated counterfeiters have begun duplicating genuine batch QR codes onto spurious strips, meaning a casual scan merely confirms that a valid batch exists somewhere in the supply chain unless the portal tracks unique serial-level deactivations at the point of sale.\n\nBased on the passage, why is the current QR-code mandate insufficient to eradicate counterfeit medicines in semi-urban markets?",
+  "options": {
+   "A": "Semi-urban pharmacies lack the internet connectivity required for consumers to scan QR codes at the counter.",
+   "B": "Both low consumer verification habits and the absence of single-use serial deactivation allow cloned codes on fake strips to pass undetected.",
+   "C": "Pharmaceutical manufacturers have largely refused to print QR codes on inexpensive over-the-counter blister packs.",
+   "D": "Retail chemists in semi-urban areas actively discourage buyers from scanning packaging to protect their profit margins."
+  },
+  "correct_answer": "B",
+  "trap_type": "Unstated Assumption About Rural Infrastructure",
+  "pedagogical_explanation": "The passage identifies two distinct flaws: (1) fewer than 4% of buyers scan the codes due to reliance on chemist familiarity and viewing scanning as tedious, and (2) counterfeiters copy genuine batch codes, which pass a casual scan unless unique serial-level deactivations are tracked at the point of sale. Option B synthesizes both explicitly stated barriers. Trap (A): Students bring in outside stereotypes about 'semi-urban' areas lacking internet connectivity, whereas the passage attributes low scanning to consumer attitude ('viewing digital verification as a tedious step'), not network failure. Trap (C): Candidates misread the consumers' belief that scanning is 'reserved for expensive hospital injectables' as manufacturers refusing to print codes on cheaper drugs. Trap (D): Test-takers distort 'rely instead on the familiarity of the chemist' into chemists actively discouraging customers.",
+  "verify_code": "answer = \"Both low consumer verification habits and the absence of single-use serial deactivation allow cloned codes on fake strips to pass undetected.\""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari English",
+  "difficulty": "Moderate",
+  "concept_tag": "Spelling - Double Consonant and Vowel Suffix Rules",
+  "question_text": "Select the correctly spelt word from the given options:",
+  "options": {
+   "A": "Connoisseur",
+   "B": "Connoiseur",
+   "C": "Connoissieur",
+   "D": "Conoisseur"
+  },
+  "correct_answer": "A",
+  "trap_type": "Single vs Double Consonant and Vowel Transposition",
+  "pedagogical_explanation": "The correct spelling of 'Connoisseur' (an expert judge in matters of taste) contains a double 'n', 'oi', double 's', and ends in '-eur' (c-o-n-n-o-i-s-s-e-u-r). Trap (B): Students remember the double 'n' but drop the second 's' because the '/s/' sound is voiced softly in pronunciation ('Connoiseur'). Trap (C): Candidates insert an extra 'i' before '-eur' by false analogy with words like 'monsieur' or 'financiers' ('Connoissieur'). Trap (D): Test-takers preserve the double 's' but simplify the first syllable to a single 'n' ('Conoisseur').",
+  "verify_code": "answer = \"Connoisseur\""
+ }
+]
