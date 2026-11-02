@@ -13,25 +13,25 @@ from scripts import import_multi_model_bank as imp
 BANK = json.loads(bank.multi_model_bank_path("sarkari").read_text(encoding="utf-8"))
 ITEMS = BANK["questions"]
 BY_SOURCE = {q["source_ref"]: q for q in ITEMS}
-ID_RE = re.compile(r"^MM-SK-(SQA|SRE|SEN)-(GB[1-6]|G4A|G4B|MT|CS5|C55|SG|CG|MH1|MH2)-\d{3}$")
+ID_RE = re.compile(r"^MM-SK-(SQA|SRE|SEN)-(GB[1-6]|G4A|G4B|MT|CS5|C55|SG|CG|MH1|MH2|GB8|GB9|ME1|ME2|MR1|MR2)-\d{3}$")
 EXPECTED_TOPICS = {
-    "Sarkari English": 35,
+    "Sarkari English": 72,
     "Sarkari Quantitative Aptitude": 100,
-    "Sarkari Reasoning": 36,
+    "Sarkari Reasoning": 73,
 }
 EXPECTED_MODELS = {
     "ChatGPT Go": 9,
     "Claude Sonnet 5": 10,
     "Claude Sonnet 5.5 Medium": 8,
-    "Gemini Argon 4.0": 107,
-    "Meta AI": 29,
+    "Gemini Argon 4.0": 144,
+    "Meta AI": 66,
     "SuperGrok": 8,
 }
 
 
 def test_counts_and_meta():
-    assert len(ITEMS) == 171
-    assert BANK["meta"]["count"] == 171 and BANK["meta"]["family"] == "sarkari"
+    assert len(ITEMS) == 245
+    assert BANK["meta"]["count"] == 245 and BANK["meta"]["family"] == "sarkari"
     assert dict(Counter(q["topic"] for q in ITEMS)) == EXPECTED_TOPICS
     assert dict(Counter(q["source_model"] for q in ITEMS)) == EXPECTED_MODELS
 
@@ -51,7 +51,9 @@ def test_schema_ids_and_hashes():
     assert len({q["id"] for q in ITEMS}) == len(ITEMS)
     assert len({q["text_hash"] for q in ITEMS}) == len(ITEMS)
     keys = Counter(q["correct_answer"] for q in ITEMS)
-    assert max(keys.values()) - min(keys.values()) <= 5, keys
+    # The seeded per-item shuffle is random, so the spread grows with the bank; allow about 6% of the bank.
+    assert max(keys.values()) - min(keys.values()) <= max(5, len(ITEMS) // 16), keys
+    assert min(keys.values()) >= len(ITEMS) // 5, keys
 
 
 def test_no_clash_with_other_banks():
@@ -87,7 +89,7 @@ def test_import_paths_and_serving_badge():
                 if q["topic"] in families.family_topics("sarkari")]
     pool = bank.serving_pool([], [], imported)
     mine = [q for q in pool if q["source"] == bank.MULTI_MODEL_SOURCE]
-    assert len(mine) == 171
+    assert len(mine) == 245
     for q in mine:
         assert q["verified"] is True
         badge = "✅ Verified (" + ", ".join(q["verification"]) + ")"
@@ -118,3 +120,21 @@ def test_meta_hard_batches():
     for q in mh:
         ans = engine.run_verify_code(q["verify_code"])
         assert engine.answer_matches_key(ans, q["options"], q["correct_answer"]), q["id"]
+
+
+def test_gemini_meta_english_reasoning_batches():
+    new = [q for q in ITEMS if q["id"].split("-")[3] in {"GB8", "GB9", "ME1", "ME2", "MR1", "MR2"}]
+    assert len(new) == 74
+    assert Counter((q["source_model"], q["topic"]) for q in new) == {
+        ("Gemini Argon 4.0", "Sarkari Reasoning"): 18,
+        ("Gemini Argon 4.0", "Sarkari English"): 19,
+        ("Meta AI", "Sarkari English"): 18,
+        ("Meta AI", "Sarkari Reasoning"): 19,
+    }
+    assert Counter(q["difficulty"] for q in new) == {"Moderate": 49, "Easy": 23, "CAT-Level": 2}
+    dropped = {"batch-8 #6", "batch-8 #8", "batch-9 #11", "meta-eng-p1 #1", "meta-eng-p1 #2", "meta-rea-p2 #6"}
+    assert not {f"multi:{d}" for d in dropped} & set(BY_SOURCE)
+    for q in new:
+        if q.get("verify_code"):
+            ans = engine.run_verify_code(q["verify_code"])
+            assert engine.answer_matches_key(ans, q["options"], q["correct_answer"]), q["id"]

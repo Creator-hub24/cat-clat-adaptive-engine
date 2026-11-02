@@ -48,6 +48,14 @@
     {
       "source": "compare-chatgpt #9",
       "reason": "cross-dedupe sim=0.826 vs bank:aptisetu_cuet_bank.json"
+    },
+    {
+      "source": "batch-8 #6",
+      "reason": "cross-dedupe sim=0.817 vs bank:multi_model_bank_sarkari.json"
+    },
+    {
+      "source": "batch-8 #8",
+      "reason": "cross-dedupe sim=0.914 vs kept:batch-8 #7"
     }
   ],
   "cross_dedupe_drops": [
@@ -171,6 +179,28 @@
       "against": "bank:aptisetu_cuet_bank.json",
       "against_text": "AS-CU-QR-UG23",
       "question_text": "If x + 1/x = 5, where x is nonzero, what is the value of x² + 1/x²?"
+    },
+    {
+      "source": "batch-8 #6",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-8",
+      "code": "GB8",
+      "index": 6,
+      "sim": 0.817,
+      "against": "bank:multi_model_bank_sarkari.json",
+      "against_text": "MM-SK-SRE-GB2-017",
+      "question_text": "Statements:\n1. Only a few trains are buses.\n2. All buses are cars.\nConclusions:\nI. All cars being buses is a possibility"
+    },
+    {
+      "source": "batch-8 #8",
+      "model": "Gemini Argon 4.0",
+      "batch": "batch-8",
+      "code": "GB8",
+      "index": 8,
+      "sim": 0.914,
+      "against": "kept:batch-8 #7",
+      "against_text": "Statements: P >= Q = R > S; R <= T < U\nConclusions:\nI. P > S\nII. Q < U\nWhich of the following options is correct?",
+      "question_text": "Statements: K >= L = M >= N; N = P\nConclusions:\nI. K > P\nII. K = P\nWhich of the following options is correct?"
     }
   ],
   "exclusions": [],
@@ -294,6 +324,114 @@
     {
       "source": "meta-hard-p2 #0",
       "flag": "Stems keep Meta AI's 'plus/minus/divided by' wording; readable, differs from house style."
+    },
+    {
+      "source": "batch-8 #1",
+      "flag": "Facing the centre, right = anticlockwise; same answer under the mirror convention."
+    },
+    {
+      "source": "batch-8 #3",
+      "flag": "Facing outward, right = clockwise."
+    },
+    {
+      "source": "batch-8 #0",
+      "flag": "Seating clues repaired during verification; sight-check wording."
+    },
+    {
+      "source": "batch-8 #2",
+      "flag": "Seating clues repaired during verification; sight-check wording."
+    },
+    {
+      "source": "batch-8 #11",
+      "flag": "Renamed Tarun to Tanuja (wife) and replaced distractor C."
+    },
+    {
+      "source": "batch-8 #13",
+      "flag": "E is at (15, 8) from A; \"North-East\" is the usual loose SSC wording, not exactly 45°."
+    },
+    {
+      "source": "batch-8 #15",
+      "flag": "Odd/even word-length rule rests on a single odd-length example; thin pattern."
+    },
+    {
+      "source": "batch-8 #7",
+      "flag": "Similarity 0.914 with dropped batch-8 #8 (same inequality template); kept the earlier item."
+    },
+    {
+      "source": "batch-9 #1",
+      "flag": "Possessive before gerund is the exam convention; non-possessive form is accepted in modern usage."
+    },
+    {
+      "source": "batch-9 #5",
+      "flag": "Related to the bank's \"superior than\" error item; different test point (that of), now with \"No improvement\"."
+    },
+    {
+      "source": "batch-9 #14",
+      "flag": "Circumlocution can also be evasive; Equivocation is the better fit, confirm."
+    },
+    {
+      "source": "batch-9 #16",
+      "flag": "\"de-icing salts\" (non-Indian context); \"passive film\" vs \"protective oxide layer\" terminology."
+    },
+    {
+      "source": "batch-9 #3",
+      "flag": "\"should deposit\" is also standard in Indian exams but not among the options."
+    },
+    {
+      "source": "meta-eng-p1 #0",
+      "flag": "Singular \"their\" with \"Each of the trainees\"; a strict examiner might call it a second error."
+    },
+    {
+      "source": "meta-eng-p1 #8",
+      "flag": "Bank has a MITIGATE synonym item; this asks the antonym (same headword, different ask)."
+    },
+    {
+      "source": "meta-eng-p1 #7",
+      "flag": "All three distractors are antonyms; valid but weak traps."
+    },
+    {
+      "source": "meta-eng-p2 #2",
+      "flag": "\"is comprised of\" marked wrong per strict exam usage; many dictionaries accept it."
+    },
+    {
+      "source": "meta-eng-p2 #8",
+      "flag": "Conciseness item; confirm the reworded stem."
+    },
+    {
+      "source": "meta-eng-p2 #9",
+      "flag": "Keyed option rewritten during verification; confirm."
+    },
+    {
+      "source": "meta-eng-p2 #7",
+      "flag": "\"First sentence\" with a 4-sentence set; S is the only general topic sentence."
+    },
+    {
+      "source": "meta-rea-p1 #6",
+      "flag": "Assumption item (SBI/IBPS convention); judgement item, quick faculty read."
+    },
+    {
+      "source": "meta-rea-p1 #7",
+      "flag": "Course-of-action item (SBI/IBPS convention); judgement item, quick faculty read."
+    },
+    {
+      "source": "meta-rea-p1 #3",
+      "flag": "Trap D (\"rejecting I\") is the weakest distractor logic."
+    },
+    {
+      "source": "meta-rea-p2 #0",
+      "flag": "South-facing people use their own left/right (consistent with batch 8)."
+    },
+    {
+      "source": "meta-rea-p2 #2",
+      "flag": "Relies on the IBPS complementary-pair \"either\" rule."
+    },
+    {
+      "source": "meta-rea-p2 #8",
+      "flag": "Standard ranking template at 0.776 vs AS-CU-GMA-G-R59; below threshold but close."
+    },
+    {
+      "source": "meta-rea-p2 #4",
+      "flag": "Kept at Moderate; confirm."
     }
   ],
   "option_shuffle": {
@@ -372,13 +510,198 @@
       "from": "CAT-Level",
       "to": "Easy",
       "reason": "basic boat DS"
+    },
+    {
+      "source": "batch-8 #2",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-clue row seating after repair"
+    },
+    {
+      "source": "batch-8 #10",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "two-link blood relation"
+    },
+    {
+      "source": "batch-8 #18",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "one-formula ranking"
+    },
+    {
+      "source": "batch-9 #1",
+      "from": "Moderate",
+      "to": "CAT-Level",
+      "reason": "possessive before gerund (Mains grammar point)"
+    },
+    {
+      "source": "batch-9 #5",
+      "from": "Moderate",
+      "to": "CAT-Level",
+      "reason": "that of / those of comparison (Mains grammar point)"
+    },
+    {
+      "source": "meta-eng-p1 #0",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic subject-verb agreement"
+    },
+    {
+      "source": "meta-eng-p1 #5",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "common phrasal verb"
+    },
+    {
+      "source": "meta-eng-p1 #6",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "common idiom"
+    },
+    {
+      "source": "meta-eng-p1 #7",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "common synonym"
+    },
+    {
+      "source": "meta-eng-p2 #1",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "distractors plainly negative"
+    },
+    {
+      "source": "meta-eng-p2 #3",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "common one-word substitution"
+    },
+    {
+      "source": "meta-eng-p2 #4",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "common spelling"
+    },
+    {
+      "source": "meta-eng-p2 #5",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "direct passive conversion"
+    },
+    {
+      "source": "meta-eng-p2 #6",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "direct indirect-speech conversion"
+    },
+    {
+      "source": "meta-rea-p1 #0",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p1 #1",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p1 #2",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p1 #7",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p1 #8",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p1 #9",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p2 #3",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p2 #5",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p2 #7",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p2 #8",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
+    },
+    {
+      "source": "meta-rea-p2 #9",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "single-step reasoning"
     }
   ],
-  "difficulty_relabels_doc": "Applied during verification (already reflected in raw/meta_hard_*_passing.json); recorded here for audit.",
+  "difficulty_relabels_doc": "Applied during verification (already reflected in raw/meta_hard_*, batch8/batch9, meta_eng_* and meta_rea_* passing files); recorded here for audit.",
   "meta_hard_cross_dedupe": {
     "threshold": 0.8,
     "pool": "seed + AI + AptiSetu + sample + Claude banks + multi_model_bank_sarkari (2296 items)",
     "max_sim": 0.731,
     "drops": 0
+  },
+  "gemini_meta_sarkari_import_2026_11_02": {
+    "threshold": 0.8,
+    "pool": "seed + AI + AptiSetu + sample + Claude banks + multi_model_bank_sarkari (2397 items), plus pairwise within the 75 candidates",
+    "metric": "SequenceMatcher on normalized question_text + option values",
+    "candidates": 75,
+    "max_sim_vs_bank": 0.782,
+    "max_sim_vs_bank_item": "batch-8 #5 vs MM-SK-SRE-GB5-008",
+    "max_sim_within_candidates": 0.914,
+    "drops": 1,
+    "drop_sources": [
+      "batch-8 #8"
+    ],
+    "held_before_import": [
+      "batch-8 #6 (0.817 vs MM-SK-SRE-GB2-017, held during batch-8 verification)"
+    ],
+    "verification_drops": [
+      {
+        "source": "batch-9 #11",
+        "reason": "bank duplicate idiom \"throw down the gauntlet\" (claude_bank_sarkari)"
+      },
+      {
+        "source": "meta-eng-p1 #1",
+        "reason": "bank duplicate of CL-SK-SEN-F1-144 (Despite of)"
+      },
+      {
+        "source": "meta-eng-p1 #2",
+        "reason": "bank duplicate of CL-SK-SEN-F1-172 (would rather to stay)"
+      },
+      {
+        "source": "meta-rea-p2 #6",
+        "reason": "odd one out with no single-mistake distractor path; needs a new item"
+      }
+    ],
+    "imported": 74
   }
 }

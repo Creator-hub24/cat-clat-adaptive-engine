@@ -1,0 +1,172 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Floor Puzzle",
+  "question_text": "Five friends Aarav, Bina, Chetan, Divya and Eshan live on five different floors from 1 to 5, floor 1 is bottom and floor 5 is top. Clues: Eshan lives on the topmost floor. Aarav lives on an even numbered floor but not on floor 2. Bina lives immediately above Chetan. Divya lives below Aarav. Chetan does not live on floor 1. Who lives on floor 3?",
+  "options": {
+   "A": "Bina",
+   "B": "Chetan",
+   "C": "Divya",
+   "D": "Aarav"
+  },
+  "correct_answer": "A",
+  "trap_type": "Reversing 'immediately above', dropping a negative clue, or reading the wrong floor",
+  "pedagogical_explanation": "Step-by-step solution: Floors are numbered 1 (bottom) to 5 (top). 1) Eshan lives on the topmost floor, so Eshan is on floor 5. 2) Aarav lives on an even floor other than 2, so Aarav is on floor 4. 3) Bina lives immediately above Chetan, so the pair (Chetan, Bina) takes two consecutive free floors among 1, 2 and 3: (1, 2) or (2, 3). Chetan does not live on floor 1, so Chetan is on floor 2 and Bina on floor 3. 4) Divya takes floor 1, which is below Aarav as required. Final order from bottom: Divya, Chetan, Bina, Aarav, Eshan. Floor 3 belongs to Bina.\nTrap (B): Reading 'Bina lives immediately above Chetan' the other way round puts Chetan on floor 3 and Bina on floor 2, giving Chetan.\nTrap (C): Ignoring the clue 'Chetan does not live on floor 1' puts Chetan on 1 and Bina on 2, leaving floor 3 for Divya.\nTrap (D): Reading the floor one place too high (floor 4 instead of floor 3) gives Aarav.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Aarav', 'Bina', 'Chetan', 'Divya', 'Eshan']):\n    f = {n: i + 1 for i, n in enumerate(p)}\n    if f['Eshan'] != 5: continue\n    if f['Aarav'] % 2 or f['Aarav'] == 2: continue\n    if f['Bina'] != f['Chetan'] + 1: continue\n    if f['Divya'] >= f['Aarav']: continue\n    if f['Chetan'] == 1: continue\n    sols.append(p)\nassert len(sols) == 1\nanswer = sols[0][2]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Box Stacking",
+  "question_text": "Five boxes belonging to Rohan, Sneha, Karan, Priya and Vikram are stacked one above another. Position 1 is the top and position 5 is the bottom. Clues: Vikram's box is at the bottom. Sneha's box is at the top. Rohan's box is immediately above Karan's box. Priya's box is below Rohan's box but not at the bottom. Karan's box is not adjacent to Vikram's box. Whose box is immediately below Karan's box?",
+  "options": {
+   "A": "Rohan",
+   "B": "Priya",
+   "C": "Vikram",
+   "D": "Sneha"
+  },
+  "correct_answer": "B",
+  "trap_type": "Reversing 'immediately above' or counting the wrong number of places from the reference box",
+  "pedagogical_explanation": "Step-by-step solution: 1) Sneha is at position 1 and Vikram at position 5. 2) Rohan is immediately above Karan, so (Rohan, Karan) is (2, 3) or (3, 4). 3) Karan is not adjacent to Vikram, so Karan is not at 4; hence Rohan is at 2 and Karan at 3. 4) Priya is below Rohan but not at the bottom, so Priya is at 4. Stack from top: Sneha, Rohan, Karan, Priya, Vikram. The box immediately below Karan (position 4) is Priya's.\nTrap (A): Reading 'Rohan is immediately above Karan' the other way round puts Karan at 2 and Rohan at 3, giving Rohan below Karan.\nTrap (C): Counting two places below Karan instead of one gives position 5, Vikram.\nTrap (D): Counting two places above Karan instead of one below gives position 1, Sneha.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Rohan', 'Sneha', 'Karan', 'Priya', 'Vikram']):\n    s = {n: i + 1 for i, n in enumerate(p)}\n    if s['Vikram'] != 5 or s['Sneha'] != 1: continue\n    if s['Rohan'] != s['Karan'] - 1: continue\n    if not (s['Priya'] > s['Rohan'] and s['Priya'] != 5): continue\n    if abs(s['Karan'] - s['Vikram']) == 1: continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('Karan') + 1]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Month Scheduling",
+  "question_text": "Five friends Ananya, Bhavesh, Chirag, Deepa and Farhan each have one meeting in a different month from January to May. Clues: Deepa's meeting is in January. Ananya's meeting is immediately before Farhan's meeting. Chirag's meeting is in May. Farhan's meeting is not in April. Who has the meeting in April?",
+  "options": {
+   "A": "Ananya",
+   "B": "Farhan",
+   "C": "Chirag",
+   "D": "Bhavesh"
+  },
+  "correct_answer": "D",
+  "trap_type": "Dropping the negative clue or reversing 'immediately before'",
+  "pedagogical_explanation": "Step-by-step solution: 1) Deepa is in January and Chirag in May, so February, March and April remain for Ananya, Bhavesh and Farhan. 2) Ananya is immediately before Farhan, so (Ananya, Farhan) is (February, March) or (March, April). 3) Farhan is not in April, so Ananya is in February and Farhan in March. 4) Bhavesh takes April. Order: Deepa, Ananya, Farhan, Bhavesh, Chirag. April belongs to Bhavesh.\nTrap (A): Reading the clue the other way round (Farhan immediately before Ananya) allows Farhan in March and Ananya in April, giving Ananya.\nTrap (B): Ignoring 'Farhan's meeting is not in April' allows Ananya in March and Farhan in April, giving Farhan.\nTrap (C): Answering for the last month (May) instead of April gives Chirag.",
+  "verify_code": "import itertools\nM = ['Jan', 'Feb', 'Mar', 'Apr', 'May']\nsols = []\nfor p in itertools.permutations(['Ananya', 'Bhavesh', 'Chirag', 'Deepa', 'Farhan']):\n    m = {n: i for i, n in enumerate(p)}\n    if m['Deepa'] != 0 or m['Chirag'] != 4: continue\n    if m['Farhan'] != m['Ananya'] + 1: continue\n    if m['Farhan'] == 3: continue\n    sols.append(p)\nassert len(sols) == 1\nanswer = sols[0][M.index('Apr')]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Syllogism",
+  "question_text": "Statements: No laptop is a tablet. Some tablets are phones. All phones are gadgets.\nConclusions: I. Some gadgets are tablets. II. No laptop is a phone. III. Some gadgets are not laptops.\nWhich conclusion(s) follow?",
+  "options": {
+   "A": "Only I follows",
+   "B": "All of I, II and III follow",
+   "C": "Only I and III follow",
+   "D": "Only III follows"
+  },
+  "correct_answer": "C",
+  "trap_type": "Accepting a 'No' conclusion that is only possible, or missing a conclusion reached through the tablet-gadget overlap",
+  "pedagogical_explanation": "Step-by-step solution: 1) Some tablets are phones and all phones are gadgets, so those tablets are gadgets: Some tablets are gadgets, which converts to Some gadgets are tablets. Conclusion I follows. 2) No laptop is a tablet says nothing about phones that are not tablets; a laptop may or may not be a phone, so 'No laptop is a phone' is only a possibility. Conclusion II does not follow. 3) The gadgets that are tablets cannot be laptops (no laptop is a tablet), so Some gadgets are not laptops. Conclusion III follows. Answer: Only I and III follow.\nTrap (A): Stopping after Conclusion I and missing that the same tablet-gadgets give III gives Only I follows.\nTrap (B): Treating 'No laptop is a tablet' plus 'Some tablets are phones' as 'No laptop is a phone' accepts II as well, giving All of I, II and III follow.\nTrap (D): Rejecting I because the statements never mention gadgets and tablets together gives Only III follows.",
+  "verify_code": "import itertools\nSETS = ['L', 'T', 'P', 'G']\nregions = [r for r in itertools.product([0, 1], repeat=len(SETS)) if any(r)]\ndef models():\n    for occ in itertools.product([0, 1], repeat=len(regions)):\n        live = [r for r, o in zip(regions, occ) if o]\n        if all(any(r[i] for r in live) for i in range(len(SETS))):\n            yield live\nix = {n: i for i, n in enumerate(SETS)}\nsome = lambda m, a, b: any(r[ix[a]] and r[ix[b]] for r in m)\nsome_not = lambda m, a, b: any(r[ix[a]] and not r[ix[b]] for r in m)\nall_ = lambda m, a, b: not some_not(m, a, b)\nno = lambda m, a, b: not some(m, a, b)\nms = [m for m in models() if no(m, 'L', 'T') and some(m, 'T', 'P') and all_(m, 'P', 'G')]\nf1 = all(some(m, 'G', 'T') for m in ms)\nf2 = all(no(m, 'L', 'P') for m in ms)\nf3 = all(some_not(m, 'G', 'L') for m in ms)\nanswer = {(True, False, True): 'Only I and III follow', (True, False, False): 'Only I follows', (True, True, True): 'All of I, II and III follow', (False, False, True): 'Only III follows'}[(f1, f2, f3)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Input Output",
+  "question_text": "Input: 58 papaya 34 guava 91 orange 12 apple 47 banana\nA machine rearranges the input step by step. In each step exactly one element is moved to its final position from the left, alternating between words (in alphabetical order) and numbers (in ascending order), starting with a word. The final output is: apple 12 banana 34 guava 47 orange 58 papaya 91.\nStep 1: apple 58 papaya 34 guava 91 orange 12 47 banana\nStep 2: apple 12 58 papaya 34 guava 91 orange 47 banana\nWhat will be Step 3?",
+  "options": {
+   "A": "apple 12 banana 58 papaya 34 guava 91 orange 47",
+   "B": "apple 12 34 58 papaya guava 91 orange 47 banana",
+   "C": "apple 12 58 banana papaya 34 guava 91 orange 47",
+   "D": "apple 12 papaya 58 34 guava 91 orange 47 banana"
+  },
+  "correct_answer": "A",
+  "trap_type": "Moving the wrong element (wrong type or wrong word) or inserting it one place off",
+  "pedagogical_explanation": "Step-by-step solution: The pattern is word, number, word, number, ... Step 1 placed the first word (apple) at position 1 and Step 2 placed the smallest number (12) at position 2. Step 3 must place the next word in alphabetical order, banana, at position 3; every other element keeps its relative order. Banana is taken from the end of Step 2 and inserted after 12: apple 12 banana 58 papaya 34 guava 91 orange 47.\nTrap (B): Moving the next number (34) instead of the next word breaks the word-number alternation and gives apple 12 34 58 papaya guava 91 orange 47 banana.\nTrap (C): Inserting banana one place too far right (position 4) gives apple 12 58 banana papaya 34 guava 91 orange 47.\nTrap (D): Moving the first remaining word in the row (papaya) instead of the alphabetically next word gives apple 12 papaya 58 34 guava 91 orange 47 banana.",
+  "verify_code": "row = '58 papaya 34 guava 91 orange 12 apple 47 banana'.split()\nwords = sorted(x for x in row if not x.isdigit())\nnums = sorted((x for x in row if x.isdigit()), key=int)\norder = []\nfor w, n in zip(words, nums):\n    order += [w, n]\nsteps = []\nfor k, e in enumerate(order):\n    row.remove(e); row.insert(k, e)\n    steps.append(' '.join(row))\nassert steps[0] == 'apple 58 papaya 34 guava 91 orange 12 47 banana'\nassert steps[1] == 'apple 12 58 papaya 34 guava 91 orange 47 banana'\nOPTS = {'A': 'apple 12 banana 58 papaya 34 guava 91 orange 47', 'B': 'apple 12 34 58 papaya guava 91 orange 47 banana', 'C': 'apple 12 58 banana papaya 34 guava 91 orange 47', 'D': 'apple 12 papaya 58 34 guava 91 orange 47 banana'}\nanswer = [k for k, v in OPTS.items() if v == steps[2]][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Alphanumeric Series",
+  "question_text": "Arrangement: M 3 $ K 7 % L 9 & P 2 # Q 5 @ R 8 ^ S 4. Note left end is M and right end is 4. Which element is 4th to the left of the element which is 9th from the right end?",
+  "options": {
+   "A": "&",
+   "B": "R",
+   "C": "9",
+   "D": "L"
+  },
+  "correct_answer": "C",
+  "trap_type": "Off-by-one counting from an end or from the reference element, or moving the wrong way",
+  "pedagogical_explanation": "Step-by-step solution: Number the 20 elements from the left: M(1) 3(2) $(3) K(4) 7(5) %(6) L(7) 9(8) &(9) P(10) 2(11) #(12) Q(13) 5(14) @(15) R(16) 8(17) ^(18) S(19) 4(20). The 9th from the right end is position 20 - 9 + 1 = 12, which is #. The 4th element to the left of # is position 12 - 4 = 8, which is 9.\nTrap (A): Counting # itself as the first step (inclusive counting) moves only three places and lands on position 9, giving &.\nTrap (B): Moving 4 places to the right of # instead of the left lands on position 16, giving R.\nTrap (D): Forgetting the +1 when converting from the right end (20 - 9 = 11) and then moving 4 left lands on position 7, giving L.",
+  "verify_code": "s = 'M 3 $ K 7 % L 9 & P 2 # Q 5 @ R 8 ^ S 4'.split()\nassert len(s) == 20\nref = len(s) - 9\nanswer = s[ref - 4]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Statement Assumption",
+  "question_text": "Statement: The company has launched a new electric scooter and is advertising its range of 200 km on a single charge.\nAssumptions:\nI. People prefer electric scooters over petrol scooters.\nII. A long range is a feature that buyers of electric scooters want.\nWhich of the assumptions is/are implicit in the statement?",
+  "options": {
+   "A": "Only I is implicit",
+   "B": "Only II is implicit",
+   "C": "Both I and II are implicit",
+   "D": "Neither I nor II is implicit"
+  },
+  "correct_answer": "B",
+  "trap_type": "Preference over petrol assumed, Both assumed, Neither assumed",
+  "pedagogical_explanation": "Step-by-step solution: An assumption is implicit only if the statement cannot make sense without it. 1) Assumption I: Launching an electric scooter needs only some demand for electric scooters; it does not need people in general to prefer them over petrol scooters. I is not implicit. 2) Assumption II: The company chooses to advertise the 200 km range, which makes sense only if buyers value a long range. II is implicit. Answer: Only II is implicit.\nTrap (A): Reading the launch itself as proof that electric scooters are preferred over petrol ones accepts I instead of II.\nTrap (C): Accepting the over-general preference in I along with II gives Both I and II.\nTrap (D): Treating the advertisement as a plain fact with no assumption behind it rejects II as well, giving Neither.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Course of Action",
+  "question_text": "Statement: Many accidents have been reported on the highway due to large potholes. Courses of action: I. Government should get potholes repaired immediately. II. Government should ban all vehicles on the highway. Which course of action follows?",
+  "options": {
+   "A": "Only II follows",
+   "B": "Both I and II follow",
+   "C": "Neither I nor II follows",
+   "D": "Only I follows"
+  },
+  "correct_answer": "D",
+  "trap_type": "Extreme action accepted, Both extreme, No action",
+  "pedagogical_explanation": "Step-by-step solution: A course of action follows if it is practical and addresses the problem in the statement. 1) Course I: The accidents are caused by large potholes, so repairing them immediately removes the cause. I follows. 2) Course II: Banning all vehicles on the highway is impractical and stops all traffic instead of fixing the potholes. II does not follow. Answer: Only I follows.\nTrap (A): Choosing the extreme step because it would stop all accidents gives Only II follows.\nTrap (B): Accepting the ban along with the repair gives Both I and II follow.\nTrap (C): Treating an immediate repair as too costly to be practical rejects I as well, giving Neither.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Cause Effect",
+  "question_text": "Statements:\nI. The local administration has ordered the closure of schools for three days.\nII. A severe cyclonic storm is expected to hit the coastal region.\nWhich of the following best describes the relation between the two statements?",
+  "options": {
+   "A": "II is the cause and I is the effect",
+   "B": "I is the cause and II is the effect",
+   "C": "Both are independent causes",
+   "D": "Both are effects of a common cause"
+  },
+  "correct_answer": "A",
+  "trap_type": "Reversed cause effect, Independent causes misjudgement, Common cause confusion",
+  "pedagogical_explanation": "Step-by-step solution: The cyclone forecast (II) is a natural event that comes first; the administration closes schools (I) to keep students safe from it. So II is the cause and I is its effect. Answer: II is the cause and I is the effect.\nTrap (B): Reading the statements in their printed order (I first) reverses the direction, giving I as the cause and II as the effect.\nTrap (C): Missing the safety link between the forecast and the closure treats them as unrelated, giving Both are independent causes.\nTrap (D): Linking both to the season instead of to each other gives Both are effects of a common cause.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Calendar",
+  "question_text": "If 26th January 2024 was Friday, what day of the week was 26th January 2023?",
+  "options": {
+   "A": "Wednesday",
+   "B": "Thursday",
+   "C": "Friday",
+   "D": "Saturday"
+  },
+  "correct_answer": "B",
+  "trap_type": "Leap year double shift, Same day assumption, Forward shift",
+  "pedagogical_explanation": "Step-by-step solution: 1) The leap day of 2024 is 29 February 2024, which comes after 26 January 2024, so it is not inside the period from 26 January 2023 to 26 January 2024. 2) The period therefore has 365 days = 52 weeks + 1 odd day. 3) Going back one year from Friday shifts the day back by 1, so 26 January 2023 was a Thursday.\nTrap (A): Counting 29 February 2024 inside the period (2 odd days) and shifting back 2 gives Wednesday.\nTrap (C): Assuming the same date falls on the same weekday every year gives Friday.\nTrap (D): Shifting the odd day forward instead of backward gives Saturday.",
+  "verify_code": "leap = lambda y: y % 4 == 0 and (y % 100 != 0 or y % 400 == 0)\nmdays = lambda y: [31, 29 if leap(y) else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]\ndef ordinal(y, m, dd):\n    return sum(366 if leap(k) else 365 for k in range(1, y)) + sum(mdays(y)[:m - 1]) + dd\ndays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\ngap = ordinal(2024, 1, 26) - ordinal(2023, 1, 26)\nassert gap == 365\nanswer = days[(days.index('Friday') - gap) % 7]"
+ }
+]

@@ -1,0 +1,325 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Linear Seating Arrangement - Single Row Facing North",
+  "question_text": "Six executives—Aarav, Bhavya, Charan, Divya, Esha, and Farhan—are sitting in a straight row facing North, not necessarily in the same order. Divya sits third from the right end. Only one person sits between Divya and Farhan. Bhavya sits to the immediate left of Farhan. Aarav sits second to the left of Bhavya. Charan does not sit at any of the extreme ends of the row. Who sits second to the right of Aarav?",
+  "options": {
+   "A": "Bhavya",
+   "B": "Esha",
+   "C": "Divya",
+   "D": "Charan"
+  },
+  "correct_answer": "A",
+  "trap_type": "Counting the wrong number of seats or the wrong direction from the reference person",
+  "pedagogical_explanation": "Step-by-step solution: Number the six North-facing seats 1 to 6 from left to right. 1) Divya sits third from the right end, so Divya is at Seat 4. 2) Only one person sits between Divya and Farhan, so Farhan is at Seat 2 or Seat 6. 3) Bhavya sits to the immediate left of Farhan. If Farhan were at Seat 2, Bhavya would be at Seat 1 and Aarav (second to the left of Bhavya) would have no seat, so Farhan is at Seat 6 and Bhavya at Seat 5. 4) Aarav sits second to the left of Bhavya, so Aarav is at Seat 3. 5) Charan is not at an extreme end, so Charan is at Seat 2 and Esha at Seat 1. Final row (left to right): Esha, Charan, Aarav, Divya, Bhavya, Farhan. Second to the right of Aarav (Seat 3) is Seat 5, which is Bhavya.\nTrap (B): Moving two seats to the left of Aarav instead of the right lands on Seat 1, giving Esha.\nTrap (C): Moving only one seat (immediate right) instead of two lands on Seat 4, giving Divya.\nTrap (D): Taking the immediate left of Aarav instead of second to the right lands on Seat 2, giving Charan.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Aarav', 'Bhavya', 'Charan', 'Divya', 'Esha', 'Farhan']):\n    s = {n: i + 1 for i, n in enumerate(p)}\n    if s['Divya'] != 4: continue\n    if abs(s['Divya'] - s['Farhan']) != 2: continue\n    if s['Bhavya'] != s['Farhan'] - 1: continue\n    if s['Aarav'] != s['Bhavya'] - 2: continue\n    if s['Charan'] in (1, 6): continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('Aarav') + 2]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Circular Seating Arrangement - Facing Center",
+  "question_text": "Six doctors—Gaurav, Harish, Indu, Jatin, Kavya, and Lalit—are sitting around a circular table facing the center. Gaurav sits second to the right of Indu. Only two persons sit between Gaurav and Kavya. Harish sits to the immediate left of Kavya. Jatin is not an immediate neighbour of Indu. Who sits to the immediate right of Jatin?",
+  "options": {
+   "A": "Gaurav",
+   "B": "Indu",
+   "C": "Kavya",
+   "D": "Harish"
+  },
+  "correct_answer": "D",
+  "trap_type": "Reading the wrong neighbour (left vs right, or the wrong number of seats) in a centre-facing circle",
+  "pedagogical_explanation": "Step-by-step solution: For people facing the centre, 'right' is anticlockwise. Number the six seats 0 to 5 anticlockwise, so moving right is +1 and moving left is -1. 1) Place Indu at Seat 0. 2) Gaurav sits second to the right of Indu, so Gaurav is at Seat 2. 3) Only two persons sit between Gaurav and Kavya; in a 6-seat circle this means they sit opposite each other, so Kavya is at Seat 5. 4) Harish sits to the immediate left of Kavya, so Harish is at Seat 4. 5) Seats 1 and 3 remain. Seat 1 is next to Indu, and Jatin is not an immediate neighbour of Indu, so Jatin is at Seat 3 and Lalit at Seat 1. The immediate right of Jatin (Seat 3 + 1) is Seat 4, which is Harish.\nTrap (A): Taking the immediate left of Jatin (Seat 2) instead of the immediate right gives Gaurav.\nTrap (B): Taking the person sitting opposite Jatin (Seat 0) instead of the immediate right gives Indu.\nTrap (C): Moving two seats to the right of Jatin (Seat 5) instead of one gives Kavya.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Gaurav', 'Harish', 'Jatin', 'Kavya', 'Lalit']):\n    s = {'Indu': 0}\n    s.update({n: i + 1 for i, n in enumerate(p)})\n    if s['Gaurav'] != (s['Indu'] + 2) % 6: continue\n    if (s['Kavya'] - s['Gaurav']) % 6 != 3: continue\n    if s['Harish'] != (s['Kavya'] - 1) % 6: continue\n    if (s['Jatin'] - s['Indu']) % 6 in (1, 5): continue\n    sols.append(s)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['Jatin'] + 1) % 6]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Linear Seating Arrangement - Facing South",
+  "question_text": "Five chartered accountants—Manish, Nidhi, Omkar, Pooja, and Qasim—are sitting in a row facing South. Pooja sits at the extreme left end of the row (from their own South-facing perspective). Manish sits second to the right of Pooja. Only one person sits between Manish and Qasim. Nidhi sits to the immediate left of Manish. Who sits to the immediate right of Manish?",
+  "options": {
+   "A": "Nidhi",
+   "B": "Qasim",
+   "C": "Omkar",
+   "D": "Pooja"
+  },
+  "correct_answer": "C",
+  "trap_type": "Mixing up own left/right for South-facing people or counting the wrong number of seats",
+  "pedagogical_explanation": "Step-by-step solution: Everyone faces South, so use their own left and right. Number the five seats 0 to 4 from their own left to their own right (this is right to left for a viewer facing them). 1) Pooja sits at the extreme left end, so Pooja is at Seat 0. 2) Manish sits second to the right of Pooja, so Manish is at Seat 2. 3) Only one person sits between Manish and Qasim; Seat 0 is taken, so Qasim is at Seat 4. 4) Nidhi sits to the immediate left of Manish, so Nidhi is at Seat 1. 5) Omkar takes the remaining Seat 3. Order from their own left to right: Pooja, Nidhi, Manish, Omkar, Qasim. The immediate right of Manish is Seat 3, which is Omkar.\nTrap (A): Taking the immediate left of Manish instead of the immediate right gives Nidhi.\nTrap (B): Moving two seats to the right of Manish instead of one gives Qasim.\nTrap (D): Moving two seats to the left of Manish instead of one to the right gives Pooja.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Manish', 'Nidhi', 'Omkar', 'Pooja', 'Qasim']):\n    s = {n: i for i, n in enumerate(p)}\n    if s['Pooja'] != 0: continue\n    if s['Manish'] != s['Pooja'] + 2: continue\n    if abs(s['Manish'] - s['Qasim']) != 2: continue\n    if s['Nidhi'] != s['Manish'] - 1: continue\n    sols.append(p)\nassert len(sols) == 1\np = sols[0]\nanswer = p[p.index('Manish') + 1]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Circular Seating Arrangement - Six People Facing Outward",
+  "question_text": "Six professors—Raghav, Suman, Tarun, Urvashi, Vikas, and Waseem—sit around a circular table facing outward (away from the center). Suman sits third to the right of Raghav. Tarun sits to the immediate left of Suman. Vikas sits second to the right of Tarun. Waseem sits to the immediate right of Raghav. Who sits directly opposite to Urvashi?",
+  "options": {
+   "A": "Tarun",
+   "B": "Vikas",
+   "C": "Waseem",
+   "D": "Raghav"
+  },
+  "correct_answer": "A",
+  "trap_type": "Selecting the immediate neighbour instead of the opposite person in a 6-seat circle",
+  "pedagogical_explanation": "Step-by-step solution: For people facing outward, 'right' is clockwise. Number the six seats 0 to 5 clockwise, so moving right is +1 and moving left is -1. 1) Place Raghav at Seat 0. 2) Suman sits third to the right of Raghav, so Suman is at Seat 3 (opposite Raghav). 3) Tarun sits to the immediate left of Suman, so Tarun is at Seat 2. 4) Vikas sits second to the right of Tarun, so Vikas is at Seat 4. 5) Waseem sits to the immediate right of Raghav, so Waseem is at Seat 1, and Urvashi takes the remaining Seat 5. In a 6-seat circle, the person opposite Seat 5 is at Seat (5 + 3) % 6 = 2, which is Tarun.\nTrap (B): Taking the immediate left of Urvashi (Seat 4) instead of the person opposite gives Vikas.\nTrap (C): Moving only two seats from Urvashi (Seat 1) instead of three gives Waseem.\nTrap (D): Taking the immediate right of Urvashi (Seat 0) instead of the person opposite gives Raghav.",
+  "verify_code": "import itertools\nsols = []\nfor p in itertools.permutations(['Suman', 'Tarun', 'Urvashi', 'Vikas', 'Waseem']):\n    s = {'Raghav': 0}\n    s.update({n: i + 1 for i, n in enumerate(p)})\n    if s['Suman'] != (s['Raghav'] + 3) % 6: continue\n    if s['Tarun'] != (s['Suman'] - 1) % 6: continue\n    if s['Vikas'] != (s['Tarun'] + 2) % 6: continue\n    if s['Waseem'] != (s['Raghav'] + 1) % 6: continue\n    sols.append(s)\nassert len(sols) == 1\ninv = {v: k for k, v in sols[0].items()}\nanswer = inv[(sols[0]['Urvashi'] + 3) % 6]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Syllogism - Only a Few & Possibility",
+  "question_text": "Statements:\n1. Only a few mangoes are apples.\n2. All apples are bananas.\n3. No banana is a cherry.\nConclusions:\nI. Some mangoes are definitely not apples.\nII. Some mangoes are not cherries.\nWhich of the following options is correct?",
+  "options": {
+   "A": "Only Conclusion I follows",
+   "B": "Both Conclusions I and II follow",
+   "C": "Only Conclusion II follows",
+   "D": "Neither Conclusion I nor II follows"
+  },
+  "correct_answer": "B",
+  "trap_type": "Treating 'Only a few A are B' as ordinary 'Some A are B' and ignoring the 'Some A are not B' part",
+  "pedagogical_explanation": "Step-by-step solution: 1) 'Only a few mangoes are apples' means BOTH 'Some mangoes are apples' AND 'Some mangoes are not apples'. Therefore, Conclusion I ('Some mangoes are definitely not apples') directly follows. 2) Since some mangoes are apples, and all apples are bananas, those specific mangoes are also bananas. Because no banana is a cherry, the part of mangoes that lies inside apples (and bananas) can never be cherries. Therefore, Conclusion II ('Some mangoes are not cherries') also definitely follows. Hence, both Conclusions I and II follow.\nTrap (A): Failing to chain 'Some mangoes are apples' with 'All apples are bananas' and 'No banana is a cherry' leads to rejecting Conclusion II and picking Only Conclusion I follows.\nTrap (C): Treating 'Only a few mangoes are apples' as a standard 'Some mangoes are apples' (where 'All mangoes are apples' would be possible, making 'Some mangoes are not apples' doubtful) leads to rejecting Conclusion I and picking Only Conclusion II follows.\nTrap (D): Rejecting both negative conclusions under the false rule that positive statements cannot yield 'some... not' conclusions leads to Neither follows.",
+  "verify_code": "import itertools\nSETS = ['M', 'A', 'B', 'C']\nregions = [r for r in itertools.product([0, 1], repeat=len(SETS)) if any(r)]\ndef models():\n    for occ in itertools.product([0, 1], repeat=len(regions)):\n        live = [r for r, o in zip(regions, occ) if o]\n        if all(any(r[i] for r in live) for i in range(len(SETS))):\n            yield live\nix = {n: i for i, n in enumerate(SETS)}\nsome = lambda m, a, b: any(r[ix[a]] and r[ix[b]] for r in m)\nsome_not = lambda m, a, b: any(r[ix[a]] and not r[ix[b]] for r in m)\nall_ = lambda m, a, b: not some_not(m, a, b)\nno = lambda m, a, b: not some(m, a, b)\nfew = lambda m, a, b: some(m, a, b) and some_not(m, a, b)\nms = [m for m in models() if few(m, 'M', 'A') and all_(m, 'A', 'B') and no(m, 'B', 'C')]\nc1, c2 = lambda m: some_not(m, 'M', 'A'), lambda m: some_not(m, 'M', 'C')\nf1 = any(c1(m) for m in ms) if False else all(c1(m) for m in ms)\nf2 = any(c2(m) for m in ms) if False else all(c2(m) for m in ms)\nanswer = {(True, False): 'Only Conclusion I follows', (False, True): 'Only Conclusion II follows', (True, True): 'Both Conclusions I and II follow', (False, False): 'Neither Conclusion I nor II follows'}[(f1, f2)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Syllogism - Only a Few & All Possibility Trap",
+  "question_text": "Statements:\n1. Only a few rivers are lakes.\n2. Some lakes are oceans.\nConclusions:\nI. All rivers being lakes is a possibility.\nII. All lakes being rivers is a possibility.\nWhich of the following options is correct?",
+  "options": {
+   "A": "Only Conclusion I follows",
+   "B": "Both Conclusions I and II follow",
+   "C": "Neither Conclusion I nor II follows",
+   "D": "Only Conclusion II follows"
+  },
+  "correct_answer": "D",
+  "trap_type": "Symmetrical restriction error on 'Only a few A are B'",
+  "pedagogical_explanation": "Step-by-step solution: The statement 'Only a few rivers are lakes' imposes a strict restriction on the subject ('rivers'): some rivers are lakes, and some rivers are definitely NOT lakes. Because some rivers are definitely not lakes, the entire set of rivers can NEVER go inside lakes—making Conclusion I ('All rivers being lakes is a possibility') false. However, the restriction applies only from rivers to lakes, not from lakes to rivers. The entire circle of 'lakes' can sit completely inside part of the 'rivers' circle while leaving other rivers outside lakes. Thus, Conclusion II ('All lakes being rivers is a possibility') is true. Only Conclusion II follows.\nTrap (A): Reversing the direction of the 'Only a few' restriction (thinking all rivers can be lakes, but not all lakes can be rivers) gives Only Conclusion I follows.\nTrap (B): Treating 'Only a few' as a simple 'Some' statement (where 'All' is possible in both directions) gives Both Conclusions I and II follow.\nTrap (C): Assuming 'Only a few rivers are lakes' forbids 'All' possibilities in both directions (symmetrical restriction error) gives Neither Conclusion I nor II follows.",
+  "verify_code": "import itertools\nSETS = ['R', 'L', 'O']\nregions = [r for r in itertools.product([0, 1], repeat=len(SETS)) if any(r)]\ndef models():\n    for occ in itertools.product([0, 1], repeat=len(regions)):\n        live = [r for r, o in zip(regions, occ) if o]\n        if all(any(r[i] for r in live) for i in range(len(SETS))):\n            yield live\nix = {n: i for i, n in enumerate(SETS)}\nsome = lambda m, a, b: any(r[ix[a]] and r[ix[b]] for r in m)\nsome_not = lambda m, a, b: any(r[ix[a]] and not r[ix[b]] for r in m)\nall_ = lambda m, a, b: not some_not(m, a, b)\nno = lambda m, a, b: not some(m, a, b)\nfew = lambda m, a, b: some(m, a, b) and some_not(m, a, b)\nms = [m for m in models() if few(m, 'R', 'L') and some(m, 'L', 'O')]\nc1, c2 = lambda m: all_(m, 'R', 'L'), lambda m: all_(m, 'L', 'R')\nf1 = any(c1(m) for m in ms) if True else all(c1(m) for m in ms)\nf2 = any(c2(m) for m in ms) if True else all(c2(m) for m in ms)\nanswer = {(True, False): 'Only Conclusion I follows', (False, True): 'Only Conclusion II follows', (True, True): 'Both Conclusions I and II follow', (False, False): 'Neither Conclusion I nor II follows'}[(f1, f2)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Inequality - Two-Statement Comma Chain",
+  "question_text": "Statements: P >= Q = R > S; R <= T < U\nConclusions:\nI. P > S\nII. Q < U\nWhich of the following options is correct?",
+  "options": {
+   "A": "Only Conclusion I is true",
+   "B": "Only Conclusion II is true",
+   "C": "Both Conclusions I and II are true",
+   "D": "Neither Conclusion I nor II is true"
+  },
+  "correct_answer": "C",
+  "trap_type": "Missing the substitution of equal elements (Q = R) across comma-separated statements",
+  "pedagogical_explanation": "Step-by-step solution: 1) For Conclusion I (P > S): Trace the path from P to S in the first statement: P >= Q = R > S. Since the chain has >=, =, and strictly >, the strict inequality (>) dominates, making P > S definitely true. 2) For Conclusion II (Q < U): Combine the two statements via the common element R: Q = R <= T < U. Since the chain from Q to U has =, <=, and strictly <, the strict inequality (<) dominates, making Q < U definitely true. Therefore, both Conclusions I and II are true.\nTrap (A): Seeing opposing signs between the two statements (>= in the first and <= in the second) and assuming Q and U cannot be compared without noticing that Q = R starts to the left of <= T < U gives Only Conclusion I is true.\nTrap (B): Misreading P >= Q = R > S as requiring >= between P and S gives Only Conclusion II is true.\nTrap (D): Requiring every symbol in the chain to be strictly > or < for a strict conclusion to hold gives Neither is true.",
+  "verify_code": "import itertools\nV = ['P', 'Q', 'R', 'S', 'T', 'U']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    P, Q, R, S, T, U = vals\n    if P >= Q == R > S and R <= T < U:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda P, Q, R, S, T, U: P > S)\nc2 = holds(lambda P, Q, R, S, T, U: Q < U)\neither = holds(lambda P, Q, R, S, T, U: (P > S) or (Q < U)) and not c1 and not c2\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Inequality - Complementary Pair (Either-Or)",
+  "question_text": "Statements: K >= L = M >= N; N = P\nConclusions:\nI. K > P\nII. K = P\nWhich of the following options is correct?",
+  "options": {
+   "A": "Only Conclusion I is true",
+   "B": "Either Conclusion I or II is true",
+   "C": "Both Conclusions I and II are true",
+   "D": "Neither Conclusion I nor II is true"
+  },
+  "correct_answer": "B",
+  "trap_type": "Rejecting both parts of a >= relation instead of forming an Either-Or complementary pair",
+  "pedagogical_explanation": "Step-by-step solution: Combine the statements from K to P: K >= L = M >= N = P. The net definite relationship between K and P is K >= P, which means K is either strictly greater than P (K > P) or equal to P (K = P). Individually, neither Conclusion I (K > P) nor Conclusion II (K = P) is definitely true on its own, but together they exhaust both possibilities of K >= P. Therefore, Either Conclusion I or II is true.\nTrap (A): Assuming that two '>=' signs in a row strengthen into a strict '>' sign gives Only Conclusion I is true.\nTrap (C): Confusing 'K is greater than or equal to P' with 'both K > P and K = P are simultaneously true' gives Both Conclusions I and II are true.\nTrap (D): Checking Conclusion I (false individually) and Conclusion II (false individually) and stopping without checking the Either-Or complementary pair rule gives Neither Conclusion I nor II is true.",
+  "verify_code": "import itertools\nV = ['K', 'L', 'M', 'N', 'P']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    K, L, M, N, P = vals\n    if K >= L == M >= N and N == P:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda K, L, M, N, P: K > P)\nc2 = holds(lambda K, L, M, N, P: K == P)\neither = holds(lambda K, L, M, N, P: (K > P) or (K == P)) and not c1 and not c2\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coded Inequality - Symbol Translation",
+  "question_text": "In a certain code language:\n'X @ Y' means 'X is greater than Y'\n'X # Y' means 'X is greater than or equal to Y'\n'X $ Y' means 'X is equal to Y'\n'X % Y' means 'X is smaller than Y'\nStatements: A # B $ C @ D; C % E\nConclusions:\nI. A @ D\nII. E @ D\nWhich of the following options is correct?",
+  "options": {
+   "A": "Only Conclusion I is true",
+   "B": "Only Conclusion II is true",
+   "C": "Neither Conclusion I nor II is true",
+   "D": "Both Conclusions I and II are true"
+  },
+  "correct_answer": "D",
+  "trap_type": "Reversing the inequality direction when linking a reversed branch (C < E vs C > D)",
+  "pedagogical_explanation": "Step-by-step solution: Decode the symbols first: @ means >, # means >=, $ means =, and % means <. Now rewrite the statements: A >= B = C > D and C < E (which is equivalent to E > C). 1) Check Conclusion I (A @ D, i.e., A > D): From A >= B = C > D, the strict '>' dominates, so A > D is definitely true. 2) Check Conclusion II (E @ D, i.e., E > D): Combine E > C and C > D to get E > C > D, which means E > D is also definitely true. Thus, both Conclusions I and II are true.\nTrap (A): Seeing C > D and C < E with opposite-facing signs (< and >) and assuming E and D have a blocked relation (forgetting to flip C < E into E > C before chaining with C > D) gives Only Conclusion I is true.\nTrap (B): Misreading # (>=) as % (<) in the first statement blocks A > D and gives Only Conclusion II is true.\nTrap (C): Reading '@' as 'smaller than' in both conclusions (A < D and E < D) makes both false, giving Neither Conclusion I nor II is true.",
+  "verify_code": "import itertools\nV = ['A', 'B', 'C', 'D', 'E']\nok = []\nfor vals in itertools.product(range(5), repeat=len(V)):\n    A, B, C, D, E = vals\n    if A >= B == C > D and C < E:\n        ok.append(vals)\ndef holds(f):\n    return all(f(*v) for v in ok)\nc1 = holds(lambda A, B, C, D, E: A > D)\nc2 = holds(lambda A, B, C, D, E: E > D)\neither = holds(lambda A, B, C, D, E: (A > D) or (E > D)) and not c1 and not c2\nanswer = 'Either Conclusion I or II is true' if either else {(True, False): 'Only Conclusion I is true', (False, True): 'Only Conclusion II is true', (True, True): 'Both Conclusions I and II are true', (False, False): 'Neither Conclusion I nor II is true'}[(c1, c2)]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Coded Blood Relations - Forward Coding",
+  "question_text": "If 'A + B' means 'A is the father of B', 'A - B' means 'A is the mother of B', 'A * B' means 'A is the brother of B', and 'A / B' means 'A is the sister of B', then how is Kartik related to Meera in the expression 'Kartik * Lata - Meera'?",
+  "options": {
+   "A": "Paternal Uncle",
+   "B": "Brother",
+   "C": "Maternal Uncle",
+   "D": "Niece"
+  },
+  "correct_answer": "C",
+  "trap_type": "Confusing Maternal Uncle with Paternal Uncle or reversing the direction of relation",
+  "pedagogical_explanation": "Step-by-step solution: Break the expression 'Kartik * Lata - Meera' into two segments: 1) 'Kartik * Lata' means Kartik is the brother of Lata (so Kartik is male, and Kartik and Lata are siblings). 2) 'Lata - Meera' means Lata is the mother of Meera (so Lata is female, one generation above Meera). Since Kartik is the brother of Meera's mother (Lata), Kartik is the Maternal Uncle of Meera.\nTrap (A): Identifying Kartik as an uncle correctly but misreading '-' as 'father of' instead of 'mother of' gives Paternal Uncle.\nTrap (B): Ignoring the generation gap created by '-' and treating all three people as siblings in the same generation gives Brother.\nTrap (D): Answering how Meera is related to Kartik (the reverse direction) instead of how Kartik is related to Meera gives Niece.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coded Blood Relations - In-Law & Spousal Chain",
+  "question_text": "In a certain code language:\n'P @ Q' means 'P is the wife of Q'\n'P # Q' means 'P is the son of Q'\n'P $ Q' means 'P is the sister of Q'\nIn the expression 'Ritu $ Sameer # Tanuja @ Umesh', how is Umesh related to Ritu?",
+  "options": {
+   "A": "Father",
+   "B": "Mother",
+   "C": "Brother",
+   "D": "Maternal Uncle"
+  },
+  "correct_answer": "A",
+  "trap_type": "Misreading the spouse code '@' or answering for the wrong person",
+  "pedagogical_explanation": "Step-by-step solution: Decode the expression one link at a time. 1) 'Ritu $ Sameer' means Ritu is the sister of Sameer, so Ritu and Sameer are siblings. 2) 'Sameer # Tanuja' means Sameer is the son of Tanuja, so Tanuja is the parent of Sameer and Ritu. 3) 'Tanuja @ Umesh' means Tanuja is the wife of Umesh, so Tanuja is their mother and Umesh is her husband. Umesh is the husband of Ritu's mother, so Umesh is the Father of Ritu.\nTrap (B): Answering Tanuja's relation to Ritu instead of Umesh's gives Mother.\nTrap (C): Reading '@' as 'mother of' makes Umesh another child of Tanuja, giving Brother.\nTrap (D): Reading '@' as 'sister of' makes Umesh the brother of Ritu's mother, giving Maternal Uncle.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coded Blood Relations - Backward/Reversed Operand Coding",
+  "question_text": "Read the following information carefully:\n'M & N' means 'N is the father of M'\n'M % N' means 'N is the mother of M'\n'M ^ N' means 'N is the husband of M'\nIn the expression 'Pooja % Rekha & Suresh', how is Suresh related to Pooja?",
+  "options": {
+   "A": "Father",
+   "B": "Maternal Grandfather",
+   "C": "Husband",
+   "D": "Paternal Grandfather"
+  },
+  "correct_answer": "B",
+  "trap_type": "Reading backward-coded definitions ('N is the father of M') as forward-coded ('M is the father of N')",
+  "pedagogical_explanation": "Step-by-step solution: Notice carefully that every rule defines the SECOND person (N) in terms of the FIRST person (M): 1) In 'Pooja % Rekha', the rule 'M % N means N is the mother of M' tells us that Rekha is the mother of Pooja. 2) In 'Rekha & Suresh', the rule 'M & N means N is the father of M' tells us that Suresh is the father of Rekha. Since Rekha is Pooja's mother and Suresh is Rekha's father, Suresh is the Maternal Grandfather of Pooja.\nTrap (A): Skipping the intermediate generation (Rekha) and linking Suresh directly as the parent of Pooja gives Father.\nTrap (C): Reading '%' forward ('Pooja is the mother of Rekha') while reading '&' correctly makes Pooja and Suresh the two parents of Rekha, giving Husband.\nTrap (D): Identifying the two-generation gap correctly (grandfather) but misreading '%' as 'father of' instead of 'mother of' gives Paternal Grandfather.",
+  "verify_code": ""
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Direction Sense - Pythagorean Shortest Distance & Direction",
+  "question_text": "Vikram starts walking from Point A and walks 12 m North to reach Point B. From Point B, he turns right and walks 9 m to reach Point C. From Point C, he turns right again and walks 4 m to reach Point D. Finally, he turns left and walks 6 m to reach Point E. What is the shortest distance between Point A and Point E, and in which direction is Point E with respect to Point A?",
+  "options": {
+   "A": "17 m, North-East",
+   "B": "17 m, South-West",
+   "C": "23 m, North-East",
+   "D": "15 m, North-East"
+  },
+  "correct_answer": "A",
+  "trap_type": "Turning left from South as West instead of East, or reversing reference point",
+  "pedagogical_explanation": "Step-by-step solution: Place Point A at the origin (0, 0). 1) 12 m North takes Vikram to Point B (0, 12). 2) Turning right from North is East; walking 9 m East takes him to Point C (9, 12). 3) Turning right from East is South; walking 4 m South takes him to Point D (9, 8). 4) Turning left when facing South means turning East; walking 6 m East takes him to Point E (9 + 6, 8) = (15, 8). Now compute the shortest (straight-line) distance from A (0, 0) to E (15, 8) using the Pythagoras theorem: sqrt(15 * 15 + 8 * 8) = sqrt(225 + 64) = sqrt(289) = 17 m. Since x = +15 (East) and y = +8 (North), Point E is in the North-East direction with respect to Point A.\nTrap (B): Calculating the distance (17 m) correctly but finding the direction of Point A with respect to Point E (instead of E with respect to A) gives 17 m, South-West.\nTrap (C): Adding the net horizontal and vertical components (15 m + 8 m = 23 m) instead of using the Pythagorean theorem gives 23 m, North-East.\nTrap (D): Stopping at Point C (sqrt(12 * 12 + 9 * 9) = 15 m) or taking only the horizontal displacement (15 m) gives 15 m, North-East.",
+  "verify_code": "x, y = 0, 0\nd = (0, 1)\nright = lambda v: (v[1], -v[0])\nleft = lambda v: (-v[1], v[0])\nx, y = x + 12 * d[0], y + 12 * d[1]\nd = right(d); x, y = x + 9 * d[0], y + 9 * d[1]\nd = right(d); x, y = x + 4 * d[0], y + 4 * d[1]\nd = left(d); x, y = x + 6 * d[0], y + 6 * d[1]\ndist = round((x * x + y * y) ** 0.5)\nassert dist * dist == x * x + y * y and x > 0 and y > 0\nans = str(dist) + ' m, North-East'\nOPTS = {'A': '17 m, North-East', 'B': '17 m, South-West', 'C': '23 m, North-East', 'D': '15 m, North-East'}\nanswer = [k for k, v in OPTS.items() if v == ans][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Direction Sense - Rectangular Loop & Distance Calculation",
+  "question_text": "Ananya leaves her office and walks 15 m West to reach a bus stop. She then turns left and walks 20 m to reach a café. From the café, she turns left again and walks 27 m to reach a bookstore. Finally, she turns left and walks 25 m to reach her home. What is the shortest distance between her office and her home?",
+  "options": {
+   "A": "17 m",
+   "B": "12 m",
+   "C": "13 m",
+   "D": "7 m"
+  },
+  "correct_answer": "C",
+  "trap_type": "Adding instead of subtracting opposite parallel movements before applying Pythagoras",
+  "pedagogical_explanation": "Step-by-step solution: Set the office at the origin (0, 0). 1) Walking 15 m West reaches the bus stop at (-15, 0). 2) Turning left from West is South; walking 20 m South reaches the café at (-15, -20). 3) Turning left from South is East; walking 27 m East reaches the bookstore at (-15 + 27, -20) = (12, -20). 4) Turning left from East is North; walking 25 m North reaches her home at (12, -20 + 25) = (12, 5). Thus, her home is 12 m East and 5 m North of her office (0, 0). By the Pythagoras theorem, the shortest distance is sqrt(12 * 12 + 5 * 5) = sqrt(144 + 25) = sqrt(169) = 13 m.\nTrap (A): Adding the horizontal and vertical net displacements (12 m + 5 m) instead of computing the hypotenuse gives 17 m.\nTrap (B): Calculating only the horizontal displacement (27 - 15 = 12 m) and ignoring the 5 m vertical difference between 25 m North and 20 m South gives 12 m.\nTrap (D): Subtracting the net vertical distance from the net horizontal distance (12 m - 5 m) gives 7 m.",
+  "verify_code": "x, y = 0, 0\nd = (-1, 0)\nleft = lambda v: (-v[1], v[0])\nx, y = x + 15 * d[0], y + 15 * d[1]\nd = left(d); x, y = x + 20 * d[0], y + 20 * d[1]\nd = left(d); x, y = x + 27 * d[0], y + 27 * d[1]\nd = left(d); x, y = x + 25 * d[0], y + 25 * d[1]\ndist = round((x * x + y * y) ** 0.5)\nassert dist * dist == x * x + y * y\nanswer = dist"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coding-Decoding - New Pattern (Length, Symbol, Last Letter Shift)",
+  "question_text": "In a certain code language:\n'TIGER' is coded as '5#S'\n'MONKEY' is coded as '6@Z'\n'LION' is coded as '4@O'\nBased on the same coding pattern, how will 'TRAIN' be coded in that language?",
+  "options": {
+   "A": "5@O",
+   "B": "5#N",
+   "C": "5#M",
+   "D": "5#O"
+  },
+  "correct_answer": "D",
+  "trap_type": "Taking the symbol from the wrong example or forgetting the +1 shift on the last letter",
+  "pedagogical_explanation": "Step-by-step solution: Analyze the three elements (Number, Symbol, Letter) of each code: 1) Number: 'TIGER' has 5 letters -> 5; 'MONKEY' has 6 letters -> 6; 'LION' has 4 letters -> 4. So the number represents the total number of letters in the word. For 'TRAIN', the length is 5. 2) Symbol: 'TIGER' (odd length, 5) has '#'; 'MONKEY' (even length, 6) and 'LION' (even length, 4) have '@'. Since 'TRAIN' has 5 letters (odd), its symbol is '#'. 3) Letter: Last letter of TIGER is R -> R + 1 = S; last letter of MONKEY is Y -> Y + 1 = Z; last letter of LION is N -> N + 1 = O. For 'TRAIN', the last letter is N, and N + 1 = O. Combining all three gives '5#O'.\nTrap (A): Copying the symbol from LION, the example whose last letter N matches TRAIN's, instead of using the odd/even word-length rule gives 5@O.\nTrap (B): Keeping the last letter 'N' unchanged instead of shifting it forward by +1 gives 5#N.\nTrap (C): Shifting the last letter backward by -1 (N - 1 = M) instead of forward by +1 gives 5#M.",
+  "verify_code": "ex = {'TIGER': '5#S', 'MONKEY': '6@Z', 'LION': '4@O'}\ncode = lambda w: str(len(w)) + ('#' if len(w) % 2 else '@') + chr(ord(w[-1]) + 1)\nassert all(code(w) == c for w, c in ex.items())\nOPTS = {'A': '5@O', 'B': '5#N', 'C': '5#M', 'D': '5#O'}\nanswer = [k for k, v in OPTS.items() if v == code('TRAIN')][0]"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Coding-Decoding - Opposite Letters & Consonant/Vowel Shift",
+  "question_text": "In a certain code language, 'SMART' is written as 'HNZIG' and 'BRAIN' is written as 'YIZRM'. How will 'CLOUD' be written in that language?",
+  "options": {
+   "A": "XOLFZ",
+   "B": "XOLFW",
+   "C": "DMPVE",
+   "D": "XLOFW"
+  },
+  "correct_answer": "B",
+  "trap_type": "Missing that the middle letters L and O swap into each other's place under the opposite-letter rule",
+  "pedagogical_explanation": "Step-by-step solution: Observe the relation between each letter and its code using standard alphabetical positions (A=1 to Z=26): S(19)+H(8)=27, M(13)+N(14)=27, A(1)+Z(26)=27, R(18)+I(9)=27, T(20)+G(7)=27. Every letter is replaced by its reverse-alphabetical opposite pair (two letters whose positions sum to 27). Applying this rule to 'CLOUD': C(3) -> 24(X), L(12) -> 15(O), O(15) -> 12(L), U(21) -> 6(F), D(4) -> 23(W). Therefore, 'CLOUD' is coded as 'XOLFW'.\nTrap (A): Miscalculating the opposite of D(4) as Z(26) instead of W(23) gives XOLFZ.\nTrap (C): Applying a +1 shift to every letter (as M becomes N in SMART) instead of the opposite-letter rule gives DMPVE.\nTrap (D): Leaving L and O in their original places, because L and O are each other's opposites, instead of replacing each letter gives XLOFW.",
+  "verify_code": "opp = lambda w: ''.join(chr(155 - ord(c)) for c in w)\nassert opp('SMART') == 'HNZIG' and opp('BRAIN') == 'YIZRM'\nanswer = opp('CLOUD')"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Order and Ranking - Rank Interchange in a Row",
+  "question_text": "In a row of cadet applicants facing North, Deepak is 14th from the left end and Pranav is 19th from the right end. When they interchange their positions, Deepak becomes 23rd from the left end. What will be Pranav's new position from the right end after the interchange?",
+  "options": {
+   "A": "27th",
+   "B": "28th",
+   "C": "29th",
+   "D": "41st"
+  },
+  "correct_answer": "B",
+  "trap_type": "Subtracting 1 from the rank shift when transferring the increase to the second person",
+  "pedagogical_explanation": "Step-by-step solution: Method 1 (Direct Shift): Before the interchange, Deepak was 14th from the left; after moving to Pranav's seat, Deepak becomes 23rd from the left—an increase of 23 - 14 = +9 positions. By symmetry, Pranav's rank from the right end also increases by the exact same amount (+9): 19 + 9 = 28th. Method 2 (Via Total Persons): Since Deepak's new seat is Pranav's old seat, that seat is 23rd from the left and 19th from the right. Total persons = 23 + 19 - 1 = 41. Now Pranav is at Deepak's old seat (14th from the left), so Pranav's rank from the right is (41 - 14) + 1 = 28th.\nTrap (A): Calculating the total as 41 correctly, but forgetting to add +1 when finding Pranav's right-end rank (41 - 14 = 27) gives 27th.\nTrap (C): Adding 1 to the shift (19 + 9 + 1 = 29) due to confusing rank-difference formulas with total-person formulas gives 29th.\nTrap (D): Stopping after calculating the total number of cadets in the row (23 + 19 - 1 = 41) gives 41st.",
+  "verify_code": "total = 23 + 19 - 1\nanswer = total - 14 + 1"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Easy",
+  "concept_tag": "Order and Ranking - Overlapping vs Non-Overlapping Row",
+  "question_text": "In a row of 45 students, Kritika is 18th from the left end and Roshan is 16th from the right end. How many students are sitting strictly between Kritika and Roshan?",
+  "options": {
+   "A": "11",
+   "B": "10",
+   "C": "12",
+   "D": "9"
+  },
+  "correct_answer": "A",
+  "trap_type": "Subtracting an extra 1 from (Total - Sum of Ranks) when calculating persons strictly between",
+  "pedagogical_explanation": "Step-by-step solution: First check whether the two ranks overlap by adding them: 18 (from left) + 16 (from right) = 34. Since 34 is less than the total number of students (45), it is a non-overlapping case. The number of students sitting strictly between them is simply Total - (Left Rank + Right Rank) = 45 - (18 + 16) = 45 - 34 = 11.\nTrap (B): Subtracting an extra 1 from the difference (45 - 34 - 1 = 10) by confusing the 'between' formula with the 'Total = L + R - 1' formula gives 10.\nTrap (C): Adding 1 to the difference (45 - 34 + 1 = 12) by confusing it with the 'Opposite Rank = Total - Rank + 1' formula gives 12.\nTrap (D): Excluding Kritika and Roshan a second time (45 - 34 - 2) gives 9.",
+  "verify_code": "answer = 45 - (18 + 16)"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari Reasoning",
+  "difficulty": "Moderate",
+  "concept_tag": "Alphanumeric Series - Relative Positional Shift",
+  "question_text": "Study the following alphanumeric-symbol series carefully and answer the question below:\nM 4 # P 7 @ R 2 $ K 9 % T 5 & W 8 * Z 3\nWhich element is sixth to the left of the fifteenth element from the left end of the above arrangement?",
+  "options": {
+   "A": "2",
+   "B": "K",
+   "C": "$",
+   "D": "@"
+  },
+  "correct_answer": "C",
+  "trap_type": "Off-by-one counting from a reference element, or dropping the reference element",
+  "pedagogical_explanation": "Step-by-step solution: When both reference directions are from the same end ('left of the ... from the left end'), subtract the two positions: 15 - 6 = 9th element from the left end. Now count to the 9th element from the left in 'M(1) 4(2) #(3) P(4) 7(5) @(6) R(7) 2(8) $(9) K(10) ...': the 9th element from the left end is '$'.\nTrap (A): Counting 6 steps left from the 15th element inclusively (counting the 15th element '&' as 1 instead of 0, which lands on the 15 - 6 - 1 = 8th element) gives 2.\nTrap (B): Off-by-one error to the right (landing on the 10th element instead of the 9th element) gives K.\nTrap (D): Reading the question as 'sixth element from the left end' and ignoring the fifteenth-element reference gives @.",
+  "verify_code": "s = 'M 4 # P 7 @ R 2 $ K 9 % T 5 & W 8 * Z 3'.split()\nassert len(s) == 20 and s[14] == '&'\nanswer = s[15 - 6 - 1]"
+ }
+]
