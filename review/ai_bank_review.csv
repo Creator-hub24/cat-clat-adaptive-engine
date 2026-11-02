@@ -1173,3 +1173,240 @@ Why the distractors are wrong:
 - Trap A (The Main Distractor): The candidate correctly identifies that departmental inquiries do not count as a court, but leaps to the conclusion that because the Magistrate is a court of law, the dismissal bars a fresh complaint. This ignores the explicit condition that the judicial proceeding must result in *prosecution and punishment on the merits*; a dismissal on a preliminary technical defect does not create double jeopardy.
 - Trap C (General Fairness / Moral Equivalence): Assumes that facing two complaints is 'vexatious litigation'. The passage expressly warns that double jeopardy is not a general moral shield against inconvenience, but requires strict adherence to the defined three-part rule.
 - Trap D (Rule Distortion): Misstates the doctrine by asserting that double jeopardy requires an acquittal (the passage specifies 'prosecution and punishment', i.e., conviction) and introduces an irrelevant concept of administrative dismissal overriding immunity.",Satisfying the forum requirement (court of law) while ignoring the outcome requirement (conviction and punishment on merits),Constitutional and Criminal Law - Double Jeopardy,False,True,,gemini-flash-latest,2026-11-01T08:59:40.297492+00:00,unreviewed,,
+AI-IQ-b8fbdfd3,IPMAT,IPMAT Quant,Moderate,What is the sum of the infinite series $S = \frac{1}{1 \cdot 4 \cdot 7} + \frac{1}{4 \cdot 7 \cdot 10} + \frac{1}{7 \cdot 10 \cdot 13} + \dots$?,1/24,1/12,1/18,1/48,A,"Shortcut: For a telescoping series where each term has a denominator with 3 factors in AP (common difference $d = 3$), split the general term using the difference between the outer factors: $a_{n+2} - a_n = 2d = 6$.
+
+Step-by-step:
+1. The $n$-th term is $T_n = \frac{1}{(3n-2)(3n+1)(3n+4)}$.
+2. Multiply and divide by the outer difference $(3n+4) - (3n-2) = 6$:
+   $T_n = \frac{1}{6} \left[ \frac{(3n+4) - (3n-2)}{(3n-2)(3n+1)(3n+4)} \right] = \frac{1}{6} \left[ \frac{1}{(3n-2)(3n+1)} - \frac{1}{(3n+1)(3n+4)} \right]$.
+3. Summing from $n=1$ to $\infty$, all intermediate terms telescope to 0:
+   $S = \frac{1}{6} \left( \frac{1}{1 \cdot 4} - \lim_{n \to \infty} \frac{1}{(3n+1)(3n+4)} \right) = \frac{1}{6} \times \frac{1}{4} = \frac{1}{24}$.
+
+Main distractor B (1/12) occurs when a student mistakenly uses the single common difference $d = 3$ instead of the outer difference $2d = 6$, calculating $\frac{1}{3} \times \frac{1}{4} = \frac{1}{12}$.",Using adjacent difference instead of outer difference in partial fractions,Sequences & Series - Telescoping Infinite Sums,True,True,,gemini-3.6-flash,2026-11-02T08:38:57.743775+00:00,unreviewed,,
+AI-CLR-a3590512,CLAT,CLAT Logical Reasoning,Moderate,"To qualify for a senior research fellowship at the Institute of Advanced Energy, an applicant must have published at least three peer-reviewed papers on clean technology. The selection committee chairperson asserts that implementing this rule will guarantee that every appointed fellow possesses strong grant-writing skills, because writing peer-reviewed papers requires synthesizing complex data and crafting persuasive academic arguments.
+
+Which of the following is an assumption on which the chairperson's argument depends?",Publishing peer-reviewed papers is the only method through which a researcher can develop strong grant-writing skills.,"Candidates who meet the three-paper requirement performed the synthesis and persuasive drafting themselves, rather than relying on co-authors.",The Institute of Advanced Energy will receive a sufficient volume of applications from researchers who meet the publication standard.,Strong grant-writing skills are more critical to a fellow's success than their ability to conduct laboratory experiments.,B,"To identify a required assumption, we bridge the logical gap between the premise and the conclusion using the Negation Test.
+
+Premise: Writing peer-reviewed papers requires synthesizing complex data and crafting persuasive arguments.
+Conclusion: Requiring three published papers guarantees that every appointed fellow possesses strong grant-writing skills.
+
+Gap: The chairperson assumes that having one's name on published papers means the candidate personally performed the required writing and synthesis.
+
+Applying the Negation Test to (B):
+'Candidates who meet the three-paper requirement did NOT perform the synthesis and persuasive drafting themselves, but relied on co-authors.'
+If this negation is true, a fellow could meet the publication requirement without personally possessing any writing or synthesis skills, thereby completely destroying the chairperson's claim of a 'guarantee'. Thus, (B) is essential.
+
+Why Main Distractor (A) is wrong:
+Option A presents an exaggerated 'only way' claim, confusing a sufficient condition with a necessary one. The chairperson only needs paper-writing to be sufficient to indicate grant-writing skills; it does not need to be the sole method. Negating A ('There are other ways to learn grant writing') does not invalidate the conclusion that this specific rule guarantees those skills.",Necessary vs. Sufficient confusion ('Only way' trap),Assumption - Negation Test,False,True,,gemini-3.6-flash,2026-11-02T08:39:19.791326+00:00,unreviewed,,
+AI-CQ-69b52be8,CAT,CAT Quant,CAT-Level,"If the polynomial $p(x) = x^4 - 12x^3 + ax^2 + bx + 81 = 0$ has four positive real roots, what is the value of $a + b$?",54,-54,162,-90,B,"Step-by-step solution:
+1. Let the four positive real roots be $r_1, r_2, r_3, r_4 > 0$.
+2. By Vieta's formulas, the sum of the roots is $r_1 + r_2 + r_3 + r_4 = 12$, and the product of the roots is $r_1 r_2 r_3 r_4 = 81$.
+3. Calculate the Arithmetic Mean (AM) and Geometric Mean (GM) of the four roots:
+   $$AM = \frac{r_1 + r_2 + r_3 + r_4}{4} = \frac{12}{4} = 3$$
+   $$GM = \sqrt[4]{r_1 r_2 r_3 r_4} = \sqrt[4]{81} = 3$$
+4. Since $AM = GM = 3$, the equality condition for the AM-GM inequality holds, which means all four roots must be equal: $r_1 = r_2 = r_3 = r_4 = 3$.
+5. Expanding $(x - 3)^4$ using the Binomial Theorem gives:
+   $$(x - 3)^4 = x^4 - 4(3)x^3 + 6(3^2)x^2 - 4(3^3)x + 3^4 = x^4 - 12x^3 + 54x^2 - 108x + 81$$
+6. Matching coefficients gives $a = 54$ and $b = -108$.
+7. Therefore, $a + b = 54 + (-108) = -54$.
+
+Shortcut / Reading Signal:
+When given the sum and product of positive roots in a polynomial, always test for $AM = GM$. If $AM = GM$, all roots are equal, immediately giving you the factored form $(x - r)^n$.
+
+Main Distractor Analysis:
+Option C (162) is the main distractor trap. It occurs when a student correctly identifies $a = 54$ and $|b| = 108$, but fails to account for the alternating signs in the binomial expansion of $(x - 3)^4$, erroneously setting $b = +108$ and computing $54 + 108 = 162$.",Sign-flip oversight in expansion,Algebra - polynomials and AM-GM inequality,True,True,,gemini-3.6-flash,2026-11-02T08:39:44.889738+00:00,unreviewed,,
+AI-CD-b980eb16,CAT,CAT DILR,CAT-Level,"Four consultants—A, B, C, and D—worked on a 4-day project under the following conditions:
+- On each day, exactly 3 consultants worked and 1 consultant took a day off.
+- Over the 4 days, each consultant worked for exactly 3 days (and took a day off on exactly 1 day).
+- Each consultant has a constant daily fee.
+- The total daily payments made to the consultants working on each day were as follows:
+
+| Day | Total Daily Payment ($) |
+|---|---|
+| Day 1 | 110 |
+| Day 2 | 130 |
+| Day 3 | 140 |
+| Day 4 | 160 |
+
+- Consultant A took a day off on Day 1.
+- Consultant B took a day off on Day 4.
+- Consultant C's daily fee is $10 higher than Consultant D's daily fee.
+
+Which consultant took a day off on Day 3?",Consultant A,Consultant B,Consultant C,Consultant D,D,"Step 1 (Global Conservation check): Sum the daily payments across all 4 days: 110 + 130 + 140 + 160 = $540. Since each consultant works on 3 days, 3 × (Rate_A + Rate_B + Rate_C + Rate_D) = 540, which yields Rate_A + Rate_B + Rate_C + Rate_D = $180.
+
+Step 2 (Fee of absent consultant): On any given day k, Daily Payment = Total Sum (180) - Fee of person off on day k. Therefore, Fee(off on day k) = 180 - Daily Payment(k):
+- Day 1 off fee = 180 - 110 = $70 (Consultant A, so Rate_A = $70)
+- Day 2 off fee = 180 - 130 = $50
+- Day 3 off fee = 180 - 140 = $40
+- Day 4 off fee = 180 - 160 = $20 (Consultant B, so Rate_B = $20)
+
+Step 3 (Assign remaining fees): The unassigned off-day fees for Days 2 and 3 are $50 and $40. We are given Rate_C - Rate_D = 10, so Rate_C = $50 and Rate_D = $40.
+
+Step 4 (Match with Day 3): The consultant off on Day 3 has a fee of $40, which corresponds to Consultant D.
+
+Shortcut/Reading Signal: Recognizing 'Complementary sum conservation' (Total Daily Payment = Total Fee Pool - Fee of Absent Consultant) immediately converts a system of equations into direct subtraction, taking under 90 seconds.
+
+Trap (C): Solvers often assume that a higher daily payment on Day 3 ($140) compared to Day 2 ($130) implies the person absent on Day 3 has a higher daily fee ($50, i.e., Consultant C). This inverted logic overlooks the fact that higher total payments mean a smaller fee was deducted.",Inverted relationship error,Scheduling & Allocation - Complementary Sum Invariant,True,True,,gemini-3.5-flash,2026-11-02T08:41:53.607996+00:00,unreviewed,,
+AI-CLR-c2768b39,CLAT,CLAT Logical Reasoning,CAT-Level,"A municipal audit in City Y revealed that 85% of small businesses that declared bankruptcy last year operated out of leased commercial properties rather than self-owned premises. Citing this statistic, the city council concluded that escalating commercial rents are the principal cause of small business failure in City Y, and proposed a statutory cap on rent increases to stem further bankruptcies.
+
+Which of the following is a necessary assumption on which the city council's argument depends?",Small businesses operating out of self-owned premises are less likely to fail due to non-rental operational expenses than those operating out of leased properties.,The proportion of all small businesses operating in City Y that occupy leased premises is not substantially greater than 85%.,Property owners in City Y will not convert commercial spaces into residential units if statutory limits are placed on rent increases.,High commercial rent is the single largest expense category for the majority of small businesses operating out of leased premises in City Y.,B,"Step 1: Identify Premise and Conclusion.
+- Premise: 85% of bankrupt small businesses leased their premises.
+- Conclusion: Rent increases are the principal cause of small business bankruptcies.
+
+Step 2: Recognize the Reading Signal / Logical Gap (Baseline Fallacy).
+The argument assumes that an 85% representation among bankrupt businesses implies leasing is a risk factor. However, without knowing the baseline proportion of ALL small businesses that lease, this statistic is logically incomplete. If 95% of ALL small businesses in City Y lease, then leased businesses are actually under-represented among bankruptcies (85% < 95%), meaning leasing is actually safer than owning!
+
+Step 3: Apply the Negation Test to Option B.
+- Negated Option B: 'The proportion of all small businesses in City Y that lease premises IS substantially greater than 85% (e.g., 95%).'
+- Result: If 95% of all businesses lease, the audit finding (85%) proves that non-leasing businesses fail at a higher rate relative to their market share. The council's core claim that rent is driving failure collapses. Hence, Option B is a necessary assumption.
+
+Step 4: Explain the Main Distractor (Option D).
+Option D relies on the 'Exaggerated Standard / Extremeness Trap'. Hasty solvers think that for rent to be the primary driver of failure, it must be the single largest line-item expense. However, even if payroll or inventory is larger than rent, rapid rent increases can still be the marginal factor pushing businesses past profitability. Negating D ('Rent is not the single largest expense') does not break the argument, so D is not necessary.",Baseline Fallacy / Exaggerated Standard Trap,Critical Reasoning - Necessary Assumption,False,True,,gemini-3.6-flash,2026-11-02T08:42:22.336792+00:00,unreviewed,,
+AI-IQ-a13d6ad3,IPMAT,IPMAT Quant,CAT-Level,"How many ordered triples of positive integers $(a, b, c)$ satisfy the following system of equations simultaneously?
+$$\text{lcm}(a, b) = 180$$
+$$\text{lcm}(b, c) = 450$$
+$$\text{lcm}(c, a) = 900$$",28,63,84,171,B,"Step 1: Prime factorize the three given LCM values:
+- $180 = 2^2 \cdot 3^2 \cdot 5^1$
+- $450 = 2^1 \cdot 3^2 \cdot 5^2$
+- $900 = 2^2 \cdot 3^2 \cdot 5^2$
+
+Let $a = 2^{a_1} 3^{a_2} 5^{a_3}$, $b = 2^{b_1} 3^{b_2} 5^{b_3}$, and $c = 2^{c_1} 3^{c_2} 5^{c_3}$. Since $\text{lcm}(x, y) = 2^{\max(x_1, y_1)} 3^{\max(x_2, y_2)} 5^{\max(x_3, y_3)}$, we can analyze each prime exponent independently.
+
+Step 2: Exponents of 2:
+- $\max(a_1, b_1) = 2$
+- $\max(b_1, c_1) = 1 \implies b_1 \le 1$ and $c_1 \le 1$
+- $\max(c_1, a_1) = 2$
+Since $b_1 \le 1$, $\max(a_1, b_1) = 2$ forces $a_1 = 2$. With $a_1 = 2$, $\max(c_1, a_1) = 2$ is automatically satisfied. The condition $\max(b_1, c_1) = 1$ with $b_1, c_1 \in \{0, 1\}$ allows 3 valid pairs for $(b_1, c_1)$: $(1,0), (0,1), (1,1)$. Thus, there are $1 \times 3 = 3$ valid triples $(a_1, b_1, c_1)$.
+
+Step 3: Exponents of 3:
+- $\max(a_2, b_2) = 2$
+- $\max(b_2, c_2) = 2$
+- $\max(c_2, a_2) = 2$
+For the maximum of EVERY pair to be 2, at least TWO of the three exponents $(a_2, b_2, c_2)$ must equal 2 (and none can exceed 2).
+- Case (i): All three equal 2 $\rightarrow (2, 2, 2)$ gives 1 solution.
+- Case (ii): Exactly two equal 2 $\rightarrow \binom{3}{2} = 3$ ways to choose which two are 2, and 2 choices (0 or 1) for the remaining exponent $\rightarrow 3 \times 2 = 6$ solutions.
+Total valid triples for prime 3 = $1 + 6 = 7$.
+
+Step 4: Exponents of 5:
+- $\max(a_3, b_3) = 1 \implies a_3 \le 1$ and $b_3 \le 1$
+- $\max(b_3, c_3) = 2$
+- $\max(c_3, a_3) = 2$
+Since $a_3 \le 1$, $\max(c_3, a_3) = 2$ forces $c_3 = 2$. With $c_3 = 2$, $\max(b_3, c_3) = 2$ is automatically satisfied. The condition $\max(a_3, b_3) = 1$ with $a_3, b_3 \in \{0, 1\}$ allows 3 valid pairs $(a_3, b_3)$: $(1,0), (0,1), (1,1)$. Thus, there are $3 \times 1 = 3$ valid triples $(a_3, b_3, c_3)$.
+
+Step 5: Total ordered triples:
+By the multiplication principle, Total = $3 \times 7 \times 3 = 63$.
+
+Shortcut/Signal: For simultaneous LCM systems, split into individual prime components and express conditions using $\max(x_i, y_i) = k$.
+
+Main Distractor Error (Option D - 171): Solvers incorrectly assume that for prime 3, the condition requires only ""at least one exponent equals 2"" ($3^3 - 2^3 = 19$). However, if only ONE exponent is 2 (e.g., $a_2 = 2, b_2 = 1, c_2 = 0$), then $\max(b_2, c_2) = 1 \neq 2$, violating $\text{lcm}(b, c) = 450$. At least two exponents must be 2.",Miscounting valid exponent combinations by requiring only one maximum instead of pair-wise maximums,Number Theory - LCM equations and prime factorization,True,True,,gemini-3.6-flash,2026-11-02T08:43:06.877146+00:00,unreviewed,,
+AI-IV-d128a70e,IPMAT,IPMAT Verbal,CAT-Level,"Passage:
+Standard psychometric testing routinely diagnoses cognitive decline in older adults based on reduced speed in context-free recall tasks. However, in complex real-world environments, decision quality depends far less on raw processing speed than on the rapid recognition of structural patterns—a capacity built on accumulated experiential schemas. By equating cognitive utility with the rapid manipulation of novel, context-free data, standard diagnostics mistake a shift in processing strategy for a loss of intellectual function. Consequently, these tests unfairly penalize older adults whose cognitive architecture has optimized for relevance rather than raw velocity.
+
+The standard psychometric tests criticized by the author rely on which of the following underlying assumptions?",Raw processing speed on context-free tasks is a valid proxy for overall cognitive utility.,The accumulation of experiential schemas actively impairs an individual's ability to recall novel information.,Older adults rely on pattern recognition primarily to compensate for irreversible neurological loss.,Standardized quantitative metrics are fundamentally incapable of measuring real-world decision quality.,A,"Reading signals: Look for the author's identification of the tests' leap in logic: 'By equating cognitive utility with the rapid manipulation of novel, context-free data, standard diagnostics mistake...'
+
+Step-by-step logic:
+To criticize the tests for equating context-free processing speed with cognitive utility, the author must establish that the tests implicitly presuppose a link between the two. If speed on context-free tasks were NOT assumed to represent overall cognitive utility, the tests would not use speed as a metric to diagnose general 'cognitive decline.' Thus, Option A is the required underlying assumption.
+
+Main Distractor Analysis:
+Option C is a classic 'Plausible Medical/Scientific Narrative Trap.' A strong but hasty solver might pick C because it addresses cognitive strategy and sounds like an explanation for aging. However, C presents an assumption about *neurological loss* that the standard tests do not make—the passage asserts that tests ignore pattern recognition entirely, rather than viewing it as a compensatory loss mechanism.
+
+Why B and D are wrong:
+- B incorrectly claims that schemas *actively impair* recall. The passage says cognitive architecture optimizes for relevance, not that schemas cause functional damage.
+- D represents the exact opposite of what the test-makers believe. Test-makers assume quantitative metrics *are* capable, whereas D asserts they are incapable.",Plausible external narrative (C) vs. core logical premise of the framework (A),Critical Reasoning - Underlying Assumption,False,True,,gemini-3.6-flash,2026-11-02T08:43:25.104334+00:00,unreviewed,,
+AI-CQ-277c0862,CAT,CAT Quant,Easy,The difference between the compound interest (compounded annually) and the simple interest on a principal amount for 2 years at 15% per annum is ₹180. What is the principal amount?,"₹6,000","₹8,000","₹12,000","₹9,000",B,"Step-by-step solution:
+1. For 2 years, the difference between Compound Interest (CI) and Simple Interest (SI) is simply the interest earned during the second year on the first year's interest.
+2. Let the interest for year 1 be I. Interest on I at 15% per annum is given as ₹180:
+   0.15 * I = 180 => I = ₹1,200.
+3. Since I is the 15% interest earned on the principal P in year 1:
+   0.15 * P = 1,200 => P = ₹8,000.
+
+Shortcut:
+Apply the direct 2-year difference formula: D = P * (R/100)^2
+180 = P * (15/100)^2
+180 = P * (9/400)
+P = (180 * 400) / 9 = 20 * 400 = ₹8,000.
+
+Main Distractor Trap:
+Option C (₹12,000) or ₹1,200 occurs when students mistake the first year's interest (₹1,200) for the principal itself, or equate ₹180 directly to 15% of the principal (getting 1,200) due to confusing interest-on-interest with direct principal interest.",Confusing interest-on-interest with direct principal interest,Interest - CI and SI Difference,True,True,,gemini-3.6-flash,2026-11-02T08:43:49.374711+00:00,unreviewed,,
+AI-CVR-9a3bbd82,CAT,CAT VARC RC,Easy,"Passage: Long before modern refrigeration, fermentation served as one of humanity’s most vital technologies for survival. By harnessing beneficial bacteria and fungi, early agricultural societies could transform highly perishable foods—such as milk, cabbage, and fresh meat—into shelf-stable staples like cheese, sauerkraut, and cured meats. This biological transformation inhibited the growth of dangerous pathogens through acidic or salty environments, effectively locking in nutrients for months. While contemporary consumers largely appreciate fermented foods for their complex culinary flavors or probiotic health benefits, historical reliance on fermentation was fundamentally economic and existential. Without it, communities faced severe food insecurity during winter months or crop failures. Thus, fermentation was less an artistic culinary choice than an essential strategy for long-term food preservation and human resilience.
+
+Which of the following best captures the main argument of the passage?",Early societies developed fermentation mainly as a culinary art to improve the flavor of basic foods.,Fermentation historically functioned primarily as an essential survival strategy for food preservation.,Modern consumers understand the health benefits of fermentation better than ancient societies did.,Fermentation was the single most effective method for completely eliminating all foodborne pathogens.,B,"Step 1: Identify the main contrast signal in the passage ('While contemporary consumers... historical reliance... was fundamentally economic and existential' and 'less an artistic culinary choice than an essential strategy').
+Step 2: Synthesize the core thesis: Fermentation was primarily a survival mechanism to preserve food and prevent starvation, not just a culinary preference.
+Step 3: Evaluate the options against this core thesis.
+- Option B accurately synthesizes the passage's thesis.
+- Option A is a REVERSAL: The passage explicitly states that fermentation was 'less an artistic culinary choice' and was driven by survival, not flavor enhancement.
+- Option C is OUT OF SCOPE: The passage contrasts why modern consumers use fermented foods (flavors/probiotics) with why historical societies did (survival), but it never compares their depth of understanding.
+- Option D uses EXTREME SCOPE: The words 'single most effective' and 'all foodborne pathogens' exaggerate the passage's claim that fermentation 'inhibited the growth of dangerous pathogens'.
+
+The main distractor is (A) because readers who confuse modern appreciation (flavor/art) with historical origin fall into the reversal trap.",Reversal,RC - main idea,False,True,,gemini-3.6-flash,2026-11-02T08:44:07.553170+00:00,unreviewed,,
+AI-CD-6dd1cc16,CAT,CAT DILR,Easy,"Four friends — Akash, Bhanu, Chetan, and Deepa — are sitting in a row of four seats numbered 1 to 4 from left to right, all facing North.
+
+- Akash is sitting immediately to the left of Bhanu.
+- Chetan is not sitting on Seat 1.
+- Deepa is sitting on Seat 4.
+
+Who is sitting on Seat 2?",Akash,Bhanu,Chetan,Deepa,B,"1. Deepa is fixed on Seat 4: [ _, _, _, Deepa ].
+2. Akash is immediately to the left of Bhanu, so they form a block [Akash, Bhanu] occupying consecutive seats.
+3. The block can only occupy (Seat 1, Seat 2) or (Seat 2, Seat 3):
+   - If [Akash, Bhanu] is on (Seat 2, Seat 3), then Chetan must sit on Seat 1. However, Clue 2 states Chetan cannot sit on Seat 1. This case is invalid.
+   - If [Akash, Bhanu] is on (Seat 1, Seat 2), then Chetan sits on Seat 3. This satisfies all conditions.
+4. Therefore, the unique arrangement from Seat 1 to 4 is: Akash, Bhanu, Chetan, Deepa. Bhanu sits on Seat 2.
+
+Reading Signal / Shortcut: Negative constraints ('Chetan is NOT on Seat 1') act as fast elimination filters once fixed blocks are tested.
+
+Main Distractor (A): Akash is placed on Seat 2 if the negative constraint is ignored and Chetan is mistakenly placed on Seat 1.",Ignoring a negative constraint,Linear Arrangement - Elimination and Constraints,True,True,,gemini-3.6-flash,2026-11-02T08:44:33.504755+00:00,unreviewed,,
+AI-CR-eaea3767,CLAT,CLAT RC,Easy,"Passage: Under the doctrine of frustration, a contract becomes void and unenforceable if, after its formation, an unforeseen event beyond the control of both parties makes the performance of the contract physically or legally impossible. However, mere commercial unprofitability, increased difficulty, or higher cost of performance does not frustrate a contract.
+
+Fact Situation: Rohan contracts to hire Vikram's hall for a three-day art exhibition. A day before the event, an accidental electrical fire completely destroys the hall. Rohan sues Vikram for failure to provide the venue. Applying ONLY the principle given above:",Vikram is liable for breach of contract because he promised to provide the venue and failed to perform.,"The contract is frustrated and void because the destruction of the hall made performance physically impossible, so Vikram is not liable.",The contract is not frustrated because Vikram could have rebuilt or repaired the hall at a higher cost.,"The contract remains valid, but Rohan must pay Vikram damages for the loss of his hall.",B,"1. Step-by-step application: The principle states that an unforeseen event beyond both parties' control that makes performance physically impossible renders the contract frustrated and void. Here, the accidental fire destroyed the hall, making performance physically impossible. Thus, the contract is void and Vikram is not liable.
+2. Reading signal: Match 'physically impossible' from the principle directly to 'accidental fire completely destroys the hall' in the facts.
+3. Main distractor: Option A. This trap relies on the 'absolute performance fallacy'—assuming that failure to fulfill a promise automatically results in liability, ignoring the frustration defense provided in the passage.",Absolute performance fallacy,Legal RC - Frustration of Contract,False,True,,gemini-3.5-flash,2026-11-02T08:44:57.382456+00:00,unreviewed,,
+AI-CLR-da6f84d9,CLAT,CLAT Logical Reasoning,Easy,"The government has recently announced a scheme to provide substantial tax breaks to any technology company that establishes a manufacturing unit in a rural district. The government claims that this initiative will lead to a significant decrease in the unemployment rate within these rural districts.
+
+Which of the following is an assumption required by the government’s argument?",Most rural residents currently travel to urban centers to find employment in the technology sector.,The technology companies setting up these units will hire a significant portion of their workforce from the local rural population.,Every technology company in the country is planning to expand its manufacturing operations in the next year.,The tax breaks offered are the largest financial incentives the government has ever provided to the private sector.,B,"To solve for a necessary assumption, we use the Negation Test. The argument's logic is: Tax Breaks -> Units in Rural Districts -> Lower Rural Unemployment. For this to hold, there must be a link between the units being built and the local people getting jobs. If we negate Option B ('The companies will NOT hire a significant portion of their workforce from the local population'), the argument falls apart: even if the units are built, they might bring in workers from cities, leaving rural unemployment unchanged. Option A is a premise that might make the policy more desirable, but the argument doesn't 'depend' on it. Option C is 'Extreme'—the argument doesn't need 'every' company to move for the plan to work. Option D is irrelevant to the causal link between the policy and the unemployment rate.",Extreme Scope,Assumption,False,True,,gemini-3-flash-preview,2026-11-02T08:45:20.800141+00:00,unreviewed,,
+AI-CLG-79b68cd4,CLAT,CLAT Legal Reasoning,Easy,"Passage: 
+In the law of torts, the doctrine of strict liability establishes that in certain circumstances, a person can be held liable for damages even in the total absence of fault, negligence, or bad intention. Traditionally, a plaintiff must show that the defendant failed to exercise reasonable care. However, strict liability serves as a significant departure from this requirement. The rule is specifically designed to address activities that are inherently dangerous or involve a 'non-natural' use of land. A non-natural use is defined as a special use of the land that increases the danger to the public and is not merely an ordinary or common use of the land. For instance, while domestic water plumbing is considered a natural use, the storage of massive quantities of water or hazardous chemicals in a reservoir is deemed non-natural.
+
+For the rule of strict liability to be triggered, four essential elements must be established. First, the defendant must have brought something onto their land which is 'likely to do mischief' if it escapes. This includes things like fire, gas, electricity, or toxic waste. Second, there must be an 'escape' of that substance from the defendant’s area of control to a place outside their occupation. Third, the use of the land must be 'non-natural.' Finally, the escape must result in damage to the plaintiff.
+
+The most defining characteristic of this rule is the 'no-fault' aspect. The defendant cannot escape liability by demonstrating that they took all possible precautions, employed the best technology, or followed all safety regulations. Even if the escape was the result of an unavoidable accident, the defendant remains liable for the natural consequences of the escape. This policy ensures that the person who profits from a hazardous activity also bears the financial burden of the risks that activity creates, rather than placing that burden on a neighbor who had no part in the activity.
+
+Facts: 
+Mr. Bajaj owns a chemical processing plant. As part of his industrial operations, he stores 50,000 liters of a highly corrosive acid in a massive underground reservoir. This reservoir was constructed using the latest leak-proof technology and is inspected by safety experts every week. Last Tuesday, following a minor earth tremor that was not strong enough to be considered a major natural disaster, the reservoir developed a structural crack. The acid seeped through the soil and contaminated the groundwater of a neighboring farm owned by Mr. Rohan, leading to the destruction of his prize-winning organic crops. Mr. Bajaj refuses to pay compensation, arguing that he had exercised the highest degree of care and the leak was an unavoidable accident.
+
+Question: 
+Is Mr. Bajaj liable to Mr. Rohan for the loss of the crops?","No, because the damage was caused by a tremor, which is an external event beyond Mr. Bajaj's control.","Yes, because he brought a dangerous substance onto his land for a non-natural use, and under strict liability, taking reasonable care is not a defense.","No, because Mr. Bajaj’s weekly inspections and use of latest technology prove that he was not negligent.","Yes, but only if Mr. Rohan can demonstrate that the safety experts were negligent during their last inspection.",B,"The passage defines strict liability as 'no-fault' liability. To solve this, we check the elements: (1) Dangerous thing? Yes, corrosive acid. (2) Non-natural use? Yes, 50,000 liters in a reservoir for industrial use. (3) Escape? Yes, it seeped into the neighbor's land. (4) Damage? Yes, crop destruction. Once these are met, the passage explicitly states that 'taking all possible precautions' or the fact that it was an 'unavoidable accident' is no defense. Therefore, Mr. Bajaj is liable despite his lack of negligence. The 'reading signal' here is the phrase 'defendant cannot escape liability by demonstrating that they took all possible precautions.'",Negligence-based reasoning (thinking fault is required for liability),Tort - Strict Liability,False,True,,gemini-3-flash-preview,2026-11-02T08:45:48.258722+00:00,unreviewed,,
+AI-IQ-024aed4e,IPMAT,IPMAT Quant,Easy,"The vertices of a triangle in a Cartesian plane are $A(2, 4)$, $B(6, 8)$, and $C(x, y)$. If the centroid of the triangle is located at $(5, 6)$, find the value of $x + y$.",11,13,15,33,B,"The centroid $(G)$ of a triangle with vertices $(x_1, y_1), (x_2, y_2),$ and $(x_3, y_3)$ is given by the formula $G = (\frac{x_1 + x_2 + x_3}{3}, \frac{y_1 + y_2 + y_3}{3})$. 
+Step 1: Set up the equation for the x-coordinate: $\frac{2 + 6 + x}{3} = 5 \Rightarrow 8 + x = 15 \Rightarrow x = 7$. 
+Step 2: Set up the equation for the y-coordinate: $\frac{4 + 8 + y}{3} = 6 \Rightarrow 12 + y = 18 \Rightarrow y = 6$. 
+Step 3: Calculate $x + y = 7 + 6 = 13$. 
+Shortcut: Use the property that the sum of coordinates of vertices is 3 times the coordinates of the centroid: $\sum x = 3x_g$ and $\sum y = 3y_g$. Thus, $(x+y) = 3(x_g + y_g) - (x_1 + y_1 + x_2 + y_2) = 3(5+6) - (2+4+6+8) = 33 - 20 = 13$.",Conceptual confusion between centroid and sum of coordinates,Coordinate Geometry - Centroid of a Triangle,True,True,,gemini-3-flash-preview,2026-11-02T08:46:05.812024+00:00,unreviewed,,
+AI-CQ-0ef03b96,CAT,CAT Quant,Moderate,"A vessel contains a mixture of grape juice and soda in the ratio 5:3. When 16 liters of this mixture are replaced with 16 liters of soda, the ratio of grape juice to soda reverses to 3:5. What was the initial quantity of the mixture in the vessel?",24,40,48,64,B,"Let the total volume be V. Initially, grape juice is 5/8 of the total. When 16 liters of mixture are removed, the amount of grape juice remaining is (5/8) * (V - 16). When 16 liters of soda are added, the total volume returns to V, and the final fraction of grape juice is 3/8. Therefore, (5/8)(V - 16) = (3/8)V. Solving for V: 5(V - 16) = 3V => 5V - 80 = 3V => 2V = 80 => V = 40 liters. Shortcut: In a replacement problem where volume is constant, the ratio of the non-added component (grape juice) changes as: Final Concentration = Initial Concentration * (1 - Replaced Volume / Total Volume). Here, 3/8 = 5/8 * (1 - 16/V). This simplifies to 3/5 = 1 - 16/V, or 16/V = 2/5, giving V = 40. Trap (D) comes from the additive fallacy: assuming the 16 liters added corresponds exactly to the 2-part increase in soda (from 3 to 5 parts), implying 2 parts = 16L, so 8 parts = 64L. This ignores that the 16L removed also reduced the soda quantity.",Additive fallacy / Ignoring component removal,Mixtures - Replacement,True,True,,gemini-3-flash-preview,2026-11-02T08:50:59.007689+00:00,unreviewed,,
+AI-IQ-cdd28acd,IPMAT,IPMAT Quant,Moderate,"Let the coordinates of the vertices of a triangle be (a, a²), (b, b²), and (c, c²). If a, b, and c are in an Arithmetic Progression (AP) such that a < b < c and the common difference is 3, what is the area of the triangle in square units?",9,13.5,27,54,C,"Step 1: The area of a triangle with vertices (x1, y1), (x2, y2), (x3, y3) is given by the determinant formula: Area = 0.5 * |x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2)|. Step 2: For any three points on the parabola y = x², the area simplifies to 0.5 * |(a - b)(b - c)(c - a)|. Step 3: Since a, b, c are in AP with common difference d = 3, we have (b - a) = 3, (c - b) = 3, and (c - a) = 6. Substituting these into the formula: Area = 0.5 * |(-3) * (-3) * (6)| = 0.5 * 54 = 27. Shortcut: For any triangle with vertices on y = x² where the x-coordinates form an AP with common difference d, the area is simply d³. Here, 3³ = 27. Main distractor D (54) is the result of calculating the product of differences but forgetting the 0.5 factor in the area formula.",Coefficient omission in area formula,Coordinate Geometry - Area of Triangle,True,True,,gemini-3-flash-preview,2026-11-02T08:52:20.806094+00:00,unreviewed,,
+AI-IV-7aa09af8,IPMAT,IPMAT Verbal,Easy,"Identify the grammatically correct version of the underlined part:
+
+The weather reporter announced that the cyclone **will hit the coast by midnight**, but the storm dissipated harmlessly over the ocean.",will hit the coast by midnight,would hit the coast by midnight,would have hit the coast by midnight,hits the coast by midnight,B,"Grammar shortcut: When the main verb of a sentence is in the past tense ('announced'), the verbs in the subordinate clauses must also shift to a past form. This is known as the 'Sequence of Tenses'. In reported speech or future-in-the-past contexts, the modal 'will' must change to 'would'. Main distractor A ('will hit') is the most common error because students often focus on the future nature of the event rather than the past-tense anchor of the reporting verb. Option C introduces the conditional perfect, which is unnecessarily complex for a simple reported statement, and Option D creates a tense clash between the past 'announced' and the present 'hits'.",Tense persistence trap (failing to shift 'will' to 'would' in a past-tense context),Grammar - Sequence of Tenses,False,True,,gemini-3-flash-preview,2026-11-02T08:52:32.281128+00:00,unreviewed,,
+AI-CD-80d5e6fa,CAT,CAT DILR,Moderate,"Five books of different genres—Mystery (M), Sci-Fi (S), History (H), Poetry (P), and Biography (B)—are arranged on five shelves numbered 1 to 5 from top to bottom. The following conditions apply:
+
+1. Mystery is exactly two shelves above History.
+2. Sci-Fi is not on the top shelf or the bottom shelf.
+3. Poetry is on a shelf with a higher number than Biography.
+4. The shelf immediately below Mystery is not Sci-Fi.
+5. History is not on shelf 3.
+
+Which book is on shelf 4?",Poetry,Mystery,Sci-Fi,History,A,"Step 1: Analyze Rule 1 (M = H - 2) and Rule 5 (H ≠ 3). Possible pairs for (M, H) are (1, 3) and (2, 4) and (3, 5). Rule 5 eliminates (1, 3).
+Step 2: Test Case (M=2, H=4). According to Rule 2, S cannot be on 1 or 5. According to Rule 4, the shelf below M (shelf 3) cannot be S. Since shelves 2 and 4 are already occupied by M and H, there is no valid shelf remaining for S. This case is impossible.
+Step 3: Test Case (M=3, H=5). According to Rule 2, S cannot be 1 or 5. According to Rule 4, the shelf below M (shelf 4) cannot be S. This leaves only shelf 2 for S.
+Step 4: Place remaining books. Shelves 1 and 4 are free for B and P. Rule 3 states Poetry has a higher number than Biography, so P = 4 and B = 1.
+Final Arrangement: 1: Biography, 2: Sci-Fi, 3: Mystery, 4: Poetry, 5: History.
+Reading Signal: 'Intersection of Exclusions'. When Rule 2 and Rule 4 both restricted Sci-Fi, it created a bottleneck that eliminated Case 2.",Overlooking the exclusion constraint (Rule 4),Arrangement - Linear with exclusion rules,True,True,,gemini-3-flash-preview,2026-11-02T08:54:23.751962+00:00,unreviewed,,
+AI-CR-f572ca85,CLAT,CLAT RC,Moderate,"### Principle:
+Generally, a seller is not responsible for any defects in the goods sold or their unsuitability for the buyer's needs. However, an implied warranty of fitness arises if the buyer makes known to the seller the specific purpose for which the goods are required and relies on the seller’s skill or judgment to select them. This implied warranty does not apply if the buyer purchases an article under its patent or other trade name, even if they mention the purpose for which they want it.
+
+### Fact Situation:
+Anil wants to buy a water purifier that can specifically filter out 'arsenic' contamination. 
+
+**Scenario 1:** Anil tells the shopkeeper, ""I need a purifier that removes arsenic; please recommend one."" The shopkeeper recommends the 'Puro-Max', which Anil buys. The Puro-Max fails to remove arsenic.
+
+**Scenario 2:** Anil tells the shopkeeper, ""I need a purifier for arsenic removal. Give me the 'Aqua-Guard 200' model."" The shopkeeper provides it. The Aqua-Guard 200 also fails to remove arsenic.
+
+Which of the following is correct?","The shopkeeper is liable in Scenario 1 because Anil relied on the shopkeeper's skill, but not in Scenario 2 because Anil asked for a trade name.",The shopkeeper is liable in both scenarios because Anil clearly communicated the specific purpose (arsenic removal) in both instances.,The shopkeeper is not liable in either scenario because the general rule is that the seller is not responsible for the suitability of goods.,The shopkeeper is liable in Scenario 2 because the shopkeeper knew the purpose and should have warned Anil if the 'Aqua-Guard 200' was unsuitable.,A,"The question tests the application of a rule followed by an exception. In Scenario 1, Anil satisfies both conditions for an implied warranty: he states the purpose ('arsenic removal') and relies on the seller's judgment ('please recommend one'). Thus, the seller is liable. In Scenario 2, although he states the purpose, he specifies a trade name ('Aqua-Guard 200'). The principle explicitly states that the implied warranty does not apply when an article is purchased under its trade name, regardless of whether the purpose was mentioned. Therefore, the seller is not liable in Scenario 2.",Overlooking the Exception,Legal RC - Caveat Emptor and Trade Name Exception,False,True,,gemini-3-flash-preview,2026-11-02T08:54:35.241228+00:00,unreviewed,,

@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-11-01T09:03:26.281412+00:00",
+    "updated_at": "2026-11-02T09:11:32.516011+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -3254,48 +3254,592 @@
       "review_status": "unreviewed",
       "verified_computed": false,
       "verified_independent": true
+    },
+    {
+      "question_text": "What is the sum of the infinite series $S = \\frac{1}{1 \\cdot 4 \\cdot 7} + \\frac{1}{4 \\cdot 7 \\cdot 10} + \\frac{1}{7 \\cdot 10 \\cdot 13} + \\dots$?",
+      "options": {
+        "A": "1/24",
+        "B": "1/12",
+        "C": "1/18",
+        "D": "1/48"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Shortcut: For a telescoping series where each term has a denominator with 3 factors in AP (common difference $d = 3$), split the general term using the difference between the outer factors: $a_{n+2} - a_n = 2d = 6$.\n\nStep-by-step:\n1. The $n$-th term is $T_n = \\frac{1}{(3n-2)(3n+1)(3n+4)}$.\n2. Multiply and divide by the outer difference $(3n+4) - (3n-2) = 6$:\n   $T_n = \\frac{1}{6} \\left[ \\frac{(3n+4) - (3n-2)}{(3n-2)(3n+1)(3n+4)} \\right] = \\frac{1}{6} \\left[ \\frac{1}{(3n-2)(3n+1)} - \\frac{1}{(3n+1)(3n+4)} \\right]$.\n3. Summing from $n=1$ to $\\infty$, all intermediate terms telescope to 0:\n   $S = \\frac{1}{6} \\left( \\frac{1}{1 \\cdot 4} - \\lim_{n \\to \\infty} \\frac{1}{(3n+1)(3n+4)} \\right) = \\frac{1}{6} \\times \\frac{1}{4} = \\frac{1}{24}$.\n\nMain distractor B (1/12) occurs when a student mistakenly uses the single common difference $d = 3$ instead of the outer difference $2d = 6$, calculating $\\frac{1}{3} \\times \\frac{1}{4} = \\frac{1}{12}$.",
+      "trap_type": "Using adjacent difference instead of outer difference in partial fractions",
+      "concept_tag": "Sequences & Series - Telescoping Infinite Sums",
+      "verify_code": "from fractions import Fraction\nS = sum(Fraction(1, (3*n - 2)*(3*n + 1)*(3*n + 4)) for n in range(1, 1000))\nanswer = 'A' if abs(S - Fraction(1, 24)) < Fraction(1, 1000000) else 'B'",
+      "id": "AI-IQ-b8fbdfd3",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "b8fbdfd31624a2d589087c9fdfd288d2e2b52b593afed096a06717a02286dcf4",
+      "created_at": "2026-11-02T08:38:57.743775+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "To qualify for a senior research fellowship at the Institute of Advanced Energy, an applicant must have published at least three peer-reviewed papers on clean technology. The selection committee chairperson asserts that implementing this rule will guarantee that every appointed fellow possesses strong grant-writing skills, because writing peer-reviewed papers requires synthesizing complex data and crafting persuasive academic arguments.\n\nWhich of the following is an assumption on which the chairperson's argument depends?",
+      "options": {
+        "A": "Publishing peer-reviewed papers is the only method through which a researcher can develop strong grant-writing skills.",
+        "B": "Candidates who meet the three-paper requirement performed the synthesis and persuasive drafting themselves, rather than relying on co-authors.",
+        "C": "The Institute of Advanced Energy will receive a sufficient volume of applications from researchers who meet the publication standard.",
+        "D": "Strong grant-writing skills are more critical to a fellow's success than their ability to conduct laboratory experiments."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To identify a required assumption, we bridge the logical gap between the premise and the conclusion using the Negation Test.\n\nPremise: Writing peer-reviewed papers requires synthesizing complex data and crafting persuasive arguments.\nConclusion: Requiring three published papers guarantees that every appointed fellow possesses strong grant-writing skills.\n\nGap: The chairperson assumes that having one's name on published papers means the candidate personally performed the required writing and synthesis.\n\nApplying the Negation Test to (B):\n'Candidates who meet the three-paper requirement did NOT perform the synthesis and persuasive drafting themselves, but relied on co-authors.'\nIf this negation is true, a fellow could meet the publication requirement without personally possessing any writing or synthesis skills, thereby completely destroying the chairperson's claim of a 'guarantee'. Thus, (B) is essential.\n\nWhy Main Distractor (A) is wrong:\nOption A presents an exaggerated 'only way' claim, confusing a sufficient condition with a necessary one. The chairperson only needs paper-writing to be sufficient to indicate grant-writing skills; it does not need to be the sole method. Negating A ('There are other ways to learn grant writing') does not invalidate the conclusion that this specific rule guarantees those skills.",
+      "trap_type": "Necessary vs. Sufficient confusion ('Only way' trap)",
+      "concept_tag": "Assumption - Negation Test",
+      "id": "AI-CLR-a3590512",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a3590512e06a3adb67efce2ae4a2c0263d9e5087711e4e1fb61469c3885d031c",
+      "created_at": "2026-11-02T08:39:19.791326+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "If the polynomial $p(x) = x^4 - 12x^3 + ax^2 + bx + 81 = 0$ has four positive real roots, what is the value of $a + b$?",
+      "options": {
+        "A": "54",
+        "B": "-54",
+        "C": "162",
+        "D": "-90"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Let the four positive real roots be $r_1, r_2, r_3, r_4 > 0$.\n2. By Vieta's formulas, the sum of the roots is $r_1 + r_2 + r_3 + r_4 = 12$, and the product of the roots is $r_1 r_2 r_3 r_4 = 81$.\n3. Calculate the Arithmetic Mean (AM) and Geometric Mean (GM) of the four roots:\n   $$AM = \\frac{r_1 + r_2 + r_3 + r_4}{4} = \\frac{12}{4} = 3$$\n   $$GM = \\sqrt[4]{r_1 r_2 r_3 r_4} = \\sqrt[4]{81} = 3$$\n4. Since $AM = GM = 3$, the equality condition for the AM-GM inequality holds, which means all four roots must be equal: $r_1 = r_2 = r_3 = r_4 = 3$.\n5. Expanding $(x - 3)^4$ using the Binomial Theorem gives:\n   $$(x - 3)^4 = x^4 - 4(3)x^3 + 6(3^2)x^2 - 4(3^3)x + 3^4 = x^4 - 12x^3 + 54x^2 - 108x + 81$$\n6. Matching coefficients gives $a = 54$ and $b = -108$.\n7. Therefore, $a + b = 54 + (-108) = -54$.\n\nShortcut / Reading Signal:\nWhen given the sum and product of positive roots in a polynomial, always test for $AM = GM$. If $AM = GM$, all roots are equal, immediately giving you the factored form $(x - r)^n$.\n\nMain Distractor Analysis:\nOption C (162) is the main distractor trap. It occurs when a student correctly identifies $a = 54$ and $|b| = 108$, but fails to account for the alternating signs in the binomial expansion of $(x - 3)^4$, erroneously setting $b = +108$ and computing $54 + 108 = 162$.",
+      "trap_type": "Sign-flip oversight in expansion",
+      "concept_tag": "Algebra - polynomials and AM-GM inequality",
+      "verify_code": "a = 54\nb = -108\nanswer = a + b",
+      "id": "AI-CQ-69b52be8",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "69b52be834c0ea0733c82ff8e3bbf97abf415db0c220152d2f5fd08b7440052e",
+      "created_at": "2026-11-02T08:39:44.889738+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Four consultants—A, B, C, and D—worked on a 4-day project under the following conditions:\n- On each day, exactly 3 consultants worked and 1 consultant took a day off.\n- Over the 4 days, each consultant worked for exactly 3 days (and took a day off on exactly 1 day).\n- Each consultant has a constant daily fee.\n- The total daily payments made to the consultants working on each day were as follows:\n\n| Day | Total Daily Payment ($) |\n|---|---|\n| Day 1 | 110 |\n| Day 2 | 130 |\n| Day 3 | 140 |\n| Day 4 | 160 |\n\n- Consultant A took a day off on Day 1.\n- Consultant B took a day off on Day 4.\n- Consultant C's daily fee is $10 higher than Consultant D's daily fee.\n\nWhich consultant took a day off on Day 3?",
+      "options": {
+        "A": "Consultant A",
+        "B": "Consultant B",
+        "C": "Consultant C",
+        "D": "Consultant D"
+      },
+      "correct_answer": "D",
+      "pedagogical_explanation": "Step 1 (Global Conservation check): Sum the daily payments across all 4 days: 110 + 130 + 140 + 160 = $540. Since each consultant works on 3 days, 3 × (Rate_A + Rate_B + Rate_C + Rate_D) = 540, which yields Rate_A + Rate_B + Rate_C + Rate_D = $180.\n\nStep 2 (Fee of absent consultant): On any given day k, Daily Payment = Total Sum (180) - Fee of person off on day k. Therefore, Fee(off on day k) = 180 - Daily Payment(k):\n- Day 1 off fee = 180 - 110 = $70 (Consultant A, so Rate_A = $70)\n- Day 2 off fee = 180 - 130 = $50\n- Day 3 off fee = 180 - 140 = $40\n- Day 4 off fee = 180 - 160 = $20 (Consultant B, so Rate_B = $20)\n\nStep 3 (Assign remaining fees): The unassigned off-day fees for Days 2 and 3 are $50 and $40. We are given Rate_C - Rate_D = 10, so Rate_C = $50 and Rate_D = $40.\n\nStep 4 (Match with Day 3): The consultant off on Day 3 has a fee of $40, which corresponds to Consultant D.\n\nShortcut/Reading Signal: Recognizing 'Complementary sum conservation' (Total Daily Payment = Total Fee Pool - Fee of Absent Consultant) immediately converts a system of equations into direct subtraction, taking under 90 seconds.\n\nTrap (C): Solvers often assume that a higher daily payment on Day 3 ($140) compared to Day 2 ($130) implies the person absent on Day 3 has a higher daily fee ($50, i.e., Consultant C). This inverted logic overlooks the fact that higher total payments mean a smaller fee was deducted.",
+      "trap_type": "Inverted relationship error",
+      "concept_tag": "Scheduling & Allocation - Complementary Sum Invariant",
+      "verify_code": "import itertools\n\npayments = {1: 110, 2: 130, 3: 140, 4: 160}\nanswers = set()\n\nfor off_days in itertools.permutations([1, 2, 3, 4]):\n    # off_days tuple: (off_day_A, off_day_B, off_day_C, off_day_D)\n    if off_days[0] != 1 or off_days[1] != 4:\n        continue\n    r = {\n        'A': 180 - payments[off_days[0]],\n        'B': 180 - payments[off_days[1]],\n        'C': 180 - payments[off_days[2]],\n        'D': 180 - payments[off_days[3]]\n    }\n    if r['C'] == r['D'] + 10:\n        day3_off = ['A', 'B', 'C', 'D'][off_days.index(3)]\n        answers.add(day3_off)\n\nanswer = next(iter(answers))",
+      "id": "AI-CD-b980eb16",
+      "topic": "CAT DILR",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "b980eb163fba3b0528776ac9a5126f1eee43b258fc1dc7748102c9dec1437de7",
+      "created_at": "2026-11-02T08:41:53.607996+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "A municipal audit in City Y revealed that 85% of small businesses that declared bankruptcy last year operated out of leased commercial properties rather than self-owned premises. Citing this statistic, the city council concluded that escalating commercial rents are the principal cause of small business failure in City Y, and proposed a statutory cap on rent increases to stem further bankruptcies.\n\nWhich of the following is a necessary assumption on which the city council's argument depends?",
+      "options": {
+        "A": "Small businesses operating out of self-owned premises are less likely to fail due to non-rental operational expenses than those operating out of leased properties.",
+        "B": "The proportion of all small businesses operating in City Y that occupy leased premises is not substantially greater than 85%.",
+        "C": "Property owners in City Y will not convert commercial spaces into residential units if statutory limits are placed on rent increases.",
+        "D": "High commercial rent is the single largest expense category for the majority of small businesses operating out of leased premises in City Y."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Identify Premise and Conclusion.\n- Premise: 85% of bankrupt small businesses leased their premises.\n- Conclusion: Rent increases are the principal cause of small business bankruptcies.\n\nStep 2: Recognize the Reading Signal / Logical Gap (Baseline Fallacy).\nThe argument assumes that an 85% representation among bankrupt businesses implies leasing is a risk factor. However, without knowing the baseline proportion of ALL small businesses that lease, this statistic is logically incomplete. If 95% of ALL small businesses in City Y lease, then leased businesses are actually under-represented among bankruptcies (85% < 95%), meaning leasing is actually safer than owning!\n\nStep 3: Apply the Negation Test to Option B.\n- Negated Option B: 'The proportion of all small businesses in City Y that lease premises IS substantially greater than 85% (e.g., 95%).'\n- Result: If 95% of all businesses lease, the audit finding (85%) proves that non-leasing businesses fail at a higher rate relative to their market share. The council's core claim that rent is driving failure collapses. Hence, Option B is a necessary assumption.\n\nStep 4: Explain the Main Distractor (Option D).\nOption D relies on the 'Exaggerated Standard / Extremeness Trap'. Hasty solvers think that for rent to be the primary driver of failure, it must be the single largest line-item expense. However, even if payroll or inventory is larger than rent, rapid rent increases can still be the marginal factor pushing businesses past profitability. Negating D ('Rent is not the single largest expense') does not break the argument, so D is not necessary.",
+      "trap_type": "Baseline Fallacy / Exaggerated Standard Trap",
+      "concept_tag": "Critical Reasoning - Necessary Assumption",
+      "id": "AI-CLR-c2768b39",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "CAT-Level",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c2768b393ccc0eaed6792757e0b69ffde11a6f6058f2dee1d72c617870f48253",
+      "created_at": "2026-11-02T08:42:22.336792+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "How many ordered triples of positive integers $(a, b, c)$ satisfy the following system of equations simultaneously?\n$$\\text{lcm}(a, b) = 180$$\n$$\\text{lcm}(b, c) = 450$$\n$$\\text{lcm}(c, a) = 900$$",
+      "options": {
+        "A": "28",
+        "B": "63",
+        "C": "84",
+        "D": "171"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Prime factorize the three given LCM values:\n- $180 = 2^2 \\cdot 3^2 \\cdot 5^1$\n- $450 = 2^1 \\cdot 3^2 \\cdot 5^2$\n- $900 = 2^2 \\cdot 3^2 \\cdot 5^2$\n\nLet $a = 2^{a_1} 3^{a_2} 5^{a_3}$, $b = 2^{b_1} 3^{b_2} 5^{b_3}$, and $c = 2^{c_1} 3^{c_2} 5^{c_3}$. Since $\\text{lcm}(x, y) = 2^{\\max(x_1, y_1)} 3^{\\max(x_2, y_2)} 5^{\\max(x_3, y_3)}$, we can analyze each prime exponent independently.\n\nStep 2: Exponents of 2:\n- $\\max(a_1, b_1) = 2$\n- $\\max(b_1, c_1) = 1 \\implies b_1 \\le 1$ and $c_1 \\le 1$\n- $\\max(c_1, a_1) = 2$\nSince $b_1 \\le 1$, $\\max(a_1, b_1) = 2$ forces $a_1 = 2$. With $a_1 = 2$, $\\max(c_1, a_1) = 2$ is automatically satisfied. The condition $\\max(b_1, c_1) = 1$ with $b_1, c_1 \\in \\{0, 1\\}$ allows 3 valid pairs for $(b_1, c_1)$: $(1,0), (0,1), (1,1)$. Thus, there are $1 \\times 3 = 3$ valid triples $(a_1, b_1, c_1)$.\n\nStep 3: Exponents of 3:\n- $\\max(a_2, b_2) = 2$\n- $\\max(b_2, c_2) = 2$\n- $\\max(c_2, a_2) = 2$\nFor the maximum of EVERY pair to be 2, at least TWO of the three exponents $(a_2, b_2, c_2)$ must equal 2 (and none can exceed 2).\n- Case (i): All three equal 2 $\\rightarrow (2, 2, 2)$ gives 1 solution.\n- Case (ii): Exactly two equal 2 $\\rightarrow \\binom{3}{2} = 3$ ways to choose which two are 2, and 2 choices (0 or 1) for the remaining exponent $\\rightarrow 3 \\times 2 = 6$ solutions.\nTotal valid triples for prime 3 = $1 + 6 = 7$.\n\nStep 4: Exponents of 5:\n- $\\max(a_3, b_3) = 1 \\implies a_3 \\le 1$ and $b_3 \\le 1$\n- $\\max(b_3, c_3) = 2$\n- $\\max(c_3, a_3) = 2$\nSince $a_3 \\le 1$, $\\max(c_3, a_3) = 2$ forces $c_3 = 2$. With $c_3 = 2$, $\\max(b_3, c_3) = 2$ is automatically satisfied. The condition $\\max(a_3, b_3) = 1$ with $a_3, b_3 \\in \\{0, 1\\}$ allows 3 valid pairs $(a_3, b_3)$: $(1,0), (0,1), (1,1)$. Thus, there are $3 \\times 1 = 3$ valid triples $(a_3, b_3, c_3)$.\n\nStep 5: Total ordered triples:\nBy the multiplication principle, Total = $3 \\times 7 \\times 3 = 63$.\n\nShortcut/Signal: For simultaneous LCM systems, split into individual prime components and express conditions using $\\max(x_i, y_i) = k$.\n\nMain Distractor Error (Option D - 171): Solvers incorrectly assume that for prime 3, the condition requires only \"at least one exponent equals 2\" ($3^3 - 2^3 = 19$). However, if only ONE exponent is 2 (e.g., $a_2 = 2, b_2 = 1, c_2 = 0$), then $\\max(b_2, c_2) = 1 \\neq 2$, violating $\\text{lcm}(b, c) = 450$. At least two exponents must be 2.",
+      "trap_type": "Miscounting valid exponent combinations by requiring only one maximum instead of pair-wise maximums",
+      "concept_tag": "Number Theory - LCM equations and prime factorization",
+      "verify_code": "import math\ndivs = [d for d in range(1, 901) if 900 % d == 0]\nlcm = lambda x, y: (x * y) // math.gcd(x, y)\nsol_count = 0\nfor a in divs:\n    for b in divs:\n        if lcm(a, b) != 180:\n            continue\n        for c in divs:\n            if lcm(b, c) == 450 and lcm(c, a) == 900:\n                sol_count += 1\nanswer = {28: 'A', 63: 'B', 84: 'C', 171: 'D'}[sol_count]",
+      "id": "AI-IQ-a13d6ad3",
+      "topic": "IPMAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "a13d6ad36f3e22982a22417fcf751bd7c2588bdab064c49051774ea8bd570ca6",
+      "created_at": "2026-11-02T08:43:06.877146+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage:\nStandard psychometric testing routinely diagnoses cognitive decline in older adults based on reduced speed in context-free recall tasks. However, in complex real-world environments, decision quality depends far less on raw processing speed than on the rapid recognition of structural patterns—a capacity built on accumulated experiential schemas. By equating cognitive utility with the rapid manipulation of novel, context-free data, standard diagnostics mistake a shift in processing strategy for a loss of intellectual function. Consequently, these tests unfairly penalize older adults whose cognitive architecture has optimized for relevance rather than raw velocity.\n\nThe standard psychometric tests criticized by the author rely on which of the following underlying assumptions?",
+      "options": {
+        "A": "Raw processing speed on context-free tasks is a valid proxy for overall cognitive utility.",
+        "B": "The accumulation of experiential schemas actively impairs an individual's ability to recall novel information.",
+        "C": "Older adults rely on pattern recognition primarily to compensate for irreversible neurological loss.",
+        "D": "Standardized quantitative metrics are fundamentally incapable of measuring real-world decision quality."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Reading signals: Look for the author's identification of the tests' leap in logic: 'By equating cognitive utility with the rapid manipulation of novel, context-free data, standard diagnostics mistake...'\n\nStep-by-step logic:\nTo criticize the tests for equating context-free processing speed with cognitive utility, the author must establish that the tests implicitly presuppose a link between the two. If speed on context-free tasks were NOT assumed to represent overall cognitive utility, the tests would not use speed as a metric to diagnose general 'cognitive decline.' Thus, Option A is the required underlying assumption.\n\nMain Distractor Analysis:\nOption C is a classic 'Plausible Medical/Scientific Narrative Trap.' A strong but hasty solver might pick C because it addresses cognitive strategy and sounds like an explanation for aging. However, C presents an assumption about *neurological loss* that the standard tests do not make—the passage asserts that tests ignore pattern recognition entirely, rather than viewing it as a compensatory loss mechanism.\n\nWhy B and D are wrong:\n- B incorrectly claims that schemas *actively impair* recall. The passage says cognitive architecture optimizes for relevance, not that schemas cause functional damage.\n- D represents the exact opposite of what the test-makers believe. Test-makers assume quantitative metrics *are* capable, whereas D asserts they are incapable.",
+      "trap_type": "Plausible external narrative (C) vs. core logical premise of the framework (A)",
+      "concept_tag": "Critical Reasoning - Underlying Assumption",
+      "verify_code": "",
+      "id": "AI-IV-d128a70e",
+      "topic": "IPMAT Verbal",
+      "difficulty": "CAT-Level",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d128a70e68907bcdb14c25e9ceb32233ae7bca2dfe6d206c405595caa897d141",
+      "created_at": "2026-11-02T08:43:25.104334+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "The difference between the compound interest (compounded annually) and the simple interest on a principal amount for 2 years at 15% per annum is ₹180. What is the principal amount?",
+      "options": {
+        "A": "₹6,000",
+        "B": "₹8,000",
+        "C": "₹12,000",
+        "D": "₹9,000"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. For 2 years, the difference between Compound Interest (CI) and Simple Interest (SI) is simply the interest earned during the second year on the first year's interest.\n2. Let the interest for year 1 be I. Interest on I at 15% per annum is given as ₹180:\n   0.15 * I = 180 => I = ₹1,200.\n3. Since I is the 15% interest earned on the principal P in year 1:\n   0.15 * P = 1,200 => P = ₹8,000.\n\nShortcut:\nApply the direct 2-year difference formula: D = P * (R/100)^2\n180 = P * (15/100)^2\n180 = P * (9/400)\nP = (180 * 400) / 9 = 20 * 400 = ₹8,000.\n\nMain Distractor Trap:\nOption C (₹12,000) or ₹1,200 occurs when students mistake the first year's interest (₹1,200) for the principal itself, or equate ₹180 directly to 15% of the principal (getting 1,200) due to confusing interest-on-interest with direct principal interest.",
+      "trap_type": "Confusing interest-on-interest with direct principal interest",
+      "concept_tag": "Interest - CI and SI Difference",
+      "verify_code": "D = 180\nR = 15\nP = D / ((R / 100) ** 2)\nanswer = int(round(P))",
+      "id": "AI-CQ-277c0862",
+      "topic": "CAT Quant",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "277c0862d755f22085efabbea3420f3e6e351f0abf6bfd3896006adb74f3ee7a",
+      "created_at": "2026-11-02T08:43:49.374711+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Long before modern refrigeration, fermentation served as one of humanity’s most vital technologies for survival. By harnessing beneficial bacteria and fungi, early agricultural societies could transform highly perishable foods—such as milk, cabbage, and fresh meat—into shelf-stable staples like cheese, sauerkraut, and cured meats. This biological transformation inhibited the growth of dangerous pathogens through acidic or salty environments, effectively locking in nutrients for months. While contemporary consumers largely appreciate fermented foods for their complex culinary flavors or probiotic health benefits, historical reliance on fermentation was fundamentally economic and existential. Without it, communities faced severe food insecurity during winter months or crop failures. Thus, fermentation was less an artistic culinary choice than an essential strategy for long-term food preservation and human resilience.\n\nWhich of the following best captures the main argument of the passage?",
+      "options": {
+        "A": "Early societies developed fermentation mainly as a culinary art to improve the flavor of basic foods.",
+        "B": "Fermentation historically functioned primarily as an essential survival strategy for food preservation.",
+        "C": "Modern consumers understand the health benefits of fermentation better than ancient societies did.",
+        "D": "Fermentation was the single most effective method for completely eliminating all foodborne pathogens."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step 1: Identify the main contrast signal in the passage ('While contemporary consumers... historical reliance... was fundamentally economic and existential' and 'less an artistic culinary choice than an essential strategy').\nStep 2: Synthesize the core thesis: Fermentation was primarily a survival mechanism to preserve food and prevent starvation, not just a culinary preference.\nStep 3: Evaluate the options against this core thesis.\n- Option B accurately synthesizes the passage's thesis.\n- Option A is a REVERSAL: The passage explicitly states that fermentation was 'less an artistic culinary choice' and was driven by survival, not flavor enhancement.\n- Option C is OUT OF SCOPE: The passage contrasts why modern consumers use fermented foods (flavors/probiotics) with why historical societies did (survival), but it never compares their depth of understanding.\n- Option D uses EXTREME SCOPE: The words 'single most effective' and 'all foodborne pathogens' exaggerate the passage's claim that fermentation 'inhibited the growth of dangerous pathogens'.\n\nThe main distractor is (A) because readers who confuse modern appreciation (flavor/art) with historical origin fall into the reversal trap.",
+      "trap_type": "Reversal",
+      "concept_tag": "RC - main idea",
+      "id": "AI-CVR-9a3bbd82",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9a3bbd82bb2920d882fa7ff084ce8907a88675d5a0e3addee226696b29825600",
+      "created_at": "2026-11-02T08:44:07.553170+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Four friends — Akash, Bhanu, Chetan, and Deepa — are sitting in a row of four seats numbered 1 to 4 from left to right, all facing North.\n\n- Akash is sitting immediately to the left of Bhanu.\n- Chetan is not sitting on Seat 1.\n- Deepa is sitting on Seat 4.\n\nWho is sitting on Seat 2?",
+      "options": {
+        "A": "Akash",
+        "B": "Bhanu",
+        "C": "Chetan",
+        "D": "Deepa"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "1. Deepa is fixed on Seat 4: [ _, _, _, Deepa ].\n2. Akash is immediately to the left of Bhanu, so they form a block [Akash, Bhanu] occupying consecutive seats.\n3. The block can only occupy (Seat 1, Seat 2) or (Seat 2, Seat 3):\n   - If [Akash, Bhanu] is on (Seat 2, Seat 3), then Chetan must sit on Seat 1. However, Clue 2 states Chetan cannot sit on Seat 1. This case is invalid.\n   - If [Akash, Bhanu] is on (Seat 1, Seat 2), then Chetan sits on Seat 3. This satisfies all conditions.\n4. Therefore, the unique arrangement from Seat 1 to 4 is: Akash, Bhanu, Chetan, Deepa. Bhanu sits on Seat 2.\n\nReading Signal / Shortcut: Negative constraints ('Chetan is NOT on Seat 1') act as fast elimination filters once fixed blocks are tested.\n\nMain Distractor (A): Akash is placed on Seat 2 if the negative constraint is ignored and Chetan is mistakenly placed on Seat 1.",
+      "trap_type": "Ignoring a negative constraint",
+      "concept_tag": "Linear Arrangement - Elimination and Constraints",
+      "verify_code": "import itertools\n\npeople = ['Akash', 'Bhanu', 'Chetan', 'Deepa']\nsolutions = []\nfor p in itertools.permutations(people):\n    if p[3] == 'Deepa' and p[0] != 'Chetan':\n        if p.index('Akash') + 1 == p.index('Bhanu'):\n            solutions.append(p)\n\nanswers = {s[1] for s in solutions}\nanswer = 'Bhanu'",
+      "id": "AI-CD-6dd1cc16",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "6dd1cc16f9cb333b31c14d4d35a7cf0463a3f5488716d95153937432857c5648",
+      "created_at": "2026-11-02T08:44:33.504755+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "Passage: Under the doctrine of frustration, a contract becomes void and unenforceable if, after its formation, an unforeseen event beyond the control of both parties makes the performance of the contract physically or legally impossible. However, mere commercial unprofitability, increased difficulty, or higher cost of performance does not frustrate a contract.\n\nFact Situation: Rohan contracts to hire Vikram's hall for a three-day art exhibition. A day before the event, an accidental electrical fire completely destroys the hall. Rohan sues Vikram for failure to provide the venue. Applying ONLY the principle given above:",
+      "options": {
+        "A": "Vikram is liable for breach of contract because he promised to provide the venue and failed to perform.",
+        "B": "The contract is frustrated and void because the destruction of the hall made performance physically impossible, so Vikram is not liable.",
+        "C": "The contract is not frustrated because Vikram could have rebuilt or repaired the hall at a higher cost.",
+        "D": "The contract remains valid, but Rohan must pay Vikram damages for the loss of his hall."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "1. Step-by-step application: The principle states that an unforeseen event beyond both parties' control that makes performance physically impossible renders the contract frustrated and void. Here, the accidental fire destroyed the hall, making performance physically impossible. Thus, the contract is void and Vikram is not liable.\n2. Reading signal: Match 'physically impossible' from the principle directly to 'accidental fire completely destroys the hall' in the facts.\n3. Main distractor: Option A. This trap relies on the 'absolute performance fallacy'—assuming that failure to fulfill a promise automatically results in liability, ignoring the frustration defense provided in the passage.",
+      "trap_type": "Absolute performance fallacy",
+      "concept_tag": "Legal RC - Frustration of Contract",
+      "id": "AI-CR-eaea3767",
+      "topic": "CLAT RC",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "eaea3767638f0039edd373a54f17940f2c9f7cb1f100b54cfe8b8610ee712ce3",
+      "created_at": "2026-11-02T08:44:57.382456+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "The government has recently announced a scheme to provide substantial tax breaks to any technology company that establishes a manufacturing unit in a rural district. The government claims that this initiative will lead to a significant decrease in the unemployment rate within these rural districts.\n\nWhich of the following is an assumption required by the government’s argument?",
+      "options": {
+        "A": "Most rural residents currently travel to urban centers to find employment in the technology sector.",
+        "B": "The technology companies setting up these units will hire a significant portion of their workforce from the local rural population.",
+        "C": "Every technology company in the country is planning to expand its manufacturing operations in the next year.",
+        "D": "The tax breaks offered are the largest financial incentives the government has ever provided to the private sector."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve for a necessary assumption, we use the Negation Test. The argument's logic is: Tax Breaks -> Units in Rural Districts -> Lower Rural Unemployment. For this to hold, there must be a link between the units being built and the local people getting jobs. If we negate Option B ('The companies will NOT hire a significant portion of their workforce from the local population'), the argument falls apart: even if the units are built, they might bring in workers from cities, leaving rural unemployment unchanged. Option A is a premise that might make the policy more desirable, but the argument doesn't 'depend' on it. Option C is 'Extreme'—the argument doesn't need 'every' company to move for the plan to work. Option D is irrelevant to the causal link between the policy and the unemployment rate.",
+      "trap_type": "Extreme Scope",
+      "concept_tag": "Assumption",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CLR-da6f84d9",
+      "topic": "CLAT Logical Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "da6f84d9279320d7958a5e3720ac06e890713fe3808b6970387cd75c2adbe62d",
+      "created_at": "2026-11-02T08:45:20.800141+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: \nIn the law of torts, the doctrine of strict liability establishes that in certain circumstances, a person can be held liable for damages even in the total absence of fault, negligence, or bad intention. Traditionally, a plaintiff must show that the defendant failed to exercise reasonable care. However, strict liability serves as a significant departure from this requirement. The rule is specifically designed to address activities that are inherently dangerous or involve a 'non-natural' use of land. A non-natural use is defined as a special use of the land that increases the danger to the public and is not merely an ordinary or common use of the land. For instance, while domestic water plumbing is considered a natural use, the storage of massive quantities of water or hazardous chemicals in a reservoir is deemed non-natural.\n\nFor the rule of strict liability to be triggered, four essential elements must be established. First, the defendant must have brought something onto their land which is 'likely to do mischief' if it escapes. This includes things like fire, gas, electricity, or toxic waste. Second, there must be an 'escape' of that substance from the defendant’s area of control to a place outside their occupation. Third, the use of the land must be 'non-natural.' Finally, the escape must result in damage to the plaintiff.\n\nThe most defining characteristic of this rule is the 'no-fault' aspect. The defendant cannot escape liability by demonstrating that they took all possible precautions, employed the best technology, or followed all safety regulations. Even if the escape was the result of an unavoidable accident, the defendant remains liable for the natural consequences of the escape. This policy ensures that the person who profits from a hazardous activity also bears the financial burden of the risks that activity creates, rather than placing that burden on a neighbor who had no part in the activity.\n\nFacts: \nMr. Bajaj owns a chemical processing plant. As part of his industrial operations, he stores 50,000 liters of a highly corrosive acid in a massive underground reservoir. This reservoir was constructed using the latest leak-proof technology and is inspected by safety experts every week. Last Tuesday, following a minor earth tremor that was not strong enough to be considered a major natural disaster, the reservoir developed a structural crack. The acid seeped through the soil and contaminated the groundwater of a neighboring farm owned by Mr. Rohan, leading to the destruction of his prize-winning organic crops. Mr. Bajaj refuses to pay compensation, arguing that he had exercised the highest degree of care and the leak was an unavoidable accident.\n\nQuestion: \nIs Mr. Bajaj liable to Mr. Rohan for the loss of the crops?",
+      "options": {
+        "A": "No, because the damage was caused by a tremor, which is an external event beyond Mr. Bajaj's control.",
+        "B": "Yes, because he brought a dangerous substance onto his land for a non-natural use, and under strict liability, taking reasonable care is not a defense.",
+        "C": "No, because Mr. Bajaj’s weekly inspections and use of latest technology prove that he was not negligent.",
+        "D": "Yes, but only if Mr. Rohan can demonstrate that the safety experts were negligent during their last inspection."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The passage defines strict liability as 'no-fault' liability. To solve this, we check the elements: (1) Dangerous thing? Yes, corrosive acid. (2) Non-natural use? Yes, 50,000 liters in a reservoir for industrial use. (3) Escape? Yes, it seeped into the neighbor's land. (4) Damage? Yes, crop destruction. Once these are met, the passage explicitly states that 'taking all possible precautions' or the fact that it was an 'unavoidable accident' is no defense. Therefore, Mr. Bajaj is liable despite his lack of negligence. The 'reading signal' here is the phrase 'defendant cannot escape liability by demonstrating that they took all possible precautions.'",
+      "trap_type": "Negligence-based reasoning (thinking fault is required for liability)",
+      "concept_tag": "Tort - Strict Liability",
+      "verify_code": "def check_liability():\n    # Elements of Strict Liability from the passage\n    dangerous_thing = True\n    non_natural_use = True\n    escape = True\n    damage_caused = True\n    \n    # Defense attempted by Mr. Bajaj\n    took_all_care = True\n    no_negligence = True\n    \n    # Logic based on strict liability rule in the passage\n    if dangerous_thing and non_natural_use and escape and damage_caused:\n        # The passage says even if care was taken, liability remains\n        liable = True\n    else:\n        liable = False\n        \n    return 'B' if liable else 'C'\n\nanswer = check_liability()",
+      "id": "AI-CLG-79b68cd4",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "79b68cd485ad5d44118bc7f02157177bb18e2b00e4c906c67b72a0be171fe405",
+      "created_at": "2026-11-02T08:45:48.258722+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "The vertices of a triangle in a Cartesian plane are $A(2, 4)$, $B(6, 8)$, and $C(x, y)$. If the centroid of the triangle is located at $(5, 6)$, find the value of $x + y$.",
+      "options": {
+        "A": "11",
+        "B": "13",
+        "C": "15",
+        "D": "33"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The centroid $(G)$ of a triangle with vertices $(x_1, y_1), (x_2, y_2),$ and $(x_3, y_3)$ is given by the formula $G = (\\frac{x_1 + x_2 + x_3}{3}, \\frac{y_1 + y_2 + y_3}{3})$. \r\nStep 1: Set up the equation for the x-coordinate: $\\frac{2 + 6 + x}{3} = 5 \\Rightarrow 8 + x = 15 \\Rightarrow x = 7$. \r\nStep 2: Set up the equation for the y-coordinate: $\\frac{4 + 8 + y}{3} = 6 \\Rightarrow 12 + y = 18 \\Rightarrow y = 6$. \r\nStep 3: Calculate $x + y = 7 + 6 = 13$. \r\nShortcut: Use the property that the sum of coordinates of vertices is 3 times the coordinates of the centroid: $\\sum x = 3x_g$ and $\\sum y = 3y_g$. Thus, $(x+y) = 3(x_g + y_g) - (x_1 + y_1 + x_2 + y_2) = 3(5+6) - (2+4+6+8) = 33 - 20 = 13$.",
+      "trap_type": "Conceptual confusion between centroid and sum of coordinates",
+      "concept_tag": "Coordinate Geometry - Centroid of a Triangle",
+      "verify_code": "x_g, y_g = 5, 6\nx1, y1 = 2, 4\nx2, y2 = 6, 8\nx3 = 3 * x_g - (x1 + x2)\ny3 = 3 * y_g - (y1 + y2)\nres = x3 + y3\nanswer = 'B' if res == 13 else 'A'",
+      "id": "AI-IQ-024aed4e",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "024aed4e7fe4ba618fa33f16eacae3fce109eaa1b8258900160f35cb763efb07",
+      "created_at": "2026-11-02T08:46:05.812024+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "A vessel contains a mixture of grape juice and soda in the ratio 5:3. When 16 liters of this mixture are replaced with 16 liters of soda, the ratio of grape juice to soda reverses to 3:5. What was the initial quantity of the mixture in the vessel?",
+      "options": {
+        "A": "24",
+        "B": "40",
+        "C": "48",
+        "D": "64"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Let the total volume be V. Initially, grape juice is 5/8 of the total. When 16 liters of mixture are removed, the amount of grape juice remaining is (5/8) * (V - 16). When 16 liters of soda are added, the total volume returns to V, and the final fraction of grape juice is 3/8. Therefore, (5/8)(V - 16) = (3/8)V. Solving for V: 5(V - 16) = 3V => 5V - 80 = 3V => 2V = 80 => V = 40 liters. Shortcut: In a replacement problem where volume is constant, the ratio of the non-added component (grape juice) changes as: Final Concentration = Initial Concentration * (1 - Replaced Volume / Total Volume). Here, 3/8 = 5/8 * (1 - 16/V). This simplifies to 3/5 = 1 - 16/V, or 16/V = 2/5, giving V = 40. Trap (D) comes from the additive fallacy: assuming the 16 liters added corresponds exactly to the 2-part increase in soda (from 3 to 5 parts), implying 2 parts = 16L, so 8 parts = 64L. This ignores that the 16L removed also reduced the soda quantity.",
+      "trap_type": "Additive fallacy / Ignoring component removal",
+      "concept_tag": "Mixtures - Replacement",
+      "verify_code": "answer = next(v for v in range(17, 200) if 5 * (v - 16) == 3 * v)",
+      "id": "AI-CQ-0ef03b96",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "0ef03b96ccbe79270b57f0cecffbda3e3ce9c541826e8c369deeb20c48ad1545",
+      "created_at": "2026-11-02T08:50:59.007689+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Let the coordinates of the vertices of a triangle be (a, a²), (b, b²), and (c, c²). If a, b, and c are in an Arithmetic Progression (AP) such that a < b < c and the common difference is 3, what is the area of the triangle in square units?",
+      "options": {
+        "A": "9",
+        "B": "13.5",
+        "C": "27",
+        "D": "54"
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "Step 1: The area of a triangle with vertices (x1, y1), (x2, y2), (x3, y3) is given by the determinant formula: Area = 0.5 * |x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2)|. Step 2: For any three points on the parabola y = x², the area simplifies to 0.5 * |(a - b)(b - c)(c - a)|. Step 3: Since a, b, c are in AP with common difference d = 3, we have (b - a) = 3, (c - b) = 3, and (c - a) = 6. Substituting these into the formula: Area = 0.5 * |(-3) * (-3) * (6)| = 0.5 * 54 = 27. Shortcut: For any triangle with vertices on y = x² where the x-coordinates form an AP with common difference d, the area is simply d³. Here, 3³ = 27. Main distractor D (54) is the result of calculating the product of differences but forgetting the 0.5 factor in the area formula.",
+      "trap_type": "Coefficient omission in area formula",
+      "concept_tag": "Coordinate Geometry - Area of Triangle",
+      "verify_code": "import math\nanswers = set()\nfor a in range(-10, 10):\n    d = 3\n    b, c = a + d, a + 2*d\n    # Area formula: 0.5 * |x1(y2-y3) + x2(y3-y1) + x3(y1-y2)|\n    area = 0.5 * abs(a*(b**2 - c**2) + b*(c**2 - a**2) + c*(a**2 - b**2))\n    answers.add(int(area))\nanswer = 'C' if (len(answers) == 1 and 27 in answers) else 'A'",
+      "id": "AI-IQ-cdd28acd",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "cdd28acdee3cacef5c59c0601654294ef299ff0a1fb831e31f7d25c75af87e80",
+      "created_at": "2026-11-02T08:52:20.806094+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Identify the grammatically correct version of the underlined part:\n\nThe weather reporter announced that the cyclone **will hit the coast by midnight**, but the storm dissipated harmlessly over the ocean.",
+      "options": {
+        "A": "will hit the coast by midnight",
+        "B": "would hit the coast by midnight",
+        "C": "would have hit the coast by midnight",
+        "D": "hits the coast by midnight"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Grammar shortcut: When the main verb of a sentence is in the past tense ('announced'), the verbs in the subordinate clauses must also shift to a past form. This is known as the 'Sequence of Tenses'. In reported speech or future-in-the-past contexts, the modal 'will' must change to 'would'. Main distractor A ('will hit') is the most common error because students often focus on the future nature of the event rather than the past-tense anchor of the reporting verb. Option C introduces the conditional perfect, which is unnecessarily complex for a simple reported statement, and Option D creates a tense clash between the past 'announced' and the present 'hits'.",
+      "trap_type": "Tense persistence trap (failing to shift 'will' to 'would' in a past-tense context)",
+      "concept_tag": "Grammar - Sequence of Tenses",
+      "verify_code": "answer = 'B'",
+      "id": "AI-IV-7aa09af8",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7aa09af8be12df00f9d93f60cd5bbcd081fd72e4fa6ea35af90508e5957caf1b",
+      "created_at": "2026-11-02T08:52:32.281128+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five books of different genres—Mystery (M), Sci-Fi (S), History (H), Poetry (P), and Biography (B)—are arranged on five shelves numbered 1 to 5 from top to bottom. The following conditions apply:\n\n1. Mystery is exactly two shelves above History.\n2. Sci-Fi is not on the top shelf or the bottom shelf.\n3. Poetry is on a shelf with a higher number than Biography.\n4. The shelf immediately below Mystery is not Sci-Fi.\n5. History is not on shelf 3.\n\nWhich book is on shelf 4?",
+      "options": {
+        "A": "Poetry",
+        "B": "Mystery",
+        "C": "Sci-Fi",
+        "D": "History"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step 1: Analyze Rule 1 (M = H - 2) and Rule 5 (H ≠ 3). Possible pairs for (M, H) are (1, 3) and (2, 4) and (3, 5). Rule 5 eliminates (1, 3).\nStep 2: Test Case (M=2, H=4). According to Rule 2, S cannot be on 1 or 5. According to Rule 4, the shelf below M (shelf 3) cannot be S. Since shelves 2 and 4 are already occupied by M and H, there is no valid shelf remaining for S. This case is impossible.\nStep 3: Test Case (M=3, H=5). According to Rule 2, S cannot be 1 or 5. According to Rule 4, the shelf below M (shelf 4) cannot be S. This leaves only shelf 2 for S.\nStep 4: Place remaining books. Shelves 1 and 4 are free for B and P. Rule 3 states Poetry has a higher number than Biography, so P = 4 and B = 1.\nFinal Arrangement: 1: Biography, 2: Sci-Fi, 3: Mystery, 4: Poetry, 5: History.\nReading Signal: 'Intersection of Exclusions'. When Rule 2 and Rule 4 both restricted Sci-Fi, it created a bottleneck that eliminated Case 2.",
+      "trap_type": "Overlooking the exclusion constraint (Rule 4)",
+      "concept_tag": "Arrangement - Linear with exclusion rules",
+      "verify_code": "import itertools\ngenres = ['M', 'S', 'H', 'P', 'B']\nshelves = [1, 2, 3, 4, 5]\nsolutions = []\nfor p in itertools.permutations(genres):\n    d = {shelves[i]: p[i] for i in range(5)}\n    pos_M = next(k for k, v in d.items() if v == 'M')\n    pos_H = next(k for k, v in d.items() if v == 'H')\n    pos_S = next(k for k, v in d.items() if v == 'S')\n    pos_P = next(k for k, v in d.items() if v == 'P')\n    pos_B = next(k for k, v in d.items() if v == 'B')\n    if pos_M != pos_H - 2: continue\n    if pos_S == 1 or pos_S == 5: continue\n    if pos_P <= pos_B: continue\n    if d.get(pos_M + 1) == 'S': continue\n    if pos_H == 3: continue\n    solutions.append(d)\nmapping = {'P': 'A', 'M': 'B', 'S': 'C', 'H': 'D', 'B': 'Other'}\nanswers = {mapping[sol[4]] for sol in solutions}\nanswer = 'A'",
+      "id": "AI-CD-80d5e6fa",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "80d5e6fa97320927dbcbef7ebc5a6fa290ed13cbc31f44c2eaa84dd52ca5ba94",
+      "created_at": "2026-11-02T08:54:23.751962+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "### Principle:\nGenerally, a seller is not responsible for any defects in the goods sold or their unsuitability for the buyer's needs. However, an implied warranty of fitness arises if the buyer makes known to the seller the specific purpose for which the goods are required and relies on the seller’s skill or judgment to select them. This implied warranty does not apply if the buyer purchases an article under its patent or other trade name, even if they mention the purpose for which they want it.\n\n### Fact Situation:\nAnil wants to buy a water purifier that can specifically filter out 'arsenic' contamination. \n\n**Scenario 1:** Anil tells the shopkeeper, \"I need a purifier that removes arsenic; please recommend one.\" The shopkeeper recommends the 'Puro-Max', which Anil buys. The Puro-Max fails to remove arsenic.\n\n**Scenario 2:** Anil tells the shopkeeper, \"I need a purifier for arsenic removal. Give me the 'Aqua-Guard 200' model.\" The shopkeeper provides it. The Aqua-Guard 200 also fails to remove arsenic.\n\nWhich of the following is correct?",
+      "options": {
+        "A": "The shopkeeper is liable in Scenario 1 because Anil relied on the shopkeeper's skill, but not in Scenario 2 because Anil asked for a trade name.",
+        "B": "The shopkeeper is liable in both scenarios because Anil clearly communicated the specific purpose (arsenic removal) in both instances.",
+        "C": "The shopkeeper is not liable in either scenario because the general rule is that the seller is not responsible for the suitability of goods.",
+        "D": "The shopkeeper is liable in Scenario 2 because the shopkeeper knew the purpose and should have warned Anil if the 'Aqua-Guard 200' was unsuitable."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "The question tests the application of a rule followed by an exception. In Scenario 1, Anil satisfies both conditions for an implied warranty: he states the purpose ('arsenic removal') and relies on the seller's judgment ('please recommend one'). Thus, the seller is liable. In Scenario 2, although he states the purpose, he specifies a trade name ('Aqua-Guard 200'). The principle explicitly states that the implied warranty does not apply when an article is purchased under its trade name, regardless of whether the purpose was mentioned. Therefore, the seller is not liable in Scenario 2.",
+      "trap_type": "Overlooking the Exception",
+      "concept_tag": "Legal RC - Caveat Emptor and Trade Name Exception",
+      "verify_code": "def check_liability():\n    # Scenario 1: Purpose stated + Reliance on skill = Liable\n    scenario_1 = 'liable'\n    \n    # Scenario 2: Purpose stated + Trade name specified = Not Liable (Exception applies)\n    scenario_2 = 'not_liable'\n    \n    if scenario_1 == 'liable' and scenario_2 == 'not_liable':\n        return 'A'\n    return 'None'\n\nanswer = check_liability()",
+      "id": "AI-CR-f572ca85",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f572ca85804b26f69d99da441d11a2f6da6abec16b4598077d0c1663758990f9",
+      "created_at": "2026-11-02T08:54:35.241228+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 22,
-      "rejected": 7,
-      "accepted": 15
+      "attempts": 26,
+      "rejected": 8,
+      "accepted": 18
     },
     "CAT VARC RC": {
+      "attempts": 33,
+      "rejected": 16,
+      "accepted": 17
+    },
+    "CAT DILR": {
+      "attempts": 30,
+      "rejected": 13,
+      "accepted": 17
+    },
+    "CLAT RC": {
+      "attempts": 26,
+      "rejected": 9,
+      "accepted": 17
+    },
+    "CLAT Logical Reasoning": {
       "attempts": 29,
       "rejected": 13,
       "accepted": 16
     },
-    "CAT DILR": {
-      "attempts": 26,
-      "rejected": 12,
-      "accepted": 14
-    },
-    "CLAT RC": {
-      "attempts": 23,
-      "rejected": 8,
-      "accepted": 15
-    },
-    "CLAT Logical Reasoning": {
-      "attempts": 25,
-      "rejected": 12,
-      "accepted": 13
-    },
     "CLAT Legal Reasoning": {
-      "attempts": 16,
-      "rejected": 1,
-      "accepted": 15
+      "attempts": 18,
+      "rejected": 2,
+      "accepted": 16
     },
     "IPMAT Quant": {
-      "attempts": 19,
+      "attempts": 23,
       "rejected": 7,
-      "accepted": 12
+      "accepted": 16
     },
     "IPMAT Verbal": {
-      "attempts": 15,
-      "rejected": 1,
-      "accepted": 14
+      "attempts": 19,
+      "rejected": 3,
+      "accepted": 16
     }
   }
 }
