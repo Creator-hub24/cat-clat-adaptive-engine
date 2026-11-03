@@ -13,16 +13,16 @@ from scripts import import_multi_model_bank as imp
 BANK = json.loads(bank.multi_model_bank_path("sarkari").read_text(encoding="utf-8"))
 ITEMS = BANK["questions"]
 BY_SOURCE = {q["source_ref"]: q for q in ITEMS}
-ID_RE = re.compile(r"^MM-SK-(SQA|SRE|SEN|SGA)-(GB[1-6]|G4A|G4B|MT|CS5|C55|SG|CG|MH1|MH2|GB8|GB9|ME1|ME2|MR1|MR2|GA1|GA2|GA3)-\d{3}$")
+ID_RE = re.compile(r"^MM-SK-(SQA|SRE|SEN|SGA)-(GB[1-6]|G4A|G4B|MT|CS5|C55|SG|CG|MH1|MH2|GB8|GB9|ME1|ME2|MR1|MR2|GA1|GA2|GA3|GA4|GA5)-\d{3}$")
 EXPECTED_TOPICS = {
     "Sarkari English": 72,
-    "Sarkari General Awareness": 99,
+    "Sarkari General Awareness": 149,
     "Sarkari Quantitative Aptitude": 100,
     "Sarkari Reasoning": 73,
 }
 EXPECTED_MODELS = {
     "ChatGPT Go": 9,
-    "Claude (Pro)": 99,
+    "Claude (Pro)": 149,
     "Claude Sonnet 5": 10,
     "Claude Sonnet 5.5 Medium": 8,
     "Gemini Argon 4.0": 144,
@@ -32,8 +32,8 @@ EXPECTED_MODELS = {
 
 
 def test_counts_and_meta():
-    assert len(ITEMS) == 344
-    assert BANK["meta"]["count"] == 344 and BANK["meta"]["family"] == "sarkari"
+    assert len(ITEMS) == 394
+    assert BANK["meta"]["count"] == 394 and BANK["meta"]["family"] == "sarkari"
     assert dict(Counter(q["topic"] for q in ITEMS)) == EXPECTED_TOPICS
     assert dict(Counter(q["source_model"] for q in ITEMS)) == EXPECTED_MODELS
 
@@ -91,7 +91,7 @@ def test_import_paths_and_serving_badge():
                 if q["topic"] in families.family_topics("sarkari")]
     pool = bank.serving_pool([], [], imported)
     mine = [q for q in pool if q["source"] == bank.MULTI_MODEL_SOURCE]
-    assert len(mine) == 344
+    assert len(mine) == 394
     for q in mine:
         assert q["verified"] is True
         badge = "✅ Verified (" + ", ".join(q["verification"]) + ")"
@@ -145,10 +145,9 @@ def test_gemini_meta_english_reasoning_batches():
 
 def test_claude_general_awareness_batches():
     ga = [q for q in ITEMS if q["topic"] == "Sarkari General Awareness"]
-    assert len(ga) == 99
-    assert {q["id"].split("-")[3] for q in ga} == {"GA1", "GA2", "GA3"}
-    assert Counter(q["id"].split("-")[3] for q in ga) == {"GA1": 50, "GA2": 16, "GA3": 33}
-    assert Counter(q["difficulty"] for q in ga) == {"Easy": 44, "Moderate": 40, "CAT-Level": 15}
+    assert len(ga) == 149
+    assert Counter(q["id"].split("-")[3] for q in ga) == {"GA1": 50, "GA2": 16, "GA3": 33, "GA4": 25, "GA5": 25}
+    assert Counter(q["difficulty"] for q in ga) == {"Easy": 62, "Moderate": 61, "CAT-Level": 26}
     assert all(q["source_model"] == "Claude (Pro)" and q["verify_code"] == "" for q in ga)
     assert all(q["verification"] == ["independent solve"] for q in ga)
     assert "multi:claude-ga-p3 #82" not in BY_SOURCE  # dropped: disputed fact

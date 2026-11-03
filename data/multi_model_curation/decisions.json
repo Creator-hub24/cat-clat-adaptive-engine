@@ -452,6 +452,10 @@
     {
       "source": "claude-ga-p1 #30",
       "flag": "Explanation notes the 2022 SDF change; reverse repo kept as a definition question."
+    },
+    {
+      "source": "claude-ga-p4 #108",
+      "flag": "Near-verbatim of CUET bank item AS-CU-GK-UG85 (first INC president, 1885; similarity 0.98). Different exam family, never co-served. Kept; consider rewording."
     }
   ],
   "option_shuffle": {
@@ -812,6 +816,30 @@
       "from": "Moderate",
       "to": "Easy",
       "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p4 #117",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "standard fact, not CAT-Level"
+    },
+    {
+      "source": "claude-ga-p4 #120",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p4 #122",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p5 #146",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
     }
   ],
   "difficulty_relabels_doc": "Applied during verification (already reflected in raw/meta_hard_*, batch8/batch9, meta_eng_* and meta_rea_* passing files); recorded here for audit. Claude GA relabels are likewise already reflected in raw/claude_ga_p*.",
@@ -883,5 +911,24 @@
       "claude-ga-p3 #73 option A: rupee symbol wording"
     ],
     "verification": "Each key and distractor fact-checked; Moderate/CAT-Level keys web-checked against official/primary sources (Constitution text, SC reports, RBI, NABARD, IFCI, IES). No verify_code (GA is not a code-required topic)."
+  },
+  "claude_ga_sarkari_import_2026_11_03_p4p5": {
+    "threshold": 0.8,
+    "pool": "all data/*.json banks plus the 99 Claude GA items (#18) and pairwise within p4/p5",
+    "metric": "SequenceMatcher on question_text",
+    "received": 50,
+    "kept": 50,
+    "drops": [],
+    "template_similar_kept": [
+      "claude-ga-p5 #144 vs p3 #62 (SI unit of force vs current)",
+      "claude-ga-p5 #128 vs p2 #5 (Tenth vs Ninth Schedule)",
+      "claude-ga-p5 #130 vs p1 #9 (Attorney General vs Finance Commission article)",
+      "claude-ga-p5 #149 vs p2 #48 (first Phalke vs first Jnanpith)",
+      "claude-ga-p4 #124 vs p3 #54 (Santosh Trophy vs Birdie)"
+    ],
+    "text_fixes_applied_in_raw": [
+      "claude-ga-p5 #141 explanation: EXIM Bank commenced business 1 March 1982 (not 1 January), per EXIM Citizens' Charter"
+    ],
+    "verification": "Each key solved independently; Moderate/CAT-Level keys and uncertain facts web-checked (INC session list, RBI Act s.45ZB, AIFF/Santosh Trophy, EXIM Bank, Suhrawardi silsila). No verify_code (GA is not a code-required topic)."
   }
 }

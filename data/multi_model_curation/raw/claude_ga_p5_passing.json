@@ -1,0 +1,452 @@
+[
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "polity_vice_president",
+    "question_text": "Who is the ex-officio Chairman of the Rajya Sabha?",
+    "options": {
+      "A": "The Vice-President of India",
+      "B": "The President of India",
+      "C": "The Speaker of the Lok Sabha",
+      "D": "The Deputy Chairman of the Rajya Sabha"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): The Speaker presides over the Lok Sabha, so students assign the matching role in the other House to the same office.",
+    "pedagogical_explanation": "Article 64 makes the Vice-President the ex-officio Chairman of the Council of States, and Article 89 repeats this for the Rajya Sabha. The Deputy Chairman is elected by the members and presides only in the Chairman's absence. Memory hook: VP = Rajya Sabha head.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-126"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_dpsp_ucc",
+    "question_text": "Which Article of the Directive Principles of State Policy directs the State to endeavour to secure a Uniform Civil Code for citizens throughout India?",
+    "options": {
+      "A": "Article 40",
+      "B": "Article 45",
+      "C": "Article 44",
+      "D": "Article 48"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): Article 45 is the neighbouring Directive Principle (early childhood care and education), so students pick the adjacent number.",
+    "pedagogical_explanation": "Article 44 is the only Directive Principle that mentions a Uniform Civil Code. Article 40 deals with village panchayats and Article 48 with organisation of agriculture and animal husbandry. Memory hook: 44 = one law for all.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-127"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_anti_defection",
+    "question_text": "The Tenth Schedule, containing the anti-defection provisions, was added to the Constitution by which Amendment?",
+    "options": {
+      "A": "32nd Amendment, 1973",
+      "B": "52nd Amendment, 1985",
+      "C": "55th Amendment, 1986",
+      "D": "62nd Amendment, 1989"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): The 55th Amendment came just a year later (1986), so students choose the neighbouring amendment by year.",
+    "pedagogical_explanation": "The Constitution (Fifty-second Amendment) Act, 1985 added the Tenth Schedule and laid down grounds for disqualification of legislators on the ground of defection. Memory hook: 52nd = Tenth Schedule = defection.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-128"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_joint_sitting",
+    "question_text": "Who presides over a joint sitting of the two Houses of Parliament summoned to resolve a deadlock over an ordinary Bill?",
+    "options": {
+      "A": "The President of India",
+      "B": "The Chairman of the Rajya Sabha",
+      "C": "The Prime Minister of India",
+      "D": "The Speaker of the Lok Sabha"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): The Chairman of the Rajya Sabha heads one of the two Houses meeting together, so students assume he shares or takes the chair.",
+    "pedagogical_explanation": "Article 108 provides for the joint sitting, and Article 118(4) says the Speaker presides, or the Deputy Speaker in the Speaker's absence. The Chairman of the Rajya Sabha never presides over it. Memory hook: Joint sitting = Speaker in the chair.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-129"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_attorney_general",
+    "question_text": "The office of the Attorney General of India is provided for under which Article of the Constitution?",
+    "options": {
+      "A": "Article 76",
+      "B": "Article 165",
+      "C": "Article 78",
+      "D": "Article 124"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Article 165 creates the Advocate General of a State, the parallel State-level law officer, so the two offices are swapped.",
+    "pedagogical_explanation": "Article 76 empowers the President to appoint as Attorney General a person qualified to be a Supreme Court judge. Article 78 lists the Prime Minister's duties to furnish information to the President, and Article 124 establishes the Supreme Court. Memory hook: 76 = Union law officer, 165 = State law officer.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-130"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "history_mauryan_ashoka",
+    "question_text": "Which Mauryan emperor gave up conquest by war and adopted the policy of Dhamma after the Kalinga War?",
+    "options": {
+      "A": "Bindusara",
+      "B": "Ashoka",
+      "C": "Dasharatha",
+      "D": "Brihadratha"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Bindusara was Ashoka's father and the preceding Mauryan emperor, so students pick the nearest ruler on the family list.",
+    "pedagogical_explanation": "Ashoka fought the Kalinga War around 261 BCE, and his Rock Edict XIII expresses remorse over the suffering it caused. He then promoted Dhamma, a code of moral conduct. Memory hook: Kalinga = Ashoka's turning point.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-131"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_gupta_inscription",
+    "question_text": "The Prayaga Prashasti (Allahabad Pillar Inscription), composed by the court poet Harishena, praises which Gupta ruler?",
+    "options": {
+      "A": "Chandragupta II",
+      "B": "Kumaragupta I",
+      "C": "Skandagupta",
+      "D": "Samudragupta"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Chandragupta II (Vikramaditya) is the best-known Gupta king, so students attach every Gupta record to him.",
+    "pedagogical_explanation": "The inscription is engraved on an Ashokan pillar at Prayagraj and lists the conquests, qualities and policies of Samudragupta. Harishena was his court poet. Memory hook: Harishena wrote, Samudragupta was praised.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-132"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_sufi_silsilas",
+    "question_text": "Sheikh Bahauddin Zakariya of Multan, a prominent Sufi saint of the thirteenth century, belonged to which silsila?",
+    "options": {
+      "A": "Chishti",
+      "B": "Qadiri",
+      "C": "Suhrawardi",
+      "D": "Naqshbandi"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): The Chishti silsila is the best known in India, so students assign most early saints to it.",
+    "pedagogical_explanation": "Bahauddin Zakariya was a leading saint of the Suhrawardi silsila, which was strong in Multan and Sind and kept closer ties with the rulers than the Chishtis did. The Qadiri and Naqshbandi orders became influential in India later. Memory hook: Multan = Suhrawardi.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-133"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "history_social_reform",
+    "question_text": "Which Governor-General declared the practice of Sati illegal through a regulation passed in 1829?",
+    "options": {
+      "A": "Lord William Bentinck",
+      "B": "Lord Canning",
+      "C": "Lord Hastings",
+      "D": "Lord Dalhousie"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Lord Canning's term saw the Widow Remarriage Act of 1856, another social reform law, so the two reforms get mixed.",
+    "pedagogical_explanation": "Regulation XVII of 1829, passed under Lord William Bentinck, banned Sati in the Bengal Presidency, with strong support from Raja Rammohan Roy. Memory hook: Bentinck = Banned Sati.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-134"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_sikh_scripture",
+    "question_text": "The Adi Granth, the first compilation of Sikh scripture, was compiled in 1604 by which Guru?",
+    "options": {
+      "A": "Guru Nanak",
+      "B": "Guru Arjan Dev",
+      "C": "Guru Hargobind",
+      "D": "Guru Gobind Singh"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (D): Guru Gobind Singh added the hymns of Guru Tegh Bahadur and gave the scripture its final form, so students credit him with the original compilation.",
+    "pedagogical_explanation": "Guru Arjan Dev gathered the hymns of the first five Gurus along with compositions of saints such as Kabir, Ravidas and Baba Farid, and installed the Adi Granth at Harmandir Sahib. Guru Gobind Singh later included Guru Tegh Bahadur's hymns. Memory hook: Arjan = Adi Granth, Gobind = final form.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-135"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "geography_longitude",
+    "question_text": "Which imaginary line passes through Greenwich in London and is taken as 0 degree longitude?",
+    "options": {
+      "A": "Equator",
+      "B": "International Date Line",
+      "C": "Prime Meridian",
+      "D": "Tropic of Capricorn"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): The Equator is the 0 degree line of latitude, so students confuse the two zero lines.",
+    "pedagogical_explanation": "The Prime Meridian passes through the Royal Observatory at Greenwich and divides the Earth into the Eastern and Western Hemispheres. Memory hook: Meridian = longitude, Equator = latitude.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-136"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_soils",
+    "question_text": "Which soil, formed from the weathering of volcanic Deccan lava and locally called 'regur', is considered ideal for cotton cultivation?",
+    "options": {
+      "A": "Alluvial soil",
+      "B": "Red soil",
+      "C": "Laterite soil",
+      "D": "Black soil"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Alluvial soil is the most widespread and fertile soil in India, so students pick it for every major crop.",
+    "pedagogical_explanation": "Black soil retains moisture, is rich in lime, iron and magnesia, and suits cotton, which is why it is also called black cotton soil. It is found mainly on the Deccan plateau. Memory hook: Regur = Black = Cotton.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-137"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_dams",
+    "question_text": "The Nagarjuna Sagar Dam, a major masonry dam in southern India, is built across which river?",
+    "options": {
+      "A": "Krishna",
+      "B": "Godavari",
+      "C": "Kaveri",
+      "D": "Tungabhadra"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (D): The Tungabhadra is a major tributary of the Krishna with its own well-known dam, so students choose it by association.",
+    "pedagogical_explanation": "Nagarjuna Sagar lies on the border of present-day Telangana and Andhra Pradesh and impounds the Krishna. It supports irrigation and hydropower. Memory hook: Nagarjuna Sagar = Krishna.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-138"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "geography_passes",
+    "question_text": "Which pass in the Pir Panjal range links Jammu with the Kashmir Valley?",
+    "options": {
+      "A": "Zoji La",
+      "B": "Khardung La",
+      "C": "Banihal Pass",
+      "D": "Bara-lacha La"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Zoji La also lies on the Srinagar route, but it connects the Kashmir Valley with Ladakh across the Great Himalaya, not Jammu through the Pir Panjal.",
+    "pedagogical_explanation": "The Banihal Pass crosses the Pir Panjal range between Jammu and the Kashmir Valley, and a road tunnel beneath it carries the highway. Khardung La is in Ladakh and Bara-lacha La lies on the Manali-Leh route. Memory hook: Banihal = Jammu to Kashmir, Zoji La = Kashmir to Ladakh.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-139"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "banking_negotiable_instruments",
+    "question_text": "A cheque with two parallel lines drawn across its face, usually at the top left corner, is called a:",
+    "options": {
+      "A": "Bearer cheque",
+      "B": "Crossed cheque",
+      "C": "Stale cheque",
+      "D": "Open cheque"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (D): An open cheque is the uncrossed form that can be cashed over the counter, the exact opposite of a crossed cheque.",
+    "pedagogical_explanation": "A crossed cheque can only be credited to the payee's bank account and cannot be encashed over the counter. This makes it safer against theft or loss. Memory hook: Two lines = pay through the bank only.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-140"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "banking_institution_hq",
+    "question_text": "The Export-Import Bank of India (EXIM Bank), set up in 1982 to finance foreign trade, has its head office in which city?",
+    "options": {
+      "A": "New Delhi",
+      "B": "Kolkata",
+      "C": "Hyderabad",
+      "D": "Mumbai"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): EXIM Bank is a government-owned institution linked to trade policy, so students place its head office in the national capital.",
+    "pedagogical_explanation": "EXIM Bank was established under the Export-Import Bank of India Act, 1981 and began operations on 1 March 1982. Its head office is in Mumbai. Memory hook: EXIM = Export-Import, Mumbai port city.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-141"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "banking_omo",
+    "question_text": "When the RBI buys or sells government securities in the open market to manage liquidity in the banking system, the tool is known as:",
+    "options": {
+      "A": "Open Market Operations",
+      "B": "Moral suasion",
+      "C": "Margin requirement",
+      "D": "Selective credit control"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Moral suasion is a qualitative tool in which the RBI persuades banks through advice, so students mix quantitative and qualitative tools.",
+    "pedagogical_explanation": "In Open Market Operations, purchase of securities injects money into the system and sale of securities absorbs money from it. Moral suasion, margin requirement and selective credit control are qualitative measures. Memory hook: OMO = RBI trades securities.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-142"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "economy_plan_holiday",
+    "question_text": "The three Annual Plans of 1966-67, 1967-68 and 1968-69, which came between the Third and the Fourth Five Year Plans, are known as the:",
+    "options": {
+      "A": "Rolling Plan",
+      "B": "Plan Holiday",
+      "C": "Perspective Plan",
+      "D": "Indicative Plan"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): The Rolling Plan of 1978 to 1980 was another short-term departure from the five-year format, so students link the two.",
+    "pedagogical_explanation": "After the Third Plan, the Indo-Pakistan war, droughts and a resource crunch led to the Fourth Plan being postponed. Three Annual Plans were followed instead, and this period is called the Plan Holiday. Memory hook: 1966 to 1969 = Plan Holiday.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-143"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_physics_units",
+    "question_text": "What is the SI unit of force?",
+    "options": {
+      "A": "Joule",
+      "B": "Pascal",
+      "C": "Newton",
+      "D": "Watt"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): The joule is the unit of work and energy, which is calculated as force multiplied by distance, so students confuse the two.",
+    "pedagogical_explanation": "One newton is the force that gives a mass of 1 kg an acceleration of 1 m/s squared. Pascal measures pressure and watt measures power. Memory hook: Newton = Force, Joule = Work.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-144"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "science_chemistry_acids",
+    "question_text": "Which acid is naturally present in tamarind?",
+    "options": {
+      "A": "Citric acid",
+      "B": "Lactic acid",
+      "C": "Oxalic acid",
+      "D": "Tartaric acid"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Citric acid is the best-known natural fruit acid, found in lemon and orange, so students apply it to every sour fruit.",
+    "pedagogical_explanation": "Tamarind contains tartaric acid. Oxalic acid is found in tomato and lactic acid in sour milk. Memory hook: Tamarind = Tartaric (both start with T).",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-145"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_human_body_bones",
+    "question_text": "Which is the smallest bone in the human body?",
+    "options": {
+      "A": "Malleus",
+      "B": "Incus",
+      "C": "Stapes",
+      "D": "Pisiform"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): The incus is another middle-ear ossicle of very similar size, so students pick the wrong one of the three.",
+    "pedagogical_explanation": "The stapes (stirrup) in the middle ear is the smallest bone and passes vibrations from the incus to the inner ear. The malleus and incus are also tiny but larger. Memory hook: Stapes = Smallest, shaped like a stirrup.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-146"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_diseases_virus",
+    "question_text": "Which of the following diseases is caused by a virus?",
+    "options": {
+      "A": "Polio",
+      "B": "Cholera",
+      "C": "Tetanus",
+      "D": "Typhoid"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Cholera is a water-borne disease often listed with polio under preventable diseases, but it is bacterial.",
+    "pedagogical_explanation": "Polio is caused by the poliovirus. Cholera is caused by Vibrio cholerae, tetanus by Clostridium tetani and typhoid by Salmonella typhi, all bacteria. Memory hook: Polio = Poliovirus.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-147"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_festivals",
+    "question_text": "Bihu, the festival that marks the Assamese New Year and the harvest seasons, is celebrated in which state?",
+    "options": {
+      "A": "Odisha",
+      "B": "West Bengal",
+      "C": "Manipur",
+      "D": "Assam"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): West Bengal celebrates its new year, Poila Boishakh, in the same mid-April period, so students mix the two.",
+    "pedagogical_explanation": "Bihu is the main festival of Assam and is celebrated three times a year: Rongali (Bohag) Bihu in April, Bhogali (Magh) Bihu in January and Kongali (Kati) Bihu in October. Memory hook: Bihu = Assam.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-148"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "static_awards_cinema",
+    "question_text": "Who was the first recipient of the Dadasaheb Phalke Award, India's highest award in cinema, given for the year 1969?",
+    "options": {
+      "A": "Prithviraj Kapoor",
+      "B": "Devika Rani",
+      "C": "Raj Kapoor",
+      "D": "Dilip Kumar"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Prithviraj Kapoor was an early pioneer of Indian cinema and received the award in 1971, so students pick him as the first.",
+    "pedagogical_explanation": "Devika Rani received the first Dadasaheb Phalke Award, followed by B. N. Sircar in 1970. The award was instituted by the Government of India in 1969 to mark the birth centenary of Dadasaheb Phalke. Memory hook: Phalke Award No. 1 = Devika Rani.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-149"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_sports_trophies",
+    "question_text": "The Thomas Cup is an international team championship for men in which sport?",
+    "options": {
+      "A": "Table tennis",
+      "B": "Tennis",
+      "C": "Badminton",
+      "D": "Squash"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): The Swaythling Cup is the table tennis team trophy, another men's team championship with a similar format, so the two are swapped.",
+    "pedagogical_explanation": "The Thomas Cup is the world men's team championship in badminton, and its women's counterpart is the Uber Cup. It is organised by the Badminton World Federation. Memory hook: Thomas = men, Uber = women, both badminton.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P5-150"
+  }
+]

@@ -1,0 +1,452 @@
+[
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "polity_governor",
+    "question_text": "Under the Constitution of India, the Governor of a State is appointed by whom?",
+    "options": {
+      "A": "The Chief Minister of the State",
+      "B": "The President of India",
+      "C": "The Chief Justice of the High Court",
+      "D": "The Prime Minister of India"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): The Chief Minister heads the State government, so students assume the State picks its own Governor.",
+    "pedagogical_explanation": "Article 155 says the Governor is appointed by the President by warrant under his hand and seal, in practice on the advice of the Union government. The Governor holds office during the pleasure of the President. Memory hook: Governor = President's appointee.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-101"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_election_commission",
+    "question_text": "Superintendence, direction and control of the preparation of electoral rolls and the conduct of elections is vested in the Election Commission under which Article?",
+    "options": {
+      "A": "Article 315",
+      "B": "Article 326",
+      "C": "Article 324",
+      "D": "Article 338"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): Article 326 also sits in the elections Part (adult suffrage as the basis of elections), so it is the closest confusion.",
+    "pedagogical_explanation": "Article 324 in Part XV vests the Election Commission with control of elections to Parliament, State Legislatures and the offices of President and Vice-President. Article 315 is for Public Service Commissions and Article 326 gives adult suffrage. Memory hook: 324 = Election body.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-102"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_amendments_education",
+    "question_text": "Article 21A, which makes free and compulsory education a Fundamental Right for children aged 6 to 14 years, was inserted by which Constitutional Amendment?",
+    "options": {
+      "A": "86th Amendment, 2002",
+      "B": "44th Amendment, 1978",
+      "C": "61st Amendment, 1988",
+      "D": "42nd Amendment, 1976"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): The 61st Amendment lowered the voting age to 18, another amendment about citizens' rights, so it gets mixed up.",
+    "pedagogical_explanation": "The 86th Amendment Act, 2002 inserted Article 21A, changed Article 45 and added a Fundamental Duty in Article 51A. The Right to Education Act, 2009 later gave effect to Article 21A. Memory hook: 86th = Education right.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-103"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_ordinance_power",
+    "question_text": "The President can promulgate an Ordinance when Parliament is not in session under which Article of the Constitution?",
+    "options": {
+      "A": "Article 111",
+      "B": "Article 213",
+      "C": "Article 85",
+      "D": "Article 123"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Article 213 gives the same power to the Governor of a State, so students swap the two.",
+    "pedagogical_explanation": "Article 123 allows the President to issue Ordinances with the force of law when either House is not in session. They must be laid before Parliament and lapse six weeks after Parliament reassembles unless approved earlier. Memory hook: 123 = President's ordinance, 213 = Governor's ordinance.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-104"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_cag",
+    "question_text": "The Comptroller and Auditor General of India is appointed by the President under which Article?",
+    "options": {
+      "A": "Article 149",
+      "B": "Article 148",
+      "C": "Article 150",
+      "D": "Article 151"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Article 149 describes the duties and powers of the CAG, so students pick it for the appointment provision.",
+    "pedagogical_explanation": "Article 148 provides for the appointment, oath and removal of the CAG, who can be removed only in the same manner as a Supreme Court judge. Article 149 gives duties, 150 the form of accounts and 151 the audit reports. Memory hook: 148 = Appointment, 149 = Audit duties.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-105"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "history_mughal_architecture",
+    "question_text": "Who built the Red Fort (Lal Qila) in Delhi?",
+    "options": {
+      "A": "Akbar",
+      "B": "Humayun",
+      "C": "Aurangzeb",
+      "D": "Shah Jahan"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Akbar built the famous Agra Fort, so students credit him with the Delhi fort as well.",
+    "pedagogical_explanation": "Shah Jahan built the Red Fort as part of his new capital Shahjahanabad, between 1639 and 1648. Aurangzeb added the barbican walls later. Memory hook: Shah Jahan = Red Fort and Taj Mahal.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-106"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_sher_shah",
+    "question_text": "Which ruler is credited with reorganising the old highway from Sonargaon in Bengal to Peshawar, which later came to be known as the Grand Trunk Road?",
+    "options": {
+      "A": "Akbar",
+      "B": "Alauddin Khalji",
+      "C": "Sher Shah Suri",
+      "D": "Muhammad bin Tughluq"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Akbar is the best-known Mughal administrator, so students credit him with every major Mughal-era road.",
+    "pedagogical_explanation": "Sher Shah Suri (1540 to 1545) repaired and extended this highway, called Sadak-e-Azam, and built sarais at regular intervals along it. Memory hook: Sher Shah = Sadak-e-Azam.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-107"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_inc_sessions",
+    "question_text": "Who presided over the first session of the Indian National Congress held at Bombay in 1885?",
+    "options": {
+      "A": "W. C. Bonnerjee",
+      "B": "A. O. Hume",
+      "C": "Dadabhai Naoroji",
+      "D": "Badruddin Tyabji"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): A. O. Hume helped found the Congress and was its first General Secretary, so students pick him as president.",
+    "pedagogical_explanation": "Womesh Chandra Bonnerjee was the first President of the INC at the Gokuldas Tejpal Sanskrit College, Bombay, with 72 delegates. Dadabhai Naoroji presided in 1886 and Badruddin Tyabji in 1887. Memory hook: 1885 Bombay = Bonnerjee.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-108"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_inc_sessions",
+    "question_text": "Subhas Chandra Bose was elected President of the Indian National Congress for the first time at which session?",
+    "options": {
+      "A": "Tripuri",
+      "B": "Haripura",
+      "C": "Faizpur",
+      "D": "Lahore"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Tripuri (1939) is the session where Bose was re-elected and then resigned, so it is the closest confusion.",
+    "pedagogical_explanation": "Bose presided over the Haripura session in Gujarat in February 1938 and was re-elected in 1939 at Tripuri, defeating Pattabhi Sitaramayya. Faizpur (1936) was presided over by Jawaharlal Nehru. Memory hook: Haripura = first term, Tripuri = second term.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-109"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_revolt_1857",
+    "question_text": "The Revolt of 1857 broke out as a general uprising on 10 May 1857 at which place?",
+    "options": {
+      "A": "Barrackpore",
+      "B": "Delhi",
+      "C": "Kanpur",
+      "D": "Meerut"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Barrackpore saw the earlier Mangal Pandey incident in March 1857, so students treat it as the start of the revolt.",
+    "pedagogical_explanation": "On 10 May 1857, sepoys at Meerut rebelled, freed their jailed comrades and marched to Delhi, where they proclaimed Bahadur Shah Zafar the leader. Memory hook: Meerut = outbreak, Delhi = capital of the revolt.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-110"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "geography_world_capitals",
+    "question_text": "What is the capital of Australia?",
+    "options": {
+      "A": "Sydney",
+      "B": "Melbourne",
+      "C": "Canberra",
+      "D": "Perth"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Sydney is the largest and best-known Australian city, so it is the usual wrong choice.",
+    "pedagogical_explanation": "Canberra is the purpose-built capital of Australia, planned as a compromise between the rival cities of Sydney and Melbourne. Memory hook: Canberra = Capital, Sydney = Skyline.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-111"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_dams",
+    "question_text": "The Hirakud Dam, one of the longest earthen dams in the world, is built across which river?",
+    "options": {
+      "A": "Mahanadi",
+      "B": "Godavari",
+      "C": "Krishna",
+      "D": "Brahmani"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (D): The Brahmani is another major river of Odisha, so students pick it by state association.",
+    "pedagogical_explanation": "The Hirakud Dam near Sambalpur in Odisha is on the Mahanadi and was one of the first major multipurpose projects after Independence. It serves flood control, irrigation and power. Memory hook: Hirakud = Mahanadi.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-112"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "geography_straits",
+    "question_text": "The Bosphorus Strait connects the Black Sea with which water body?",
+    "options": {
+      "A": "Aegean Sea",
+      "B": "Sea of Marmara",
+      "C": "Caspian Sea",
+      "D": "Adriatic Sea"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): The Dardanelles links the Sea of Marmara to the Aegean, so the Aegean is confused with the Bosphorus link.",
+    "pedagogical_explanation": "The Bosphorus runs through Istanbul and joins the Black Sea to the Sea of Marmara. The Dardanelles then leads from Marmara to the Aegean Sea. Memory hook: Bosphorus = Black to Marmara, Dardanelles = Marmara to Aegean.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-113"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_national_parks",
+    "question_text": "Jim Corbett National Park, the oldest national park of India, established in 1936, is located in which state?",
+    "options": {
+      "A": "Madhya Pradesh",
+      "B": "Assam",
+      "C": "Rajasthan",
+      "D": "Uttarakhand"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Kaziranga in Assam is the best-known national park, so students assume the oldest one is also there.",
+    "pedagogical_explanation": "Jim Corbett National Park was set up in 1936 as Hailey National Park and lies in Uttarakhand. It was the first area covered under Project Tiger in 1973. Memory hook: Corbett = Uttarakhand, 1936.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-114"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "banking_payment_systems",
+    "question_text": "What is the full form of NEFT, the retail electronic payment system operated by the RBI?",
+    "options": {
+      "A": "National Electronic Funds Transfer",
+      "B": "National Economic Funds Transfer",
+      "C": "Net Electronic Fund Transaction",
+      "D": "National Electronic Fund Trading"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (D): 'Trading' sounds plausible because of electronic stock trading, but the T stands for Transfer.",
+    "pedagogical_explanation": "NEFT is a nationwide system that lets bank customers transfer funds electronically from any bank branch to another bank's branch. Memory hook: NEFT = National Electronic Funds Transfer.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-115"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "banking_mpc",
+    "question_text": "How many members does the Monetary Policy Committee (MPC) have under the RBI Act, 1934 as amended in 2016?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): Students forget that the Governor is a member and chairperson and count only 5.",
+    "pedagogical_explanation": "Section 45ZB provides for six members: the Governor (chairperson), the Deputy Governor in charge of monetary policy, one RBI officer nominated by the Central Board, and three external members appointed by the Central Government. Memory hook: 3 from RBI + 3 from outside = 6.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-116"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "banking_rbi_governors",
+    "question_text": "Who was the first Indian to be appointed Governor of the Reserve Bank of India?",
+    "options": {
+      "A": "Sir Osborne Smith",
+      "B": "C. D. Deshmukh",
+      "C": "Benegal Rama Rau",
+      "D": "I. G. Patel"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): Benegal Rama Rau succeeded Deshmukh and was also an Indian Governor, so students pick the wrong one of the two.",
+    "pedagogical_explanation": "Sir Osborne Smith was the first Governor of RBI (1935), and Sir C. D. Deshmukh became the first Indian Governor in 1943. Memory hook: Smith = British first, Deshmukh = Indian first.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-117"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "banking_regulators",
+    "question_text": "Which authority regulates and develops the insurance industry in India?",
+    "options": {
+      "A": "PFRDA",
+      "B": "SEBI",
+      "C": "IRDAI",
+      "D": "NABARD"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): PFRDA regulates pensions, a neighbouring financial regulator, so it is the closest confusion.",
+    "pedagogical_explanation": "The Insurance Regulatory and Development Authority of India (IRDAI) was set up under the IRDA Act, 1999 to regulate and promote the insurance sector. SEBI regulates securities markets. Memory hook: IRDAI = Insurance.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-118"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_atmosphere",
+    "question_text": "Which gas is the most abundant in the Earth's atmosphere?",
+    "options": {
+      "A": "Oxygen",
+      "B": "Argon",
+      "C": "Carbon dioxide",
+      "D": "Nitrogen"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Oxygen is vital for life, so students assume it is the most abundant, but it forms only about 21 percent.",
+    "pedagogical_explanation": "Nitrogen makes up about 78 percent of dry air by volume, followed by oxygen at about 21 percent and argon at about 0.9 percent. Memory hook: 78 percent N2, 21 percent O2.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-119"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_vitamins",
+    "question_text": "Which vitamin is essential for the normal clotting of blood?",
+    "options": {
+      "A": "Vitamin K",
+      "B": "Vitamin A",
+      "C": "Vitamin B12",
+      "D": "Vitamin E"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): Vitamin B12 is also linked to blood (red cell formation and anaemia), so students confuse the two.",
+    "pedagogical_explanation": "Vitamin K helps the liver make clotting factors, so its deficiency leads to delayed clotting and bleeding. Vitamin B12 deficiency causes pernicious anaemia. Memory hook: K = Koagulation.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-120"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "science_human_body_endocrine",
+    "question_text": "In the human pancreas, insulin is secreted by which cells of the Islets of Langerhans?",
+    "options": {
+      "A": "Alpha cells",
+      "B": "Beta cells",
+      "C": "Delta cells",
+      "D": "Acinar cells"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Alpha cells secrete glucagon, the opposing hormone, so the two cell types are swapped.",
+    "pedagogical_explanation": "Beta cells secrete insulin, which lowers blood glucose, while alpha cells secrete glucagon, which raises it. Acinar cells make digestive enzymes and belong to the exocrine part. Memory hook: Beta = Brings sugar down.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-121"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_diseases",
+    "question_text": "Malaria is caused by which type of organism?",
+    "options": {
+      "A": "Bacterium",
+      "B": "Virus",
+      "C": "Protozoan",
+      "D": "Fungus"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): Dengue and chikungunya are mosquito-borne viral diseases, so students assume malaria is also viral.",
+    "pedagogical_explanation": "Malaria is caused by the protozoan Plasmodium and spread by the female Anopheles mosquito. Typhoid is bacterial and ringworm is fungal. Memory hook: Malaria = Plasmodium = Protozoan.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-122"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_festivals",
+    "question_text": "Onam, the harvest festival associated with King Mahabali, is celebrated mainly in which state?",
+    "options": {
+      "A": "Tamil Nadu",
+      "B": "Karnataka",
+      "C": "Andhra Pradesh",
+      "D": "Kerala"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Pongal in Tamil Nadu is another southern harvest festival, so students mix the two.",
+    "pedagogical_explanation": "Onam is the state festival of Kerala, celebrated in the Malayalam month of Chingam with flower carpets (pookalam), boat races and a feast called Onasadya. Memory hook: Onam = Kerala, Pongal = Tamil Nadu.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-123"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_sports_trophies",
+    "question_text": "The Santosh Trophy is associated with which sport?",
+    "options": {
+      "A": "Football",
+      "B": "Hockey",
+      "C": "Cricket",
+      "D": "Kabaddi"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): Many Indian domestic trophies such as the Ranji and Duleep Trophies belong to cricket, so students assume the same here.",
+    "pedagogical_explanation": "The Santosh Trophy is the national football championship for state and institutional teams, run by the All India Football Federation. It is named after Maharaja Manmatha Nath Roy Chowdhury of Santosh. Memory hook: Santosh = Soccer.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-124"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "static_literature_sanskrit",
+    "question_text": "The Sanskrit historical play 'Mudrarakshasa', which describes the rise of Chandragupta Maurya through Chanakya's strategy, was written by:",
+    "options": {
+      "A": "Kalidasa",
+      "B": "Bhasa",
+      "C": "Vishakhadatta",
+      "D": "Shudraka"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (D): Shudraka wrote the Sanskrit play Mrichchhakatika, another classical drama, so the playwrights are confused.",
+    "pedagogical_explanation": "Vishakhadatta wrote Mudrarakshasa, a political play in which Chanakya wins over the minister Rakshasa of the Nandas. Kalidasa wrote Abhijnanashakuntalam and Bhasa wrote Svapnavasavadatta. Memory hook: Mudra-rakshasa = Vishakhadatta.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P4-125"
+  }
+]
