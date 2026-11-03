@@ -1,0 +1,290 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "polity_landmark_cases",
+  "question_text": "In which 1967 case did the Supreme Court hold that Parliament cannot amend Fundamental Rights under Article 368?",
+  "options": {
+   "A": "Shankari Prasad v. Union of India",
+   "B": "Kesavananda Bharati v. State of Kerala",
+   "C": "Minerva Mills v. Union of India",
+   "D": "Golaknath v. State of Punjab"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (B): Kesavananda Bharati (1973) is the most famous amending-power case, so students pick it even though it came six years later and allowed amendment within the basic structure.",
+  "pedagogical_explanation": "In Golaknath (1967) the Court held that Fundamental Rights could not be amended. Shankari Prasad (1951) had upheld Parliament's power. Kesavananda (1973) overruled Golaknath and laid down the basic structure doctrine. Memory hook: Golaknath 67 = rights frozen.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-003"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "polity_supreme_court_jurisdiction",
+  "question_text": "The advisory jurisdiction of the Supreme Court, under which the President may seek its opinion on a question of law or fact of public importance, is provided in which Article?",
+  "options": {
+   "A": "Article 131",
+   "B": "Article 143",
+   "C": "Article 136",
+   "D": "Article 142"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Article 131 deals with the original jurisdiction of the Supreme Court in Centre-State disputes, so students mix up the two types of jurisdiction.",
+  "pedagogical_explanation": "Article 143 lets the President refer a question to the Supreme Court for its opinion, which is not binding on the President. Article 136 is special leave to appeal and Article 142 is enforcement of decrees to do complete justice. Memory hook: 143 = Advice.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-004"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "polity_schedules_amendments",
+  "question_text": "The Ninth Schedule was added to the Constitution by which Amendment?",
+  "options": {
+   "A": "42nd Amendment",
+   "B": "24th Amendment",
+   "C": "First Amendment",
+   "D": "44th Amendment"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): The 42nd Amendment (1976) is the best-known big amendment, so students attach every major change to it.",
+  "pedagogical_explanation": "The First Amendment Act, 1951 added the Ninth Schedule to protect land reform laws from court challenge. Memory hook: First Amendment = Ninth Schedule.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-005"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "polity_money_bill",
+  "question_text": "Who decides whether a Bill is a Money Bill or not?",
+  "options": {
+   "A": "The President",
+   "B": "The Speaker of the Lok Sabha",
+   "C": "The Chairman of the Rajya Sabha",
+   "D": "The Finance Minister"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (C): The Chairman of the Rajya Sabha is confused with the Speaker because the Rajya Sabha can only make recommendations on Money Bills.",
+  "pedagogical_explanation": "Under Article 110(3), if any question arises whether a Bill is a Money Bill, the decision of the Speaker of the Lok Sabha is final. Memory hook: Money Bill = Speaker's call.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-008"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "polity_council_of_ministers",
+  "question_text": "The limit that the Council of Ministers in a State cannot exceed 15 percent of the total strength of the Legislative Assembly was introduced by which Amendment?",
+  "options": {
+   "A": "73rd Amendment",
+   "B": "84th Amendment",
+   "C": "91st Amendment",
+   "D": "97th Amendment"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (B): The 84th Amendment (2001) is close in time and also deals with legislatures (delimitation freeze), so it is easily confused.",
+  "pedagogical_explanation": "The 91st Amendment (2003) capped the size of the Union and State Councils of Ministers at 15 percent of the lower house and tightened the anti-defection law. Memory hook: 91st = 15 percent cap.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-009"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "polity_centre_state_relations",
+  "question_text": "Which Article of the Constitution provides for the establishment of an Inter-State Council?",
+  "options": {
+   "A": "Article 263",
+   "B": "Article 262",
+   "C": "Article 280",
+   "D": "Article 307"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Article 262 sits right beside it and deals with adjudication of inter-State river water disputes, another inter-State provision.",
+  "pedagogical_explanation": "Article 263 empowers the President to set up an Inter-State Council to investigate and discuss subjects of common interest between States and the Union. Article 307 relates to an authority for inter-State trade and commerce. Memory hook: 263 = Council for Co-ordination.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-010"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "history_doctrine_of_lapse",
+  "question_text": "Which was the first Indian state annexed by Lord Dalhousie under the Doctrine of Lapse?",
+  "options": {
+   "A": "Jhansi",
+   "B": "Nagpur",
+   "C": "Satara",
+   "D": "Sambalpur"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Jhansi is the best-known annexation under the Doctrine of Lapse (1853), so students assume it was the first.",
+  "pedagogical_explanation": "Satara was annexed in 1848, followed by Sambalpur (1849), Jhansi (1853) and Nagpur (1854). Memory hook: Satara = Start of lapse.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-014"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "history_viceroys",
+  "question_text": "The Vernacular Press Act of 1878, which restricted Indian-language newspapers, was passed during the Viceroyalty of:",
+  "options": {
+   "A": "Lord Ripon",
+   "B": "Lord Lytton",
+   "C": "Lord Curzon",
+   "D": "Lord Dufferin"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Lord Ripon repealed the Act in 1882, so students link his name with it.",
+  "pedagogical_explanation": "Lord Lytton (1876 to 1880) passed the Vernacular Press Act in 1878, and Ripon repealed it in 1882. Curzon is linked with the Indian Universities Act (1904) and the Partition of Bengal. Memory hook: Lytton = Lock on the press.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-016"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "history_cabinet_mission",
+  "question_text": "Which of the following was NOT a member of the Cabinet Mission of 1946?",
+  "options": {
+   "A": "Pethick-Lawrence",
+   "B": "Stafford Cripps",
+   "C": "A. V. Alexander",
+   "D": "Lord Wavell"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (B): Stafford Cripps is linked mainly with the 1942 Cripps Mission, so students wrongly think he was absent from the 1946 mission.",
+  "pedagogical_explanation": "The Cabinet Mission had three British Cabinet ministers: Pethick-Lawrence, Stafford Cripps and A. V. Alexander. Lord Wavell was the Viceroy who worked with them but was not a member. Memory hook: three ministers, Viceroy outside.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-019"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_coastline",
+  "question_text": "Which Indian state has the longest mainland coastline?",
+  "options": {
+   "A": "Gujarat",
+   "B": "Andhra Pradesh",
+   "C": "Tamil Nadu",
+   "D": "Maharashtra"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Andhra Pradesh has the second longest coastline and the longest on the east coast, so it is the closest confusion.",
+  "pedagogical_explanation": "Gujarat has the longest coastline among Indian states, followed by Andhra Pradesh. Tamil Nadu is third on the mainland. Memory hook: Gujarat = Great coast.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-022"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_peaks",
+  "question_text": "Which is the highest peak of Peninsular India?",
+  "options": {
+   "A": "Doddabetta",
+   "B": "Mahendragiri",
+   "C": "Anamudi",
+   "D": "Mullayanagiri"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Doddabetta is the highest peak of the Nilgiri hills and the most visited, so students pick it as the highest overall.",
+  "pedagogical_explanation": "Anamudi (2,695 m) in the Anamalai hills of Kerala is the highest peak of the Western Ghats and Peninsular India. Mullayanagiri is the highest in Karnataka. Memory hook: Anamudi = Peninsular peak.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-025"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_waterfalls",
+  "question_text": "The Dhuandhar Falls near Jabalpur are formed by which river?",
+  "options": {
+   "A": "Narmada",
+   "B": "Tapi",
+   "C": "Mahanadi",
+   "D": "Chambal"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): The Tapi is the other major west-flowing river of central India, so students swap it with the Narmada.",
+  "pedagogical_explanation": "The Narmada plunges over the Dhuandhar Falls at Bhedaghat in Madhya Pradesh, near marble rocks. Memory hook: Dhuandhar = Narmada (smoke cascade).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-026"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "banking_rrb_history",
+  "question_text": "Regional Rural Banks (RRBs) were set up in 1975 on the recommendation of which Working Group?",
+  "options": {
+   "A": "Shivaraman Committee",
+   "B": "Narasimham Working Group",
+   "C": "Rangarajan Committee",
+   "D": "Kelkar Committee"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): The Shivaraman Committee (1979) also dealt with rural credit but led to NABARD, not the RRBs.",
+  "pedagogical_explanation": "The Narasimham Working Group (1975) recommended RRBs, and the first five were set up on 2 October 1975, later governed by the RRB Act, 1976. Memory hook: RRB = Narasimham Working Group, 1975.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-031"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_chemistry_everyday",
+  "question_text": "What is the chemical formula of Plaster of Paris?",
+  "options": {
+   "A": "CaSO4.2H2O",
+   "B": "CaSO4.1/2H2O",
+   "C": "CaCO3",
+   "D": "CaSO4"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): CaSO4.2H2O is gypsum, the raw material from which Plaster of Paris is made, so the two hydrates get swapped.",
+  "pedagogical_explanation": "Plaster of Paris is calcium sulphate hemihydrate, made by heating gypsum at about 373 K. It sets into gypsum when mixed with water. Memory hook: Plaster = Half water.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-041"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_physics_atmospheric_refraction",
+  "question_text": "The twinkling of stars is caused by which phenomenon?",
+  "options": {
+   "A": "Dispersion of light",
+   "B": "Total internal reflection",
+   "C": "Atmospheric refraction",
+   "D": "Scattering of light"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (D): Scattering explains the blue colour of the sky and the red Sun at sunrise, so students apply it to twinkling as well.",
+  "pedagogical_explanation": "Starlight passes through layers of air with changing density and refracts continuously, so the apparent position and brightness of the star keep fluctuating. Planets do not twinkle because they are extended sources. Memory hook: Twinkle = Refraction in moving air.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-043"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "static_literary_awards",
+  "question_text": "Who was the first recipient of the Jnanpith Award, presented for the year 1965?",
+  "options": {
+   "A": "G. Sankara Kurup",
+   "B": "Tarashankar Bandyopadhyay",
+   "C": "Kuvempu",
+   "D": "Amrita Pritam"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Tarashankar Bandyopadhyay won the Jnanpith the very next year (1966), so students pick him as the first winner.",
+  "pedagogical_explanation": "The Malayalam poet G. Sankara Kurup received the first Jnanpith Award for his collection Odakkuzhal. The award is given by the Bharatiya Jnanpith for literary excellence in Indian languages. Memory hook: First Jnanpith = Kurup, Malayalam.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P2-048"
+ }
+]

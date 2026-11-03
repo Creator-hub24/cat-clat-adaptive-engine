@@ -149,12 +149,13 @@ identical files and existing ids stay stable when items are added. To hold an it
 Independently verified Sarkari items from Gemini Argon 4.0 batches 1–6, 8 (Reasoning) and 9 (English)
 plus model-comparison Quant runs (Meta AI, Claude Sonnet 5, Claude Sonnet 5.5 Medium, SuperGrok, ChatGPT Go),
 two Meta AI Hard Quant batches (`meta_hard_p1`/`meta_hard_p2`: 8 CAT-Level, 9 Moderate, 3 Easy) and Meta AI
-English (`meta_eng_p1`/`meta_eng_p2`) and Reasoning (`meta_rea_p1`/`meta_rea_p2`) batches are served as
+English (`meta_eng_p1`/`meta_eng_p2`) and Reasoning (`meta_rea_p1`/`meta_rea_p2`) batches, and Claude static-GK
+General Awareness batches (`claude_ga_p1`–`p3`, every fact checked against its cited source) are served as
 `data/multi_model_bank_sarkari.json` (the Gemini compare file is omitted — it duplicates batch 4):
 
 | Family | Items | Topics |
 |--------|------:|--------|
-| `sarkari` | 245 | Sarkari Quantitative Aptitude 100 · Sarkari Reasoning 73 · Sarkari English 72 |
+| `sarkari` | 344 | Sarkari Quantitative Aptitude 100 · Sarkari General Awareness 99 · Sarkari Reasoning 73 · Sarkari English 72 |
 
 Sources live in `data/multi_model_curation/` (verified questions, manifest with per-item model/batch,
 faculty flags, cross-dedupe drop log). Rebuild with `python3 -m scripts.import_multi_model_bank`
@@ -170,7 +171,7 @@ Set `EXAM_FAMILY` in an app's Streamlit secrets (or env) to choose which app it 
 | `EXAM_FAMILY` | App | Status |
 |---|---|---|
 | `mgmt_law` (default) | CAT · CLAT · IPMAT | live |
-| `sarkari` | SSC CGL/CHSL · Railway NTPC/Group D · Bank IBPS/SBI PO/Clerk | live |
+| `sarkari` | SSC CGL/CHSL · Railway NTPC/Group D · Bank IBPS/SBI PO/Clerk | coming soon (not yet launched; General Awareness bank in progress) |
 | `cuet` | CUET UG: General Test · English · Maths | ready (see below) |
 | `medical` | NEET UG | coming soon |
 | `engineering` | JEE Main | coming soon |

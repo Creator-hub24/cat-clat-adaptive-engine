@@ -432,6 +432,26 @@
     {
       "source": "meta-rea-p2 #4",
       "flag": "Kept at Moderate; confirm."
+    },
+    {
+      "source": "claude-ga-p1 #19",
+      "flag": "Subsidiary Alliance 'first state' = Hyderabad (1798) per standard texts; some books treat Awadh's earlier treaties as the first. Faculty to confirm wording."
+    },
+    {
+      "source": "claude-ga-p2 #14",
+      "flag": "Doctrine of Lapse first annexation = Satara (1848); Angul was also annexed in 1848 but not under the Doctrine. Faculty to confirm."
+    },
+    {
+      "source": "claude-ga-p1 #28",
+      "flag": "Same fact as starter sample item SGA-E-01 (RBI 1935). Kept; consider retiring one."
+    },
+    {
+      "source": "claude-ga-p1 #7",
+      "flag": "Same fact area as starter sample item SGA-M-01 (Eleventh Schedule / Panchayats). Kept; consider retiring one."
+    },
+    {
+      "source": "claude-ga-p1 #30",
+      "flag": "Explanation notes the 2022 SDF change; reverse repo kept as a definition question."
     }
   ],
   "option_shuffle": {
@@ -660,9 +680,141 @@
       "from": "Moderate",
       "to": "Easy",
       "reason": "single-step reasoning"
+    },
+    {
+      "source": "claude-ga-p1 #15",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "standard freedom-struggle fact"
+    },
+    {
+      "source": "claude-ga-p1 #16",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "standard medieval fact"
+    },
+    {
+      "source": "claude-ga-p1 #35",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common banking fact"
+    },
+    {
+      "source": "claude-ga-p1 #43",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "NCERT Class 10 optics"
+    },
+    {
+      "source": "claude-ga-p1 #50",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common static GK"
+    },
+    {
+      "source": "claude-ga-p2 #16",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common modern-history fact"
+    },
+    {
+      "source": "claude-ga-p2 #25",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common geography fact"
+    },
+    {
+      "source": "claude-ga-p2 #26",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common geography fact"
+    },
+    {
+      "source": "claude-ga-p2 #41",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "NCERT Class 10 chemistry"
+    },
+    {
+      "source": "claude-ga-p3 #69",
+      "from": "CAT-Level",
+      "to": "Easy",
+      "reason": "basic biology"
+    },
+    {
+      "source": "claude-ga-p3 #61",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common static GK"
+    },
+    {
+      "source": "claude-ga-p3 #79",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common economy fact"
+    },
+    {
+      "source": "claude-ga-p3 #84",
+      "from": "CAT-Level",
+      "to": "Moderate",
+      "reason": "common geography fact"
+    },
+    {
+      "source": "claude-ga-p3 #64",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #65",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #70",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #72",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #74",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #75",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #76",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #78",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
+    },
+    {
+      "source": "claude-ga-p3 #81",
+      "from": "Moderate",
+      "to": "Easy",
+      "reason": "basic fact"
     }
   ],
-  "difficulty_relabels_doc": "Applied during verification (already reflected in raw/meta_hard_*, batch8/batch9, meta_eng_* and meta_rea_* passing files); recorded here for audit.",
+  "difficulty_relabels_doc": "Applied during verification (already reflected in raw/meta_hard_*, batch8/batch9, meta_eng_* and meta_rea_* passing files); recorded here for audit. Claude GA relabels are likewise already reflected in raw/claude_ga_p*.",
   "meta_hard_cross_dedupe": {
     "threshold": 0.8,
     "pool": "seed + AI + AptiSetu + sample + Claude banks + multi_model_bank_sarkari (2296 items)",
@@ -703,5 +855,33 @@
       }
     ],
     "imported": 74
+  },
+  "claude_ga_sarkari_import_2026_11_03": {
+    "threshold": 0.8,
+    "pool": "existing Sarkari banks (sample + Claude + multi-model) plus pairwise within candidates",
+    "metric": "SequenceMatcher on question_text",
+    "received": 134,
+    "kept": 99,
+    "drops": [
+      {
+        "batch": "claude_ga_p2",
+        "count": 34,
+        "reason": "resend of p1 questions (exact text repeats)"
+      },
+      {
+        "source": "claude-ga-p3 #82",
+        "reason": "ambiguous: Nile vs Amazon length is disputed"
+      }
+    ],
+    "template_similar_kept": [
+      "claude-ga-p3 #54 (Birdie vs Scrum)",
+      "claude-ga-p3 #70 / #76 (RBI/SBI HQ vs SIDBI HQ)",
+      "claude-ga-p3 #51 vs #52 (national flower vs tree)"
+    ],
+    "text_fixes_applied_in_raw": [
+      "claude-ga-p1 #30 explanation: SDF note",
+      "claude-ga-p3 #73 option A: rupee symbol wording"
+    ],
+    "verification": "Each key and distractor fact-checked; Moderate/CAT-Level keys web-checked against official/primary sources (Constitution text, SC reports, RBI, NABARD, IFCI, IES). No verify_code (GA is not a code-required topic)."
   }
 }

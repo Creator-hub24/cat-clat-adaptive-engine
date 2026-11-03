@@ -3,7 +3,8 @@
 Source (data/multi_model_curation/):
   verified_questions.json  items that passed independent verification (Gemini batches 1–6, 8 and 9,
                            model compares, Meta AI Hard Quant batches meta_hard_p1/p2, Meta AI English
-                           meta_eng_p1/p2 and Reasoning meta_rea_p1/p2)
+                           meta_eng_p1/p2 and Reasoning meta_rea_p1/p2, Claude General
+                           Awareness claude_ga_p1/p2/p3)
   manifest.json            position -> source model/batch and original index (stable ids)
   additions.json           items re-included after review (optional)
   decisions.json           text fixes, exclusions, faculty flags, option-shuffle seed, cross-dedupe drop log
@@ -44,11 +45,12 @@ TOPIC_CODES = {
     "Sarkari Quantitative Aptitude": "SQA",
     "Sarkari Reasoning": "SRE",
     "Sarkari English": "SEN",
+    "Sarkari General Awareness": "SGA",
 }
 FIELDS = ("exam", "topic", "difficulty", "concept_tag", "question_text", "options", "correct_answer",
           "trap_type", "pedagogical_explanation")
 LETTERS = "ABCD"
-SOURCE_RE = re.compile(r"^(batch-\d+[a-z]?|compare-[a-z0-9]+|meta-(?:hard|eng|rea)-p\d+)\s+#(\d+)$")
+SOURCE_RE = re.compile(r"^(batch-\d+[a-z]?|compare-[a-z0-9]+|meta-(?:hard|eng|rea)-p\d+|claude-ga-p\d+)\s+#(\d+)$")
 VERIFICATION = ["independent solve"]
 TRAP_RE = re.compile(r"\bTrap \(([A-D])\)")
 OPTION_RE = re.compile(r"\b(Options?)(\s+)((?:[A-D])(?:(?:,\s*|\s+and\s+|\s+or\s+)[A-D])*)\b")
@@ -136,6 +138,7 @@ def shuffle_item(q: dict, seed: str, source: str) -> dict[str, str]:
     q["options"] = {new: q["options"][inverse[new]] for new in LETTERS}
     q["correct_answer"] = mapping[q["correct_answer"]]
     q["pedagogical_explanation"] = remap_explanation(q.get("pedagogical_explanation") or "", mapping)
+    q["trap_type"] = remap_explanation(q.get("trap_type") or "", mapping)  # GA items put "Trap (X)" here
     q["verify_code"] = remap_verify_code(q.get("verify_code") or "", mapping)
     return mapping
 
@@ -208,7 +211,7 @@ def write_bank(items: list[dict]) -> Path:
     path = bank_path()
     meta = {
         "version": 1,
-        "source": "data/multi_model_curation (Gemini + model-compare + Meta AI Hard/English/Reasoning, independently verified)",
+        "source": "data/multi_model_curation (Gemini + model-compare + Meta AI Hard/English/Reasoning + Claude GA, independently verified)",
         "author": "Vaibhav Gupta",
         "family": FAMILY,
         "count": len(items),
