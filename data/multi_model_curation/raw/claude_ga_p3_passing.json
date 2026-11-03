@@ -1,0 +1,596 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_national_symbols",
+  "question_text": "Which flower is the national flower of India?",
+  "options": {
+   "A": "Rose",
+   "B": "Marigold",
+   "C": "Lotus",
+   "D": "Jasmine"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): The rose is the most widely recognised flower in everyday life, so students choose it by default.",
+  "pedagogical_explanation": "The lotus (Nelumbo nucifera) is the national flower of India and symbolises purity and heritage. Memory hook: Lotus grows in mud yet stays pure.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-051"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_national_symbols",
+  "question_text": "Which tree is the national tree of India?",
+  "options": {
+   "A": "Peepal",
+   "B": "Neem",
+   "C": "Mango",
+   "D": "Banyan"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): The peepal is also a sacred fig tree, so it is the closest confusion with the banyan.",
+  "pedagogical_explanation": "The banyan (Ficus benghalensis) is the national tree of India, noted for its aerial roots and long life. The mango is the national fruit. Memory hook: Banyan = Big and eternal.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-052"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_important_days",
+  "question_text": "World Environment Day is observed every year on which date?",
+  "options": {
+   "A": "22 April",
+   "B": "5 June",
+   "C": "16 September",
+   "D": "11 July"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): 22 April is Earth Day, another environmental day that is often swapped with World Environment Day.",
+  "pedagogical_explanation": "World Environment Day is observed on 5 June, started by the United Nations in 1972 (first celebrated 1974). 16 September is World Ozone Day and 11 July is World Population Day. Memory hook: June 5 = Environment.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-053"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_sports_terms",
+  "question_text": "The term 'Birdie' is associated with which sport?",
+  "options": {
+   "A": "Badminton",
+   "B": "Golf",
+   "C": "Cricket",
+   "D": "Squash"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): The shuttlecock in badminton is also called a 'bird', so students link 'birdie' with badminton.",
+  "pedagogical_explanation": "In golf, a birdie means completing a hole in one stroke under par. Other golf terms are eagle, bogey and par. Memory hook: Birdie = Golf score.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-054"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_books_authors",
+  "question_text": "Who wrote the ancient Sanskrit work on statecraft, the 'Arthashastra'?",
+  "options": {
+   "A": "Kalidasa",
+   "B": "Kautilya",
+   "C": "Panini",
+   "D": "Banabhatta"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Kalidasa is the most famous classical Sanskrit author, so students attach any Sanskrit text to him.",
+  "pedagogical_explanation": "The Arthashastra is attributed to Kautilya (Chanakya), adviser to Chandragupta Maurya, and deals with politics, economy and military strategy. Kalidasa wrote Abhijnanashakuntalam and Panini wrote the Ashtadhyayi (grammar). Memory hook: Arthashastra = Kautilya = economy and state.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-055"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_important_days",
+  "question_text": "Teachers' Day in India is celebrated on 5 September in honour of the birth anniversary of which person?",
+  "options": {
+   "A": "Dr. Rajendra Prasad",
+   "B": "Dr. A. P. J. Abdul Kalam",
+   "C": "Dr. S. Radhakrishnan",
+   "D": "Dr. Zakir Husain"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Rajendra Prasad was the first President of India, so students link him with a day honouring a leader of the same era.",
+  "pedagogical_explanation": "Dr. Sarvepalli Radhakrishnan, a philosopher and teacher, was born on 5 September 1888 and later became the second President of India. Memory hook: 5 September = Radhakrishnan = Teacher.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-056"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_dance_forms",
+  "question_text": "Kuchipudi, a classical dance form of India, originated in which state?",
+  "options": {
+   "A": "Kerala",
+   "B": "Odisha",
+   "C": "Tamil Nadu",
+   "D": "Andhra Pradesh"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (C): Tamil Nadu is the home of Bharatanatyam, the classical dance most often confused with Kuchipudi.",
+  "pedagogical_explanation": "Kuchipudi takes its name from the village of Kuchipudi in Andhra Pradesh. Odissi comes from Odisha and Kathakali from Kerala. Memory hook: Kuchipudi = Krishna district, Andhra.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-057"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "static_literature_epics",
+  "question_text": "The ancient Tamil epic 'Silappathikaram' was composed by:",
+  "options": {
+   "A": "Tiruvalluvar",
+   "B": "Ilango Adigal",
+   "C": "Kamban",
+   "D": "Sattanar"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (D): Sattanar wrote Manimekalai, the sequel epic to Silappathikaram, so the two authors are swapped.",
+  "pedagogical_explanation": "Ilango Adigal composed Silappathikaram, the story of Kovalan and Kannagi. Sattanar wrote Manimekalai, Tiruvalluvar wrote the Tirukkural and Kamban wrote the Tamil Ramayana. Memory hook: Ilango = Silappathikaram.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-058"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_firsts",
+  "question_text": "Who was the first Prime Minister of independent India?",
+  "options": {
+   "A": "Sardar Vallabhbhai Patel",
+   "B": "Jawaharlal Nehru",
+   "C": "Lal Bahadur Shastri",
+   "D": "Dr. Rajendra Prasad"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Sardar Patel was the first Deputy Prime Minister and Home Minister, so students confuse the two top offices.",
+  "pedagogical_explanation": "Jawaharlal Nehru took office on 15 August 1947 and served until 1964. Rajendra Prasad was the first President. Memory hook: Nehru = first PM, Prasad = first President.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-059"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_awards",
+  "question_text": "The Arjuna Award in India is given for outstanding achievement in which field?",
+  "options": {
+   "A": "Literature",
+   "B": "Science and technology",
+   "C": "Sports",
+   "D": "Social service"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (B): The Shanti Swarup Bhatnagar Prize is the well-known science award, so students pair national awards with the wrong field.",
+  "pedagogical_explanation": "The Arjuna Award, instituted in 1961 by the Ministry of Youth Affairs and Sports, recognises outstanding sportspersons. Memory hook: Arjuna = Archer = Athlete.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-060"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_ancient_texts",
+  "question_text": "Which Vedic text, among the four Vedas, deals mainly with music, melodies and chants?",
+  "options": {
+   "A": "Rigveda",
+   "B": "Samaveda",
+   "C": "Yajurveda",
+   "D": "Atharvaveda"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): The Rigveda is the oldest Veda and contains the hymns that the Samaveda later sets to melody, so the two are confused.",
+  "pedagogical_explanation": "The Samaveda is a collection of melodies (saman) largely drawn from the Rigveda and is regarded as the source of Indian classical music. The Yajurveda gives sacrificial formulas and the Atharvaveda contains spells and charms. Memory hook: Sama = Song.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-061"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_physics_units",
+  "question_text": "What is the SI unit of electric current?",
+  "options": {
+   "A": "Volt",
+   "B": "Ohm",
+   "C": "Watt",
+   "D": "Ampere"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Volt is the unit of potential difference, which is closely linked with current in circuit problems.",
+  "pedagogical_explanation": "The ampere (A) is the SI base unit of electric current, equal to a flow of one coulomb of charge per second. Volt measures potential difference, ohm measures resistance and watt measures power. Memory hook: A for Ampere, A for current.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-062"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_biology_blood",
+  "question_text": "Which component of human blood is mainly responsible for carrying oxygen?",
+  "options": {
+   "A": "White blood cells",
+   "B": "Platelets",
+   "C": "Plasma",
+   "D": "Red blood cells"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (C): Plasma is the liquid part of blood that carries many substances, so students think it carries oxygen too.",
+  "pedagogical_explanation": "Red blood cells contain haemoglobin, which binds oxygen and transports it from lungs to tissues. White cells defend the body and platelets help in clotting. Memory hook: Red cells = Respiratory carriers.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-063"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_chemistry_ph",
+  "question_text": "A solution that has a pH value of 7 is:",
+  "options": {
+   "A": "Acidic",
+   "B": "Neutral",
+   "C": "Strongly basic",
+   "D": "Weakly basic"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (D): Students sometimes treat pure water as slightly basic because it is the 'base' liquid of solutions.",
+  "pedagogical_explanation": "On the pH scale (0 to 14), 7 is neutral, below 7 is acidic and above 7 is basic. Pure water at 25 degrees Celsius has pH 7. Memory hook: Seven = Even (neutral).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-064"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_physics_sound",
+  "question_text": "Sound cannot travel through which of the following?",
+  "options": {
+   "A": "Steel",
+   "B": "Water",
+   "C": "Air",
+   "D": "Vacuum"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (C): Students think sound needs only 'thin' media like air, forgetting it can travel through solids and liquids but never through empty space.",
+  "pedagogical_explanation": "Sound is a mechanical wave and needs a material medium of particles to propagate, so it cannot travel through a vacuum. It travels fastest in solids such as steel. Memory hook: No particles, no sound.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-065"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_biology_plants",
+  "question_text": "Which gas do plants absorb from the atmosphere for photosynthesis?",
+  "options": {
+   "A": "Oxygen",
+   "B": "Nitrogen",
+   "C": "Carbon dioxide",
+   "D": "Hydrogen"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Oxygen is the gas that plants release during photosynthesis, so students reverse the direction of exchange.",
+  "pedagogical_explanation": "In photosynthesis, plants take in carbon dioxide and water, and with sunlight produce glucose and release oxygen. Memory hook: Plants take CO2, give O2.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-066"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_chemistry_metals",
+  "question_text": "Which metal is liquid at room temperature?",
+  "options": {
+   "A": "Gallium",
+   "B": "Mercury",
+   "C": "Sodium",
+   "D": "Lead"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Gallium melts at about 30 degrees Celsius, so students confuse it as liquid at room temperature, but it stays solid at normal room temperature.",
+  "pedagogical_explanation": "Mercury is the only metal that is liquid at ordinary room temperature, which is why it is used in some thermometers. Memory hook: Mercury = Quicksilver.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-067"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_physics_heat",
+  "question_text": "Which mode of heat transfer does not require any material medium?",
+  "options": {
+   "A": "Conduction",
+   "B": "Convection",
+   "C": "Radiation",
+   "D": "Evaporation"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (B): Convection is also taught alongside radiation, but it needs a moving fluid medium, so students pick it by confusion.",
+  "pedagogical_explanation": "Radiation transfers heat as electromagnetic waves and can travel through a vacuum, as the Sun's heat reaches the Earth. Conduction needs solids and convection needs fluids. Memory hook: Radiation = Ray, no medium.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-068"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_biology_genetics",
+  "question_text": "Who is regarded as the 'Father of Genetics' for his experiments on pea plants?",
+  "options": {
+   "A": "Charles Darwin",
+   "B": "Gregor Mendel",
+   "C": "Hugo de Vries",
+   "D": "Thomas Hunt Morgan"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Charles Darwin is the best-known biologist, so students attach every biology title to him.",
+  "pedagogical_explanation": "Gregor Mendel, an Austrian monk, worked on pea plants in the 1850s and 1860s and laid down the laws of inheritance. De Vries was one of those who rediscovered his work in 1900. Memory hook: Mendel = Peas.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-069"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_rbi_headquarters",
+  "question_text": "The headquarters of the Reserve Bank of India is located in which city?",
+  "options": {
+   "A": "New Delhi",
+   "B": "Kolkata",
+   "C": "Chennai",
+   "D": "Mumbai"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (B): RBI was originally headquartered in Calcutta (Kolkata) when it started in 1935, so students pick the old location.",
+  "pedagogical_explanation": "The RBI's central office moved from Kolkata to Mumbai in 1937 and is permanently located there. Memory hook: RBI = Mumbai, Mint Road area.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-070"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_currency",
+  "question_text": "Which authority issues currency notes of all denominations except the one-rupee note in India?",
+  "options": {
+   "A": "Ministry of Finance",
+   "B": "State Bank of India",
+   "C": "Reserve Bank of India",
+   "D": "Government of India Mint"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): The one-rupee note and all coins are issued by the Ministry of Finance, so students confuse it with the issuer of the other notes.",
+  "pedagogical_explanation": "Under Section 22 of the RBI Act, 1934, the RBI has the sole right to issue bank notes in India. The one-rupee note and coins come from the Government of India. Memory hook: RBI = Notes, Finance Ministry = Coins and 1 rupee.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-071"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_basics",
+  "question_text": "In banking, what does the abbreviation KYC stand for?",
+  "options": {
+   "A": "Keep Your Cash",
+   "B": "Know Your Customer",
+   "C": "Key Yield Certificate",
+   "D": "Know Your Credit"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (D): 'Know Your Credit' sounds plausible because banks check credit history, so it is the closest wrong expansion.",
+  "pedagogical_explanation": "KYC means Know Your Customer, the process banks follow to verify identity and address of customers to prevent fraud and money laundering. Memory hook: KYC = Know, not Credit.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-072"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_basics",
+  "question_text": "The Indian rupee is represented by which symbol, adopted officially in 2010?",
+  "options": {
+   "A": "A blend of Devanagari 'Ra' and Roman 'R', with two horizontal lines at the top",
+   "B": "The letter R with one slash",
+   "C": "A Latin letter 'Rs' joined together",
+   "D": "A Devanagari letter 'Ru' with a dot"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Many people think the symbol is just a Latin R with a slash, ignoring that it blends Devanagari 'Ra' and Latin R with two parallel bars.",
+  "pedagogical_explanation": "The rupee symbol was designed by D. Udaya Kumar and approved by the Union Cabinet in 2010. It blends the Devanagari letter Ra with the Latin capital R and has two parallel horizontal bars. Memory hook: Two bars = flag, equality.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-073"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_economics_basics",
+  "question_text": "A situation in which the general price level in the economy rises continuously over time is called:",
+  "options": {
+   "A": "Deflation",
+   "B": "Inflation",
+   "C": "Stagflation",
+   "D": "Disinflation"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (D): Disinflation is a fall in the rate of inflation (prices still rise), and its name is easily confused with inflation.",
+  "pedagogical_explanation": "Inflation is a sustained rise in the general price level, which reduces the purchasing power of money. Deflation is a sustained fall in prices. Memory hook: Inflation = Increase in prices.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-074"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_economics_sectors",
+  "question_text": "Agriculture and allied activities belong to which sector of the economy?",
+  "options": {
+   "A": "Secondary sector",
+   "B": "Tertiary sector",
+   "C": "Primary sector",
+   "D": "Quaternary sector"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Agro-processing industries like sugar mills are secondary, which makes students place all agriculture-related work in the secondary sector.",
+  "pedagogical_explanation": "The primary sector extracts natural resources and includes agriculture, fishing, forestry and mining. The secondary sector covers manufacturing and the tertiary sector covers services. Memory hook: Primary = Produce from nature.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-075"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_institution_hq",
+  "question_text": "The headquarters of the State Bank of India (SBI) is located in:",
+  "options": {
+   "A": "Kolkata",
+   "B": "Mumbai",
+   "C": "New Delhi",
+   "D": "Hyderabad"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): SBI's ancestor, the Imperial Bank of India, was formed in Calcutta, so students pick Kolkata.",
+  "pedagogical_explanation": "SBI has its corporate centre at Nariman Point, Mumbai. It traces its roots to the Bank of Calcutta (1806), and the State Bank of India Act was passed in 1955. Memory hook: SBI = Mumbai.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-076"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "banking_institutions",
+  "question_text": "The Industrial Finance Corporation of India (IFCI), the first development financial institution of India, was set up in which year?",
+  "options": {
+   "A": "1948",
+   "B": "1955",
+   "C": "1964",
+   "D": "1990"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (C): IDBI was set up in 1964, another major development bank, so its year is confused with IFCI.",
+  "pedagogical_explanation": "IFCI was established in 1948 under the IFC Act to provide medium and long-term credit to industry. ICICI came in 1955 and IDBI in 1964. Memory hook: IFCI = First, 1948.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-077"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_economics_tax",
+  "question_text": "Which type of tax is levied directly on the income of a person and cannot be shifted to someone else?",
+  "options": {
+   "A": "Direct tax",
+   "B": "Indirect tax",
+   "C": "Excise duty",
+   "D": "Customs duty"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Students mix up the two categories because both are collected by the Government, but indirect taxes can be passed on to consumers.",
+  "pedagogical_explanation": "A direct tax such as income tax is paid by the person on whom it is levied and the burden is not shifted. Excise and customs duties are indirect taxes. Memory hook: Direct = Directly paid by you.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-078"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_economics_planning",
+  "question_text": "India's first Five Year Plan (1951 to 1956) gave the highest priority to which sector, based on the Harrod-Domar model?",
+  "options": {
+   "A": "Heavy industry",
+   "B": "Agriculture",
+   "C": "Services",
+   "D": "Foreign trade"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): The Second Five Year Plan (Mahalanobis model) stressed heavy industry, so students apply it to the first plan.",
+  "pedagogical_explanation": "The First Plan emphasised agriculture, irrigation and power, including projects such as Bhakra Nangal and Hirakud. The Second Plan shifted to heavy industry. Memory hook: First plan = Food first.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-079"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_world_deserts",
+  "question_text": "Which is the largest hot desert in the world?",
+  "options": {
+   "A": "Gobi",
+   "B": "Thar",
+   "C": "Kalahari",
+   "D": "Sahara"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): The Gobi is a large Asian desert, but it is a cold desert, so it is sometimes mistaken as the largest overall.",
+  "pedagogical_explanation": "The Sahara in North Africa covers around 9 million sq km and is the largest hot desert. Antarctica is the largest desert overall as a cold desert. Memory hook: Sahara = Super hot.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-080"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_indian_states",
+  "question_text": "Which is the largest state of India by area?",
+  "options": {
+   "A": "Madhya Pradesh",
+   "B": "Maharashtra",
+   "C": "Uttar Pradesh",
+   "D": "Rajasthan"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Madhya Pradesh is the second largest state and is the most common wrong pick.",
+  "pedagogical_explanation": "Rajasthan covers about 342,239 sq km and is the largest state in India by area, followed by Madhya Pradesh. Memory hook: Rajasthan = Royal and Really big.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-081"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_indian_cities",
+  "question_text": "Which Indian city is known as the 'Pink City'?",
+  "options": {
+   "A": "Jodhpur",
+   "B": "Udaipur",
+   "C": "Jaipur",
+   "D": "Jaisalmer"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Jodhpur is called the 'Blue City', another Rajasthan city nickname linked to a colour.",
+  "pedagogical_explanation": "Jaipur earned the name Pink City from the terracotta-pink buildings of its old walled city, painted in 1876 to welcome the Prince of Wales. Udaipur is the City of Lakes and Jaisalmer the Golden City. Memory hook: Jaipur = Pink.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-083"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_physical_features",
+  "question_text": "The 'Palghat Gap', a major mountain pass, connects which two states across the Western Ghats?",
+  "options": {
+   "A": "Karnataka and Goa",
+   "B": "Tamil Nadu and Kerala",
+   "C": "Maharashtra and Gujarat",
+   "D": "Andhra Pradesh and Odisha"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): The Western Ghats also pass through Karnataka and Goa, so students pick another Ghat-adjacent state pair.",
+  "pedagogical_explanation": "The Palghat Gap lies between the Nilgiri Hills and Anamalai Hills, linking Palakkad in Kerala with Coimbatore in Tamil Nadu. Thal Ghat and Bhor Ghat are passes in Maharashtra. Memory hook: Palghat = Kerala-Tamil Nadu gateway.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P3-084"
+ }
+]

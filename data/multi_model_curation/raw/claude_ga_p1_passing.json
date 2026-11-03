@@ -1,0 +1,902 @@
+[
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "polity_fundamental_rights",
+  "question_text": "Which Article of the Constitution of India guarantees the protection of life and personal liberty?",
+  "options": {
+   "A": "Article 19",
+   "B": "Article 20",
+   "C": "Article 21",
+   "D": "Article 22"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (D): Article 22 deals with protection against arrest and detention, which is closely linked to personal liberty.",
+  "pedagogical_explanation": "Article 21 states that no person shall be deprived of life or personal liberty except according to procedure established by law. Memory hook: 21 = Life.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-001"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "polity_constitutional_remedies",
+  "question_text": "Dr. B. R. Ambedkar described which Article as the 'heart and soul' of the Constitution?",
+  "options": {
+   "A": "Article 32",
+   "B": "Article 226",
+   "C": "Article 14",
+   "D": "Article 19"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Article 226 also gives writ powers, but to High Courts, so students confuse it with Article 32.",
+  "pedagogical_explanation": "Article 32 gives the right to move the Supreme Court for enforcement of Fundamental Rights. Ambedkar called it the heart and soul of the Constitution. Memory hook: 32 = Supreme Court remedy.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-002"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "polity_constituent_assembly",
+  "question_text": "Who was the Chairman of the Drafting Committee of the Constituent Assembly of India?",
+  "options": {
+   "A": "Dr. Rajendra Prasad",
+   "B": "B. N. Rau",
+   "C": "Jawaharlal Nehru",
+   "D": "Dr. B. R. Ambedkar"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Rajendra Prasad was the President of the Constituent Assembly, not the Drafting Committee chairman.",
+  "pedagogical_explanation": "The Drafting Committee was set up on 29 August 1947 with Ambedkar as Chairman. B. N. Rau was the Constitutional Adviser. Memory hook: Ambedkar = Architect of the Constitution.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-003"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "polity_fundamental_duties",
+  "question_text": "Fundamental Duties are contained in which Part of the Constitution of India?",
+  "options": {
+   "A": "Part III",
+   "B": "Part IV",
+   "C": "Part IV-A",
+   "D": "Part V"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (B): Part IV holds the Directive Principles, which sits right next to Part IV-A.",
+  "pedagogical_explanation": "Fundamental Duties were added by the 42nd Amendment (1976) as Part IV-A, containing Article 51A. Memory hook: 51A sits in IV-A.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-004"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "polity_money_bill",
+  "question_text": "Which Article of the Constitution defines a 'Money Bill'?",
+  "options": {
+   "A": "Article 108",
+   "B": "Article 110",
+   "C": "Article 112",
+   "D": "Article 109"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (D): Article 109 lays down the special procedure for Money Bills in the Rajya Sabha, so it is the nearest neighbouring Article.",
+  "pedagogical_explanation": "Article 110 defines a Money Bill and lists the matters it may contain. Article 109 gives the procedure and Article 112 is the Annual Financial Statement. Memory hook: 110 defines, 109 procedure.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-005"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "polity_emergency_provisions",
+  "question_text": "President's Rule in a State is imposed under which Article of the Constitution?",
+  "options": {
+   "A": "Article 352",
+   "B": "Article 360",
+   "C": "Article 365",
+   "D": "Article 356"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Article 352 is the National Emergency provision, so students mix up the two emergencies.",
+  "pedagogical_explanation": "Article 356 deals with failure of constitutional machinery in a State. Article 352 is National Emergency and Article 360 is Financial Emergency. Memory hook: 356 = State failure.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-006"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "polity_schedules",
+  "question_text": "Which Schedule of the Constitution lists the functional items of Panchayats?",
+  "options": {
+   "A": "Eleventh Schedule",
+   "B": "Tenth Schedule",
+   "C": "Twelfth Schedule",
+   "D": "Ninth Schedule"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (C): The Twelfth Schedule lists functions of Municipalities, the urban counterpart added by the 74th Amendment.",
+  "pedagogical_explanation": "The Eleventh Schedule, added by the 73rd Amendment (1992), lists 29 subjects for Panchayats. The Twelfth Schedule has 18 items for Municipalities. Memory hook: 11 = Village (the two 1s look like village poles).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-007"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "polity_parliament_qualifications",
+  "question_text": "What is the minimum age required to become a member of the Rajya Sabha?",
+  "options": {
+   "A": "25 years",
+   "B": "30 years",
+   "C": "35 years",
+   "D": "21 years"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): 25 years is the minimum age for the Lok Sabha, which students confuse with the Rajya Sabha.",
+  "pedagogical_explanation": "Article 84 fixes 30 years for the Rajya Sabha and 25 years for the Lok Sabha. The President must be at least 35 years old. Memory hook: Upper House, upper age: 30.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-008"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "polity_finance_commission",
+  "question_text": "The Finance Commission of India is constituted under which Article of the Constitution?",
+  "options": {
+   "A": "Article 275",
+   "B": "Article 282",
+   "C": "Article 280",
+   "D": "Article 293"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Article 275 deals with grants-in-aid to States and is closely linked to Finance Commission recommendations.",
+  "pedagogical_explanation": "Article 280 provides for a Finance Commission every five years to recommend distribution of taxes between the Union and States. Memory hook: 280 = Commission.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-009"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "polity_legislative_relations",
+  "question_text": "Under which Article can Parliament legislate on a State List subject in the national interest if the Rajya Sabha passes a resolution supported by two-thirds of members present and voting?",
+  "options": {
+   "A": "Article 249",
+   "B": "Article 250",
+   "C": "Article 248",
+   "D": "Article 252"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Article 250 also lets Parliament legislate on State List subjects, but during a Proclamation of Emergency, not through a Rajya Sabha resolution.",
+  "pedagogical_explanation": "Article 249 allows Parliament to legislate on a State List matter for up to one year at a time after such a Rajya Sabha resolution. Article 252 is by consent of States and Article 248 is residuary powers. Memory hook: 249 = Rajya Sabha resolution.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-010"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "history_modern_battles",
+  "question_text": "In which year was the Battle of Plassey fought?",
+  "options": {
+   "A": "1764",
+   "B": "1757",
+   "C": "1761",
+   "D": "1799"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): 1764 is the year of the Battle of Buxar, the other decisive Company victory in Bengal.",
+  "pedagogical_explanation": "At Plassey in 1757 Robert Clive defeated Nawab Siraj-ud-Daulah, laying the base of British rule in India. Buxar (1764) confirmed it. Memory hook: Plassey 57, Buxar 64.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-011"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "history_ancient_maurya",
+  "question_text": "Who founded the Maurya Empire with the guidance of Chanakya (Kautilya)?",
+  "options": {
+   "A": "Ashoka",
+   "B": "Bindusara",
+   "C": "Samudragupta",
+   "D": "Chandragupta Maurya"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (C): Samudragupta belongs to the later Gupta dynasty, and the shared 'Chandragupta/Gupta' naming causes confusion.",
+  "pedagogical_explanation": "Chandragupta Maurya overthrew the Nandas around 321 BCE and founded the Maurya Empire. Bindusara was his son and Ashoka his grandson. Memory hook: Chandragupta started it, Ashoka made it famous.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-012"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "history_freedom_struggle",
+  "question_text": "In which year did the Jallianwala Bagh massacre take place in Amritsar?",
+  "options": {
+   "A": "1919",
+   "B": "1920",
+   "C": "1917",
+   "D": "1922"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (D): 1922 is the year of Chauri Chaura and the withdrawal of Non-Cooperation, which students link with Jallianwala.",
+  "pedagogical_explanation": "On 13 April 1919 (Baisakhi) General Dyer ordered firing on a peaceful gathering at Jallianwala Bagh. Memory hook: Rowlatt Act 1919, Jallianwala 1919.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-013"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "history_non_cooperation",
+  "question_text": "Which incident led Mahatma Gandhi to suspend the Non-Cooperation Movement in February 1922?",
+  "options": {
+   "A": "Jallianwala Bagh massacre",
+   "B": "Moplah rebellion",
+   "C": "Chauri Chaura incident",
+   "D": "Kakori train robbery"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Jallianwala Bagh (1919) came before the movement and helped trigger it, not end it.",
+  "pedagogical_explanation": "At Chauri Chaura (Uttar Pradesh) a mob burnt a police station, killing policemen, and Gandhi withdrew the movement over the violence. Memory hook: Chauri Chaura = movement stopped.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-014"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "history_civil_disobedience",
+  "question_text": "The Dandi March (Salt March) of 1930 began from which place?",
+  "options": {
+   "A": "Sevagram Ashram",
+   "B": "Champaran",
+   "C": "Bardoli",
+   "D": "Sabarmati Ashram"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Sevagram Ashram near Wardha became Gandhi's base later, and students confuse it with his earlier ashram.",
+  "pedagogical_explanation": "Gandhi began the march on 12 March 1930 from Sabarmati Ashram, Ahmedabad, and reached Dandi on 6 April to break the salt law. Memory hook: Sabarmati to Dandi.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-015"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "history_medieval_battles",
+  "question_text": "The First Battle of Panipat (1526) was fought between Babur and which ruler?",
+  "options": {
+   "A": "Rana Sanga",
+   "B": "Ibrahim Lodi",
+   "C": "Hemu",
+   "D": "Sher Shah Suri"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Rana Sanga was Babur's opponent at Khanwa (1527), the very next major battle.",
+  "pedagogical_explanation": "Babur defeated Ibrahim Lodi, the last Delhi Sultan, at Panipat in 1526 and began Mughal rule. Hemu fought at the Second Battle of Panipat (1556). Memory hook: Panipat I = Lodi ends.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-016"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "history_indus_valley",
+  "question_text": "The 'Great Bath', a famous structure of the Harappan civilisation, was found at which site?",
+  "options": {
+   "A": "Mohenjodaro",
+   "B": "Harappa",
+   "C": "Lothal",
+   "D": "Kalibangan"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Harappa gave the civilisation its name and was discovered first, so students assume the Great Bath is there.",
+  "pedagogical_explanation": "The Great Bath was part of the citadel at Mohenjodaro in present-day Sindh, Pakistan. Lothal is known for its dockyard and Kalibangan for fire altars. Memory hook: Mohenjodaro = Great Bath.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-017"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "history_british_revenue",
+  "question_text": "The Permanent Settlement of Bengal in 1793 was introduced by which Governor-General?",
+  "options": {
+   "A": "Warren Hastings",
+   "B": "Lord Wellesley",
+   "C": "Lord Cornwallis",
+   "D": "Lord Dalhousie"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Warren Hastings is linked with earlier revenue experiments such as the five-year settlement of 1772.",
+  "pedagogical_explanation": "Lord Cornwallis fixed land revenue permanently with zamindars as owners, in Bengal, Bihar and Orissa. Memory hook: Cornwallis = Permanent Settlement.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-018"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "history_subsidiary_alliance",
+  "question_text": "Which was the first Indian state to accept the Subsidiary Alliance introduced by Lord Wellesley?",
+  "options": {
+   "A": "Mysore",
+   "B": "Awadh",
+   "C": "The Peshwa's Maratha state",
+   "D": "Hyderabad"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (B): Awadh accepted the system later (1801), and students pick it as the best-known early acceptor.",
+  "pedagogical_explanation": "The Nizam of Hyderabad accepted the Subsidiary Alliance in 1798, the first state to do so. Awadh followed in 1801 and the Peshwa through the Treaty of Bassein (1802). Memory hook: Hyderabad was first in 98.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-019"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_indian_rivers",
+  "question_text": "Which is the longest river of India, flowing mainly within the country?",
+  "options": {
+   "A": "Godavari",
+   "B": "Ganga",
+   "C": "Yamuna",
+   "D": "Narmada"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Godavari is the longest peninsular river, so it is mistaken for the longest river overall.",
+  "pedagogical_explanation": "The Ganga, about 2,525 km long, is the longest river of India. Godavari is the longest of the peninsular rivers. Memory hook: Ganga = Longest, Godavari = Longest in the South.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-020"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_tropic_of_cancer",
+  "question_text": "The Tropic of Cancer passes through how many Indian states?",
+  "options": {
+   "A": "6",
+   "B": "7",
+   "C": "8",
+   "D": "9"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (B): Students often forget one of the small north-eastern states (Tripura or Mizoram) and count 7.",
+  "pedagogical_explanation": "It passes through Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram. Memory hook: G-R-M-C-J-W-T-M = 8.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-021"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_world_continents",
+  "question_text": "Which is the largest continent of the world by area?",
+  "options": {
+   "A": "Asia",
+   "B": "Africa",
+   "C": "North America",
+   "D": "Europe"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Africa is the second largest continent, so it is the most common wrong pick.",
+  "pedagogical_explanation": "Asia covers about 44 million sq km and has the largest population. Africa is second. Memory hook: Asia first, Africa second.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-022"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_rivers_floods",
+  "question_text": "Which river was historically called the 'Sorrow of Bengal' because of its devastating floods?",
+  "options": {
+   "A": "Kosi",
+   "B": "Hooghly",
+   "C": "Mahanadi",
+   "D": "Damodar"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Kosi is called the Sorrow of Bihar, a very similar title for a neighbouring state.",
+  "pedagogical_explanation": "The Damodar flooded repeatedly before dams were built under the Damodar Valley Corporation. Memory hook: Damodar = Bengal, Kosi = Bihar.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-023"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "geography_oceans",
+  "question_text": "The deepest known point of the world's oceans, the Challenger Deep, lies in which trench?",
+  "options": {
+   "A": "Puerto Rico Trench",
+   "B": "Java Trench",
+   "C": "Mariana Trench",
+   "D": "Tonga Trench"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (D): Tonga Trench is also in the Pacific and is the second deepest, so it is the closest confusion.",
+  "pedagogical_explanation": "The Mariana Trench in the western Pacific reaches about 11,000 m depth. Memory hook: Mariana = Maximum depth.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-024"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_lakes",
+  "question_text": "Chilika Lake, the largest coastal lagoon in India, is located in which state?",
+  "options": {
+   "A": "Andhra Pradesh",
+   "B": "Odisha",
+   "C": "Tamil Nadu",
+   "D": "West Bengal"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Pulicat Lake, another large lagoon, lies on the Andhra Pradesh-Tamil Nadu border, so students confuse the two lagoons.",
+  "pedagogical_explanation": "Chilika is a brackish water lagoon on the Odisha coast along the Bay of Bengal. Memory hook: Chilika = Odisha, Pulicat = AP/TN.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-025"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "geography_straits",
+  "question_text": "Which strait separates India from Sri Lanka?",
+  "options": {
+   "A": "Palk Strait",
+   "B": "Strait of Malacca",
+   "C": "Ten Degree Channel",
+   "D": "Bass Strait"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (C): Ten Degree Channel is an Indian channel too, but it separates the Andaman Islands from the Nicobar Islands.",
+  "pedagogical_explanation": "The Palk Strait lies between Tamil Nadu and Sri Lanka, joining the Bay of Bengal and the Palk Bay. Memory hook: Palk = India-Sri Lanka.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-026"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "geography_mountain_passes",
+  "question_text": "Through which Himalayan pass does the River Sutlej enter India from Tibet?",
+  "options": {
+   "A": "Nathu La",
+   "B": "Zoji La",
+   "C": "Bomdi La",
+   "D": "Shipki La"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Nathu La is the best-known border pass with Tibet, but it lies in Sikkim and does not carry the Sutlej.",
+  "pedagogical_explanation": "The Sutlej enters Himachal Pradesh through Shipki La. Zoji La is in Ladakh and Bomdi La in Arunachal Pradesh. Memory hook: Sutlej = Shipki La (both start with S).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-027"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_rbi_history",
+  "question_text": "The Reserve Bank of India commenced operations in which year?",
+  "options": {
+   "A": "1935",
+   "B": "1949",
+   "C": "1947",
+   "D": "1955"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): 1949 is the year of RBI's nationalisation, the most common date confused with its start.",
+  "pedagogical_explanation": "RBI was set up under the RBI Act, 1934 and began operations on 1 April 1935. It was nationalised on 1 January 1949. Memory hook: Act 34, start 35.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-028"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_institution_hq",
+  "question_text": "The headquarters of the Asian Development Bank (ADB) is located in which city?",
+  "options": {
+   "A": "Tokyo",
+   "B": "Singapore",
+   "C": "Manila",
+   "D": "Beijing"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): ADB has traditionally been headed by a Japanese president, so students wrongly place its HQ in Tokyo.",
+  "pedagogical_explanation": "ADB, founded in 1966, is headquartered in Mandaluyong, Metro Manila, Philippines. Beijing hosts the Asian Infrastructure Investment Bank. Memory hook: ADB = Manila.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-029"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_monetary_policy_tools",
+  "question_text": "The rate at which the RBI borrows money from commercial banks for the short term is called:",
+  "options": {
+   "A": "Repo Rate",
+   "B": "Reverse Repo Rate",
+   "C": "Bank Rate",
+   "D": "Cash Reserve Ratio"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Repo Rate is the rate at which RBI lends to banks, the exact opposite direction of the flow.",
+  "pedagogical_explanation": "Under reverse repo, banks park surplus funds with RBI and earn this rate, which absorbs liquidity from the system. Memory hook: Reverse repo = RBI borrows (Reverse of Repo). (Since 2022 the Standing Deposit Facility is the floor of the LAF corridor, but the fixed-rate reverse repo still exists as a definition.)",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-030"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_crr",
+  "question_text": "The percentage of a bank's Net Demand and Time Liabilities (NDTL) that must be kept as cash balance with the RBI is called:",
+  "options": {
+   "A": "Statutory Liquidity Ratio",
+   "B": "Bank Rate",
+   "C": "Repo Rate",
+   "D": "Cash Reserve Ratio"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): SLR is also a percentage of NDTL, but it is held by the bank itself in liquid assets, not as cash with RBI.",
+  "pedagogical_explanation": "CRR is the share of NDTL that banks must keep as cash with the RBI and it earns no interest. SLR is kept in cash, gold and approved securities with the banks themselves. Memory hook: CRR = Cash with RBI.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-031"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_institution_hq",
+  "question_text": "The headquarters of the Small Industries Development Bank of India (SIDBI) is located in:",
+  "options": {
+   "A": "Mumbai",
+   "B": "Lucknow",
+   "C": "New Delhi",
+   "D": "Kolkata"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Most financial institutions such as RBI, NABARD and SEBI are in Mumbai, so students default to Mumbai for SIDBI too.",
+  "pedagogical_explanation": "SIDBI was set up in 1990 and has its head office in Lucknow. Memory hook: SIDBI = Small bank, Lucknow.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-032"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "CAT-Level",
+  "concept_tag": "banking_nabard_history",
+  "question_text": "NABARD was established in 1982 on the recommendation of which committee?",
+  "options": {
+   "A": "Shivaraman Committee",
+   "B": "Narasimham Committee",
+   "C": "Rangarajan Committee",
+   "D": "Kelkar Committee"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Narasimham Committee is the most famous banking committee (financial sector reforms), so students pick it by default.",
+  "pedagogical_explanation": "The Shivaraman Committee (1979) recommended a dedicated apex institution for agriculture and rural credit, leading to NABARD in July 1982. Memory hook: Shivaraman = NABARD.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-033"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_nationalisation",
+  "question_text": "In which year were 14 major commercial banks nationalised in India?",
+  "options": {
+   "A": "1955",
+   "B": "1980",
+   "C": "1969",
+   "D": "1991"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (B): 1980 is the second round of nationalisation (six banks), so students mix up the two rounds.",
+  "pedagogical_explanation": "On 19 July 1969 the Government nationalised 14 banks having deposits above Rs 50 crore. Six more followed in 1980. Memory hook: 14 banks in 69.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-034"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "banking_sebi",
+  "question_text": "SEBI was given statutory powers through the SEBI Act passed in which year?",
+  "options": {
+   "A": "1988",
+   "B": "1991",
+   "C": "1995",
+   "D": "1992"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): SEBI was first set up in 1988 as a non-statutory body, so students pick the year of its creation instead of its statutory status.",
+  "pedagogical_explanation": "SEBI was established administratively in 1988 and became a statutory regulator of the securities market with the SEBI Act, 1992. Memory hook: Set up 88, statutory 92.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-035"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "banking_rbi_functions",
+  "question_text": "Which institution is known as the 'Banker's Bank' in India?",
+  "options": {
+   "A": "State Bank of India",
+   "B": "Reserve Bank of India",
+   "C": "NABARD",
+   "D": "IDBI Bank"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): SBI is the largest commercial bank, so students think it is the bank for other banks.",
+  "pedagogical_explanation": "RBI acts as banker to commercial banks by holding their reserves and lending to them as lender of last resort. Memory hook: RBI = Banker to banks and to the Government.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-036"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_chemistry_compounds",
+  "question_text": "What is the chemical formula of common salt?",
+  "options": {
+   "A": "NaOH",
+   "B": "Na2CO3",
+   "C": "NaCl",
+   "D": "KCl"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (D): KCl is potassium chloride, another chloride salt that looks similar to NaCl.",
+  "pedagogical_explanation": "Common salt is sodium chloride (NaCl), formed by neutralisation of NaOH and HCl. Memory hook: Na + Cl = Salt.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-037"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_biology_cell",
+  "question_text": "Which cell organelle is called the 'powerhouse of the cell'?",
+  "options": {
+   "A": "Mitochondria",
+   "B": "Golgi apparatus",
+   "C": "Ribosome",
+   "D": "Lysosome"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (D): Lysosome is known by another nickname, 'suicide bag', so the two nicknames get swapped.",
+  "pedagogical_explanation": "Mitochondria release energy in the form of ATP during respiration. Ribosomes make proteins. Memory hook: Mitochondria = Energy ATP.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-038"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_physics_mirrors",
+  "question_text": "Which type of mirror is used as a rear-view mirror in vehicles because it gives a wider field of view?",
+  "options": {
+   "A": "Plane mirror",
+   "B": "Concave mirror",
+   "C": "Cylindrical mirror",
+   "D": "Convex mirror"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (B): Concave mirrors are used in headlights, shaving mirrors and by dentists, so they are the most common mix-up.",
+  "pedagogical_explanation": "A convex mirror always forms an erect, diminished image and covers a wide area behind the vehicle. Memory hook: Convex = Cars (wide view).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-039"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "science_biology_nutrition",
+  "question_text": "Deficiency of which vitamin causes the disease scurvy?",
+  "options": {
+   "A": "Vitamin D",
+   "B": "Vitamin C",
+   "C": "Vitamin B1",
+   "D": "Vitamin A"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Vitamin D deficiency causes rickets, the other classic bone and tissue disease students mix with scurvy.",
+  "pedagogical_explanation": "Vitamin C (ascorbic acid) deficiency causes scurvy, with bleeding gums and slow wound healing. Vitamin B1 deficiency causes beriberi and Vitamin A deficiency causes night blindness. Memory hook: Scurvy = Citrus cure.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-040"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_chemistry_everyday",
+  "question_text": "What is the chemical name of baking soda?",
+  "options": {
+   "A": "Sodium carbonate",
+   "B": "Calcium carbonate",
+   "C": "Sodium hydrogen carbonate",
+   "D": "Calcium hydroxide"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): Sodium carbonate is washing soda, a close relative of baking soda that students often swap with it.",
+  "pedagogical_explanation": "Baking soda is sodium hydrogen carbonate (NaHCO3), a mild non-corrosive base used in baking and antacids. Washing soda is Na2CO3.10H2O. Memory hook: Baking soda has Hydrogen (NaHCO3).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-041"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_biology_brain",
+  "question_text": "Which part of the human brain is mainly responsible for maintaining posture and balance of the body?",
+  "options": {
+   "A": "Cerebellum",
+   "B": "Cerebrum",
+   "C": "Medulla",
+   "D": "Hypothalamus"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (C): Medulla controls involuntary actions such as heartbeat and breathing, so it is confused with the balance centre.",
+  "pedagogical_explanation": "The cerebellum, in the hindbrain, coordinates voluntary movements, posture and equilibrium. The cerebrum handles thinking and voluntary action. Memory hook: Cerebellum = Coordination and balance.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-042"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_physics_dispersion",
+  "question_text": "When white light passes through a glass prism, which colour deviates the least?",
+  "options": {
+   "A": "Violet",
+   "B": "Green",
+   "C": "Blue",
+   "D": "Red"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Violet is at the opposite end of the spectrum and deviates the most, so students reverse the order.",
+  "pedagogical_explanation": "Red has the longest wavelength and bends least, while violet has the shortest and bends most. This causes dispersion into VIBGYOR. Memory hook: Red = Rigid (least bending).",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-043"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "science_biology_circulation",
+  "question_text": "Which chamber of the human heart receives deoxygenated blood from the body through the vena cavae?",
+  "options": {
+   "A": "Right atrium",
+   "B": "Left atrium",
+   "C": "Right ventricle",
+   "D": "Left ventricle"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): Left atrium also receives blood, but it is oxygenated blood coming from the lungs.",
+  "pedagogical_explanation": "The right atrium collects deoxygenated blood from the body and passes it to the right ventricle, which pumps it to the lungs. Memory hook: Right side = Returned (used) blood.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-044"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_national_symbols",
+  "question_text": "Which animal is the national animal of India?",
+  "options": {
+   "A": "Lion",
+   "B": "Tiger",
+   "C": "Leopard",
+   "D": "Elephant"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): The lions of the Sarnath capital appear on the national emblem, so students mistake the lion for the national animal.",
+  "pedagogical_explanation": "The Bengal tiger (Panthera tigris) is the national animal of India. The lion capital of Ashoka is the national emblem, not an animal designation. Memory hook: Tiger = Animal, Lion = Emblem.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-045"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_books_authors",
+  "question_text": "Who is the author of the book 'The Discovery of India'?",
+  "options": {
+   "A": "Mahatma Gandhi",
+   "B": "Rabindranath Tagore",
+   "C": "S. Radhakrishnan",
+   "D": "Jawaharlal Nehru"
+  },
+  "correct_answer": "D",
+  "trap_type": "Trap (A): Gandhi's autobiography 'My Experiments with Truth' is far more famous, so he is picked for any freedom-era book.",
+  "pedagogical_explanation": "Nehru wrote The Discovery of India during imprisonment at Ahmednagar Fort (1942 to 1945), and it was published in 1946. Memory hook: Nehru in jail = Discovery of India.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-046"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_important_days",
+  "question_text": "National Sports Day is observed in India every year on which date, the birth anniversary of hockey player Major Dhyan Chand?",
+  "options": {
+   "A": "12 January",
+   "B": "24 January",
+   "C": "29 August",
+   "D": "14 November"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (A): 12 January is National Youth Day (Swami Vivekananda's birthday), another day linked to youth and activity.",
+  "pedagogical_explanation": "Major Dhyan Chand was born on 29 August 1905, and the day is celebrated as National Sports Day. 14 November is Children's Day. Memory hook: 29 August = Dhyan Chand.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-047"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_sports_terms",
+  "question_text": "The term 'Scrum' is associated with which sport?",
+  "options": {
+   "A": "Polo",
+   "B": "Rugby",
+   "C": "Baseball",
+   "D": "Volleyball"
+  },
+  "correct_answer": "B",
+  "trap_type": "Trap (A): Polo has its own unusual term, 'chukker', so students link odd team-sport terms with polo.",
+  "pedagogical_explanation": "A scrum is a method of restarting play in rugby, where players from both sides bind together and contest the ball. Memory hook: Scrum = Rugby.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-048"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Easy",
+  "concept_tag": "static_firsts",
+  "question_text": "Who was the first Indian to receive a Nobel Prize?",
+  "options": {
+   "A": "Rabindranath Tagore",
+   "B": "C. V. Raman",
+   "C": "Mother Teresa",
+   "D": "Amartya Sen"
+  },
+  "correct_answer": "A",
+  "trap_type": "Trap (B): C. V. Raman won the first Nobel in Science for an Indian (1930), so students think he came first overall.",
+  "pedagogical_explanation": "Tagore won the Nobel Prize in Literature in 1913 for Gitanjali. C. V. Raman won the Physics Nobel in 1930. Memory hook: Tagore 1913 = first.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-049"
+ },
+ {
+  "exam": "Sarkari",
+  "topic": "Sarkari General Awareness",
+  "difficulty": "Moderate",
+  "concept_tag": "static_national_song",
+  "question_text": "In which novel by Bankim Chandra Chattopadhyay did the song 'Vande Mataram' first appear?",
+  "options": {
+   "A": "Durgeshnandini",
+   "B": "Kapalkundala",
+   "C": "Anandamath",
+   "D": "Devi Chaudhurani"
+  },
+  "correct_answer": "C",
+  "trap_type": "Trap (D): Devi Chaudhurani is another Bankim novel with a similar sannyasi-rebellion theme, so it is the closest confusion.",
+  "pedagogical_explanation": "Vande Mataram appears in Anandamath (1882), set around the Sannyasi Rebellion. It was adopted as the national song in 1950. Memory hook: Anandamath = Vande Mataram.",
+  "verify_code": "",
+  "id": "CL-SK-SGA-P1-050"
+ }
+]
