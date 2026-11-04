@@ -930,5 +930,25 @@
       "claude-ga-p5 #141 explanation: EXIM Bank commenced business 1 March 1982 (not 1 January), per EXIM Citizens' Charter"
     ],
     "verification": "Each key solved independently; Moderate/CAT-Level keys and uncertain facts web-checked (INC session list, RBI Act s.45ZB, AIFF/Santosh Trophy, EXIM Bank, Suhrawardi silsila). No verify_code (GA is not a code-required topic)."
+  },
+  "claude_ga_sarkari_import_2026_11_04_p6p9": {
+    "threshold": 0.8,
+    "pool": "all data/*.json banks plus the 149 Claude GA items (#18, #19) and pairwise within p6-p9",
+    "metric": "SequenceMatcher on question_text",
+    "received": 100,
+    "kept": 100,
+    "drops": [],
+    "template_similar_kept": [
+      "claude-ga-p7 #192 vs p1 #25 (Sambhar vs Chilika lake, 0.76)",
+      "claude-ga-p6 #172 vs p4 #122 (Kala-azar vs Malaria pathogen)",
+      "claude-ga-p7 #185 vs p3 #54 (Gambit vs Birdie)",
+      "claude-ga-p8 #208 vs p5 #138 (Tehri vs Nagarjuna Sagar dam)"
+    ],
+    "difficulty_mix": "each 50-question batch is 12 Easy / 22 Moderate / 16 CAT-Level; History 10, Static GK 10, Polity 8, Geography 8, Science 7, Banking 7 (economy tags counted as Banking)",
+    "notes": [
+      "claude-ga-p7 #184 (ICAO HQ Montreal) kept as CAT-Level to preserve the batch difficulty target; arguably Moderate",
+      "claude-ga-p7 resent unchanged as a separate upload (same md5); counted once"
+    ],
+    "verification": "Each key solved independently; uncertain Moderate/CAT-Level keys web-checked (RBI Master Direction on call/notice/term money). Article 316(2) age limit (State PSC 62, UPSC 65) confirmed against question wording. No verify_code (GA is not a code-required topic)."
   }
 }

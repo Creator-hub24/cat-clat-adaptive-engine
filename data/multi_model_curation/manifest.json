@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Position n in verified_questions.json -> source model/batch and original index. Gemini compare file omitted (duplicates batch 4). Meta AI Hard Quant batches meta_hard_p1/meta_hard_p2 appended (codes MH1/MH2). Gemini Argon 4.0 batches 8 (Reasoning, GB8) and 9 (English, GB9) and Meta AI English/Reasoning batches meta_eng_p1/p2 (ME1/ME2) and meta_rea_p1/p2 (MR1/MR2) appended; index is the item's position in the source file (dropped items leave gaps). Claude General Awareness (static GK) batches claude_ga_p1/p2/p3 and the 50-question batch claude_ga_p4/p5 appended (codes GA1-GA5); index is the question's original id in Claude's output; fact_source and ga_area record the cited source and sub-area."
+    "description": "Position n in verified_questions.json -> source model/batch and original index. Gemini compare file omitted (duplicates batch 4). Meta AI Hard Quant batches meta_hard_p1/meta_hard_p2 appended (codes MH1/MH2). Gemini Argon 4.0 batches 8 (Reasoning, GB8) and 9 (English, GB9) and Meta AI English/Reasoning batches meta_eng_p1/p2 (ME1/ME2) and meta_rea_p1/p2 (MR1/MR2) appended; index is the item's position in the source file (dropped items leave gaps). Claude General Awareness (static GK) batches claude_ga_p1/p2/p3 the 50-question batch claude_ga_p4/p5 and the two 50-question batches claude_ga_p6/p7 and claude_ga_p8/p9 appended (codes GA1-GA9); index is the question's original id in Claude's output; fact_source and ga_area record the cited source and sub-area."
   },
   "items": [
     {
@@ -3452,6 +3452,1006 @@
       "index": 150,
       "fact_source": "Badminton World Federation (BWF), official website (Thomas and Uber Cup)",
       "ga_area": "Static GK"
+    },
+    {
+      "n": 394,
+      "source": "claude-ga-p6 #151",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 151,
+      "fact_source": "NCERT Class 12, Themes in Indian History Part I, Ch 1; Archaeological Survey of India",
+      "ga_area": "History"
+    },
+    {
+      "n": 395,
+      "source": "claude-ga-p6 #152",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 152,
+      "fact_source": "NCERT Class 7, Our Pasts II, Ch 2 (New Kings and Kingdoms)",
+      "ga_area": "History"
+    },
+    {
+      "n": 396,
+      "source": "claude-ga-p6 #153",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 153,
+      "fact_source": "NCERT Class 12, Themes in Indian History Part II, Ch 7 (An Imperial Capital: Vijayanagara)",
+      "ga_area": "History"
+    },
+    {
+      "n": 397,
+      "source": "claude-ga-p6 #154",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 154,
+      "fact_source": "Satish Chandra, Medieval India Part I (Delhi Sultanate); NCERT Class 7, Our Pasts II, Ch 3",
+      "ga_area": "History"
+    },
+    {
+      "n": 398,
+      "source": "claude-ga-p6 #155",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 155,
+      "fact_source": "NCERT Class 12, Themes in Indian History Part III, Ch 13",
+      "ga_area": "History"
+    },
+    {
+      "n": 399,
+      "source": "claude-ga-p6 #156",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 156,
+      "fact_source": "UNESCO World Heritage Centre, India; Archaeological Survey of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 400,
+      "source": "claude-ga-p6 #157",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 157,
+      "fact_source": "Sangeet Natak Akademi; Ministry of Culture, Government of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 401,
+      "source": "claude-ga-p6 #158",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 158,
+      "fact_source": "Sangeet Natak Akademi; Ministry of Culture, Government of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 402,
+      "source": "claude-ga-p6 #159",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 159,
+      "fact_source": "United Nations, Charter and ICJ official website (Seat of the Court)",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 403,
+      "source": "claude-ga-p6 #160",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 160,
+      "fact_source": "Sangeet Natak Akademi (Odissi); Ministry of Culture, Government of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 404,
+      "source": "claude-ga-p6 #161",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 161,
+      "fact_source": "Lok Sabha Secretariat, Constitution of India notes; Swaran Singh Committee Report",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 405,
+      "source": "claude-ga-p6 #162",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 162,
+      "fact_source": "Constitution of India, Part IV, Articles 47, 49, 50 and 51",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 406,
+      "source": "claude-ga-p6 #163",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 163,
+      "fact_source": "Constitution of India, Part IX, Articles 243D, 243G, 243I and 243K",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 407,
+      "source": "claude-ga-p6 #164",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 164,
+      "fact_source": "Protection of Human Rights Act, 1993; National Human Rights Commission, official website",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 408,
+      "source": "claude-ga-p6 #165",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 165,
+      "fact_source": "NCERT Class 10, Contemporary India II, Ch 4 (Agriculture)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 409,
+      "source": "claude-ga-p6 #166",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 166,
+      "fact_source": "NCERT Class 10, Contemporary India II, Ch 1 (Resources and Development)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 410,
+      "source": "claude-ga-p6 #167",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 167,
+      "fact_source": "NCERT Class 11, India: Physical Environment, Ch 3 (Drainage System)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 411,
+      "source": "claude-ga-p6 #168",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 168,
+      "fact_source": "World Atlas (Europe: Drainage); International Commission for the Protection of the Danube River",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 412,
+      "source": "claude-ga-p6 #169",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 169,
+      "fact_source": "NCERT Class 10 Science, Ch 3 (Metals and Non-metals)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 413,
+      "source": "claude-ga-p6 #170",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 170,
+      "fact_source": "NCERT Class 11, Fundamentals of Physical Geography, Ch 9 (Water in the Atmosphere); India Meteorological Department",
+      "ga_area": "Science"
+    },
+    {
+      "n": 414,
+      "source": "claude-ga-p6 #171",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 171,
+      "fact_source": "NCERT Class 12 Chemistry, Ch 7 (The p-Block Elements: Oxides of Nitrogen)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 415,
+      "source": "claude-ga-p6 #172",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 172,
+      "fact_source": "National Centre for Vector Borne Diseases Control (NCVBDC), Ministry of Health and Family Welfare",
+      "ga_area": "Science"
+    },
+    {
+      "n": 416,
+      "source": "claude-ga-p6 #173",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 173,
+      "fact_source": "Reserve Bank of India, Financial Education booklets (Deposit Accounts)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 417,
+      "source": "claude-ga-p6 #174",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 174,
+      "fact_source": "Reserve Bank of India, Money Market (Call/Notice Money Market)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 418,
+      "source": "claude-ga-p6 #175",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p6",
+      "code": "GA6",
+      "index": 175,
+      "fact_source": "NCERT Class 12, Introductory Macroeconomics, Ch 2 (National Income Accounting)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 419,
+      "source": "claude-ga-p7 #176",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 176,
+      "fact_source": "NCERT Class 12, Themes in Indian History Part I, Ch 2 (Kings, Farmers and Towns)",
+      "ga_area": "History"
+    },
+    {
+      "n": 420,
+      "source": "claude-ga-p7 #177",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 177,
+      "fact_source": "NCERT Class 7, Our Pasts II, Ch 3 (The Delhi Sultans); Archaeological Survey of India",
+      "ga_area": "History"
+    },
+    {
+      "n": 421,
+      "source": "claude-ga-p7 #178",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 178,
+      "fact_source": "NCERT Class 8, Our Pasts III, Ch 5 (When People Rebel)",
+      "ga_area": "History"
+    },
+    {
+      "n": 422,
+      "source": "claude-ga-p7 #179",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 179,
+      "fact_source": "NCERT Class 12, Themes in Indian History Part III, Ch 14; Bipan Chandra, India's Struggle for Independence",
+      "ga_area": "History"
+    },
+    {
+      "n": 423,
+      "source": "claude-ga-p7 #180",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 180,
+      "fact_source": "UNESCO World Heritage Centre, Group of Monuments at Mahabalipuram; NCERT Class 11, An Introduction to Indian Art",
+      "ga_area": "History"
+    },
+    {
+      "n": 424,
+      "source": "claude-ga-p7 #181",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 181,
+      "fact_source": "Sangeet Natak Akademi; Ministry of Culture, Government of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 425,
+      "source": "claude-ga-p7 #182",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 182,
+      "fact_source": "UNESCO World Heritage Centre, Sundarbans National Park; Ministry of Environment, Forest and Climate Change",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 426,
+      "source": "claude-ga-p7 #183",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 183,
+      "fact_source": "Sangeet Natak Akademi; Ministry of Culture, Government of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 427,
+      "source": "claude-ga-p7 #184",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 184,
+      "fact_source": "International Civil Aviation Organization, official website; United Nations system directory",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 428,
+      "source": "claude-ga-p7 #185",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 185,
+      "fact_source": "FIDE, Handbook and Laws of Chess (terminology)",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 429,
+      "source": "claude-ga-p7 #186",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 186,
+      "fact_source": "Constitution of India, Parts IX, IX-A, IX-B and XIV-A",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 430,
+      "source": "claude-ga-p7 #187",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 187,
+      "fact_source": "Constitution of India, Article 60",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 431,
+      "source": "claude-ga-p7 #188",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 188,
+      "fact_source": "Constitution (Forty-fourth Amendment) Act, 1978; Constitution of India, Article 300A",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 432,
+      "source": "claude-ga-p7 #189",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 189,
+      "fact_source": "Constitution of India, Part III, Articles 17, 23, 24 and 25",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 433,
+      "source": "claude-ga-p7 #190",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 190,
+      "fact_source": "Ministry of Tribal Affairs, Government of India; Census of India (Scheduled Tribes)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 434,
+      "source": "claude-ga-p7 #191",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 191,
+      "fact_source": "NCERT Class 10, Contemporary India II, Ch 5 (Minerals and Energy Resources); Indian Bureau of Mines",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 435,
+      "source": "claude-ga-p7 #192",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 192,
+      "fact_source": "NCERT Class 11, India: Physical Environment, Ch 3 (Drainage System)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 436,
+      "source": "claude-ga-p7 #193",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 193,
+      "fact_source": "NCERT Class 11, Fundamentals of Physical Geography; World Atlas (Africa)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 437,
+      "source": "claude-ga-p7 #194",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 194,
+      "fact_source": "NCERT Class 10 Science, Ch 4 (Carbon and its Compounds)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 438,
+      "source": "claude-ga-p7 #195",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 195,
+      "fact_source": "NCERT Class 9 Science, Ch 4 (Structure of the Atom)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 439,
+      "source": "claude-ga-p7 #196",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 196,
+      "fact_source": "NCERT Class 11 Biology, Ch 19 (Excretory Products and their Elimination)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 440,
+      "source": "claude-ga-p7 #197",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 197,
+      "fact_source": "National Payments Corporation of India, official website; Reserve Bank of India, Payment Systems",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 441,
+      "source": "claude-ga-p7 #198",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 198,
+      "fact_source": "Reserve Bank of India, Financial Education booklets (Types of Bank Accounts)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 442,
+      "source": "claude-ga-p7 #199",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 199,
+      "fact_source": "Reserve Bank of India, Government Securities Market (Treasury Bills)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 443,
+      "source": "claude-ga-p7 #200",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p7",
+      "code": "GA7",
+      "index": 200,
+      "fact_source": "Planning Commission of India, Eighth Five Year Plan document; NCERT Class 12, Indian Economic Development",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 444,
+      "source": "claude-ga-p8 #201",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 201,
+      "fact_source": "Upinder Singh, A History of Ancient and Early Medieval India; NCERT Class 11, An Introduction to Indian Art (Buddhist traditions)",
+      "ga_area": "History"
+    },
+    {
+      "n": 445,
+      "source": "claude-ga-p8 #202",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 202,
+      "fact_source": "Upinder Singh, A History of Ancient and Early Medieval India; NCERT Class 12, Themes in Indian History Part I, Ch 2",
+      "ga_area": "History"
+    },
+    {
+      "n": 446,
+      "source": "claude-ga-p8 #203",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 203,
+      "fact_source": "Satish Chandra, Medieval India Part II; Archaeological Survey of India (Raigad Fort)",
+      "ga_area": "History"
+    },
+    {
+      "n": 447,
+      "source": "claude-ga-p8 #204",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 204,
+      "fact_source": "NCERT Class 8, Our Pasts III, Ch 'Women, Caste and Reform'; Bipan Chandra, History of Modern India",
+      "ga_area": "History"
+    },
+    {
+      "n": 448,
+      "source": "claude-ga-p8 #205",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 205,
+      "fact_source": "Bipan Chandra, India's Struggle for Independence; NCERT Class 12, Themes in Indian History Part III, Ch 13",
+      "ga_area": "History"
+    },
+    {
+      "n": 449,
+      "source": "claude-ga-p8 #206",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 206,
+      "fact_source": "Ministry of Culture, Government of India; NCERT Class 11, An Introduction to Indian Art",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 450,
+      "source": "claude-ga-p8 #207",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 207,
+      "fact_source": "UNESCO World Heritage Centre, Khajuraho Group of Monuments; NCERT Class 11, An Introduction to Indian Art",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 451,
+      "source": "claude-ga-p8 #208",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 208,
+      "fact_source": "Ministry of Jal Shakti, Government of India; Central Water Commission (major dams)",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 452,
+      "source": "claude-ga-p8 #209",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 209,
+      "fact_source": "Archaeological Survey of India; Maharashtra Tourism, Government of Maharashtra",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 453,
+      "source": "claude-ga-p8 #210",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 210,
+      "fact_source": "Ministry of Environment, Forest and Climate Change; UNESCO Man and the Biosphere Programme, India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 454,
+      "source": "claude-ga-p8 #211",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 211,
+      "fact_source": "Constitution of India, Seventh Schedule (Union and State Lists)",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 455,
+      "source": "claude-ga-p8 #212",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 212,
+      "fact_source": "Constitution of India, Articles 72 and 161",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 456,
+      "source": "claude-ga-p8 #213",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 213,
+      "fact_source": "Constitution of India, Articles 32 and 226",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 457,
+      "source": "claude-ga-p8 #214",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 214,
+      "fact_source": "Constitution of India, Article 316(2)",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 458,
+      "source": "claude-ga-p8 #215",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 215,
+      "fact_source": "NCERT Class 11, India: Physical Environment, Ch 4 (Climate)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 459,
+      "source": "claude-ga-p8 #216",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 216,
+      "fact_source": "NCERT Class 11, Fundamentals of Physical Geography, Ch 14 (Movements of Ocean Water)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 460,
+      "source": "claude-ga-p8 #217",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 217,
+      "fact_source": "NCERT Class 10, Contemporary India II, Ch 7 (Lifelines of National Economy)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 461,
+      "source": "claude-ga-p8 #218",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 218,
+      "fact_source": "Survey of India; Tamil Nadu Tourism, Government of Tamil Nadu",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 462,
+      "source": "claude-ga-p8 #219",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 219,
+      "fact_source": "General Clauses Act, 1897, Section 3(21)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 463,
+      "source": "claude-ga-p8 #220",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 220,
+      "fact_source": "Reserve Bank of India, Master Circular on Income Recognition, Asset Classification and Provisioning",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 464,
+      "source": "claude-ga-p8 #221",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 221,
+      "fact_source": "Reserve Bank of India, Master Circular on Basel III Capital Regulations",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 465,
+      "source": "claude-ga-p8 #222",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 222,
+      "fact_source": "NCERT Class 12, Introductory Macroeconomics, Ch 5 (Government Budget and the Economy)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 466,
+      "source": "claude-ga-p8 #223",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 223,
+      "fact_source": "NCERT Class 10 Science, Ch 2 (Acids, Bases and Salts)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 467,
+      "source": "claude-ga-p8 #224",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 224,
+      "fact_source": "NCERT Class 9 Science, Ch 12 (Sound)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 468,
+      "source": "claude-ga-p8 #225",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p8",
+      "code": "GA8",
+      "index": 225,
+      "fact_source": "NCERT Class 11 Biology, Ch 15 (Plant Growth and Development)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 469,
+      "source": "claude-ga-p9 #226",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 226,
+      "fact_source": "NCERT Class 6, Our Pasts I, Ch 6 (New Questions and Ideas)",
+      "ga_area": "History"
+    },
+    {
+      "n": 470,
+      "source": "claude-ga-p9 #227",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 227,
+      "fact_source": "K. A. Nilakanta Sastri, A History of South India (The Pallavas)",
+      "ga_area": "History"
+    },
+    {
+      "n": 471,
+      "source": "claude-ga-p9 #228",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 228,
+      "fact_source": "Bipan Chandra, History of Modern India (Viceroys and administrative changes)",
+      "ga_area": "History"
+    },
+    {
+      "n": 472,
+      "source": "claude-ga-p9 #229",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 229,
+      "fact_source": "Bipan Chandra, India's Struggle for Independence; NCERT Class 12, Themes in Indian History Part III, Ch 14",
+      "ga_area": "History"
+    },
+    {
+      "n": 473,
+      "source": "claude-ga-p9 #230",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 230,
+      "fact_source": "Bipan Chandra, History of Modern India (British administrative structure)",
+      "ga_area": "History"
+    },
+    {
+      "n": 474,
+      "source": "claude-ga-p9 #231",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 231,
+      "fact_source": "Ministry of Railways, Southern Railway (Pamban Bridge); Archaeological and engineering heritage records of Indian Railways",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 475,
+      "source": "claude-ga-p9 #232",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 232,
+      "fact_source": "NCERT Class 11, An Introduction to Indian Art (Temple architecture); Archaeological Survey of India",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 476,
+      "source": "claude-ga-p9 #233",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 233,
+      "fact_source": "Ministry of Culture, Government of India (Folk paintings of India); Ministry of Textiles, Handicrafts",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 477,
+      "source": "claude-ga-p9 #234",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 234,
+      "fact_source": "Board of Control for Cricket in India (BCCI), official website (Ranji Trophy history)",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 478,
+      "source": "claude-ga-p9 #235",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 235,
+      "fact_source": "Ministry of Environment, Forest and Climate Change; Manipur Forest Department",
+      "ga_area": "Static GK"
+    },
+    {
+      "n": 479,
+      "source": "claude-ga-p9 #236",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 236,
+      "fact_source": "Constitution of India, Articles 32 and 226",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 480,
+      "source": "claude-ga-p9 #237",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 237,
+      "fact_source": "Constitution of India, Part XIV, Articles 310 to 313",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 481,
+      "source": "claude-ga-p9 #238",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 238,
+      "fact_source": "Constitution of India, Article 324(5)",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 482,
+      "source": "claude-ga-p9 #239",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 239,
+      "fact_source": "Constitution of India, Articles 61 and 67(b)",
+      "ga_area": "Polity"
+    },
+    {
+      "n": 483,
+      "source": "claude-ga-p9 #240",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 240,
+      "fact_source": "NCERT Class 11, India: Physical Environment, Ch 4 (Climate)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 484,
+      "source": "claude-ga-p9 #241",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 241,
+      "fact_source": "UNESCO World Heritage Centre, Lake Baikal; World Atlas",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 485,
+      "source": "claude-ga-p9 #242",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 242,
+      "fact_source": "NCERT Class 10, Contemporary India II, Ch 7 (Lifelines of National Economy)",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 486,
+      "source": "claude-ga-p9 #243",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 243,
+      "fact_source": "NCERT Class 9, Contemporary India I, Ch 3 (Drainage); NCERT Class 11, India: Physical Environment, Ch 3",
+      "ga_area": "Geography"
+    },
+    {
+      "n": 487,
+      "source": "claude-ga-p9 #244",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 244,
+      "fact_source": "Banking Regulation Act, 1949, Sections 22, 24 and 35A; Reserve Bank of India, Monetary Policy glossary",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 488,
+      "source": "claude-ga-p9 #245",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 245,
+      "fact_source": "NCERT Class 12, Introductory Macroeconomics, Ch 5 (Government Budget and the Economy)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 489,
+      "source": "claude-ga-p9 #246",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 246,
+      "fact_source": "Reserve Bank of India, Money Market (Commercial Paper)",
+      "ga_area": "Banking"
+    },
+    {
+      "n": 490,
+      "source": "claude-ga-p9 #247",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 247,
+      "fact_source": "NCERT Class 10 Science, Ch 11 (The Human Eye and the Colourful World)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 491,
+      "source": "claude-ga-p9 #248",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 248,
+      "fact_source": "NCERT Class 7 Science, Ch 5 (Acids, Bases and Salts)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 492,
+      "source": "claude-ga-p9 #249",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 249,
+      "fact_source": "NCERT Class 11 Biology, Ch 13 (Photosynthesis in Higher Plants)",
+      "ga_area": "Science"
+    },
+    {
+      "n": 493,
+      "source": "claude-ga-p9 #250",
+      "model": "Claude (Pro)",
+      "batch": "claude_ga_p9",
+      "code": "GA9",
+      "index": 250,
+      "fact_source": "NobelPrize.org, Karl Landsteiner (Physiology or Medicine 1930); NCERT Class 12 Biology, Ch 8",
+      "ga_area": "Science"
     }
   ]
 }

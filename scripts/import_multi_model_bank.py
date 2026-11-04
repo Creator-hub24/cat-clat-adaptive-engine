@@ -4,7 +4,7 @@ Source (data/multi_model_curation/):
   verified_questions.json  items that passed independent verification (Gemini batches 1–6, 8 and 9,
                            model compares, Meta AI Hard Quant batches meta_hard_p1/p2, Meta AI English
                            meta_eng_p1/p2 and Reasoning meta_rea_p1/p2, Claude General
-                           Awareness claude_ga_p1/p2/p3)
+                           Awareness claude_ga_p1-p9)
   manifest.json            position -> source model/batch and original index (stable ids)
   additions.json           items re-included after review (optional)
   decisions.json           text fixes, exclusions, faculty flags, option-shuffle seed, cross-dedupe drop log

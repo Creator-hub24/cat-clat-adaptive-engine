@@ -1,0 +1,452 @@
+[
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "history_mauryan_sources",
+    "question_text": "Which Greek ambassador at the Mauryan court wrote the account 'Indica', describing life in the Mauryan empire?",
+    "options": {
+      "A": "Megasthenes",
+      "B": "Seleucus Nicator",
+      "C": "Fa-Xian",
+      "D": "Hiuen Tsang"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Seleucus Nicator was the Greek ruler who sent the ambassador after his treaty with the Mauryas, so students pick the sender instead of the writer.",
+    "pedagogical_explanation": "Megasthenes stayed at Pataliputra as the envoy of Seleucus I, and his Indica survives only in fragments quoted by later writers. Fa-Xian and Hiuen Tsang were Chinese pilgrims of much later periods. Memory hook: Megasthenes = Mauryan envoy = Indica.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-176"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_delhi_sultanate_architecture",
+    "question_text": "Construction of the Qutb Minar in Delhi was begun by Qutbuddin Aibak and completed by which Sultan?",
+    "options": {
+      "A": "Balban",
+      "B": "Alauddin Khalji",
+      "C": "Iltutmish",
+      "D": "Firoz Shah Tughlaq"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): Alauddin Khalji added the Alai Darwaza and started the unfinished Alai Minar in the same complex, so students credit him with the Qutb Minar.",
+    "pedagogical_explanation": "Aibak began the tower, and Iltutmish completed the upper storeys. Firoz Shah Tughlaq later repaired the top storeys after lightning damage. Memory hook: Aibak starts, Iltutmish finishes.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-177"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_revolt_1857_leaders",
+    "question_text": "Who led the Revolt of 1857 at Lucknow, proclaiming her young son Birjis Qadr as the Nawab of Awadh?",
+    "options": {
+      "A": "Rani Lakshmibai",
+      "B": "Begum Hazrat Mahal",
+      "C": "Nana Saheb",
+      "D": "Kunwar Singh"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Rani Lakshmibai of Jhansi is the best-known woman leader of 1857, so students pick her for every leadership question.",
+    "pedagogical_explanation": "Begum Hazrat Mahal, wife of the deposed Nawab Wajid Ali Shah, took charge of the rebellion at Lucknow. Nana Saheb led at Kanpur and Kunwar Singh at Jagdishpur in Bihar. Memory hook: Lucknow = Hazrat Mahal, Kanpur = Nana Saheb.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-178"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_quit_india",
+    "question_text": "The All India Congress Committee adopted the Quit India resolution on 8 August 1942 at which place?",
+    "options": {
+      "A": "Wardha",
+      "B": "Sevagram",
+      "C": "Allahabad",
+      "D": "Gowalia Tank Maidan"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The Congress Working Committee passed the preliminary resolution at Wardha in July 1942, so students pick Wardha for the final adoption.",
+    "pedagogical_explanation": "The AICC session at Gowalia Tank Maidan in Bombay adopted the resolution, and Gandhi gave the call 'Do or Die' there. The ground is now known as August Kranti Maidan. Memory hook: Wardha drafts, Gowalia Tank adopts.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-179"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_pallava_architecture",
+    "question_text": "The Shore Temple at Mamallapuram, a structural temple built of cut stone, was constructed during the reign of which Pallava ruler?",
+    "options": {
+      "A": "Mahendravarman I",
+      "B": "Narasimhavarman II (Rajasimha)",
+      "C": "Narasimhavarman I (Mamalla)",
+      "D": "Nandivarman II"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): Narasimhavarman I (Mamalla) gave Mamallapuram its name and is linked with its rock-cut monuments, so students credit him with the Shore Temple.",
+    "pedagogical_explanation": "The Shore Temple dates to the early eighth century and belongs to Narasimhavarman II, also called Rajasimha. Unlike the earlier rock-cut caves and rathas, it is a free-standing structural temple. Memory hook: Mamalla = rock-cut, Rajasimha = structural shore temple.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-180"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_classical_dance",
+    "question_text": "Sattriya, recognised as a classical dance form by the Sangeet Natak Akademi in 2000, originated in the monasteries (Sattras) of which state?",
+    "options": {
+      "A": "Odisha",
+      "B": "Manipur",
+      "C": "West Bengal",
+      "D": "Assam"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Manipur has its own classical dance, Manipuri, which is another north-eastern form, so students pick it.",
+    "pedagogical_explanation": "Sattriya was developed in the fifteenth century by Srimanta Sankardeva as part of the Vaishnava Sattras of Assam. It was added to the list of classical dances in 2000. Memory hook: Sattriya = Sattra = Assam.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-181"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_unesco_sites",
+    "question_text": "The Sundarbans National Park, a UNESCO World Heritage Site known for its mangrove forests, is located in which Indian state?",
+    "options": {
+      "A": "West Bengal",
+      "B": "Odisha",
+      "C": "Andhra Pradesh",
+      "D": "Gujarat"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Bhitarkanika in Odisha is another famous mangrove area, so students pick Odisha.",
+    "pedagogical_explanation": "The Indian Sundarbans lie in the delta of the Ganga and Brahmaputra in West Bengal and were inscribed on the World Heritage List in 1987. The mangroves are home to the Royal Bengal tiger. Memory hook: Sundarbans = Sundari trees = Bengal delta.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-182"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_musical_maestros",
+    "question_text": "Pandit Hariprasad Chaurasia is a renowned maestro of which musical instrument?",
+    "options": {
+      "A": "Santoor",
+      "B": "Sarod",
+      "C": "Bansuri",
+      "D": "Veena"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Santoor is another Hindustani instrument, linked with Pandit Shivkumar Sharma, so students swap the two maestros.",
+    "pedagogical_explanation": "Hariprasad Chaurasia is a leading exponent of the bansuri, the bamboo flute of Hindustani classical music. Sarod is associated with Ustad Amjad Ali Khan. Memory hook: Chaurasia = Bansuri.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-183"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "static_international_hq",
+    "question_text": "The headquarters of the International Civil Aviation Organization (ICAO), a specialised agency of the United Nations, is located in which city?",
+    "options": {
+      "A": "Geneva",
+      "B": "Montreal",
+      "C": "London",
+      "D": "Rome"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Geneva hosts many UN agencies, so students make it the default guess for any specialised agency.",
+    "pedagogical_explanation": "ICAO was created under the Chicago Convention of 1944 and is headquartered in Montreal, Canada. The International Maritime Organization is in London and the Food and Agriculture Organization is in Rome. Memory hook: ICAO = Air = Montreal.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-184"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_sports_terms",
+    "question_text": "The term 'Gambit' is used in which game?",
+    "options": {
+      "A": "Chess",
+      "B": "Bridge",
+      "C": "Carrom",
+      "D": "Snooker"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Bridge is another mind sport with its own jargon such as trump, rubber and slam, so students pick it.",
+    "pedagogical_explanation": "A gambit is an opening in chess in which a pawn or piece is sacrificed to gain an advantage in position, as in the Queen's Gambit. Memory hook: Gambit = Gamble in chess.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-185"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_local_government",
+    "question_text": "Part IX-A of the Constitution of India, containing Articles 243P to 243ZG, deals with which of the following?",
+    "options": {
+      "A": "Panchayats",
+      "B": "Co-operative Societies",
+      "C": "Municipalities",
+      "D": "Tribunals"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Part IX deals with Panchayats and sits right before Part IX-A, so students pick the neighbouring Part.",
+    "pedagogical_explanation": "Part IX-A covers Municipalities, which are urban local bodies. Part IX-B on Co-operative Societies was added later by the 97th Amendment, and Part XIV-A deals with Tribunals. Memory hook: IX = village, IX-A = city.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-186"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "polity_president_oath",
+    "question_text": "Who administers the oath of office to the President of India?",
+    "options": {
+      "A": "The Vice-President",
+      "B": "The Speaker of the Lok Sabha",
+      "C": "The Prime Minister",
+      "D": "The Chief Justice of India"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The Vice-President is the second-highest officer and acts as President in a vacancy, so students pick him.",
+    "pedagogical_explanation": "Article 60 says the oath is administered by the Chief Justice of India or, in his absence, the senior-most judge of the Supreme Court available. Memory hook: Article 60 = oath by the CJI.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-187"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_right_to_property",
+    "question_text": "The Right to Property was removed from the list of Fundamental Rights and made a constitutional right under Article 300A by which Amendment?",
+    "options": {
+      "A": "44th Amendment, 1978",
+      "B": "42nd Amendment, 1976",
+      "C": "25th Amendment, 1971",
+      "D": "31st Amendment, 1973"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): The 25th Amendment curtailed the right to property by changing Article 31, so it is the closest confusion with the amendment that finally removed it.",
+    "pedagogical_explanation": "The 44th Amendment omitted Articles 19(1)(f) and 31 and inserted Article 300A in Part XII, so property is now a legal right and not a Fundamental Right. Memory hook: 44th = property out, 300A = property in as a legal right.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-188"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_right_against_exploitation",
+    "question_text": "Which Article of the Constitution prohibits traffic in human beings and forced labour (begar)?",
+    "options": {
+      "A": "Article 17",
+      "B": "Article 24",
+      "C": "Article 25",
+      "D": "Article 23"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Article 24 prohibits child labour in factories and mines and sits right after Article 23, so students pick the adjacent Article.",
+    "pedagogical_explanation": "Articles 23 and 24 together form the Right against Exploitation. Article 17 abolishes untouchability and Article 25 gives freedom of religion. Memory hook: 23 = Adults exploited, 24 = Children exploited.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-189"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_tribes",
+    "question_text": "The Toda, a pastoral community known for its barrel-vaulted huts, lives mainly in the Nilgiri hills of which state?",
+    "options": {
+      "A": "Kerala",
+      "B": "Tamil Nadu",
+      "C": "Karnataka",
+      "D": "Odisha"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Kerala also borders the Nilgiris and has many tribal groups, so students pick the neighbouring state.",
+    "pedagogical_explanation": "The Todas are concentrated in the Nilgiri district of Tamil Nadu and are traditionally buffalo herders. Memory hook: Toda = Nilgiri = Tamil Nadu.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-190"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "geography_minerals",
+    "question_text": "The Malanjkhand copper mines, in the Balaghat district, are located in which state?",
+    "options": {
+      "A": "Rajasthan",
+      "B": "Jharkhand",
+      "C": "Madhya Pradesh",
+      "D": "Andhra Pradesh"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Rajasthan's Khetri belt is the most famous copper-mining area, so students pick Rajasthan.",
+    "pedagogical_explanation": "The Balaghat mines of Madhya Pradesh, which include Malanjkhand, are the leading source of copper in India. Singhbhum in Jharkhand and Khetri in Rajasthan are the other major belts. Memory hook: Balaghat = Madhya Pradesh copper.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-191"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_lakes",
+    "question_text": "Sambhar Lake, the largest inland saltwater lake of India, is located in which state?",
+    "options": {
+      "A": "Rajasthan",
+      "B": "Gujarat",
+      "C": "Jammu and Kashmir",
+      "D": "Manipur"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): The Rann of Kutch in Gujarat is a salty region and a major salt producer, so students pick Gujarat.",
+    "pedagogical_explanation": "Sambhar Lake lies near Jaipur and is a major source of salt. It is also a recognised Ramsar wetland. Memory hook: Sambhar = Salt = Rajasthan.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-192"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_world_deserts",
+    "question_text": "The Namib Desert, a coastal desert along the Atlantic Ocean, lies mainly in which country?",
+    "options": {
+      "A": "Botswana",
+      "B": "South Africa",
+      "C": "Angola",
+      "D": "Namibia"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The Kalahari Desert spreads across Botswana and lies next to the Namib, so students pick Botswana.",
+    "pedagogical_explanation": "The Namib runs along the coast of Namibia, and the country takes its name from the desert. The Kalahari lies inland to the east, covering Botswana and parts of neighbouring countries. Memory hook: Namib = Namibia.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-193"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_carbon",
+    "question_text": "Which is the hardest naturally occurring substance?",
+    "options": {
+      "A": "Graphite",
+      "B": "Quartz",
+      "C": "Diamond",
+      "D": "Corundum"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Graphite is also an allotrope of carbon, so students confuse it with diamond, but it is soft and slippery.",
+    "pedagogical_explanation": "In diamond each carbon atom is bonded to four others in a rigid three-dimensional network, which makes it the hardest natural substance. Graphite has layers that slide over each other. Memory hook: Diamond = Dense network = Hardest.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-194"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "science_atomic_structure",
+    "question_text": "Which scientist discovered the neutron in 1932?",
+    "options": {
+      "A": "J. J. Thomson",
+      "B": "James Chadwick",
+      "C": "Ernest Rutherford",
+      "D": "Niels Bohr"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): Rutherford discovered the atomic nucleus and the proton and guided Chadwick, so students credit him with the neutron.",
+    "pedagogical_explanation": "James Chadwick discovered the neutron, a particle with no charge and mass about equal to a proton. Thomson discovered the electron and Bohr proposed the orbit model. Memory hook: Chadwick = Chargeless neutron.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-195"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "science_human_excretion",
+    "question_text": "In the human nephron, most of the selective reabsorption of glucose and amino acids from the filtrate takes place in the:",
+    "options": {
+      "A": "Distal convoluted tubule",
+      "B": "Loop of Henle",
+      "C": "Collecting duct",
+      "D": "Proximal convoluted tubule"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): The Loop of Henle is the best-known region for water reabsorption and concentrating urine, so students pick it.",
+    "pedagogical_explanation": "The proximal convoluted tubule reabsorbs nearly all essential nutrients such as glucose and amino acids, along with much of the water and electrolytes. The Loop of Henle and collecting duct mainly regulate water and urine concentration. Memory hook: Proximal = Primary reabsorption.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-196"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "banking_payment_systems",
+    "question_text": "IMPS (Immediate Payment Service), which allows instant interbank fund transfers through mobile and internet round the clock, is operated by which organisation?",
+    "options": {
+      "A": "Reserve Bank of India",
+      "B": "Indian Banks' Association",
+      "C": "National Payments Corporation of India",
+      "D": "State Bank of India"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): The RBI regulates payment systems and itself operates NEFT and RTGS, so students assume it also runs IMPS.",
+    "pedagogical_explanation": "NPCI is the umbrella organisation for retail payments in India, set up in 2008 with the guidance of the RBI and the Indian Banks' Association. It operates IMPS, UPI and RuPay. Memory hook: NPCI = Retail payments, RBI = Regulator and NEFT/RTGS.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-197"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "banking_deposit_accounts",
+    "question_text": "Which type of bank account, mostly opened by traders and businesses, normally pays no interest and has no limit on the number of transactions?",
+    "options": {
+      "A": "Current account",
+      "B": "Savings account",
+      "C": "Demat account",
+      "D": "NRE account"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): The savings account is the most common account, but it pays interest and has limits on transactions, so students confuse the two demand accounts.",
+    "pedagogical_explanation": "A current account is meant for frequent business transactions and usually pays no interest. A Demat account holds securities in electronic form and is not a deposit account. Memory hook: Current account = Constant business flow.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-198"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "banking_treasury_bills",
+    "question_text": "Treasury Bills issued by the Government of India are currently issued in which three maturities?",
+    "options": {
+      "A": "91 days, 182 days and 365 days",
+      "B": "91 days, 182 days and 364 days",
+      "C": "28 days, 91 days and 182 days",
+      "D": "30 days, 90 days and 180 days"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): 365 days sounds like a natural one-year bill, but the longest Treasury Bill matures in 364 days.",
+    "pedagogical_explanation": "Treasury Bills are zero-coupon money market instruments issued at a discount and redeemed at face value. The three tenors are 91, 182 and 364 days. Memory hook: 91, 182, 364 = 13, 26, 52 weeks.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-199"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "economy_five_year_plans",
+    "question_text": "Which Five Year Plan, launched in 1992 after the economic reforms of 1991, placed human development, including employment, education and public health, at the centre of its objectives?",
+    "options": {
+      "A": "Sixth Plan",
+      "B": "Seventh Plan",
+      "C": "Ninth Plan",
+      "D": "Eighth Plan"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (C): The Ninth Plan stressed growth with social justice and equity, a similar social theme, so students pick it.",
+    "pedagogical_explanation": "The Eighth Plan (1992 to 1997) began after the reforms of 1991 and made human development its main focus, along with modernisation and growth. Memory hook: Eighth = Human development after reforms.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P7-200"
+  }
+]
