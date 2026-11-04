@@ -4,16 +4,16 @@
     "source": "data/multi_model_curation (Gemini + model-compare + Meta AI Hard/English/Reasoning + Claude GA, independently verified)",
     "author": "Vaibhav Gupta",
     "family": "sarkari",
-    "count": 344,
+    "count": 394,
     "topics": {
       "Sarkari English": 72,
-      "Sarkari General Awareness": 99,
+      "Sarkari General Awareness": 149,
       "Sarkari Quantitative Aptitude": 100,
       "Sarkari Reasoning": 73
     },
     "models": {
       "ChatGPT Go": 9,
-      "Claude (Pro)": 99,
+      "Claude (Pro)": 149,
       "Claude Sonnet 5": 10,
       "Claude Sonnet 5.5 Medium": 8,
       "Gemini Argon 4.0": 144,
@@ -4675,6 +4675,1356 @@
         "independent solve"
       ],
       "text_hash": "9455ebefd7deafbf5c8f872032ef59038309aa314c1efde77bb76628643e6ef4"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-101",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "polity_governor",
+      "question_text": "Under the Constitution of India, the Governor of a State is appointed by whom?",
+      "options": {
+        "A": "The Chief Justice of the High Court",
+        "B": "The Chief Minister of the State",
+        "C": "The President of India",
+        "D": "The Prime Minister of India"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): The Chief Minister heads the State government, so students assume the State picks its own Governor.",
+      "pedagogical_explanation": "Article 155 says the Governor is appointed by the President by warrant under his hand and seal, in practice on the advice of the Union government. The Governor holds office during the pleasure of the President. Memory hook: Governor = President's appointee.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #101",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f09d3cb81add8cd1168c9b771920c68e4e180c4f62dc70949c7ec9978bc5d832"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-102",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_election_commission",
+      "question_text": "Superintendence, direction and control of the preparation of electoral rolls and the conduct of elections is vested in the Election Commission under which Article?",
+      "options": {
+        "A": "Article 338",
+        "B": "Article 315",
+        "C": "Article 324",
+        "D": "Article 326"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Article 326 also sits in the elections Part (adult suffrage as the basis of elections), so it is the closest confusion.",
+      "pedagogical_explanation": "Article 324 in Part XV vests the Election Commission with control of elections to Parliament, State Legislatures and the offices of President and Vice-President. Article 315 is for Public Service Commissions and Article 326 gives adult suffrage. Memory hook: 324 = Election body.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #102",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "5522be56aafc3de7beaa7521cb7f7794bf7ed55ce4c754db89508943b5b9ea78"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-103",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_amendments_education",
+      "question_text": "Article 21A, which makes free and compulsory education a Fundamental Right for children aged 6 to 14 years, was inserted by which Constitutional Amendment?",
+      "options": {
+        "A": "42nd Amendment, 1976",
+        "B": "44th Amendment, 1978",
+        "C": "86th Amendment, 2002",
+        "D": "61st Amendment, 1988"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): The 61st Amendment lowered the voting age to 18, another amendment about citizens' rights, so it gets mixed up.",
+      "pedagogical_explanation": "The 86th Amendment Act, 2002 inserted Article 21A, changed Article 45 and added a Fundamental Duty in Article 51A. The Right to Education Act, 2009 later gave effect to Article 21A. Memory hook: 86th = Education right.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #103",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ef84a808d389ab2fb3ec104e12fe3f74c197a14a1cedcb6767c7f304fb115a34"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-104",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_ordinance_power",
+      "question_text": "The President can promulgate an Ordinance when Parliament is not in session under which Article of the Constitution?",
+      "options": {
+        "A": "Article 123",
+        "B": "Article 213",
+        "C": "Article 85",
+        "D": "Article 111"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Article 213 gives the same power to the Governor of a State, so students swap the two.",
+      "pedagogical_explanation": "Article 123 allows the President to issue Ordinances with the force of law when either House is not in session. They must be laid before Parliament and lapse six weeks after Parliament reassembles unless approved earlier. Memory hook: 123 = President's ordinance, 213 = Governor's ordinance.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #104",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7ab847199b6e6e91f7f951ac362f534484e10ad199e370f48777883b04e78436"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-105",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_cag",
+      "question_text": "The Comptroller and Auditor General of India is appointed by the President under which Article?",
+      "options": {
+        "A": "Article 149",
+        "B": "Article 150",
+        "C": "Article 151",
+        "D": "Article 148"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): Article 149 describes the duties and powers of the CAG, so students pick it for the appointment provision.",
+      "pedagogical_explanation": "Article 148 provides for the appointment, oath and removal of the CAG, who can be removed only in the same manner as a Supreme Court judge. Article 149 gives duties, 150 the form of accounts and 151 the audit reports. Memory hook: 148 = Appointment, 149 = Audit duties.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #105",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "624bcd4974871a7f258cf839e236893b20ebbdfed5ecb8c052f8f46a9e0fbf2e"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-106",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_mughal_architecture",
+      "question_text": "Who built the Red Fort (Lal Qila) in Delhi?",
+      "options": {
+        "A": "Shah Jahan",
+        "B": "Aurangzeb",
+        "C": "Akbar",
+        "D": "Humayun"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Akbar built the famous Agra Fort, so students credit him with the Delhi fort as well.",
+      "pedagogical_explanation": "Shah Jahan built the Red Fort as part of his new capital Shahjahanabad, between 1639 and 1648. Aurangzeb added the barbican walls later. Memory hook: Shah Jahan = Red Fort and Taj Mahal.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #106",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d9dcdaf31485bf45161c39b712e2474755a826194a78c2f5037251ff52a24eb8"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-107",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_sher_shah",
+      "question_text": "Which ruler is credited with reorganising the old highway from Sonargaon in Bengal to Peshawar, which later came to be known as the Grand Trunk Road?",
+      "options": {
+        "A": "Muhammad bin Tughluq",
+        "B": "Akbar",
+        "C": "Sher Shah Suri",
+        "D": "Alauddin Khalji"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Akbar is the best-known Mughal administrator, so students credit him with every major Mughal-era road.",
+      "pedagogical_explanation": "Sher Shah Suri (1540 to 1545) repaired and extended this highway, called Sadak-e-Azam, and built sarais at regular intervals along it. Memory hook: Sher Shah = Sadak-e-Azam.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #107",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "0d0eabcd3aed44b15a2b685b2d6cafe3495ebc35b99701ae6e38ef563055e17a"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-108",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_inc_sessions",
+      "question_text": "Who presided over the first session of the Indian National Congress held at Bombay in 1885?",
+      "options": {
+        "A": "Dadabhai Naoroji",
+        "B": "A. O. Hume",
+        "C": "Badruddin Tyabji",
+        "D": "W. C. Bonnerjee"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): A. O. Hume helped found the Congress and was its first General Secretary, so students pick him as president.",
+      "pedagogical_explanation": "Womesh Chandra Bonnerjee was the first President of the INC at the Gokuldas Tejpal Sanskrit College, Bombay, with 72 delegates. Dadabhai Naoroji presided in 1886 and Badruddin Tyabji in 1887. Memory hook: 1885 Bombay = Bonnerjee.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #108",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "96222ff22fcaf3890eb1a87e6944f81a74612cada17c2fe685d8654d9610d8a0"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-109",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_inc_sessions",
+      "question_text": "Subhas Chandra Bose was elected President of the Indian National Congress for the first time at which session?",
+      "options": {
+        "A": "Lahore",
+        "B": "Haripura",
+        "C": "Tripuri",
+        "D": "Faizpur"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): Tripuri (1939) is the session where Bose was re-elected and then resigned, so it is the closest confusion.",
+      "pedagogical_explanation": "Bose presided over the Haripura session in Gujarat in February 1938 and was re-elected in 1939 at Tripuri, defeating Pattabhi Sitaramayya. Faizpur (1936) was presided over by Jawaharlal Nehru. Memory hook: Haripura = first term, Tripuri = second term.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #109",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a8527a0a932254e568240c649362fd39ed391cb179527772174273f35c33bb0c"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-110",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_revolt_1857",
+      "question_text": "The Revolt of 1857 broke out as a general uprising on 10 May 1857 at which place?",
+      "options": {
+        "A": "Kanpur",
+        "B": "Delhi",
+        "C": "Barrackpore",
+        "D": "Meerut"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Barrackpore saw the earlier Mangal Pandey incident in March 1857, so students treat it as the start of the revolt.",
+      "pedagogical_explanation": "On 10 May 1857, sepoys at Meerut rebelled, freed their jailed comrades and marched to Delhi, where they proclaimed Bahadur Shah Zafar the leader. Memory hook: Meerut = outbreak, Delhi = capital of the revolt.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #110",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "54b3fa538ed2250145f719ec64479b022034b8d87056764c938a7071ebd957e7"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-111",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "geography_world_capitals",
+      "question_text": "What is the capital of Australia?",
+      "options": {
+        "A": "Sydney",
+        "B": "Melbourne",
+        "C": "Canberra",
+        "D": "Perth"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Sydney is the largest and best-known Australian city, so it is the usual wrong choice.",
+      "pedagogical_explanation": "Canberra is the purpose-built capital of Australia, planned as a compromise between the rival cities of Sydney and Melbourne. Memory hook: Canberra = Capital, Sydney = Skyline.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #111",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "de8df956b11deb733a906df9adcbebf982d1af0f1c26370c6aa0640c8a746a9c"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-112",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_dams",
+      "question_text": "The Hirakud Dam, one of the longest earthen dams in the world, is built across which river?",
+      "options": {
+        "A": "Godavari",
+        "B": "Brahmani",
+        "C": "Krishna",
+        "D": "Mahanadi"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): The Brahmani is another major river of Odisha, so students pick it by state association.",
+      "pedagogical_explanation": "The Hirakud Dam near Sambalpur in Odisha is on the Mahanadi and was one of the first major multipurpose projects after Independence. It serves flood control, irrigation and power. Memory hook: Hirakud = Mahanadi.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #112",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "cf5cee9c2afa4a3fbaa645f8242614f20af91972139b30c34ede33683fac0b59"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-113",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "geography_straits",
+      "question_text": "The Bosphorus Strait connects the Black Sea with which water body?",
+      "options": {
+        "A": "Aegean Sea",
+        "B": "Adriatic Sea",
+        "C": "Caspian Sea",
+        "D": "Sea of Marmara"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): The Dardanelles links the Sea of Marmara to the Aegean, so the Aegean is confused with the Bosphorus link.",
+      "pedagogical_explanation": "The Bosphorus runs through Istanbul and joins the Black Sea to the Sea of Marmara. The Dardanelles then leads from Marmara to the Aegean Sea. Memory hook: Bosphorus = Black to Marmara, Dardanelles = Marmara to Aegean.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #113",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9d36ffc987879d852c1b7828690aace2a33013d1835ef703af08e99c11ba8efa"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-114",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_national_parks",
+      "question_text": "Jim Corbett National Park, the oldest national park of India, established in 1936, is located in which state?",
+      "options": {
+        "A": "Assam",
+        "B": "Rajasthan",
+        "C": "Madhya Pradesh",
+        "D": "Uttarakhand"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): Kaziranga in Assam is the best-known national park, so students assume the oldest one is also there.",
+      "pedagogical_explanation": "Jim Corbett National Park was set up in 1936 as Hailey National Park and lies in Uttarakhand. It was the first area covered under Project Tiger in 1973. Memory hook: Corbett = Uttarakhand, 1936.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #114",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6a07c0b70b6a10accb6f80f22c2d395dac444bf43236858e7b558b03d2675445"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-115",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "banking_payment_systems",
+      "question_text": "What is the full form of NEFT, the retail electronic payment system operated by the RBI?",
+      "options": {
+        "A": "National Electronic Funds Transfer",
+        "B": "National Economic Funds Transfer",
+        "C": "Net Electronic Fund Transaction",
+        "D": "National Electronic Fund Trading"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): 'Trading' sounds plausible because of electronic stock trading, but the T stands for Transfer.",
+      "pedagogical_explanation": "NEFT is a nationwide system that lets bank customers transfer funds electronically from any bank branch to another bank's branch. Memory hook: NEFT = National Electronic Funds Transfer.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #115",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "102db50dc83b88b842c1dd6f632db6bffcc69184caf603235f87d94be4b8b110"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-116",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_mpc",
+      "question_text": "How many members does the Monetary Policy Committee (MPC) have under the RBI Act, 1934 as amended in 2016?",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "4",
+        "D": "7"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Students forget that the Governor is a member and chairperson and count only 5.",
+      "pedagogical_explanation": "Section 45ZB provides for six members: the Governor (chairperson), the Deputy Governor in charge of monetary policy, one RBI officer nominated by the Central Board, and three external members appointed by the Central Government. Memory hook: 3 from RBI + 3 from outside = 6.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #116",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a52ec435aaf9b04676c802064483a5a9bae2081d231afce635808f9c57665d2d"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-117",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_rbi_governors",
+      "question_text": "Who was the first Indian to be appointed Governor of the Reserve Bank of India?",
+      "options": {
+        "A": "C. D. Deshmukh",
+        "B": "Sir Osborne Smith",
+        "C": "Benegal Rama Rau",
+        "D": "I. G. Patel"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Benegal Rama Rau succeeded Deshmukh and was also an Indian Governor, so students pick the wrong one of the two.",
+      "pedagogical_explanation": "Sir Osborne Smith was the first Governor of RBI (1935), and Sir C. D. Deshmukh became the first Indian Governor in 1943. Memory hook: Smith = British first, Deshmukh = Indian first.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #117",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "85cdcbf1e281ccb14e89c5d04f03a359aa0288d28f9701dd26bdf5af58345ad4"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-118",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "banking_regulators",
+      "question_text": "Which authority regulates and develops the insurance industry in India?",
+      "options": {
+        "A": "SEBI",
+        "B": "PFRDA",
+        "C": "NABARD",
+        "D": "IRDAI"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): PFRDA regulates pensions, a neighbouring financial regulator, so it is the closest confusion.",
+      "pedagogical_explanation": "The Insurance Regulatory and Development Authority of India (IRDAI) was set up under the IRDA Act, 1999 to regulate and promote the insurance sector. SEBI regulates securities markets. Memory hook: IRDAI = Insurance.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #118",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "077566ef7cf101fd65a23236c79ea6add40a0227241d64028f137c522a6b25c6"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-119",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_atmosphere",
+      "question_text": "Which gas is the most abundant in the Earth's atmosphere?",
+      "options": {
+        "A": "Argon",
+        "B": "Nitrogen",
+        "C": "Oxygen",
+        "D": "Carbon dioxide"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): Oxygen is vital for life, so students assume it is the most abundant, but it forms only about 21 percent.",
+      "pedagogical_explanation": "Nitrogen makes up about 78 percent of dry air by volume, followed by oxygen at about 21 percent and argon at about 0.9 percent. Memory hook: 78 percent N2, 21 percent O2.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #119",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "bab79fc53593ec52df76d34dc49d84bbced0a643896dbc22adfc954be8dbf643"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-120",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_vitamins",
+      "question_text": "Which vitamin is essential for the normal clotting of blood?",
+      "options": {
+        "A": "Vitamin B12",
+        "B": "Vitamin E",
+        "C": "Vitamin K",
+        "D": "Vitamin A"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Vitamin B12 is also linked to blood (red cell formation and anaemia), so students confuse the two.",
+      "pedagogical_explanation": "Vitamin K helps the liver make clotting factors, so its deficiency leads to delayed clotting and bleeding. Vitamin B12 deficiency causes pernicious anaemia. Memory hook: K = Koagulation.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #120",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d3665f75c43e4dea7ee4129746504ec25dc54497edfd280447e6452d5697b7b8"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-121",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "science_human_body_endocrine",
+      "question_text": "In the human pancreas, insulin is secreted by which cells of the Islets of Langerhans?",
+      "options": {
+        "A": "Acinar cells",
+        "B": "Alpha cells",
+        "C": "Delta cells",
+        "D": "Beta cells"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Alpha cells secrete glucagon, the opposing hormone, so the two cell types are swapped.",
+      "pedagogical_explanation": "Beta cells secrete insulin, which lowers blood glucose, while alpha cells secrete glucagon, which raises it. Acinar cells make digestive enzymes and belong to the exocrine part. Memory hook: Beta = Brings sugar down.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #121",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "e1614516a9f4be384a1328016c430f661f61f34732eda3186043357aea2464d7"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-122",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_diseases",
+      "question_text": "Malaria is caused by which type of organism?",
+      "options": {
+        "A": "Fungus",
+        "B": "Virus",
+        "C": "Bacterium",
+        "D": "Protozoan"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Dengue and chikungunya are mosquito-borne viral diseases, so students assume malaria is also viral.",
+      "pedagogical_explanation": "Malaria is caused by the protozoan Plasmodium and spread by the female Anopheles mosquito. Typhoid is bacterial and ringworm is fungal. Memory hook: Malaria = Plasmodium = Protozoan.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #122",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2a859953fc1a6c95bbb955a983b53ae3fb5505530ac9c0eddb6c522af2964390"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-123",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_festivals",
+      "question_text": "Onam, the harvest festival associated with King Mahabali, is celebrated mainly in which state?",
+      "options": {
+        "A": "Andhra Pradesh",
+        "B": "Tamil Nadu",
+        "C": "Kerala",
+        "D": "Karnataka"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Pongal in Tamil Nadu is another southern harvest festival, so students mix the two.",
+      "pedagogical_explanation": "Onam is the state festival of Kerala, celebrated in the Malayalam month of Chingam with flower carpets (pookalam), boat races and a feast called Onasadya. Memory hook: Onam = Kerala, Pongal = Tamil Nadu.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #123",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2bc04c6af767d0a3211dd33e78f597ff18b5b22ea1039f8589386cb6ff41f404"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-124",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_sports_trophies",
+      "question_text": "The Santosh Trophy is associated with which sport?",
+      "options": {
+        "A": "Cricket",
+        "B": "Kabaddi",
+        "C": "Football",
+        "D": "Hockey"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Many Indian domestic trophies such as the Ranji and Duleep Trophies belong to cricket, so students assume the same here.",
+      "pedagogical_explanation": "The Santosh Trophy is the national football championship for state and institutional teams, run by the All India Football Federation. It is named after Maharaja Manmatha Nath Roy Chowdhury of Santosh. Memory hook: Santosh = Soccer.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #124",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "98f3ed7561f1e40c1d2b925c85dde8047116cc79418da2b7dbe4e60daa5179de"
+    },
+    {
+      "id": "MM-SK-SGA-GA4-125",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "static_literature_sanskrit",
+      "question_text": "The Sanskrit historical play 'Mudrarakshasa', which describes the rise of Chandragupta Maurya through Chanakya's strategy, was written by:",
+      "options": {
+        "A": "Kalidasa",
+        "B": "Vishakhadatta",
+        "C": "Shudraka",
+        "D": "Bhasa"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): Shudraka wrote the Sanskrit play Mrichchhakatika, another classical drama, so the playwrights are confused.",
+      "pedagogical_explanation": "Vishakhadatta wrote Mudrarakshasa, a political play in which Chanakya wins over the minister Rakshasa of the Nandas. Kalidasa wrote Abhijnanashakuntalam and Bhasa wrote Svapnavasavadatta. Memory hook: Mudra-rakshasa = Vishakhadatta.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p4 #125",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p4",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "285661bf4ac3b2cd1239f8a4e66b1e62e1f1682d7f44ec93ac383592a2de186b"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-126",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "polity_vice_president",
+      "question_text": "Who is the ex-officio Chairman of the Rajya Sabha?",
+      "options": {
+        "A": "The Vice-President of India",
+        "B": "The Speaker of the Lok Sabha",
+        "C": "The President of India",
+        "D": "The Deputy Chairman of the Rajya Sabha"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): The Speaker presides over the Lok Sabha, so students assign the matching role in the other House to the same office.",
+      "pedagogical_explanation": "Article 64 makes the Vice-President the ex-officio Chairman of the Council of States, and Article 89 repeats this for the Rajya Sabha. The Deputy Chairman is elected by the members and presides only in the Chairman's absence. Memory hook: VP = Rajya Sabha head.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #126",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ef4c7aa277062b80dc120abd3626c0fea9b55cf6154e7a4853e56a10e3f8907a"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-127",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_dpsp_ucc",
+      "question_text": "Which Article of the Directive Principles of State Policy directs the State to endeavour to secure a Uniform Civil Code for citizens throughout India?",
+      "options": {
+        "A": "Article 44",
+        "B": "Article 40",
+        "C": "Article 48",
+        "D": "Article 45"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Article 45 is the neighbouring Directive Principle (early childhood care and education), so students pick the adjacent number.",
+      "pedagogical_explanation": "Article 44 is the only Directive Principle that mentions a Uniform Civil Code. Article 40 deals with village panchayats and Article 48 with organisation of agriculture and animal husbandry. Memory hook: 44 = one law for all.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #127",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "8f9249e0190a8e83fb765cc5b3ab7d55eef71bac7bf68c955f01439b449e95f8"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-128",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_anti_defection",
+      "question_text": "The Tenth Schedule, containing the anti-defection provisions, was added to the Constitution by which Amendment?",
+      "options": {
+        "A": "55th Amendment, 1986",
+        "B": "52nd Amendment, 1985",
+        "C": "32nd Amendment, 1973",
+        "D": "62nd Amendment, 1989"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): The 55th Amendment came just a year later (1986), so students choose the neighbouring amendment by year.",
+      "pedagogical_explanation": "The Constitution (Fifty-second Amendment) Act, 1985 added the Tenth Schedule and laid down grounds for disqualification of legislators on the ground of defection. Memory hook: 52nd = Tenth Schedule = defection.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #128",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "41e54350289f49c15792a9d957809098021fb42d2c085b80dc1d649fe9f17794"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-129",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_joint_sitting",
+      "question_text": "Who presides over a joint sitting of the two Houses of Parliament summoned to resolve a deadlock over an ordinary Bill?",
+      "options": {
+        "A": "The Prime Minister of India",
+        "B": "The Chairman of the Rajya Sabha",
+        "C": "The Speaker of the Lok Sabha",
+        "D": "The President of India"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): The Chairman of the Rajya Sabha heads one of the two Houses meeting together, so students assume he shares or takes the chair.",
+      "pedagogical_explanation": "Article 108 provides for the joint sitting, and Article 118(4) says the Speaker presides, or the Deputy Speaker in the Speaker's absence. The Chairman of the Rajya Sabha never presides over it. Memory hook: Joint sitting = Speaker in the chair.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #129",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "559e772a82d68fe395c148dafc1c967394be4f32e3026894b0336f68eee28950"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-130",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_attorney_general",
+      "question_text": "The office of the Attorney General of India is provided for under which Article of the Constitution?",
+      "options": {
+        "A": "Article 76",
+        "B": "Article 165",
+        "C": "Article 124",
+        "D": "Article 78"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Article 165 creates the Advocate General of a State, the parallel State-level law officer, so the two offices are swapped.",
+      "pedagogical_explanation": "Article 76 empowers the President to appoint as Attorney General a person qualified to be a Supreme Court judge. Article 78 lists the Prime Minister's duties to furnish information to the President, and Article 124 establishes the Supreme Court. Memory hook: 76 = Union law officer, 165 = State law officer.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #130",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "398e5e539cd4330e559488b37c7d892a9a35480ae7a02e8aaeea1aab4e425110"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-131",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_mauryan_ashoka",
+      "question_text": "Which Mauryan emperor gave up conquest by war and adopted the policy of Dhamma after the Kalinga War?",
+      "options": {
+        "A": "Bindusara",
+        "B": "Brihadratha",
+        "C": "Ashoka",
+        "D": "Dasharatha"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Bindusara was Ashoka's father and the preceding Mauryan emperor, so students pick the nearest ruler on the family list.",
+      "pedagogical_explanation": "Ashoka fought the Kalinga War around 261 BCE, and his Rock Edict XIII expresses remorse over the suffering it caused. He then promoted Dhamma, a code of moral conduct. Memory hook: Kalinga = Ashoka's turning point.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #131",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "61d579723c73abd6e5d6417c806b6df09e8f9d68feb6c129b4eb3086594284b5"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-132",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_gupta_inscription",
+      "question_text": "The Prayaga Prashasti (Allahabad Pillar Inscription), composed by the court poet Harishena, praises which Gupta ruler?",
+      "options": {
+        "A": "Samudragupta",
+        "B": "Chandragupta II",
+        "C": "Skandagupta",
+        "D": "Kumaragupta I"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Chandragupta II (Vikramaditya) is the best-known Gupta king, so students attach every Gupta record to him.",
+      "pedagogical_explanation": "The inscription is engraved on an Ashokan pillar at Prayagraj and lists the conquests, qualities and policies of Samudragupta. Harishena was his court poet. Memory hook: Harishena wrote, Samudragupta was praised.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #132",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ebc7ba84f4d78f0cbc0ca14f2358da2171aac690ef8077460f8200a193ecd090"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-133",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_sufi_silsilas",
+      "question_text": "Sheikh Bahauddin Zakariya of Multan, a prominent Sufi saint of the thirteenth century, belonged to which silsila?",
+      "options": {
+        "A": "Suhrawardi",
+        "B": "Chishti",
+        "C": "Naqshbandi",
+        "D": "Qadiri"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): The Chishti silsila is the best known in India, so students assign most early saints to it.",
+      "pedagogical_explanation": "Bahauddin Zakariya was a leading saint of the Suhrawardi silsila, which was strong in Multan and Sind and kept closer ties with the rulers than the Chishtis did. The Qadiri and Naqshbandi orders became influential in India later. Memory hook: Multan = Suhrawardi.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #133",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "538484c64202b45048a6c531d586effb18f8c89936a8c1ef930f877b7ecfd105"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-134",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_social_reform",
+      "question_text": "Which Governor-General declared the practice of Sati illegal through a regulation passed in 1829?",
+      "options": {
+        "A": "Lord Hastings",
+        "B": "Lord William Bentinck",
+        "C": "Lord Dalhousie",
+        "D": "Lord Canning"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Lord Canning's term saw the Widow Remarriage Act of 1856, another social reform law, so the two reforms get mixed.",
+      "pedagogical_explanation": "Regulation XVII of 1829, passed under Lord William Bentinck, banned Sati in the Bengal Presidency, with strong support from Raja Rammohan Roy. Memory hook: Bentinck = Banned Sati.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #134",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b31f59f766c5670d78a991baaaa3171598fb3608b73a39e6bb5be48838a1089c"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-135",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_sikh_scripture",
+      "question_text": "The Adi Granth, the first compilation of Sikh scripture, was compiled in 1604 by which Guru?",
+      "options": {
+        "A": "Guru Nanak",
+        "B": "Guru Hargobind",
+        "C": "Guru Arjan Dev",
+        "D": "Guru Gobind Singh"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Guru Gobind Singh added the hymns of Guru Tegh Bahadur and gave the scripture its final form, so students credit him with the original compilation.",
+      "pedagogical_explanation": "Guru Arjan Dev gathered the hymns of the first five Gurus along with compositions of saints such as Kabir, Ravidas and Baba Farid, and installed the Adi Granth at Harmandir Sahib. Guru Gobind Singh later included Guru Tegh Bahadur's hymns. Memory hook: Arjan = Adi Granth, Gobind = final form.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #135",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "bfbdd1547b055b80a496cc9179701a82026fcddaaedd454f08cb032ac1bb78fd"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-136",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "geography_longitude",
+      "question_text": "Which imaginary line passes through Greenwich in London and is taken as 0 degree longitude?",
+      "options": {
+        "A": "Tropic of Capricorn",
+        "B": "Prime Meridian",
+        "C": "International Date Line",
+        "D": "Equator"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): The Equator is the 0 degree line of latitude, so students confuse the two zero lines.",
+      "pedagogical_explanation": "The Prime Meridian passes through the Royal Observatory at Greenwich and divides the Earth into the Eastern and Western Hemispheres. Memory hook: Meridian = longitude, Equator = latitude.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #136",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ddd6fee5fb498274d5e7dca81ce80d22c0c3800286fb19ab5b150a6b7ea4c0cc"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-137",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_soils",
+      "question_text": "Which soil, formed from the weathering of volcanic Deccan lava and locally called 'regur', is considered ideal for cotton cultivation?",
+      "options": {
+        "A": "Alluvial soil",
+        "B": "Black soil",
+        "C": "Red soil",
+        "D": "Laterite soil"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Alluvial soil is the most widespread and fertile soil in India, so students pick it for every major crop.",
+      "pedagogical_explanation": "Black soil retains moisture, is rich in lime, iron and magnesia, and suits cotton, which is why it is also called black cotton soil. It is found mainly on the Deccan plateau. Memory hook: Regur = Black = Cotton.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #137",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2ce12181bd11c74d4f9099cea9339edb4ec3dc8c8645406c0f3a92e3d23cf6d9"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-138",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_dams",
+      "question_text": "The Nagarjuna Sagar Dam, a major masonry dam in southern India, is built across which river?",
+      "options": {
+        "A": "Kaveri",
+        "B": "Krishna",
+        "C": "Tungabhadra",
+        "D": "Godavari"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The Tungabhadra is a major tributary of the Krishna with its own well-known dam, so students choose it by association.",
+      "pedagogical_explanation": "Nagarjuna Sagar lies on the border of present-day Telangana and Andhra Pradesh and impounds the Krishna. It supports irrigation and hydropower. Memory hook: Nagarjuna Sagar = Krishna.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #138",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "892bc06947ca7b206cb045a666046118af50951ccdec85ea8dfd23721173bb98"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-139",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "geography_passes",
+      "question_text": "Which pass in the Pir Panjal range links Jammu with the Kashmir Valley?",
+      "options": {
+        "A": "Bara-lacha La",
+        "B": "Zoji La",
+        "C": "Banihal Pass",
+        "D": "Khardung La"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Zoji La also lies on the Srinagar route, but it connects the Kashmir Valley with Ladakh across the Great Himalaya, not Jammu through the Pir Panjal.",
+      "pedagogical_explanation": "The Banihal Pass crosses the Pir Panjal range between Jammu and the Kashmir Valley, and a road tunnel beneath it carries the highway. Khardung La is in Ladakh and Bara-lacha La lies on the Manali-Leh route. Memory hook: Banihal = Jammu to Kashmir, Zoji La = Kashmir to Ladakh.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #139",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "37c9766f4a7c5784d87f77919766b1a2e7af44e7406e26c9f294f153a2c1bc3f"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-140",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "banking_negotiable_instruments",
+      "question_text": "A cheque with two parallel lines drawn across its face, usually at the top left corner, is called a:",
+      "options": {
+        "A": "Bearer cheque",
+        "B": "Stale cheque",
+        "C": "Open cheque",
+        "D": "Crossed cheque"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): An open cheque is the uncrossed form that can be cashed over the counter, the exact opposite of a crossed cheque.",
+      "pedagogical_explanation": "A crossed cheque can only be credited to the payee's bank account and cannot be encashed over the counter. This makes it safer against theft or loss. Memory hook: Two lines = pay through the bank only.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #140",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "4234198d26ed9db58fdebc57ccdee1c15a4847b849c2773681a4ad7d1385a81e"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-141",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_institution_hq",
+      "question_text": "The Export-Import Bank of India (EXIM Bank), set up in 1982 to finance foreign trade, has its head office in which city?",
+      "options": {
+        "A": "Mumbai",
+        "B": "Hyderabad",
+        "C": "New Delhi",
+        "D": "Kolkata"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): EXIM Bank is a government-owned institution linked to trade policy, so students place its head office in the national capital.",
+      "pedagogical_explanation": "EXIM Bank was established under the Export-Import Bank of India Act, 1981 and began operations on 1 March 1982. Its head office is in Mumbai. Memory hook: EXIM = Export-Import, Mumbai port city.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #141",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "e1961b57f2d0f216549d36bb11e0ba833a7aacd2aad51d458b04b4573d0eb27b"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-142",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_omo",
+      "question_text": "When the RBI buys or sells government securities in the open market to manage liquidity in the banking system, the tool is known as:",
+      "options": {
+        "A": "Margin requirement",
+        "B": "Moral suasion",
+        "C": "Open Market Operations",
+        "D": "Selective credit control"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Moral suasion is a qualitative tool in which the RBI persuades banks through advice, so students mix quantitative and qualitative tools.",
+      "pedagogical_explanation": "In Open Market Operations, purchase of securities injects money into the system and sale of securities absorbs money from it. Moral suasion, margin requirement and selective credit control are qualitative measures. Memory hook: OMO = RBI trades securities.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #142",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "bfdeb8b24e8f76828634b63038f2b85ac22a8bb42bf9ee555ba66367f0084b7e"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-143",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "economy_plan_holiday",
+      "question_text": "The three Annual Plans of 1966-67, 1967-68 and 1968-69, which came between the Third and the Fourth Five Year Plans, are known as the:",
+      "options": {
+        "A": "Plan Holiday",
+        "B": "Perspective Plan",
+        "C": "Indicative Plan",
+        "D": "Rolling Plan"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): The Rolling Plan of 1978 to 1980 was another short-term departure from the five-year format, so students link the two.",
+      "pedagogical_explanation": "After the Third Plan, the Indo-Pakistan war, droughts and a resource crunch led to the Fourth Plan being postponed. Three Annual Plans were followed instead, and this period is called the Plan Holiday. Memory hook: 1966 to 1969 = Plan Holiday.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #143",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3e3f3db25fe735ecad507fe868070fa6698ea076c9ac9e2789dd10c6110f2a64"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-144",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_physics_units",
+      "question_text": "What is the SI unit of force?",
+      "options": {
+        "A": "Newton",
+        "B": "Joule",
+        "C": "Pascal",
+        "D": "Watt"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): The joule is the unit of work and energy, which is calculated as force multiplied by distance, so students confuse the two.",
+      "pedagogical_explanation": "One newton is the force that gives a mass of 1 kg an acceleration of 1 m/s squared. Pascal measures pressure and watt measures power. Memory hook: Newton = Force, Joule = Work.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #144",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c5fb2d16a528352d94b67ed8d63fd2c48ab98ce674e7f8c8c4bab2d3dcb03c23"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-145",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_chemistry_acids",
+      "question_text": "Which acid is naturally present in tamarind?",
+      "options": {
+        "A": "Lactic acid",
+        "B": "Tartaric acid",
+        "C": "Oxalic acid",
+        "D": "Citric acid"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Citric acid is the best-known natural fruit acid, found in lemon and orange, so students apply it to every sour fruit.",
+      "pedagogical_explanation": "Tamarind contains tartaric acid. Oxalic acid is found in tomato and lactic acid in sour milk. Memory hook: Tamarind = Tartaric (both start with T).",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #145",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "84bad043f90840ea733e8c5e297109692907055b45c34d2f72e5bc903247ef87"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-146",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_human_body_bones",
+      "question_text": "Which is the smallest bone in the human body?",
+      "options": {
+        "A": "Malleus",
+        "B": "Stapes",
+        "C": "Incus",
+        "D": "Pisiform"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The incus is another middle-ear ossicle of very similar size, so students pick the wrong one of the three.",
+      "pedagogical_explanation": "The stapes (stirrup) in the middle ear is the smallest bone and passes vibrations from the incus to the inner ear. The malleus and incus are also tiny but larger. Memory hook: Stapes = Smallest, shaped like a stirrup.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #146",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7a505ceb7e9bf14d414808c72baf630b636eb077c997a2ac4845f506dd8838ca"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-147",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_diseases_virus",
+      "question_text": "Which of the following diseases is caused by a virus?",
+      "options": {
+        "A": "Tetanus",
+        "B": "Typhoid",
+        "C": "Cholera",
+        "D": "Polio"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Cholera is a water-borne disease often listed with polio under preventable diseases, but it is bacterial.",
+      "pedagogical_explanation": "Polio is caused by the poliovirus. Cholera is caused by Vibrio cholerae, tetanus by Clostridium tetani and typhoid by Salmonella typhi, all bacteria. Memory hook: Polio = Poliovirus.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #147",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f53090de4a12d470d81f9e5108cdef121f9c13706ac70166dd002e55b690216c"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-148",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_festivals",
+      "question_text": "Bihu, the festival that marks the Assamese New Year and the harvest seasons, is celebrated in which state?",
+      "options": {
+        "A": "West Bengal",
+        "B": "Manipur",
+        "C": "Assam",
+        "D": "Odisha"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): West Bengal celebrates its new year, Poila Boishakh, in the same mid-April period, so students mix the two.",
+      "pedagogical_explanation": "Bihu is the main festival of Assam and is celebrated three times a year: Rongali (Bohag) Bihu in April, Bhogali (Magh) Bihu in January and Kongali (Kati) Bihu in October. Memory hook: Bihu = Assam.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #148",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d4ae54be137f28479350f4260aab77a85b5ad27268c767c0dece5a15507fa54f"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-149",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "static_awards_cinema",
+      "question_text": "Who was the first recipient of the Dadasaheb Phalke Award, India's highest award in cinema, given for the year 1969?",
+      "options": {
+        "A": "Prithviraj Kapoor",
+        "B": "Raj Kapoor",
+        "C": "Devika Rani",
+        "D": "Dilip Kumar"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Prithviraj Kapoor was an early pioneer of Indian cinema and received the award in 1971, so students pick him as the first.",
+      "pedagogical_explanation": "Devika Rani received the first Dadasaheb Phalke Award, followed by B. N. Sircar in 1970. The award was instituted by the Government of India in 1969 to mark the birth centenary of Dadasaheb Phalke. Memory hook: Phalke Award No. 1 = Devika Rani.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #149",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9d505a16e4adc74daea7474482bcdf934538442c1eedea3ce17761a0a1819308"
+    },
+    {
+      "id": "MM-SK-SGA-GA5-150",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_sports_trophies",
+      "question_text": "The Thomas Cup is an international team championship for men in which sport?",
+      "options": {
+        "A": "Tennis",
+        "B": "Table tennis",
+        "C": "Squash",
+        "D": "Badminton"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): The Swaythling Cup is the table tennis team trophy, another men's team championship with a similar format, so the two are swapped.",
+      "pedagogical_explanation": "The Thomas Cup is the world men's team championship in badminton, and its women's counterpart is the Uber Cup. It is organised by the Badminton World Federation. Memory hook: Thomas = men, Uber = women, both badminton.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p5 #150",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p5",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "762440538da1c381aa8619f05e1fec8265e4c422db76aa43a635cff392e61d63"
     },
     {
       "id": "MM-SK-SQA-C55-000",
