@@ -2,7 +2,7 @@
   "meta": {
     "version": 1,
     "generator": "scripts/build_bank.py",
-    "updated_at": "2026-11-03T09:02:59.081321+00:00",
+    "updated_at": "2026-11-04T08:57:46.019271+00:00",
     "removed_in_spot_check": [
       {
         "id": "AI-CVR-3e5c508a",
@@ -4194,48 +4194,393 @@
       "review_status": "unreviewed",
       "verified_computed": false,
       "verified_independent": true
+    },
+    {
+      "question_text": "If $x, y$, and $z$ are real numbers satisfying the system of equations:\n$$x + y + z = 2$$\n$$x^2 + y^2 + z^2 = 6$$\n$$x^3 + y^3 + z^3 = 11$$\n\nWhat is the value of $x^4 + y^4 + z^4$?",
+      "options": {
+        "A": "17",
+        "B": "34",
+        "C": "26",
+        "D": "22"
+      },
+      "correct_answer": "C",
+      "pedagogical_explanation": "Step-by-step solution:\n\n1. Find the elementary symmetric sum $e_2 = xy + yz + zx$:\nUsing $(x+y+z)^2 = x^2 + y^2 + z^2 + 2(xy + yz + zx)$:\n$2^2 = 6 + 2e_2 \\implies 4 = 6 + 2e_2 \\implies e_2 = -1$.\n\n2. Find the product $e_3 = xyz$:\nUsing the cubic identity $x^3 + y^3 + z^3 - 3xyz = (x+y+z)(x^2+y^2+z^2 - e_2)$:\n$11 - 3e_3 = 2(6 - (-1)) = 2(7) = 14 \\implies -3e_3 = 3 \\implies e_3 = -1$.\n\n3. Shortcut (Newton's Sums / Characteristic Polynomial):\n$x, y, z$ are roots of $t^3 - e_1 t^2 + e_2 t - e_3 = 0$, which gives:\n$t^3 - 2t^2 - t + 1 = 0 \\implies t^4 = 2t^3 + t^2 - t$.\n\nSumming this identity for $t = x, y, z$:\n$x^4 + y^4 + z^4 = 2(x^3 + y^3 + z^3) + (x^2 + y^2 + z^2) - (x + y + z)$\n$x^4 + y^4 + z^4 = 2(11) + 6 - 2 = 26$.\n\nMain Distractor Analysis:\nTrap (B) = 34: Solvers often attempt $(x^2+y^2+z^2)^2 = x^4+y^4+z^4 + 2(x^2y^2+y^2z^2+z^2x^2) = 36$, but commit the error of assuming $(xy+yz+zx)^2 = x^2y^2+y^2z^2+z^2x^2$, ignoring the $+2xyz(x+y+z)$ cross-term. They get $x^2y^2+y^2z^2+z^2x^2 = (-1)^2 = 1$, leading to $36 - 2(1) = 34$.\n\nTrap (A) = 17: Solvers assuming a simple linear/arithmetic progression in powers ($p_1=2, p_2=6, p_3=11 \\implies$ differences $4, 5, 6 \\implies p_4 = 17$).",
+      "trap_type": "Omission of cross-terms in symmetric expansion",
+      "concept_tag": "Algebra - Newton's sums and symmetric polynomials",
+      "verify_code": "p1 = 2\np2 = 6\np3 = 11\ne1 = p1\ne2 = (e1**2 - p2) // 2\ne3 = (p3 - e1 * p2 + e2 * p1) // 3\nanswer = e1 * p3 - e2 * p2 + e3 * p1",
+      "id": "AI-CQ-cbc85006",
+      "topic": "CAT Quant",
+      "difficulty": "CAT-Level",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "cbc85006ee63c99e1be3ef92fb6e0003d8f4176c70d1b7deb58bc4309a2d0a1b",
+      "created_at": "2026-11-04T08:37:15.508169+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: For centuries, luthiers and musicians have claimed that stringed instruments, such as violins and acoustic guitars, sound significantly better as they age and are played regularly. While once dismissed as subjective folklore, recent acoustical research supports this phenomenon. Over decades of playing, continuous sound vibrations physically alter the cellular structure of the instrument's wooden soundboard. These microscopic vibrations break down moisture-retaining hemicellulose within the wood fibers, making the timber lighter, stiffer, and less prone to dampening sound waves. Consequently, an aged, well-played instrument produces richer harmonics and greater resonance than a newly manufactured counterpart made of identical materials. However, this beneficial acoustic aging only occurs if the instrument is actively played; wood stored away in a case simply dries out and becomes brittle without developing the desired vibrational flexibility. Thus, the acoustic maturity of a wooden instrument is driven far more by active play than by the mere passage of time.\n\nWhich of the following best captures the main idea of the passage?",
+      "options": {
+        "A": "Contemporary instrument makers are unable to replicate the tonal quality of older violins due to modern manufacturing synthetic materials.",
+        "B": "Regular play induces microscopic structural changes in an instrument's wood, which enhances its acoustic resonance over time.",
+        "C": "A wooden instrument improves acoustically over time primarily because natural drying breaks down fibers without needing any physical use.",
+        "D": "All wooden stringed instruments automatically develop superior resonance and flexibility simply as time passes."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Identify the passage structure: The author introduces a traditional belief (instruments sound better with age/use), presents scientific evidence (vibrations break down hemicellulose in the soundboard), provides a critical qualification ('only occurs if the instrument is actively played'), and concludes with the main thesis ('acoustic maturity... is driven far more by active play than by the mere passage of time').\n2. Match with options: Option B correctly synthesizes the scientific mechanism (microscopic structural changes) and the key condition (regular play leading to enhanced resonance over time).\n\nReading signal / Shortcut:\nPay close attention to concluding structural signals ('However...', 'Thus...'). The passage's final sentence explicitly resolves the main idea by contrasting 'active play' against 'mere passage of time'.\n\nDistractor Analysis:\n- Option A is OUT-OF-SCOPE: Modern manufacturing methods and synthetic materials are never discussed in the text.\n- Option C is a REVERSAL / HALF-TRUE: It correctly mentions drying and fiber breakdown, but incorrectly claims this happens 'without needing any physical use', contradicting the text's emphasis on active playing.\n- Option D (Main Distractor) suffers from EXTREME SCOPE and REVERSAL: It uses absolute language ('All', 'automatically') and attributes acoustic improvement solely to time passing, directly contradicting the passage's explicit statement that passive aging alone merely makes wood brittle.",
+      "trap_type": "Extreme scope",
+      "concept_tag": "RC - main idea",
+      "id": "AI-CVR-26920b37",
+      "topic": "CAT VARC RC",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "26920b3704b07578b00479ac8fc86040eb826a58f6c18514476520d85a2a0f56",
+      "created_at": "2026-11-04T08:39:04.072579+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Four friends — Amar, Akbar, Anthony, and Alok — live on four different floors of a 4-storey building, numbered 1 to 4 from bottom to top.\n\n1. Amar lives on an odd-numbered floor.\n2. Anthony lives on the floor immediately above Amar.\n3. Akbar lives on Floor 3.\n\nWho lives on Floor 4?",
+      "options": {
+        "A": "Amar",
+        "B": "Akbar",
+        "C": "Anthony",
+        "D": "Alok"
+      },
+      "correct_answer": "D",
+      "trap_type": "Overlooking fixed-position conflict",
+      "concept_tag": "Floor arrangement - sequential placement and elimination",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Akbar is fixed on Floor 3.\n2. Amar must live on an odd floor (Floor 1 or Floor 3). Since Floor 3 is occupied by Akbar, Amar must live on Floor 1.\n3. Anthony lives immediately above Amar, so Anthony must live on Floor 2.\n4. The only remaining floor (Floor 4) must be occupied by Alok.\n\nReading Signal/Shortcut:\n'Anchor First' — Always lock in direct floor assignments (Akbar = Floor 3) before testing conditional placements.\n\nMain Distractor Analysis:\nOption C (Anthony) is the main trap. Test-takers often assume Amar is on Floor 3, which directly places Anthony on Floor 4 (3 + 1 = 4), ignoring the fact that Akbar is already assigned to Floor 3.",
+      "verify_code": "import itertools\n\npeople = ['Amar', 'Akbar', 'Anthony', 'Alok']\nsolutions = []\nfor p in itertools.permutations(people):\n    # p[0]=floor 1, p[1]=floor 2, p[2]=floor 3, p[3]=floor 4\n    f = {person: i + 1 for i, person in enumerate(p)}\n    if f['Amar'] in (1, 3) and f['Anthony'] == f['Amar'] + 1 and f['Akbar'] == 3:\n        solutions.append(p[3])\n\noption_map = {'Amar': 'A', 'Akbar': 'B', 'Anthony': 'C', 'Alok': 'D'}\nanswers = {option_map[name] for name in solutions}\nanswer = next(iter(answers))",
+      "id": "AI-CD-cdf87e68",
+      "topic": "CAT DILR",
+      "difficulty": "Easy",
+      "exam": "CAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "cdf87e689bff3b7c57989f16b76a4d3cd7fe6fa37b2b5eca001341dcbf5dc428",
+      "created_at": "2026-11-04T08:39:33.854128+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "Passage:\nUnder the principles of Constitutional Law, the prohibition against ex post facto criminal legislation is a fundamental protection for individual liberty. An ex post facto law is a legal statute that retroactively alters the legal consequences of actions committed before the enactment of the law. This constitutional principle establishes two clear rules governing criminal liability and sentencing:\n\nFirst, no person can be convicted of any criminal offence except for the violation of a law in force at the time when the act charged as an offence was committed. If an action was lawful at the time it was performed, a statute enacted later cannot retroactively convert that past lawful act into a crime or render the person criminally liable.\n\nSecond, no person can be subjected to a criminal penalty greater than the maximum penalty that might have been inflicted under the law in force at the time when the offence was committed. If a penal law is amended after the commission of an offence to increase the punishment, the enhanced penalty cannot be applied retroactively to the offender. The offender remains liable only up to the maximum penalty permitted by the law in existence on the date of the crime.\n\nHowever, this immunity against retroactive application is strictly restricted to criminal laws and criminal penalties. It does not apply to civil liabilities, civil taxes, or administrative penalties. Furthermore, even if a statute explicitly claims to operate retroactively, courts will strike down any retroactive increase in criminal punishment as unconstitutional.\n\nFacts:\nOn 10th January 2023, Rohan parked his vehicle in a non-designated zone outside a railway station. Under the traffic law in force on that date, illegal parking was a criminal offence punishable by a maximum fine of Rs. 500. On 15th January 2023, the legislature passed an amendment increasing the criminal fine for illegal parking from Rs. 500 to Rs. 5,000, explicitly stating that the amendment would take effect retrospectively from 1st January 2023. On 20th January 2023, Rohan was served a penalty notice directing him to pay the enhanced fine of Rs. 5,000 for his act on 10th January 2023. Rohan challenges the Rs. 5,000 fine in court.\n\nWill Rohan succeed in his challenge against the Rs. 5,000 fine?",
+      "options": {
+        "A": "Yes, because the law in force on 10th January 2023 prescribed a maximum penalty of Rs. 500, and an enhanced criminal penalty cannot be applied retroactively.",
+        "B": "No, because the legislature explicitly stated that the amendment would take effect retrospectively from 1st January 2023.",
+        "C": "No, because parking regulations are administrative measures, and constitutional protections against ex post facto laws do not apply to them.",
+        "D": "Yes, because parking in a non-designated zone was completely lawful when Rohan parked his vehicle on 10th January 2023."
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Step-by-step solution:\n1. Identify the legal rule: The second branch of the ex post facto principle states that a person cannot be subjected to a criminal penalty greater than the maximum penalty prescribed by the law in force on the date the offence was committed.\n2. Apply the rule to facts: On 10th January 2023 (date of the act), the maximum statutory penalty was Rs. 500. The amendment passed on 15th January enhanced the fine to Rs. 5,000.\n3. Conclusion: Rohan cannot be forced to pay Rs. 5,000; his liability is capped at Rs. 500. Thus, Rohan will succeed in challenging the Rs. 5,000 fine.\n\nReading Signal / Shortcut: Focus on the date of commission vs date of amendment. The passage explicitly notes that even if a legislature states a law is retrospective, courts strike down retroactive criminal penalty increases.\n\nWhy the traps are wrong:\n- Main Distractor B ('statutory retrospectivity trap'): This trap tricks candidates into prioritizing legislative intent/statutory wording over constitutional protection. The passage expressly states that even if a statute explicitly claims to operate retroactively, courts will strike down retroactive criminal penalty increases.\n- Trap C ('mischaracterization of facts trap'): Claims this is an administrative measure. The facts explicitly state that illegal parking was a 'criminal offence punishable by a maximum fine'.\n- Trap D ('factual error trap'): Claims the act was completely legal on 10th January. On 10th January, illegal parking WAS already a criminal offence (subject to a Rs. 500 fine), so Rohan was guilty of an offence, just not liable for the enhanced Rs. 5,000 fine.",
+      "trap_type": "Legislative retrospectivity wording overriding constitutional prohibition",
+      "concept_tag": "Constitutional Law - Ex Post Facto Laws",
+      "verify_code": "",
+      "id": "AI-CLG-358526f3",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Easy",
+      "exam": "CLAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "358526f3a725642b5176191fbe6daa36f3057cf4a84d88c49b069115a9572b4e",
+      "created_at": "2026-11-04T08:40:05.422449+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "What is the value of the product $\\log_3(4) \\cdot \\log_4(5) \\cdot \\log_5(6) \\cdot \\log_6(7) \\cdot \\log_7(8) \\cdot \\log_8(9)$?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "6"
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "Shortcut: Use the logarithmic change of base chain rule, $\\log_a(b) \\cdot \\log_b(c) = \\log_a(c)$. Applying this across the entire sequence collapses the product directly to $\\log_3(9) = 2$.\n\nStep-by-step solution:\n1. Apply the change of base formula $\\log_a(b) = \\frac{\\log b}{\\log a}$ to each term:\n   $$\\left(\\frac{\\log 4}{\\log 3}\\right) \\cdot \\left(\\frac{\\log 5}{\\log 4}\\right) \\cdot \\left(\\frac{\\log 6}{\\log 5}\\right) \\cdot \\left(\\frac{\\log 7}{\\log 6}\\right) \\cdot \\left(\\frac{\\log 8}{\\log 7}\\right) \\cdot \\left(\\frac{\\log 9}{\\log 8}\\right)$$\n2. Notice the telescoping cancellation of all intermediate numerators and denominators ($\\log 4, \\log 5, \\log 6, \\log 7, \\log 8$).\n3. This leaves $\\frac{\\log 9}{\\log 3} = \\log_3(9) = 2$.\n\nMain distractor trap: Option A (1) occurs when students see complete telescoping cross-cancellation and mistakenly assume everything cancels out to 1 without noticing the initial base 3 and final argument 9 remaining.",
+      "trap_type": "Confusing telescoping product with complete cancellation to 1",
+      "concept_tag": "Logarithms - change of base chain rule",
+      "verify_code": "import math\nres = math.log(4, 3) * math.log(5, 4) * math.log(6, 5) * math.log(7, 6) * math.log(8, 7) * math.log(9, 8)\nanswer = 'B' if abs(res - 2.0) < 1e-7 else 'A'",
+      "id": "AI-IQ-3c9d7308",
+      "topic": "IPMAT Quant",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.6-flash",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "3c9d73087fcf41b94b108d5bc055d3779fad7fc0c985aea2d0f4c9bdf1f0b6ef",
+      "created_at": "2026-11-04T08:40:54.679142+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "options": {
+        "A": "was able to locate",
+        "B": "were able to locate",
+        "C": "is able to locate",
+        "D": "have been able to locate"
+      },
+      "trap_type": "First-subject agreement trap (failing to apply the rule of proximity)",
+      "pedagogical_explanation": "Grammar shortcut: When subjects are connected by 'neither... nor' (or 'either... or'), the verb must agree in number with the subject closest to it (the proximity rule). Here, the closer subject is 'the attending nurses' (plural), which requires a plural verb ('were'). Additionally, the clause 'before the audit began' establishes a simple past tense context, making 'were able to locate' correct. Main distractor A ('was able to locate') falls for the first-subject trap by matching the verb to the singular noun 'chief medical officer' instead of the nearest subject.",
+      "concept_tag": "Grammar - Subject-verb agreement with correlative conjunctions (Neither/Nor)",
+      "correct_answer": "B",
+      "question_text": "Identify the grammatically correct version of the underlined part:\n\nNeither the chief medical officer nor the attending nurses **was able to locate** the missing patient records before the audit began.",
+      "verify_code": "",
+      "id": "AI-IV-41abaa68",
+      "topic": "IPMAT Verbal",
+      "difficulty": "Easy",
+      "exam": "IPMAT",
+      "model": "gemini-3.5-flash",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "41abaa68ead9bed1d43e974431db622d4f55c10590a44ac60c1f1ebcc01db10f",
+      "created_at": "2026-11-04T08:41:34.920740+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Pipe A can fill a tank in 10 minutes, while Pipe B can fill it in 60 minutes. A drainage hole at the bottom of the tank can empty the full tank in 20 minutes. If the drainage hole remains open throughout and Pipes A and B are opened for 1 minute each alternately, starting with Pipe A, how many minutes will it take to fill the tank for the first time?",
+      "options": {
+        "A": "115",
+        "B": "120",
+        "C": "119",
+        "D": "15"
+      },
+      "correct_answer": "A",
+      "trap_type": "Average Rate Fallacy",
+      "pedagogical_explanation": "1. **Define Capacity**: Let the capacity of the tank be the LCM(10, 60, 20) = 60 units. \n2. **Determine Rates**: \n   - Pipe A = +6 units/min\n   - Pipe B = +1 unit/min\n   - Leak = -3 units/min\n3. **Analyze the Cycle**: Since the leak is always open:\n   - Minute 1 (A + Leak): 6 - 3 = +3 units\n   - Minute 2 (B + Leak): 1 - 3 = -2 units\n   - Net work in 1 cycle (2 minutes) = 3 - 2 = 1 unit.\n4. **The Twist**: In alternating problems, the tank might get full during the 'filling' step of a cycle before the 'emptying' step occurs. The peak fill in a cycle is +3. \n5. **Safe Margin Calculation**: Subtract the peak (+3) from total (60) to find the threshold: 60 - 3 = 57 units. \n6. **Full Cycles**: To reach 57 units at a rate of 1 unit per 2-minute cycle, we need 57 cycles. \n   Time = 57 cycles * 2 = 114 minutes. \n   Volume = 57 units.\n7. **Final Step**: In the next minute (Minute 115), Pipe A opens. It adds 3 units. \n   Final Volume = 57 + 3 = 60 units. The tank is now full. \n**Shortcut**: Always subtract the maximum positive work from the total before calculating cycles to avoid overshooting the 'filling' moment.",
+      "concept_tag": "Pipes & Cisterns - Alternating Work",
+      "verify_code": "capacity = 60\na_rate = 6\nb_rate = 1\nleak_rate = -3\ncurrent = 0\nminutes = 0\nwhile current < capacity:\n    minutes += 1\n    if minutes % 2 != 0:\n        current += (a_rate + leak_rate)\n    else:\n        current += (b_rate + leak_rate)\n    if current >= capacity:\n        break\nanswer = minutes",
+      "id": "AI-CQ-1e42fe7b",
+      "topic": "CAT Quant",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "1e42fe7b1f7a99528e45f239176036c9cf970a53e3a33eea2c4d81d2bb453cb5",
+      "created_at": "2026-11-04T08:43:07.091008+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: Ecologists long championed the \"climax community\" as the pinnacle of environmental health—a stable, unchanging state where a few dominant species coexist in a delicate equilibrium. In this view, any external disturbance, such as a fire or a storm, was seen as a setback to the ecosystem’s maturity. However, the Intermediate Disturbance Hypothesis (IDH) challenges this by suggesting that biodiversity actually peaks when disturbances are neither too frequent nor too rare. In environments with very low disturbance, a few competitive \"k-strategists\" eventually crowd out all other species, leading to a biological monoculture. Conversely, in high-disturbance areas, only a handful of colonizer species can survive the constant upheaval. It is the middle ground—periodic disruption—that prevents any single species from achieving total dominance, thereby allowing a mosaic of diverse life forms to thrive in the gaps created by change. Thus, the pursuit of absolute ecological stability may paradoxically diminish the very variety it seeks to preserve, as the absence of change allows competition to finalize its ruthless winnowing process.\n\nWhich of the following best expresses the main paradox described in the passage?",
+      "options": {
+        "A": "Achieving a permanent climax state is the most reliable method for maximizing an ecosystem's overall biodiversity.",
+        "B": "The pursuit of total environmental stability can lead to a loss of species variety by facilitating the competitive exclusion of weaker species.",
+        "C": "Modern conservationists prioritize the protection of k-strategists because they are more vulnerable to human-induced climate change.",
+        "D": "Only through frequent and severe environmental disruptions can an ecosystem maintain any degree of biological complexity."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The passage discusses the Intermediate Disturbance Hypothesis, which posits that both too much and too little disturbance are bad for biodiversity. The 'paradox' lies in the fact that 'absolute ecological stability' (the climax state) leads to a 'biological monoculture' because strong competitors (k-strategists) eventually drive others to extinction. Option B captures this causal link perfectly. (A) is a Reversal; it states the old view that the passage is actively debunking. (C) is Out-of-scope; while k-strategists are mentioned, their vulnerability to human-induced climate change is never discussed. (D) is Extreme scope; the passage argues for 'intermediate' or 'periodic' disruption, not 'frequent and severe' (which the text says only a handful of species survive).",
+      "trap_type": "Reversal",
+      "concept_tag": "RC - central idea",
+      "verify_code": "answer = 'B'",
+      "id": "AI-CVR-2e4e21bc",
+      "topic": "CAT VARC RC",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2e4e21bc090e815cf838eb019dd66dccebe228067354e02f292abab85aee05ce",
+      "created_at": "2026-11-04T08:43:21.915673+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Five chefs—A, B, C, D, and E—are participating in a culinary challenge. They are scheduled to perform one after another in five distinct slots.\n\n| Slot | Time |\n| :--- | :--- |\n| 1 | 10:00 AM |\n| 2 | 11:00 AM |\n| 3 | 12:00 PM |\n| 4 | 01:00 PM |\n| 5 | 02:00 PM |\n\nThe following conditions apply to their schedule:\n1. Chef A is scheduled at some time after Chef E.\n2. There is exactly one chef scheduled between Chef B and Chef D.\n3. Chef C is scheduled in an even-numbered slot.\n4. Chef D is not scheduled in slot 1.\n5. Chef E is scheduled immediately after Chef B.\n\nWhich chef is scheduled in slot 3?",
+      "options": {
+        "A": "Chef A",
+        "B": "Chef B",
+        "C": "Chef C",
+        "D": "Chef D"
+      },
+      "correct_answer": "D",
+      "pedagogical_explanation": "To solve this efficiently, we link Constraints 2 and 5. Since E is immediately after B (B-E) and there is exactly one chef between B and D, the only possible sequence involving these three is the block (B, E, D). \n\nNow, test the placement of this (B, E, D) block:\n1. If (B, E, D) occupies slots 2, 3, 4: Then slots 1 and 5 are left for A and C. Constraint 3 requires C to be in an even slot, but slots 1 and 5 are both odd. This fails.\n2. If (B, E, D) occupies slots 3, 4, 5: Then Chef A must be scheduled after Chef E (Constraint 1). However, since E is in slot 4 and D is in slot 5, there is no slot left for A after slot 4. This fails.\n3. If (B, E, D) occupies slots 1, 2, 3: The remaining slots are 4 and 5. Constraint 3 requires C to be in an even slot, so C must be in slot 4. This leaves slot 5 for Chef A. Finally, check Constraint 1: A (slot 5) is indeed after E (slot 2). This arrangement satisfies all conditions.\n\nThe unique arrangement is: B(1), E(2), D(3), C(4), A(5). Therefore, Chef D is in slot 3.",
+      "trap_type": "Constraint Overlook",
+      "concept_tag": "Linear Arrangement - Block Constraints",
+      "verify_code": "import itertools\nchefs = ['A', 'B', 'C', 'D', 'E']\nsols = []\nfor p in itertools.permutations(chefs):\n    d = {c: p.index(c) + 1 for c in chefs}\n    cond1 = d['A'] > d['E']\n    cond2 = abs(d['B'] - d['D']) == 2\n    cond3 = d['C'] % 2 == 0\n    cond4 = d['D'] != 1\n    cond5 = d['E'] == d['B'] + 1\n    if cond1 and cond2 and cond3 and cond4 and cond5:\n        sols.append(p)\n# The question asks who is in slot 3 (index 2)\nanswers = {sol[2] for sol in sols}\nanswer = 'D'",
+      "id": "AI-CD-3d919249",
+      "topic": "CAT DILR",
+      "difficulty": "Moderate",
+      "exam": "CAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "unique solution",
+        "independent solve"
+      ],
+      "text_hash": "3d91924908be06a49d925fe74f90492977b11966435bfa50f0159934b327070d",
+      "created_at": "2026-11-04T08:45:08.620375+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true,
+      "verified_unique": true
+    },
+    {
+      "question_text": "### Principle:\nUnder the law of contracts, the doctrine of frustration applies when an unforeseen event, occurring after the contract is formed, makes the performance of the agreed-upon obligations impossible or changes them into something radically different from what was originally contemplated. When a contract is frustrated, it is automatically terminated, and both parties are excused from further performance. However, there are vital limitations to this doctrine. First, a contract is not frustrated simply because performance has become more difficult, more expensive, or less profitable for one of the parties than anticipated. Second, the doctrine cannot be invoked if the event was caused by the negligence or the deliberate act of the party seeking to rely on it. \n\n### Facts:\nSwift-Move Corp. entered into a contract with a retail chain to deliver 500 air conditioners from their warehouse to a city across a mountain range by June 1st for a fixed fee of Rs. 2,00,000. On May 20th, a massive landslide (an unforeseen event) destroyed the main highway through the mountains. An alternative route exists via a coastal road, but it is significantly longer, requiring three additional days of travel and doubling the fuel costs for Swift-Move Corp. Swift-Move Corp. informs the retail chain that the contract is frustrated due to the destruction of the highway and refuses to deliver the goods. Is the contract frustrated?",
+      "options": {
+        "A": "Yes, because the destruction of the main highway was an unforeseen event that made the original delivery plan impossible.",
+        "B": "No, because the coastal road provides a viable, though more expensive, alternative for performance.",
+        "C": "Yes, because the doubling of fuel costs and the three-day delay change the performance into something radically different.",
+        "D": "No, because Swift-Move Corp. assumed the risk of natural disasters when they signed a fixed-fee contract."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "The doctrine of frustration requires 'impossibility'. As per the principle, mere 'difficulty' or 'increased expense' does not qualify as frustration. In this scenario, while the main highway is gone, the coastal road remains a physical possibility for delivery. The fact that it costs more in fuel and takes more time falls squarely under the exception provided in the principle (performance becoming more expensive or difficult). Shortcut: When you see an alternative exists, check if that alternative is 'impossible' or just 'inconvenient'. If it's the latter, there is no frustration. Trap (A) is the 'Event-Focus' trap, where students assume any major unforeseen disaster automatically frustrates a contract, ignoring the availability of alternatives. Trap (C) is the 'Radical Change' trap, but a 3-day delay and fuel hike in a commercial delivery are standard business risks, not a 'radical change' in the nature of the service (which would be something like the air conditioners being banned by law).",
+      "trap_type": "Event-Focus Error",
+      "concept_tag": "Legal RC - Doctrine of Frustration",
+      "verify_code": "is_impossible = False\nmore_expensive = True\nmore_difficult = True\n\n# According to principle:\n# Frustration = Impossibility AND NOT (more_expensive OR more_difficult)\n\nfrustrated = is_impossible and not (more_expensive or more_difficult)\n\nif not frustrated:\n    answer = 'B'\nelse:\n    answer = 'A'\n\nanswers = {answer}",
+      "id": "AI-CR-346c634e",
+      "topic": "CLAT RC",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "346c634ee53aa1786bd821a5bb32d20b3620614d705c88400732962b77af15ee",
+      "created_at": "2026-11-04T08:45:36.342509+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Passage: The principle of strict liability dictates that any person who, for their own purposes, brings onto their land and collects and keeps there anything likely to do mischief if it escapes, must keep it in at their peril. If the substance escapes, the person is prima facie answerable for all the damage which is the natural consequence of its escape. For this rule to be invoked, it must be established that the defendant made a 'non-natural use' of the land. Non-natural use refers to the bringing of something onto the land that is not naturally there, or using the land in a way that increases the danger to others, such as the industrial storage of large quantities of water, hazardous chemicals, or explosive gases.\n\nCrucially, strict liability is distinct from negligence. In a claim for negligence, the plaintiff must prove that the defendant failed to take reasonable care. In contrast, under strict liability, the defendant can be held liable even if they exercised the utmost care and were not at fault for the escape. The focus is on the inherent danger of the activity rather than the conduct of the person.\n\nHowever, the law recognizes specific exceptions where strict liability does not apply. The most prominent among these is the 'Act of God' (Vis Major). An Act of God is defined as an operation of natural forces so unexpected, extraordinary, and unprecedented that no human foresight or skill could reasonably be expected to anticipate or provide against it. For a natural event to qualify as an Act of God, it must be the sole cause of the damage and must be of such a magnitude that it transcends the ordinary course of nature. Common seasonal occurrences, such as heavy monsoon rains in a tropical region or expected high tides, do not constitute an Act of God, as these are foreseeable events that a reasonable person should guard against.\n\nFacts: Nitro-Corp operates a chemical processing unit in a coastal district. The company stores pressurized chlorine gas in specialized containers. Historical meteorological data for the district over the last 150 years shows that the area occasionally experiences cyclonic winds, with the highest recorded speed being 110 km/h. Nitro-Corp’s storage facility was specifically engineered to withstand winds of up to 180 km/h, far exceeding local records. Last month, an unprecedented 'hyper-cyclone' hit the coast with wind speeds reaching 350 km/h. The extreme pressure caused the containers to dislodge and rupture, releasing chlorine gas which drifted into a nearby poultry farm owned by Mr. Khanna, killing thousands of birds. Mr. Khanna sued Nitro-Corp for damages.\n\nBased on the principles provided, is Nitro-Corp liable?",
+      "options": {
+        "A": "Yes, because chlorine gas is a dangerous substance and its escape caused the damage, satisfying the rule of strict liability.",
+        "B": "No, because the hyper-cyclone was an unprecedented natural event that could not have been reasonably foreseen by human foresight.",
+        "C": "Yes, because Nitro-Corp’s storage of chlorine gas constitutes a non-natural use of land, making them liable for all consequences of an escape.",
+        "D": "No, because Nitro-Corp had taken more than reasonable care by building containers that significantly exceeded historical safety requirements."
+      },
+      "correct_answer": "B",
+      "pedagogical_explanation": "To solve this, we first check if the rule of Strict Liability applies. Storing chlorine gas is a 'non-natural use' and it escaped, causing damage. However, we must then check for exceptions. The passage defines an 'Act of God' as a natural force that is 'unprecedented' and could not be 'reasonably anticipated'. Since the cyclone (350 km/h) was more than triple the 150-year historical maximum (110 km/h), it meets the definition of an Act of God. Therefore, Nitro-Corp is not liable. Trap A and C are 'Rule-only' traps; they correctly identify the rule but ignore the stated exception. Trap D is the 'Negligence Trap'; it suggests Nitro-Corp is not liable because they took care. However, the passage explicitly states that under strict liability, a person is liable *even if* they took all possible care. The correct reason for non-liability is the Act of God exception, not the lack of negligence.",
+      "trap_type": "The Negligence Trap (arguing lack of fault/care in a strict liability scenario)",
+      "concept_tag": "Law of Torts - Strict Liability and Act of God",
+      "verify_code": "answer = 'B'\nanswers = {'B'}",
+      "id": "AI-CLG-856ae8a2",
+      "topic": "CLAT Legal Reasoning",
+      "difficulty": "Moderate",
+      "exam": "CLAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "856ae8a235a2a6c6b2b85f9e2563a0144766630f7f52a079dcddc23f399f4aee",
+      "created_at": "2026-11-04T08:46:38.608020+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": false,
+      "verified_independent": true
+    },
+    {
+      "question_text": "Three players A, B, and C take turns rolling a fair six-sided die in the order A, B, C, A, B, C, ... until one of them rolls a prime number. The first player to roll a prime number wins the game and the game ends immediately. What is the probability that player C wins the game?",
+      "options": {
+        "A": "1/7",
+        "B": "2/7",
+        "C": "4/7",
+        "D": "1/8"
+      },
+      "correct_answer": "A",
+      "pedagogical_explanation": "Let 'p' be the probability of rolling a prime number (2, 3, or 5) and 'q' be the probability of not rolling one. On a fair die, p = 3/6 = 1/2 and q = 1 - 1/2 = 1/2. Player C wins if the game ends on the 3rd, 6th, 9th, ... roll. This occurs if A and B fail on their turns, and C succeeds, or if all fail for a full round and C succeeds in the next, and so on. P(C wins) = (q*q*p) + (q*q*q*q*q*p) + (q*q*q*q*q*q*q*q*p) + ... This is an infinite geometric progression with first term a = q^2*p = (1/2)^3 = 1/8 and common ratio r = q^3 = (1/2)^3 = 1/8. Using the formula S = a / (1 - r), we get S = (1/8) / (1 - 1/8) = (1/8) / (7/8) = 1/7. Shortcut: For n players, the ratio of winning probabilities is 1 : q : q^2 : ... : q^(n-1). For A, B, and C, the ratio is 1 : (1/2) : (1/4), or 4 : 2 : 1. C's probability is 1 / (4+2+1) = 1/7.",
+      "trap_type": "Calculating the probability for the wrong player or an incomplete series",
+      "concept_tag": "Probability - Infinite Geometric Series",
+      "verify_code": "from fractions import Fraction\np = Fraction(1, 2)\nq = Fraction(1, 2)\na = (q**2) * p\nr = q**3\nres = a / (1 - r)\nanswer = 'A' if res == Fraction(1, 7) else 'Wrong'",
+      "id": "AI-IQ-63b64b68",
+      "topic": "IPMAT Quant",
+      "difficulty": "Moderate",
+      "exam": "IPMAT",
+      "model": "gemini-3-flash-preview",
+      "verified": true,
+      "verification": [
+        "computed",
+        "independent solve"
+      ],
+      "text_hash": "63b64b68f249220ae0725bc09c0719e2d22b47b981bf7cff26563b5e53cf704b",
+      "created_at": "2026-11-04T08:46:58.628253+00:00",
+      "review_status": "unreviewed",
+      "verified_computed": true,
+      "verified_independent": true
     }
   ],
   "build_stats": {
     "CAT Quant": {
-      "attempts": 29,
-      "rejected": 10,
-      "accepted": 19
+      "attempts": 32,
+      "rejected": 11,
+      "accepted": 21
     },
     "CAT VARC RC": {
-      "attempts": 37,
-      "rejected": 18,
-      "accepted": 19
+      "attempts": 41,
+      "rejected": 20,
+      "accepted": 21
     },
     "CAT DILR": {
-      "attempts": 32,
-      "rejected": 14,
-      "accepted": 18
+      "attempts": 35,
+      "rejected": 15,
+      "accepted": 20
     },
     "CLAT RC": {
-      "attempts": 28,
-      "rejected": 9,
-      "accepted": 19
+      "attempts": 30,
+      "rejected": 10,
+      "accepted": 20
     },
     "CLAT Logical Reasoning": {
-      "attempts": 32,
-      "rejected": 14,
-      "accepted": 18
+      "attempts": 34,
+      "rejected": 15,
+      "accepted": 19
     },
     "CLAT Legal Reasoning": {
-      "attempts": 21,
-      "rejected": 3,
-      "accepted": 18
+      "attempts": 24,
+      "rejected": 4,
+      "accepted": 20
     },
     "IPMAT Quant": {
-      "attempts": 26,
-      "rejected": 8,
-      "accepted": 18
+      "attempts": 30,
+      "rejected": 10,
+      "accepted": 20
     },
     "IPMAT Verbal": {
-      "attempts": 23,
-      "rejected": 5,
-      "accepted": 18
+      "attempts": 26,
+      "rejected": 7,
+      "accepted": 19
     }
   }
 }

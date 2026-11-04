@@ -1581,3 +1581,155 @@ Which of the following is an assumption the argument depends on?",Most drivers i
 1. **Negate (B):** 'Handheld mobile phone use does NOT cause a significant number of accidents.' If this is true, then even if the fine successfully stops everyone from using phones, the total number of accidents will not decrease significantly. The argument's conclusion collapses, making (B) necessary.
 2. **Trap A (Extreme Scope):** The argument doesn't need 'most' drivers to be offending. Even if only 5% of drivers use phones but they cause 40% of the accidents, the plan works.
 3. **Trap C (Exclusivity):** The argument suggests a specific solution; it does not need to assume that no other solutions (like better road design) exist.",Extreme scope,Assumption,False,True,,gemini-3-flash-preview,2026-11-03T08:56:53.839133+00:00,unreviewed,,
+AI-CQ-cbc85006,CAT,CAT Quant,CAT-Level,"If $x, y$, and $z$ are real numbers satisfying the system of equations:
+$$x + y + z = 2$$
+$$x^2 + y^2 + z^2 = 6$$
+$$x^3 + y^3 + z^3 = 11$$
+
+What is the value of $x^4 + y^4 + z^4$?",17,34,26,22,C,"Step-by-step solution:
+
+1. Find the elementary symmetric sum $e_2 = xy + yz + zx$:
+Using $(x+y+z)^2 = x^2 + y^2 + z^2 + 2(xy + yz + zx)$:
+$2^2 = 6 + 2e_2 \implies 4 = 6 + 2e_2 \implies e_2 = -1$.
+
+2. Find the product $e_3 = xyz$:
+Using the cubic identity $x^3 + y^3 + z^3 - 3xyz = (x+y+z)(x^2+y^2+z^2 - e_2)$:
+$11 - 3e_3 = 2(6 - (-1)) = 2(7) = 14 \implies -3e_3 = 3 \implies e_3 = -1$.
+
+3. Shortcut (Newton's Sums / Characteristic Polynomial):
+$x, y, z$ are roots of $t^3 - e_1 t^2 + e_2 t - e_3 = 0$, which gives:
+$t^3 - 2t^2 - t + 1 = 0 \implies t^4 = 2t^3 + t^2 - t$.
+
+Summing this identity for $t = x, y, z$:
+$x^4 + y^4 + z^4 = 2(x^3 + y^3 + z^3) + (x^2 + y^2 + z^2) - (x + y + z)$
+$x^4 + y^4 + z^4 = 2(11) + 6 - 2 = 26$.
+
+Main Distractor Analysis:
+Trap (B) = 34: Solvers often attempt $(x^2+y^2+z^2)^2 = x^4+y^4+z^4 + 2(x^2y^2+y^2z^2+z^2x^2) = 36$, but commit the error of assuming $(xy+yz+zx)^2 = x^2y^2+y^2z^2+z^2x^2$, ignoring the $+2xyz(x+y+z)$ cross-term. They get $x^2y^2+y^2z^2+z^2x^2 = (-1)^2 = 1$, leading to $36 - 2(1) = 34$.
+
+Trap (A) = 17: Solvers assuming a simple linear/arithmetic progression in powers ($p_1=2, p_2=6, p_3=11 \implies$ differences $4, 5, 6 \implies p_4 = 17$).",Omission of cross-terms in symmetric expansion,Algebra - Newton's sums and symmetric polynomials,True,True,,gemini-3.5-flash,2026-11-04T08:37:15.508169+00:00,unreviewed,,
+AI-CVR-26920b37,CAT,CAT VARC RC,Easy,"Passage: For centuries, luthiers and musicians have claimed that stringed instruments, such as violins and acoustic guitars, sound significantly better as they age and are played regularly. While once dismissed as subjective folklore, recent acoustical research supports this phenomenon. Over decades of playing, continuous sound vibrations physically alter the cellular structure of the instrument's wooden soundboard. These microscopic vibrations break down moisture-retaining hemicellulose within the wood fibers, making the timber lighter, stiffer, and less prone to dampening sound waves. Consequently, an aged, well-played instrument produces richer harmonics and greater resonance than a newly manufactured counterpart made of identical materials. However, this beneficial acoustic aging only occurs if the instrument is actively played; wood stored away in a case simply dries out and becomes brittle without developing the desired vibrational flexibility. Thus, the acoustic maturity of a wooden instrument is driven far more by active play than by the mere passage of time.
+
+Which of the following best captures the main idea of the passage?",Contemporary instrument makers are unable to replicate the tonal quality of older violins due to modern manufacturing synthetic materials.,"Regular play induces microscopic structural changes in an instrument's wood, which enhances its acoustic resonance over time.",A wooden instrument improves acoustically over time primarily because natural drying breaks down fibers without needing any physical use.,All wooden stringed instruments automatically develop superior resonance and flexibility simply as time passes.,B,"Step-by-step solution:
+1. Identify the passage structure: The author introduces a traditional belief (instruments sound better with age/use), presents scientific evidence (vibrations break down hemicellulose in the soundboard), provides a critical qualification ('only occurs if the instrument is actively played'), and concludes with the main thesis ('acoustic maturity... is driven far more by active play than by the mere passage of time').
+2. Match with options: Option B correctly synthesizes the scientific mechanism (microscopic structural changes) and the key condition (regular play leading to enhanced resonance over time).
+
+Reading signal / Shortcut:
+Pay close attention to concluding structural signals ('However...', 'Thus...'). The passage's final sentence explicitly resolves the main idea by contrasting 'active play' against 'mere passage of time'.
+
+Distractor Analysis:
+- Option A is OUT-OF-SCOPE: Modern manufacturing methods and synthetic materials are never discussed in the text.
+- Option C is a REVERSAL / HALF-TRUE: It correctly mentions drying and fiber breakdown, but incorrectly claims this happens 'without needing any physical use', contradicting the text's emphasis on active playing.
+- Option D (Main Distractor) suffers from EXTREME SCOPE and REVERSAL: It uses absolute language ('All', 'automatically') and attributes acoustic improvement solely to time passing, directly contradicting the passage's explicit statement that passive aging alone merely makes wood brittle.",Extreme scope,RC - main idea,False,True,,gemini-3.6-flash,2026-11-04T08:39:04.072579+00:00,unreviewed,,
+AI-CD-cdf87e68,CAT,CAT DILR,Easy,"Four friends — Amar, Akbar, Anthony, and Alok — live on four different floors of a 4-storey building, numbered 1 to 4 from bottom to top.
+
+1. Amar lives on an odd-numbered floor.
+2. Anthony lives on the floor immediately above Amar.
+3. Akbar lives on Floor 3.
+
+Who lives on Floor 4?",Amar,Akbar,Anthony,Alok,D,"Step-by-step solution:
+1. Akbar is fixed on Floor 3.
+2. Amar must live on an odd floor (Floor 1 or Floor 3). Since Floor 3 is occupied by Akbar, Amar must live on Floor 1.
+3. Anthony lives immediately above Amar, so Anthony must live on Floor 2.
+4. The only remaining floor (Floor 4) must be occupied by Alok.
+
+Reading Signal/Shortcut:
+'Anchor First' — Always lock in direct floor assignments (Akbar = Floor 3) before testing conditional placements.
+
+Main Distractor Analysis:
+Option C (Anthony) is the main trap. Test-takers often assume Amar is on Floor 3, which directly places Anthony on Floor 4 (3 + 1 = 4), ignoring the fact that Akbar is already assigned to Floor 3.",Overlooking fixed-position conflict,Floor arrangement - sequential placement and elimination,True,True,,gemini-3.5-flash,2026-11-04T08:39:33.854128+00:00,unreviewed,,
+AI-CLG-358526f3,CLAT,CLAT Legal Reasoning,Easy,"Passage:
+Under the principles of Constitutional Law, the prohibition against ex post facto criminal legislation is a fundamental protection for individual liberty. An ex post facto law is a legal statute that retroactively alters the legal consequences of actions committed before the enactment of the law. This constitutional principle establishes two clear rules governing criminal liability and sentencing:
+
+First, no person can be convicted of any criminal offence except for the violation of a law in force at the time when the act charged as an offence was committed. If an action was lawful at the time it was performed, a statute enacted later cannot retroactively convert that past lawful act into a crime or render the person criminally liable.
+
+Second, no person can be subjected to a criminal penalty greater than the maximum penalty that might have been inflicted under the law in force at the time when the offence was committed. If a penal law is amended after the commission of an offence to increase the punishment, the enhanced penalty cannot be applied retroactively to the offender. The offender remains liable only up to the maximum penalty permitted by the law in existence on the date of the crime.
+
+However, this immunity against retroactive application is strictly restricted to criminal laws and criminal penalties. It does not apply to civil liabilities, civil taxes, or administrative penalties. Furthermore, even if a statute explicitly claims to operate retroactively, courts will strike down any retroactive increase in criminal punishment as unconstitutional.
+
+Facts:
+On 10th January 2023, Rohan parked his vehicle in a non-designated zone outside a railway station. Under the traffic law in force on that date, illegal parking was a criminal offence punishable by a maximum fine of Rs. 500. On 15th January 2023, the legislature passed an amendment increasing the criminal fine for illegal parking from Rs. 500 to Rs. 5,000, explicitly stating that the amendment would take effect retrospectively from 1st January 2023. On 20th January 2023, Rohan was served a penalty notice directing him to pay the enhanced fine of Rs. 5,000 for his act on 10th January 2023. Rohan challenges the Rs. 5,000 fine in court.
+
+Will Rohan succeed in his challenge against the Rs. 5,000 fine?","Yes, because the law in force on 10th January 2023 prescribed a maximum penalty of Rs. 500, and an enhanced criminal penalty cannot be applied retroactively.","No, because the legislature explicitly stated that the amendment would take effect retrospectively from 1st January 2023.","No, because parking regulations are administrative measures, and constitutional protections against ex post facto laws do not apply to them.","Yes, because parking in a non-designated zone was completely lawful when Rohan parked his vehicle on 10th January 2023.",A,"Step-by-step solution:
+1. Identify the legal rule: The second branch of the ex post facto principle states that a person cannot be subjected to a criminal penalty greater than the maximum penalty prescribed by the law in force on the date the offence was committed.
+2. Apply the rule to facts: On 10th January 2023 (date of the act), the maximum statutory penalty was Rs. 500. The amendment passed on 15th January enhanced the fine to Rs. 5,000.
+3. Conclusion: Rohan cannot be forced to pay Rs. 5,000; his liability is capped at Rs. 500. Thus, Rohan will succeed in challenging the Rs. 5,000 fine.
+
+Reading Signal / Shortcut: Focus on the date of commission vs date of amendment. The passage explicitly notes that even if a legislature states a law is retrospective, courts strike down retroactive criminal penalty increases.
+
+Why the traps are wrong:
+- Main Distractor B ('statutory retrospectivity trap'): This trap tricks candidates into prioritizing legislative intent/statutory wording over constitutional protection. The passage expressly states that even if a statute explicitly claims to operate retroactively, courts will strike down retroactive criminal penalty increases.
+- Trap C ('mischaracterization of facts trap'): Claims this is an administrative measure. The facts explicitly state that illegal parking was a 'criminal offence punishable by a maximum fine'.
+- Trap D ('factual error trap'): Claims the act was completely legal on 10th January. On 10th January, illegal parking WAS already a criminal offence (subject to a Rs. 500 fine), so Rohan was guilty of an offence, just not liable for the enhanced Rs. 5,000 fine.",Legislative retrospectivity wording overriding constitutional prohibition,Constitutional Law - Ex Post Facto Laws,False,True,,gemini-3.6-flash,2026-11-04T08:40:05.422449+00:00,unreviewed,,
+AI-IQ-3c9d7308,IPMAT,IPMAT Quant,Easy,What is the value of the product $\log_3(4) \cdot \log_4(5) \cdot \log_5(6) \cdot \log_6(7) \cdot \log_7(8) \cdot \log_8(9)$?,1,2,3,6,B,"Shortcut: Use the logarithmic change of base chain rule, $\log_a(b) \cdot \log_b(c) = \log_a(c)$. Applying this across the entire sequence collapses the product directly to $\log_3(9) = 2$.
+
+Step-by-step solution:
+1. Apply the change of base formula $\log_a(b) = \frac{\log b}{\log a}$ to each term:
+   $$\left(\frac{\log 4}{\log 3}\right) \cdot \left(\frac{\log 5}{\log 4}\right) \cdot \left(\frac{\log 6}{\log 5}\right) \cdot \left(\frac{\log 7}{\log 6}\right) \cdot \left(\frac{\log 8}{\log 7}\right) \cdot \left(\frac{\log 9}{\log 8}\right)$$
+2. Notice the telescoping cancellation of all intermediate numerators and denominators ($\log 4, \log 5, \log 6, \log 7, \log 8$).
+3. This leaves $\frac{\log 9}{\log 3} = \log_3(9) = 2$.
+
+Main distractor trap: Option A (1) occurs when students see complete telescoping cross-cancellation and mistakenly assume everything cancels out to 1 without noticing the initial base 3 and final argument 9 remaining.",Confusing telescoping product with complete cancellation to 1,Logarithms - change of base chain rule,True,True,,gemini-3.6-flash,2026-11-04T08:40:54.679142+00:00,unreviewed,,
+AI-IV-41abaa68,IPMAT,IPMAT Verbal,Easy,"Identify the grammatically correct version of the underlined part:
+
+Neither the chief medical officer nor the attending nurses **was able to locate** the missing patient records before the audit began.",was able to locate,were able to locate,is able to locate,have been able to locate,B,"Grammar shortcut: When subjects are connected by 'neither... nor' (or 'either... or'), the verb must agree in number with the subject closest to it (the proximity rule). Here, the closer subject is 'the attending nurses' (plural), which requires a plural verb ('were'). Additionally, the clause 'before the audit began' establishes a simple past tense context, making 'were able to locate' correct. Main distractor A ('was able to locate') falls for the first-subject trap by matching the verb to the singular noun 'chief medical officer' instead of the nearest subject.",First-subject agreement trap (failing to apply the rule of proximity),Grammar - Subject-verb agreement with correlative conjunctions (Neither/Nor),False,True,,gemini-3.5-flash,2026-11-04T08:41:34.920740+00:00,unreviewed,,
+AI-CQ-1e42fe7b,CAT,CAT Quant,Moderate,"Pipe A can fill a tank in 10 minutes, while Pipe B can fill it in 60 minutes. A drainage hole at the bottom of the tank can empty the full tank in 20 minutes. If the drainage hole remains open throughout and Pipes A and B are opened for 1 minute each alternately, starting with Pipe A, how many minutes will it take to fill the tank for the first time?",115,120,119,15,A,"1. **Define Capacity**: Let the capacity of the tank be the LCM(10, 60, 20) = 60 units. 
+2. **Determine Rates**: 
+   - Pipe A = +6 units/min
+   - Pipe B = +1 unit/min
+   - Leak = -3 units/min
+3. **Analyze the Cycle**: Since the leak is always open:
+   - Minute 1 (A + Leak): 6 - 3 = +3 units
+   - Minute 2 (B + Leak): 1 - 3 = -2 units
+   - Net work in 1 cycle (2 minutes) = 3 - 2 = 1 unit.
+4. **The Twist**: In alternating problems, the tank might get full during the 'filling' step of a cycle before the 'emptying' step occurs. The peak fill in a cycle is +3. 
+5. **Safe Margin Calculation**: Subtract the peak (+3) from total (60) to find the threshold: 60 - 3 = 57 units. 
+6. **Full Cycles**: To reach 57 units at a rate of 1 unit per 2-minute cycle, we need 57 cycles. 
+   Time = 57 cycles * 2 = 114 minutes. 
+   Volume = 57 units.
+7. **Final Step**: In the next minute (Minute 115), Pipe A opens. It adds 3 units. 
+   Final Volume = 57 + 3 = 60 units. The tank is now full. 
+**Shortcut**: Always subtract the maximum positive work from the total before calculating cycles to avoid overshooting the 'filling' moment.",Average Rate Fallacy,Pipes & Cisterns - Alternating Work,True,True,,gemini-3-flash-preview,2026-11-04T08:43:07.091008+00:00,unreviewed,,
+AI-CVR-2e4e21bc,CAT,CAT VARC RC,Moderate,"Passage: Ecologists long championed the ""climax community"" as the pinnacle of environmental health—a stable, unchanging state where a few dominant species coexist in a delicate equilibrium. In this view, any external disturbance, such as a fire or a storm, was seen as a setback to the ecosystem’s maturity. However, the Intermediate Disturbance Hypothesis (IDH) challenges this by suggesting that biodiversity actually peaks when disturbances are neither too frequent nor too rare. In environments with very low disturbance, a few competitive ""k-strategists"" eventually crowd out all other species, leading to a biological monoculture. Conversely, in high-disturbance areas, only a handful of colonizer species can survive the constant upheaval. It is the middle ground—periodic disruption—that prevents any single species from achieving total dominance, thereby allowing a mosaic of diverse life forms to thrive in the gaps created by change. Thus, the pursuit of absolute ecological stability may paradoxically diminish the very variety it seeks to preserve, as the absence of change allows competition to finalize its ruthless winnowing process.
+
+Which of the following best expresses the main paradox described in the passage?",Achieving a permanent climax state is the most reliable method for maximizing an ecosystem's overall biodiversity.,The pursuit of total environmental stability can lead to a loss of species variety by facilitating the competitive exclusion of weaker species.,Modern conservationists prioritize the protection of k-strategists because they are more vulnerable to human-induced climate change.,Only through frequent and severe environmental disruptions can an ecosystem maintain any degree of biological complexity.,B,"The passage discusses the Intermediate Disturbance Hypothesis, which posits that both too much and too little disturbance are bad for biodiversity. The 'paradox' lies in the fact that 'absolute ecological stability' (the climax state) leads to a 'biological monoculture' because strong competitors (k-strategists) eventually drive others to extinction. Option B captures this causal link perfectly. (A) is a Reversal; it states the old view that the passage is actively debunking. (C) is Out-of-scope; while k-strategists are mentioned, their vulnerability to human-induced climate change is never discussed. (D) is Extreme scope; the passage argues for 'intermediate' or 'periodic' disruption, not 'frequent and severe' (which the text says only a handful of species survive).",Reversal,RC - central idea,False,True,,gemini-3-flash-preview,2026-11-04T08:43:21.915673+00:00,unreviewed,,
+AI-CD-3d919249,CAT,CAT DILR,Moderate,"Five chefs—A, B, C, D, and E—are participating in a culinary challenge. They are scheduled to perform one after another in five distinct slots.
+
+| Slot | Time |
+| :--- | :--- |
+| 1 | 10:00 AM |
+| 2 | 11:00 AM |
+| 3 | 12:00 PM |
+| 4 | 01:00 PM |
+| 5 | 02:00 PM |
+
+The following conditions apply to their schedule:
+1. Chef A is scheduled at some time after Chef E.
+2. There is exactly one chef scheduled between Chef B and Chef D.
+3. Chef C is scheduled in an even-numbered slot.
+4. Chef D is not scheduled in slot 1.
+5. Chef E is scheduled immediately after Chef B.
+
+Which chef is scheduled in slot 3?",Chef A,Chef B,Chef C,Chef D,D,"To solve this efficiently, we link Constraints 2 and 5. Since E is immediately after B (B-E) and there is exactly one chef between B and D, the only possible sequence involving these three is the block (B, E, D). 
+
+Now, test the placement of this (B, E, D) block:
+1. If (B, E, D) occupies slots 2, 3, 4: Then slots 1 and 5 are left for A and C. Constraint 3 requires C to be in an even slot, but slots 1 and 5 are both odd. This fails.
+2. If (B, E, D) occupies slots 3, 4, 5: Then Chef A must be scheduled after Chef E (Constraint 1). However, since E is in slot 4 and D is in slot 5, there is no slot left for A after slot 4. This fails.
+3. If (B, E, D) occupies slots 1, 2, 3: The remaining slots are 4 and 5. Constraint 3 requires C to be in an even slot, so C must be in slot 4. This leaves slot 5 for Chef A. Finally, check Constraint 1: A (slot 5) is indeed after E (slot 2). This arrangement satisfies all conditions.
+
+The unique arrangement is: B(1), E(2), D(3), C(4), A(5). Therefore, Chef D is in slot 3.",Constraint Overlook,Linear Arrangement - Block Constraints,True,True,,gemini-3-flash-preview,2026-11-04T08:45:08.620375+00:00,unreviewed,,
+AI-CR-346c634e,CLAT,CLAT RC,Moderate,"### Principle:
+Under the law of contracts, the doctrine of frustration applies when an unforeseen event, occurring after the contract is formed, makes the performance of the agreed-upon obligations impossible or changes them into something radically different from what was originally contemplated. When a contract is frustrated, it is automatically terminated, and both parties are excused from further performance. However, there are vital limitations to this doctrine. First, a contract is not frustrated simply because performance has become more difficult, more expensive, or less profitable for one of the parties than anticipated. Second, the doctrine cannot be invoked if the event was caused by the negligence or the deliberate act of the party seeking to rely on it. 
+
+### Facts:
+Swift-Move Corp. entered into a contract with a retail chain to deliver 500 air conditioners from their warehouse to a city across a mountain range by June 1st for a fixed fee of Rs. 2,00,000. On May 20th, a massive landslide (an unforeseen event) destroyed the main highway through the mountains. An alternative route exists via a coastal road, but it is significantly longer, requiring three additional days of travel and doubling the fuel costs for Swift-Move Corp. Swift-Move Corp. informs the retail chain that the contract is frustrated due to the destruction of the highway and refuses to deliver the goods. Is the contract frustrated?","Yes, because the destruction of the main highway was an unforeseen event that made the original delivery plan impossible.","No, because the coastal road provides a viable, though more expensive, alternative for performance.","Yes, because the doubling of fuel costs and the three-day delay change the performance into something radically different.","No, because Swift-Move Corp. assumed the risk of natural disasters when they signed a fixed-fee contract.",B,"The doctrine of frustration requires 'impossibility'. As per the principle, mere 'difficulty' or 'increased expense' does not qualify as frustration. In this scenario, while the main highway is gone, the coastal road remains a physical possibility for delivery. The fact that it costs more in fuel and takes more time falls squarely under the exception provided in the principle (performance becoming more expensive or difficult). Shortcut: When you see an alternative exists, check if that alternative is 'impossible' or just 'inconvenient'. If it's the latter, there is no frustration. Trap (A) is the 'Event-Focus' trap, where students assume any major unforeseen disaster automatically frustrates a contract, ignoring the availability of alternatives. Trap (C) is the 'Radical Change' trap, but a 3-day delay and fuel hike in a commercial delivery are standard business risks, not a 'radical change' in the nature of the service (which would be something like the air conditioners being banned by law).",Event-Focus Error,Legal RC - Doctrine of Frustration,False,True,,gemini-3-flash-preview,2026-11-04T08:45:36.342509+00:00,unreviewed,,
+AI-CLG-856ae8a2,CLAT,CLAT Legal Reasoning,Moderate,"Passage: The principle of strict liability dictates that any person who, for their own purposes, brings onto their land and collects and keeps there anything likely to do mischief if it escapes, must keep it in at their peril. If the substance escapes, the person is prima facie answerable for all the damage which is the natural consequence of its escape. For this rule to be invoked, it must be established that the defendant made a 'non-natural use' of the land. Non-natural use refers to the bringing of something onto the land that is not naturally there, or using the land in a way that increases the danger to others, such as the industrial storage of large quantities of water, hazardous chemicals, or explosive gases.
+
+Crucially, strict liability is distinct from negligence. In a claim for negligence, the plaintiff must prove that the defendant failed to take reasonable care. In contrast, under strict liability, the defendant can be held liable even if they exercised the utmost care and were not at fault for the escape. The focus is on the inherent danger of the activity rather than the conduct of the person.
+
+However, the law recognizes specific exceptions where strict liability does not apply. The most prominent among these is the 'Act of God' (Vis Major). An Act of God is defined as an operation of natural forces so unexpected, extraordinary, and unprecedented that no human foresight or skill could reasonably be expected to anticipate or provide against it. For a natural event to qualify as an Act of God, it must be the sole cause of the damage and must be of such a magnitude that it transcends the ordinary course of nature. Common seasonal occurrences, such as heavy monsoon rains in a tropical region or expected high tides, do not constitute an Act of God, as these are foreseeable events that a reasonable person should guard against.
+
+Facts: Nitro-Corp operates a chemical processing unit in a coastal district. The company stores pressurized chlorine gas in specialized containers. Historical meteorological data for the district over the last 150 years shows that the area occasionally experiences cyclonic winds, with the highest recorded speed being 110 km/h. Nitro-Corp’s storage facility was specifically engineered to withstand winds of up to 180 km/h, far exceeding local records. Last month, an unprecedented 'hyper-cyclone' hit the coast with wind speeds reaching 350 km/h. The extreme pressure caused the containers to dislodge and rupture, releasing chlorine gas which drifted into a nearby poultry farm owned by Mr. Khanna, killing thousands of birds. Mr. Khanna sued Nitro-Corp for damages.
+
+Based on the principles provided, is Nitro-Corp liable?","Yes, because chlorine gas is a dangerous substance and its escape caused the damage, satisfying the rule of strict liability.","No, because the hyper-cyclone was an unprecedented natural event that could not have been reasonably foreseen by human foresight.","Yes, because Nitro-Corp’s storage of chlorine gas constitutes a non-natural use of land, making them liable for all consequences of an escape.","No, because Nitro-Corp had taken more than reasonable care by building containers that significantly exceeded historical safety requirements.",B,"To solve this, we first check if the rule of Strict Liability applies. Storing chlorine gas is a 'non-natural use' and it escaped, causing damage. However, we must then check for exceptions. The passage defines an 'Act of God' as a natural force that is 'unprecedented' and could not be 'reasonably anticipated'. Since the cyclone (350 km/h) was more than triple the 150-year historical maximum (110 km/h), it meets the definition of an Act of God. Therefore, Nitro-Corp is not liable. Trap A and C are 'Rule-only' traps; they correctly identify the rule but ignore the stated exception. Trap D is the 'Negligence Trap'; it suggests Nitro-Corp is not liable because they took care. However, the passage explicitly states that under strict liability, a person is liable *even if* they took all possible care. The correct reason for non-liability is the Act of God exception, not the lack of negligence.",The Negligence Trap (arguing lack of fault/care in a strict liability scenario),Law of Torts - Strict Liability and Act of God,False,True,,gemini-3-flash-preview,2026-11-04T08:46:38.608020+00:00,unreviewed,,
+AI-IQ-63b64b68,IPMAT,IPMAT Quant,Moderate,"Three players A, B, and C take turns rolling a fair six-sided die in the order A, B, C, A, B, C, ... until one of them rolls a prime number. The first player to roll a prime number wins the game and the game ends immediately. What is the probability that player C wins the game?",1/7,2/7,4/7,1/8,A,"Let 'p' be the probability of rolling a prime number (2, 3, or 5) and 'q' be the probability of not rolling one. On a fair die, p = 3/6 = 1/2 and q = 1 - 1/2 = 1/2. Player C wins if the game ends on the 3rd, 6th, 9th, ... roll. This occurs if A and B fail on their turns, and C succeeds, or if all fail for a full round and C succeeds in the next, and so on. P(C wins) = (q*q*p) + (q*q*q*q*q*p) + (q*q*q*q*q*q*q*q*p) + ... This is an infinite geometric progression with first term a = q^2*p = (1/2)^3 = 1/8 and common ratio r = q^3 = (1/2)^3 = 1/8. Using the formula S = a / (1 - r), we get S = (1/8) / (1 - 1/8) = (1/8) / (7/8) = 1/7. Shortcut: For n players, the ratio of winning probabilities is 1 : q : q^2 : ... : q^(n-1). For A, B, and C, the ratio is 1 : (1/2) : (1/4), or 4 : 2 : 1. C's probability is 1 / (4+2+1) = 1/7.",Calculating the probability for the wrong player or an incomplete series,Probability - Infinite Geometric Series,True,True,,gemini-3-flash-preview,2026-11-04T08:46:58.628253+00:00,unreviewed,,
