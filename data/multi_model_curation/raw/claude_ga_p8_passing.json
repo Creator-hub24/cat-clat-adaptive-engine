@@ -1,0 +1,452 @@
+[
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_buddhist_councils",
+    "question_text": "The Buddhist Council held at Pataliputra during the reign of Emperor Ashoka, under the presidency of Moggaliputta Tissa, was the:",
+    "options": {
+      "A": "First Buddhist Council",
+      "B": "Second Buddhist Council",
+      "C": "Third Buddhist Council",
+      "D": "Fourth Buddhist Council"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): The Second Council was held at Vaishali about a century after the Buddha's death, and students confuse the two because both dealt with disputes over monastic discipline.",
+    "pedagogical_explanation": "The Third Council at Pataliputra, held under Ashoka, aimed to purify the Sangha and settle doctrinal disputes. The Fourth Council was held in Kashmir under Kanishka. Memory hook: Third = Ashoka = Pataliputra.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-201"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_satavahanas",
+    "question_text": "Gautamiputra Satakarni, the most celebrated Satavahana ruler, is credited with defeating and destroying the power of which Western Kshatrapa ruler, whose coins he restruck?",
+    "options": {
+      "A": "Rudradaman I",
+      "B": "Nahapana",
+      "C": "Chastana",
+      "D": "Jayadaman"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Rudradaman I is the best-known Kshatrapa ruler and fought the Satavahanas, but he belonged to a later generation and defeated a Satavahana successor, not Gautamiputra.",
+    "pedagogical_explanation": "Gautamiputra Satakarni defeated Nahapana of the Kshaharata line, and a hoard of Nahapana's silver coins restruck with Satavahana marks was found near Nashik. Rudradaman I of the Ujjain line came later. Memory hook: Gautamiputra beats Nahapana, Rudradaman comes after.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-202"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "history_maratha_empire",
+    "question_text": "Shivaji was crowned Chhatrapati in 1674 at which fort, which he also made his capital?",
+    "options": {
+      "A": "Rajgad",
+      "B": "Pratapgad",
+      "C": "Sinhagad",
+      "D": "Raigad"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): Rajgad was Shivaji's earlier seat of government before he shifted to Raigad, so students pick it as the capital.",
+    "pedagogical_explanation": "Shivaji's formal coronation took place at Raigad, which became the capital of the Maratha kingdom. Pratapgad is remembered for the encounter with Afzal Khan and Sinhagad for the capture of Kondana. Memory hook: Raigad = Royal coronation.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-203"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_social_reformers",
+    "question_text": "The Satyashodhak Samaj, founded in 1873 to secure social justice for the lower castes, was established by:",
+    "options": {
+      "A": "Jyotirao Phule",
+      "B": "Dayananda Saraswati",
+      "C": "Sir Syed Ahmad Khan",
+      "D": "Swami Vivekananda"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Dayananda Saraswati founded the Arya Samaj only two years later, in 1875, so the two reform bodies of the 1870s get swapped.",
+    "pedagogical_explanation": "Jyotirao Phule set up the Satyashodhak Samaj in Pune and attacked caste hierarchy and Brahmanical dominance, writing Gulamgiri in 1873. Memory hook: Phule = Pune = Satyashodhak.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-204"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_inc_moderates_extremists",
+    "question_text": "The Indian National Congress split into the Moderate and Extremist camps at its Surat session in 1907. Who presided over this session?",
+    "options": {
+      "A": "Gopal Krishna Gokhale",
+      "B": "Surendranath Banerjea",
+      "C": "Rash Behari Ghosh",
+      "D": "Lala Lajpat Rai"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (D): The Extremist camp had wanted Lajpat Rai as president, which is exactly the dispute behind the split, so students assume he presided.",
+    "pedagogical_explanation": "Rash Behari Ghosh, the Moderates' choice, presided at Surat, and the session broke up amid disorder. The split lasted until the Lucknow Congress of 1916. Memory hook: Surat 1907 = Ghosh, split.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-205"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_folk_painting",
+    "question_text": "Madhubani painting, a folk art tradition known for its intricate line work and vivid natural colours, originated in the Mithila region of which state?",
+    "options": {
+      "A": "Maharashtra",
+      "B": "Bihar",
+      "C": "Odisha",
+      "D": "Rajasthan"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Warli painting from Maharashtra is the other famous tribal folk art, so the two are often swapped.",
+    "pedagogical_explanation": "Madhubani, also called Mithila painting, comes from the Mithila region of Bihar and traditionally decorated walls and floors of homes. Memory hook: Madhubani = Mithila = Bihar.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-206"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_temple_architecture",
+    "question_text": "The famous group of temples at Khajuraho in Madhya Pradesh, known for its Nagara-style architecture and sculpture, was built by which dynasty?",
+    "options": {
+      "A": "Chandelas",
+      "B": "Rashtrakutas",
+      "C": "Parmaras",
+      "D": "Hoysalas"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): The Rashtrakutas built the monolithic Kailasa temple at Ellora, another famous sculpted temple, so the dynasties get mixed up.",
+    "pedagogical_explanation": "The Chandela rulers of Bundelkhand built the Khajuraho temples roughly between 950 and 1050 CE. The Hoysalas are known for the temples at Belur and Halebidu. Memory hook: Chandela = Khajuraho.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-207"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_dams",
+    "question_text": "The Tehri Dam, a major multipurpose project in Uttarakhand, is built on which river?",
+    "options": {
+      "A": "Alaknanda",
+      "B": "Yamuna",
+      "C": "Mandakini",
+      "D": "Bhagirathi"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The Alaknanda is the other headstream that joins the Bhagirathi at Devprayag to form the Ganga, so it is the closest confusion.",
+    "pedagogical_explanation": "The Tehri Dam stands on the Bhagirathi near its confluence with the Bhilangana in Tehri Garhwal district. It serves irrigation, drinking water and hydropower. Memory hook: Tehri = Bhagirathi.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-208"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_monuments",
+    "question_text": "The Gateway of India in Mumbai was built to commemorate the 1911 landing in India of which British monarch?",
+    "options": {
+      "A": "Edward VII",
+      "B": "George V",
+      "C": "Queen Victoria",
+      "D": "Edward VIII"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): Queen Victoria was Empress of India and many colonial monuments honour her, so students attach this one to her too.",
+    "pedagogical_explanation": "King George V and Queen Mary landed at Apollo Bunder in December 1911, and the arch designed by George Wittet was built to mark the visit and completed in 1924. Memory hook: Gateway = George V.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-209"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "static_biosphere_reserves",
+    "question_text": "Which was the first Biosphere Reserve to be established in India, in 1986?",
+    "options": {
+      "A": "Nilgiri Biosphere Reserve",
+      "B": "Nanda Devi Biosphere Reserve",
+      "C": "Gulf of Mannar Biosphere Reserve",
+      "D": "Pachmarhi Biosphere Reserve"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Nanda Devi was notified only two years later, in 1988, and is the best-known Himalayan reserve, so students pick it.",
+    "pedagogical_explanation": "The Nilgiri Biosphere Reserve, spread across Tamil Nadu, Kerala and Karnataka, was India's first, in 1986. Gulf of Mannar followed in 1989 and Pachmarhi in 1999. Memory hook: Nilgiri = Number one.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-210"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "polity_union_list",
+    "question_text": "Which of the following subjects is included in the Union List of the Seventh Schedule?",
+    "options": {
+      "A": "Police",
+      "B": "Agriculture",
+      "C": "Defence of India",
+      "D": "Public health"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Central police forces exist, so students assume police is a Union subject, but it is a State List subject.",
+    "pedagogical_explanation": "Defence of India is Entry 1 of the Union List. Police, agriculture and public health are State List subjects. Memory hook: Defence = Delhi decides.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-211"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_pardoning_power",
+    "question_text": "Which of the following sentences can be pardoned by the President under Article 72 but is outside the pardoning power of the Governor under Article 161?",
+    "options": {
+      "A": "A sentence for which a reprieve, respite or remission is sought",
+      "B": "A sentence that is to be suspended",
+      "C": "A sentence for an offence under a State law",
+      "D": "A sentence passed by a court martial"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (C): The Governor's power extends to offences against State laws, so students think it is the area that belongs only to the President.",
+    "pedagogical_explanation": "Article 72 gives the President power over sentences by court martial and over offences under Union law, while Article 161 limits the Governor to matters in the State's executive power. Both can grant reprieves, respites, remissions and suspensions. Memory hook: Court martial = President only.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-212"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_writs",
+    "question_text": "Which writ is issued by a higher court to stop a lower court or tribunal from continuing proceedings in a case that is beyond its jurisdiction?",
+    "options": {
+      "A": "Prohibition",
+      "B": "Certiorari",
+      "C": "Mandamus",
+      "D": "Quo Warranto"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Certiorari also deals with lower courts exceeding jurisdiction, but it quashes an order already passed, while Prohibition acts while proceedings are pending.",
+    "pedagogical_explanation": "Prohibition is a preventive writ issued while the case is pending, whereas Certiorari is corrective and issued after the order. Both are available under Articles 32 and 226. Memory hook: Prohibition = Prevent, Certiorari = Cancel.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-213"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_public_service_commission",
+    "question_text": "A member of a State Public Service Commission holds office for six years or until attaining which age, whichever is earlier?",
+    "options": {
+      "A": "58 years",
+      "B": "65 years",
+      "C": "62 years",
+      "D": "60 years"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): 65 years is the age limit for a member of the UPSC, so the two limits are swapped.",
+    "pedagogical_explanation": "Article 316(2) fixes six years or the age of 62 for State Public Service Commission members, and six years or the age of 65 for the UPSC. Memory hook: Union = 65, State = 62.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-214"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "geography_local_winds",
+    "question_text": "The strong, gusty, hot and dry wind that blows during summer afternoons over the northern and north-western plains of India is called:",
+    "options": {
+      "A": "Mango showers",
+      "B": "Kalbaisakhi",
+      "C": "Western disturbance",
+      "D": "Loo"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Kalbaisakhi is also a summer phenomenon, but it is a thunderstorm of Bengal and not a hot dry wind.",
+    "pedagogical_explanation": "Loo is a hot and dry wind of the northern plains in May and June. Mango showers occur in Kerala and Karnataka, and Kalbaisakhi in West Bengal. Memory hook: Loo = Lethal heat in the plains.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-215"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_ocean_currents",
+    "question_text": "Which cold ocean current flows along the western coast of South America?",
+    "options": {
+      "A": "Brazil Current",
+      "B": "Peru (Humboldt) Current",
+      "C": "Benguela Current",
+      "D": "Kuroshio Current"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): The Benguela Current is the matching cold current off the western coast of southern Africa, so the two continents get swapped.",
+    "pedagogical_explanation": "The Peru or Humboldt Current is a cold current in the south-eastern Pacific along the coast of Peru and Chile. Brazil Current is warm and Kuroshio is a warm current in the north-western Pacific. Memory hook: Peru = Pacific = Cold.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-216"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_indian_ports",
+    "question_text": "Which Indian port is described as the deepest landlocked and well-protected port?",
+    "options": {
+      "A": "Visakhapatnam",
+      "B": "Chennai",
+      "C": "Paradip",
+      "D": "Tuticorin"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): Paradip is known as a deep-sea harbour handling iron ore exports, so students link 'deep' with Paradip.",
+    "pedagogical_explanation": "Visakhapatnam on the east coast is the deepest landlocked and well-protected port. Chennai is an artificial harbour and Tuticorin is a major port in Tamil Nadu. Memory hook: Vizag = Very deep and sheltered.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-217"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "geography_hill_stations",
+    "question_text": "The hill station of Kodaikanal in Tamil Nadu lies in which hill range?",
+    "options": {
+      "A": "Nilgiri Hills",
+      "B": "Anamalai Hills",
+      "C": "Cardamom Hills",
+      "D": "Palani Hills"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The Nilgiris hold Udhagamandalam (Ooty), the best-known Tamil Nadu hill station, so students place Kodaikanal there too.",
+    "pedagogical_explanation": "Kodaikanal is in the Palani Hills, an eastward spur of the Western Ghats in Dindigul district. Ooty is in the Nilgiris. Memory hook: Kodaikanal = Palani.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-218"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "economy_financial_year",
+    "question_text": "The financial year of the Government of India runs from:",
+    "options": {
+      "A": "1 January to 31 December",
+      "B": "1 April to 31 March",
+      "C": "1 July to 30 June",
+      "D": "1 October to 30 September"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): The calendar year is the everyday year, so students assume the financial year follows it.",
+    "pedagogical_explanation": "The General Clauses Act, 1897 defines the financial year as the year commencing on 1 April, and the Union Budget covers this period. Memory hook: April to March.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-219"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "banking_npa_norms",
+    "question_text": "As per RBI norms, a loan is classified as a Non-Performing Asset (NPA) when interest or principal remains overdue for more than how many days?",
+    "options": {
+      "A": "30 days",
+      "B": "60 days",
+      "C": "90 days",
+      "D": "180 days"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): 60 days falls within the 'special mention' stage (SMA-1 is 31 to 60 days overdue), so students mistake an early-warning stage for an NPA.",
+    "pedagogical_explanation": "An asset becomes an NPA when interest or instalment is overdue for more than 90 days. 180 days was an older norm that was tightened to 90 days. Memory hook: 90 days overdue = NPA.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-220"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "banking_basel_norms",
+    "question_text": "As per RBI's Basel III guidelines, the minimum total capital to risk-weighted assets ratio (CRAR) for Indian scheduled commercial banks, excluding the capital conservation buffer, is:",
+    "options": {
+      "A": "9 percent",
+      "B": "8 percent",
+      "C": "11.5 percent",
+      "D": "10.5 percent"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): 8 percent is the minimum prescribed by the Basel Committee itself, while RBI has set a stricter 9 percent for Indian banks.",
+    "pedagogical_explanation": "RBI requires banks to maintain a minimum total capital of 9 percent of risk-weighted assets, which rises to 11.5 percent after adding the 2.5 percent capital conservation buffer. Memory hook: Basel says 8, RBI says 9.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-221"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "economy_fiscal_deficit",
+    "question_text": "Fiscal deficit in the Government Budget is equal to total expenditure minus:",
+    "options": {
+      "A": "Revenue receipts only",
+      "B": "Revenue receipts plus non-debt capital receipts",
+      "C": "Total receipts including borrowings",
+      "D": "Tax revenue plus borrowings"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Subtracting only revenue receipts ignores non-debt capital receipts such as recovery of loans and disinvestment, so the deficit comes out too large.",
+    "pedagogical_explanation": "Fiscal deficit equals total expenditure minus total receipts excluding borrowings, and the gap is the amount the government must borrow. Including borrowings in receipts would make the deficit zero by definition. Memory hook: Fiscal deficit = Borrowing requirement.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-222"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_acid_base_indicators",
+    "question_text": "Phenolphthalein indicator turns which colour in a basic solution?",
+    "options": {
+      "A": "Red",
+      "B": "Yellow",
+      "C": "Blue",
+      "D": "Pink"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Methyl orange turns yellow in basic solution, so the two indicators get mixed up.",
+    "pedagogical_explanation": "Phenolphthalein is colourless in acidic and neutral solutions and turns pink in bases. Methyl orange is red in acid and yellow in base. Memory hook: Phenolphthalein = Pink in base.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-223"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "science_sound_echo",
+    "question_text": "Taking the speed of sound in air as 344 m/s at 22 degrees Celsius, what is the minimum distance of a reflecting surface from the source needed to hear a distinct echo?",
+    "options": {
+      "A": "8.6 m",
+      "B": "34.4 m",
+      "C": "17.2 m",
+      "D": "20 m"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (B): 34.4 m is the total distance covered by sound in 0.1 second, and students forget that the sound travels to the obstacle and back, so the one-way distance is half.",
+    "pedagogical_explanation": "The ear retains a sound for about 0.1 s, so the echo must arrive after that gap. Total path = 344 x 0.1 = 34.4 m, and the one-way distance = 34.4 / 2 = 17.2 m. Memory hook: Echo needs 17.2 m, halve the round trip.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-224"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "science_plant_hormones",
+    "question_text": "Which plant hormone is commonly called the 'stress hormone' because it helps plants cope with conditions such as water shortage by closing stomata?",
+    "options": {
+      "A": "Abscisic acid",
+      "B": "Auxin",
+      "C": "Gibberellin",
+      "D": "Cytokinin"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Auxin is the best-known plant hormone, so students choose it for any hormone question.",
+    "pedagogical_explanation": "Abscisic acid inhibits growth, promotes closing of stomata and helps plants withstand stress. Cytokinins promote cell division and gibberellins promote stem elongation. Memory hook: ABA = Alarm hormone.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P8-225"
+  }
+]

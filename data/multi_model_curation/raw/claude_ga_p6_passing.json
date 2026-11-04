@@ -1,0 +1,452 @@
+[
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_harappan_sites",
+    "question_text": "Which Harappan site on Khadir Bet island in the Rann of Kutch, Gujarat, is known for its elaborate water conservation system with large reservoirs?",
+    "options": {
+      "A": "Banawali",
+      "B": "Dholavira",
+      "C": "Rakhigarhi",
+      "D": "Chanhudaro"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): Rakhigarhi is a major Harappan site in Haryana, so students pick it for any question about a large Harappan town.",
+    "pedagogical_explanation": "Dholavira in Kutch had a series of stone-cut reservoirs and channels to store scarce rainwater in an arid setting. It is also known for a monumental inscription of large signs. Memory hook: Dholavira = Drains and Dams in a desert.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-151"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_cholas",
+    "question_text": "The Brihadisvara Temple at Thanjavur was built by which Chola ruler?",
+    "options": {
+      "A": "Vijayalaya",
+      "B": "Kulottunga I",
+      "C": "Rajendra I",
+      "D": "Rajaraja I"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (C): Rajendra I was Rajaraja I's son and built a similar grand temple at Gangaikonda Cholapuram, so the two are swapped.",
+    "pedagogical_explanation": "Rajaraja I built the Brihadisvara Temple, which was completed around 1010 CE and is dedicated to Shiva. Rajendra I later founded Gangaikonda Cholapuram as his capital. Memory hook: Rajaraja = Raja of Thanjavur.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-152"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "history_vijayanagara",
+    "question_text": "Krishnadevaraya, the most celebrated ruler of the Vijayanagara Empire, belonged to which dynasty?",
+    "options": {
+      "A": "Tuluva",
+      "B": "Sangama",
+      "C": "Saluva",
+      "D": "Aravidu"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): The Sangama dynasty was the first dynasty, founded by Harihara and Bukka, so students attach the empire's most famous ruler to it.",
+    "pedagogical_explanation": "Krishnadevaraya ruled from 1509 to 1529 and belonged to the Tuluva dynasty. The Aravidu dynasty was the last to rule the empire. Memory hook: Tuluva = Triumph of Krishnadevaraya.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-153"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "history_delhi_sultanate",
+    "question_text": "Which Delhi Sultan introduced a system of fixed prices for grain, cloth and other goods, supervised by an officer called Shahna-i-Mandi?",
+    "options": {
+      "A": "Muhammad bin Tughluq",
+      "B": "Balban",
+      "C": "Alauddin Khalji",
+      "D": "Firoz Shah Tughlaq"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Muhammad bin Tughluq is famous for bold economic experiments such as token currency, so students credit him with market control.",
+    "pedagogical_explanation": "Alauddin Khalji fixed prices and set up regulated markets so that he could maintain a large standing army at low cost. Memory hook: Alauddin = Army needs cheap goods = price control.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-154"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "history_gandhian_movements",
+    "question_text": "In 1917, Gandhi launched his first satyagraha in India at Champaran in Bihar on behalf of peasants who were forced to grow which crop?",
+    "options": {
+      "A": "Cotton",
+      "B": "Indigo",
+      "C": "Sugarcane",
+      "D": "Jute"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): The Ahmedabad mill strike of 1918 involved cotton textile workers, so students link cotton with Gandhi's early campaigns.",
+    "pedagogical_explanation": "European planters compelled Champaran peasants to grow indigo on a part of their land under the tinkathia system. Gandhi's intervention led to an inquiry and relief for the peasants. Memory hook: Champaran = Indigo.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-155"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_unesco_sites",
+    "question_text": "Which of the following UNESCO World Heritage Sites is located in Odisha?",
+    "options": {
+      "A": "Khajuraho Group of Monuments",
+      "B": "Group of Monuments at Hampi",
+      "C": "Sun Temple, Konark",
+      "D": "Ellora Caves"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Khajuraho is also famous for temple sculpture, so students confuse it with the sculpted Konark temple.",
+    "pedagogical_explanation": "The Sun Temple at Konark was built in the thirteenth century in the form of a giant chariot of the Sun God and was inscribed on the World Heritage List in 1984. Khajuraho is in Madhya Pradesh, Hampi in Karnataka and Ellora in Maharashtra. Memory hook: Konark = Chariot of the Sun.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-156"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_folk_dances",
+    "question_text": "Lavani, a folk dance form known for its quick rhythm and dholki accompaniment, belongs to which state?",
+    "options": {
+      "A": "Maharashtra",
+      "B": "Gujarat",
+      "C": "Goa",
+      "D": "Karnataka"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Gujarat is known for the energetic Garba and Dandiya, the best-known western Indian dance forms, so it is the usual wrong pick.",
+    "pedagogical_explanation": "Lavani is a traditional song and dance form of Maharashtra, performed to the beat of the dholki. Garba and Dandiya belong to Gujarat. Memory hook: Lavani = Maharashtra's dholki dance.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-157"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "static_musical_instruments",
+    "question_text": "The musician Ustad Bismillah Khan is associated with which musical instrument?",
+    "options": {
+      "A": "Sitar",
+      "B": "Sarod",
+      "C": "Santoor",
+      "D": "Shehnai"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The sitar is the most famous Hindustani instrument and is linked with Pandit Ravi Shankar, so students choose it by default.",
+    "pedagogical_explanation": "Bismillah Khan raised the shehnai, a wind instrument traditionally played at temples and weddings, to the concert stage. Santoor is linked with Pandit Shivkumar Sharma and sarod with Ustad Amjad Ali Khan. Memory hook: Bismillah = Blowing shehnai.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-158"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "static_international_hq",
+    "question_text": "The International Court of Justice, the principal judicial organ of the United Nations, has its seat in which city?",
+    "options": {
+      "A": "Geneva",
+      "B": "The Hague",
+      "C": "New York",
+      "D": "Vienna"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Geneva hosts many UN agencies such as the WHO and the ILO, so it is the default guess for UN bodies.",
+    "pedagogical_explanation": "The ICJ sits at the Peace Palace in The Hague, Netherlands. It is the only principal organ of the United Nations that is not located in New York. Memory hook: ICJ = Justice in The Hague.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-159"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "static_dance_literature",
+    "question_text": "Which poet's Sanskrit work 'Gita Govinda', describing the love of Radha and Krishna, is a principal literary source for Odissi dance?",
+    "options": {
+      "A": "Jayadeva",
+      "B": "Kalidasa",
+      "C": "Vidyapati",
+      "D": "Surdas"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (C): Vidyapati wrote Radha-Krishna love songs in Maithili, so students link him with the same theme.",
+    "pedagogical_explanation": "Jayadeva composed the Gita Govinda in the twelfth century, and its verses are widely used for abhinaya in Odissi. Memory hook: Jayadeva = Gita Govinda = Odissi.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-160"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_fundamental_duties_committee",
+    "question_text": "On whose recommendations were the Fundamental Duties incorporated in the Constitution of India?",
+    "options": {
+      "A": "Sarkaria Commission",
+      "B": "Balwant Rai Mehta Committee",
+      "C": "Swaran Singh Committee",
+      "D": "Ashok Mehta Committee"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): The Sarkaria Commission is the best-known commission linked with the Constitution (Centre-State relations), so students pick it by default.",
+    "pedagogical_explanation": "The Swaran Singh Committee was set up during the Emergency to suggest constitutional changes and recommended the inclusion of Fundamental Duties, which Parliament adopted soon after. Balwant Rai Mehta and Ashok Mehta both dealt with Panchayati Raj. Memory hook: Swaran Singh = Duties.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-161"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_dpsp_judiciary",
+    "question_text": "Which Article of the Directive Principles of State Policy directs the State to take steps to separate the judiciary from the executive in the public services of the State?",
+    "options": {
+      "A": "Article 47",
+      "B": "Article 49",
+      "C": "Article 51",
+      "D": "Article 50"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (B): Article 49 deals with protection of monuments and sits right before Article 50, so students pick the adjacent number.",
+    "pedagogical_explanation": "Article 50 aims to secure the independence of the judiciary by separating it from the executive in public services. Article 47 deals with nutrition and public health and Article 51 with promotion of international peace and security. Memory hook: 50 = Judges free from executive.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-162"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "polity_panchayati_raj_provisions",
+    "question_text": "Which Article of the Constitution provides for a State Election Commission to conduct elections to the Panchayats?",
+    "options": {
+      "A": "Article 243I",
+      "B": "Article 243K",
+      "C": "Article 243D",
+      "D": "Article 243G"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Article 243I provides for the State Finance Commission and sits just before Article 243K, so students pick the adjacent letter.",
+    "pedagogical_explanation": "Article 243K in Part IX vests the superintendence of Panchayat elections in a State Election Commission headed by a State Election Commissioner appointed by the Governor. Article 243D deals with reservation of seats and 243G with powers and responsibilities of Panchayats. Memory hook: 243K = Keeper of local elections.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-163"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "polity_statutory_bodies",
+    "question_text": "The National Human Rights Commission of India is a statutory body established under which Act?",
+    "options": {
+      "A": "Protection of Human Rights Act, 1993",
+      "B": "Right to Information Act, 2005",
+      "C": "Consumer Protection Act, 1986",
+      "D": "Lokpal and Lokayuktas Act, 2013"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (D): The Lokpal and Lokayuktas Act, 2013 created another statutory grievance body, so students pick it by association.",
+    "pedagogical_explanation": "The NHRC was constituted under the Protection of Human Rights Act, 1993 and is a statutory, not a constitutional, body. Memory hook: NHRC = 1993 Act, statutory.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-164"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "geography_crops",
+    "question_text": "Which crop is known as the 'Golden Fibre' of India?",
+    "options": {
+      "A": "Cotton",
+      "B": "Flax",
+      "C": "Jute",
+      "D": "Hemp"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Cotton is the most important fibre crop of India, so students pick it for any fibre question.",
+    "pedagogical_explanation": "Jute is called the Golden Fibre because of its colour and its importance in making bags, sacks and ropes. It grows well in the fertile flood plains with a hot and humid climate. Memory hook: Jute = Golden fibre for gunny bags.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-165"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_soils",
+    "question_text": "Which soil, formed by intense leaching under heavy rainfall and high temperature, is suited to crops such as tea, coffee and cashew nut?",
+    "options": {
+      "A": "Black soil",
+      "B": "Arid soil",
+      "C": "Red soil",
+      "D": "Laterite soil"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (C): Red soil is also a tropical soil rich in iron, so students pick it, but it forms in areas of low rainfall.",
+    "pedagogical_explanation": "Laterite soil forms where heavy rain washes away nutrients such as lime and silica, leaving iron and aluminium compounds. It needs manure and fertiliser for good yields. Memory hook: Laterite = Leaching.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-166"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "geography_peninsular_rivers",
+    "question_text": "Which of the following is a tributary of the Godavari river?",
+    "options": {
+      "A": "Manjra",
+      "B": "Tungabhadra",
+      "C": "Bhima",
+      "D": "Koyna"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): The Tungabhadra is the best-known peninsular tributary, but it joins the Krishna, not the Godavari.",
+    "pedagogical_explanation": "The Manjra is a tributary of the Godavari, along with the Pranhita, Wardha and Wainganga. The Tungabhadra, Bhima and Koyna are all tributaries of the Krishna. Memory hook: Godavari = Manjra, Pranhita; Krishna = Tungabhadra, Bhima, Koyna.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-167"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "geography_world_rivers",
+    "question_text": "Which river flows through the capital cities of Vienna, Budapest and Belgrade?",
+    "options": {
+      "A": "Rhine",
+      "B": "Danube",
+      "C": "Elbe",
+      "D": "Volga"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): The Rhine is the other great river of central Europe and flows through Basel and Cologne, so students pick it.",
+    "pedagogical_explanation": "The Danube flows through four capitals, namely Vienna, Bratislava, Budapest and Belgrade, before emptying into the Black Sea. Memory hook: Danube = River of capitals.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-168"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "science_alloys",
+    "question_text": "Brass is an alloy of which two metals?",
+    "options": {
+      "A": "Copper and tin",
+      "B": "Iron and carbon",
+      "C": "Copper and zinc",
+      "D": "Lead and tin"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Copper and tin is bronze, the other well-known copper alloy, so students swap the two.",
+    "pedagogical_explanation": "Brass is made from copper and zinc and is used in utensils and musical instruments. Bronze is copper and tin, solder is lead and tin, and steel is iron with carbon. Memory hook: Brass = Copper + Zinc.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-169"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "science_instruments",
+    "question_text": "Which instrument is used to measure the relative humidity of the air?",
+    "options": {
+      "A": "Hydrometer",
+      "B": "Anemometer",
+      "C": "Barometer",
+      "D": "Hygrometer"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): The hydrometer has a similar-sounding name but measures the density of liquids, not moisture in air.",
+    "pedagogical_explanation": "A hygrometer measures the amount of water vapour in the air. An anemometer measures wind speed and a barometer measures atmospheric pressure. Memory hook: Hygro = moisture.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-170"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Moderate",
+    "concept_tag": "science_chemistry_compounds",
+    "question_text": "Which compound, used as a mild anaesthetic, is commonly known as 'laughing gas'?",
+    "options": {
+      "A": "Nitrous oxide",
+      "B": "Nitric oxide",
+      "C": "Nitrogen dioxide",
+      "D": "Carbon monoxide"
+    },
+    "correct_answer": "A",
+    "trap_type": "Trap (B): Nitric oxide (NO) has a very similar name to nitrous oxide (N2O), so the two are swapped.",
+    "pedagogical_explanation": "Nitrous oxide (N2O) is called laughing gas and is used as a mild anaesthetic. Nitric oxide is NO and nitrogen dioxide is NO2, a brown toxic gas. Memory hook: Nitrous = N2O = Two nitrogens, laughing.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-171"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "science_diseases_protozoa",
+    "question_text": "Kala-azar (visceral leishmaniasis) is caused by which organism?",
+    "options": {
+      "A": "Trypanosoma",
+      "B": "Leishmania donovani",
+      "C": "Entamoeba histolytica",
+      "D": "Plasmodium vivax"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (A): Trypanosoma is a similar flagellated protozoan, but it causes sleeping sickness, so students swap the two.",
+    "pedagogical_explanation": "Kala-azar is caused by the protozoan Leishmania donovani and spread by the bite of the sandfly. Entamoeba causes amoebic dysentery and Plasmodium causes malaria. Memory hook: Kala-azar = Sandfly + Leishmania.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-172"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "Easy",
+    "concept_tag": "banking_deposit_accounts",
+    "question_text": "In which type of bank account does a depositor deposit a fixed sum every month for a fixed tenure and receive the maturity amount with interest at the end?",
+    "options": {
+      "A": "Fixed Deposit",
+      "B": "Savings Account",
+      "C": "Current Account",
+      "D": "Recurring Deposit"
+    },
+    "correct_answer": "D",
+    "trap_type": "Trap (A): A Fixed Deposit also pays interest at maturity, but it involves a single lump-sum deposit, so students confuse the two term deposits.",
+    "pedagogical_explanation": "A Recurring Deposit builds savings through regular monthly instalments over a fixed tenure. A Fixed Deposit is a one-time lump-sum deposit for a fixed term. Memory hook: RD = Regular instalments.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-173"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "banking_money_market",
+    "question_text": "In the money market, funds borrowed or lent for a period between 2 days and 14 days are called:",
+    "options": {
+      "A": "Call money",
+      "B": "Term money",
+      "C": "Notice money",
+      "D": "Treasury bill"
+    },
+    "correct_answer": "C",
+    "trap_type": "Trap (A): Call money is the closest neighbour, but it covers borrowing for only one day, not 2 to 14 days.",
+    "pedagogical_explanation": "Per the RBI, money borrowed or lent for one day is call money, for 2 to 14 days it is notice money, and for periods beyond 14 days it is term money. Memory hook: Call = 1 day, Notice = 2 to 14 days, Term = beyond 14.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-174"
+  },
+  {
+    "exam": "Sarkari",
+    "topic": "Sarkari General Awareness",
+    "difficulty": "CAT-Level",
+    "concept_tag": "economy_national_income",
+    "question_text": "In national income accounting, which of the following is equal to 'National Income'?",
+    "options": {
+      "A": "Gross Domestic Product at market prices",
+      "B": "Net National Product at factor cost",
+      "C": "Gross National Product at market prices",
+      "D": "Net Domestic Product at market prices"
+    },
+    "correct_answer": "B",
+    "trap_type": "Trap (C): GNP at market prices is popularly called the national product, so students pick it, but it includes depreciation and indirect taxes.",
+    "pedagogical_explanation": "Net National Product at factor cost equals GNP at market prices minus depreciation minus net indirect taxes, and this is the National Income. Memory hook: National Income = NNP at factor cost.",
+    "verify_code": "",
+    "id": "CL-SK-SGA-P6-175"
+  }
+]

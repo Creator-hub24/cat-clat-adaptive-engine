@@ -4,16 +4,16 @@
     "source": "data/multi_model_curation (Gemini + model-compare + Meta AI Hard/English/Reasoning + Claude GA, independently verified)",
     "author": "Vaibhav Gupta",
     "family": "sarkari",
-    "count": 394,
+    "count": 494,
     "topics": {
       "Sarkari English": 72,
-      "Sarkari General Awareness": 149,
+      "Sarkari General Awareness": 249,
       "Sarkari Quantitative Aptitude": 100,
       "Sarkari Reasoning": 73
     },
     "models": {
       "ChatGPT Go": 9,
-      "Claude (Pro)": 149,
+      "Claude (Pro)": 249,
       "Claude Sonnet 5": 10,
       "Claude Sonnet 5.5 Medium": 8,
       "Gemini Argon 4.0": 144,
@@ -6025,6 +6025,2706 @@
         "independent solve"
       ],
       "text_hash": "762440538da1c381aa8619f05e1fec8265e4c422db76aa43a635cff392e61d63"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-151",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_harappan_sites",
+      "question_text": "Which Harappan site on Khadir Bet island in the Rann of Kutch, Gujarat, is known for its elaborate water conservation system with large reservoirs?",
+      "options": {
+        "A": "Dholavira",
+        "B": "Banawali",
+        "C": "Chanhudaro",
+        "D": "Rakhigarhi"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Rakhigarhi is a major Harappan site in Haryana, so students pick it for any question about a large Harappan town.",
+      "pedagogical_explanation": "Dholavira in Kutch had a series of stone-cut reservoirs and channels to store scarce rainwater in an arid setting. It is also known for a monumental inscription of large signs. Memory hook: Dholavira = Drains and Dams in a desert.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #151",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "1416c4548f2ea17fa6870349e7a67f94676405accfd6159f597bb0bef2ed32a8"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-152",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_cholas",
+      "question_text": "The Brihadisvara Temple at Thanjavur was built by which Chola ruler?",
+      "options": {
+        "A": "Vijayalaya",
+        "B": "Rajendra I",
+        "C": "Kulottunga I",
+        "D": "Rajaraja I"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Rajendra I was Rajaraja I's son and built a similar grand temple at Gangaikonda Cholapuram, so the two are swapped.",
+      "pedagogical_explanation": "Rajaraja I built the Brihadisvara Temple, which was completed around 1010 CE and is dedicated to Shiva. Rajendra I later founded Gangaikonda Cholapuram as his capital. Memory hook: Rajaraja = Raja of Thanjavur.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #152",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "89d5db3147a297c02412b10bdbe2d882df96f9875bc896979fecca79cc9fdf9f"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-153",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_vijayanagara",
+      "question_text": "Krishnadevaraya, the most celebrated ruler of the Vijayanagara Empire, belonged to which dynasty?",
+      "options": {
+        "A": "Tuluva",
+        "B": "Sangama",
+        "C": "Saluva",
+        "D": "Aravidu"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): The Sangama dynasty was the first dynasty, founded by Harihara and Bukka, so students attach the empire's most famous ruler to it.",
+      "pedagogical_explanation": "Krishnadevaraya ruled from 1509 to 1529 and belonged to the Tuluva dynasty. The Aravidu dynasty was the last to rule the empire. Memory hook: Tuluva = Triumph of Krishnadevaraya.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #153",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "44828def435e5ecf1294c5837d2c064d629b232cc02c2659ab4fa39694ad33a6"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-154",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_delhi_sultanate",
+      "question_text": "Which Delhi Sultan introduced a system of fixed prices for grain, cloth and other goods, supervised by an officer called Shahna-i-Mandi?",
+      "options": {
+        "A": "Balban",
+        "B": "Firoz Shah Tughlaq",
+        "C": "Muhammad bin Tughluq",
+        "D": "Alauddin Khalji"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Muhammad bin Tughluq is famous for bold economic experiments such as token currency, so students credit him with market control.",
+      "pedagogical_explanation": "Alauddin Khalji fixed prices and set up regulated markets so that he could maintain a large standing army at low cost. Memory hook: Alauddin = Army needs cheap goods = price control.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #154",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ce23a7c7104ba77737e417e45337f300e11c201ae92b9348669c1176bd184a07"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-155",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_gandhian_movements",
+      "question_text": "In 1917, Gandhi launched his first satyagraha in India at Champaran in Bihar on behalf of peasants who were forced to grow which crop?",
+      "options": {
+        "A": "Cotton",
+        "B": "Sugarcane",
+        "C": "Jute",
+        "D": "Indigo"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): The Ahmedabad mill strike of 1918 involved cotton textile workers, so students link cotton with Gandhi's early campaigns.",
+      "pedagogical_explanation": "European planters compelled Champaran peasants to grow indigo on a part of their land under the tinkathia system. Gandhi's intervention led to an inquiry and relief for the peasants. Memory hook: Champaran = Indigo.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #155",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9e50c16a9876c9618bc0fa7e810d36df67a8c61c0d3d0a10fef5635add119ba2"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-156",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_unesco_sites",
+      "question_text": "Which of the following UNESCO World Heritage Sites is located in Odisha?",
+      "options": {
+        "A": "Group of Monuments at Hampi",
+        "B": "Khajuraho Group of Monuments",
+        "C": "Ellora Caves",
+        "D": "Sun Temple, Konark"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Khajuraho is also famous for temple sculpture, so students confuse it with the sculpted Konark temple.",
+      "pedagogical_explanation": "The Sun Temple at Konark was built in the thirteenth century in the form of a giant chariot of the Sun God and was inscribed on the World Heritage List in 1984. Khajuraho is in Madhya Pradesh, Hampi in Karnataka and Ellora in Maharashtra. Memory hook: Konark = Chariot of the Sun.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #156",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3095b047507f8ece56648329c0fbeb63f89fcc8a2a4afa169e130e04bfd73fd1"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-157",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_folk_dances",
+      "question_text": "Lavani, a folk dance form known for its quick rhythm and dholki accompaniment, belongs to which state?",
+      "options": {
+        "A": "Gujarat",
+        "B": "Karnataka",
+        "C": "Maharashtra",
+        "D": "Goa"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Gujarat is known for the energetic Garba and Dandiya, the best-known western Indian dance forms, so it is the usual wrong pick.",
+      "pedagogical_explanation": "Lavani is a traditional song and dance form of Maharashtra, performed to the beat of the dholki. Garba and Dandiya belong to Gujarat. Memory hook: Lavani = Maharashtra's dholki dance.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #157",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2ef11dc3d739b4a63cd213bd5ad52699c9957eb8c7b32953c731b384923f733e"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-158",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_musical_instruments",
+      "question_text": "The musician Ustad Bismillah Khan is associated with which musical instrument?",
+      "options": {
+        "A": "Santoor",
+        "B": "Shehnai",
+        "C": "Sitar",
+        "D": "Sarod"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The sitar is the most famous Hindustani instrument and is linked with Pandit Ravi Shankar, so students choose it by default.",
+      "pedagogical_explanation": "Bismillah Khan raised the shehnai, a wind instrument traditionally played at temples and weddings, to the concert stage. Santoor is linked with Pandit Shivkumar Sharma and sarod with Ustad Amjad Ali Khan. Memory hook: Bismillah = Blowing shehnai.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #158",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ffb99933c84ffc7f5d1864ec4435dcd47e8659c01c2deaa4bbb40abd4fb875f6"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-159",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_international_hq",
+      "question_text": "The International Court of Justice, the principal judicial organ of the United Nations, has its seat in which city?",
+      "options": {
+        "A": "New York",
+        "B": "Vienna",
+        "C": "Geneva",
+        "D": "The Hague"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Geneva hosts many UN agencies such as the WHO and the ILO, so it is the default guess for UN bodies.",
+      "pedagogical_explanation": "The ICJ sits at the Peace Palace in The Hague, Netherlands. It is the only principal organ of the United Nations that is not located in New York. Memory hook: ICJ = Justice in The Hague.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #159",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d96978cb04f3238549d3b7b8005c8487b0a64c975456325b516fbcef2824d2f5"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-160",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "static_dance_literature",
+      "question_text": "Which poet's Sanskrit work 'Gita Govinda', describing the love of Radha and Krishna, is a principal literary source for Odissi dance?",
+      "options": {
+        "A": "Kalidasa",
+        "B": "Surdas",
+        "C": "Jayadeva",
+        "D": "Vidyapati"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Vidyapati wrote Radha-Krishna love songs in Maithili, so students link him with the same theme.",
+      "pedagogical_explanation": "Jayadeva composed the Gita Govinda in the twelfth century, and its verses are widely used for abhinaya in Odissi. Memory hook: Jayadeva = Gita Govinda = Odissi.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #160",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "368932e9bdf582174abb0eb76e8d33de9615f9a0e747a61cd77722d66e64d6a6"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-161",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_fundamental_duties_committee",
+      "question_text": "On whose recommendations were the Fundamental Duties incorporated in the Constitution of India?",
+      "options": {
+        "A": "Sarkaria Commission",
+        "B": "Ashok Mehta Committee",
+        "C": "Balwant Rai Mehta Committee",
+        "D": "Swaran Singh Committee"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): The Sarkaria Commission is the best-known commission linked with the Constitution (Centre-State relations), so students pick it by default.",
+      "pedagogical_explanation": "The Swaran Singh Committee was set up during the Emergency to suggest constitutional changes and recommended the inclusion of Fundamental Duties, which Parliament adopted soon after. Balwant Rai Mehta and Ashok Mehta both dealt with Panchayati Raj. Memory hook: Swaran Singh = Duties.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #161",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "24bb431cbe4f80d389eff95a80057c38b979c7712988357b6d36adffc313e904"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-162",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_dpsp_judiciary",
+      "question_text": "Which Article of the Directive Principles of State Policy directs the State to take steps to separate the judiciary from the executive in the public services of the State?",
+      "options": {
+        "A": "Article 50",
+        "B": "Article 51",
+        "C": "Article 49",
+        "D": "Article 47"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Article 49 deals with protection of monuments and sits right before Article 50, so students pick the adjacent number.",
+      "pedagogical_explanation": "Article 50 aims to secure the independence of the judiciary by separating it from the executive in public services. Article 47 deals with nutrition and public health and Article 51 with promotion of international peace and security. Memory hook: 50 = Judges free from executive.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #162",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b2957d4c872dbe3381c1780f3c7ebfedc7e45f163766332bb5a66c78b7a60942"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-163",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_panchayati_raj_provisions",
+      "question_text": "Which Article of the Constitution provides for a State Election Commission to conduct elections to the Panchayats?",
+      "options": {
+        "A": "Article 243D",
+        "B": "Article 243I",
+        "C": "Article 243G",
+        "D": "Article 243K"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Article 243I provides for the State Finance Commission and sits just before Article 243K, so students pick the adjacent letter.",
+      "pedagogical_explanation": "Article 243K in Part IX vests the superintendence of Panchayat elections in a State Election Commission headed by a State Election Commissioner appointed by the Governor. Article 243D deals with reservation of seats and 243G with powers and responsibilities of Panchayats. Memory hook: 243K = Keeper of local elections.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #163",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b60e0ef5756b08ef3543f1aec5c01593156a4c0f47bcc590389ed4a6a03e530c"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-164",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_statutory_bodies",
+      "question_text": "The National Human Rights Commission of India is a statutory body established under which Act?",
+      "options": {
+        "A": "Consumer Protection Act, 1986",
+        "B": "Right to Information Act, 2005",
+        "C": "Protection of Human Rights Act, 1993",
+        "D": "Lokpal and Lokayuktas Act, 2013"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): The Lokpal and Lokayuktas Act, 2013 created another statutory grievance body, so students pick it by association.",
+      "pedagogical_explanation": "The NHRC was constituted under the Protection of Human Rights Act, 1993 and is a statutory, not a constitutional, body. Memory hook: NHRC = 1993 Act, statutory.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #164",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d3cdb89a6fa1db2d6949024e4b979163b9644efdbb4b5dea6b8bd6f04f65b816"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-165",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "geography_crops",
+      "question_text": "Which crop is known as the 'Golden Fibre' of India?",
+      "options": {
+        "A": "Jute",
+        "B": "Flax",
+        "C": "Cotton",
+        "D": "Hemp"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Cotton is the most important fibre crop of India, so students pick it for any fibre question.",
+      "pedagogical_explanation": "Jute is called the Golden Fibre because of its colour and its importance in making bags, sacks and ropes. It grows well in the fertile flood plains with a hot and humid climate. Memory hook: Jute = Golden fibre for gunny bags.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #165",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ed4abf47cec7ffebac71c3c3c22edebd0722c0aa51a64c661b938586955dc8eb"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-166",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_soils",
+      "question_text": "Which soil, formed by intense leaching under heavy rainfall and high temperature, is suited to crops such as tea, coffee and cashew nut?",
+      "options": {
+        "A": "Arid soil",
+        "B": "Red soil",
+        "C": "Black soil",
+        "D": "Laterite soil"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Red soil is also a tropical soil rich in iron, so students pick it, but it forms in areas of low rainfall.",
+      "pedagogical_explanation": "Laterite soil forms where heavy rain washes away nutrients such as lime and silica, leaving iron and aluminium compounds. It needs manure and fertiliser for good yields. Memory hook: Laterite = Leaching.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #166",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6d1f4fc6e57e086e8bd3cfdb3460dc0e423ca8ba46ab3535f61781bd3416fe1a"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-167",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "geography_peninsular_rivers",
+      "question_text": "Which of the following is a tributary of the Godavari river?",
+      "options": {
+        "A": "Koyna",
+        "B": "Manjra",
+        "C": "Tungabhadra",
+        "D": "Bhima"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The Tungabhadra is the best-known peninsular tributary, but it joins the Krishna, not the Godavari.",
+      "pedagogical_explanation": "The Manjra is a tributary of the Godavari, along with the Pranhita, Wardha and Wainganga. The Tungabhadra, Bhima and Koyna are all tributaries of the Krishna. Memory hook: Godavari = Manjra, Pranhita; Krishna = Tungabhadra, Bhima, Koyna.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #167",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "beec5df045e4da5662de3cb12eca8475df13da9f58c1222fa987541a82805f63"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-168",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_world_rivers",
+      "question_text": "Which river flows through the capital cities of Vienna, Budapest and Belgrade?",
+      "options": {
+        "A": "Danube",
+        "B": "Elbe",
+        "C": "Rhine",
+        "D": "Volga"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): The Rhine is the other great river of central Europe and flows through Basel and Cologne, so students pick it.",
+      "pedagogical_explanation": "The Danube flows through four capitals, namely Vienna, Bratislava, Budapest and Belgrade, before emptying into the Black Sea. Memory hook: Danube = River of capitals.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #168",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7e43447d45e0e4ad8d6e0c421a46cd703c4328df5d8706c6d07f1f72577b2aad"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-169",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_alloys",
+      "question_text": "Brass is an alloy of which two metals?",
+      "options": {
+        "A": "Copper and zinc",
+        "B": "Lead and tin",
+        "C": "Copper and tin",
+        "D": "Iron and carbon"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Copper and tin is bronze, the other well-known copper alloy, so students swap the two.",
+      "pedagogical_explanation": "Brass is made from copper and zinc and is used in utensils and musical instruments. Bronze is copper and tin, solder is lead and tin, and steel is iron with carbon. Memory hook: Brass = Copper + Zinc.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #169",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7ae40a58504ee823ba51c5f6236935aa2133714d9b299f8a4f136702c4899db1"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-170",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_instruments",
+      "question_text": "Which instrument is used to measure the relative humidity of the air?",
+      "options": {
+        "A": "Hydrometer",
+        "B": "Hygrometer",
+        "C": "Barometer",
+        "D": "Anemometer"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): The hydrometer has a similar-sounding name but measures the density of liquids, not moisture in air.",
+      "pedagogical_explanation": "A hygrometer measures the amount of water vapour in the air. An anemometer measures wind speed and a barometer measures atmospheric pressure. Memory hook: Hygro = moisture.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #170",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "225229b5e8d3b370c0bf1e13560d1edeec9050015d32b5d1e3c828f797945596"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-171",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_chemistry_compounds",
+      "question_text": "Which compound, used as a mild anaesthetic, is commonly known as 'laughing gas'?",
+      "options": {
+        "A": "Nitrogen dioxide",
+        "B": "Nitrous oxide",
+        "C": "Carbon monoxide",
+        "D": "Nitric oxide"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Nitric oxide (NO) has a very similar name to nitrous oxide (N2O), so the two are swapped.",
+      "pedagogical_explanation": "Nitrous oxide (N2O) is called laughing gas and is used as a mild anaesthetic. Nitric oxide is NO and nitrogen dioxide is NO2, a brown toxic gas. Memory hook: Nitrous = N2O = Two nitrogens, laughing.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #171",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a1636441675e566a477dceef937fadac2683dda5212f34b9dffe879afaf28b0e"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-172",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "science_diseases_protozoa",
+      "question_text": "Kala-azar (visceral leishmaniasis) is caused by which organism?",
+      "options": {
+        "A": "Leishmania donovani",
+        "B": "Trypanosoma",
+        "C": "Plasmodium vivax",
+        "D": "Entamoeba histolytica"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Trypanosoma is a similar flagellated protozoan, but it causes sleeping sickness, so students swap the two.",
+      "pedagogical_explanation": "Kala-azar is caused by the protozoan Leishmania donovani and spread by the bite of the sandfly. Entamoeba causes amoebic dysentery and Plasmodium causes malaria. Memory hook: Kala-azar = Sandfly + Leishmania.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #172",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "fbcbf1007e042a3153a554bf2ed347fa7566a1fe689fe9feb979a4bb48a3454d"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-173",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "banking_deposit_accounts",
+      "question_text": "In which type of bank account does a depositor deposit a fixed sum every month for a fixed tenure and receive the maturity amount with interest at the end?",
+      "options": {
+        "A": "Fixed Deposit",
+        "B": "Savings Account",
+        "C": "Current Account",
+        "D": "Recurring Deposit"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): A Fixed Deposit also pays interest at maturity, but it involves a single lump-sum deposit, so students confuse the two term deposits.",
+      "pedagogical_explanation": "A Recurring Deposit builds savings through regular monthly instalments over a fixed tenure. A Fixed Deposit is a one-time lump-sum deposit for a fixed term. Memory hook: RD = Regular instalments.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #173",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3d40cf7b7769aa08e3a91efc5742072b5096771d7bedf602c9f41d865f85de19"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-174",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "banking_money_market",
+      "question_text": "In the money market, funds borrowed or lent for a period between 2 days and 14 days are called:",
+      "options": {
+        "A": "Term money",
+        "B": "Notice money",
+        "C": "Treasury bill",
+        "D": "Call money"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Call money is the closest neighbour, but it covers borrowing for only one day, not 2 to 14 days.",
+      "pedagogical_explanation": "Per the RBI, money borrowed or lent for one day is call money, for 2 to 14 days it is notice money, and for periods beyond 14 days it is term money. Memory hook: Call = 1 day, Notice = 2 to 14 days, Term = beyond 14.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #174",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "eb7715ed629a046c8ad40a46996824f4cdda44a5c50b48c5061a4b3a2b143c49"
+    },
+    {
+      "id": "MM-SK-SGA-GA6-175",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "economy_national_income",
+      "question_text": "In national income accounting, which of the following is equal to 'National Income'?",
+      "options": {
+        "A": "Gross Domestic Product at market prices",
+        "B": "Net National Product at factor cost",
+        "C": "Net Domestic Product at market prices",
+        "D": "Gross National Product at market prices"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): GNP at market prices is popularly called the national product, so students pick it, but it includes depreciation and indirect taxes.",
+      "pedagogical_explanation": "Net National Product at factor cost equals GNP at market prices minus depreciation minus net indirect taxes, and this is the National Income. Memory hook: National Income = NNP at factor cost.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p6 #175",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p6",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d58410041c7d3712fed2a478aef7be16a8271b0479273f2448838f63797a6ef4"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-176",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_mauryan_sources",
+      "question_text": "Which Greek ambassador at the Mauryan court wrote the account 'Indica', describing life in the Mauryan empire?",
+      "options": {
+        "A": "Hiuen Tsang",
+        "B": "Megasthenes",
+        "C": "Fa-Xian",
+        "D": "Seleucus Nicator"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Seleucus Nicator was the Greek ruler who sent the ambassador after his treaty with the Mauryas, so students pick the sender instead of the writer.",
+      "pedagogical_explanation": "Megasthenes stayed at Pataliputra as the envoy of Seleucus I, and his Indica survives only in fragments quoted by later writers. Fa-Xian and Hiuen Tsang were Chinese pilgrims of much later periods. Memory hook: Megasthenes = Mauryan envoy = Indica.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #176",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6c0fdf83a108d0555ee9dc034742bf3d4793298e94cc1eae251fe77bbf1fc4a2"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-177",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_delhi_sultanate_architecture",
+      "question_text": "Construction of the Qutb Minar in Delhi was begun by Qutbuddin Aibak and completed by which Sultan?",
+      "options": {
+        "A": "Firoz Shah Tughlaq",
+        "B": "Iltutmish",
+        "C": "Alauddin Khalji",
+        "D": "Balban"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): Alauddin Khalji added the Alai Darwaza and started the unfinished Alai Minar in the same complex, so students credit him with the Qutb Minar.",
+      "pedagogical_explanation": "Aibak began the tower, and Iltutmish completed the upper storeys. Firoz Shah Tughlaq later repaired the top storeys after lightning damage. Memory hook: Aibak starts, Iltutmish finishes.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #177",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d9e6784ffe4b8b399ee400f1128cbc8e602f492ffcdd6f4bead12c90b8e0ee53"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-178",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_revolt_1857_leaders",
+      "question_text": "Who led the Revolt of 1857 at Lucknow, proclaiming her young son Birjis Qadr as the Nawab of Awadh?",
+      "options": {
+        "A": "Nana Saheb",
+        "B": "Rani Lakshmibai",
+        "C": "Begum Hazrat Mahal",
+        "D": "Kunwar Singh"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Rani Lakshmibai of Jhansi is the best-known woman leader of 1857, so students pick her for every leadership question.",
+      "pedagogical_explanation": "Begum Hazrat Mahal, wife of the deposed Nawab Wajid Ali Shah, took charge of the rebellion at Lucknow. Nana Saheb led at Kanpur and Kunwar Singh at Jagdishpur in Bihar. Memory hook: Lucknow = Hazrat Mahal, Kanpur = Nana Saheb.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #178",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2dc6112fe74e8e14cb0c4d97e905a2ad7d855a5e9019e8a7b5957805d1501929"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-179",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_quit_india",
+      "question_text": "The All India Congress Committee adopted the Quit India resolution on 8 August 1942 at which place?",
+      "options": {
+        "A": "Wardha",
+        "B": "Sevagram",
+        "C": "Gowalia Tank Maidan",
+        "D": "Allahabad"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): The Congress Working Committee passed the preliminary resolution at Wardha in July 1942, so students pick Wardha for the final adoption.",
+      "pedagogical_explanation": "The AICC session at Gowalia Tank Maidan in Bombay adopted the resolution, and Gandhi gave the call 'Do or Die' there. The ground is now known as August Kranti Maidan. Memory hook: Wardha drafts, Gowalia Tank adopts.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #179",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d4a6fa68f835f047a2868a521c4471f1eff7ccbeab6d371a08592c535414d6b4"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-180",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_pallava_architecture",
+      "question_text": "The Shore Temple at Mamallapuram, a structural temple built of cut stone, was constructed during the reign of which Pallava ruler?",
+      "options": {
+        "A": "Narasimhavarman II (Rajasimha)",
+        "B": "Narasimhavarman I (Mamalla)",
+        "C": "Nandivarman II",
+        "D": "Mahendravarman I"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Narasimhavarman I (Mamalla) gave Mamallapuram its name and is linked with its rock-cut monuments, so students credit him with the Shore Temple.",
+      "pedagogical_explanation": "The Shore Temple dates to the early eighth century and belongs to Narasimhavarman II, also called Rajasimha. Unlike the earlier rock-cut caves and rathas, it is a free-standing structural temple. Memory hook: Mamalla = rock-cut, Rajasimha = structural shore temple.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #180",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "70d701ca5b1725c0f956ade9d087bda4d9f4efac9c0ba71b8c5dce492a33a0de"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-181",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_classical_dance",
+      "question_text": "Sattriya, recognised as a classical dance form by the Sangeet Natak Akademi in 2000, originated in the monasteries (Sattras) of which state?",
+      "options": {
+        "A": "Assam",
+        "B": "West Bengal",
+        "C": "Odisha",
+        "D": "Manipur"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Manipur has its own classical dance, Manipuri, which is another north-eastern form, so students pick it.",
+      "pedagogical_explanation": "Sattriya was developed in the fifteenth century by Srimanta Sankardeva as part of the Vaishnava Sattras of Assam. It was added to the list of classical dances in 2000. Memory hook: Sattriya = Sattra = Assam.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #181",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "75ddcbfcc40d085a95652fcecd2136921a8d4e24a5e12eb8788ea2cec01ad7e0"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-182",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_unesco_sites",
+      "question_text": "The Sundarbans National Park, a UNESCO World Heritage Site known for its mangrove forests, is located in which Indian state?",
+      "options": {
+        "A": "Andhra Pradesh",
+        "B": "Odisha",
+        "C": "West Bengal",
+        "D": "Gujarat"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Bhitarkanika in Odisha is another famous mangrove area, so students pick Odisha.",
+      "pedagogical_explanation": "The Indian Sundarbans lie in the delta of the Ganga and Brahmaputra in West Bengal and were inscribed on the World Heritage List in 1987. The mangroves are home to the Royal Bengal tiger. Memory hook: Sundarbans = Sundari trees = Bengal delta.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #182",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "dcf53adb7d17cc86df7e4d9c5cd43fffd68b8a21c13d6f36d7a78692847ce080"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-183",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_musical_maestros",
+      "question_text": "Pandit Hariprasad Chaurasia is a renowned maestro of which musical instrument?",
+      "options": {
+        "A": "Bansuri",
+        "B": "Veena",
+        "C": "Sarod",
+        "D": "Santoor"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Santoor is another Hindustani instrument, linked with Pandit Shivkumar Sharma, so students swap the two maestros.",
+      "pedagogical_explanation": "Hariprasad Chaurasia is a leading exponent of the bansuri, the bamboo flute of Hindustani classical music. Sarod is associated with Ustad Amjad Ali Khan. Memory hook: Chaurasia = Bansuri.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #183",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "02cb8dc9e1eeedea71dc0bef30fa31b782a066e798ca1969cba5034cd2c5822e"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-184",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "static_international_hq",
+      "question_text": "The headquarters of the International Civil Aviation Organization (ICAO), a specialised agency of the United Nations, is located in which city?",
+      "options": {
+        "A": "Montreal",
+        "B": "London",
+        "C": "Geneva",
+        "D": "Rome"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Geneva hosts many UN agencies, so students make it the default guess for any specialised agency.",
+      "pedagogical_explanation": "ICAO was created under the Chicago Convention of 1944 and is headquartered in Montreal, Canada. The International Maritime Organization is in London and the Food and Agriculture Organization is in Rome. Memory hook: ICAO = Air = Montreal.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #184",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "32c427be68b2b2df25100fbea8e1faa3bf646c607e71a2a59be324291e1e371f"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-185",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_sports_terms",
+      "question_text": "The term 'Gambit' is used in which game?",
+      "options": {
+        "A": "Carrom",
+        "B": "Chess",
+        "C": "Bridge",
+        "D": "Snooker"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): Bridge is another mind sport with its own jargon such as trump, rubber and slam, so students pick it.",
+      "pedagogical_explanation": "A gambit is an opening in chess in which a pawn or piece is sacrificed to gain an advantage in position, as in the Queen's Gambit. Memory hook: Gambit = Gamble in chess.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #185",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "caaa7cbd6d98927b7dfbb02b9db51afcaf9e5265ed95921e6e45ba6f0e9294d7"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-186",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_local_government",
+      "question_text": "Part IX-A of the Constitution of India, containing Articles 243P to 243ZG, deals with which of the following?",
+      "options": {
+        "A": "Panchayats",
+        "B": "Co-operative Societies",
+        "C": "Municipalities",
+        "D": "Tribunals"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Part IX deals with Panchayats and sits right before Part IX-A, so students pick the neighbouring Part.",
+      "pedagogical_explanation": "Part IX-A covers Municipalities, which are urban local bodies. Part IX-B on Co-operative Societies was added later by the 97th Amendment, and Part XIV-A deals with Tribunals. Memory hook: IX = village, IX-A = city.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #186",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "d4c1dac3beacbe75178094bb58b320259d4701bb8282791ab1c56b0213f38dad"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-187",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "polity_president_oath",
+      "question_text": "Who administers the oath of office to the President of India?",
+      "options": {
+        "A": "The Speaker of the Lok Sabha",
+        "B": "The Chief Justice of India",
+        "C": "The Prime Minister",
+        "D": "The Vice-President"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): The Vice-President is the second-highest officer and acts as President in a vacancy, so students pick him.",
+      "pedagogical_explanation": "Article 60 says the oath is administered by the Chief Justice of India or, in his absence, the senior-most judge of the Supreme Court available. Memory hook: Article 60 = oath by the CJI.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #187",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "32d8116c7ea961c22a2ea6a65e96703d42f7055a9eca8d7ef43f6aa82bc59195"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-188",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_right_to_property",
+      "question_text": "The Right to Property was removed from the list of Fundamental Rights and made a constitutional right under Article 300A by which Amendment?",
+      "options": {
+        "A": "31st Amendment, 1973",
+        "B": "25th Amendment, 1971",
+        "C": "44th Amendment, 1978",
+        "D": "42nd Amendment, 1976"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): The 25th Amendment curtailed the right to property by changing Article 31, so it is the closest confusion with the amendment that finally removed it.",
+      "pedagogical_explanation": "The 44th Amendment omitted Articles 19(1)(f) and 31 and inserted Article 300A in Part XII, so property is now a legal right and not a Fundamental Right. Memory hook: 44th = property out, 300A = property in as a legal right.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #188",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "438f9f8664d394a0599ad7d0e0e1c5366ce4ba69ec200c085354716d2702f8f6"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-189",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_right_against_exploitation",
+      "question_text": "Which Article of the Constitution prohibits traffic in human beings and forced labour (begar)?",
+      "options": {
+        "A": "Article 24",
+        "B": "Article 23",
+        "C": "Article 17",
+        "D": "Article 25"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Article 24 prohibits child labour in factories and mines and sits right after Article 23, so students pick the adjacent Article.",
+      "pedagogical_explanation": "Articles 23 and 24 together form the Right against Exploitation. Article 17 abolishes untouchability and Article 25 gives freedom of religion. Memory hook: 23 = Adults exploited, 24 = Children exploited.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #189",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a144fdfa361b2d3bc3071d94fe369ed388ed61d00818b207be60a33cb14ba6be"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-190",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_tribes",
+      "question_text": "The Toda, a pastoral community known for its barrel-vaulted huts, lives mainly in the Nilgiri hills of which state?",
+      "options": {
+        "A": "Kerala",
+        "B": "Tamil Nadu",
+        "C": "Karnataka",
+        "D": "Odisha"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Kerala also borders the Nilgiris and has many tribal groups, so students pick the neighbouring state.",
+      "pedagogical_explanation": "The Todas are concentrated in the Nilgiri district of Tamil Nadu and are traditionally buffalo herders. Memory hook: Toda = Nilgiri = Tamil Nadu.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #190",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "60b373a27bb139858dcc0fbe29975e30005bd1214efe50e5149c9eb97fa9169f"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-191",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "geography_minerals",
+      "question_text": "The Malanjkhand copper mines, in the Balaghat district, are located in which state?",
+      "options": {
+        "A": "Andhra Pradesh",
+        "B": "Jharkhand",
+        "C": "Rajasthan",
+        "D": "Madhya Pradesh"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Rajasthan's Khetri belt is the most famous copper-mining area, so students pick Rajasthan.",
+      "pedagogical_explanation": "The Balaghat mines of Madhya Pradesh, which include Malanjkhand, are the leading source of copper in India. Singhbhum in Jharkhand and Khetri in Rajasthan are the other major belts. Memory hook: Balaghat = Madhya Pradesh copper.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #191",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6a47e60ccf8df3561e49c1fc748897975b14a3f89a964294296f404a077016fb"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-192",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_lakes",
+      "question_text": "Sambhar Lake, the largest inland saltwater lake of India, is located in which state?",
+      "options": {
+        "A": "Gujarat",
+        "B": "Manipur",
+        "C": "Rajasthan",
+        "D": "Jammu and Kashmir"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): The Rann of Kutch in Gujarat is a salty region and a major salt producer, so students pick Gujarat.",
+      "pedagogical_explanation": "Sambhar Lake lies near Jaipur and is a major source of salt. It is also a recognised Ramsar wetland. Memory hook: Sambhar = Salt = Rajasthan.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #192",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3509f5bd226ab42a5f346e1d9a77b91c83846f15fc8b1df944c565e307626cb8"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-193",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_world_deserts",
+      "question_text": "The Namib Desert, a coastal desert along the Atlantic Ocean, lies mainly in which country?",
+      "options": {
+        "A": "Angola",
+        "B": "Botswana",
+        "C": "Namibia",
+        "D": "South Africa"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): The Kalahari Desert spreads across Botswana and lies next to the Namib, so students pick Botswana.",
+      "pedagogical_explanation": "The Namib runs along the coast of Namibia, and the country takes its name from the desert. The Kalahari lies inland to the east, covering Botswana and parts of neighbouring countries. Memory hook: Namib = Namibia.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #193",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "cbd5a288b4514538cab41f2f159769c4ea8fc6d517003792903a80d2fb1bb07a"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-194",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_carbon",
+      "question_text": "Which is the hardest naturally occurring substance?",
+      "options": {
+        "A": "Diamond",
+        "B": "Graphite",
+        "C": "Quartz",
+        "D": "Corundum"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Graphite is also an allotrope of carbon, so students confuse it with diamond, but it is soft and slippery.",
+      "pedagogical_explanation": "In diamond each carbon atom is bonded to four others in a rigid three-dimensional network, which makes it the hardest natural substance. Graphite has layers that slide over each other. Memory hook: Diamond = Dense network = Hardest.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #194",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "89184727ca2142cf06c3b68bed97eb54b5b94acb2ea156b83b42b48529918240"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-195",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_atomic_structure",
+      "question_text": "Which scientist discovered the neutron in 1932?",
+      "options": {
+        "A": "James Chadwick",
+        "B": "J. J. Thomson",
+        "C": "Niels Bohr",
+        "D": "Ernest Rutherford"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Rutherford discovered the atomic nucleus and the proton and guided Chadwick, so students credit him with the neutron.",
+      "pedagogical_explanation": "James Chadwick discovered the neutron, a particle with no charge and mass about equal to a proton. Thomson discovered the electron and Bohr proposed the orbit model. Memory hook: Chadwick = Chargeless neutron.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #195",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a33a08b91a2e8d1750ca494ea265b49d0d99c5acfc6cf5ee46fa2540a6b537b7"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-196",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "science_human_excretion",
+      "question_text": "In the human nephron, most of the selective reabsorption of glucose and amino acids from the filtrate takes place in the:",
+      "options": {
+        "A": "Loop of Henle",
+        "B": "Proximal convoluted tubule",
+        "C": "Distal convoluted tubule",
+        "D": "Collecting duct"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): The Loop of Henle is the best-known region for water reabsorption and concentrating urine, so students pick it.",
+      "pedagogical_explanation": "The proximal convoluted tubule reabsorbs nearly all essential nutrients such as glucose and amino acids, along with much of the water and electrolytes. The Loop of Henle and collecting duct mainly regulate water and urine concentration. Memory hook: Proximal = Primary reabsorption.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #196",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "4819063a2bafebce6e0b31fd5054fa230f4926eaf05679f96d17a721a7470d35"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-197",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_payment_systems",
+      "question_text": "IMPS (Immediate Payment Service), which allows instant interbank fund transfers through mobile and internet round the clock, is operated by which organisation?",
+      "options": {
+        "A": "Indian Banks' Association",
+        "B": "State Bank of India",
+        "C": "Reserve Bank of India",
+        "D": "National Payments Corporation of India"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): The RBI regulates payment systems and itself operates NEFT and RTGS, so students assume it also runs IMPS.",
+      "pedagogical_explanation": "NPCI is the umbrella organisation for retail payments in India, set up in 2008 with the guidance of the RBI and the Indian Banks' Association. It operates IMPS, UPI and RuPay. Memory hook: NPCI = Retail payments, RBI = Regulator and NEFT/RTGS.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #197",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c78a91f9e192536b391a392e4b3c8359e50036aba833b366fd05d2c329ab58f3"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-198",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "banking_deposit_accounts",
+      "question_text": "Which type of bank account, mostly opened by traders and businesses, normally pays no interest and has no limit on the number of transactions?",
+      "options": {
+        "A": "Savings account",
+        "B": "NRE account",
+        "C": "Current account",
+        "D": "Demat account"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): The savings account is the most common account, but it pays interest and has limits on transactions, so students confuse the two demand accounts.",
+      "pedagogical_explanation": "A current account is meant for frequent business transactions and usually pays no interest. A Demat account holds securities in electronic form and is not a deposit account. Memory hook: Current account = Constant business flow.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #198",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "08046893fc45b8ff0e09361225cf67ae563c2504eced213d6ca9b5db55ab5997"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-199",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "banking_treasury_bills",
+      "question_text": "Treasury Bills issued by the Government of India are currently issued in which three maturities?",
+      "options": {
+        "A": "91 days, 182 days and 365 days",
+        "B": "91 days, 182 days and 364 days",
+        "C": "28 days, 91 days and 182 days",
+        "D": "30 days, 90 days and 180 days"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): 365 days sounds like a natural one-year bill, but the longest Treasury Bill matures in 364 days.",
+      "pedagogical_explanation": "Treasury Bills are zero-coupon money market instruments issued at a discount and redeemed at face value. The three tenors are 91, 182 and 364 days. Memory hook: 91, 182, 364 = 13, 26, 52 weeks.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #199",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "69ca27a4103bee7a57e8b03e10210f06b40781a1261145bcfa137aea66d2865d"
+    },
+    {
+      "id": "MM-SK-SGA-GA7-200",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "economy_five_year_plans",
+      "question_text": "Which Five Year Plan, launched in 1992 after the economic reforms of 1991, placed human development, including employment, education and public health, at the centre of its objectives?",
+      "options": {
+        "A": "Seventh Plan",
+        "B": "Eighth Plan",
+        "C": "Ninth Plan",
+        "D": "Sixth Plan"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The Ninth Plan stressed growth with social justice and equity, a similar social theme, so students pick it.",
+      "pedagogical_explanation": "The Eighth Plan (1992 to 1997) began after the reforms of 1991 and made human development its main focus, along with modernisation and growth. Memory hook: Eighth = Human development after reforms.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p7 #200",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p7",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "94317a049fab2fce5434839cd913061814246501e95363b82e15986c521aa309"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-201",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_buddhist_councils",
+      "question_text": "The Buddhist Council held at Pataliputra during the reign of Emperor Ashoka, under the presidency of Moggaliputta Tissa, was the:",
+      "options": {
+        "A": "Second Buddhist Council",
+        "B": "Fourth Buddhist Council",
+        "C": "First Buddhist Council",
+        "D": "Third Buddhist Council"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): The Second Council was held at Vaishali about a century after the Buddha's death, and students confuse the two because both dealt with disputes over monastic discipline.",
+      "pedagogical_explanation": "The Third Council at Pataliputra, held under Ashoka, aimed to purify the Sangha and settle doctrinal disputes. The Fourth Council was held in Kashmir under Kanishka. Memory hook: Third = Ashoka = Pataliputra.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #201",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ba5a2139e2a4a7b3e335268cc9af9e8e67bd99c6ee5abbed0d61d3e73106c983"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-202",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_satavahanas",
+      "question_text": "Gautamiputra Satakarni, the most celebrated Satavahana ruler, is credited with defeating and destroying the power of which Western Kshatrapa ruler, whose coins he restruck?",
+      "options": {
+        "A": "Chastana",
+        "B": "Nahapana",
+        "C": "Jayadaman",
+        "D": "Rudradaman I"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Rudradaman I is the best-known Kshatrapa ruler and fought the Satavahanas, but he belonged to a later generation and defeated a Satavahana successor, not Gautamiputra.",
+      "pedagogical_explanation": "Gautamiputra Satakarni defeated Nahapana of the Kshaharata line, and a hoard of Nahapana's silver coins restruck with Satavahana marks was found near Nashik. Rudradaman I of the Ujjain line came later. Memory hook: Gautamiputra beats Nahapana, Rudradaman comes after.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #202",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a9105451aa2996320ce88d67332fe777731e8eb13f6bb4e418f82e12769a6ac7"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-203",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_maratha_empire",
+      "question_text": "Shivaji was crowned Chhatrapati in 1674 at which fort, which he also made his capital?",
+      "options": {
+        "A": "Sinhagad",
+        "B": "Pratapgad",
+        "C": "Rajgad",
+        "D": "Raigad"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Rajgad was Shivaji's earlier seat of government before he shifted to Raigad, so students pick it as the capital.",
+      "pedagogical_explanation": "Shivaji's formal coronation took place at Raigad, which became the capital of the Maratha kingdom. Pratapgad is remembered for the encounter with Afzal Khan and Sinhagad for the capture of Kondana. Memory hook: Raigad = Royal coronation.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #203",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b49f465dbaae190e633a56d99fdea706cd581f89dd3ddd65520395f090f07408"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-204",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_social_reformers",
+      "question_text": "The Satyashodhak Samaj, founded in 1873 to secure social justice for the lower castes, was established by:",
+      "options": {
+        "A": "Jyotirao Phule",
+        "B": "Swami Vivekananda",
+        "C": "Dayananda Saraswati",
+        "D": "Sir Syed Ahmad Khan"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Dayananda Saraswati founded the Arya Samaj only two years later, in 1875, so the two reform bodies of the 1870s get swapped.",
+      "pedagogical_explanation": "Jyotirao Phule set up the Satyashodhak Samaj in Pune and attacked caste hierarchy and Brahmanical dominance, writing Gulamgiri in 1873. Memory hook: Phule = Pune = Satyashodhak.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #204",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3631b158228a6f68111a52964cc291a405f5b1fbb984b1ff498ebcd641b56fac"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-205",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_inc_moderates_extremists",
+      "question_text": "The Indian National Congress split into the Moderate and Extremist camps at its Surat session in 1907. Who presided over this session?",
+      "options": {
+        "A": "Surendranath Banerjea",
+        "B": "Rash Behari Ghosh",
+        "C": "Lala Lajpat Rai",
+        "D": "Gopal Krishna Gokhale"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The Extremist camp had wanted Lajpat Rai as president, which is exactly the dispute behind the split, so students assume he presided.",
+      "pedagogical_explanation": "Rash Behari Ghosh, the Moderates' choice, presided at Surat, and the session broke up amid disorder. The split lasted until the Lucknow Congress of 1916. Memory hook: Surat 1907 = Ghosh, split.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #205",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "cfbe47dd53c4eff67c0290df5da23b22c82044e206e56de826a41ec48f9eac72"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-206",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_folk_painting",
+      "question_text": "Madhubani painting, a folk art tradition known for its intricate line work and vivid natural colours, originated in the Mithila region of which state?",
+      "options": {
+        "A": "Bihar",
+        "B": "Rajasthan",
+        "C": "Odisha",
+        "D": "Maharashtra"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Warli painting from Maharashtra is the other famous tribal folk art, so the two are often swapped.",
+      "pedagogical_explanation": "Madhubani, also called Mithila painting, comes from the Mithila region of Bihar and traditionally decorated walls and floors of homes. Memory hook: Madhubani = Mithila = Bihar.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #206",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "ffc493075d6447b6637bae85fa5602ed5db84b68e7d2db5469b0232faa1efe6e"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-207",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_temple_architecture",
+      "question_text": "The famous group of temples at Khajuraho in Madhya Pradesh, known for its Nagara-style architecture and sculpture, was built by which dynasty?",
+      "options": {
+        "A": "Rashtrakutas",
+        "B": "Chandelas",
+        "C": "Parmaras",
+        "D": "Hoysalas"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): The Rashtrakutas built the monolithic Kailasa temple at Ellora, another famous sculpted temple, so the dynasties get mixed up.",
+      "pedagogical_explanation": "The Chandela rulers of Bundelkhand built the Khajuraho temples roughly between 950 and 1050 CE. The Hoysalas are known for the temples at Belur and Halebidu. Memory hook: Chandela = Khajuraho.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #207",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "c03db9a0425ad90e2e71335dd9f1ccd3432b6350f5c0bfca6a8281e36ae8a198"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-208",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_dams",
+      "question_text": "The Tehri Dam, a major multipurpose project in Uttarakhand, is built on which river?",
+      "options": {
+        "A": "Yamuna",
+        "B": "Bhagirathi",
+        "C": "Alaknanda",
+        "D": "Mandakini"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): The Alaknanda is the other headstream that joins the Bhagirathi at Devprayag to form the Ganga, so it is the closest confusion.",
+      "pedagogical_explanation": "The Tehri Dam stands on the Bhagirathi near its confluence with the Bhilangana in Tehri Garhwal district. It serves irrigation, drinking water and hydropower. Memory hook: Tehri = Bhagirathi.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #208",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "7da21149a5af03da2615569eecc459a60923318bfea8f2ece47ef81c24ef8828"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-209",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_monuments",
+      "question_text": "The Gateway of India in Mumbai was built to commemorate the 1911 landing in India of which British monarch?",
+      "options": {
+        "A": "Edward VII",
+        "B": "Queen Victoria",
+        "C": "Edward VIII",
+        "D": "George V"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): Queen Victoria was Empress of India and many colonial monuments honour her, so students attach this one to her too.",
+      "pedagogical_explanation": "King George V and Queen Mary landed at Apollo Bunder in December 1911, and the arch designed by George Wittet was built to mark the visit and completed in 1924. Memory hook: Gateway = George V.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #209",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "0b96e89515d14b7077641d8b9842cd794fd0a25d6d0d79a0f8ff10dd826032f3"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-210",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "static_biosphere_reserves",
+      "question_text": "Which was the first Biosphere Reserve to be established in India, in 1986?",
+      "options": {
+        "A": "Gulf of Mannar Biosphere Reserve",
+        "B": "Pachmarhi Biosphere Reserve",
+        "C": "Nilgiri Biosphere Reserve",
+        "D": "Nanda Devi Biosphere Reserve"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Nanda Devi was notified only two years later, in 1988, and is the best-known Himalayan reserve, so students pick it.",
+      "pedagogical_explanation": "The Nilgiri Biosphere Reserve, spread across Tamil Nadu, Kerala and Karnataka, was India's first, in 1986. Gulf of Mannar followed in 1989 and Pachmarhi in 1999. Memory hook: Nilgiri = Number one.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #210",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "f62d6bf53441bc0060fbd31696c5d818fc2e014f725277243b774c1d08ecbcd2"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-211",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "polity_union_list",
+      "question_text": "Which of the following subjects is included in the Union List of the Seventh Schedule?",
+      "options": {
+        "A": "Agriculture",
+        "B": "Police",
+        "C": "Defence of India",
+        "D": "Public health"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Central police forces exist, so students assume police is a Union subject, but it is a State List subject.",
+      "pedagogical_explanation": "Defence of India is Entry 1 of the Union List. Police, agriculture and public health are State List subjects. Memory hook: Defence = Delhi decides.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #211",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2a0ab103f5441c690545a0ee41f2cc10faacd8784899df7d82a070021be3c926"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-212",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_pardoning_power",
+      "question_text": "Which of the following sentences can be pardoned by the President under Article 72 but is outside the pardoning power of the Governor under Article 161?",
+      "options": {
+        "A": "A sentence passed by a court martial",
+        "B": "A sentence for which a reprieve, respite or remission is sought",
+        "C": "A sentence for an offence under a State law",
+        "D": "A sentence that is to be suspended"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): The Governor's power extends to offences against State laws, so students think it is the area that belongs only to the President.",
+      "pedagogical_explanation": "Article 72 gives the President power over sentences by court martial and over offences under Union law, while Article 161 limits the Governor to matters in the State's executive power. Both can grant reprieves, respites, remissions and suspensions. Memory hook: Court martial = President only.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #212",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "945c5f5d5b18d8fdccb7d3da84ee6c3ff71c3ac3f867bfd6e5a9affb10f70a1d"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-213",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_writs",
+      "question_text": "Which writ is issued by a higher court to stop a lower court or tribunal from continuing proceedings in a case that is beyond its jurisdiction?",
+      "options": {
+        "A": "Mandamus",
+        "B": "Certiorari",
+        "C": "Prohibition",
+        "D": "Quo Warranto"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): Certiorari also deals with lower courts exceeding jurisdiction, but it quashes an order already passed, while Prohibition acts while proceedings are pending.",
+      "pedagogical_explanation": "Prohibition is a preventive writ issued while the case is pending, whereas Certiorari is corrective and issued after the order. Both are available under Articles 32 and 226. Memory hook: Prohibition = Prevent, Certiorari = Cancel.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #213",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "cadb1fed5f3a93922352b1d9b65d4e58251e46cf118a493fb3b32cd2dd0f021b"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-214",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_public_service_commission",
+      "question_text": "A member of a State Public Service Commission holds office for six years or until attaining which age, whichever is earlier?",
+      "options": {
+        "A": "60 years",
+        "B": "65 years",
+        "C": "62 years",
+        "D": "58 years"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (B): 65 years is the age limit for a member of the UPSC, so the two limits are swapped.",
+      "pedagogical_explanation": "Article 316(2) fixes six years or the age of 62 for State Public Service Commission members, and six years or the age of 65 for the UPSC. Memory hook: Union = 65, State = 62.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #214",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "613fa50621e0267a9c10e74260dbc7b8d94fdb16dcb3ec60bc9c48f7fb3a70ca"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-215",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "geography_local_winds",
+      "question_text": "The strong, gusty, hot and dry wind that blows during summer afternoons over the northern and north-western plains of India is called:",
+      "options": {
+        "A": "Mango showers",
+        "B": "Loo",
+        "C": "Western disturbance",
+        "D": "Kalbaisakhi"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Kalbaisakhi is also a summer phenomenon, but it is a thunderstorm of Bengal and not a hot dry wind.",
+      "pedagogical_explanation": "Loo is a hot and dry wind of the northern plains in May and June. Mango showers occur in Kerala and Karnataka, and Kalbaisakhi in West Bengal. Memory hook: Loo = Lethal heat in the plains.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #215",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "470516c731e31a17da6131d0bdf8722da41af10444e56db6b267da958d594122"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-216",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_ocean_currents",
+      "question_text": "Which cold ocean current flows along the western coast of South America?",
+      "options": {
+        "A": "Benguela Current",
+        "B": "Brazil Current",
+        "C": "Peru (Humboldt) Current",
+        "D": "Kuroshio Current"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): The Benguela Current is the matching cold current off the western coast of southern Africa, so the two continents get swapped.",
+      "pedagogical_explanation": "The Peru or Humboldt Current is a cold current in the south-eastern Pacific along the coast of Peru and Chile. Brazil Current is warm and Kuroshio is a warm current in the north-western Pacific. Memory hook: Peru = Pacific = Cold.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #216",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6d9e6613af33c84b14197cccc23519524b957c6c3eaf61e1c208951056a00930"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-217",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_indian_ports",
+      "question_text": "Which Indian port is described as the deepest landlocked and well-protected port?",
+      "options": {
+        "A": "Paradip",
+        "B": "Tuticorin",
+        "C": "Chennai",
+        "D": "Visakhapatnam"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): Paradip is known as a deep-sea harbour handling iron ore exports, so students link 'deep' with Paradip.",
+      "pedagogical_explanation": "Visakhapatnam on the east coast is the deepest landlocked and well-protected port. Chennai is an artificial harbour and Tuticorin is a major port in Tamil Nadu. Memory hook: Vizag = Very deep and sheltered.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #217",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "490ba5a717cf6093fe10f7da6a79cb2ebbecddc3444b35d7786daffff8a78811"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-218",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "geography_hill_stations",
+      "question_text": "The hill station of Kodaikanal in Tamil Nadu lies in which hill range?",
+      "options": {
+        "A": "Nilgiri Hills",
+        "B": "Palani Hills",
+        "C": "Anamalai Hills",
+        "D": "Cardamom Hills"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): The Nilgiris hold Udhagamandalam (Ooty), the best-known Tamil Nadu hill station, so students place Kodaikanal there too.",
+      "pedagogical_explanation": "Kodaikanal is in the Palani Hills, an eastward spur of the Western Ghats in Dindigul district. Ooty is in the Nilgiris. Memory hook: Kodaikanal = Palani.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #218",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "48e91cc94168a8c1fedaf6b466f49367aa3d803be139b25e6fb5f4d46c7cb82d"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-219",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "economy_financial_year",
+      "question_text": "The financial year of the Government of India runs from:",
+      "options": {
+        "A": "1 October to 30 September",
+        "B": "1 July to 30 June",
+        "C": "1 January to 31 December",
+        "D": "1 April to 31 March"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): The calendar year is the everyday year, so students assume the financial year follows it.",
+      "pedagogical_explanation": "The General Clauses Act, 1897 defines the financial year as the year commencing on 1 April, and the Union Budget covers this period. Memory hook: April to March.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #219",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b498a41c71508039c62613a957bb7447d3291b7b1e4ede636f353703d9dc6a48"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-220",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_npa_norms",
+      "question_text": "As per RBI norms, a loan is classified as a Non-Performing Asset (NPA) when interest or principal remains overdue for more than how many days?",
+      "options": {
+        "A": "180 days",
+        "B": "90 days",
+        "C": "60 days",
+        "D": "30 days"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): 60 days falls within the 'special mention' stage (SMA-1 is 31 to 60 days overdue), so students mistake an early-warning stage for an NPA.",
+      "pedagogical_explanation": "An asset becomes an NPA when interest or instalment is overdue for more than 90 days. 180 days was an older norm that was tightened to 90 days. Memory hook: 90 days overdue = NPA.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #220",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "680c3310ace4bf5533dbed133887c239d187472b9472fc2a41f5d1f77918a6bd"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-221",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "banking_basel_norms",
+      "question_text": "As per RBI's Basel III guidelines, the minimum total capital to risk-weighted assets ratio (CRAR) for Indian scheduled commercial banks, excluding the capital conservation buffer, is:",
+      "options": {
+        "A": "9 percent",
+        "B": "11.5 percent",
+        "C": "8 percent",
+        "D": "10.5 percent"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): 8 percent is the minimum prescribed by the Basel Committee itself, while RBI has set a stricter 9 percent for Indian banks.",
+      "pedagogical_explanation": "RBI requires banks to maintain a minimum total capital of 9 percent of risk-weighted assets, which rises to 11.5 percent after adding the 2.5 percent capital conservation buffer. Memory hook: Basel says 8, RBI says 9.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #221",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "88d3ada4f0eb6dbb3416d34b6d73f64e4718624628b19f5764263d9b4ad5e632"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-222",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "economy_fiscal_deficit",
+      "question_text": "Fiscal deficit in the Government Budget is equal to total expenditure minus:",
+      "options": {
+        "A": "Revenue receipts only",
+        "B": "Total receipts including borrowings",
+        "C": "Revenue receipts plus non-debt capital receipts",
+        "D": "Tax revenue plus borrowings"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (A): Subtracting only revenue receipts ignores non-debt capital receipts such as recovery of loans and disinvestment, so the deficit comes out too large.",
+      "pedagogical_explanation": "Fiscal deficit equals total expenditure minus total receipts excluding borrowings, and the gap is the amount the government must borrow. Including borrowings in receipts would make the deficit zero by definition. Memory hook: Fiscal deficit = Borrowing requirement.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #222",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "223572ab0b9bf3459df94036ab1fd311114b8543dbc7e395a0742b137e8bb176"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-223",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_acid_base_indicators",
+      "question_text": "Phenolphthalein indicator turns which colour in a basic solution?",
+      "options": {
+        "A": "Pink",
+        "B": "Yellow",
+        "C": "Blue",
+        "D": "Red"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): Methyl orange turns yellow in basic solution, so the two indicators get mixed up.",
+      "pedagogical_explanation": "Phenolphthalein is colourless in acidic and neutral solutions and turns pink in bases. Methyl orange is red in acid and yellow in base. Memory hook: Phenolphthalein = Pink in base.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #223",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "70cfcafff2c9f09c652d3421b95322a2e40ff5b54929abbde26248f2acfcf92a"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-224",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "science_sound_echo",
+      "question_text": "Taking the speed of sound in air as 344 m/s at 22 degrees Celsius, what is the minimum distance of a reflecting surface from the source needed to hear a distinct echo?",
+      "options": {
+        "A": "17.2 m",
+        "B": "8.6 m",
+        "C": "34.4 m",
+        "D": "20 m"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): 34.4 m is the total distance covered by sound in 0.1 second, and students forget that the sound travels to the obstacle and back, so the one-way distance is half.",
+      "pedagogical_explanation": "The ear retains a sound for about 0.1 s, so the echo must arrive after that gap. Total path = 344 x 0.1 = 34.4 m, and the one-way distance = 34.4 / 2 = 17.2 m. Memory hook: Echo needs 17.2 m, halve the round trip.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #224",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b988dfdb9446a9ef7f5c96d0957421744b8ad8cb0c0c2c4cbc5bfc98df1f25de"
+    },
+    {
+      "id": "MM-SK-SGA-GA8-225",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_plant_hormones",
+      "question_text": "Which plant hormone is commonly called the 'stress hormone' because it helps plants cope with conditions such as water shortage by closing stomata?",
+      "options": {
+        "A": "Cytokinin",
+        "B": "Gibberellin",
+        "C": "Auxin",
+        "D": "Abscisic acid"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Auxin is the best-known plant hormone, so students choose it for any hormone question.",
+      "pedagogical_explanation": "Abscisic acid inhibits growth, promotes closing of stomata and helps plants withstand stress. Cytokinins promote cell division and gibberellins promote stem elongation. Memory hook: ABA = Alarm hormone.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p8 #225",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p8",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "812681539609467f552c13aa49cb5de37ae0e4ac6907d1d97a27f5d46c417ab3"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-226",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "history_jainism",
+      "question_text": "Who was the 24th and last Tirthankara of Jainism?",
+      "options": {
+        "A": "Rishabhanatha",
+        "B": "Neminatha",
+        "C": "Parshvanatha",
+        "D": "Mahavira"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): Parshvanatha was the 23rd Tirthankara, immediately before Mahavira, so students pick him as the nearest earlier teacher.",
+      "pedagogical_explanation": "Vardhamana Mahavira, born in the sixth century BCE near Vaishali, was the 24th and last Tirthankara of the Jains. Rishabhanatha was the first Tirthankara. Memory hook: Mahavira = 24th = Last.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #226",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "86ecbd4db4aed8e56fb9f236a321cec85c279e01a4acd39b6f10850edaa9bdf9"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-227",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_pallavas",
+      "question_text": "Which Pallava ruler wrote the Sanskrit farce 'Mattavilasa Prahasana'?",
+      "options": {
+        "A": "Simhavishnu",
+        "B": "Mahendravarman I",
+        "C": "Narasimhavarman I",
+        "D": "Parameshvaravarman I"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (C): Narasimhavarman I (Mamalla) was Mahendravarman's son and the better-known Pallava king, so students credit him with the work.",
+      "pedagogical_explanation": "Mahendravarman I, who ruled in the early seventh century CE, composed Mattavilasa Prahasana, a satirical Sanskrit one-act play. He is also known for patronising rock-cut cave temples. Memory hook: Mahendravarman = Mattavilasa (both start with M).",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #227",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "24da0bd0737c2627afe48ef084690194cfbdf5978b2cc56c22897f3d31ef0efd"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-228",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_viceroy_reforms",
+      "question_text": "Which Viceroy is regarded as the 'Father of Local Self-Government' in India because of his resolution of 1882 on local bodies?",
+      "options": {
+        "A": "Lord Lansdowne",
+        "B": "Lord Curzon",
+        "C": "Lord Ripon",
+        "D": "Lord Mayo"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Lord Mayo's 1870 resolution on financial decentralisation was an earlier step towards local finance, so students credit him with the 1882 reform.",
+      "pedagogical_explanation": "Lord Ripon's Resolution of 1882 encouraged elected non-official majorities in local boards and gave them real powers. Mayo's 1870 resolution only devolved certain finances to the provinces. Memory hook: Ripon = Rural and urban local bodies.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #228",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "5c7b8aefc054300ac0794185056e1a87f9c14a2cd0e6ac9c152613519885bdef"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-229",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "history_constitutional_acts",
+      "question_text": "Separate electorates for Muslims were first introduced in British India by which Act?",
+      "options": {
+        "A": "Indian Councils Act, 1909",
+        "B": "Government of India Act, 1919",
+        "C": "Indian Councils Act, 1892",
+        "D": "Government of India Act, 1935"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): The 1919 Act extended separate electorates to Sikhs, Indian Christians, Anglo-Indians and Europeans, so students think it introduced them.",
+      "pedagogical_explanation": "The Indian Councils Act, 1909 (Morley-Minto Reforms) provided separate electorates for Muslims for the first time. Later Acts extended the principle to other communities. Memory hook: 1909 = Minto = Muslim electorates.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #229",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "4d82cb1bf04efb4430f24a3ad3a76b8b975cbd9ba217b0c4e04daf654e4172e4"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-230",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "history_charter_acts",
+      "question_text": "Which Act redesignated the Governor-General of Bengal as the Governor-General of India and ended the East India Company's role as a commercial body?",
+      "options": {
+        "A": "Charter Act of 1853",
+        "B": "Pitt's India Act of 1784",
+        "C": "Charter Act of 1833",
+        "D": "Charter Act of 1813"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): The Charter Act of 1813 ended the Company's trade monopoly except in tea and the China trade, so students pick it for the end of the commercial role.",
+      "pedagogical_explanation": "The Charter Act of 1833 made Lord William Bentinck the first Governor-General of India and turned the Company into a purely administrative body. The Charter Act of 1853 later added non-official members to the legislative council and opened up the civil service to competition. Memory hook: 1833 = One India, one Governor-General.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #230",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2df3a274cde8ae9c8febe5f232a3e1f9294e619d3909ebcc554b5410418d5039"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-231",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_bridges",
+      "question_text": "The Pamban Bridge, India's first sea bridge, connects the mainland with which island?",
+      "options": {
+        "A": "Elephanta",
+        "B": "Majuli",
+        "C": "Rameswaram",
+        "D": "Sriharikota"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Sriharikota is also an island on the south-eastern coast, so students pick it by region.",
+      "pedagogical_explanation": "The Pamban Bridge, opened in 1914, links the mainland of Tamil Nadu with Rameswaram (Pamban) Island across the Palk Strait. Elephanta is near Mumbai and Majuli is a river island in the Brahmaputra. Memory hook: Pamban = Pilgrims to Rameswaram.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #231",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b523f9d1f5ef73cf4953b9bf94731657d2c651f66ebcfb116e7e403f86f6a93a"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-232",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "static_temple_architecture",
+      "question_text": "In Dravidian temple architecture, the monumental gateway tower at the entrance of the temple complex is called the:",
+      "options": {
+        "A": "Mandapa",
+        "B": "Vimana",
+        "C": "Shikhara",
+        "D": "Gopuram"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): The Vimana is also a tall tower in Dravidian temples, but it stands over the sanctum and not over the entrance.",
+      "pedagogical_explanation": "A gopuram is the large, ornate gateway tower of South Indian temples and became taller in later periods such as Chola and Vijayanagara times. The Shikhara is the tower of Nagara temples. Memory hook: Gopuram = Gate.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #232",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "2afc8e0045e6552867e999f51ab631b11b096e8c1f96b8e5e377f91fc36d15b8"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-233",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "static_folk_painting",
+      "question_text": "Phad, a long cloth scroll painting that narrates the epics of folk heroes such as Pabuji and Devnarayan, belongs to which region?",
+      "options": {
+        "A": "Odisha",
+        "B": "Rajasthan",
+        "C": "West Bengal",
+        "D": "Telangana"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Odisha's Pattachitra is also a cloth-based narrative painting, so students link the two scroll traditions.",
+      "pedagogical_explanation": "Phad paintings are made by the Joshi community of Bhilwara and Shahpura in Rajasthan and are shown during storytelling performances by Bhopa priest-singers. Cheriyal scrolls come from Telangana and Patua scrolls from Bengal. Memory hook: Phad = Pabuji = Rajasthan.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #233",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "5f141635b486836dd0fda7b57502043e20d9969da7f80e239c971185bbf80059"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-234",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_sports_trophies",
+      "question_text": "India's premier first-class cricket championship, the Ranji Trophy, is named after:",
+      "options": {
+        "A": "Nawab of Pataudi",
+        "B": "C. K. Nayudu",
+        "C": "K. S. Ranjitsinhji",
+        "D": "K. S. Duleepsinhji"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): Duleepsinhji was Ranjitsinhji's nephew and has the Duleep Trophy named after him, so the two trophies get swapped.",
+      "pedagogical_explanation": "The trophy honours Ranjitsinhji, the Jam Sahib of Nawanagar, who played Test cricket for England. The Duleep Trophy is the zonal tournament named after Duleepsinhji. Memory hook: Ranji Trophy = Ranjitsinhji.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #234",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6ed9eaa2a3d07212693c0e9bf2907a8e25b8e60b1ef140f385fae4bae3862260"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-235",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "static_national_parks",
+      "question_text": "The Keibul Lamjao National Park, known for its floating phumdis and the endangered sangai deer, lies on which lake?",
+      "options": {
+        "A": "Loktak Lake",
+        "B": "Pulicat Lake",
+        "C": "Dal Lake",
+        "D": "Wular Lake"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Dal Lake is famous for its floating gardens, so students link it with 'floating' vegetation.",
+      "pedagogical_explanation": "Keibul Lamjao in Manipur is the world's only floating national park and sits on the southern part of Loktak Lake. The floating mats of vegetation, soil and organic matter are called phumdis. Memory hook: Loktak = Manipur = Sangai.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #235",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "06690a4546d1b0cdc76cc26e677b328b1c5a55a9749c4afcbc3e266eea5c680c"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-236",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "polity_writs",
+      "question_text": "Which writ is issued to secure the release of a person who has been illegally detained?",
+      "options": {
+        "A": "Mandamus",
+        "B": "Certiorari",
+        "C": "Quo Warranto",
+        "D": "Habeas Corpus"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): Mandamus is the best-known writ and means 'we command', so students pick it for any case where a court gives an order.",
+      "pedagogical_explanation": "Habeas Corpus means 'you may have the body' and requires the detaining authority to produce the person before the court. Quo Warranto questions the legal authority of a person holding a public office. Memory hook: Habeas = Have the body.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #236",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "1fc3892f337c1a962c6e763aaf73e9dd03a3e83dc62005bd49908446d4dc2eef"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-237",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_all_india_services",
+      "question_text": "Under which Article can Parliament create a new All-India Service common to the Union and the States if the Rajya Sabha declares by a two-thirds majority of members present and voting that it is necessary in the national interest?",
+      "options": {
+        "A": "Article 312",
+        "B": "Article 313",
+        "C": "Article 311",
+        "D": "Article 310"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): Article 311 protects civil servants from dismissal without inquiry and is the best-known Article in the same Part, so students pick it.",
+      "pedagogical_explanation": "Article 312 allows Parliament to legislate for new All-India Services once the Rajya Sabha passes such a resolution. Article 310 deals with the tenure of civil servants at the pleasure of the President or Governor, and Article 313 with transitional provisions. Memory hook: 312 = Create All-India Services.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #237",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "b66aa5e85751ab33471235296e36797c646c91761d098be21075cda46ff927f3"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-238",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "polity_election_commission_removal",
+      "question_text": "The Chief Election Commissioner can be removed from office only in the same manner and on the same grounds as a:",
+      "options": {
+        "A": "Union Cabinet Minister",
+        "B": "Governor of a State",
+        "C": "Attorney General of India",
+        "D": "Judge of the Supreme Court"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): The Attorney General holds office during the pleasure of the President, so students assume constitutional officers are removed in the same loose manner.",
+      "pedagogical_explanation": "The proviso to Article 324(5) protects the Chief Election Commissioner's independence by giving him the same removal procedure as a Supreme Court judge, which is impeachment by Parliament. Other Election Commissioners can be removed only on the recommendation of the Chief Election Commissioner. Memory hook: CEC removal = like a Supreme Court judge.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #238",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6cd93cc3ef47dd3c9655818f31bfa4a0db99e3a641736310c2a7a6a117b89090"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-239",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "polity_vice_president_removal",
+      "question_text": "How can the Vice-President of India be removed from office before the end of the five-year term?",
+      "options": {
+        "A": "By impeachment by two-thirds of the total membership of each House",
+        "B": "By a resolution passed by two-thirds of the members present and voting in the Rajya Sabha alone",
+        "C": "By a resolution passed by a simple majority in a joint sitting of both Houses",
+        "D": "By a resolution passed by a majority of all the then members of the Rajya Sabha and agreed to by the Lok Sabha"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (A): This is the impeachment procedure for the President under Article 61, so students apply it to the Vice-President.",
+      "pedagogical_explanation": "Article 67(b) provides that the Vice-President can be removed by a resolution of the Rajya Sabha passed by a majority of all its then members and agreed to by the Lok Sabha, after at least fourteen days' notice. No special majority and no joint sitting is needed. Memory hook: President = Impeachment, Vice-President = Resolution.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #239",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a8fa52b6debecb35d48b2b3dc0fe27c0bb7d4d28af1db0ff20aa52f07e1efc97"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-240",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "geography_climate",
+      "question_text": "Which winds bring most of the annual rainfall to the Tamil Nadu coast during October to December?",
+      "options": {
+        "A": "North-east monsoon (retreating monsoon) winds",
+        "B": "South-west monsoon winds",
+        "C": "Land and sea breezes",
+        "D": "Western disturbances"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (B): The south-west monsoon gives most of India its rainfall, but Tamil Nadu lies in its rain shadow, so students pick it by default.",
+      "pedagogical_explanation": "During the retreating monsoon, north-east winds pick up moisture from the Bay of Bengal and cause rain on the Tamil Nadu and southern Andhra coasts. Western disturbances bring winter rain to north-west India. Memory hook: Oct to Dec, Tamil Nadu = North-east monsoon.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #240",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "9d36f3cb65184382b46cc97f742479c6dec3f37e0d05e7279aa68f6859fa1351"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-241",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_world_lakes",
+      "question_text": "Which lake is the deepest in the world, with a maximum depth of over 1,600 metres?",
+      "options": {
+        "A": "Lake Tanganyika",
+        "B": "Lake Baikal",
+        "C": "Lake Superior",
+        "D": "Lake Victoria"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Lake Tanganyika is the second deepest lake and the longest freshwater lake, so students pick it as the deepest.",
+      "pedagogical_explanation": "Lake Baikal in Siberia, Russia, is the deepest lake in the world and holds a very large share of the world's unfrozen surface fresh water. Lake Superior is the largest freshwater lake by area and Victoria is Africa's largest lake by area. Memory hook: Baikal = Bottomless.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #241",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "fd6bd43e3a12fdbec6cf496404cef110a74bdb50214b50695b989faff33fdcfc"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-242",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "geography_indian_ports",
+      "question_text": "Which tidal port in Kachchh, Gujarat, was developed soon after Independence to ease the pressure on Mumbai port after the loss of Karachi port?",
+      "options": {
+        "A": "Tuticorin",
+        "B": "Kandla",
+        "C": "Mormugao",
+        "D": "Nhava Sheva"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (D): Nhava Sheva (Jawaharlal Nehru Port) was also built to decongest Mumbai port, but much later, in the 1980s, and is in Maharashtra.",
+      "pedagogical_explanation": "Kandla was the first major port developed after Partition, when Karachi went to Pakistan, and it handles large volumes of grain, salt and fertiliser. Mormugao is in Goa and Tuticorin in Tamil Nadu. Memory hook: Kandla = Kachchh = Karachi's replacement.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #242",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "a06eb8ad76b89fb43b7954194eb23a93fff9a72522911bca62eef7e5667794e5"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-243",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "geography_river_names",
+      "question_text": "In Bangladesh, the main channel of the Brahmaputra is known as the:",
+      "options": {
+        "A": "Padma",
+        "B": "Jamuna",
+        "C": "Meghna",
+        "D": "Dihang"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): The Padma is the main channel of the Ganga in Bangladesh, which the Brahmaputra (Jamuna) joins, so students swap the two names.",
+      "pedagogical_explanation": "After entering Bangladesh, the Brahmaputra flows south as the Jamuna and meets the Padma, the Ganga's channel. Their combined stream later joins the Meghna and falls into the Bay of Bengal. Dihang or Siang is its name in Arunachal Pradesh. Memory hook: Brahmaputra = Dihang in India, Jamuna in Bangladesh.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #243",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "0c55d4bc644fae6970099d48cc2852e75c36a8e3911711d56ca5216edc1f5598"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-244",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "banking_slr_provision",
+      "question_text": "The Statutory Liquidity Ratio (SLR) requirement for banks is prescribed under which provision?",
+      "options": {
+        "A": "Section 42 of the Reserve Bank of India Act, 1934",
+        "B": "Section 24 of the Banking Regulation Act, 1949",
+        "C": "Section 35A of the Banking Regulation Act, 1949",
+        "D": "Section 22 of the Banking Regulation Act, 1949"
+      },
+      "correct_answer": "B",
+      "trap_type": "Trap (A): Section 42 of the RBI Act is the provision for the Cash Reserve Ratio, the other reserve requirement, so students swap the two.",
+      "pedagogical_explanation": "Section 24 of the Banking Regulation Act, 1949 requires banks to maintain a percentage of their demand and time liabilities in liquid assets such as cash, gold and approved securities. Section 35A gives the RBI power to issue directions to banks and Section 22 deals with licensing. Memory hook: SLR = Section 24, BR Act.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #244",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "3510c5201e68cb9cf533c9e49c579d34c585c18ca89dfb7d189fec3b7e3c9fd1"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-245",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "economy_revenue_deficit",
+      "question_text": "Revenue deficit in the Union Budget is the excess of:",
+      "options": {
+        "A": "Fiscal deficit over interest payments",
+        "B": "Capital expenditure over capital receipts",
+        "C": "Total expenditure over total receipts excluding borrowings",
+        "D": "Revenue expenditure over revenue receipts"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (C): This is the definition of fiscal deficit, the best-known budget deficit, so students use it for revenue deficit.",
+      "pedagogical_explanation": "Revenue deficit means the government's day-to-day spending exceeds its revenue (tax and non-tax) receipts, which implies borrowing even for consumption. Fiscal deficit minus interest payments is the primary deficit. Memory hook: Revenue deficit = Revenue expenditure minus Revenue receipts.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #245",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "15d5c09c217310dae51ec7eb43a72cecfe5d9e72849e68e41c68b6cbbf0ae1ab"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-246",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "banking_money_market_instruments",
+      "question_text": "Which money market instrument is an unsecured short-term promissory note issued mainly by highly rated corporates to raise funds?",
+      "options": {
+        "A": "Call money",
+        "B": "Certificate of Deposit",
+        "C": "Treasury Bill",
+        "D": "Commercial Paper"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): A Certificate of Deposit is also an unsecured short-term money market instrument, but it is issued by banks and not by corporates.",
+      "pedagogical_explanation": "Commercial Paper lets companies with a good credit rating borrow directly from investors for short periods. Treasury Bills are issued by the Government and call money is inter-bank borrowing for one day. Memory hook: CP = Corporate Paper, CD = Customer Deposit at a bank.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #246",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "32a39963d17570417b3a303daae282054b64a014fed4ec6d79d67fda3a0ddd01"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-247",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Easy",
+      "concept_tag": "science_light_vision",
+      "question_text": "A person who can see nearby objects clearly but cannot see distant objects clearly (myopia) is corrected using which lens?",
+      "options": {
+        "A": "Bifocal lens",
+        "B": "Cylindrical lens",
+        "C": "Concave lens",
+        "D": "Convex lens"
+      },
+      "correct_answer": "C",
+      "trap_type": "Trap (D): A convex lens corrects hypermetropia (far-sightedness), the opposite defect, so students swap the two.",
+      "pedagogical_explanation": "In myopia the image of a distant object forms in front of the retina. A concave lens of suitable power diverges the rays so the image forms on the retina. Memory hook: Myopia = Minus power = Concave.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #247",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "bb6a8158b15a24a685e09f73d65c8c74ab7d8ff040bc36959fa5a13adcd276e1"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-248",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_everyday_acids",
+      "question_text": "The painful burning sensation caused by a red ant's sting is mainly due to which acid?",
+      "options": {
+        "A": "Formic acid",
+        "B": "Lactic acid",
+        "C": "Oxalic acid",
+        "D": "Acetic acid"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (D): Acetic acid is the familiar kitchen acid of vinegar, so students pick it as the most common weak acid.",
+      "pedagogical_explanation": "Red ants inject formic acid (methanoic acid), and rubbing a mild base such as baking soda on the sting neutralises it and gives relief. The name formic comes from the Latin word for ant. Memory hook: Formic = Formica = Ant.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #248",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "51b11fa078b3859acfd1662c14ff4a928bb03432493801b7f6585c19996dc492"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-249",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "CAT-Level",
+      "concept_tag": "science_photosynthesis",
+      "question_text": "In the chloroplast, the light-independent (dark) reactions of photosynthesis take place in the:",
+      "options": {
+        "A": "Thylakoid lumen",
+        "B": "Grana",
+        "C": "Outer membrane",
+        "D": "Stroma"
+      },
+      "correct_answer": "D",
+      "trap_type": "Trap (B): The grana are the stacks of thylakoids where the light reactions occur, so students place all of photosynthesis there.",
+      "pedagogical_explanation": "The light reactions occur in the thylakoid membranes of the grana, producing ATP and NADPH. These are used in the stroma, the fluid matrix, where the Calvin cycle fixes carbon dioxide into sugars. Memory hook: Grana = Light, Stroma = Sugar.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #249",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "6aa6d88acdc0c458dead25ebc723b920910026e30b7d8c66d014937d347ebd47"
+    },
+    {
+      "id": "MM-SK-SGA-GA9-250",
+      "exam": "Sarkari",
+      "topic": "Sarkari General Awareness",
+      "difficulty": "Moderate",
+      "concept_tag": "science_blood_groups",
+      "question_text": "The ABO blood group system was discovered by:",
+      "options": {
+        "A": "Karl Landsteiner",
+        "B": "Louis Pasteur",
+        "C": "William Harvey",
+        "D": "Edward Jenner"
+      },
+      "correct_answer": "A",
+      "trap_type": "Trap (C): William Harvey is the famous scientist who described the circulation of blood, so students link every blood-related discovery to him.",
+      "pedagogical_explanation": "Karl Landsteiner identified the A, B and O blood groups, which made safe blood transfusion possible, and received the Nobel Prize in Physiology or Medicine in 1930. Jenner developed the smallpox vaccine and Pasteur worked on germ theory and vaccines. Memory hook: Landsteiner = Labelled the blood groups.",
+      "verify_code": "",
+      "source_ref": "multi:claude-ga-p9 #250",
+      "import_source": "Multi-model curated bank",
+      "source_model": "Claude (Pro)",
+      "source_batch": "claude_ga_p9",
+      "verified": true,
+      "verification": [
+        "independent solve"
+      ],
+      "text_hash": "25807729410639ce2753670e9a61aa64a4148d55da348dfdbbe96a012a671ac7"
     },
     {
       "id": "MM-SK-SQA-C55-000",
