@@ -269,6 +269,9 @@ def daily_challenge() -> dict:
     base = load_bank() + approved   # only faculty-approved AI items join the shared daily question
     if not base:  # app with no seed bank yet (CUET): rotate through its verified, served imports instead
         imported = [q for q in load_pool() if q["source"] in qbank.IMPORT_SOURCES and q.get("verified")]
+        if not imported:  # app served only from the AI bank so far (NEET): rotate through it, keeping its review label
+            q = engine.daily_pick([q for q in load_pool() if q.get("verified")], dt.date.fromisoformat(guard.ist_today()))
+            return dict(q, source=f"Daily micro-challenge · {q['source']}")
         return dict(engine.daily_pick(imported, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     q = dict(engine.daily_pick(base, dt.date.fromisoformat(guard.ist_today())), source="Daily micro-challenge")
     return q if q["id"].startswith("AI-") else mark_seed(q)

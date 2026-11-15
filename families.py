@@ -66,14 +66,17 @@ FAMILIES: dict[str, dict] = {
         "name": "NEET Adaptive Engine",
         "title": "NEET UG Adaptive Practice Engine",
         "sidebar_title": "🩺 NEET Engine",
-        "tagline": "NEET UG practice built on NCERT. Coming soon.",
+        "tagline": "NEET UG Biology (Botany and Zoology) practice built on NCERT: named traps, speed tracking. "
+                   "Physics and Chemistry coming soon.",
         "icon": "🩺",
         "badge": "🩺",
         "accent": "#0F9D8F",   # teal
         "accent2": "#14B8A6",
-        "sections": {"NEET UG": []},  # placeholder: no question content yet
+        # Biology only for now: Physics and Chemistry are added as sections once their banks are ready
+        # (an empty section would show an empty topic list)
+        "sections": {"Biology": ["NEET Botany", "NEET Zoology"]},
         "level_labels": {"CAT-Level": "Exam-Level"},
-        "coming_soon": True,
+        "coming_soon": False,
     },
     "engineering": {
         "name": "JEE Adaptive Engine",

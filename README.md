@@ -173,7 +173,7 @@ Set `EXAM_FAMILY` in an app's Streamlit secrets (or env) to choose which app it 
 | `mgmt_law` (default) | CAT · CLAT · IPMAT | live |
 | `sarkari` | SSC CGL/CHSL · Railway NTPC/Group D · Bank IBPS/SBI PO/Clerk | coming soon (not yet launched; General Awareness bank in progress) |
 | `cuet` | CUET UG: General Test · English · Maths | ready (see below) |
-| `medical` | NEET UG | coming soon |
+| `medical` | NEET UG: Biology (Botany · Zoology); Physics and Chemistry coming soon | ready (Biology bank in faculty review) |
 | `engineering` | JEE Main | coming soon |
 
 Each app has its own branding, question bank (`data/sample_bank_<family>.json`), progress and Pro

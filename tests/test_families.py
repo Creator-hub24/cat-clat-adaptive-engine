@@ -32,9 +32,9 @@ def test_family_selected_by_env(monkeypatch):
     monkeypatch.setenv("EXAM_FAMILY", " Sarkari ")
     f = families.get_family()
     assert f["key"] == "sarkari" and f["icon"] == "🏛️" and "#FF9933" in families.theme_css(f)
-    assert families.get_family("medical")["icon"] == "🩺" and families.get_family("medical")["coming_soon"]
+    assert families.get_family("medical")["icon"] == "🩺" and not families.get_family("medical")["coming_soon"]
     assert families.get_family("engineering")["icon"] == "⚙️" and families.get_family("engineering")["coming_soon"]
-    assert all(t == [] for t in families.get_family("medical")["sections"].values())
+    assert all(t == [] for t in families.get_family("engineering")["sections"].values())
 
 
 def test_topics_unique_across_families_and_ai_prefixes_unique():
